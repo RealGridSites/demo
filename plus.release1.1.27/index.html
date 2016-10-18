@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>페이지 스타일 1</title>
-    <meta name="description" content="GridView.setColumns() 메쏘드는 매개변수로 전달되는 컬럼 정보 배열을 flash 그리드로 전달하여 기존 컬럼들을 지우고 새로운 컬럼들을 추가하도록 합니다. 예제에서 “column3”와 “column6”는 같은 값을 표시하고 있는데, 두 컬럼이 “Field3” 필드를...">
+    <title>RealGridPlus Release 1.1.27</title>
+    <meta name="description" content="  셀 데이터에 따옴표가 들어 있는 경우 다중 행을 복사 후 붙여넣을 때 따옴표 사이의 데이터가 하나의 셀로 인식되는 문제를 개선하기 위해 복사/붙여넣기 로직을 개선하였습니다.  엑셀 Export시 윤달을 포함한 3월달에 날짜가 하루씩 앞당겨지는 문제를 개선하였습니다.  RowGr...">
 
     <link rel="stylesheet" href="/demo/css/style.css">
 
@@ -18,7 +18,7 @@
       <link rel="stylesheet" href="/demo/css/prettify.css">
       <link rel="stylesheet" href="/demo/css/main.css">
       <link rel="stylesheet" href="/demo/css/octicons.css">
-      <link rel="canonical" href="demo.realgrid.com/demo/setColumns/">
+      <link rel="canonical" href="demo.realgrid.com/demo/plus.release1.1.27/">
       <link rel="alternate" type="application/rss+xml" title="RealGrid DEMO" href="demo.realgrid.com/demo/feed.xml" />
 
       <script type="text/javascript" src="/demo/script/jquery-1.11.2.min.js"></script>
@@ -138,8 +138,8 @@
                 
                 
                     
-                    <li class="item-toc current ">
-                        <a href="/demo/setColumns/" class="sidebar-link current">
+                    <li class="item-toc ">
+                        <a href="/demo/setColumns/" class="sidebar-link ">
                             <span>페이지 스타일 1</span>
                         </a>
                     </li>
@@ -758,11 +758,12 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">페이지 스타일 1</h1>
+            <h1 class="title-page">RealGridPlus Release 1.1.27</h1>
             
                 <div class="subtitle-page">
                     
-                        그리드 컬럼은 그리드에 연결된 데이터셋 한 필드의 값들을 표시하고 관리하는 View 모델입니다.
+                        <!--버전이 있는 경우 버전 표시-->
+                        2016-03-22 Relaese 1.1.27.2635
                     
                 </div>
             
@@ -774,101 +775,13 @@
         </div>
 
         <div class="document-formatting">
-            <p>GridView.setColumns() 메쏘드는 매개변수로 전달되는 컬럼 정보 배열을 flash 그리드로 전달하여 기존 컬럼들을 지우고 새로운 컬럼들을 추가하도록 합니다. 예제에서 “column3”와 “column6”는 같은 값을 표시하고 있는데, 두 컬럼이 “Field3” 필드를 표시하고 있기 때문입니다. 즉, 하나의 데이터 필드를 여러 컬럼이 동시에 참조할 수 있으며, 같은 값을 각각 다른 방식으로 표시하는 요구 사항은 드물지 않습니다.
-컬럼 name은 undefined이거나 그리드 내에서 유일해야 합니다. GridView.columnByName 메쏘드는 이 이름에 해당하는 javascript 컬럼 객체를 반환합니다. 컬럼의 tag 속성 값은 다양한 용도로 사용할 수 있는 사용자 지정 값입니다. 이 값은 중복될 수 있습니다. GridView.findColumnsByTag 메쏘드는 매개변수로 지정한 tag 값을 갖는 모든 컬럼들을 배열로 리턴 합니다. 이런 함수들이 리턴하는 컬럼들은 setColumns() 에서 전달한 컬럼 개체들입니다. 즉, javascript 내에서 생성되고 GridView에서 보관하는 컬럼 정보들인데, flash grid 내부에서 생성되는 컬럼 객체와는 양쪽에서 관리하는 id 값으로 연결되지만 속성들이 자동으로 동기화 되지는 않습니다.
-컬럼은 각각 Header와 <strong>Footer를</strong> 표시하기 위한 정보를 갖습니다. 또한, 컬럼별로 스타일을 설정할 수 있습니다.</p>
-
-<ol>
-  <li>a</li>
-  <li>b</li>
-  <li>c</li>
-</ol>
-
-<p>description:
-그리드 fiteringOptions.enabled 가 true이고, 컬럼에 filter들이 설정되면 컬럼 헤더에 필터 핸들이 표시되고, 사용자는 그 핸들을 클릭해서 표시되는 필터 리스트를 이용 컬럼 별로 데이터를 필터링할 수 있습니다. 한 컬럼 내에서 복수 필터가 선택되면 필터셋 중 하나의 필터 조건에만 해당되어도 행들이 표시됩니다. 하지만 여러 컬럼에 필터가 설정되면 모든 컬럼의 필터셋에 해당되는 행들만이 표시됩니다.
-아래는 “CustmerID” 필드에 대한 컬럼 필터 적용 예제입니다.
-RealGridJS 1.1.18 버전부터 datetime 필드에 필터를 적용할 수 있습니다.
-더보기 버튼을 눌러 기능을 확인하세요.
-더 보기  skin view</p>
-
-<p>var column = grid.columnByName(“CustomerId”);
-if (column) {
-    var filters = [{
-        name: “VINET”,
-        criteria: “value = ‘VINET’”
-    }, {
-        name: “VICTE”,
-        criteria: “value = ‘VICTE’”
-    }, {
-    …
-    ];</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre>column.filters = filters;
-grid.setColumn(column); }; 사용자가 컬럼 필터를 선택하는 선택 상자는 FilteringOption의 selector 속성으로 표시되는 크기 등을 지정할 수 있습니다.
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>grid.setOptions({
-    filtering: {
-        selector: {
-            minWidth: 200,
-            maxWidth: 200,
-            maxHeight: 250,
-            closeWhenClick: false
-        }
-    }
-    …
-});
-min, max 너비 높이는 예제 처럼 절대값으로 지정하거나, “50%”와 같이 그리드 전체 너비/높이에 대한 상대값으로 지정할 수도 있습니다. closeWhenClick를 true로 지정하면 한 항목을 클릭한 후 선택 상자가 닫히게 됩니다.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</pre></td><td class="code"><pre>var column = grdMain.columnByName('OrderDate'); if (column) {
-var filters = [{
-    name: "1996년",
-    criteria: "year(value) = 1996"
-}, {
-    name: "1997년",
-    criteria: "year(value) = 1997"
-}, {
-    name: "10월",
-    criteria: "month(value) = 10"
-}, {
-    name: "8일",
-    criteria: "day(value) = 8 "
-}, {
-    name: "1시",
-    criteria: "hour(value) = 1 "
-}, {
-    name: "1996년10월",
-    criteria: "datestr(value) like '199610%'"
-}];
-column.filters = filters;
-grdMain.setColumn(column); }; year(), month(), day(), hour()를 사용하여 datetime필드의 연,월,일,시간에 대한 값을 가져 올 수 있습니다. month()의 경우 0~11까지가 아닌 1~12의 값으로 반환됩니다. datestr()의 반환되는 값을 형태는 YYYYMMDDHHNNSSTTT 입니다.
-</pre></td></tr></tbody></table>
-</div>
-</div>
+            <ul>
+  <li>셀 데이터에 따옴표가 들어 있는 경우 다중 행을 복사 후 붙여넣을 때 따옴표 사이의 데이터가 하나의 셀로 인식되는 문제를 개선하기 위해 복사/붙여넣기 로직을 개선하였습니다.</li>
+  <li>엑셀 Export시 윤달을 포함한 3월달에 날짜가 하루씩 앞당겨지는 문제를 개선하였습니다.</li>
+  <li>RowGroupOptions.mergeMode가 true일 때 여러 컬럼을 Grouping한 상태에서 엑셀 Export시 RowGroup의 Header,Footer행의 상위level에 해당하는 컬럼에 경계선이 다르게 표시되는 문제를 개선하였습니다.</li>
+  <li>Row Grouping한 상태에서 컬럼의 경계선을 더블클릭하거나 fitColumnWidth() 함수를 이용해 컬럼 fitting하는 경우 발생하는 오류를 개선하였습니다.</li>
+  <li>Validation Error표시할 때 순수한 Validation Message만 표시하도록 수정하였습니다.</li>
+</ul>
 
         </div>
     </div>
