@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>소개</title>
+    <meta name="description" content="RealGrid 데모사이트 입니다.">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="text/javascript" src="/lib/jquery/jquery-1.11.2.min.js"></script>
+
+    <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
+    <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.19/realgridjs_eval.1.1.19.min.js"></script>
+    <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.19/realgridjs-api.1.1.19.js"></script>
+    <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.19/jszip.min.js"></script>
+
+<!--
+      <link rel="stylesheet" href="/css/bootstrap.css">
+      <link rel="stylesheet" href="/css/prettify.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/css/octicons.css">
+      <link rel="canonical" href="demo.realgrid.com/">
+      <link rel="alternate" type="application/rss+xml" title="RealGrid DEMO" href="demo.realgrid.com/feed.xml" />
+
+      <script type="text/javascript" src="/script/jquery-1.11.2.min.js"></script>
+      <script type="text/javascript" src="/script/bootstrap.min.js"></script>
+      <script type="text/javascript" src="/script/prettify.js"></script>
+ -->
+<!--
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/png" href="<%- theme.favicon || 'https://www.meteor.com/favicon.png' %>" sizes="16x16 32x32 64x64">
+
+    <meta name="google-site-verification" content="" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/style/style.css">
+ -->
+</head>
+
+
+<body class="">
+
+    <div class="nav dark">
+    <div class="nav-group">
+        <div class="nav-item">
+            <span class="js-sidebar-toggle show-mobile">
+                <span class="icon-menu"></span>
+            </span>
+            <a class="logo show-desktop"
+                href=""
+                title="RealGrid DEMO">
+                <img src="/images/realgrid-logo.png"
+                    alt="RealGrid DEMO">
+                <span>RealGrid DEMO</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="nav-group right">
+        <div class="nav-item show-mobile">
+            <span class="js-search-toggle">
+                <span class="icon-search"></span>
+            </span>
+        </div>
+
+        <div class="nav-item show-desktop active">
+            <a class="link"
+                href="http://demo.realgrid.com">
+                <span>데모보기</span>
+            </a>
+        </div>
+        <div class="nav-item show-desktop">
+            <a class="link"
+                href="http://help.realgrid.com">
+                <span>개발자문서</span>
+            </a>
+        </div>
+        <div class="nav-item show-desktop">
+            <a class="link"
+                href="http://demo.realgrid.com/questions/">
+                <span>질문답변</span>
+            </a>
+        </div>
+        <div class="nav-item show-desktop">
+            <a class="btn orange small round lowercase"
+                href="http://help.realgrid.com">
+                <span>평가판</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="sidebar">
+
+  <div class="sidebar-content">
+    <div class="topcap">
+      <span class="title-sidebar">RealGrid 데모보기</span>
+      
+    </div>
+
+    <div class="wrapper-search">
+      <div class="input-symbol small round">
+        <input type="text" placeholder="Search Demo" id="desktop-search-input" />
+        <span class="icon-search"></span>
+      </div>
+      <div class="wrapper-desktop-search-results"></div>
+    </div>
+
+    <ul class="toc">
+        <li>
+            <ul class="list-toc">
+                
+                
+                    
+                
+                    
+                    <li class="item-toc current ">
+                        <a href="/" class="sidebar-link current">
+                            <span>소개</span>
+                        </a>
+                    </li>
+                    
+                
+
+                
+                
+                    
+                    <li class="item-toc ">
+                        <a href="/setColumns/" class="sidebar-link ">
+                            <span>페이지 스타일 1</span>
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li class="item-toc ">
+                        <a href="/setColumns2/" class="sidebar-link ">
+                            <span>페이지 스타일 2</span>
+                        </a>
+                    </li>
+                    
+                
+            </ul>
+        </li>
+
+        
+        <li>
+          
+            <div class="heading-toc">Concept</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">컬럼</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Columns</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/Columns/SetColumns/" class="sidebar-link ">
+                  <span>컬럼 만들기</span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/Columns/ColumnProperties/" class="sidebar-link ">
+                  <span>컬럼 속성 변경하기</span>
+                </a>
+              </li>
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Getting Started</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Concepts</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Rows</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Data</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Paging</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Renderers</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Series</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Editing</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Components</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">TreeView</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Expression</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Styles</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">DataCellStyle</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Export</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Import</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Events</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">HighChart Interface</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">UbiReport Interface</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Crownix Interface</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">Fusion Charts</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+
+    </ul>
+  </div>
+</div>
+
+
+<div class="content">
+
+    <div class="content-wrapper no-devbox">
+        <div class="header-content">
+            <h1 class="title-page">소개</h1>
+            
+                <div class="subtitle-page">RealGrid 데모보기 페이지 소개</div>
+            
+
+            
+
+            
+        </div>
+
+        <div class="document-formatting">
+            <p>RealGrid 데모보기에서는 RealGrid의 모든 기능을 다양하게 활용할 수 있는 방법을 보여드릴 뿐만 아니라
+데모에서 보여지는 기능을 어떻게 구현할 수 있는지 그 방법과 소스코드를 제공하고 있습니다.</p>
+
+<h2>최신 버전 릴리즈 소식</h2>
+
+<p><strong>2016년 9월 30일 1.1.19 버전</strong>이 릴리즈 되었습니다. 이번 릴리즈에 포함된 내용은 아래와 같습니다.</p>
+
+<ul>
+  <li>Renderer.showTooltip속성이 TextCellRenderer뿐 아니라 Data를 표시하는 전체 Cell Renderer에서 적용되도록 개선되었습니다.</li>
+  <li>그리드에서 행을 추가할때 dataProvider.onRowInserted 이벤트에서 dataProvider.setValue api를 사용할때 발생하는 오류를 수정하였습니다.</li>
+  <li><a href="#">상세보기…</a></li>
+</ul>
+
+<h2>주요기능 요약</h2>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+    <script>
+        function togglePageStyles() {
+            $('.content-wrapper').toggleClass('with-devbox');
+            $('.content-wrapper').toggleClass('no-devbox');
+            $('.devbox').toggle('display');
+        }
+    </script>
+
+<!--
+    <script src="/script/smooth-scroll.min.js"></script>
+    <script src="/script/main.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+      // nectar ninja
+    //   (function(){
+    //     var handle = '@meteorjs';
+    //     var a = document.createElement('script');
+    //     var m = document.getElementsByTagName('script')[0];
+    //     a.async = 1;
+    //     a.src = 'https://nectar.ninja/api/v1/' + handle.slice(1);
+    //     m.parentNode.insertBefore(a, m);
+    //   })();
+
+     <% if (config.apis && config.apis.ga) { %>
+        // Google analytics
+        ;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '<%- config.apis.ga %>', 'auto');
+        ga('send', 'pageview');
+      <% } %>
+      <% if (config.apis && config.apis.segment) { %>
+        // Segment Tracking
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+        analytics.load("<%- config.apis.segment %>");
+        analytics.page()
+        }}();
+      <% } %>
+
+      // search box
+      <% if (config.apis && config.apis.swiftype) { %>
+        ;(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+        _st('install','<%- config.apis.swiftype %>','2.0.0');
+      <% } else if (config.apis && config.apis.docsearch) { %>
+
+        ['desktop', 'mobile'].forEach(function(type) {
+          var search = docsearch({
+            apiKey: '<%- config.apis.docsearch.apiKey %>',
+            indexName: '<%- config.apis.docsearch.indexName %>',
+            inputSelector: '#' + type + '-search-input',
+            autocompleteOptions: {
+              dropdownMenuContainer: '.wrapper-' + type + '-search-results',
+              debug: true
+            }
+          }).autocomplete;
+
+          var sidebar = document.querySelector('.sidebar-content');
+          search.on('autocomplete:opened', function() {
+            sidebar.classList.add('searching');
+          });
+          search.on('autocomplete:closed', function() {
+            sidebar.classList.remove('searching');
+          });
+          search.on('autocomplete:updated', function() {
+            if (search.val() === '') {
+              search.autocomplete.close();
+            }
+          });
+        });
+      <% } %>
+
+      <% if (config.redirects) { %>
+        var REDIRECTS = <%- JSON.stringify(config.redirects, 0, 2) %>;
+
+        function redirect() {
+          // Support redirects of the form /path#hash
+          var locationKey = location.pathname + location.hash;
+          if (REDIRECTS[locationKey]) {
+            location.replace(location.origin + '/' + REDIRECTS[locationKey]);
+          }
+
+          // Support redirects of the form #hash (works for any path)
+          var hashKey = location.hash;
+          if (REDIRECTS[hashKey]) {
+            location.replace(location.origin + '/' + REDIRECTS[hashKey]);
+          }
+        }
+
+        // Redirect now
+        redirect();
+
+        // Redirect on hash change
+        window.onhashchange = redirect;
+      <% } %>
+    </script>
+-->
+
+  </body>
+
+</html>
