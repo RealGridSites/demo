@@ -19,4 +19,4 @@ message="Update message $now"
 git commit -m "$message"
 
 echo "--------- push"
-git push deploy master
+git push deploy gh-pages
