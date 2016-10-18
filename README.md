@@ -1,9 +1,22 @@
-<<<<<<< HEAD
-# demo.realgrid.com 사이트 소스 저장소
+# RealGrid DEMO 사이트
 
 ## Architectures
 
+### Frameworks
+
 - Jekyll
-=======
-# demo
->>>>>>> 0baff233b38873154cb186d47b8f5d4c9f72bca9
+- github pages
+
+### Libraries
+
+- realgrid
+- jquery
+- bootstrap
+
+## Development
+
+- 개발 저장소(Private) : https://github.com/realgrid/demo.realgrid.com.git
+
+## Deployment
+
+- 배포 저장소(Public) : https://github.com/RealGridSites/demo.realgrid.com.git
