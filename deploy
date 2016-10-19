@@ -8,8 +8,8 @@ echo "---------------------"
 JEKYLL_ENV=production jekyll build
 
 # _site폴더가 생성되었다고 가정하고 실행
-
 cd ./_site
+
 
 echo "---------------------"
 echo " check status"
@@ -18,21 +18,26 @@ echo "---------------------"
 git status
 git remote -v
 
-# 혹시 _site가 재생성되어 remote가 제거되었다면 다시 생성하는 코드가 필요하다.
 
+# 혹시 _site가 재생성되어 remote가 제거되었다면 다시 생성하는 코드가 필요하다.
 echo "---------------------"
 echo " add to stage"
 echo "---------------------"
+
 git add -A
+
 
 echo "---------------------"
 echo " git commit "
 echo "---------------------"
+
 now=$(date +'%Y-%m-%d %T')
 message="Update message $now"
 git commit -m "$message"
 
+
 echo "---------------------"
 echo " git push"
 echo "---------------------"
+
 git push deploy gh-pages
