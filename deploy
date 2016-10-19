@@ -21,7 +21,7 @@ git remote -v
 # 혹시 _site가 재생성되어 remote가 제거되었다면 다시 생성하는 코드가 필요하다.
 
 echo "---------------------"
-echo " add to station"
+echo " add to stage"
 echo "---------------------"
 git add -A
 
