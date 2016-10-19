@@ -19,7 +19,12 @@
 
 - 개발 저장소(Private) : https://github.com/realgrid/demo.realgrid.com.git
 
-### URL
+### 메뉴 카테고리
+
+- 왼쪽 메뉴 카테고리는 _config.yml 파일에 categories 속성으로 정의한다.
+
+
+### URL 링크
 
 - 사용자가 접근 하는 root URL은 www.realgrid.com/demo
 - 개발은 /demo 부분만 따로 관리하게 되므로 항상 앞쪽에 /demo가 붙어야 한다.
@@ -50,6 +55,7 @@ Provider);
   - layout: page
   - title: {타이틀} 상단 제목
   - releaseDate: {배포일자} 정렬 순서를 결정한다.
+  - sidebar: {true|false} 왼쪽 메뉴에 보일지 말지 결정한다.
   - version: {배포버전}
 
 ## Deployment
