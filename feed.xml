@@ -5,13 +5,15 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/demo/</link>
     <atom:link href="demo.realgrid.com/demo/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 20 Oct 2016 02:20:53 +0900</pubDate>
-    <lastBuildDate>Thu, 20 Oct 2016 02:20:53 +0900</lastBuildDate>
+    <pubDate>Thu, 20 Oct 2016 02:22:32 +0900</pubDate>
+    <lastBuildDate>Thu, 20 Oct 2016 02:22:32 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>페이지 스타일 1</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;사이드바에 표시 안되는 하위 제목은 #붙인다.&lt;/h1&gt;
+        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;이 페이지는 실제 배포시 메뉴에서 안보입니다. 리뷰를 위해 임시로 오픈 합니다.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;사이드바에 표시 안되는 하위 제목은 #붙인다.&lt;/h1&gt;
 
 &lt;p&gt;GridView.setColumns() 메쏘드는 매개변수로 전달되는 컬럼 정보 배열을 flash 그리드로 전달하여 기존 컬럼들을 지우고 새로운 컬럼들을 추가하도록 합니다. 예제에서 “column3”와 “column6”는 같은 값을 표시하고 있는데, 두 컬럼이 “Field3” 필드를 표시하고 있기 때문입니다. 즉, 하나의 데이터 필드를 여러 컬럼이 동시에 참조할 수 있으며, 같은 값을 각각 다른 방식으로 표시하는 요구 사항은 드물지 않습니다.&lt;/p&gt;
 
@@ -156,7 +158,11 @@ grdMain.setColumn(column); }; year(), month(), day(), hour()를 사용하여 dat
     
       <item>
         <title>페이지 스타일 2</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;첫 번째 그리드 만들기&lt;/h1&gt;
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;이 페이지는 실제 배포시 메뉴에서 안보입니다. 리뷰를 위해 임시로 오픈 합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;첫 번째 그리드 만들기&lt;/h1&gt;
 
 &lt;div id=&quot;realgrid&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
 
