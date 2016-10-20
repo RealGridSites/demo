@@ -34,6 +34,11 @@
   - release 카테고리는 고정된 이름의 카테고리이다.
   - _release 폴더에 들어 있는 .md파일은 release로 구분 된다.
 
+### 메뉴 필터링
+
+- sidebar 메뉴는 page.title, page.tags로 필터링 한다.
+- tags로 검색 조건을 조절 할 수 있다.
+
 ### demo 페이지에서 RealGrid 사용하기
 
 - RealGrid는 lib/realgrid/realgridjs_{eval}.{version} 폴더 밑에 버전별 폴더를 만들어 넣어준다.
@@ -78,6 +83,10 @@ Provider);
   - releaseDate: {배포일자} 정렬 순서를 결정한다.
   - sidebar: {true|false} 왼쪽 메뉴에 보일지 말지 결정한다.
   - releaseVersion: {배포버전}
+
+### SEE
+
+- [지킬 성능 이슈](https://wiredcraft.com/blog/make-jekyll-fast/)
 
 ## Deployment
 
