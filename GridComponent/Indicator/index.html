@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     인디케이터
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="인디케이터(Indicator)는 그리드의 가장 왼쪽에 위치한 수직 영역으로 데이터의 행 번호등을 표시하기 위한 용도로 사용 할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -15814,22 +15814,247 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">인디케이터</h1>
             
 
 
             
+            <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div>
+            
 
             
         </div>
 
         <div class="document-formatting">
+            <p>인디케이터(Indicator)는 그리드의 가장 왼쪽에 위치한 수직 영역으로 데이터의 행 번호등을 표시하기 위한 용도로 사용 할 수 있습니다.</p>
+
+<div id="realgrid" style="width:100%; height:300px"></div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.19");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/demo/resource/layout/fieldset1.json", function (data) {
+                dataProvider.setFields(data);
+            })
+            .done(function () {
+                gridView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/columnset1.json", function (data) {
+                gridView.setColumns(data);
+            })
+            .done(function () {
+                gridView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/dataProviderOption1.json", function (data) {
+                dataProvider.setOptions(data);
+            })
+            .done(function () {
+                gridView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/gridOption1.json", function (data) {
+                gridView.setOptions(data);
+            })
+            .done(function () {
+                gridView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/style1.json", function (data) {
+                gridView.setStyles(data);
+            })
+            .done(function () {
+                gridView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+
+        
+            
+
+            $.getJSON("/demo/resource/data/griddata1.json", function (data) {
+                dataProvider.setRows(data);
+            })
+            .done(function () {
+                gridView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+    });
+</script>
+
+<p><em>displayValue</em></p>
+<ul>
+  <li><code class="highlighter-rouge">none</code>: 값을 표시 하지 않습니다.</li>
+  <li><code class="highlighter-rouge">index</code>: 1부터 시작하여 표시합니다. (정렬에 무관하게 1번부터 시작)</li>
+  <li><code class="highlighter-rouge">row</code>: Row의 고유번호를 표시합니다. (정렬에 따라서 섞여서 표시)</li>
+</ul>
 
         </div>
     </div>
+</div>
+
+
+    <div class="sidebar devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <p>인디케이터 <code class="highlighter-rouge">displayValue</code> 속성 변경 하기</p>
+
+<p><em>displayValue</em></p>
+<ul>
+  <li><code class="highlighter-rouge">none</code>: 값을 표시 하지 않습니다.</li>
+  <li><code class="highlighter-rouge">index</code>: 1부터 시작하여 표시합니다. (정렬에 무관하게 1번부터 시작)</li>
+  <li><code class="highlighter-rouge">row</code>: Row의 고유번호를 표시합니다. (정렬에 따라서 섞여서 표시)</li>
+</ul>
+
+<p><a class="btn primary small round lowercase" id="btnSetDisplayValueNone">none</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setIndicator</span><span class="p">({</span>
+  <span class="na">displayValue</span><span class="p">:</span> <span class="s2">"none"</span>  
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<p><a class="btn primary small round lowercase" id="btnSetDisplayValueIndex">Index</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setIndicator</span><span class="p">({</span>
+  <span class="na">displayValue</span><span class="p">:</span> <span class="s2">"index"</span>  
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<p><a class="btn primary small round lowercase" id="btnSetDisplayValueRow">Row</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setIndicator</span><span class="p">({</span>
+  <span class="na">displayValue</span><span class="p">:</span> <span class="s2">"row"</span>  
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="btnSetDisplayValueNone2">none</a>
+<a class="btn primary small round lowercase" id="btnSetDisplayValueIndex2">Index</a>
+<a class="btn primary small round lowercase" id="btnSetDisplayValueRow2">Row</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setIndicator</span><span class="p">({</span>
+  <span class="na">displayValue</span><span class="p">:</span> <span class="s2">"none"</span>  
+<span class="p">});</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setIndicator</span><span class="p">({</span>
+  <span class="na">displayValue</span><span class="p">:</span> <span class="s2">"index"</span>  
+<span class="p">});</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setIndicator</span><span class="p">({</span>
+  <span class="na">displayValue</span><span class="p">:</span> <span class="s2">"row"</span>  
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+
+  $('#btnSetDisplayValueNone').click(function() {
+    gridView.setIndicator({
+      displayValue: "none"  
+    });
+  });
+
+  $('#btnSetDisplayValueIndex').click(function() {
+    gridView.setIndicator({
+      displayValue: "index"  
+    });
+  });
+
+  $('#btnSetDisplayValueRow').click(function() {
+    gridView.setIndicator({
+      displayValue: "row"  
+    });
+  });
+</script>
+
+
+  </div>
 </div>
 
 
