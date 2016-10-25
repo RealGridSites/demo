@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    최신버전(1.1.19)
+    최신버전 (1.1.19)
     </title>
     <meta name="description" content="RealGrid 데모사이트 입니다.">
 
@@ -126,7 +126,7 @@
 
     <ul class="toc">
         <li>
-            <ul class="list-toc">
+            <ul class="list-toc release">
                 
                 
                     
@@ -142,32 +142,12 @@
                     
                     <li class="item-toc current ">
                         <a href="/demo/release.html" class="sidebar-link current">
-                            <span>최신버전(1.1.19)</span>
+                            <span>최신버전 (1.1.19)</span>
                         </a>
                     </li>
                     
                 
 
-                
-                    <!-- _posts폴더의 post는 개발시에만 메뉴에 표시됩니다. -->
-                    
-                    
-                        
-                        <li class="item-toc ">
-                            <a href="/demo/setColumns/" class="sidebar-link ">
-                                <span>페이지 스타일 1</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li class="item-toc ">
-                            <a href="/demo/setColumns2/" class="sidebar-link ">
-                                <span>페이지 스타일 2</span>
-                            </a>
-                        </li>
-                        
-                    
                 
             </ul>
         </li>
@@ -15779,34 +15759,7 @@
 
         </li>
         
-
-        <!--릴리즈 메뉴-->
-        <li>
-          <div class="heading-toc release">release</div>
-          <ul class="list-toc">
-            
-            
-                
-                  <li class="item-toc ">
-                    <a href="/demo/release1.1.19/" class="sidebar-link ">
-                      <span>Release 1.1.19</span>
-                    </a>
-                  </li>
-                
-            
-                
-                  <li class="item-toc ">
-                    <a href="/demo/release1.1.18/" class="sidebar-link ">
-                      <span>Release 1.1.18</span>
-                    </a>
-                  </li>
-                
-            
-                
-            
-          </ul>
-        </li>
-
+        
     </ul>
   </div>
 </div>
@@ -15816,14 +15769,7 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">최신버전(1.1.19)</h1>
-            
-                <div class="subtitle-page">
-                    
-                        <!--버전이 있는 경우 버전 표시-->
-                        2016-09-30 Relaese 1.1.19.2277
-                    
-                </div>
+            <h1 class="title-page">최신버전 (1.1.19)</h1>
             
 
 
@@ -15833,7 +15779,9 @@
         </div>
 
         <div class="document-formatting">
-            <ul>
+            <h2 id="september-2016-1119">September 2016 (1.1.19)</h2>
+
+<ul>
   <li>Renderer.showTooltip속성이 TextCellRenderer뿐 아니라 Data를 표시하는 전체 Cell Renderer에서 적용되도록 개선되었습니다.</li>
   <li>그리드에서 행을 추가할때 dataProvider.onRowInserted 이벤트에서 dataProvider.setValue api를 사용할때 발생하는 오류를 수정하였습니다.</li>
   <li>onContextMenuPopup 이벤트에 elementName이 추가되었습니다. 이베트에서 false를 return하면 contextMenu가 생성되지 않도록 개선되었습니다. ContextMenu 페이지에서 확인하세요.</li>
@@ -15869,6 +15817,20 @@
   <li>EditOptions.insertable이 true인경우 shift+insert키를 입력하는 경우 현재행 아래에 새로운 행이 추가되도록 변경되었습니다. api를 이용하는 경우 gridView.beginInsertRow(0,true)를 사용할수 있습니다. 자세한 내용은 Inserting 페이지를 참조바랍니다.</li>
   <li>onValidateColumn 사용시 첫번째행과 마지막행에서는 validation icon이 표시되지 않는 문제를 수정하였습니다.</li>
   <li>PasteOptions.noEditEvent가 true인경우 onCellEdited도 발생하지 않도록 수정되었습니다.</li>
+</ul>
+
+<h2 id="august-2016-1118">August 2016 (1.1.18)</h2>
+
+<ul>
+  <li>Column Filter의 조건에 개행문자가 있는 경우 필터생성은 되나 필터적용시 오류가 발생하는 현상을 수정하였습니다.</li>
+  <li>Filter조건에 날짜관련 수식을 추가하였습니다. 자세한 내용은 ColumnFiltering 페이지를 참조바랍니다.</li>
+  <li>Excel Export시 DynamicStyle을 Export할수 있도록 개선되었습니다. ExportOptions.applyDynamicStyles를 true로 설정하면 Grid에 적용된 Style이 Export됩니다. Export to Excel File 페이지를 참조바랍니다.</li>
+  <li>Field의 DataType이 Date인 컬럼은 Column.mergeRule에 의해서 셀 병합되지 않는 문제를 수정하였습니다.</li>
+  <li>ColumnGroup의 하위 Column도 Column.mergeRule이 적용되도록 수정하였습니다. ColumnGroup.orientation이 vertical인경우에는 적용되지 않습니다.</li>
+  <li>Grid.onItemEditCanceled이벤트가 추가되었습니다. 자세한 내용은 onItemEditCanceled를 참조바랍니다.</li>
+  <li>Column의 visible을 변경할때 Column의 순서가 바뀌는 현상을 개선하였습니다.</li>
+  <li>Column.mergeRule이 설정되어있을때 RowGrouping상태에서 dataProvider.clearRows()를 호출하였을때 발생하는 오류를 수정하였습니다.</li>
+  <li>중첩된 rowGrouping시 상위 컬럼을 그룹에서 제거하면 하위 컬럼도 같이 제거될수 있도록 RowGroupingOptions.removeIncludeLower속성을 추가하였습니다. true로 설정시 상위 컬럼을 그룹에서 제거하면 하위컬럼도 함께 제거됩니다. (기본값은 false)</li>
 </ul>
 
         </div>
