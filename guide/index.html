@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    데모페이지 만들기...
+    [데모페이지 작성요령]
     </title>
-    <meta name="description" content="마크다운(markdown) 문서">
+    <meta name="description" content="목차">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -15769,7 +15769,13 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">데모페이지 만들기...</h1>
+            <h1 class="title-page">[데모페이지 작성요령]</h1>
+            
+                <div class="subtitle-page">
+                    
+                        데모페이지 작성요령에 대해 설명합니다.
+                    
+                </div>
             
 
 
@@ -15779,14 +15785,31 @@
         </div>
 
         <div class="document-formatting">
-            <h2 id="markdown-">마크다운(markdown) 문서</h2>
+            <h2 id="section">목차</h2>
 
-<p>데모페이지는 markdown문서로 작성합니다.</p>
+<p>기본적으로 데모페이지는 markdown 문서로 작성합니다. 지킬(jekyll)의 리퀴드(liquid) 템플릿을 사용할 수도 있습니다.
+문서내용은 자유로운 편집을 보장하지만, 정해진 서식을 지켜야 합니다.</p>
 
-<h2 id="sidebar">사이드바(sidebar)</h2>
+<blockquote>
+  <p>아래 링크는 각 서식에 해당하는 섹션으로 바로 이동 합니다. 해당 서식 작성방법을 확인하시고 그대로 사용하시면 됩니다.</p>
+</blockquote>
 
-<p>사이드바는 왼쪽 메뉴영역을 말합니다. 왼쪽 메뉴영역에는 굵은글씨로 카테고리(category)가 표시되고 그 아래
-해당 카테고리에 포함된 데모페이지들이 <code class="highlighter-rouge">order</code>의 순서로 표시됩니다.</p>
+<ul>
+  <li><a href="#section-sidebar---">메뉴 및 제목 표시하기</a></li>
+  <li><a href="#front-matter">프론트메터</a></li>
+  <li><a href="#section-button-">버튼 표시하기</a></li>
+  <li><a href="#section-link-">링크 표시하기</a></li>
+  <li><a href="#section-image-">이미지 표시하기</a></li>
+  <li><a href="#section-code-">코드 표시하기</a></li>
+  <li><a href="#section-grid--">그리드 표시하기</a></li>
+  <li><a href="#section-tree--">트리 표시하기</a></li>
+  <li><a href="#dev-box">데브 박스</a></li>
+  <li><a href="#grid-toolbox--">그리드 툴 박스</a></li>
+</ul>
+
+<h2 id="section-sidebar---"><section-sidebar>메뉴 및 제목 표시하기</section-sidebar></h2>
+
+<p>왼쪽에 보이는 메뉴영역에는 굵은글씨로 카테고리(category)가 표시되고 그 아래 해당 카테고리에 포함된 데모페이지들이 프론트메터의 <code class="highlighter-rouge">order</code>의 순서로 표시됩니다.</p>
 
 <p>사이드바에는 각 데모페이지의 <code class="highlighter-rouge">title</code>이 표시됩니다. 만약 부제목을 사이드바에 표시하고 싶다면, 문서 작성시
 ##(샵샵)을 이용해 제목을 작성합니다. 문서에 포함된 ##(샵샵) 타이틀은 자동으로 사이드바에 표시되며,
@@ -15818,25 +15841,18 @@
 <ul>
   <li><code class="highlighter-rouge">layout</code>: page</li>
   <li><code class="highlighter-rouge">title</code>: 상단 제목</li>
+  <li><code class="highlighter-rouge">description</code>: 제목 아래에 표시할 부제목 또는 페이지 설명을 입력합니다.</li>
+  <li><code class="highlighter-rouge">order</code>: 사이드바 제목 표시 순번입니다.</li>
   <li><code class="highlighter-rouge">devbox</code>: devbox 표시여부를 true 또는 false로 입력합니다.</li>
   <li><code class="highlighter-rouge">devboxfile</code>: devbox에 표시될 markdown filename, ./devbox 폴더 밑에 해당 파일이 있어야 합니다.</li>
-  <li><code class="highlighter-rouge">description</code>: 제목 아래에 표시할 부제목 또는 페이지 설명을 입력합니다.</li>
   <li><code class="highlighter-rouge">categories</code>: 데모 페이지 카테고리명</li>
   <li><code class="highlighter-rouge">tags</code>: 페이지검색용 태그</li>
 </ul>
 
 <p><strong>데모페이지 프론트메터 작성 예</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10</pre></td><td class="code"><pre>---
+<pre>
+---
 layout: page
 title: 인디케이터
 order: 1
@@ -15846,20 +15862,126 @@ categories:
   - 그리드 구성요소
 tags: ['indicator', 'item', 'number', '행번호']
 ---
+</pre>
+
+<h2 id="section-button-"><section-button>버튼 표시하기</section-button></h2>
+
+<p>버튼은 html의 <code class="highlighter-rouge">&lt;a&gt;</code> 태그를 이용해 화면에 추가하며, javascript 함수를 호출하는 방식으로 동작을 구현할 수 있습니다.</p>
+
+<h4 id="section-1">기본 버튼</h4>
+
+<p><code class="highlighter-rouge">devbox</code>등 문서에서 사용되는 기본 버튼 입니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn primary small round lowercase"</span><span class="nt">&gt;</span>primary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn secondary small round lowercase"</span><span class="nt">&gt;</span>secondary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn tertiary small round lowercase"</span><span class="nt">&gt;</span>tertiary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn ancillary small round lowercase"</span><span class="nt">&gt;</span>ancillary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn orange small round lowercase"</span><span class="nt">&gt;</span>orange<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn danger small round lowercase"</span><span class="nt">&gt;</span>danger<span class="nt">&lt;/a&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
-<h2 id="section">코드 표시하기</h2>
+<p>위 코드를 페이지에 입력하면 아래와 같은 버튼이 표시됩니다.</p>
 
-<p>데모페이지의 코드표시기(highlighter)는 <code class="highlighter-rouge">rouge</code> 입니다. 예전의 help 사이트와 다르게</p>
+<p><a class="btn primary small round lowercase">primary</a>
+<a class="btn secondary small round lowercase">secondary</a>
+<a class="btn tertiary small round lowercase">tertiary</a>
+<a class="btn ancillary small round lowercase">ancillary</a>
+<a class="btn orange small round lowercase">orange</a>
+<a class="btn danger small round lowercase">danger</a></p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">funcExample</span><span class="p">(</span><span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">strParam</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">intParam</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<h4 id="section-2">추가 버튼(특수용도)</h4>
 
-  <span class="k">return</span> <span class="nx">a</span>
-<span class="p">}</span></code></pre></figure>
+<p>특수용도로 사용하기 위해 만든 버튼 입니다. 문서내에서는 사용하지 마세요.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn primary small lowercase"</span><span class="nt">&gt;</span>primary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn secondary small lowercase"</span><span class="nt">&gt;</span>secondary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn tertiary small lowercase"</span><span class="nt">&gt;</span>tertiary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn ancillary small lowercase"</span><span class="nt">&gt;</span>ancillary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn orange small lowercase"</span><span class="nt">&gt;</span>orange<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn danger small lowercase"</span><span class="nt">&gt;</span>danger<span class="nt">&lt;/a&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>위 코드를 페이지에 입력하면 아래와 같은 버튼이 표시됩니다.</p>
+
+<p><a class="btn primary small lowercase">primary</a>
+<a class="btn secondary small lowercase">secondary</a>
+<a class="btn tertiary small lowercase">tertiary</a>
+<a class="btn ancillary small lowercase">ancillary</a>
+<a class="btn orange small lowercase">orange</a>
+<a class="btn danger small lowercase">danger</a></p>
+
+<h2 id="section-link-"><section-link>링크 표시하기</section-link></h2>
+
+<p>페이지에 링크를 삽입하려면 마크다운 문법을 사용하시면 됩니다.</p>
+
+<pre>
+[네이버 링크](http://www.naver.com/){:target="_blank"}
+</pre>
+
+<p>예를 들어 페이지에 아래와 같이 입력하면 아래와 같은 링크가 표시됩니다.</p>
+
+<p><a href="http://www.naver.com/" target="_blank">네이버 링크</a></p>
+
+<p>다른 데모 페이지와 같이 demo.realgrid.com 프로젝트 내에 포함된 페이지나 파일의 링크를 표시할 때에는 아래와 같이 <code class="highlighter-rouge">baseurl</code>을 해당 경로의 앞에 붙여주기 위해 <code class="highlighter-rouge">prepend</code>필터를 사용한 리퀴드 템플릿 문법을 사용해야 합니다.</p>
+
+<p>즉, _config.yml 에 입력되어 있는 <code class="highlighter-rouge">baseurl</code> 값을 렌더링 시점에 해당 링크의 앞에 붙여주는 겁니다.</p>
+
+<pre>
+[인디케이터 데모 페이지 링크]({{ "/GridComponent/Indicator/" | prepend: site.baseurl }})
+</pre>
+
+<p>우리는 현재 <code class="highlighter-rouge">/demo</code>라는 <code class="highlighter-rouge">baseurl</code>을 사용하기 때문에 위 코드는 <code class="highlighter-rouge">/demo/GridComponent/Indicator</code> 로 렌더링 됩니다.</p>
+
+<p><a href="/demo/GridComponent/Indicator/">인디케이터 데모 페이지 링크</a></p>
+
+<h2 id="section-image-"><section-image>이미지 표시하기</section-image></h2>
+
+<p>데모 페이지에서 사용하는 이미지는 <code class="highlighter-rouge">images/demo</code>폴더에 해당 데모의 카테고리 영문명을 폴더로 만들어 추가합니다.
+이미지를 페이지에 표시할때에도 <code class="highlighter-rouge">baseurl</code>을 <code class="highlighter-rouge">prepend</code>해 주어야 합니다.</p>
+
+<p>이미지를 표시하는 방법은 markdown 문법으로 아래와 같이 작성 합니다.</p>
+
+<pre>
+![이미지타이틀]({{ "/images/demo/guide/sampleimage.png" | prepend: site.baseurl }})
+</pre>
+
+<p>위 코드를 입력하면 아래와 같이 이미지가 표시됩니다.</p>
+
+<p><img src="/demo/images/demo/guide/sampleimage.png" alt="이미지타이틀" /></p>
+
+<h2 id="section-code-"><section-code>코드 표시하기</section-code></h2>
+
+<p>데모페이지의 코드표시기(highlighter)는 <a href="http://rouge.jneen.net/" target="_blank">rouge</a> 입니다.</p>
+
+<p>문서내부에 코드를 표시할때에는 아래와 같이 <mark>` (백틱 backtick)마크</mark>를 연속으로 3개 입력하고, 그 뒤에 표현할 언어를 입력하면 됩니다.
+코드를 표시할 수 있는 여러가지 방법이 있지만, 데모사이트 문서를 작성할 때에는 반드시 아래의 방법을 따라 주시기 바랍니다.</p>
+
+<pre>
+<mark>```js</mark>
+function funcExample(param1, param2) {
+  var strParam = 'param';
+  var intParam = 0;
+
+  return param1;
+}
+<mark>```</mark>
+</pre>
+
+<p>javascript 코드를 위와 같이 입력하면 아래와 같이 표시됩니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -15867,32 +15989,40 @@ tags: ['indicator', 'item', 'number', '행번호']
 4
 5
 6</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">funcExample</span><span class="p">(</span><span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">strParam</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">strParam</span> <span class="o">=</span> <span class="s1">'param'</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">intParam</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-  <span class="k">return</span> <span class="nx">a</span>
+  <span class="k">return</span> <span class="nx">param1</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;body&gt;</span>
+<p>HTML코드의 경우 language 영역에 ‘html’ 을 입력합니다.</p>
 
-<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"demo"</span><span class="nt">&gt;</span>Click the button to display the cookies associated with this document.<span class="nt">&lt;/p&gt;</span>
+<pre>
+<mark>```html</mark>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
 
-<span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"myFunction()"</span><span class="nt">&gt;</span>Try it<span class="nt">&lt;/button&gt;</span>
+&lt;p id=&quot;demo&quot;&gt;Click the button to display the cookies associated with this document.&lt;/p&gt;
 
-<span class="nt">&lt;script&gt;</span>
-<span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
-    <span class="s2">"Cookies associated with this document: "</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">&lt;/script&gt;</span>
+&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
 
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+&lt;script&gt;
+function myFunction() {
+    document.getElementById(&quot;demo&quot;).innerHTML =
+    &quot;Cookies associated with this document: &quot; + document.cookie;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+<mark>```</mark>
+</pre>
+
+<p>위 코드는 아래와 같이 표시됩니다.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -15931,38 +16061,57 @@ tags: ['indicator', 'item', 'number', '행번호']
 </div>
 </div>
 
-<h2 id="section-1">그리드 만들기</h2>
+<h2 id="section-grid-"><section-grid>그리드 표시하기</section-grid></h2>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14</pre></td><td class="code"><pre><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">realgrid.html</span><span class="w">
-  </span><span class="err">gridVar=</span><span class="nt">"gridView"</span><span class="w">
-  </span><span class="err">dpVar=</span><span class="nt">"dataProvider"</span><span class="w">
-  </span><span class="err">fieldSet=</span><span class="nt">"fieldset1"</span><span class="w">
-  </span><span class="err">columnSet=</span><span class="nt">"columnset1"</span><span class="w">
-  </span><span class="err">dpOptionSet=</span><span class="nt">"dataProviderOption1"</span><span class="w">
-  </span><span class="err">gridOptionSet=</span><span class="nt">"gridOption1"</span><span class="w">
-  </span><span class="err">styleSet=</span><span class="nt">"style1"</span><span class="w">
-  </span><span class="err">dataSet=</span><span class="nt">"griddata1"</span><span class="w">
-  </span><span class="err">gridId=</span><span class="nt">"realgrid"</span><span class="w">
-  </span><span class="err">gridWidth=</span><span class="nt">"100%"</span><span class="w">
-  </span><span class="err">gridHeight=</span><span class="nt">"300px"</span><span class="w"> </span><span class="err">%}</span><span class="w">
+<p>그리드를 페이지에 표시하는 기본방법은 페이지에 아래와 같은 코드를 입력하면 됩니다.
+아래 코드는 jekyll 템플릿으로 완성된 그리드를 미리 렌더링 하여 페이지에 그리드가 표시되게 하고 원하는 데이터까지 불러 올 수 있습니다.
+물론, 그리드의 레이아웃이나 데이터는 모두 미리 정의 되어 있어야 합니다.</p>
 
-</span></pre></td></tr></tbody></table>
-</div>
-</div>
+<pre>
+{% include realgrid.html
+  gridVar="gridView"
+  dpVar="dataProvider"
+  <mark>fieldSet="fieldset1"
+  columnSet="columnset1"
+  dpOptionSet="dataProviderOption1"
+  gridOptionSet="gridOption1"
+  styleSet="style1"
+  dataSet="griddata1"</mark>
+  gridId="realgrid"
+  gridWidth="100%"
+  gridHeight="300px" %}
+</pre>
+
+<p>각 행의 명령과 인자에 대해 아래 설명을 참조하세요.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">include</code>:  템플릿 파일명으로 항상 <code class="highlighter-rouge">realgrid.html</code>을 입력합니다.</li>
+  <li><code class="highlighter-rouge">gridVar</code>:  페이지 전체에서 사용할 grid 변수</li>
+  <li><code class="highlighter-rouge">dpVar</code>: 페이지에서 사용할 data provider 변수</li>
+  <li><code class="highlighter-rouge">fieldSet</code>: 그리드의 field 정보를 담고 있는 json 파일의 이름</li>
+  <li><code class="highlighter-rouge">columnSet</code>: 그리드의 column 정보를 담고 있는 json 파일의 이름</li>
+  <li><code class="highlighter-rouge">dpOptionSet</code>: 그리드의 data provider option 정보를 담고 있는 json 파일의 이름</li>
+  <li><code class="highlighter-rouge">gridOptionSet</code>: 그리드의 option 정보를 담고 있는 json 파일의 이름</li>
+  <li><code class="highlighter-rouge">styleSet</code>: 그리드의 style 정보를 담고 있는 json 파일의 이름</li>
+  <li><code class="highlighter-rouge">dataSet</code>: 그리드의 data 를 담고 있는 json 파일의 이름</li>
+  <li><code class="highlighter-rouge">gridId</code>: 그리드가 위치할 <code class="highlighter-rouge">&lt;div&gt;</code> tag id attribute</li>
+  <li><code class="highlighter-rouge">gridWidth</code>: grid width style</li>
+  <li><code class="highlighter-rouge">gridHeight</code>: grid height style</li>
+</ul>
+
+<p>그리드의 레이아웃이나 데이터는 모두 <code class="highlighter-rouge">\resource</code> 폴더에 각각 <code class="highlighter-rouge">data</code>, <code class="highlighter-rouge">layout</code>, <code class="highlighter-rouge">option</code>, <code class="highlighter-rouge">style</code> 이라 이름의 하위 폴더에 json 포멧의 파일로 작성합니다.
+작성된 json파일의 파일명을 해당 인자의 값으로 넘겨주면 됩니다.</p>
+
+<p>위 코드중 마킹된 영역의 파일에 해당하는 인자들이 실제 어떤 경로에 위치해야 하는지 정보를 정리해 보겠습니다.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">fieldSet="fieldset1"</code>: \resource\layout\fieldset1.json</li>
+  <li><code class="highlighter-rouge">columnSet="columnset1"</code>: \resource\layout\columnset1.json</li>
+  <li><code class="highlighter-rouge">dpOptionSet="dataProviderOption1"</code>: \resource\option\dataProviderOption1.json</li>
+  <li><code class="highlighter-rouge">gridOptionSet="gridOption1"</code>: \resource\option\gridOption1.json</li>
+  <li><code class="highlighter-rouge">styleSet="style1"</code>: \resource\style\style1.json</li>
+  <li><code class="highlighter-rouge">dataSet="griddata1"</code>: \resource\data\griddata1.json</li>
+</ul>
 
 <div id="realgrid" style="width:100%; height:300px"></div>
 
@@ -16077,9 +16226,163 @@ tags: ['indicator', 'item', 'number', '행번호']
     });
 </script>
 
-<h2 id="dev-box">데브박스(dev. box)</h2>
+<h2 id="section-tree-"><section-tree>트리 표시하기</section-tree></h2>
 
-<h2 id="code-box">코드박스(code box)</h2>
+<p>트리도 그리드와 동일한 방법으로 페이지에 추가합니다. 단지, 아래와 같이 몇 개의 인자명만 바꿔주면 됩니다.</p>
+
+<pre>
+{% include <mark>realtree.html</mark>
+  <mark>treeVar</mark>="treeView"
+  dpVar="dataProvider"
+  fieldSet="fieldset1"
+  columnSet="columnset1"
+  dpOptionSet="treeDataProviderOption1"
+  <mark>treeOptionSet</mark>="treeOption1"
+  styleSet="style1"
+  dataSet="griddata1"
+  <mark>treeId</mark>="realtree"
+  <mark>treeWidth</mark>="100%"
+  <mark>treeHeight</mark>="300px" %}
+</pre>
+
+<p>위 코드를 입력하면 트리는 아래와 같이 표시됩니다.</p>
+
+<div id="realtree" style="width:100%; height:300px"></div>
+
+<script>
+    var treeView;
+    var treeDataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.19");
+
+        treeDataProvider = new RealGridJS.LocalTreeDataProvider();
+        treeView = new RealGridJS.TreeView("realtree");
+        treeView.setDataSource(treeDataProvider);
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/treeFieldset1.json", function (data) {
+                treeDataProvider.setFields(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/TreeColumnset1.json", function (data) {
+                treeView.setColumns(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/treeDataProviderOption1.json", function (data) {
+                treeDataProvider.setOptions(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/treeOption1.json", function (data) {
+                treeView.setOptions(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/treeStyle1.json", function (data) {
+                treeView.setStyles(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+
+        
+            
+
+            $.getJSON("/demo/resource/data/treedata1.json", function (data) {
+                treeDataProvider.setRows(data, "tree", true, "");
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        
+
+    });
+</script>
+
+<h2 id="dev-box">데브 박스(dev. box)</h2>
+
+<p>데브박스는 오른쪽에 표시되는 코드 입력창이며, 기본적으로 지킬에 의해 markdown 렌더링 되기 때문에 위에 작성한 문서 작성방법과 동일한 방법으로 문서를 작성 하시면 됩니다.</p>
+
+<p>버튼 동작의 경우 첫 번째 기본버튼만 사용하세요.</p>
+
+<p>프론트메터의 <code class="highlighter-rouge">devboxfile</code>에 기록된 파일을 <code class="highlighter-rouge">./devbox</code> 폴더에 넣어 두면 자동으로 로드됩니다.</p>
+
+<h2 id="grid-toolbox--"><grid-toolbox>그리드 툴 박스</grid-toolbox></h2>
+
+<p>그리드 툴 박스는 각각의 그리드에 대한 정보를 조회할 수 있는 툴버튼과 공통기능 동작을 위한 버튼으로 구성됩니다.</p>
+
+<ul>
+  <li>필드정보 보기</li>
+  <li>컬럼정보 보기</li>
+  <li>옵션정보 보기</li>
+  <li>스타일정보 보기</li>
+  <li>데이터 보기</li>
+</ul>
+
+<blockquote>
+  <p>현재 작성중…</p>
+</blockquote>
 
         </div>
     </div>

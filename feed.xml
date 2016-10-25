@@ -5,20 +5,37 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/demo/</link>
     <atom:link href="demo.realgrid.com/demo/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Oct 2016 09:53:54 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Oct 2016 09:53:54 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Oct 2016 17:36:05 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Oct 2016 17:36:05 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>데모페이지 만들기...</title>
-        <description>&lt;h2 id=&quot;markdown-&quot;&gt;마크다운(markdown) 문서&lt;/h2&gt;
+        <title>[데모페이지 작성요령]</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;목차&lt;/h2&gt;
 
-&lt;p&gt;데모페이지는 markdown문서로 작성합니다.&lt;/p&gt;
+&lt;p&gt;기본적으로 데모페이지는 markdown 문서로 작성합니다. 지킬(jekyll)의 리퀴드(liquid) 템플릿을 사용할 수도 있습니다.
+문서내용은 자유로운 편집을 보장하지만, 정해진 서식을 지켜야 합니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;sidebar&quot;&gt;사이드바(sidebar)&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;아래 링크는 각 서식에 해당하는 섹션으로 바로 이동 합니다. 해당 서식 작성방법을 확인하시고 그대로 사용하시면 됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;사이드바는 왼쪽 메뉴영역을 말합니다. 왼쪽 메뉴영역에는 굵은글씨로 카테고리(category)가 표시되고 그 아래
-해당 카테고리에 포함된 데모페이지들이 &lt;code class=&quot;highlighter-rouge&quot;&gt;order&lt;/code&gt;의 순서로 표시됩니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-sidebar---&quot;&gt;메뉴 및 제목 표시하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#front-matter&quot;&gt;프론트메터&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-button-&quot;&gt;버튼 표시하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-link-&quot;&gt;링크 표시하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-image-&quot;&gt;이미지 표시하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-code-&quot;&gt;코드 표시하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-grid--&quot;&gt;그리드 표시하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-tree--&quot;&gt;트리 표시하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dev-box&quot;&gt;데브 박스&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#grid-toolbox--&quot;&gt;그리드 툴 박스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-sidebar---&quot;&gt;&lt;section-sidebar&gt;메뉴 및 제목 표시하기&lt;/section-sidebar&gt;&lt;/h2&gt;
+
+&lt;p&gt;왼쪽에 보이는 메뉴영역에는 굵은글씨로 카테고리(category)가 표시되고 그 아래 해당 카테고리에 포함된 데모페이지들이 프론트메터의 &lt;code class=&quot;highlighter-rouge&quot;&gt;order&lt;/code&gt;의 순서로 표시됩니다.&lt;/p&gt;
 
 &lt;p&gt;사이드바에는 각 데모페이지의 &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;이 표시됩니다. 만약 부제목을 사이드바에 표시하고 싶다면, 문서 작성시
 ##(샵샵)을 이용해 제목을 작성합니다. 문서에 포함된 ##(샵샵) 타이틀은 자동으로 사이드바에 표시되며,
@@ -50,25 +67,18 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt;: page&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;: 상단 제목&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;description&lt;/code&gt;: 제목 아래에 표시할 부제목 또는 페이지 설명을 입력합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;order&lt;/code&gt;: 사이드바 제목 표시 순번입니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;devbox&lt;/code&gt;: devbox 표시여부를 true 또는 false로 입력합니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;devboxfile&lt;/code&gt;: devbox에 표시될 markdown filename, ./devbox 폴더 밑에 해당 파일이 있어야 합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;description&lt;/code&gt;: 제목 아래에 표시할 부제목 또는 페이지 설명을 입력합니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;categories&lt;/code&gt;: 데모 페이지 카테고리명&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tags&lt;/code&gt;: 페이지검색용 태그&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;데모페이지 프론트메터 작성 예&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;---
+&lt;pre&gt;
+---
 layout: page
 title: 인디케이터
 order: 1
@@ -78,20 +88,126 @@ categories:
   - 그리드 구성요소
 tags: ['indicator', 'item', 'number', '행번호']
 ---
+&lt;/pre&gt;
+
+&lt;h2 id=&quot;section-button-&quot;&gt;&lt;section-button&gt;버튼 표시하기&lt;/section-button&gt;&lt;/h2&gt;
+
+&lt;p&gt;버튼은 html의 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 태그를 이용해 화면에 추가하며, javascript 함수를 호출하는 방식으로 동작을 구현할 수 있습니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;기본 버튼&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;devbox&lt;/code&gt;등 문서에서 사용되는 기본 버튼 입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn primary small round lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;primary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn secondary small round lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;secondary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn tertiary small round lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;tertiary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn ancillary small round lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;ancillary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn orange small round lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;orange&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn danger small round lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;danger&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;코드 표시하기&lt;/h2&gt;
+&lt;p&gt;위 코드를 페이지에 입력하면 아래와 같은 버튼이 표시됩니다.&lt;/p&gt;
 
-&lt;p&gt;데모페이지의 코드표시기(highlighter)는 &lt;code class=&quot;highlighter-rouge&quot;&gt;rouge&lt;/code&gt; 입니다. 예전의 help 사이트와 다르게&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;btn primary small round lowercase&quot;&gt;primary&lt;/a&gt;
+&lt;a class=&quot;btn secondary small round lowercase&quot;&gt;secondary&lt;/a&gt;
+&lt;a class=&quot;btn tertiary small round lowercase&quot;&gt;tertiary&lt;/a&gt;
+&lt;a class=&quot;btn ancillary small round lowercase&quot;&gt;ancillary&lt;/a&gt;
+&lt;a class=&quot;btn orange small round lowercase&quot;&gt;orange&lt;/a&gt;
+&lt;a class=&quot;btn danger small round lowercase&quot;&gt;danger&lt;/a&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;funcExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;param1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;param2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;strParam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;intParam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;h4 id=&quot;section-2&quot;&gt;추가 버튼(특수용도)&lt;/h4&gt;
 
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;특수용도로 사용하기 위해 만든 버튼 입니다. 문서내에서는 사용하지 마세요.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn primary small lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;primary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn secondary small lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;secondary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn tertiary small lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;tertiary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn ancillary small lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;ancillary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn orange small lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;orange&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn danger small lowercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;danger&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;위 코드를 페이지에 입력하면 아래와 같은 버튼이 표시됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;btn primary small lowercase&quot;&gt;primary&lt;/a&gt;
+&lt;a class=&quot;btn secondary small lowercase&quot;&gt;secondary&lt;/a&gt;
+&lt;a class=&quot;btn tertiary small lowercase&quot;&gt;tertiary&lt;/a&gt;
+&lt;a class=&quot;btn ancillary small lowercase&quot;&gt;ancillary&lt;/a&gt;
+&lt;a class=&quot;btn orange small lowercase&quot;&gt;orange&lt;/a&gt;
+&lt;a class=&quot;btn danger small lowercase&quot;&gt;danger&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-link-&quot;&gt;&lt;section-link&gt;링크 표시하기&lt;/section-link&gt;&lt;/h2&gt;
+
+&lt;p&gt;페이지에 링크를 삽입하려면 마크다운 문법을 사용하시면 됩니다.&lt;/p&gt;
+
+&lt;pre&gt;
+[네이버 링크](http://www.naver.com/){:target=&quot;_blank&quot;}
+&lt;/pre&gt;
+
+&lt;p&gt;예를 들어 페이지에 아래와 같이 입력하면 아래와 같은 링크가 표시됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.naver.com/&quot; target=&quot;_blank&quot;&gt;네이버 링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;다른 데모 페이지와 같이 demo.realgrid.com 프로젝트 내에 포함된 페이지나 파일의 링크를 표시할 때에는 아래와 같이 &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt;을 해당 경로의 앞에 붙여주기 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;prepend&lt;/code&gt;필터를 사용한 리퀴드 템플릿 문법을 사용해야 합니다.&lt;/p&gt;
+
+&lt;p&gt;즉, _config.yml 에 입력되어 있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt; 값을 렌더링 시점에 해당 링크의 앞에 붙여주는 겁니다.&lt;/p&gt;
+
+&lt;pre&gt;
+[인디케이터 데모 페이지 링크]({{ &quot;/GridComponent/Indicator/&quot; | prepend: site.baseurl }})
+&lt;/pre&gt;
+
+&lt;p&gt;우리는 현재 &lt;code class=&quot;highlighter-rouge&quot;&gt;/demo&lt;/code&gt;라는 &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt;을 사용하기 때문에 위 코드는 &lt;code class=&quot;highlighter-rouge&quot;&gt;/demo/GridComponent/Indicator&lt;/code&gt; 로 렌더링 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/demo/GridComponent/Indicator/&quot;&gt;인디케이터 데모 페이지 링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-image-&quot;&gt;&lt;section-image&gt;이미지 표시하기&lt;/section-image&gt;&lt;/h2&gt;
+
+&lt;p&gt;데모 페이지에서 사용하는 이미지는 &lt;code class=&quot;highlighter-rouge&quot;&gt;images/demo&lt;/code&gt;폴더에 해당 데모의 카테고리 영문명을 폴더로 만들어 추가합니다.
+이미지를 페이지에 표시할때에도 &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt;을 &lt;code class=&quot;highlighter-rouge&quot;&gt;prepend&lt;/code&gt;해 주어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;이미지를 표시하는 방법은 markdown 문법으로 아래와 같이 작성 합니다.&lt;/p&gt;
+
+&lt;pre&gt;
+![이미지타이틀]({{ &quot;/images/demo/guide/sampleimage.png&quot; | prepend: site.baseurl }})
+&lt;/pre&gt;
+
+&lt;p&gt;위 코드를 입력하면 아래와 같이 이미지가 표시됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/demo/images/demo/guide/sampleimage.png&quot; alt=&quot;이미지타이틀&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-code-&quot;&gt;&lt;section-code&gt;코드 표시하기&lt;/section-code&gt;&lt;/h2&gt;
+
+&lt;p&gt;데모페이지의 코드표시기(highlighter)는 &lt;a href=&quot;http://rouge.jneen.net/&quot; target=&quot;_blank&quot;&gt;rouge&lt;/a&gt; 입니다.&lt;/p&gt;
+
+&lt;p&gt;문서내부에 코드를 표시할때에는 아래와 같이 &lt;mark&gt;` (백틱 backtick)마크&lt;/mark&gt;를 연속으로 3개 입력하고, 그 뒤에 표현할 언어를 입력하면 됩니다.
+코드를 표시할 수 있는 여러가지 방법이 있지만, 데모사이트 문서를 작성할 때에는 반드시 아래의 방법을 따라 주시기 바랍니다.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;mark&gt;```js&lt;/mark&gt;
+function funcExample(param1, param2) {
+  var strParam = 'param';
+  var intParam = 0;
+
+  return param1;
+}
+&lt;mark&gt;```&lt;/mark&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;javascript 코드를 위와 같이 입력하면 아래와 같이 표시됩니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
@@ -99,32 +215,40 @@ tags: ['indicator', 'item', 'number', '행번호']
 4
 5
 6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;funcExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;param1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;param2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;strParam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;strParam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'param'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;intParam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;param1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;p&gt;HTML코드의 경우 language 영역에 ‘html’ 을 입력합니다.&lt;/p&gt;
 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;demo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click the button to display the cookies associated with this document.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;pre&gt;
+&lt;mark&gt;```html&lt;/mark&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myFunction()&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Try it&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&amp;lt;p id=&amp;quot;demo&amp;quot;&amp;gt;Click the button to display the cookies associated with this document.&amp;lt;/p&amp;gt;
 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;demo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;Cookies associated with this document: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&amp;lt;button onclick=&amp;quot;myFunction()&amp;quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&amp;lt;script&amp;gt;
+function myFunction() {
+    document.getElementById(&amp;quot;demo&amp;quot;).innerHTML =
+    &amp;quot;Cookies associated with this document: &amp;quot; + document.cookie;
+}
+&amp;lt;/script&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;mark&gt;```&lt;/mark&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;위 코드는 아래와 같이 표시됩니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
@@ -163,38 +287,57 @@ tags: ['indicator', 'item', 'number', '행번호']
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;그리드 만들기&lt;/h2&gt;
+&lt;h2 id=&quot;section-grid-&quot;&gt;&lt;section-grid&gt;그리드 표시하기&lt;/section-grid&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;realgrid.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;gridVar=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;gridView&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dpVar=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dataProvider&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fieldSet=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;fieldset1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;columnSet=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;columnset1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dpOptionSet=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dataProviderOption1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;gridOptionSet=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;gridOption1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;styleSet=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;style1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dataSet=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;griddata1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;gridId=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;realgrid&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;gridWidth=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;100%&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;gridHeight=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;300px&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;p&gt;그리드를 페이지에 표시하는 기본방법은 페이지에 아래와 같은 코드를 입력하면 됩니다.
+아래 코드는 jekyll 템플릿으로 완성된 그리드를 미리 렌더링 하여 페이지에 그리드가 표시되게 하고 원하는 데이터까지 불러 올 수 있습니다.
+물론, 그리드의 레이아웃이나 데이터는 모두 미리 정의 되어 있어야 합니다.&lt;/p&gt;
 
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;pre&gt;
+{% include realgrid.html
+  gridVar=&quot;gridView&quot;
+  dpVar=&quot;dataProvider&quot;
+  &lt;mark&gt;fieldSet=&quot;fieldset1&quot;
+  columnSet=&quot;columnset1&quot;
+  dpOptionSet=&quot;dataProviderOption1&quot;
+  gridOptionSet=&quot;gridOption1&quot;
+  styleSet=&quot;style1&quot;
+  dataSet=&quot;griddata1&quot;&lt;/mark&gt;
+  gridId=&quot;realgrid&quot;
+  gridWidth=&quot;100%&quot;
+  gridHeight=&quot;300px&quot; %}
+&lt;/pre&gt;
+
+&lt;p&gt;각 행의 명령과 인자에 대해 아래 설명을 참조하세요.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt;:  템플릿 파일명으로 항상 &lt;code class=&quot;highlighter-rouge&quot;&gt;realgrid.html&lt;/code&gt;을 입력합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridVar&lt;/code&gt;:  페이지 전체에서 사용할 grid 변수&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dpVar&lt;/code&gt;: 페이지에서 사용할 data provider 변수&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fieldSet&lt;/code&gt;: 그리드의 field 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;columnSet&lt;/code&gt;: 그리드의 column 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dpOptionSet&lt;/code&gt;: 그리드의 data provider option 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridOptionSet&lt;/code&gt;: 그리드의 option 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;styleSet&lt;/code&gt;: 그리드의 style 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet&lt;/code&gt;: 그리드의 data 를 담고 있는 json 파일의 이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridId&lt;/code&gt;: 그리드가 위치할 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tag id attribute&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridWidth&lt;/code&gt;: grid width style&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridHeight&lt;/code&gt;: grid height style&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그리드의 레이아웃이나 데이터는 모두 &lt;code class=&quot;highlighter-rouge&quot;&gt;\resource&lt;/code&gt; 폴더에 각각 &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;option&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt; 이라 이름의 하위 폴더에 json 포멧의 파일로 작성합니다.
+작성된 json파일의 파일명을 해당 인자의 값으로 넘겨주면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;위 코드중 마킹된 영역의 파일에 해당하는 인자들이 실제 어떤 경로에 위치해야 하는지 정보를 정리해 보겠습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fieldSet=&quot;fieldset1&quot;&lt;/code&gt;: \resource\layout\fieldset1.json&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;columnSet=&quot;columnset1&quot;&lt;/code&gt;: \resource\layout\columnset1.json&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dpOptionSet=&quot;dataProviderOption1&quot;&lt;/code&gt;: \resource\option\dataProviderOption1.json&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridOptionSet=&quot;gridOption1&quot;&lt;/code&gt;: \resource\option\gridOption1.json&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;styleSet=&quot;style1&quot;&lt;/code&gt;: \resource\style\style1.json&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet=&quot;griddata1&quot;&lt;/code&gt;: \resource\data\griddata1.json&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;div id=&quot;realgrid&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
 
@@ -309,9 +452,163 @@ tags: ['indicator', 'item', 'number', '행번호']
     });
 &lt;/script&gt;
 
-&lt;h2 id=&quot;dev-box&quot;&gt;데브박스(dev. box)&lt;/h2&gt;
+&lt;h2 id=&quot;section-tree-&quot;&gt;&lt;section-tree&gt;트리 표시하기&lt;/section-tree&gt;&lt;/h2&gt;
 
-&lt;h2 id=&quot;code-box&quot;&gt;코드박스(code box)&lt;/h2&gt;
+&lt;p&gt;트리도 그리드와 동일한 방법으로 페이지에 추가합니다. 단지, 아래와 같이 몇 개의 인자명만 바꿔주면 됩니다.&lt;/p&gt;
+
+&lt;pre&gt;
+{% include &lt;mark&gt;realtree.html&lt;/mark&gt;
+  &lt;mark&gt;treeVar&lt;/mark&gt;=&quot;treeView&quot;
+  dpVar=&quot;dataProvider&quot;
+  fieldSet=&quot;fieldset1&quot;
+  columnSet=&quot;columnset1&quot;
+  dpOptionSet=&quot;treeDataProviderOption1&quot;
+  &lt;mark&gt;treeOptionSet&lt;/mark&gt;=&quot;treeOption1&quot;
+  styleSet=&quot;style1&quot;
+  dataSet=&quot;griddata1&quot;
+  &lt;mark&gt;treeId&lt;/mark&gt;=&quot;realtree&quot;
+  &lt;mark&gt;treeWidth&lt;/mark&gt;=&quot;100%&quot;
+  &lt;mark&gt;treeHeight&lt;/mark&gt;=&quot;300px&quot; %}
+&lt;/pre&gt;
+
+&lt;p&gt;위 코드를 입력하면 트리는 아래와 같이 표시됩니다.&lt;/p&gt;
+
+&lt;div id=&quot;realtree&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    var treeView;
+    var treeDataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext(&quot;/demo/lib/realgrid/realgridjs_eval.1.1.19&quot;);
+
+        treeDataProvider = new RealGridJS.LocalTreeDataProvider();
+        treeView = new RealGridJS.TreeView(&quot;realtree&quot;);
+        treeView.setDataSource(treeDataProvider);
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/layout/treeFieldset1.json&quot;, function (data) {
+                treeDataProvider.setFields(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+            });
+        
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/layout/TreeColumnset1.json&quot;, function (data) {
+                treeView.setColumns(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+            });
+        
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/option/treeDataProviderOption1.json&quot;, function (data) {
+                treeDataProvider.setOptions(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+            });
+        
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/option/treeOption1.json&quot;, function (data) {
+                treeView.setOptions(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+            });
+        
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/style/treeStyle1.json&quot;, function (data) {
+                treeView.setStyles(data);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+            });
+        
+
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/data/treedata1.json&quot;, function (data) {
+                treeDataProvider.setRows(data, &quot;tree&quot;, true, &quot;&quot;);
+            })
+            .done(function () {
+                treeView.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+            });
+        
+
+    });
+&lt;/script&gt;
+
+&lt;h2 id=&quot;dev-box&quot;&gt;데브 박스(dev. box)&lt;/h2&gt;
+
+&lt;p&gt;데브박스는 오른쪽에 표시되는 코드 입력창이며, 기본적으로 지킬에 의해 markdown 렌더링 되기 때문에 위에 작성한 문서 작성방법과 동일한 방법으로 문서를 작성 하시면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;버튼 동작의 경우 첫 번째 기본버튼만 사용하세요.&lt;/p&gt;
+
+&lt;p&gt;프론트메터의 &lt;code class=&quot;highlighter-rouge&quot;&gt;devboxfile&lt;/code&gt;에 기록된 파일을 &lt;code class=&quot;highlighter-rouge&quot;&gt;./devbox&lt;/code&gt; 폴더에 넣어 두면 자동으로 로드됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;grid-toolbox--&quot;&gt;&lt;grid-toolbox&gt;그리드 툴 박스&lt;/grid-toolbox&gt;&lt;/h2&gt;
+
+&lt;p&gt;그리드 툴 박스는 각각의 그리드에 대한 정보를 조회할 수 있는 툴버튼과 공통기능 동작을 위한 버튼으로 구성됩니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;필드정보 보기&lt;/li&gt;
+  &lt;li&gt;컬럼정보 보기&lt;/li&gt;
+  &lt;li&gt;옵션정보 보기&lt;/li&gt;
+  &lt;li&gt;스타일정보 보기&lt;/li&gt;
+  &lt;li&gt;데이터 보기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;현재 작성중…&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         <pubDate>Thu, 06 Oct 2016 00:00:00 +0900</pubDate>
         <link>demo.realgrid.com/demo/guide/</link>
