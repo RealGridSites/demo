@@ -154,14 +154,6 @@
                     
                         
                         <li class="item-toc ">
-                            <a href="/demo/2016/10/17/subpage.html" class="sidebar-link ">
-                                <span>Subpage</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li class="item-toc ">
                             <a href="/demo/guide/" class="sidebar-link ">
                                 <span>데모페이지 작성요령</span>
                             </a>
@@ -15908,7 +15900,13 @@
             
 
             $.getJSON("/demo/resource/data/treedata1.json", function (data) {
-                treeDataProvider.setRows(data, "tree", true, "");
+                treeDataProvider.setRows(
+                  data
+                   ,"" 
+                   ,false 
+                   ,""
+                  
+                );
             })
             .done(function () {
                 treeView.setFocus();
