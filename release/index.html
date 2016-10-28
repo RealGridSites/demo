@@ -31,7 +31,7 @@
       <link rel="stylesheet" href="/demo/css/prettify.css">
       <link rel="stylesheet" href="/demo/css/main.css">
       <link rel="stylesheet" href="/demo/css/octicons.css">
-      <link rel="canonical" href="demo.realgrid.com/demo/release.html">
+      <link rel="canonical" href="demo.realgrid.com/demo/release/">
       <link rel="alternate" type="application/rss+xml" title="RealGrid DEMO" href="demo.realgrid.com/demo/feed.xml" />
 
       <script type="text/javascript" src="/demo/script/jquery-1.11.2.min.js"></script>
@@ -109,6 +109,26 @@
 </div>
 
 
+<script>
+  $(document).ready( function() {
+
+    $('input[type="text"]').keyup(function(){
+
+      var that = this, $allListElements = $('ul[class="list-toc"] > li');
+
+      var $matchingListElements = $allListElements.filter(function(i, li){
+          var listItemText = $(li).text().toUpperCase(),
+              searchText = that.value.toUpperCase();
+          return ~listItemText.indexOf(searchText);
+      });
+
+      $allListElements.hide();
+      $matchingListElements.show();
+
+  });
+});
+</script>
+
 <div class="sidebar">
 
   <div class="sidebar-content">
@@ -142,7 +162,7 @@
                 
                     
                     <li class="item-toc current ">
-                        <a href="/demo/release.html" class="sidebar-link current">
+                        <a href="/demo/release/" class="sidebar-link current">
                             <span>최신버전 (1.1.19)</span>
                         </a>
                     </li>
@@ -247,6 +267,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/Indicator/" class="sidebar-link ">
                   <span>인디케이터</span>
+                  <span style="display: none;">
+                  indicator, item, number, 행번호
+                  </span>
                 </a>
               </li>
               
@@ -331,6 +354,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/StateBar/" class="sidebar-link ">
                   <span>상태바</span>
+                  <span style="display: none;">
+                  StateBar, 상태, state, 행번호
+                  </span>
                 </a>
               </li>
               
@@ -469,6 +495,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/CheckBar/" class="sidebar-link ">
                   <span>체크바</span>
+                  <span style="display: none;">
+                  CheckBar
+                  </span>
                 </a>
               </li>
               
@@ -589,6 +618,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/ContextMenu/" class="sidebar-link ">
                   <span>컨텍스트 메뉴</span>
+                  <span style="display: none;">
+                  ContextMenu
+                  </span>
                 </a>
               </li>
               
@@ -637,6 +669,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/ToastView/" class="sidebar-link ">
                   <span>토스트 메시지 창</span>
+                  <span style="display: none;">
+                  ToastView
+                  </span>
                 </a>
               </li>
               
@@ -757,6 +792,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/Cursor/" class="sidebar-link ">
                   <span>커서</span>
+                  <span style="display: none;">
+                  Cursor
+                  </span>
                 </a>
               </li>
               
@@ -823,6 +861,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/FixedColumns/" class="sidebar-link ">
                   <span>열 고정하기</span>
+                  <span style="display: none;">
+                  FixedColumns
+                  </span>
                 </a>
               </li>
               
@@ -883,6 +924,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/FixedRows/" class="sidebar-link ">
                   <span>행 고정하기</span>
+                  <span style="display: none;">
+                  FixedRows
+                  </span>
                 </a>
               </li>
               
@@ -937,6 +981,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridComponent/Selecting/" class="sidebar-link ">
                   <span>선택</span>
+                  <span style="display: none;">
+                  Selecting
+                  </span>
                 </a>
               </li>
               
@@ -1057,6 +1104,9 @@
               <li class="item-toc ">
                 <a href="/demo/CellComponent/BlinkCell/" class="sidebar-link ">
                   <span>같은 값의 셀 생략 하기</span>
+                  <span style="display: none;">
+                  BlinkCell
+                  </span>
                 </a>
               </li>
               
@@ -1261,6 +1311,9 @@
               <li class="item-toc ">
                 <a href="/demo/CellComponent/CellButton/" class="sidebar-link ">
                   <span>셀 버튼</span>
+                  <span style="display: none;">
+                  CellButton
+                  </span>
                 </a>
               </li>
               
@@ -1357,6 +1410,9 @@
               <li class="item-toc ">
                 <a href="/demo/CellComponent/PopupMenu/" class="sidebar-link ">
                   <span>팝업 메뉴</span>
+                  <span style="display: none;">
+                  PopupMenu
+                  </span>
                 </a>
               </li>
               
@@ -1399,6 +1455,9 @@
               <li class="item-toc ">
                 <a href="/demo/CellComponent/CellMerging/" class="sidebar-link ">
                   <span>셀 병합</span>
+                  <span style="display: none;">
+                  CellMerging
+                  </span>
                 </a>
               </li>
               
@@ -1555,6 +1614,9 @@
               <li class="item-toc ">
                 <a href="/demo/CellComponent/LookupColumn/" class="sidebar-link ">
                   <span>Lookup 컬럼</span>
+                  <span style="display: none;">
+                  LookupColumn
+                  </span>
                 </a>
               </li>
               
@@ -1609,6 +1671,9 @@
               <li class="item-toc ">
                 <a href="/demo/CellComponent/LookupTree/" class="sidebar-link ">
                   <span>Lookup 트리</span>
+                  <span style="display: none;">
+                  LookupTree
+                  </span>
                 </a>
               </li>
               
@@ -1711,6 +1776,9 @@
               <li class="item-toc ">
                 <a href="/demo/CellComponent/RegularExpression/" class="sidebar-link ">
                   <span>정규식 표현</span>
+                  <span style="display: none;">
+                  RegularExpression
+                  </span>
                 </a>
               </li>
               
@@ -1783,6 +1851,9 @@
               <li class="item-toc ">
                 <a href="/demo/CellComponent/Tooltip/" class="sidebar-link ">
                   <span>툴팁</span>
+                  <span style="display: none;">
+                  Tooltip
+                  </span>
                 </a>
               </li>
               
@@ -2029,6 +2100,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/SetColumn/" class="sidebar-link ">
                   <span>컬럼 만들기</span>
+                  <span style="display: none;">
+                  column, setColumns
+                  </span>
                 </a>
               </li>
               
@@ -2059,6 +2133,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnProperties/" class="sidebar-link ">
                   <span>컬럼 속성 변경하기</span>
+                  <span style="display: none;">
+                  properties, 속성
+                  </span>
                 </a>
               </li>
               
@@ -2221,6 +2298,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnGrouping/" class="sidebar-link ">
                   <span>컬럼 그룹핑</span>
+                  <span style="display: none;">
+                  Grouping
+                  </span>
                 </a>
               </li>
               
@@ -2347,6 +2427,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnLayout/" class="sidebar-link ">
                   <span>컬럼 레이아웃</span>
+                  <span style="display: none;">
+                  Layout
+                  </span>
                 </a>
               </li>
               
@@ -2401,6 +2484,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnHeight/" class="sidebar-link ">
                   <span>컬럼 높이</span>
+                  <span style="display: none;">
+                  Height
+                  </span>
                 </a>
               </li>
               
@@ -2515,6 +2601,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnMoving/" class="sidebar-link ">
                   <span>컬럼 이동</span>
+                  <span style="display: none;">
+                  Moving
+                  </span>
                 </a>
               </li>
               
@@ -2545,6 +2634,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnResizing/" class="sidebar-link ">
                   <span>컬럼 너비 조정</span>
+                  <span style="display: none;">
+                  Resizing
+                  </span>
                 </a>
               </li>
               
@@ -2641,6 +2733,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/GridFitting/" class="sidebar-link ">
                   <span>컬럼 너비 자동 조정</span>
+                  <span style="display: none;">
+                  Fitting
+                  </span>
                 </a>
               </li>
               
@@ -2725,6 +2820,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnSorting/" class="sidebar-link ">
                   <span>데이터 정렬(Sorting)</span>
+                  <span style="display: none;">
+                  Sorting
+                  </span>
                 </a>
               </li>
               
@@ -2743,6 +2841,9 @@
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnFiltering/" class="sidebar-link ">
                   <span>데이터 필터링(Filtering)</span>
+                  <span style="display: none;">
+                  Filtering
+                  </span>
                 </a>
               </li>
               
@@ -2893,6 +2994,9 @@
               <li class="item-toc ">
                 <a href="/demo/HeaderAndFooter/HeaderHeight/" class="sidebar-link ">
                   <span>헤더 높이</span>
+                  <span style="display: none;">
+                  header, height
+                  </span>
                 </a>
               </li>
               
@@ -2935,6 +3039,9 @@
               <li class="item-toc ">
                 <a href="/demo/HeaderAndFooter/HeaderCheckbox/" class="sidebar-link ">
                   <span>헤더 체크박스 사용</span>
+                  <span style="display: none;">
+                  checkbox, header
+                  </span>
                 </a>
               </li>
               
@@ -3049,6 +3156,9 @@
               <li class="item-toc ">
                 <a href="/demo/HeaderAndFooter/HeaderImage/" class="sidebar-link ">
                   <span>헤더 이미지 사용</span>
+                  <span style="display: none;">
+                  header, image
+                  </span>
                 </a>
               </li>
               
@@ -3187,6 +3297,9 @@
               <li class="item-toc ">
                 <a href="/demo/HeaderAndFooter/HeaderSubText/" class="sidebar-link ">
                   <span>헤더 추가 문자열 사용</span>
+                  <span style="display: none;">
+                  header, subtext
+                  </span>
                 </a>
               </li>
               
@@ -3289,6 +3402,9 @@
               <li class="item-toc ">
                 <a href="/demo/HeaderAndFooter/HeaderSummary/" class="sidebar-link ">
                   <span>상단 합계 표시</span>
+                  <span style="display: none;">
+                  header, summary
+                  </span>
                 </a>
               </li>
               
@@ -3409,6 +3525,9 @@
               <li class="item-toc ">
                 <a href="/demo/HeaderAndFooter/ColumnFooter/" class="sidebar-link ">
                   <span>컬럼 푸터</span>
+                  <span style="display: none;">
+                  footer
+                  </span>
                 </a>
               </li>
               
@@ -3421,6 +3540,9 @@
               <li class="item-toc ">
                 <a href="/demo/HeaderAndFooter/FooterMerge/" class="sidebar-link ">
                   <span>푸터 병합</span>
+                  <span style="display: none;">
+                  footer, merge
+                  </span>
                 </a>
               </li>
               
@@ -3715,6 +3837,9 @@
               <li class="item-toc ">
                 <a href="/demo/RowGroup/RowGrouping/" class="sidebar-link ">
                   <span>행 그룹핑</span>
+                  <span style="display: none;">
+                  grouping
+                  </span>
                 </a>
               </li>
               
@@ -3847,6 +3972,9 @@
               <li class="item-toc ">
                 <a href="/demo/RowGroup/GroupingApi/" class="sidebar-link ">
                   <span>그룹핑 API</span>
+                  <span style="display: none;">
+                  grouping, api
+                  </span>
                 </a>
               </li>
               
@@ -4003,6 +4131,9 @@
               <li class="item-toc ">
                 <a href="/demo/RowGroup/MergedRowGrouping/" class="sidebar-link ">
                   <span>행 병합 그룹핑</span>
+                  <span style="display: none;">
+                  grouping, merge
+                  </span>
                 </a>
               </li>
               
@@ -4033,6 +4164,9 @@
               <li class="item-toc ">
                 <a href="/demo/RowGroup/ZipCodeExercise/" class="sidebar-link ">
                   <span>우편번호 그룹핑 예</span>
+                  <span style="display: none;">
+                  grouping, merge, sample
+                  </span>
                 </a>
               </li>
               
@@ -4579,6 +4713,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/LoadJsonData/" class="sidebar-link ">
                   <span>JSON  데이타 가져오기</span>
+                  <span style="display: none;">
+                  filldata, json
+                  </span>
                 </a>
               </li>
               
@@ -4681,6 +4818,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/LoadXmlData/" class="sidebar-link ">
                   <span>XML 데이타 가져오기</span>
+                  <span style="display: none;">
+                  filldata, xml
+                  </span>
                 </a>
               </li>
               
@@ -4831,6 +4971,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/LoadCsvData/" class="sidebar-link ">
                   <span>CSV 데이타 가져오기</span>
+                  <span style="display: none;">
+                  filldata, csv
+                  </span>
                 </a>
               </li>
               
@@ -4885,6 +5028,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/LoadSource/" class="sidebar-link ">
                   <span>위치지정 데이타 가져오기</span>
+                  <span style="display: none;">
+                  filldata
+                  </span>
                 </a>
               </li>
               
@@ -5029,6 +5175,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/LoadFilter/" class="sidebar-link ">
                   <span>필터 적용 데이타 가져오기</span>
+                  <span style="display: none;">
+                  filldata
+                  </span>
                 </a>
               </li>
               
@@ -5089,6 +5238,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/SetDataRows/" class="sidebar-link ">
                   <span>데이터 채우기</span>
+                  <span style="display: none;">
+                  filldata, setDataRows
+                  </span>
                 </a>
               </li>
               
@@ -5179,6 +5331,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/SetRowCount/" class="sidebar-link ">
                   <span>빈 행 채우기</span>
+                  <span style="display: none;">
+                  filldata, setRowCount
+                  </span>
                 </a>
               </li>
               
@@ -5239,6 +5394,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/LazyLoading/" class="sidebar-link ">
                   <span>순차적으로 데이타 가져오기</span>
+                  <span style="display: none;">
+                  filldata, lazy
+                  </span>
                 </a>
               </li>
               
@@ -5305,6 +5463,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/ProviderSharing/" class="sidebar-link ">
                   <span>Provider 공유하기</span>
+                  <span style="display: none;">
+                  filldata, Provider
+                  </span>
                 </a>
               </li>
               
@@ -5329,6 +5490,9 @@
               <li class="item-toc ">
                 <a href="/demo/FillData/MasterDetailSample/" class="sidebar-link ">
                   <span>마스터 디테일 예</span>
+                  <span style="display: none;">
+                  filldata, sample, master, detail
+                  </span>
                 </a>
               </li>
               
@@ -5431,6 +5595,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/data/" class="sidebar-link ">
                   <span>데이터</span>
+                  <span style="display: none;">
+                  data
+                  </span>
                 </a>
               </li>
               
@@ -5545,6 +5712,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/DataType/" class="sidebar-link ">
                   <span>데이터 타입</span>
+                  <span style="display: none;">
+                  data, datatype
+                  </span>
                 </a>
               </li>
               
@@ -5629,6 +5799,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/BooleanField/" class="sidebar-link ">
                   <span>불린 타입 필드</span>
+                  <span style="display: none;">
+                  data, bool, boolean
+                  </span>
                 </a>
               </li>
               
@@ -5827,6 +6000,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/DatetimeField/" class="sidebar-link ">
                   <span>날짜 타입 필드</span>
+                  <span style="display: none;">
+                  data, date, datetime, time
+                  </span>
                 </a>
               </li>
               
@@ -5869,6 +6045,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/Subtypes/" class="sidebar-link ">
                   <span>Subtypes</span>
+                  <span style="display: none;">
+                  data, subtypes
+                  </span>
                 </a>
               </li>
               
@@ -5965,6 +6144,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/GetValues/" class="sidebar-link ">
                   <span>그리드의 값 가져오기</span>
+                  <span style="display: none;">
+                  data, getvalus
+                  </span>
                 </a>
               </li>
               
@@ -6073,6 +6255,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/SetValues/" class="sidebar-link ">
                   <span>그리드에 값 넣기</span>
+                  <span style="display: none;">
+                  data, setvalus
+                  </span>
                 </a>
               </li>
               
@@ -6133,6 +6318,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/AddDataRow/" class="sidebar-link ">
                   <span>새로운 행 추가</span>
+                  <span style="display: none;">
+                  data
+                  </span>
                 </a>
               </li>
               
@@ -6175,6 +6363,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/AddMultiRows/" class="sidebar-link ">
                   <span>여러 행 추가</span>
+                  <span style="display: none;">
+                  data
+                  </span>
                 </a>
               </li>
               
@@ -6187,6 +6378,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/DataRollback/" class="sidebar-link ">
                   <span>롤백</span>
+                  <span style="display: none;">
+                  data, rollback
+                  </span>
                 </a>
               </li>
               
@@ -6235,6 +6429,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/CalculateField/" class="sidebar-link ">
                   <span>계산 필드</span>
+                  <span style="display: none;">
+                  data, calcfield, 계산
+                  </span>
                 </a>
               </li>
               
@@ -6265,6 +6462,9 @@
               <li class="item-toc ">
                 <a href="/demo/DataManager/SearchItem/" class="sidebar-link ">
                   <span>SearchItem</span>
+                  <span style="display: none;">
+                  data, SearchItem
+                  </span>
                 </a>
               </li>
               
@@ -6385,6 +6585,9 @@
               <li class="item-toc ">
                 <a href="/demo/Paging/paging1/" class="sidebar-link ">
                   <span>전체 데이터 읽어 페이징 처리</span>
+                  <span style="display: none;">
+                  paging, 페이징
+                  </span>
                 </a>
               </li>
               
@@ -6415,6 +6618,9 @@
               <li class="item-toc ">
                 <a href="/demo/Paging/paging2/" class="sidebar-link ">
                   <span>페이지별로 조회</span>
+                  <span style="display: none;">
+                  paging, 페이징
+                  </span>
                 </a>
               </li>
               
@@ -6559,6 +6765,9 @@
               <li class="item-toc ">
                 <a href="/demo/Paging/paging3/" class="sidebar-link ">
                   <span>한 페이지의 데이터만 보관</span>
+                  <span style="display: none;">
+                  paging, 페이징
+                  </span>
                 </a>
               </li>
               
@@ -7159,6 +7368,9 @@
               <li class="item-toc ">
                 <a href="/demo/Editing/Editing/" class="sidebar-link ">
                   <span>그리드 편집</span>
+                  <span style="display: none;">
+                  editing, 편집
+                  </span>
                 </a>
               </li>
               
@@ -7345,6 +7557,9 @@
               <li class="item-toc ">
                 <a href="/demo/Editing/Inserting/" class="sidebar-link ">
                   <span>데이터 추가 또는 삽입</span>
+                  <span style="display: none;">
+                  editing, 편집, inserting
+                  </span>
                 </a>
               </li>
               
@@ -7369,6 +7584,9 @@
               <li class="item-toc ">
                 <a href="/demo/Editing/Updating/" class="sidebar-link ">
                   <span>데이터 수정</span>
+                  <span style="display: none;">
+                  editing, 편집, updating
+                  </span>
                 </a>
               </li>
               
@@ -7507,6 +7725,9 @@
               <li class="item-toc ">
                 <a href="/demo/Editing/Deleting/" class="sidebar-link ">
                   <span>데이터 삭제</span>
+                  <span style="display: none;">
+                  editing, 편집, deleting
+                  </span>
                 </a>
               </li>
               
@@ -7651,6 +7872,9 @@
               <li class="item-toc ">
                 <a href="/demo/Editing/RowStates/" class="sidebar-link ">
                   <span>행 상태</span>
+                  <span style="display: none;">
+                  editing, 편집, rowstate, state
+                  </span>
                 </a>
               </li>
               
@@ -7669,6 +7893,9 @@
               <li class="item-toc ">
                 <a href="/demo/Editing/Editors/" class="sidebar-link ">
                   <span>기본 편집기</span>
+                  <span style="display: none;">
+                  editing, 편집, 편집기, editor
+                  </span>
                 </a>
               </li>
               
@@ -7759,6 +7986,9 @@
               <li class="item-toc ">
                 <a href="/demo/Editing/ReadOnlyColumns/" class="sidebar-link ">
                   <span>읽기 전용 컬럼</span>
+                  <span style="display: none;">
+                  editing, 편집
+                  </span>
                 </a>
               </li>
               
@@ -7891,6 +8121,9 @@
               <li class="item-toc ">
                 <a href="/demo/Editing/CopyAndPaste/" class="sidebar-link ">
                   <span>복사하기 / 붙여넣기</span>
+                  <span style="display: none;">
+                  editing, 편집, 복사, 붙여넣기, copy, paste
+                  </span>
                 </a>
               </li>
               
@@ -8017,6 +8250,9 @@
               <li class="item-toc ">
                 <a href="/demo/Validation/ColumnValidation/" class="sidebar-link ">
                   <span>컬럼 유효성 검사</span>
+                  <span style="display: none;">
+                  validation, 유효성
+                  </span>
                 </a>
               </li>
               
@@ -8221,6 +8457,9 @@
               <li class="item-toc ">
                 <a href="/demo/Validation/RowValidation/" class="sidebar-link ">
                   <span>행 유효성 검사</span>
+                  <span style="display: none;">
+                  validation, 유효성
+                  </span>
                 </a>
               </li>
               
@@ -8275,6 +8514,9 @@
               <li class="item-toc ">
                 <a href="/demo/Validation/CustomColumnValidation/" class="sidebar-link ">
                   <span>사용자 지정 컬럼 유효성 검사</span>
+                  <span style="display: none;">
+                  validation, 유효성
+                  </span>
                 </a>
               </li>
               
@@ -8359,6 +8601,9 @@
               <li class="item-toc ">
                 <a href="/demo/Validation/CustomRowValidation/" class="sidebar-link ">
                   <span>사용자 지정 행 유효성 검사</span>
+                  <span style="display: none;">
+                  validation, 유효성
+                  </span>
                 </a>
               </li>
               
@@ -8905,6 +9150,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/TextCellRenderer/" class="sidebar-link ">
                   <span>텍스트 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9019,6 +9267,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/CheckCellRenderer/" class="sidebar-link ">
                   <span>체크 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9133,6 +9384,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/BarCellRenderer/" class="sidebar-link ">
                   <span>바 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9235,6 +9489,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/ImageCellRenderer/" class="sidebar-link ">
                   <span>이미지 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9337,6 +9594,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/IconCellRenderer/" class="sidebar-link ">
                   <span>아이콘 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9379,6 +9639,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/ShapeCellRenderer/" class="sidebar-link ">
                   <span>도형 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9517,6 +9780,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/SignalCellRenderer/" class="sidebar-link ">
                   <span>시그널 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9535,6 +9801,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/LinkCellRenderer/" class="sidebar-link ">
                   <span>링크 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9601,6 +9870,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/BarcodeCellRenderer/" class="sidebar-link ">
                   <span>바코드 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9691,6 +9963,9 @@
               <li class="item-toc ">
                 <a href="/demo/Renderer/RendererwithStyles/" class="sidebar-link ">
                   <span>렌더러 동적 적용</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
                 </a>
               </li>
               
@@ -9769,6 +10044,9 @@
               <li class="item-toc ">
                 <a href="/demo/Series/SeriesColumn/" class="sidebar-link ">
                   <span>시리즈 컬럼</span>
+                  <span style="display: none;">
+                  시리즈, series
+                  </span>
                 </a>
               </li>
               
@@ -9913,6 +10191,9 @@
               <li class="item-toc ">
                 <a href="/demo/Series/SparkLineRenderer/" class="sidebar-link ">
                   <span>스파크 라인 렌더러</span>
+                  <span style="display: none;">
+                  시리즈, series
+                  </span>
                 </a>
               </li>
               
@@ -10057,6 +10338,9 @@
               <li class="item-toc ">
                 <a href="/demo/Series/ActualTargetRenderer/" class="sidebar-link ">
                   <span>성과/목표 렌더러</span>
+                  <span style="display: none;">
+                  시리즈, series
+                  </span>
                 </a>
               </li>
               
@@ -10591,6 +10875,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/TreeDataModel/" class="sidebar-link ">
                   <span>트리 모델</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -10771,6 +11058,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/SetArrayDataSet/" class="sidebar-link ">
                   <span>배열 데이타</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -10891,6 +11181,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/SetJsonArray/" class="sidebar-link ">
                   <span>JSON 데이타</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -10921,6 +11214,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/SetXmlDataSet/" class="sidebar-link ">
                   <span>Set Xml DataSet</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11011,6 +11307,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/LazyLoading/" class="sidebar-link ">
                   <span>Lazy Loading</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11131,6 +11430,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/LoadCsvDataSet/" class="sidebar-link ">
                   <span>Load Csv DataSet</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11203,6 +11505,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/LoadJsonArray/" class="sidebar-link ">
                   <span>Load Json Array</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11269,6 +11574,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/LoadXmlDataSet/" class="sidebar-link ">
                   <span>Load Xml DataSet</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11317,6 +11625,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/LazyLoadingCsv/" class="sidebar-link ">
                   <span>Lazy Loading Csv</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11407,6 +11718,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/CheckBar/" class="sidebar-link ">
                   <span>CheckBar</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11425,6 +11739,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/TreeEditing/" class="sidebar-link ">
                   <span>트리 편집</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11443,6 +11760,9 @@
               <li class="item-toc ">
                 <a href="/demo/Tree/TreeMoveRow/" class="sidebar-link ">
                   <span>트리 행 이동</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
                 </a>
               </li>
               
@@ -11545,6 +11865,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/StylesOverview/" class="sidebar-link ">
                   <span>Styles Overview document</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -11605,6 +11928,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/StyleRegions/" class="sidebar-link ">
                   <span>Style Regions document</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -11713,6 +12039,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/StyleProperties/" class="sidebar-link ">
                   <span>Style Properties document</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -11857,6 +12186,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/DynamicStylesonColumns/" class="sidebar-link ">
                   <span>Dynamic Styles on Columns</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -11929,6 +12261,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/CSSStyles/" class="sidebar-link ">
                   <span>CSS Styles</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -11965,6 +12300,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/DynamicStylesonRows/" class="sidebar-link ">
                   <span>Dynamic Styles on Rows</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -12067,6 +12405,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/DataCellStyle/" class="sidebar-link ">
                   <span>DataCellStyle</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -12109,6 +12450,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/DataCellStyleOverview/" class="sidebar-link ">
                   <span>DataCellStyle Overview</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -12181,6 +12525,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/EditingProperties/" class="sidebar-link ">
                   <span>Editing Properties</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -12265,6 +12612,9 @@
               <li class="item-toc ">
                 <a href="/demo/GridStyle/DataCellStyleRows/" class="sidebar-link ">
                   <span>DataCellStyle Rows</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
                 </a>
               </li>
               
@@ -12397,6 +12747,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/ExcelExport/" class="sidebar-link ">
                   <span>Excel Export</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -12535,6 +12888,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/ExcelColumnGroup/" class="sidebar-link ">
                   <span>Excel - Column Group</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -12655,6 +13011,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/ExcelRowGroup/" class="sidebar-link ">
                   <span>Excel - Row Group</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -12763,6 +13122,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/ExcelColumnMerge/" class="sidebar-link ">
                   <span>Excel - Column Merge</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -12853,6 +13215,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/ExcelMergedRowGroup/" class="sidebar-link ">
                   <span>Excel - Merged Row Group</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -12895,6 +13260,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/ExcelTreeView/" class="sidebar-link ">
                   <span>Excel - TreeView</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -12997,6 +13365,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/PDFExport/" class="sidebar-link ">
                   <span>PDF Export</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -13039,6 +13410,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/ExportDocumentTitle/" class="sidebar-link ">
                   <span>Export DocumentTitle</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -13117,6 +13491,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/Import/" class="sidebar-link ">
                   <span>Import</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -13171,6 +13548,9 @@
               <li class="item-toc ">
                 <a href="/demo/Excels/ExcelImport/" class="sidebar-link ">
                   <span>Excel Import</span>
+                  <span style="display: none;">
+                  excel
+                  </span>
                 </a>
               </li>
               
@@ -13303,6 +13683,9 @@
               <li class="item-toc ">
                 <a href="/demo/Performance/ScrollTest/" class="sidebar-link ">
                   <span>Scroll Test</span>
+                  <span style="display: none;">
+                  성능
+                  </span>
                 </a>
               </li>
               
@@ -13387,6 +13770,9 @@
               <li class="item-toc ">
                 <a href="/demo/Performance/ScrollTest2/" class="sidebar-link ">
                   <span>Scroll Test 2</span>
+                  <span style="display: none;">
+                  성능
+                  </span>
                 </a>
               </li>
               
@@ -13507,6 +13893,9 @@
               <li class="item-toc ">
                 <a href="/demo/Performance/LargeDataLoadTest/" class="sidebar-link ">
                   <span>Large Data Load Test</span>
+                  <span style="display: none;">
+                  성능
+                  </span>
                 </a>
               </li>
               
@@ -14077,6 +14466,9 @@
               <li class="item-toc ">
                 <a href="/demo/Event/ColumnHeaderClicked/" class="sidebar-link ">
                   <span>ColumnHeaderClicked</span>
+                  <span style="display: none;">
+                  event, 이벤트
+                  </span>
                 </a>
               </li>
               
@@ -14263,6 +14655,9 @@
               <li class="item-toc ">
                 <a href="/demo/Event/ColumnHeaderDblClicked/" class="sidebar-link ">
                   <span>ColumnHeaderDblClicked</span>
+                  <span style="display: none;">
+                  event, 이벤트
+                  </span>
                 </a>
               </li>
               
@@ -14323,6 +14718,9 @@
               <li class="item-toc ">
                 <a href="/demo/Event/DataCellClicked/" class="sidebar-link ">
                   <span>DataCellClicked</span>
+                  <span style="display: none;">
+                  event, 이벤트
+                  </span>
                 </a>
               </li>
               
@@ -14473,6 +14871,9 @@
               <li class="item-toc ">
                 <a href="/demo/Event/DataCellDblClicked/" class="sidebar-link ">
                   <span>DataCellDblClicked</span>
+                  <span style="display: none;">
+                  event, 이벤트
+                  </span>
                 </a>
               </li>
               
@@ -14521,6 +14922,9 @@
               <li class="item-toc ">
                 <a href="/demo/Event/EventOrder/" class="sidebar-link ">
                   <span>Event Order</span>
+                  <span style="display: none;">
+                  event, 이벤트
+                  </span>
                 </a>
               </li>
               
@@ -14611,6 +15015,9 @@
               <li class="item-toc ">
                 <a href="/demo/Event/RegionEvents/" class="sidebar-link ">
                   <span>Region Events</span>
+                  <span style="display: none;">
+                  event, 이벤트
+                  </span>
                 </a>
               </li>
               
@@ -15025,6 +15432,9 @@
               <li class="item-toc ">
                 <a href="/demo/Interface/ColumnSelecting/" class="sidebar-link ">
                   <span>하이차트 연동 컬럼 선택</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
                 </a>
               </li>
               
@@ -15043,6 +15453,9 @@
               <li class="item-toc ">
                 <a href="/demo/Interface/ColumnFiltering/" class="sidebar-link ">
                   <span>하이차트 연동 컬럼 필터링</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
                 </a>
               </li>
               
@@ -15187,6 +15600,9 @@
               <li class="item-toc ">
                 <a href="/demo/Interface/RowSelecting/" class="sidebar-link ">
                   <span>하이차트 연동 행 선택</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
                 </a>
               </li>
               
@@ -15325,6 +15741,9 @@
               <li class="item-toc ">
                 <a href="/demo/Interface/FusionCharts/" class="sidebar-link ">
                   <span>퓨전차트 연동</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
                 </a>
               </li>
               
@@ -15373,6 +15792,9 @@
               <li class="item-toc ">
                 <a href="/demo/Interface/UbiReport/" class="sidebar-link ">
                   <span>유비아이 리포트 연동</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
                 </a>
               </li>
               
@@ -15511,6 +15933,9 @@
               <li class="item-toc ">
                 <a href="/demo/Interface/CrownixReport/" class="sidebar-link ">
                   <span>Crownix 리포트 연동</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
                 </a>
               </li>
               
@@ -15772,7 +16197,7 @@
 
         </li>
         
-        
+
     </ul>
   </div>
 </div>
@@ -15798,54 +16223,218 @@
   </a>
 </div>
 
-<h2 id="september-2016-1119">September 2016 (1.1.19)</h2>
+<h2 id="section">2016년 9월 (1.1.19)</h2>
 
-<ul>
-  <li>Renderer.showTooltip속성이 TextCellRenderer뿐 아니라 Data를 표시하는 전체 Cell Renderer에서 적용되도록 개선되었습니다.</li>
-  <li>그리드에서 행을 추가할때 dataProvider.onRowInserted 이벤트에서 dataProvider.setValue api를 사용할때 발생하는 오류를 수정하였습니다.</li>
-  <li>onContextMenuPopup 이벤트에 elementName이 추가되었습니다. 이베트에서 false를 return하면 contextMenu가 생성되지 않도록 개선되었습니다. ContextMenu 페이지에서 확인하세요.</li>
-  <li>그리드를 스크롤할때 발생되는 onTopItemIndexChanged event가 추가되었습니다. Event Order 페이지에서 확인하세요.</li>
-  <li>RowGroup Footer를 그룹의 상단에 표시할수 있도록 개선되었습니다. RowGroup.expandedAdornments속성을 “summary”로 설정하면 rowGroup Footer가 그룹상단에 - 표시됩니다. 자세한 내용은RowGrouping페이지를 참조바랍니다.</li>
-  <li>MergeRule이 적용을 컬럼을 rowGroup에 추가한 후 그룹이 접힌 상태에서 rowGroup에서 제외하는 경우 MergeRule이 해제되는 현상을 개선하였습니다.</li>
-  <li>그리드를 Export할때 Export가 끝난 시점을 알수 있도록 ExportOptions.done Callback을 추가하였습니다. gridView.exportGrid({type:”excel”,target:”local”,done:function() {alert(“done excel export”)}})형태로 사용할수 있습니다.</li>
-  <li>그리드에 Cell의 값이 없는 곳을 선택한후 복사했을때 잘못된 문자열이 복사되는 현상을 수정하였습니다.</li>
-  <li>DataProvider.restoreUpdatedStates(0)을 사용했을때 전체 row의 state까지 변경되는 현상을 수정하였습니다.</li>
-  <li>RowGroup상태에서 Excel Export시 merge된 셀의 세로 경계선이 부자연스러운 현상을 수정하였습니다.</li>
-  <li>그리드를 excel export시 Fixed Column의 Style이 적용되지 않는 현상을 수정하였습니다.</li>
-  <li>date Editor의 textReadOnly가 true인경우 date Picker에서 선택을 하여도 날짜가 변경되지 않는 현상을 수정하였습니다.</li>
-  <li>잘못된 날짜를 입력하는경우 NaN/NaN/NaN으로 표시되던것을 공백으로 표시되도록 수정하였습니다.</li>
-  <li>treeView의 treeOptions.showCheckBox를 true로 변경했을때 Check된 row가 적용되지 않는 현상을 개선하였습니다.</li>
-  <li>treeView의 indicator영역을 이용한 RowSelect시 첫번째 행부터 선택되는 오류를 수정하였습니다.</li>
-  <li>columnGroup이 중첩되어있고 Orientation이 Vertical인경우 Selection이 정상적으로 되지 않는 현상을 개선하였습니다.</li>
-  <li>styles.textWrap이 “normal”또는 “explicit”인경우 컬럼 넓이 자동조정이 개선되었습니다.</li>
-  <li>rowValidation이 설정된 그리드의 multiLine Editor에 여러행 붙여넣기를 할때 Validation이 발생하는 경우 focus된 셀이 모두 붙여넣기가 되는 현상이 수정되었습니다.</li>
-  <li>toastView의 zIndex값을 수정할수 있도록 DisplayOptions.toastZIndex 속성이 추가되었습니다. gridView.setDisplayOptions({toastZIndex:100}) 또는 gridView.showToast({message:”메세지를 입력하세요”, zIndex:100})와 같은 방식으로 사용할수 있습니다.</li>
-  <li>DropDown Editor의 domainOnly가 true인경우 붙여넣기 할때 values에 없는 값은 붙여넣기 되지 않도록 PasteOptions.checkDomainOnly 속성이 추가되었습니다. Copy And Paste 페이지에서 확인하세요.</li>
-  <li>DisplayOptions.fitStyle이 “even” 또는 “evenFill” 일때 ColumnHeader와 DataCell의 라인이 맞지않는 현상을 개선하였습니다.</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>RowGroup.sorting 속성이 추가되었습니다. 기본값은 true입니다. false로 설정하면 rowGroup시 자동으로 정렬되지 않고 그리드에 표시된 데이터의 순서대로 RowGrouping됩니다. api를 이용한 rowGrouping시에는 gridView.groupBy([field1,field2],true</td>
-          <td> </td>
-          <td>false)와 같이 사용할수 있습니다. 자세한 내용은RowGrouping페이지를 참조바랍니다.</td>
-        </tr>
-      </tbody>
-    </table>
+<p>1.1.19버전에는 GridView의 여러가지 기능이 추가되거나 개선되었습니다.
+또, 지난 버전 이후 문제되었던 크고 작은 오류들도 해결되었습니다.
+아래에서 내용을 확인하고 링크를 클릭하여 자세한 사용방법등을 알아보세요.</p>
+
+<h4 id="section-1">기능 개선</h4>
+
+<ol>
+  <li><a href="http://help.realgrid.com/api/types/TextCellRenderer/">Renderer.showTooltip</a>
+    <ul>
+      <li>TextCellRenderer에서만 가능했던 showTooltip속성을 모든 Cell Renderer에 적용되도록 개선했습니다.</li>
+    </ul>
   </li>
-  <li>EditOptions.insertable이 true인경우 shift+insert키를 입력하는 경우 현재행 아래에 새로운 행이 추가되도록 변경되었습니다. api를 이용하는 경우 gridView.beginInsertRow(0,true)를 사용할수 있습니다. 자세한 내용은 Inserting 페이지를 참조바랍니다.</li>
-  <li>onValidateColumn 사용시 첫번째행과 마지막행에서는 validation icon이 표시되지 않는 문제를 수정하였습니다.</li>
-  <li>PasteOptions.noEditEvent가 true인경우 onCellEdited도 발생하지 않도록 수정되었습니다.</li>
-</ul>
+  <li><a href="http://help.realgrid.com/api/GridBase/onContextMenuPopup/">GridBase.onContextMenuPopup</a>
+    <ul>
+      <li><code class="highlighter-rouge">elementName</code> - 컨텍스트메뉴(Context Menu)가 활성화 될때 마우스 클릭 위치에 있는 영역의 명칭을 넘겨주기 위한 인자를 추가했습니다.</li>
+      <li><code class="highlighter-rouge">return false</code> - 이벤트에서 false를 리턴하면 컨텍스트메뉴(Context Menu)가 활성화 되지 않도록 개선했습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/GridBase/onTopItemIndexChanged/">GridBase.onTopItemIndexChanged</a>
+    <ul>
+      <li>그리드가 스크롤될때 발생하는 이벤트로 <code class="highlighter-rouge">onTopItemIndexChanged</code>가 추가되었습니다.</li>
+      <li><a href="http://demo.realgrid.com/Demo/EventOrder">Event Order</a> 페이지에서 확인하세요.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/RowGroupAdornments/">RowGroup Footer 상단표시</a>
+    <ul>
+      <li><code class="highlighter-rouge">RowGroup Footer</code>를 그룹의 상단에 표시할수 있도록 개선했습니다.</li>
+      <li><code class="highlighter-rouge">expandedAdornments</code> - RowGroup Footer를 그룹상단에 표시하기 위해 <code class="highlighter-rouge">expandedAdornments</code>속성을 <code class="highlighter-rouge">'summary'</code>로 설정하면 됩니다.</li>
+      <li><a href="RowGroup/RowGrouping">RowGrouping</a>페이지에서 확인하세요.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/GridExportOptions/">ExportOptions.done</a>
+    <ul>
+      <li><a href="http://help.realgrid.com/api/GridBase/exportGrid/">GridBase.exportGrid()</a>함수 호출시 Export가 완료된 시점에 호출되는 Callback function을 <code class="highlighter-rouge">done</code> 속성으로 추가했습니다.</li>
+      <li>샘플 코드를 참조하세요.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
+  <span class="na">type</span><span class="p">:</span><span class="s2">"excel"</span><span class="p">,</span>
+  <span class="na">target</span><span class="p">:</span><span class="s2">"local"</span><span class="p">,</span>
+  <span class="na">done</span><span class="p">:</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+ <span class="nx">alert</span><span class="p">(</span><span class="s2">"엑셀 내보내기가 완료되었습니다."</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/features/Styling/">styles.textWrap</a>
+    <ul>
+      <li><code class="highlighter-rouge">styles.textWrap</code>속성의 값이 <code class="highlighter-rouge">'normal'</code>또는 <code class="highlighter-rouge">'explicit'</code>인 경우 컬럼 넓이 자동조정이 개선되었습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions.toastZIndex</a>
+    <ul>
+      <li>ToastView의 zIndex값을 수정할수 있도록 <code class="highlighter-rouge">toastZIndex</code>속성이 추가되었습니다.</li>
+      <li><a href="http://help.realgrid.com/api/types/ToastOptions/">ToastOptions.zIndex</a>속성을 변경해도 동일한 결과를 얻을 수 있습니다.</li>
+      <li>샘플코드를 참조하세요.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+  <span class="na">toastZIndex</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+        <p>또는</p>
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">showToast</span><span class="p">({</span>
+  <span class="na">message</span><span class="p">:</span> <span class="s1">'메세지를 입력하세요'</span><span class="p">,</span>
+  <span class="na">zIndex</span><span class="p">:</span> <span class="mi">100</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/PasteOptions/">PasteOptions.checkDomainOnly</a>
+    <ul>
+      <li>DropDown Editor의 <code class="highlighter-rouge">domainOnly</code>가 <code class="highlighter-rouge">'true'</code>인 경우, <code class="highlighter-rouge">values</code>에 없는 값은 붙여넣기 되지 않도록 할 수 있는 PasteOptions.checkDomainOnly 속성이 추가되었습니다.</li>
+      <li><a href="Editing/CopyAndPaste">Copy And Paste</a>페이지에서 확인하세요.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/RowGroupOptions/">RowGroupOptions.sorting</a>
+    <ul>
+      <li>RowGroup시 자동 정렬 여부를 결정하기 위해 <code class="highlighter-rouge">RowGroup.sorting</code>속성이 추가되었습니다.</li>
+      <li>기본값은 true입니다.</li>
+      <li>false로 설정하면 RowGroup시 자동으로 정렬되지 않고 그리드에 표시된 데이터의 순서대로 그룹핑 됩니다.</li>
+      <li><a href="http://help.realgrid.com/api/GridView/groupBy/">GridView.groupBy()</a>함수의 두번째 인자로 <code class="highlighter-rouge">sorting</code>여부를 넘겨줄 수도 있습니다.</li>
+      <li>아래 샘플코드를 참조하세요.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">groupBy</span><span class="p">([</span><span class="s1">'field1'</span><span class="p">,</span> <span class="s1">'field2'</span><span class="p">],</span> <span class="kc">true</span><span class="p">,</span> <span class="s1">'ascending'</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+        <p>또는</p>
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">groupBy</span><span class="p">([</span><span class="s1">'field1'</span><span class="p">,</span> <span class="s1">'field2'</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li><a href="RowGroup/RowGrouping">RowGrouping</a>페이지에서 확인하세요.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.insertable</a>
+    <ul>
+      <li>행 삽입(insert)시 현재행의 아래에 새로운 행을 삽입할 수 있는 기능을 추가했습니다.</li>
+      <li><code class="highlighter-rouge">'true'</code>인 경우 [shift]+[insert]키를 입력하면 새로운 행이 아래에 추가됩니다.</li>
+      <li><a href="http://help.realgrid.com/api/GridView/beginInsertRow/">GridView.beginInsertRow()</a>함수의 두 번째 인자로 <code class="highlighter-rouge">'true'</code>를 입력하면 동일한 동작을 구현할수 있습니다.</li>
+      <li><a href="Editing/Inserting">Inserting</a>페이지에서 확인하세요.</li>
+    </ul>
+  </li>
+  <li><a href="">PasteOptions.noEditEvent</a>
+    <ul>
+      <li><code class="highlighter-rouge">PasteOptions.noEditEvent</code>속성이 <code class="highlighter-rouge">'true'</code>인 경우 붙여넣기시 onCellEdited이벤트가 발생하지 않도록 수정되었습니다.</li>
+    </ul>
+  </li>
+</ol>
 
-<h2 id="august-2016-1118">August 2016 (1.1.18)</h2>
+<h4 id="section-2">오류 수정</h4>
+
+<ol>
+  <li><code class="highlighter-rouge">onRowInserted이벤트에서 dataProvider.setValue()함수 사용시 오류 발생 현상</code>
+    <ul>
+      <li>새로운 행 추가시 발생하는 <code class="highlighter-rouge">onRowInserted</code>이벤트 내에서 <code class="highlighter-rouge">dataProvider.setValue()</code>함수를 사용할 때 오류가 발생하던 문제를 해결했습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">MergeRule이 적용되지 않는 현상</code>
+    <ul>
+      <li>MergeRule이 적용된 컬럼이 RowGroup에 추가되어 있을때 그룹을 접고 RowGroup에서 해당 컬럼을 제외하면 MergeRule이 해제되던 오류를 수정했습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">DisplayOptions.fitStyle 변경시 라인이 틀어지는 현상</code>
+    <ul>
+      <li>DisplayOptions.fitStyle이 <code class="highlighter-rouge">even</code> 또는 <code class="highlighter-rouge">evenFill</code> 일때 ColumnHeader와 DataCell의 라인이 틀어지는 문제를 해결했습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">값이 없는 셀 복사시 오류</code>
+    <ul>
+      <li>그리드에 Cell의 값이 없는 곳을 선택한 후 복사했을때 잘못된 문자열이 복사되는 오류를 수정했습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">DataProvider.restoreUpdatedStates(0)함수 사용 오류</code>
+    <ul>
+      <li>DataProvider.restoreUpdatedStates(0)을 사용했을때 전체 row의 state까지 변경되는 오류를 수정했습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">Export된 Excel의 부자연스러운 경계선</code>
+    <ul>
+      <li>RowGroup상태에서 Excel Export시 merge된 셀의 세로 경계선이 부자연스러운 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">Excel Export시 Fixed Column의 스타일 적용 오류</code>
+    <ul>
+      <li>그리드를 excel export시 Fixed Column의 Style이 적용되지 않는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">Date Editor의 날짜선택 오류</code>
+    <ul>
+      <li>Date Editor의 <code class="highlighter-rouge">textReadOnly</code>가 <code class="highlighter-rouge">true</code>인 경우 date Picker에서 선택을 하여도 날짜가 변경되지 않는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">잘못된 날짜를 입력시 애매한 표현</code>
+    <ul>
+      <li>잘못된 날짜를 입력하는경우 <code class="highlighter-rouge">NaN/NaN/NaN</code>으로 표시 되던것을 <code class="highlighter-rouge">빈문자</code>가 표시되도록 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">TreeView의 체크박스 오류</code>
+    <ul>
+      <li>TreeView의 <code class="highlighter-rouge">TreeOptions.showCheckBox</code>를 <code class="highlighter-rouge">true</code>로 변경했을때 체크된 행이 적용되지 않는 문제를 해결했습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">TreeView에서 Indicator 선택 오류</code>
+    <ul>
+      <li>TreeView의 Indicator영역을 이용한 행 선택시 첫 번째 행부터 선택되는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">Selection오류</code>
+    <ul>
+      <li>컬럼그룹이 중첩되어있고 <code class="highlighter-rouge">Orientation</code>이 <code class="highlighter-rouge">vertical</code>인 경우 Selection이 정상적으로 되지 않는 오류를 수정했습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">Multiline Editor의 붙여넣기 오류</code>
+    <ul>
+      <li>RowValidation이 설정된 그리드의 MultiLine Editor에 여러행 붙여넣기를 할때 Validation이 발생하는 경우 focus된 셀이 모두 붙여넣기가 되던 문제를 해결했습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">Validation 아이콘 표시문제</code>
+    <ul>
+      <li><code class="highlighter-rouge">onValidateColumn</code>사용시 첫 번째행과 마지막행에서는 Validation 아이콘이 표시되지 않는 문제를 수정하였습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="section-3">2016년 8월 (1.1.18)</h2>
 
 <ul>
   <li>Column Filter의 조건에 개행문자가 있는 경우 필터생성은 되나 필터적용시 오류가 발생하는 현상을 수정하였습니다.</li>
   <li>Filter조건에 날짜관련 수식을 추가하였습니다. 자세한 내용은 ColumnFiltering 페이지를 참조바랍니다.</li>
   <li>Excel Export시 DynamicStyle을 Export할수 있도록 개선되었습니다. ExportOptions.applyDynamicStyles를 true로 설정하면 Grid에 적용된 Style이 Export됩니다. Export to Excel File 페이지를 참조바랍니다.</li>
   <li>Field의 DataType이 Date인 컬럼은 Column.mergeRule에 의해서 셀 병합되지 않는 문제를 수정하였습니다.</li>
-  <li>ColumnGroup의 하위 Column도 Column.mergeRule이 적용되도록 수정하였습니다. ColumnGroup.orientation이 vertical인경우에는 적용되지 않습니다.</li>
+  <li>ColumnGroup의 하위 Column도 Column.mergeRule이 적용되도록 수정하였습니다. ColumnGroup.orientation이 vertical인 경우에는 적용되지 않습니다.</li>
   <li>Grid.onItemEditCanceled이벤트가 추가되었습니다. 자세한 내용은 onItemEditCanceled를 참조바랍니다.</li>
   <li>Column의 visible을 변경할때 Column의 순서가 바뀌는 현상을 개선하였습니다.</li>
   <li>Column.mergeRule이 설정되어있을때 RowGrouping상태에서 dataProvider.clearRows()를 호출하였을때 발생하는 오류를 수정하였습니다.</li>
