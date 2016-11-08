@@ -5,8 +5,8 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/demo/</link>
     <atom:link href="demo.realgrid.com/demo/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Oct 2016 15:13:06 +0900</pubDate>
-    <lastBuildDate>Fri, 28 Oct 2016 15:13:06 +0900</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2016 19:34:24 +0900</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2016 19:34:24 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -29,8 +29,9 @@
   &lt;li&gt;&lt;a href=&quot;#section-code-&quot;&gt;코드 표시하기&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-grid-&quot;&gt;그리드 표시하기&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-tree-&quot;&gt;트리 표시하기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#dev-box&quot;&gt;데브 박스&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dev-box&quot;&gt;데브 박스(dev box)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#grid-toolbox--&quot;&gt;그리드 툴 박스&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#bootstrap&quot;&gt;Bootstrap&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;section-sidebar---&quot;&gt;&lt;section-sidebar&gt;메뉴 및 제목 표시하기&lt;/section-sidebar&gt;&lt;/h2&gt;
@@ -162,7 +163,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 [네이버 링크](http://www.naver.com/){:target=&quot;_blank&quot;}
 &lt;/pre&gt;
 
-&lt;p&gt;예를 들어 페이지에 아래와 같이 입력하면 아래와 같은 링크가 표시됩니다.&lt;/p&gt;
+&lt;p&gt;예를 들어 페이지에 아래와 같이 입력하면 아래와 같은 링크가 표시됩니다. 뒤에 붙은 &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:target=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;_blank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;은 새창으로 링크를 열것인지 결정합니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.naver.com/&quot; target=&quot;_blank&quot;&gt;네이버 링크&lt;/a&gt;&lt;/p&gt;
 
@@ -186,12 +187,12 @@ tags: ['indicator', 'item', 'number', '행번호']
 &lt;p&gt;이미지를 표시하는 방법은 markdown 문법으로 아래와 같이 작성 합니다.&lt;/p&gt;
 
 &lt;pre&gt;
-![이미지타이틀]({{ &quot;/resource/image/guide/sampleimage.png&quot; | prepend: site.baseurl }})
+![이미지타이틀]({{ &quot;/resource/image/sampleimage.png&quot; | prepend: site.baseurl }})
 &lt;/pre&gt;
 
 &lt;p&gt;위 코드를 입력하면 아래와 같이 이미지가 표시됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/demo/resource/image/guide/sampleimage.png&quot; alt=&quot;이미지타이틀&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/demo/resource/image/sampleimage.png&quot; alt=&quot;이미지타이틀&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-code-&quot;&gt;&lt;section-code&gt;코드 표시하기&lt;/section-code&gt;&lt;/h2&gt;
 
@@ -308,9 +309,10 @@ function myFunction() {
   columnSet=&quot;columnset1&quot;
   dpOptionSet=&quot;dataProviderOption1&quot;
   gridOptionSet=&quot;gridOption1&quot;
-  styleSet=&quot;style1&quot;
+  styleSet=&quot;defaultStyle&quot;
   dataSet=&quot;griddata1&quot;&lt;/mark&gt;
   gridId=&quot;realgrid&quot;
+  showToolbox=&quot;true&quot;
   gridWidth=&quot;100%&quot;
   gridHeight=&quot;300px&quot; %}
 &lt;/pre&gt;
@@ -346,6 +348,7 @@ function myFunction() {
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneDataSet&lt;/code&gt;: 데이터파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failDataSet&lt;/code&gt;: 데이터파일을 읽어오기 실패한 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridId&lt;/code&gt;: 그리드가 위치할 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tag id attribute&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; 하면 툴박스 보여줍니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridWidth&lt;/code&gt;: grid width style&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridHeight&lt;/code&gt;: grid height style&lt;/li&gt;
 &lt;/ul&gt;
@@ -418,11 +421,33 @@ function myFunction() {
 
 &lt;script&gt;
 var onSuccessFieldSet = function(data, textStatus, jqXHR) {
-    console.log('data:', data);
+    console.log('[EVENT LOG] onSuccessFieldSet');
+}
+var onDoneFieldSet = function(data, textStatus, jqXHR) {
+    console.log('[EVENT LOG] onDoneFieldSet');
+}
+var onFailFieldSet = function(jqxhr, textStatus, error) {
+    console.log('[EVENT LOG] onFailFieldSet');
 }
 &lt;/script&gt;
 
-&lt;div id=&quot;realgrid&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;realgrid&quot; class=&quot;realgrid&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;toolbox&quot;&gt;
+  &lt;div class=&quot;buttonbox&quot;&gt;
+    
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realgridfield')&quot;&gt;필드&lt;/a&gt;
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realgridcolumn')&quot;&gt;컬럼&lt;/a&gt;
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realgriddpoption')&quot;&gt;Provider 옵션&lt;/a&gt;
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realgridviewoption')&quot;&gt;Grid 옵션&lt;/a&gt;
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realgridstyle')&quot;&gt;스타일&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;pre class=&quot;codeview realgridfield&quot;&gt;&lt;/pre&gt;
+  &lt;pre class=&quot;codeview realgridcolumn&quot;&gt;&lt;/pre&gt;
+  &lt;pre class=&quot;codeview realgriddpoption&quot;&gt;&lt;/pre&gt;
+  &lt;pre class=&quot;codeview realgridviewoption&quot;&gt;&lt;/pre&gt;
+  &lt;pre class=&quot;codeview realgridstyle&quot;&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;script&gt;
     var gridView;
@@ -441,6 +466,10 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
             $.getJSON(&quot;/demo/resource/layout/fieldset1.json&quot;, function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
 
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
                 
                   onSuccessFieldSet(data, textStatus, jqXHR);
                 
@@ -449,13 +478,14 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
                 gridView.setFocus();
 
                 
+                  onDoneFieldSet(data, textStatus, jqXHR);
+                
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
 
                 
-                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                  onFailFieldSet(jqxhr, textStatus, error);
                 
             });
         
@@ -466,6 +496,10 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
             $.getJSON(&quot;/demo/resource/layout/columnset1.json&quot;, function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
                 
             })
             .done(function (data, textStatus, jqXHR) {
@@ -477,8 +511,9 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
                 var err = textStatus + ', ' + error;
 
                 
-                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                  var msg = &quot;gridView failColumnSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
                 
             });
         
@@ -489,6 +524,10 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
             $.getJSON(&quot;/demo/resource/option/dataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
                 dataProvider.setOptions(data);
 
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
                 
             })
             .done(function (data, textStatus, jqXHR) {
@@ -500,8 +539,9 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
                 var err = textStatus + ', ' + error;
 
                 
-                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                  var msg = &quot;gridView failDpOptionSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
                 
             });
         
@@ -512,6 +552,10 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
             $.getJSON(&quot;/demo/resource/option/gridOption1.json&quot;, function (data, textStatus, jqXHR) {
                 gridView.setOptions(data);
 
+                $('.codeview.realgridviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
                 
             })
             .done(function (data, textStatus, jqXHR) {
@@ -523,8 +567,9 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
                 var err = textStatus + ', ' + error;
 
                 
-                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                  var msg = &quot;gridView failGridOptionSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
                 
             });
         
@@ -532,8 +577,12 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;/demo/resource/style/style1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/demo/resource/style/defaultStyle.json&quot;, function (data, textStatus, jqXHR) {
                 gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
 
                 
             })
@@ -546,8 +595,9 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
                 var err = textStatus + ', ' + error;
 
                 
-                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                  var msg = &quot;gridView failStyleSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
                 
             });
         
@@ -570,8 +620,9 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
                 var err = textStatus + ', ' + error;
 
                 
-                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                  var msg = &quot;gridView failDataSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
                 
             });
         
@@ -604,7 +655,23 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 
 &lt;p&gt;위 코드를 입력하면 트리는 아래와 같이 표시됩니다.&lt;/p&gt;
 
-&lt;div id=&quot;realtree&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;realtree&quot; class=&quot;realgrid&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;toolbox&quot;&gt;
+  &lt;div class=&quot;buttonbox&quot;&gt;
+    
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realtreefield')&quot;&gt;필드&lt;/a&gt;
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realtreecolumn')&quot;&gt;컬럼&lt;/a&gt;
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realtreedpoption')&quot;&gt;Provider 옵션&lt;/a&gt;
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realtreeviewoption')&quot;&gt;Tree 옵션&lt;/a&gt;
+    &lt;a class=&quot;btn tertiary small lowercase&quot; onclick=&quot;showCodes(event, 'realtreestyle')&quot;&gt;스타일&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;pre class=&quot;codeview realtreefield&quot;&gt;&lt;/pre&gt;
+  &lt;pre class=&quot;codeview realtreecolumn&quot;&gt;&lt;/pre&gt;
+  &lt;pre class=&quot;codeview realtreedpoption&quot;&gt;&lt;/pre&gt;
+  &lt;pre class=&quot;codeview realtreeviewoption&quot;&gt;&lt;/pre&gt;
+  &lt;pre class=&quot;codeview realtreestyle&quot;&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;script&gt;
     var treeView;
@@ -620,80 +687,135 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;/demo/resource/layout/treeFieldset1.json&quot;, function (data) {
+            $.getJSON(&quot;/demo/resource/layout/treeFieldset1.json&quot;, function (data, textStatus, jqXHR) {
                 treeDataProvider.setFields(data);
+
+                $('.codeview.realtreefield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 treeView.setFocus();
+
+                
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+
+                
+                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                
             });
         
 
         
             
 
-            $.getJSON(&quot;/demo/resource/layout/treeColumnset1.json&quot;, function (data) {
+            $.getJSON(&quot;/demo/resource/layout/treeColumnset1.json&quot;, function (data, textStatus, jqXHR) {
                 treeView.setColumns(data);
+
+                $('.codeview.realtreecolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 treeView.setFocus();
+
+                
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+
+                
+                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                
             });
         
 
         
             
 
-            $.getJSON(&quot;/demo/resource/option/treeDataProviderOption1.json&quot;, function (data) {
+            $.getJSON(&quot;/demo/resource/option/treeDataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
                 treeDataProvider.setOptions(data);
+
+                $('.codeview.realtreedpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 treeView.setFocus();
+
+                
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+
+                
+                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                
             });
         
 
         
             
 
-            $.getJSON(&quot;/demo/resource/option/treeOption1.json&quot;, function (data) {
+            $.getJSON(&quot;/demo/resource/option/treeOption1.json&quot;, function (data, textStatus, jqXHR) {
                 treeView.setOptions(data);
+
+                $('.codeview.realtreeviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 treeView.setFocus();
+
+                
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+
+                
+                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                
             });
         
 
         
             
 
-            $.getJSON(&quot;/demo/resource/style/treeStyle1.json&quot;, function (data) {
+            $.getJSON(&quot;/demo/resource/style/treeStyle1.json&quot;, function (data, textStatus, jqXHR) {
                 treeView.setStyles(data);
+
+                $('.codeview.realtreestyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 treeView.setFocus();
+
+                
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+
+                
+                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                
             });
         
 
@@ -701,7 +823,7 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;/demo/resource/data/treedata1.json&quot;, function (data) {
+            $.getJSON(&quot;/demo/resource/data/treedata1.json&quot;, function (data, textStatus, jqXHR) {
                 treeDataProvider.setRows(
                   data
                    ,&quot;tree&quot; 
@@ -709,14 +831,21 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
                    ,&quot;&quot; 
                    ,&quot;icon&quot; 
                 );
+
+                
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 treeView.setFocus();
+
+                
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                alert(&quot;jQuery getJSON() Failed: &quot; + err);
+
+                
+                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
+                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                
             });
         
 
@@ -772,7 +901,7 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
                 &lt;span class=&quot;s2&quot;&gt;&quot;ve.png&quot;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;imageList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;RealGridJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ImageList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;images&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{{&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;guide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;smallflag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; | prepend: site.baseurl}}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/mark&amp;gt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;imageList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;RealGridJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ImageList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;images&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{{&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;smallflag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; | prepend: site.baseurl}}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/mark&amp;gt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;
 &lt;/span&gt;    
     &lt;span class=&quot;nx&quot;&gt;imageList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addUrls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imgFiles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;treeView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerImageList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imageList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -802,7 +931,7 @@ $('#btnAddTreeIcons').click(function() {
                 &quot;us.png&quot;,
                 &quot;ve.png&quot;
     ];
-    var imageList = new RealGridJS.ImageList(&quot;images&quot;, &quot;/demo/resource/image/guide/smallflag/&quot;);
+    var imageList = new RealGridJS.ImageList(&quot;images&quot;, &quot;/demo/resource/image/smallflag/&quot;);
 
     imageList.addUrls(imgFiles);
     treeView.registerImageList(imageList);
@@ -826,6 +955,8 @@ $('#btnAddTreeIcons').click(function() {
 
 &lt;p&gt;그리드 툴 박스는 각각의 그리드에 대한 정보를 조회할 수 있는 툴버튼과 공통기능 동작을 위한 버튼으로 구성됩니다.&lt;/p&gt;
 
+&lt;p&gt;툴 박스는 그리드나 트리의 아래쪽에 표시됩니다. 툴 박스를 보이지 않기 위해서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox=false&lt;/code&gt;로 인자의 값을 입력하시면 됩니다.&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;필드정보 보기&lt;/li&gt;
   &lt;li&gt;컬럼정보 보기&lt;/li&gt;
@@ -834,9 +965,142 @@ $('#btnAddTreeIcons').click(function() {
   &lt;li&gt;데이터 보기&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;현재 작성중…&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;툴 박스 없는 그리드 만들기&lt;/p&gt;
+
+&lt;div id=&quot;realgrid1&quot; class=&quot;realgrid&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    var gridView1;
+    var dataProvider1;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext(&quot;/demo/lib/realgrid/realgridjs_eval.1.1.19&quot;);
+
+        dataProvider1 = new RealGridJS.LocalDataProvider();
+        gridView1 = new RealGridJS.GridView(&quot;realgrid1&quot;);
+        gridView1.setDataSource(dataProvider1);
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/layout/carFields1.json&quot;, function (data, textStatus, jqXHR) {
+                dataProvider1.setFields(data);
+
+                $('.codeview.realgrid1field').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView1.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = &quot;gridView1 failFieldSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/layout/carColumns1.json&quot;, function (data, textStatus, jqXHR) {
+                gridView1.setColumns(data);
+
+                $('.codeview.realgrid1column').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView1.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = &quot;gridView1 failColumnSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+
+        
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/style/defaultStyle.json&quot;, function (data, textStatus, jqXHR) {
+                gridView1.setStyles(data);
+
+                $('.codeview.realgrid1style').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView1.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = &quot;gridView1 failStyleSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/data/carData1.json&quot;, function (data, textStatus, jqXHR) {
+                dataProvider1.setRows(data);
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView1.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = &quot;gridView1 failDataSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+    });
+&lt;/script&gt;
+
+&lt;h2 id=&quot;bootstrap&quot;&gt;Bootstrap&lt;/h2&gt;
+
+&lt;p&gt;Bootstrap UI는 부분적으로만 적용합니다.&lt;/p&gt;
+
+&lt;p&gt;2016년 11월 현재 CSS의 row와 column 관련 스타일만 적용하고 있습니다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 06 Oct 2016 00:00:00 +0900</pubDate>
         <link>demo.realgrid.com/demo/guide/</link>
