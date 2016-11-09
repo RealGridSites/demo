@@ -5,8 +5,8 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/demo/</link>
     <atom:link href="demo.realgrid.com/demo/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Nov 2016 19:34:24 +0900</pubDate>
-    <lastBuildDate>Mon, 07 Nov 2016 19:34:24 +0900</lastBuildDate>
+    <pubDate>Wed, 09 Nov 2016 11:08:57 +0900</pubDate>
+    <lastBuildDate>Wed, 09 Nov 2016 11:08:57 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -454,7 +454,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext(&quot;/demo/lib/realgrid/realgridjs_eval.1.1.19&quot;);
+        RealGridJS.setRootContext(&quot;/demo/lib/realgrid/realgridjs_eval.1.1.20&quot;);
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView(&quot;realgrid&quot;);
@@ -678,7 +678,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
     var treeDataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext(&quot;/demo/lib/realgrid/realgridjs_eval.1.1.19&quot;);
+        RealGridJS.setRootContext(&quot;/demo/lib/realgrid/realgridjs_eval.1.1.20&quot;);
 
         treeDataProvider = new RealGridJS.LocalTreeDataProvider();
         treeView = new RealGridJS.TreeView(&quot;realtree&quot;);
@@ -951,6 +951,11 @@ $('#btnAddTreeIcons').click(function() {
 
 &lt;p&gt;프론트메터의 &lt;code class=&quot;highlighter-rouge&quot;&gt;devboxfile&lt;/code&gt;에 기록된 파일을 &lt;code class=&quot;highlighter-rouge&quot;&gt;./devbox&lt;/code&gt; 폴더에 넣어 두면 자동으로 로드됩니다.&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;데브박스에 부제목 넣기: 데브박스 작성시 부제목은 ####(샵샵샵샵)을 사용하면 됩니다.&lt;/li&gt;
+  &lt;li&gt;데브박스에 버튼 및 체크박스 넣기: &lt;a href=&quot;/demo/Tree/TreeNodeControl/&quot;&gt;트리노드 페이지 참조&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;grid-toolbox--&quot;&gt;&lt;grid-toolbox&gt;그리드 툴 박스&lt;/grid-toolbox&gt;&lt;/h2&gt;
 
 &lt;p&gt;그리드 툴 박스는 각각의 그리드에 대한 정보를 조회할 수 있는 툴버튼과 공통기능 동작을 위한 버튼으로 구성됩니다.&lt;/p&gt;
@@ -974,7 +979,7 @@ $('#btnAddTreeIcons').click(function() {
     var dataProvider1;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext(&quot;/demo/lib/realgrid/realgridjs_eval.1.1.19&quot;);
+        RealGridJS.setRootContext(&quot;/demo/lib/realgrid/realgridjs_eval.1.1.20&quot;);
 
         dataProvider1 = new RealGridJS.LocalDataProvider();
         gridView1 = new RealGridJS.GridView(&quot;realgrid1&quot;);

@@ -2963,12 +2963,21 @@ body {
   width: 30%;
   background: #f3f3f3;
 }
-.sidebar.devbox p a:not(.btn), .sidebar.devbox li a:not(.btn) {
+.devbox h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.devbox p a:not(.btn),
+.devbox li a:not(.btn) {
   text-decoration:none;
   font-family: "Andale Mono WT", "Andale Mono", "Menlo", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
     font-weight: 400;
     font-size: 90%;
     line-height: 1.5
+}
+.devbox p a:hover:not(.btn),
+.devbox li a:hover {
+  text-decoration:underline;
 }
 .sidebar-content.devbox {
   padding: 1.5rem;
