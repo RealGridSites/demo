@@ -1408,7 +1408,7 @@
                 <a href="/demo/CellComponent/PopupMenu/" class="sidebar-link ">
                   <span>팝업 메뉴</span>
                   <span style="display: none;">
-                  PopupMenu
+                  PopupMenu, popup
                   </span>
                 </a>
               </li>
@@ -16113,7 +16113,7 @@
 
         <div class="document-formatting">
             <script>
-	var doneDataSet = function() {
+	var onDoneDataSet = function() {
 		gridView.setDisplayOptions({rowHeight:30})
 
 		var menu = [{
@@ -16139,7 +16139,7 @@
 	}
 </script>
 
-<p>데이터 셀의 편집기 외에 버튼을 표시하고 사용자 버튼 클릭 이벤트를 이용해 추가 작업을 실행할 수 있습니다.</p>
+<p>셀 버튼은 <code class="highlighter-rouge">action</code>, <code class="highlighter-rouge">popup</code>, <code class="highlighter-rouge">image</code> 중 하나로 지정할 수 있습니다.</p>
 
 <p></p>
 
@@ -16175,7 +16175,7 @@
         
             
 
-            $.getJSON("/demo/resource/layout/fieldset1.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/demo/resource/layout/cellButtonField.json", function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
 
                 $('.codeview.realgridfield').html(
@@ -16203,7 +16203,7 @@
         
             
 
-            $.getJSON("/demo/resource/layout/btnColumnset.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/demo/resource/layout/cellButtonColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
                 $('.codeview.realgridcolumn').html(
@@ -16325,7 +16325,7 @@
                 gridView.setFocus();
 
                 
-                  doneDataSet(data, textStatus, jqXHR);
+                  onDoneDataSet(data, textStatus, jqXHR);
                 
             })
             .fail(function (jqxhr, textStatus, error) {
@@ -16342,9 +16342,6 @@
     });
 </script>
 
-<p>Action 버튼을 클릭하면 그리드 <a href="http://help.realgrid.com/api/GridBase/onCellButtonClicked/">onCellButtonClicked</a>가 발생합니다.  <br />
-Popup 버튼을 클릭하면 컬럼에 지정한 popupMenu가 표시됩니다. 메뉴에 대해서는 <a href="">Popup Menu</a>를 참조하십시오.<br />
-IMAGE 버튼을 클릭하면 그리드 <a href="http://help.realgrid.com/api/GridBase/onImageButtonClicked/">onImageButtonClicked</a>가 발생합니다.</p>
 
             <p>
 
@@ -16357,120 +16354,11 @@ IMAGE 버튼을 클릭하면 그리드 <a href="http://help.realgrid.com/api/Gri
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      <p>셀 버튼은 <code class="highlighter-rouge">action</code>, <code class="highlighter-rouge">popup</code>, <code class="highlighter-rouge">image</code> 중 하나로 지정할 수 있습니다.<br />
-<code class="highlighter-rouge">image</code>버튼은 하나의 컬럼에 여러 개를 표시할 수 있습니다.</p>
+      <h4 id="section">버튼 항상 표시</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"EmployeeID"</span><span class="p">,</span>
-    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"EmployeeID"</span><span class="p">,</span>
-    <span class="na">width</span><span class="p">:</span> <span class="s2">"150"</span><span class="p">,</span>
-    <span class="na">button</span><span class="p">:</span> <span class="s2">"image"</span><span class="p">,</span>
-    <span class="na">imageButtons</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">width</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
-        <span class="na">height</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-        <span class="na">images</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="na">name</span><span class="p">:</span> <span class="s2">"팝업버튼"</span><span class="p">,</span>
-            <span class="na">up</span><span class="p">:</span> <span class="s2">"/demo/resource/image/btnImages/popup_normal.png"</span><span class="p">,</span>
-            <span class="na">hover</span><span class="p">:</span> <span class="s2">"/demo/resource/image/btnImages/popup_hover.png"</span><span class="p">,</span>
-            <span class="na">down</span><span class="p">:</span> <span class="s2">"/demo/resource/image/btnImages/popup_click.png"</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="na">name</span><span class="p">:</span> <span class="s2">"조회버튼"</span><span class="p">,</span>
-            <span class="na">up</span><span class="p">:</span> <span class="s2">"/demo/resource/image/btnImages/search_normal.png"</span><span class="p">,</span>
-            <span class="na">hover</span><span class="p">:</span> <span class="s2">"/demo/resource/image/btnImages/search_hover.png"</span><span class="p">,</span>
-            <span class="na">down</span><span class="p">:</span> <span class="s2">"/demo/resource/image/btnImages/search_click.png"</span>           
-        <span class="p">}]</span>
-    <span class="p">},</span>
-    <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"center"</span>
-    <span class="p">},</span>
-    <span class="na">header</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">text</span><span class="p">:</span> <span class="s2">"Employee ID"</span>
-    <span class="p">}</span>
-<span class="p">},{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"OrderID"</span><span class="p">,</span>
-    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"OrderID"</span><span class="p">,</span>
-    <span class="na">width</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
-    <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"center"</span>
-    <span class="p">},</span>
-    <span class="na">button</span><span class="p">:</span> <span class="s2">"action"</span><span class="p">,</span>
-    <span class="na">header</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">text</span><span class="p">:</span> <span class="s2">"Order ID"</span>
-    <span class="p">}</span>
-<span class="p">},</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-    <span class="na">width</span><span class="p">:</span> <span class="mi">110</span><span class="p">,</span>
-    <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"center"</span>
-    <span class="p">},</span>
-    <span class="na">button</span><span class="p">:</span> <span class="s2">"popup"</span><span class="p">,</span>
-    <span class="na">popupMenu</span><span class="p">:</span> <span class="s2">"customerPopup"</span><span class="p">,</span>
-    <span class="na">header</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">text</span><span class="p">:</span> <span class="s2">"Customer ID"</span>
-    <span class="p">}</span>
-<span class="p">},{</span>
-<span class="p">...</span>
-<span class="p">}];</span>
-<span class="nx">grid</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-<p>버튼은 컬럼의 alwaysShowButton을 true로 설정해 항상 보이게 하거나, 마우스가 해당 셀에 들어갈 때만 보이게 할 수 있습니다.</p>
+<p>버튼은 컬럼의 <code class="highlighter-rouge">alwaysShowButton</code>을 true로 설정해 항상 보이게 할 수 있습니다.</p>
 
-<p><a class="btn primary small round lowercase" id="btnButtonAlwaysShowButton">alwaysShowButton</a></p>
+<p><a class="btn primary small round lowercase" id="btnButtonAlwaysShowButton">버튼 항상 표시</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -16482,7 +16370,7 @@ IMAGE 버튼을 클릭하면 그리드 <a href="http://help.realgrid.com/api/Gri
 </div>
 <p></p>
 
-<p>데이터 셀에 버튼을 표시하는 방법</p>
+<h4 id="section-1">데이터 셀에 버튼을 표시하는 방법</h4>
 
 <ul>
   <li><code class="highlighter-rouge">always</code>: 항상 표시</li>
@@ -16491,7 +16379,7 @@ IMAGE 버튼을 클릭하면 그리드 <a href="http://help.realgrid.com/api/Gri
   <li><code class="highlighter-rouge">hidden</code>: 표시하지 않음</li>
 </ul>
 
-<p><a class="btn primary small round lowercase" id="btnButtonAlways">Always</a></p>
+<p><a class="btn primary small round lowercase" id="btnButtonAlways">항상 표시</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -16502,7 +16390,7 @@ IMAGE 버튼을 클릭하면 그리드 <a href="http://help.realgrid.com/api/Gri
 </div>
 </div>
 
-<p><a class="btn primary small round lowercase" id="btnButtonDefault">Default</a></p>
+<p><a class="btn primary small round lowercase" id="btnButtonDefault">hovering, 포커스 상태만 표시</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -16513,7 +16401,7 @@ IMAGE 버튼을 클릭하면 그리드 <a href="http://help.realgrid.com/api/Gri
 </div>
 </div>
 
-<p><a class="btn primary small round lowercase" id="btnButtonVisible">Visible</a></p>
+<p><a class="btn primary small round lowercase" id="btnButtonVisible">포커스 상태만 표시</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -16524,13 +16412,59 @@ IMAGE 버튼을 클릭하면 그리드 <a href="http://help.realgrid.com/api/Gri
 </div>
 </div>
 
-<p><a class="btn primary small round lowercase" id="btnButtonHidden">Hidden</a></p>
+<p><a class="btn primary small round lowercase" id="btnButtonHidden">표시 안함</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="section-2">버튼 클릭 이벤트</h4>
+
+<p>팝업 메뉴 버튼 클릭 이벤트</p>
+
+<ul>
+  <li><a href="http://help.realgrid.com/api/GridBase/onMenuItemClicked/">onMenuItemClicked</a></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onMenuItemClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">label</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<p>셀버튼 클릭 이벤트</p>
+
+<ul>
+  <li><a href="http://help.realgrid.com/api/GridBase/onCellButtonClicked/">onCellButtonClicked</a></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onCellButtonClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">"CellButton Clicked: itemIndex="</span> <span class="o">+</span> <span class="nx">itemIndex</span> <span class="o">+</span> <span class="s2">", fieldName="</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>이미지 버튼 클릭 이벤트</p>
+
+<ul>
+  <li><a href="http://help.realgrid.com/api/GridBase/onImageButtonClicked/">onImageButtonClicked</a></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onImageButtonClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">buttonIndex</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">"onImageButtonClicked: "</span> <span class="o">+</span> <span class="nx">itemIndex</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s2">", "</span> <span class="o">+</span> <span class="nx">buttonIndex</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+<span class="p">};</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>

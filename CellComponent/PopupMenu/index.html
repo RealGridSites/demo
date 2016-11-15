@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     팝업 메뉴
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="Javascript 설정으로 컬럼 셀에 팝업메뉴를 추가할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -1408,7 +1408,7 @@
                 <a href="/demo/CellComponent/PopupMenu/" class="sidebar-link current">
                   <span>팝업 메뉴</span>
                   <span style="display: none;">
-                  PopupMenu
+                  PopupMenu, popup
                   </span>
                 </a>
               </li>
@@ -16091,18 +16091,273 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">팝업 메뉴</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>Javascript 설정으로 컬럼 셀에 팝업메뉴를 추가할 수 있습니다.</p>
+
+<script>
+	var onDoneDataSet = function() {
+		var menu = [{
+	        label: "menu1 입니다.",
+	        enabled: true,
+	        children: [{
+	            label: "submenu1 입니다."
+	        }, {
+	            label: "submenu2 입니다."
+	        }]
+	    }, {
+	        label: "menu2 입니다",
+	        enabled: false
+	    }, {
+	        label: "-"
+	    }, {
+	        label: "menu3 입니다",
+	        type: "check",
+	        checked: true,
+	        tag: "check_menu"
+	    }, {
+	        label: "group menu",
+	        children: [{
+	            label: "group1 - 첫번째",
+	            type: "radio",
+	            group: "group1",
+	            checked: true
+	        }, {
+	            label: "group1 - 두번째",
+	            type: "radio",
+	            group: "group1"
+	        }, {
+	            label: "group1 - 세번째",
+	            type: "radio",
+	            group: "group1"
+	        }]
+	    }];
+	    gridView.addPopupMenu("menu1", menu);
+
+	    gridView.onMenuItemClicked = function (grid, data, index) {
+	        alert(data.label);
+	    };
+	}
+</script>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.20");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/demo/resource/layout/popupField.json", function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/popupColumn.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/gridOption1.json", function (data, textStatus, jqXHR) {
+                gridView.setOptions(data);
+
+                $('.codeview.realgridviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+
+            $.getJSON("/demo/resource/data/griddata1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setRows(data);
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+                  onDoneDataSet(data, textStatus, jqXHR);
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDataSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -16111,6 +16366,111 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="section">메뉴 정보 구성</h4>
+
+<p>팝업 메뉴의 각 메뉴 아이템은 <code class="highlighter-rouge">check</code> 상태를 가질 수 있고, <code class="highlighter-rouge">group</code> 속성을 통해 <code class="highlighter-rouge">radio group</code>으로 구성할 수도 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">label</span><span class="p">:</span> <span class="s2">"menu1 입니다."</span><span class="p">,</span>
+    <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="na">label</span><span class="p">:</span> <span class="s2">"submenu1 입니다."</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="na">label</span><span class="p">:</span> <span class="s2">"submenu2 입니다."</span>
+    <span class="p">}]</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="na">label</span><span class="p">:</span> <span class="s2">"menu2 입니다"</span><span class="p">,</span>
+    <span class="na">enabled</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="na">label</span><span class="p">:</span> <span class="s2">"-"</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="na">label</span><span class="p">:</span> <span class="s2">"menu3 입니다"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"check"</span><span class="p">,</span> <span class="c1">//check 상태</span>
+    <span class="na">checked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">tag</span><span class="p">:</span> <span class="s2">"check_menu"</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="na">label</span><span class="p">:</span> <span class="s2">"group menu"</span><span class="p">,</span> <span class="c1">//group 및 radio</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[{</span> 
+        <span class="na">label</span><span class="p">:</span> <span class="s2">"group1 - 첫번째"</span><span class="p">,</span> 
+        <span class="na">type</span><span class="p">:</span> <span class="s2">"radio"</span><span class="p">,</span>
+        <span class="na">group</span><span class="p">:</span> <span class="s2">"group1"</span><span class="p">,</span>
+        <span class="na">checked</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="na">label</span><span class="p">:</span> <span class="s2">"group1 - 두번째"</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s2">"radio"</span><span class="p">,</span>
+        <span class="na">group</span><span class="p">:</span> <span class="s2">"group1"</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="na">label</span><span class="p">:</span> <span class="s2">"group1 - 세번째"</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s2">"radio"</span><span class="p">,</span>
+        <span class="na">group</span><span class="p">:</span> <span class="s2">"group1"</span>
+    <span class="p">}]</span>
+<span class="p">}];</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="popupmenu-">PopupMenu 추가</h4>
+
+<p>구성된 메뉴 정보를 그리드 <code class="highlighter-rouge">addPopupMenu</code> 함수로 추가할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addPopupMenu</span><span class="p">(</span><span class="s2">"menu1"</span><span class="p">,</span> <span class="nx">menu</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="onmenuitemclicked-">onMenuItemClicked 이벤트</h4>
+
+<p>메뉴 아이템이 클릭되면 <code class="highlighter-rouge">onMenuItemClicked</code> 이벤트가 발생됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onMenuItemClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">label</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+  </div>
+</div>
 
 
 
