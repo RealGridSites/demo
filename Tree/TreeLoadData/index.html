@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    트리 구현 - loadData()함수
+    jQuery ajax() 이용하기
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="트리뷰(TreeView)를 구현하기 위해 XML 데이터를 사용할 수 있습니다.XML 데이터의 구조와 TreeDataProvider.setXmlRows()함수를 사용하여 트리뷰(TreeView)를 구현하는 샘플 코드를 살펴보세요.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -912,6 +912,36 @@
               
 
               
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/GridComponent/FixedRows/" class="sidebar-link ">
                   <span>행 고정하기</span>
@@ -975,18 +1005,6 @@
               
 
               
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
               <li class="item-toc ">
                 <a href="/demo/GridComponent/Selecting/" class="sidebar-link ">
                   <span>선택</span>
@@ -995,18 +1013,6 @@
                   </span>
                 </a>
               </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
               
 
             
@@ -1408,7 +1414,7 @@
                 <a href="/demo/CellComponent/PopupMenu/" class="sidebar-link ">
                   <span>팝업 메뉴</span>
                   <span style="display: none;">
-                  PopupMenu
+                  PopupMenu, popup
                   </span>
                 </a>
               </li>
@@ -1453,10 +1459,82 @@
                 <a href="/demo/CellComponent/CellMerging/" class="sidebar-link ">
                   <span>셀 병합</span>
                   <span style="display: none;">
-                  CellMerging
+                  CellMerging, 병합, merge
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
               
 
             
@@ -1552,82 +1630,10 @@
                 <a href="/demo/CellComponent/LookupColumn/" class="sidebar-link ">
                   <span>Lookup 컬럼</span>
                   <span style="display: none;">
-                  LookupColumn
+                  LookupColumn, Lookup, label
                   </span>
                 </a>
               </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
               
 
             
@@ -1679,6 +1685,18 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
               
 
             
@@ -1833,18 +1851,6 @@
               
 
               
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
               <li class="item-toc ">
                 <a href="/demo/CellComponent/Tooltip/" class="sidebar-link ">
                   <span>툴팁</span>
@@ -1853,6 +1859,12 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
               
 
             
@@ -2697,30 +2709,6 @@
               
 
               
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
               <li class="item-toc ">
                 <a href="/demo/Columns/GridFitting/" class="sidebar-link ">
                   <span>컬럼 너비 자동 조정</span>
@@ -2766,6 +2754,72 @@
               
 
               
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/Columns/ColumnSorting/" class="sidebar-link ">
                   <span>데이터 정렬(Sorting)</span>
@@ -2774,42 +2828,6 @@
                   </span>
                 </a>
               </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
               
 
             
@@ -3530,6 +3548,12 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
               
 
             
@@ -4607,6 +4631,12 @@
               
 
             
+              
+              
+
+              
+
+            
           </ul>
 
         </li>
@@ -4941,6 +4971,12 @@
               
 
               
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/FillData/LoadCsvData/" class="sidebar-link ">
                   <span>CSV 데이타 가져오기</span>
@@ -4949,12 +4985,6 @@
                   </span>
                 </a>
               </li>
-              
-
-            
-              
-              
-
               
 
             
@@ -5364,6 +5394,18 @@
               
 
               
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/FillData/LazyLoading/" class="sidebar-link ">
                   <span>순차적으로 데이타 가져오기</span>
@@ -5372,48 +5414,6 @@
                   </span>
                 </a>
               </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
               
 
             
@@ -5466,6 +5466,48 @@
               
 
               
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/FillData/MasterDetailSample/" class="sidebar-link ">
                   <span>마스터 디테일 예</span>
@@ -5474,12 +5516,6 @@
                   </span>
                 </a>
               </li>
-              
-
-            
-              
-              
-
               
 
             
@@ -6219,6 +6255,12 @@
               
 
               
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/DataManager/SetValues/" class="sidebar-link ">
                   <span>그리드에 값 넣기</span>
@@ -6321,6 +6363,15 @@
               
 
               
+              <li class="item-toc ">
+                <a href="/demo/DataManager/DataRollback/" class="sidebar-link ">
+                  <span>롤백</span>
+                  <span style="display: none;">
+                  data, rollback
+                  </span>
+                </a>
+              </li>
+              
 
             
               
@@ -6353,15 +6404,6 @@
               
               
 
-              
-              <li class="item-toc ">
-                <a href="/demo/DataManager/DataRollback/" class="sidebar-link ">
-                  <span>롤백</span>
-                  <span style="display: none;">
-                  data, rollback
-                  </span>
-                </a>
-              </li>
               
 
             
@@ -6420,12 +6462,6 @@
               
 
               
-
-            
-              
-              
-
-              
               <li class="item-toc ">
                 <a href="/demo/DataManager/SearchItem/" class="sidebar-link ">
                   <span>SearchItem</span>
@@ -6434,6 +6470,12 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
               
 
             
@@ -6731,6 +6773,12 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
               
 
             
@@ -8073,12 +8121,6 @@
               
 
               
-
-            
-              
-              
-
-              
               <li class="item-toc ">
                 <a href="/demo/Editing/CopyAndPaste/" class="sidebar-link ">
                   <span>복사하기 / 붙여넣기</span>
@@ -8087,6 +8129,18 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
               
 
             
@@ -8549,6 +8603,12 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
               
 
             
@@ -9720,6 +9780,12 @@
               
 
               
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/Renderer/SignalCellRenderer/" class="sidebar-link ">
                   <span>시그널 렌더러</span>
@@ -9741,6 +9807,18 @@
               
 
               
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/Renderer/LinkCellRenderer/" class="sidebar-link ">
                   <span>링크 렌더러</span>
@@ -9749,18 +9827,6 @@
                   </span>
                 </a>
               </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
               
 
             
@@ -9879,12 +9945,6 @@
               
 
               
-
-            
-              
-              
-
-              
               <li class="item-toc ">
                 <a href="/demo/Renderer/RendererwithStyles/" class="sidebar-link ">
                   <span>렌더러 동적 적용</span>
@@ -9893,6 +9953,12 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
               
 
             
@@ -10769,915 +10835,6 @@
               
 
             
-          </ul>
-
-        </li>
-        
-        <li>
-          
-            <div class="heading-toc">트리뷰(TreeView)</div>
-          
-
-          <ul class="list-toc">
-            
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeDataModel/" class="sidebar-link ">
-                  <span>트리뷰 데이터 모델</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeArrayDataSet/" class="sidebar-link ">
-                  <span>트리 구현 - 배열형 데이터</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeJsonDataSet/" class="sidebar-link ">
-                  <span>트리 구현 - JSON 데이터</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeXmlDataSet/" class="sidebar-link ">
-                  <span>트리 구현 - XML 데이터</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc current ">
-                <a href="/demo/Tree/TreeLoadData/" class="sidebar-link current">
-                  <span>트리 구현 - loadData()함수</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeLazyLoading/" class="sidebar-link ">
-                  <span>트리뷰 Lazy Loading 구현</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeNodeControl/" class="sidebar-link ">
-                  <span>트리뷰 노드 조작하기</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeEditing/" class="sidebar-link ">
-                  <span>트리뷰에서 추가/수정/삭제</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeCheckBox/" class="sidebar-link ">
-                  <span>트리뷰의 특별한 체크박스</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeIcons/" class="sidebar-link ">
-                  <span>트리뷰 아이콘 표시하기</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-              <li class="item-toc ">
-                <a href="/demo/Tree/TreeExplorer/" class="sidebar-link ">
-                  <span>[샘플화면] 트리뷰를 이용한 파일 탐색기</span>
-                  <span style="display: none;">
-                  트리, Tree
-                  </span>
-                </a>
-              </li>
-              
-
-            
               
               
 
@@ -12438,6 +11595,12 @@
               
 
               
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/GridStyle/EditingProperties/" class="sidebar-link ">
                   <span>Editing Properties</span>
@@ -12513,24 +11676,6 @@
               
 
               
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
               <li class="item-toc ">
                 <a href="/demo/GridStyle/DataCellStyleRows/" class="sidebar-link ">
                   <span>DataCellStyle Rows</span>
@@ -12539,6 +11684,24 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
               
 
             
@@ -13167,6 +12330,12 @@
               
 
               
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/Excels/ExcelTreeView/" class="sidebar-link ">
                   <span>Excel - TreeView</span>
@@ -13323,6 +12492,12 @@
               
 
               
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/Excels/ExportDocumentTitle/" class="sidebar-link ">
                   <span>Export DocumentTitle</span>
@@ -13404,6 +12579,24 @@
               
 
               
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
               <li class="item-toc ">
                 <a href="/demo/Excels/Import/" class="sidebar-link ">
                   <span>Import</span>
@@ -13412,30 +12605,6 @@
                   </span>
                 </a>
               </li>
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
-              
-
-            
-              
-              
-
               
 
             
@@ -13802,6 +12971,12 @@
                   </span>
                 </a>
               </li>
+              
+
+            
+              
+              
+
               
 
             
@@ -15209,6 +14384,942 @@
               
 
             
+              
+              
+
+              
+
+            
+          </ul>
+
+        </li>
+        
+        <li>
+          
+            <div class="heading-toc">트리뷰(TreeView)</div>
+          
+
+          <ul class="list-toc">
+            
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeDataModel/" class="sidebar-link ">
+                  <span>트리뷰 데이터 모델</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeArrayDataSet/" class="sidebar-link ">
+                  <span>트리 구현 - Array 데이터</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeJsonDataSet/" class="sidebar-link ">
+                  <span>트리 구현 - JSON 데이터</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeXmlDataSet/" class="sidebar-link ">
+                  <span>트리 구현 - XML 데이터</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeCsvDataSet/" class="sidebar-link ">
+                  <span>트리 구현 - CSV 데이터</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc current ">
+                <a href="/demo/Tree/TreeLoadData/" class="sidebar-link current">
+                  <span>jQuery ajax() 이용하기</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeNodeControl/" class="sidebar-link ">
+                  <span>트리뷰 노드 조작하기</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeLazyLoading/" class="sidebar-link ">
+                  <span>트리뷰 Lazy Loading 구현</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeEditing/" class="sidebar-link ">
+                  <span>트리뷰에서 추가/수정/삭제</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeCheckBox/" class="sidebar-link ">
+                  <span>트리뷰의 특별한 체크박스</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeIcons/" class="sidebar-link ">
+                  <span>트리뷰 아이콘 표시하기</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+
+            
+              
+              
+
+              
+              <li class="item-toc ">
+                <a href="/demo/Tree/TreeExplorer/" class="sidebar-link ">
+                  <span>[샘플화면] 트리뷰를 이용한 파일 탐색기</span>
+                  <span style="display: none;">
+                  트리, Tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
           </ul>
 
         </li>
@@ -16079,6 +16190,12 @@
               
 
             
+              
+              
+
+              
+
+            
           </ul>
 
         </li>
@@ -16091,18 +16208,200 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">트리 구현 - loadData()함수</h1>
+            <h1 class="title-page">jQuery ajax() 이용하기</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>트리뷰(TreeView)를 구현하기 위해 <code class="highlighter-rouge">XML 데이터</code>를 사용할 수 있습니다.
+XML 데이터의 구조와 <a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수를 사용하여 트리뷰(TreeView)를 구현하는 샘플 코드를 살펴보세요.</p>
+
+<div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreefield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreecolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreedpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreeviewoption')">Tree 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreestyle')">스타일</a>
+  </div>
+  <pre class="codeview realtreefield"></pre>
+  <pre class="codeview realtreecolumn"></pre>
+  <pre class="codeview realtreedpoption"></pre>
+  <pre class="codeview realtreeviewoption"></pre>
+  <pre class="codeview realtreestyle"></pre>
+</div>
+
+<script>
+    var treeView;
+    var treeDataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.20");
+
+        treeDataProvider = new RealGridJS.LocalTreeDataProvider();
+        treeView = new RealGridJS.TreeView("realtree");
+        treeView.setDataSource(treeDataProvider);
+
+        
             
+
+            $.getJSON("/demo/resource/layout/treeFieldset2.json", function (data, textStatus, jqXHR) {
+                treeDataProvider.setFields(data);
+
+                $('.codeview.realtreefield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/treeColumnset2.json", function (data, textStatus, jqXHR) {
+                treeView.setColumns(data);
+
+                $('.codeview.realtreecolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/treeDataProviderOption1.json", function (data, textStatus, jqXHR) {
+                treeDataProvider.setOptions(data);
+
+                $('.codeview.realtreedpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/treeOption1.json", function (data, textStatus, jqXHR) {
+                treeView.setOptions(data);
+
+                $('.codeview.realtreeviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/treeStyle1.json", function (data, textStatus, jqXHR) {
+                treeView.setStyles(data);
+
+                $('.codeview.realtreestyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -16111,6 +16410,225 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      
+<h4 id="xml-data-">XML Data 구조</h4>
+
+<p><a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수에 넘겨줄 배열 데이터의 간단한 샘플을 작성해 보면 아래와 같습니다.</p>
+
+<blockquote>
+  <p>트리 구성을 위한 <code class="highlighter-rouge">필드</code>와 <code class="highlighter-rouge">컬럼</code>은 트리 아래 ToolBox 버튼을 눌러 확인해 보세요.</p>
+</blockquote>
+
+<p>아래 코드는 트리뷰(TreeView)에 계층 구조를 구현하기 위한 XML형식의 데이터 구조를 보여줍니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span>
+  <span class="s2">"&lt;rows&gt;"</span><span class="o">+</span>
+  <span class="s2">"  &lt;row icon='0' do='경기도'&gt;"</span><span class="o">+</span>
+  <span class="s2">"    &lt;row icon='0' do='경기도' si='성남시'&gt;"</span><span class="o">+</span>
+  <span class="s2">"      &lt;row icon='0' do='경기도' si='성남시' gu='분당구' /&gt;"</span><span class="o">+</span>
+  <span class="s2">"      &lt;row icon='0' do='경기도' si='성남시' gu='수정구'/&gt;"</span><span class="o">+</span>
+  <span class="s2">"    &lt;/row&gt;"</span><span class="o">+</span>
+  <span class="s2">"    &lt;row icon='0' do='경기도' si='수원시'&gt;"</span><span class="o">+</span>
+  <span class="s2">"      &lt;row icon='0' do='경기도' si='수원시' gu='팔달구' /&gt;"</span><span class="o">+</span>
+  <span class="s2">"      &lt;row icon='0' do='경기도' si='수원시' gu='영통구' /&gt;"</span><span class="o">+</span>
+  <span class="s2">"    &lt;/row&gt;"</span><span class="o">+</span>
+  <span class="s2">"    &lt;row icon='0' do='경기도' si='안양시' /&gt;"</span><span class="o">+</span>
+  <span class="s2">"    &lt;row icon='0' do='경기도' si='의정부시' /&gt;"</span><span class="o">+</span>
+  <span class="s2">"    &lt;row icon='0' do='경기도' si='김포시' /&gt;"</span><span class="o">+</span>
+  <span class="s2">"  &lt;/row&gt;"</span><span class="o">+</span>
+  <span class="s2">"&lt;/rows&gt;"</span><span class="p">;</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>이 데이터 구조에서 주목할 부분은 <code class="highlighter-rouge">row</code>라는 이름의 노드(node 또는 엘리먼트 element)입니다.
+이 노드는 트리의 계층구조를 표현하기 위한 엘리먼트이며
+<a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수를 호출할 때 인자로 넘겨주어야 합니다.</p>
+
+<p>함수를 호출하는 샘플 코드를 작성해 보겠습니다.</p>
+
+<p><a class="btn primary small round lowercase" id="clearRows">데이터 지우기</a>
+<a class="btn primary small round lowercase" id="setXmlRows">XML 데이터 입력하기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="c1">// 데이터 지우기</span>
+<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">clearRows</span><span class="p">();</span>
+
+<span class="c1">// XML 데이터 입력하기</span>
+<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setXmlRows</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="s2">"row"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"icon"</span><span class="p">);</span>
+<span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="xml--">XML에서 계층 구조</h4>
+
+<p>XML의 노드는 반드시 시작 태그(start-tag)와 끝 태그(end-tag)가 쌍을 이루어야 합니다.
+<code class="highlighter-rouge">부모 노드(parent)</code>의 시작 태그와 끝 태그 사이에 들어 있는 또 다른 노드는 <code class="highlighter-rouge">자식 노드(child)</code>를 의미하게 됩니다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="nt">&lt;parent&gt;</span>
+  <span class="nt">&lt;child</span> <span class="na">field=</span><span class="s">value</span><span class="nt">&gt;</span>      <span class="c">&lt;!-- 부모 노드 --&gt;</span>
+    <span class="nt">&lt;child</span> <span class="na">field=</span><span class="s">value</span> <span class="nt">/&gt;</span>  <span class="c">&lt;!-- 자식 노드 --&gt;</span>
+    ...
+    <span class="nt">&lt;child</span> <span class="na">field=</span><span class="s">value</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/child&gt;</span>
+<span class="nt">&lt;/parent&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>위 XML 샘플 코드에서는 <code class="highlighter-rouge">field</code>가 노드의 속성(attribute)</p>
+
+<p><a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수는
+이런 XML의 계층 구조를 그대로 트리뷰(TreeView)에 적용해 주는 함수입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setXmlRows</span><span class="p">(</span><span class="nx">xml</span><span class="p">,</span> <span class="nx">rowElement</span><span class="p">,</span> <span class="nx">childrenField</span><span class="p">,</span> <span class="nx">iconField</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>이 함수의 두 번째 인자인 <code class="highlighter-rouge">rowElement</code>는 XML 데이터에서 계층 구조를 담고 있는 노드의 이름입니다.
+이 데모에서는 <code class="highlighter-rouge">row</code>노드가 여기에 해당 됩니다.</p>
+
+<h4 id="section">트리에 아이콘 표시하기</h4>
+
+<p>트리뷰에는 각 노드에 아이콘을 표시할 수 있습니다.
+<a href="http://help.realgrid.com/api/TreeDtaProvider/setJsonRows/">TreeDataProvider.setJsonRows()</a>함수의 마지막 인자인 <code class="highlighter-rouge">iconProp</code>에는
+트리컬럼에 표시할 아이콘의 index값이 들어 있는 필드명을 입력합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="setIcons">트리 아이콘 표시</a></p>
+
+<p>트리뷰에서 사용할 아이콘의 목록을 <a href="http://help.realgrid.com/api/features/Image%20List/">ImageList</a>로 작성하고 만들어진 ImageList를
+<a href="http://help.realgrid.com/api/GridView/registerImageList/">TreeView.registerImageList()</a>함수로 TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는 아이콘에 트리노드에 표시됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></td><td class="code"><pre><span class="c1">// 이미지 리스트 만들기</span>
+<span class="kd">var</span> <span class="nx">imgFiles</span> <span class="o">=</span> <span class="p">[</span>
+              <span class="s2">"kr.png"</span><span class="p">,</span>
+              <span class="s2">"br.png"</span><span class="p">,</span>
+              <span class="s2">"fr.png"</span><span class="p">,</span>
+              <span class="s2">"mx.png"</span><span class="p">,</span>
+              <span class="s2">"pt.png"</span><span class="p">,</span>
+              <span class="s2">"es.png"</span><span class="p">,</span>
+              <span class="s2">"gb.png"</span><span class="p">,</span>
+              <span class="s2">"us.png"</span><span class="p">,</span>
+              <span class="s2">"ve.png"</span>
+  <span class="p">];</span>
+<span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
+<span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">(</span><span class="nx">imgFiles</span><span class="p">);</span>
+
+<span class="c1">// 트리뷰에 이미지 리스트 등록하기</span>
+<span class="nx">treeView</span><span class="p">.</span><span class="nx">registerImageList</span><span class="p">(</span><span class="nx">imageList</span><span class="p">);</span>
+<span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span>
+    <span class="na">iconImages</span><span class="p">:</span> <span class="nx">imageList</span><span class="p">.</span><span class="nx">getName</span><span class="p">(),</span>
+    <span class="na">iconWidth</span><span class="p">:</span> <span class="mi">20</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+var data =
+  "<rows>"+
+  "  <row icon='0' do='경기도'>"+
+  "    <row icon='0' do='경기도' si='성남시'>"+
+  "      <row icon='0' do='경기도' si='성남시' gu='분당구' />"+
+  "      <row icon='0' do='경기도' si='성남시' gu='수정구'/>"+
+  "    </row>"+
+  "    <row icon='0' do='경기도' si='수원시'>"+
+  "      <row icon='0' do='경기도' si='수원시' gu='팔달구' />"+
+  "      <row icon='0' do='경기도' si='수원시' gu='영통구' />"+
+  "    </row>"+
+  "    <row icon='0' do='경기도' si='안양시' />"+
+  "    <row icon='0' do='경기도' si='의정부시' />"+
+  "    <row icon='0' do='경기도' si='김포시' />"+
+  "  </row>"+
+  "</rows>";
+
+$('#setXmlRows').click(function() {
+  treeDataProvider.setXmlRows(data, "row", "", "icon");
+  treeView.expandAll();
+});
+
+$('#clearRows').click(function() {
+  treeDataProvider.clearRows();
+});
+
+$('#setIcons').click(function() {
+  var imgFiles = [
+                "kr.png",
+                "br.png",
+                "fr.png",
+                "mx.png",
+                "pt.png",
+                "es.png",
+                "gb.png",
+                "us.png",
+                "ve.png"
+    ];
+  var imageList = new RealGridJS.ImageList("images", "/demo/resource/image/smallflag/");
+  imageList.addUrls(imgFiles);
+
+  treeView.registerImageList(imageList);
+
+  treeView.setTreeOptions({
+      iconImages: imageList.getName(),
+      iconWidth: 20
+  });
+})
+</script>
+
+
+  </div>
+</div>
 
 
 

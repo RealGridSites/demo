@@ -627,6 +627,7 @@ code {
   padding-left: 2px;
   padding-right: 2px;
   vertical-align: baseline;
+  font-size: 100%;
   /*color: #1c887e;*/
   color: #e04e4b;
   /*color: #444444;*/
@@ -1400,11 +1401,13 @@ pre {
 .document-formatting a code {
   text-decoration: underline;
 }
-.document-formatting p a,
-.document-formatting li a {
+.document-formatting p a:not(.btn),
+.document-formatting li a:not(.btn) {
   color: #22A699;
   font-weight: 400;
-  text-decoration: underline;
+  font-family: "Andale Mono WT", "Andale Mono", "Menlo", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
+  font-size: 90%;
+  line-height: 1.5
 }
 .document-formatting .btn {
   text-decoration: none;
@@ -1414,6 +1417,9 @@ pre {
 .document-formatting p a:visited,
 .document-formatting li a:visited {
   color: #22A699;
+}
+.document-formatting p a:hover:not(.btn) {
+  text-decoration: underline;
 }
 .document-formatting p a:active,
 .document-formatting li a:active {
@@ -2966,6 +2972,10 @@ body {
   width: 30%;
   background: #f3f3f3;
 }
+.devbox p {
+  font-size: 0.9rem;
+  line-height: 1.5rem;  
+}
 .devbox h4 {
   font-size: 18px;
   font-weight: bold;
@@ -2979,9 +2989,9 @@ body {
 .devbox li a:not(.btn) {
   text-decoration:none;
   font-family: "Andale Mono WT", "Andale Mono", "Menlo", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
-    font-weight: 400;
-    font-size: 90%;
-    line-height: 1.5
+  font-weight: 400;
+  font-size: 90%;
+  line-height: 1.5
 }
 .devbox p a:hover:not(.btn),
 .devbox li a:hover {
