@@ -61,6 +61,8 @@ treeDataProvider.fillJsonData(data, {rows: "rows", icon: "icon"});
 treeView.expandAll();
 ```
 
+두 함수의 실행 결과는 동일 합니다.
+
 #### 트리 구현을 위한 JSON 데이터의 계층 구조
 
 트리를 구현하기 위한 JSON 데이터의 구조에 대해 조금 더 알아보겠습니다.
@@ -73,22 +75,19 @@ treeView.expandAll();
 이 속성명은 JSON데이터로 트리를 구현하기 위한 `함수의 인자` 또는 `옵션의 속성`으로 넘겨주게 됩니다.
 
 아래는 [TreeDataProvider.setJsonRows()](http://help.realgrid.com/api/TreeDataProvider/setJsonRows/)함수의 정의 입니다.
+위 속성명인 `'rows'`는 이 함수의 두 번째 인자인 `rowsProp`의 값으로 넘겨 주어야 합니다.
 
 ```js
 function setJsonRows(json, rowsProp, childrenProp, iconProp) {}
 ```
 
-위 속성명인 `'rows'`는 이 함수의 두 번째 인자인 `rowsProp`의 값으로 넘겨 주어야 합니다.
-
-
 다음은 [TreeDataProvider.fillJsonData()](http://help.realgrid.com/api/TreeDataProvider/fillJsonData/)함수의 정의 입니다.
+두 번째 인자인 `options` 즉 [DataFillOptions](http://help.realgrid.com/api/types/DataFillOptions/)의
+`rows`속성의 값으로 위 속성명인 `'rows'`를 넘겨 주어야 합니다.
 
 ```js
 function fillJsonData(data, options) {}
 ```
-
-두 번째 인자인 `options` 즉 [DataFillOptions](http://help.realgrid.com/api/types/DataFillOptions/)의
-`rows`속성의 값으로 위 속성명인 `'rows'`를 넘겨 주어야 합니다.
 
 일반적으로 SQL을 통해 데이터를 쿼리하는 방식으로 계층 데이터를 만들어내는 것은 쉽지 않습니다. 하지만,
 JSON 데이터가 가지는 계층 구조를 직접 트리뷰 구현에 사용할 수 있기 때문에 <mark>NoSQL,
@@ -100,104 +99,45 @@ RealGrid 튜토리얼에 계층 구조 표현을 위한 데이터 구조에 대�
   - [B9-2 JSON형 트리 데이터 구조이해](http://help.realgrid.com/tutorial/b9-2/)
   - [B9-3 TreeView의 ItemModel 이해하기](http://help.realgrid.com/tutorial/b9-3/)
 
-#### 트리에 아이콘 표시하기
-
-트리뷰에는 각 노드에 아이콘을 표시할 수 있습니다. 트리를 구성하기 위한 위 함수의 `iconProp`인자.
-또는, [DataFillOptions](http://help.realgrid.com/api/types/DataFillOptions/)의 `icon`
-속성의 값에 아이콘의 index값이 들어 있는 필드명을 입력합니다. 이 샘플 데이터에서는 아이콘 필드명은 `icon`입니다.
-
-<a class="btn primary small round lowercase" id="setIcons">트리 아이콘 표시</a>
-
-트리뷰에서 사용할 아이콘의 목록을 [ImageList](http://help.realgrid.com/api/features/Image%20List/)로 작성하고 만들어진 ImageList를
-[TreeView.registerImageList()](http://help.realgrid.com/api/GridView/registerImageList/)함수로 TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는 아이콘에 트리노드에 표시됩니다.
-
-```js
-// 이미지 리스트 만들기
-var imgFiles = [
-              "kr.png",
-              "br.png",
-              "fr.png",
-              "mx.png",
-              "pt.png",
-              "es.png",
-              "gb.png",
-              "us.png",
-              "ve.png"
-  ];
-var imageList = new RealGridJS.ImageList("images", "{{"/resource/image/smallflag/" | prepend: site.baseurl}}");
-imageList.addUrls(imgFiles);
-
-// 트리뷰에 이미지 리스트 등록하기
-treeView.registerImageList(imageList);
-treeView.setTreeOptions({
-    iconImages: imageList.getName(),
-    iconWidth: 20
-});
-```
+{% include_relative devbox/TreeIcon.md %}
 
 {% comment %} ----------------- DEVBOX SCRIPT --------------- {% endcomment %}
 <script>
-var data = {
-  "rows":[
-    { "icon":0, "do":"경기도",
-      "rows":[
-        { "icon":0, "do":"경기도", "si":"성남시",
-          "rows":[
-            { "icon":0, "do":"경기도", "si":"성남시", "gu":"분당구" },
-            { "icon":0, "do":"경기도", "si":"성남시", "gu":"수정구" }
-          ]
-        },
-        { "icon":0, "do":"경기도", "si":"수원시",
-          "rows":[
-            { "icon":0, "do":"경기도", "si":"수원시", "gu":"팔달구" },
-            { "icon":0, "do":"경기도", "si":"수원시", "gu":"영통구" }
-          ]
-        },
-        { "icon":0, "do":"경기도", "si":"안양시" },
-        { "icon":0, "do":"경기도", "si":"의정부시" },
-        { "icon":0, "do":"경기도", "si":"김포시" }
-      ]
-    }
-  ]
-}
+  var data = {
+    "rows":[
+      { "icon":0, "do":"경기도",
+        "rows":[
+          { "icon":0, "do":"경기도", "si":"성남시",
+            "rows":[
+              { "icon":0, "do":"경기도", "si":"성남시", "gu":"분당구" },
+              { "icon":0, "do":"경기도", "si":"성남시", "gu":"수정구" }
+            ]
+          },
+          { "icon":0, "do":"경기도", "si":"수원시",
+            "rows":[
+              { "icon":0, "do":"경기도", "si":"수원시", "gu":"팔달구" },
+              { "icon":0, "do":"경기도", "si":"수원시", "gu":"영통구" }
+            ]
+          },
+          { "icon":0, "do":"경기도", "si":"안양시" },
+          { "icon":0, "do":"경기도", "si":"의정부시" },
+          { "icon":0, "do":"경기도", "si":"김포시" }
+        ]
+      }
+    ]
+  }
 
-$('#setJsonRows').click(function() {
-  treeDataProvider.setJsonRows(data, "rows", "", "icon");
-  treeView.expandAll();
-});
-
-$('#fillJsonData').click(function() {
-  treeDataProvider.fillJsonData(data, {rows:"rows", icon:"icon"});
-  treeView.expandAll();
-});
-
-$('.clearRows').click(function() {
-  treeDataProvider.clearRows();
-});
-
-$('#setIcons').click(function() {
-  var imgFiles = [
-                "kr.png",
-                "br.png",
-                "fr.png",
-                "mx.png",
-                "pt.png",
-                "es.png",
-                "gb.png",
-                "us.png",
-                "ve.png"
-    ];
-  var imageList = new RealGridJS.ImageList("images", "{{"/resource/image/smallflag/" | prepend: site.baseurl}}");
-  imageList.addUrls(imgFiles);
-
-  treeView.registerImageList(imageList);
-
-  treeView.setTreeOptions({
-      iconImages: imageList.getName(),
-      iconWidth: 20
+  $('#setJsonRows').click(function() {
+    treeDataProvider.setJsonRows(data, "rows", "", "icon");
+    treeView.expandAll();
   });
-})
 
+  $('#fillJsonData').click(function() {
+    treeDataProvider.fillJsonData(data, {rows:"rows", icon:"icon"});
+    treeView.expandAll();
+  });
 
-
+  $('.clearRows').click(function() {
+    treeDataProvider.clearRows();
+  });
 </script>

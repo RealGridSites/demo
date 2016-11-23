@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    트리뷰 아이콘 표시하기
+    트리뷰 아이콘 컨트롤하기
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="트리뷰(TreeView)에는 트리컬럼의 왼쪽에 노드마다 서로 다른 아이콘을 표시할 수 있습니다.또, 아이콘 필드의 값을 변경 하면 노드의 펼쳐짐, 접힘상태에 따라 다른 아이콘을 표시할 수도 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -15260,7 +15260,7 @@
               
               <li class="item-toc current ">
                 <a href="/demo/Tree/TreeIcons/" class="sidebar-link current">
-                  <span>트리뷰 아이콘 표시하기</span>
+                  <span>트리뷰 아이콘 컨트롤하기</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
@@ -15311,7 +15311,7 @@
               
               <li class="item-toc ">
                 <a href="/demo/Tree/TreeExplorer/" class="sidebar-link ">
-                  <span>[샘플화면] 트리뷰를 이용한 파일 탐색기</span>
+                  <span>[샘플] 트리뷰를 이용한 파일 탐색기</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
@@ -16208,18 +16208,265 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">트리뷰 아이콘 표시하기</h1>
+            <h1 class="title-page">트리뷰 아이콘 컨트롤하기</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p><code class="highlighter-rouge">트리뷰(TreeView)</code>에는 트리컬럼의 왼쪽에 노드마다 서로 다른 아이콘을 표시할 수 있습니다.
+또, 아이콘 필드의 값을 변경 하면 노드의 <code class="highlighter-rouge">펼쳐짐</code>, <code class="highlighter-rouge">접힘</code>상태에 따라 다른 아이콘을 표시할 수도 있습니다.</p>
+
+<script>
+  var onDoneDataSet = function() {
+    var imageList = new RealGridJS.ImageList("images", "/demo/resource/image/smallflag/");
+    imageList.addUrls([
+                "icon_male.png",
+                "icon_female.png",
+                "de.png",
+                "gr.png",
+                "hu.png",
+                "is.png",
+                "eg.png",
+                "au.png",
+                "nz.png",
+                "ph.png",
+                "sg.png",
+                "th.png",
+                "tr.png",
+                "ca.png",
+                "mx.png",
+                "us.png",
+                "bo.png",
+                "cr.png",
+                "pe.png",
+                "uy.png"
+        ]
+    );
+ 
+    treeView.registerImageList(imageList);
+    treeView.setTreeOptions({
+        iconImages: imageList.getName(),
+        iconWidth: 20
+    });
+  }
+</script>
+
+<div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreefield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreecolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreedpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreeviewoption')">Tree 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreestyle')">스타일</a>
+  </div>
+  <pre class="codeview realtreefield"></pre>
+  <pre class="codeview realtreecolumn"></pre>
+  <pre class="codeview realtreedpoption"></pre>
+  <pre class="codeview realtreeviewoption"></pre>
+  <pre class="codeview realtreestyle"></pre>
+</div>
+
+<script>
+    var treeView;
+    var treeDataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.20");
+
+        treeDataProvider = new RealGridJS.LocalTreeDataProvider();
+        treeView = new RealGridJS.TreeView("realtree");
+        treeView.setDataSource(treeDataProvider);
+
+        
             
+
+            $.getJSON("/demo/resource/layout/treeFieldset3.json", function (data, textStatus, jqXHR) {
+                treeDataProvider.setFields(data);
+
+                $('.codeview.realtreefield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/treeColumnset3.json", function (data, textStatus, jqXHR) {
+                treeView.setColumns(data);
+
+                $('.codeview.realtreecolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/treeDataProviderOption1.json", function (data, textStatus, jqXHR) {
+                treeDataProvider.setOptions(data);
+
+                $('.codeview.realtreedpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/treeOption1.json", function (data, textStatus, jqXHR) {
+                treeView.setOptions(data);
+
+                $('.codeview.realtreeviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/treeStyle1.json", function (data, textStatus, jqXHR) {
+                treeView.setStyles(data);
+
+                $('.codeview.realtreestyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+
+        
+            
+
+            $.getJSON("/demo/resource/data/treedata3.json", function (data, textStatus, jqXHR) {
+                
+                  treeDataProvider.setJsonRows(
+                    data
+                     ,"rows" 
+                     ,"" 
+                     ,"icon" 
+                  );
+                
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+                  onDoneDataSet(data, textStatus, jqXHR);
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -16228,6 +16475,112 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      
+<h4 id="section">트리에 아이콘 표시하기</h4>
+
+<p>트리뷰(TreeView)에는 각 노드에 아이콘을 표시할 수 있습니다.</p>
+
+<p>아래 트리 구현 함수들에서는 함수의 마지막 인자인 <code class="highlighter-rouge">iconField</code>에 트리컬럼에 표시할 아이콘의 index값이 들어 있는 필드명을 입력합니다.</p>
+
+<ul>
+  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a></li>
+  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setJsonRows()</a></li>
+  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setXmlRows()</a></li>
+</ul>
+
+<p>또 다른 트리 구현 함수인 아래 함수들에서는 두 번째 인자인 <code class="highlighter-rouge">options</code>
+즉, <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
+<code class="highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
+
+<ul>
+  <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillJsonData/">TreeDataProvider.fillJsonData()</a></li>
+  <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillXmlData/">TreeDataProvider.fillXmlData()</a></li>
+  <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillCsvData/">TreeDataProvider.fillCsvData()</a></li>
+</ul>
+
+<p><a class="btn primary small round lowercase" id="setIcons">트리 아이콘 표시</a></p>
+
+<p>트리뷰에서 사용할 아이콘의 목록을 <a href="http://help.realgrid.com/api/features/Image%20List/">ImageList</a>로 작성하고 만들어진 ImageList를
+<a href="http://help.realgrid.com/api/GridView/registerImageList/">TreeView.registerImageList()</a>함수로
+TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는 아이콘에 트리노드에 표시됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></td><td class="code"><pre><span class="c1">// 이미지 리스트 만들기</span>
+<span class="kd">var</span> <span class="nx">imgFiles</span> <span class="o">=</span> <span class="p">[</span>
+              <span class="s2">"kr.png"</span><span class="p">,</span>
+              <span class="s2">"br.png"</span><span class="p">,</span>
+              <span class="s2">"fr.png"</span><span class="p">,</span>
+              <span class="s2">"mx.png"</span><span class="p">,</span>
+              <span class="s2">"pt.png"</span><span class="p">,</span>
+              <span class="s2">"es.png"</span><span class="p">,</span>
+              <span class="s2">"gb.png"</span><span class="p">,</span>
+              <span class="s2">"us.png"</span><span class="p">,</span>
+              <span class="s2">"ve.png"</span>
+  <span class="p">];</span>
+<span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
+<span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">(</span><span class="nx">imgFiles</span><span class="p">);</span>
+
+<span class="c1">// 트리뷰에 이미지 리스트 등록하기</span>
+<span class="nx">treeView</span><span class="p">.</span><span class="nx">registerImageList</span><span class="p">(</span><span class="nx">imageList</span><span class="p">);</span>
+<span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span>
+    <span class="na">iconImages</span><span class="p">:</span> <span class="nx">imageList</span><span class="p">.</span><span class="nx">getName</span><span class="p">(),</span>
+    <span class="na">iconWidth</span><span class="p">:</span> <span class="mi">20</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+  $('#setIcons').click(function() {
+    var imgFiles = [
+                  "kr.png",
+                  "br.png",
+                  "fr.png",
+                  "mx.png",
+                  "pt.png",
+                  "es.png",
+                  "gb.png",
+                  "us.png",
+                  "ve.png"
+      ];
+    var imageList = new RealGridJS.ImageList("images", "/demo/resource/image/smallflag/");
+    imageList.addUrls(imgFiles);
+
+    treeView.registerImageList(imageList);
+
+    treeView.setTreeOptions({
+        iconImages: imageList.getName(),
+        iconWidth: 20
+    });
+  })
+</script>
+
+
+  </div>
+</div>
 
 
 

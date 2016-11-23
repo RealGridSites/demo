@@ -15260,7 +15260,7 @@
               
               <li class="item-toc ">
                 <a href="/demo/Tree/TreeIcons/" class="sidebar-link ">
-                  <span>트리뷰 아이콘 표시하기</span>
+                  <span>트리뷰 아이콘 컨트롤하기</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
@@ -16425,13 +16425,15 @@
             
 
             $.getJSON("/demo/resource/data/treedata1.json", function (data, textStatus, jqXHR) {
-                treeDataProvider.setRows(
-                  data
-                   ,"tree" 
-                   ,true 
-                   ,"" 
-                   ,"icon" 
-                );
+                
+                  treeDataProvider.setRows(
+                    data
+                     ,"tree" 
+                     ,true 
+                     ,"" 
+                     ,"icon" 
+                  );
+                
 
                 
             })
