@@ -1,14 +1,12 @@
+#### Array 트리 데이터
 
-#### Array Data 구조
-
-[TreeDataProvider.setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/)함수에 넘겨줄 배열 데이터의 간단한 샘플을 작성해 보면 아래와 같습니다.
-> 트리 구성을 위한 `필드`와 `컬럼`은 트리 아래 ToolBox 버튼을 눌러 확인해 보세요.
+아래 코드는 트리뷰(TreeView)를 구현하기 위한 Array 데이터 구조 입니다.
 
 ```js
 var data = [
   [0, "1", "경기도"],
   [0, "1.1", "경기도", "성남시"],
-  [0, "1.1.1", "경기도", "성남시", "분당구"],
+  [0, "16", "경기도", "성남시", "분당구"],
   [0, "1.2", "경기도", "수원시"],
   [0, "1.2.2", "경기도", "수원시", "팔달구"],
   [0, "1.2.1", "경기도", "수원시", "영통구"],
@@ -19,30 +17,68 @@ var data = [
 ]
 ```
 
-배열의 첫 번째 항목은 트리 노드에 표시될 `아이콘 인덱스(icon index)` 입니다.
-두 번째 항목은 트리를 구성할 계층 구조을 담고 있는 `트리 코드(tree code)` 입니다.
+#### Array 데이터로 트리 구현
 
-우선, 위 데이터를 입력하기 위해 [TreeDataProvider.setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/)함수를 호출하는 샘플 코드를 작성해 보겠습니다.
+`Array 데이터`로 트리를 구현하기 위해서 아래 함수를 사용할 수 있습니다.
 
-<a class="btn primary small round lowercase clearRows">데이터 지우기</a>
+- [TreeDataProvider.setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/)
+
+함수를 호출하는 샘플 코드를 작성해 보겠습니다.
+
+데이터 입력시 정렬을 위해 함수의 `needSorting`인자를 `true`로 설정합니다.
+
 <a class="btn primary small round lowercase" id="setRowsNeedSorting">배열형 데이터 정렬하여 입력하기</a>
 
 ```js
-// 데이터 지우기
-treeDataProvider.clearRows();
-
 // 배열형 데이터 정렬하여 입력하기
 treeDataProvider.setRows(data, "tree", true, "", "icon");
 treeView.expandAll();
 ```
 
-#### 계층구조 표현을 위한 treeField
+데이터 입력시 정렬을 하지 않고 입력 하려면 `needSorting`인자를 `false`로 설정합니다.
+
+<a class="btn primary small round lowercase clearRows">데이터 지우기</a>
+<a class="btn primary small round lowercase" id="setRowsNoSorting">배열형 데이터 정렬하지 않고 입력하기</a>
+
+```js
+// 데이터 지우기
+treeDataProvider.clearRows();
+
+// 배열형 데이터 정렬하지 않고 입력하기
+treeDataProvider.setRows(data, "tree", false, "", "icon");
+treeView.expandAll();
+```
+
+#### 트리 구현을 위한 Array 데이터 계층 구조
+
+Array 데이터 계층 구조에서 주목할 부분은 `treeField` 입니다. `treeField`는 이 데모의 데이터에서
+두 번째 항목에 해당하는 필드 입니다. 즉,
+
+```js
+'1'
+'1.1'
+'1.1.1'
+...
+```
+
+`treeField`는 트리를 구성하기 위한 문자열이며 설명의 편의상 필드의 값을 `트리코드(tree code)`라 명명 하겠습니다.
+
+`트리코드(tree code)`는 먼저 입력된 트리코드와 비교하여 `문자열의 포함 여부` 또는 `문자열의 갯수`를
+기준으로 노드의 깊이(Level)를 판단 합니다. 트리코드에 대한 자세한 설명은
+\[[B9-3 TreeView의 ItemModel 이해하기](http://help.realgrid.com/tutorial/b9-3/)\]를
+참조하세요.
+
+배열의 각 항목은 DataProvider에 구성된 필드(Field)들에 순서대로 매핑됩니다.
+
+이 샘플 데이터에서 배열의 첫 번째 항목은 트리 노드에 표시될 `아이콘 인덱스(icon index)` 입니다.
+
 
 [TreeDataProvider.setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/)함수의 정의는 아래와 같습니다.
 
 ```javascript
 function setRows(rows, treeField, needSorting, childrenField, iconField) {}
 ```
+
 이 함수의 두 번째 인자인 `treeField`는 데이터에서 트리 구조를 담고 있는 필드의 이름을 입력하는 인자입니다.
 TreeView는 이 필드의 값으로 트리를 구성합니다.
 
@@ -60,17 +96,6 @@ RealGrid 튜토리얼에 계층 구조 표현을 위한 데이터 구조에 대�
 
 위의 배열형 데이터를 다시 자세히 보면 일곱 번째 행에 있는 `성남시 수정구`의 경우 treeField 값이 순방향 정렬 순서에 맞지 않는 곳에 위치해 있습니다.
 
-<a class="btn primary small round lowercase clearRows">데이터 지우기</a>
-<a class="btn primary small round lowercase" id="setRowsNoSorting">배열형 데이터 정렬하지 않고 입력하기</a>
-
-```js
-// 데이터 지우기
-treeDataProvider.clearRows();
-
-// 배열형 데이터 정렬하지 않고 입력하기
-treeDataProvider.setRows(data, "tree", false, "", "icon");
-treeView.expandAll();
-```
 
 > 정렬되지 않은 배열 데이터를 입력할 경우 setRows() 함수의 로직으로 인해 원하는 계층 구조가 만들어 지지 않을 수 있습니다.
 > 그러므로, 서버에서 데이터를 가져올때 미리 정렬을 하거나, `needSorting`인자를 `true`로 입력하여 트리를 구성하기 전에
@@ -119,8 +144,8 @@ treeView.setTreeOptions({
 var data = [
     [0, "1", "경기도"],
     [0, "1.1", "경기도", "성남시"],
-    [0, "1.1.1", "경기도", "성남시", "분당구"],
-    [0, "1.2", "경기도", "수원시"],
+    [0, "2.", "경기도", "성남시", "분당구"],
+    [0, "1.", "경기도", "수원시"],
     [0, "1.2.2", "경기도", "수원시", "팔달구"],
     [0, "1.2.1", "경기도", "수원시", "영통구"],
     [0, "1.1.2", "경기도", "성남시", "수정구"],

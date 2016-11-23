@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     트리 구현 - Array 데이터
     </title>
-    <meta name="description" content="트리뷰(TreeView)를 구현하기 위해 배열형(Array) 데이터를 사용할 수 있습니다.배열형 데이터의 구조와 TreeDataProvider.setRows()함수를 사용하여 트리뷰(TreeView)를 구현하는 샘플 코드를 살펴보세요.">
+    <meta name="description" content="트리뷰(TreeView)를 구현하기 위해 배열형(Array) 데이터를 사용할 수 있습니다.배열형(Array) 데이터의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -16229,8 +16229,8 @@
         </div>
 
         <div class="document-formatting">
-            <p>트리뷰(TreeView)를 구현하기 위해 <code class="highlighter-rouge">배열형(Array) 데이터</code>를 사용할 수 있습니다.
-배열형 데이터의 구조와 <a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a>함수를 사용하여 트리뷰(TreeView)를 구현하는 샘플 코드를 살펴보세요.</p>
+            <p>트리뷰(TreeView)를 구현하기 위해 <code class="highlighter-rouge">배열형(Array) 데이터</code>를 사용할 수 있습니다.<br />
+<code class="highlighter-rouge">배열형(Array) 데이터</code>의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.</p>
 
 <div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
 
@@ -16414,13 +16414,9 @@
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      
-<h4 id="array-data-">Array Data 구조</h4>
+      <h4 id="array--">Array 트리 데이터</h4>
 
-<p><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a>함수에 넘겨줄 배열 데이터의 간단한 샘플을 작성해 보면 아래와 같습니다.</p>
-<blockquote>
-  <p>트리 구성을 위한 <code class="highlighter-rouge">필드</code>와 <code class="highlighter-rouge">컬럼</code>은 트리 아래 ToolBox 버튼을 눌러 확인해 보세요.</p>
-</blockquote>
+<p>아래 코드는 트리뷰(TreeView)를 구현하기 위한 Array 데이터 구조 입니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -16436,7 +16432,7 @@
 12</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span> <span class="s2">"경기도"</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"1.1"</span><span class="p">,</span> <span class="s2">"경기도"</span><span class="p">,</span> <span class="s2">"성남시"</span><span class="p">],</span>
-  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"1.1.1"</span><span class="p">,</span> <span class="s2">"경기도"</span><span class="p">,</span> <span class="s2">"성남시"</span><span class="p">,</span> <span class="s2">"분당구"</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"16"</span><span class="p">,</span> <span class="s2">"경기도"</span><span class="p">,</span> <span class="s2">"성남시"</span><span class="p">,</span> <span class="s2">"분당구"</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"1.2"</span><span class="p">,</span> <span class="s2">"경기도"</span><span class="p">,</span> <span class="s2">"수원시"</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"1.2.2"</span><span class="p">,</span> <span class="s2">"경기도"</span><span class="p">,</span> <span class="s2">"수원시"</span><span class="p">,</span> <span class="s2">"팔달구"</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"1.2.1"</span><span class="p">,</span> <span class="s2">"경기도"</span><span class="p">,</span> <span class="s2">"수원시"</span><span class="p">,</span> <span class="s2">"영통구"</span><span class="p">],</span>
@@ -16449,13 +16445,33 @@
 </div>
 </div>
 
-<p>배열의 첫 번째 항목은 트리 노드에 표시될 <code class="highlighter-rouge">아이콘 인덱스(icon index)</code> 입니다.
-두 번째 항목은 트리를 구성할 계층 구조을 담고 있는 <code class="highlighter-rouge">트리 코드(tree code)</code> 입니다.</p>
+<h4 id="array---">Array 데이터로 트리 구현</h4>
 
-<p>우선, 위 데이터를 입력하기 위해 <a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a>함수를 호출하는 샘플 코드를 작성해 보겠습니다.</p>
+<p><code class="highlighter-rouge">Array 데이터</code>로 트리를 구현하기 위해서 아래 함수를 사용할 수 있습니다.</p>
+
+<ul>
+  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a></li>
+</ul>
+
+<p>함수를 호출하는 샘플 코드를 작성해 보겠습니다.</p>
+
+<p>데이터 입력시 정렬을 위해 함수의 <code class="highlighter-rouge">needSorting</code>인자를 <code class="highlighter-rouge">true</code>로 설정합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="setRowsNeedSorting">배열형 데이터 정렬하여 입력하기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="c1">// 배열형 데이터 정렬하여 입력하기</span>
+<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="s2">"tree"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"icon"</span><span class="p">);</span>
+<span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>데이터 입력시 정렬을 하지 않고 입력 하려면 <code class="highlighter-rouge">needSorting</code>인자를 <code class="highlighter-rouge">false</code>로 설정합니다.</p>
 
 <p><a class="btn primary small round lowercase clearRows">데이터 지우기</a>
-<a class="btn primary small round lowercase" id="setRowsNeedSorting">배열형 데이터 정렬하여 입력하기</a></p>
+<a class="btn primary small round lowercase" id="setRowsNoSorting">배열형 데이터 정렬하지 않고 입력하기</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -16465,14 +16481,39 @@
 6</pre></td><td class="code"><pre><span class="c1">// 데이터 지우기</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">clearRows</span><span class="p">();</span>
 
-<span class="c1">// 배열형 데이터 정렬하여 입력하기</span>
-<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="s2">"tree"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"icon"</span><span class="p">);</span>
+<span class="c1">// 배열형 데이터 정렬하지 않고 입력하기</span>
+<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="s2">"tree"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"icon"</span><span class="p">);</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
-<h4 id="treefield">계층구조 표현을 위한 treeField</h4>
+<h4 id="array----1">트리 구현을 위한 Array 데이터 계층 구조</h4>
+
+<p>Array 데이터 계층 구조에서 주목할 부분은 <code class="highlighter-rouge">treeField</code> 입니다. <code class="highlighter-rouge">treeField</code>는 이 데모의 데이터에서
+두 번째 항목에 해당하는 필드 입니다. 즉,</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="s1">'1'</span>
+<span class="s1">'1.1'</span>
+<span class="s1">'1.1.1'</span>
+<span class="p">...</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><code class="highlighter-rouge">treeField</code>는 트리를 구성하기 위한 문자열이며 설명의 편의상 필드의 값을 <code class="highlighter-rouge">트리코드(tree code)</code>라 명명 하겠습니다.</p>
+
+<p><code class="highlighter-rouge">트리코드(tree code)</code>는 먼저 입력된 트리코드와 비교하여 <code class="highlighter-rouge">문자열의 포함 여부</code> 또는 <code class="highlighter-rouge">문자열의 갯수</code>를
+기준으로 노드의 깊이(Level)를 판단 합니다. 트리코드에 대한 자세한 설명은
+[<a href="http://help.realgrid.com/tutorial/b9-3/">B9-3 TreeView의 ItemModel 이해하기</a>]를
+참조하세요.</p>
+
+<p>배열의 각 항목은 DataProvider에 구성된 필드(Field)들에 순서대로 매핑됩니다.</p>
+
+<p>이 샘플 데이터에서 배열의 첫 번째 항목은 트리 노드에 표시될 <code class="highlighter-rouge">아이콘 인덱스(icon index)</code> 입니다.</p>
 
 <p><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a>함수의 정의는 아래와 같습니다.</p>
 
@@ -16480,6 +16521,7 @@
 </pre></td></tr></tbody></table>
 </div>
 </div>
+
 <p>이 함수의 두 번째 인자인 <code class="highlighter-rouge">treeField</code>는 데이터에서 트리 구조를 담고 있는 필드의 이름을 입력하는 인자입니다.
 TreeView는 이 필드의 값으로 트리를 구성합니다.</p>
 
@@ -16500,24 +16542,6 @@ TreeView는 이 필드의 값으로 트리를 구성합니다.</p>
 <p>배열형 데이터를 입력할 때 주의할 점은 <mark>정렬되지 않은</mark> <code class="highlighter-rouge">treeField</code>값을 입력할 경우 정확한 계층 구조를 만들지 못할 수도 있다는 사실입니다.</p>
 
 <p>위의 배열형 데이터를 다시 자세히 보면 일곱 번째 행에 있는 <code class="highlighter-rouge">성남시 수정구</code>의 경우 treeField 값이 순방향 정렬 순서에 맞지 않는 곳에 위치해 있습니다.</p>
-
-<p><a class="btn primary small round lowercase clearRows">데이터 지우기</a>
-<a class="btn primary small round lowercase" id="setRowsNoSorting">배열형 데이터 정렬하지 않고 입력하기</a></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6</pre></td><td class="code"><pre><span class="c1">// 데이터 지우기</span>
-<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">clearRows</span><span class="p">();</span>
-
-<span class="c1">// 배열형 데이터 정렬하지 않고 입력하기</span>
-<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="s2">"tree"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"icon"</span><span class="p">);</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
 
 <blockquote>
   <p>정렬되지 않은 배열 데이터를 입력할 경우 setRows() 함수의 로직으로 인해 원하는 계층 구조가 만들어 지지 않을 수 있습니다.
@@ -16586,8 +16610,8 @@ TreeView는 이 필드의 값으로 트리를 구성합니다.</p>
 var data = [
     [0, "1", "경기도"],
     [0, "1.1", "경기도", "성남시"],
-    [0, "1.1.1", "경기도", "성남시", "분당구"],
-    [0, "1.2", "경기도", "수원시"],
+    [0, "2.", "경기도", "성남시", "분당구"],
+    [0, "1.", "경기도", "수원시"],
     [0, "1.2.2", "경기도", "수원시", "팔달구"],
     [0, "1.2.1", "경기도", "수원시", "영통구"],
     [0, "1.1.2", "경기도", "성남시", "수정구"],

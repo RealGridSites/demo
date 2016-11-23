@@ -1,5 +1,5 @@
 
-#### CSV Data 구조
+#### CSV 데이터 구조
 
 [TreeDataProvider.fillCsvData()](http://help.realgrid.com/api/TreeDataProvider/fillCsvData/)함수에 넘겨줄 배열 데이터의 간단한 샘플을 작성해 보면 아래와 같습니다.
 

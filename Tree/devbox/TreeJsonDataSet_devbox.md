@@ -1,12 +1,6 @@
+#### JSON 트리 데이터
 
-#### JSON Data 구조
-
-JSON 데이터를 이용해 트리뷰를 구현하기 위해서 아래 두 함수를 사용할 수 있습니다.
-
-- [TreeDataProvider.setJsonRows()](http://help.realgrid.com/api/TreeDataProvider/setJsonRows/)
-- [TreeDataProvider.fillJsonData()](http://help.realgrid.com/api/TreeDataProvider/fillJsonData/)
-
-아래 코드는 트리뷰(TreeView)를 구현하기 위한 JSON형식의 데이터 구조를 보여줍니다.
+아래 코드는 트리를 구현하기 위한 JSON형식의 데이터 입니다.
 
 ```js
 var data = {
@@ -34,23 +28,20 @@ var data = {
 }
 ```
 
-> 트리 구성을 위한 `필드`와 `컬럼`은 트리 아래 ToolBox 버튼을 눌러 확인해 보세요.
+#### JSON 데이터로 트리 구현
 
-이 데이터 구조에서 주목할 부분은 `rows`라는 이름의 배열 속성 입니다.
-이 속성은 트리의 계층구조를 표현하기 위한 속성명 입니다.
-보다 자세한 내용은 아래 `JSON에서 계층 구조` 부분을 참조하세요.
+`JSON 데이터`로 트리를 구현하기 위해 아래 두 함수를 사용할 수 있습니다.
+
+- [TreeDataProvider.setJsonRows()](http://help.realgrid.com/api/TreeDataProvider/setJsonRows/)
+- [TreeDataProvider.fillJsonData()](http://help.realgrid.com/api/TreeDataProvider/fillJsonData/)
 
 먼저 [setJsonRows()](http://help.realgrid.com/api/TreeDataProvider/setJsonRows/)
 함수를 호출하여 트리를 구현해 보겠습니다.
 
-<a class="btn primary small round lowercase clearRows">데이터 지우기</a>
 <a class="btn primary small round lowercase" id="setJsonRows">setJsonRows()로 트리 구현</a>
 
 ```js
-// 데이터 지우기
-treeDataProvider.clearRows();
-
-// JSON 데이터 입력하기
+// setJsonRows()로 트리 구현
 treeDataProvider.setJsonRows(data, "rows", "", "icon");
 treeView.expandAll();
 ```
@@ -65,20 +56,21 @@ treeView.expandAll();
 // 데이터 지우기
 treeDataProvider.clearRows();
 
-// JSON 데이터 입력하기
+// fillJsonData()로 트리 구현
 treeDataProvider.fillJsonData(data, {rows: "rows", icon: "icon"});
 treeView.expandAll();
 ```
-각 함수의 API페이지로 이동해 구현 방법의 차이를 확인해 보세요.
 
-#### JSON에서 계층 구조
+#### 트리 구현을 위한 JSON 데이터의 계층 구조
 
 트리를 구현하기 위한 JSON 데이터의 구조에 대해 조금 더 알아보겠습니다.
 
-위 JSON 데이터에서 `rows` 속성은 자식 노드를 위한 속성입니다. 즉, JSON 에서 계층 구조는
-계층을 표현하기 위한 속성(여기서는 `rows`)에 하위 노드의 데이터를 배열로 넣어주면 됩니다.
+이 데모의 JSON 데이터 구조에서 주목할 부분은 `rows`라는 이름의 배열 속성 입니다.
+이 속성은 트리의 계층구조를 표현하기 위한 속성명 입니다.
+`rows` 속성은 자식 노드를 위한 속성입니다.
+즉, JSON 에서 계층 구조는 계층을 표현하기 위한 속성(여기서는 `rows`)에 하위 노드의 데이터를 배열로 넣어주면 됩니다.
 
-이 속성명은 JSON데이터로 트리를 구현하기 위한 각 함수의 인자로 넘겨주어야 합니다.
+이 속성명은 JSON데이터로 트리를 구현하기 위한 `함수의 인자` 또는 `옵션의 속성`으로 넘겨주게 됩니다.
 
 아래는 [TreeDataProvider.setJsonRows()](http://help.realgrid.com/api/TreeDataProvider/setJsonRows/)함수의 정의 입니다.
 
