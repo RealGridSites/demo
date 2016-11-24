@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     jQuery ajax() 이용하기
     </title>
-    <meta name="description" content="트리뷰(TreeView)를 구현하기 위해 XML 데이터를 사용할 수 있습니다.XML 데이터의 구조와 TreeDataProvider.setXmlRows()함수를 사용하여 트리뷰(TreeView)를 구현하는 샘플 코드를 살펴보세요.">
+    <meta name="description" content="jQuery.ajax()는 비동기 HTTP 통신을 위한 함수 입니다.이 함수를 이용해 비동기로 그리드뷰(GridView) 또는 트리뷰(TreeView)에 원격의 데이터를 가져올 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -16364,8 +16364,48 @@
         </div>
 
         <div class="document-formatting">
-            <p>트리뷰(TreeView)를 구현하기 위해 <code class="highlighter-rouge">XML 데이터</code>를 사용할 수 있습니다.
-XML 데이터의 구조와 <a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수를 사용하여 트리뷰(TreeView)를 구현하는 샘플 코드를 살펴보세요.</p>
+            <p><a href="http://api.jquery.com/jquery.ajax/">jQuery.ajax()</a>는 비동기 HTTP 통신을 위한 함수 입니다.
+이 함수를 이용해 비동기로 그리드뷰(GridView) 또는 트리뷰(TreeView)에 원격의 데이터를 가져올 수 있습니다.</p>
+
+<script>
+  var onDoneDataSet = function() {
+    var imageList = new RealGridJS.ImageList("images", "/demo/resource/image/smallflag/");
+    imageList.addUrls([
+                "icon_male.png",
+                "icon_female.png",
+                "icon_folder_col.png",
+                "icon_folder_exp.png",
+                "de.png",
+                "gr.png",
+                "hu.png",
+                "is.png",
+                "eg.png",
+                "au.png",
+                "nz.png",
+                "ph.png",
+                "sg.png",
+                "th.png",
+                "tr.png",
+                "ca.png",
+                "mx.png",
+                "us.png",
+                "bo.png",
+                "cr.png",
+                "pe.png",
+                "uy.png"
+        ]
+    );
+ 
+    treeView.registerImageList(imageList);
+    treeView.setTreeOptions({
+        iconImages: imageList.getName(),
+        iconWidth: 20
+    });
+
+    treeView.expand(1);
+    treeView.expand(0);
+  }
+</script>
 
 <div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
 
@@ -16399,7 +16439,7 @@ XML 데이터의 구조와 <a href="http://help.realgrid.com/api/TreeDataProvide
         
             
 
-            $.getJSON("/demo/resource/layout/treeFieldset2.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/demo/resource/layout/treeFieldset3.json", function (data, textStatus, jqXHR) {
                 treeDataProvider.setFields(data);
 
                 $('.codeview.realtreefield').html(
@@ -16426,7 +16466,7 @@ XML 데이터의 구조와 <a href="http://help.realgrid.com/api/TreeDataProvide
         
             
 
-            $.getJSON("/demo/resource/layout/treeColumnset2.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/demo/resource/layout/treeColumnset3.json", function (data, textStatus, jqXHR) {
                 treeView.setColumns(data);
 
                 $('.codeview.realtreecolumn').html(
@@ -16532,6 +16572,36 @@ XML 데이터의 구조와 <a href="http://help.realgrid.com/api/TreeDataProvide
         
 
 
+        
+            
+
+            $.getJSON("/demo/resource/data/treedata3.json", function (data, textStatus, jqXHR) {
+                
+                  treeDataProvider.setJsonRows(
+                    data
+                     ,"rows" 
+                     ,"" 
+                     ,"icon" 
+                  );
+                
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+                  onDoneDataSet(data, textStatus, jqXHR);
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
         
 
     });
