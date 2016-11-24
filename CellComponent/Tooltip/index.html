@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     툴팁
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="컬럼의 헤더및 데이터 영역에서 마우스 hovering시 툴팁을 표시할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -1115,7 +1115,7 @@
               
               <li class="item-toc ">
                 <a href="/demo/CellComponent/BlinkCell/"
-                  class=" sidebar-link">
+                  class=" ">
                   <span>같은 값의 셀 생략 하기</span>
                   <span style="display: none;">
                   BlinkCell, 병합, 셀병합
@@ -1323,7 +1323,7 @@
               
               <li class="item-toc ">
                 <a href="/demo/CellComponent/CellButton/"
-                  class=" sidebar-link">
+                  class=" ">
                   <span>셀 버튼</span>
                   <span style="display: none;">
                   CellButton, button
@@ -1423,7 +1423,7 @@
               
               <li class="item-toc ">
                 <a href="/demo/CellComponent/PopupMenu/"
-                  class=" sidebar-link">
+                  class=" ">
                   <span>팝업 메뉴</span>
                   <span style="display: none;">
                   PopupMenu, popup
@@ -1469,7 +1469,7 @@
               
               <li class="item-toc ">
                 <a href="/demo/CellComponent/CellMerging/"
-                  class=" sidebar-link">
+                  class=" ">
                   <span>셀 병합</span>
                   <span style="display: none;">
                   CellMerging, 병합, merge
@@ -1641,7 +1641,7 @@
               
               <li class="item-toc ">
                 <a href="/demo/CellComponent/LookupColumn/"
-                  class=" sidebar-link">
+                  class=" ">
                   <span>Lookup 컬럼</span>
                   <span style="display: none;">
                   LookupColumn, Lookup, label
@@ -1805,10 +1805,10 @@
               
               <li class="item-toc ">
                 <a href="/demo/CellComponent/RegularExpression/"
-                  class=" sidebar-link">
+                  class=" ">
                   <span>정규식 표현</span>
                   <span style="display: none;">
-                  RegularExpression
+                  RegularExpression, 정규식, 마스킹
                   </span>
                 </a>
               </li>
@@ -1869,7 +1869,7 @@
               
               <li class="item-toc current">
                 <a href="/demo/CellComponent/Tooltip/"
-                  class="current sidebar-link">
+                  class="current ">
                   <span>툴팁</span>
                   <span style="display: none;">
                   Tooltip
@@ -16343,18 +16343,257 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">툴팁</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>컬럼의 헤더및 데이터 영역에서 마우스 hovering시 툴팁을 표시할 수 있습니다.</p>
+
+<script>
+	var onDoneDataSet = function() {
+		gridView.onShowTooltip = function (grid, index, value) {
+		    var column = index.column;
+		    var itemIndex = index.itemIndex;
+		     
+		    var tooltip = value;
+		    if (column == "OrderID") {
+		        tooltip = "No: " + value +
+		            "\r\nSales Emp: " + grid.getValue(itemIndex, "EmployeeID") +
+		            "\r\nProduct:" + grid.getValue(itemIndex, "ProductName") +
+		            "\r\nQty:" + grid.getValue(itemIndex, "Quantity");
+		    } else if (column == "CustomerID") {
+		        tooltip = "Id: " + value +
+		            "\r\nName: " + grid.getValue(itemIndex, "CompanyName") +
+		            "\r\nPhone:" + grid.getValue(itemIndex, "Phone");
+		    } else if (column == "ShipVia") {
+		        tooltip = "ShipVia: " + value +
+		            "\r\nShip Name: " + grid.getValue(itemIndex, "ShipName") +
+		            "(" + grid.getValue(itemIndex, "ShipAddress") +  " " +
+		                  grid.getValue(itemIndex, "ShipCity") + " " +
+		                  grid.getValue(itemIndex, "ShipCountry") +  ")" +
+		            "\r\nFreight:" + grid.getValue(itemIndex, "Freight");
+		    }
+		    return tooltip;
+		}
+	}
+</script>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.20");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/demo/resource/layout/tooltipField.json", function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/tooltipColumn.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/gridOption1.json", function (data, textStatus, jqXHR) {
+                gridView.setOptions(data);
+
+                $('.codeview.realgridviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+
+            $.getJSON("/demo/resource/data/CustomOrders.json", function (data, textStatus, jqXHR) {
+                dataProvider.setRows(data);
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+                  onDoneDataSet(data, textStatus, jqXHR);
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDataSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -16363,6 +16602,157 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="tooltip-">Tooltip 표시하기</h4>
+
+<p>전체 헤더의 툴팁 표시 여부를 설정합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnHeaderShowTooltip">헤더 툴팁 표시</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">({</span><span class="na">showTooltip</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>특정 컬럼 헤더의 툴팁 표시여부를 설정합니다. <br />
+(전체 헤더의 툴팁 표시가 true 때 특정 컬럼만 해제할 수 있습니다.)</p>
+
+<p><a class="btn primary small round lowercase" id="btnColumnHeaderShowTooltip">R/D컬럼 헤더 툴팁 표시 해제</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"RequiredDate"</span><span class="p">,</span> <span class="s2">"header"</span><span class="p">,</span> <span class="p">{</span><span class="na">showTooltip</span><span class="p">:</span><span class="kc">false</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>헤더 툴팁을 다른 내용으로 변경하려면 <code class="highlighter-rouge">header.tooltip</code>에 문자열을 지정합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnColumnHeaderTooltip">O/D컬럼 헤더 툴팁 내용 변경</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderDate"</span><span class="p">,</span> <span class="s2">"header"</span><span class="p">,</span> <span class="p">{</span><span class="na">tooltip</span><span class="p">:</span><span class="s2">"Order Date"</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>데이터 영역에서 툴팁을 표시할 경우 <code class="highlighter-rouge">column.renderer.showTooltip</code>을 true로 설정하면 됩니다.<br />
+데이터 영역의 툴팁은 기본적으로 원래의 값이 표시되고 다른 내용을 표시하려면 onShowTooltip 이벤트를 사용합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s2">"OrderID"</span><span class="p">,</span>
+    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"OrderID"</span><span class="p">,</span>
+    <span class="na">width</span><span class="p">:</span> <span class="s2">"90"</span><span class="p">,</span>
+    <span class="na">renderer</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">showTooltip</span><span class="p">:</span> <span class="kc">true</span> <span class="c1">//툴팁 표시 여부</span>
+    <span class="p">},</span>
+    <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"center"</span><span class="p">,</span>
+        <span class="na">background</span><span class="p">:</span> <span class="s2">"#ffffff99"</span>
+    <span class="p">},</span>
+    <span class="na">header</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">"Order"</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+	<span class="p">...</span>
+<span class="p">}];</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="onshowtooltip-">onShowTooltip 이벤트</h4>
+
+<p><a href="http://help.realgrid.com/api/GridBase/onShowTooltip/">onShowTooltip</a> 이벤트는
+데이터셀의 툴팁이 표시될때 발생하는 콜백 함수입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onShowTooltip</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">column</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">itemIndex</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">itemIndex</span><span class="p">;</span>
+     
+    <span class="kd">var</span> <span class="nx">tooltip</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">column</span> <span class="o">==</span> <span class="s2">"OrderID"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">tooltip</span> <span class="o">=</span> <span class="s2">"No: "</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span>
+            <span class="s2">"\r\nSales Emp: "</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"EmployeeID"</span><span class="p">)</span> <span class="o">+</span>
+            <span class="s2">"\r\nProduct:"</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"ProductName"</span><span class="p">)</span> <span class="o">+</span>
+            <span class="s2">"\r\nQty:"</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"Quantity"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">column</span> <span class="o">==</span> <span class="s2">"CustomerID"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">tooltip</span> <span class="o">=</span> <span class="s2">"Id: "</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span>
+            <span class="s2">"\r\nName: "</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"CompanyName"</span><span class="p">)</span> <span class="o">+</span>
+            <span class="s2">"\r\nPhone:"</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"Phone"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">column</span> <span class="o">==</span> <span class="s2">"ShipVia"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">tooltip</span> <span class="o">=</span> <span class="s2">"ShipVia: "</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span>
+            <span class="s2">"\r\nShip Name: "</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"ShipName"</span><span class="p">)</span> <span class="o">+</span>
+            <span class="s2">"("</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"ShipAddress"</span><span class="p">)</span> <span class="o">+</span>  <span class="s2">" "</span> <span class="o">+</span>
+                  <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"ShipCity"</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span>
+                  <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"ShipCountry"</span><span class="p">)</span> <span class="o">+</span>  <span class="s2">")"</span> <span class="o">+</span>
+            <span class="s2">"\r\nFreight:"</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"Freight"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">tooltip</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+$('#btnHeaderShowTooltip').click(function() {
+    gridView.setHeader({showTooltip: true})
+});
+
+$('#btnColumnHeaderShowTooltip').click(function() {
+    gridView.setColumnProperty("RequiredDate", "header", {showTooltip:false})
+});
+
+$('#btnColumnHeaderTooltip').click(function() {
+    gridView.setColumnProperty("OrderDate", "header", {tooltip:"OrderDate"})
+});
+</script>
+
+
+  </div>
+</div>
 
 
 
