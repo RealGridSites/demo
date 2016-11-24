@@ -15097,7 +15097,7 @@
               
               <li class="item-toc current">
                 <a href="/demo/Tree/TreeJQueryajax/"
-                  class="current sidebar-link">
+                  class="current ">
                   <span>jQuery ajax() 이용하기</span>
                   <span style="display: none;">
                   트리, Tree
@@ -16402,8 +16402,8 @@
         iconWidth: 20
     });
 
-    treeView.expand(1);
-    treeView.expand(0);
+    treeDataProvider.clearRows();
+
   }
 </script>
 
@@ -16620,120 +16620,12 @@
   <div class="sidebar-content devbox document-formatting">
       
       
-<h4 id="xml-data-">XML Data 구조</h4>
+<h4 id="remote--">원격(Remote) 데이터 로드</h4>
 
-<p><a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수에 넘겨줄 배열 데이터의 간단한 샘플을 작성해 보면 아래와 같습니다.</p>
+<p><a href="http://api.jquery.com/jquery.ajax/">jQuery.ajax()</a>함수를 이용해 원격 데이터를 가져오는
+코드를 작성해 보겠습니다.</p>
 
-<blockquote>
-  <p>트리 구성을 위한 <code class="highlighter-rouge">필드</code>와 <code class="highlighter-rouge">컬럼</code>은 트리 아래 ToolBox 버튼을 눌러 확인해 보세요.</p>
-</blockquote>
-
-<p>아래 코드는 트리뷰(TreeView)에 계층 구조를 구현하기 위한 XML형식의 데이터 구조를 보여줍니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span>
-  <span class="s2">"&lt;rows&gt;"</span><span class="o">+</span>
-  <span class="s2">"  &lt;row icon='0' do='경기도'&gt;"</span><span class="o">+</span>
-  <span class="s2">"    &lt;row icon='0' do='경기도' si='성남시'&gt;"</span><span class="o">+</span>
-  <span class="s2">"      &lt;row icon='0' do='경기도' si='성남시' gu='분당구' /&gt;"</span><span class="o">+</span>
-  <span class="s2">"      &lt;row icon='0' do='경기도' si='성남시' gu='수정구'/&gt;"</span><span class="o">+</span>
-  <span class="s2">"    &lt;/row&gt;"</span><span class="o">+</span>
-  <span class="s2">"    &lt;row icon='0' do='경기도' si='수원시'&gt;"</span><span class="o">+</span>
-  <span class="s2">"      &lt;row icon='0' do='경기도' si='수원시' gu='팔달구' /&gt;"</span><span class="o">+</span>
-  <span class="s2">"      &lt;row icon='0' do='경기도' si='수원시' gu='영통구' /&gt;"</span><span class="o">+</span>
-  <span class="s2">"    &lt;/row&gt;"</span><span class="o">+</span>
-  <span class="s2">"    &lt;row icon='0' do='경기도' si='안양시' /&gt;"</span><span class="o">+</span>
-  <span class="s2">"    &lt;row icon='0' do='경기도' si='의정부시' /&gt;"</span><span class="o">+</span>
-  <span class="s2">"    &lt;row icon='0' do='경기도' si='김포시' /&gt;"</span><span class="o">+</span>
-  <span class="s2">"  &lt;/row&gt;"</span><span class="o">+</span>
-  <span class="s2">"&lt;/rows&gt;"</span><span class="p">;</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>이 데이터 구조에서 주목할 부분은 <code class="highlighter-rouge">row</code>라는 이름의 노드(node 또는 엘리먼트 element)입니다.
-이 노드는 트리의 계층구조를 표현하기 위한 엘리먼트이며
-<a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수를 호출할 때 인자로 넘겨주어야 합니다.</p>
-
-<p>함수를 호출하는 샘플 코드를 작성해 보겠습니다.</p>
-
-<p><a class="btn primary small round lowercase" id="clearRows">데이터 지우기</a>
-<a class="btn primary small round lowercase" id="setXmlRows">XML 데이터 입력하기</a></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6</pre></td><td class="code"><pre><span class="c1">// 데이터 지우기</span>
-<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">clearRows</span><span class="p">();</span>
-
-<span class="c1">// XML 데이터 입력하기</span>
-<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setXmlRows</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="s2">"row"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"icon"</span><span class="p">);</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<h4 id="xml--">XML에서 계층 구조</h4>
-
-<p>XML의 노드는 반드시 시작 태그(start-tag)와 끝 태그(end-tag)가 쌍을 이루어야 합니다.
-<code class="highlighter-rouge">부모 노드(parent)</code>의 시작 태그와 끝 태그 사이에 들어 있는 또 다른 노드는 <code class="highlighter-rouge">자식 노드(child)</code>를 의미하게 됩니다.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7</pre></td><td class="code"><pre><span class="nt">&lt;parent&gt;</span>
-  <span class="nt">&lt;child</span> <span class="na">field=</span><span class="s">value</span><span class="nt">&gt;</span>      <span class="c">&lt;!-- 부모 노드 --&gt;</span>
-    <span class="nt">&lt;child</span> <span class="na">field=</span><span class="s">value</span> <span class="nt">/&gt;</span>  <span class="c">&lt;!-- 자식 노드 --&gt;</span>
-    ...
-    <span class="nt">&lt;child</span> <span class="na">field=</span><span class="s">value</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/child&gt;</span>
-<span class="nt">&lt;/parent&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>위 XML 샘플 코드에서는 <code class="highlighter-rouge">field</code>가 노드의 속성(attribute)</p>
-
-<p><a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수는
-이런 XML의 계층 구조를 그대로 트리뷰(TreeView)에 적용해 주는 함수입니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setXmlRows</span><span class="p">(</span><span class="nx">xml</span><span class="p">,</span> <span class="nx">rowElement</span><span class="p">,</span> <span class="nx">childrenField</span><span class="p">,</span> <span class="nx">iconField</span><span class="p">)</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>이 함수의 두 번째 인자인 <code class="highlighter-rouge">rowElement</code>는 XML 데이터에서 계층 구조를 담고 있는 노드의 이름입니다.
-이 데모에서는 <code class="highlighter-rouge">row</code>노드가 여기에 해당 됩니다.</p>
-
-<h4 id="section">트리에 아이콘 표시하기</h4>
-
-<p>트리뷰에는 각 노드에 아이콘을 표시할 수 있습니다.
-<a href="http://help.realgrid.com/api/TreeDtaProvider/setJsonRows/">TreeDataProvider.setJsonRows()</a>함수의 마지막 인자인 <code class="highlighter-rouge">iconProp</code>에는
-트리컬럼에 표시할 아이콘의 index값이 들어 있는 필드명을 입력합니다.</p>
-
-<p><a class="btn primary small round lowercase" id="setIcons">트리 아이콘 표시</a></p>
-
-<p>트리뷰에서 사용할 아이콘의 목록을 <a href="http://help.realgrid.com/api/features/Image%20List/">ImageList</a>로 작성하고 만들어진 ImageList를
-<a href="http://help.realgrid.com/api/GridView/registerImageList/">TreeView.registerImageList()</a>함수로 TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는 아이콘에 트리노드에 표시됩니다.</p>
+<p><a class="btn primary small round lowercase" id="loadRemoteData">원격 데이터 가져오기</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -16755,80 +16647,104 @@
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="c1">// 이미지 리스트 만들기</span>
-<span class="kd">var</span> <span class="nx">imgFiles</span> <span class="o">=</span> <span class="p">[</span>
-              <span class="s2">"kr.png"</span><span class="p">,</span>
-              <span class="s2">"br.png"</span><span class="p">,</span>
-              <span class="s2">"fr.png"</span><span class="p">,</span>
-              <span class="s2">"mx.png"</span><span class="p">,</span>
-              <span class="s2">"pt.png"</span><span class="p">,</span>
-              <span class="s2">"es.png"</span><span class="p">,</span>
-              <span class="s2">"gb.png"</span><span class="p">,</span>
-              <span class="s2">"us.png"</span><span class="p">,</span>
-              <span class="s2">"ve.png"</span>
-  <span class="p">];</span>
-<span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
-<span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">(</span><span class="nx">imgFiles</span><span class="p">);</span>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></td><td class="code"><pre><span class="c1">// 원격 데이터를 다운로드 하는 동안 프로그래스바를 표시합니다.</span>
+<span class="nx">treeView</span><span class="p">.</span><span class="nx">showProgress</span><span class="p">();</span>
 
-<span class="c1">// 트리뷰에 이미지 리스트 등록하기</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">registerImageList</span><span class="p">(</span><span class="nx">imageList</span><span class="p">);</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span>
-    <span class="na">iconImages</span><span class="p">:</span> <span class="nx">imageList</span><span class="p">.</span><span class="nx">getName</span><span class="p">(),</span>
-    <span class="na">iconWidth</span><span class="p">:</span> <span class="mi">20</span>
+<span class="c1">// jQuery ajax() 함수 호출</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"http://"</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="o">+</span> <span class="s2">"/demo/resource/data/treedata3.json?__time__="</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="s2">"text"</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 원격 데이터를 비동기로 가져온 경우 호출 되는 콜백</span>
+      <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span> <span class="na">rows</span><span class="p">:</span> <span class="s2">"rows"</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s2">"icon"</span> <span class="p">});</span>
+      <span class="nx">treeView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
+    <span class="p">},</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 원격 데이터를 비동기로 가져오는 동안 오류가 발생하면 호출 되는 콜백</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">complete</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// ajax()함수 호출이 완료되면 호출 되는 콜백</span>
+      <span class="nx">treeView</span><span class="p">.</span><span class="nx">closeProgress</span><span class="p">();</span>
+    <span class="p">},</span>
+    <span class="na">xhr</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">window</span><span class="p">.</span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+        <span class="c1">// xhr 요청 정보를 이용해 progress 이벤트 리스너 등록</span>
+        <span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"progress"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">lengthComputable</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">treeView</span><span class="p">.</span><span class="nx">setProgress</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">total</span><span class="p">,</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">loaded</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nx">xhr</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
+<p>RealGrid의 기반 클래스인 GridBase의
+<a href="http://help.realgrid.com/api/GridBase/showProgress/">showProgress()</a>함수를 사용하면
+원격에서 데이터를 가져오는 동안 프로그래스바(Progress Bar)를 보여줄 수 있습니다.</p>
+
+<p>위 버튼을 클릭하면 원격 데이터를 가져오는 동안 프로그래스바(Progress Bar)가 표시 되는데, 이
+<mark>프로그래스바(Progress Bar)는 그리드나 트리에 데이터가 입력되는 진행상태가 아니라 원격에 있는 데이터를
+비동기로 가져오는 동안 네트워크 진행상태를 의미 합니다.</mark></p>
+
+<p>자세한 내용은 <a href="http://api.jquery.com/jquery.ajax/">jQuery.ajax()</a>함수 페이지를 참조하세요.</p>
+
 <script>
-var data =
-  "<rows>"+
-  "  <row icon='0' do='경기도'>"+
-  "    <row icon='0' do='경기도' si='성남시'>"+
-  "      <row icon='0' do='경기도' si='성남시' gu='분당구' />"+
-  "      <row icon='0' do='경기도' si='성남시' gu='수정구'/>"+
-  "    </row>"+
-  "    <row icon='0' do='경기도' si='수원시'>"+
-  "      <row icon='0' do='경기도' si='수원시' gu='팔달구' />"+
-  "      <row icon='0' do='경기도' si='수원시' gu='영통구' />"+
-  "    </row>"+
-  "    <row icon='0' do='경기도' si='안양시' />"+
-  "    <row icon='0' do='경기도' si='의정부시' />"+
-  "    <row icon='0' do='경기도' si='김포시' />"+
-  "  </row>"+
-  "</rows>";
+$('#loadRemoteData').click(function() {
+  treeDataProvider.onLoadCompleted = function (provider) {
+        console.log("Data loaded.");
+    }
 
-$('#setXmlRows').click(function() {
-  treeDataProvider.setXmlRows(data, "row", "", "icon");
-  treeView.expandAll();
-});
+  treeView.showProgress();
+  $.ajax({
+      type: "GET",
+      url: "http://" + location.host + "/demo/resource/data/treedata3.json?__time__=" + new Date().getTime(),
+      dataType: "text",
+      success: function (data) {
+          treeDataProvider.fillJsonData(data, { rows: "rows", icon: "icon" });
 
-$('#clearRows').click(function() {
-  treeDataProvider.clearRows();
-});
+          treeView.expand(1);
+          treeView.expand(0);
 
-$('#setIcons').click(function() {
-  var imgFiles = [
-                "kr.png",
-                "br.png",
-                "fr.png",
-                "mx.png",
-                "pt.png",
-                "es.png",
-                "gb.png",
-                "us.png",
-                "ve.png"
-    ];
-  var imageList = new RealGridJS.ImageList("images", "/demo/resource/image/smallflag/");
-  imageList.addUrls(imgFiles);
-
-  treeView.registerImageList(imageList);
-
-  treeView.setTreeOptions({
-      iconImages: imageList.getName(),
-      iconWidth: 20
+          treeView.setFocus();
+      },
+      error: function (xhr, status, error) {
+          alert(error);
+      },
+      complete: function (data) {
+          treeView.closeProgress();
+      },
+      xhr: function () {
+          var xhr = new window.XMLHttpRequest();
+          //Download progress
+          xhr.addEventListener("progress", function (evt) {
+              if (evt.lengthComputable) {
+                treeView.setProgress(0, evt.total, evt.loaded);
+              }
+          }, false);
+          return xhr;
+      }
   });
-})
+});
 </script>
 
 
