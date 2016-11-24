@@ -5,8 +5,8 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/demo/</link>
     <atom:link href="demo.realgrid.com/demo/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Nov 2016 18:47:21 +0900</pubDate>
-    <lastBuildDate>Thu, 24 Nov 2016 18:47:21 +0900</lastBuildDate>
+    <pubDate>Fri, 25 Nov 2016 01:59:55 +0900</pubDate>
+    <lastBuildDate>Fri, 25 Nov 2016 01:59:55 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -823,31 +823,35 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
         
             
 
-            $.getJSON(&quot;/demo/resource/data/treedata1.json&quot;, function (data, textStatus, jqXHR) {
-                
-                  treeDataProvider.setRows(
-                    data
-                     ,&quot;tree&quot; 
-                     ,true 
-                     ,&quot;&quot; 
-                     ,&quot;icon&quot; 
-                  );
+            $.ajax({
+              type: &quot;GET&quot;,
+              url:&quot;/demo/resource/data/treedata1&quot;,
+              success: function (data, textStatus, jqXHR) {
                 
 
-                
-            })
-            .done(function (data, textStatus, jqXHR) {
+                // 
+                //   treeDataProvider.setRows(
+                //     data
+                //      ,&quot;tree&quot; 
+                //      ,true 
+                //      ,&quot;&quot; 
+                //      ,&quot;icon&quot; 
+                //   );
+                // 
+              },
+              done: function (data, textStatus, jqXHR) {
                 treeView.setFocus();
 
                 
-            })
-            .fail(function (jqxhr, textStatus, error) {
+              },
+              fail: function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
 
                 
-                  console &amp;&amp; console.log(&quot;jQuery getJSON() Failed: &quot; + err);
-                  alert(&quot;jQuery getJSON() Failed: &quot; + err);
+                  console &amp;&amp; console.log(&quot;jQuery ajax() Failed: &quot; + err);
+                  alert(&quot;jQuery ajax() Failed: &quot; + err);
                 
+              }
             });
         
 
