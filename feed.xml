@@ -5,8 +5,8 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/demo/</link>
     <atom:link href="demo.realgrid.com/demo/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Nov 2016 13:05:37 +0900</pubDate>
-    <lastBuildDate>Fri, 25 Nov 2016 13:05:37 +0900</lastBuildDate>
+    <pubDate>Fri, 25 Nov 2016 16:12:19 +0900</pubDate>
+    <lastBuildDate>Fri, 25 Nov 2016 16:12:19 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -333,6 +333,7 @@ function myFunction() {
   &lt;mark&gt;styleSet=&quot;defaultStyle&quot;&lt;/mark&gt;
 
   &lt;mark&gt;dataSet=&quot;griddata1.json&quot;&lt;/mark&gt;
+  showProgress=&quot;true&quot;
   successDataSet=&quot;onGridSuccessDataSet&quot;
 
   gridWidth=&quot;100%&quot;
@@ -381,12 +382,13 @@ function myFunction() {
     &lt;h5 id=&quot;section-8&quot;&gt;&lt;strong&gt;데이터 정보&lt;/strong&gt;&lt;/h5&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet&lt;/code&gt;: 그리드의 data 를 담고 있는 json 파일의 이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;showProgress&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;면 데이터를 가져오는 동안 프로그래스를 보여줍니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/code&gt;: 데이터파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneDataSet&lt;/code&gt;: 데이터파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failDataSet&lt;/code&gt;: 데이터파일을 읽어오기 실패한 경우 호출됩니다.
     &lt;h5 id=&quot;section-9&quot;&gt;&lt;strong&gt;기타 정보&lt;/strong&gt;&lt;/h5&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; 하면 툴박스 보여줍니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;가 아니면 무조건 툴박스 보여줍니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridWidth&lt;/code&gt;: grid width style&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridHeight&lt;/code&gt;: grid height style&lt;/li&gt;
 &lt;/ul&gt;
@@ -645,28 +647,30 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 
         
             
+            
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;/demo/resource/data/griddata1&quot;,
+              url:&quot;/demo/resource/data/griddata1.json&quot;,
               success: function(data, textStatus, jqXHR) {
                 
                   onGridSuccessDataSet(data, textStatus, jqXHR);
                 
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               gridView.setFocus();
-
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console &amp;&amp; console.log(&quot;jQuery ajax() Failed: &quot; + err);
                 alert(&quot;jQuery ajax() Failed: &quot; + err);
               
             });
+;
         
 
     });
@@ -706,7 +710,6 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
   successDataSet=&quot;onTreeSuccessDataSet&quot;
   doneDataSet=&quot;onDoneDataSet&quot;
 
-  showToolbox=&quot;true&quot;
   treeWidth=&quot;100%&quot;
   treeHeight=&quot;300px&quot; %}
 &lt;/pre&gt;
@@ -889,25 +892,40 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
 
         
             
+              treeView.showProgress();
+            
+            
             $.ajax({
               type: &quot;GET&quot;,
               url:&quot;/demo/resource/data/treedata1.json&quot;,
               success: function(data, textStatus, jqXHR) {
                 
-                  onSuccessDataSet(data, textStatus, jqXHR);
+                  onTreeSuccessDataSet(data, textStatus, jqXHR);
                 
               }
+              
+              ,xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                xhr.addEventListener(&quot;progress&quot;, function (evt) {
+                    if (evt.lengthComputable) {
+                        treeView.setProgress(0, evt.total, evt.loaded);
+                    }
+                }, false);
+                return xhr;
+              }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               treeView.setFocus();
-
               
                 onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+                treeView.closeProgress();
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console &amp;&amp; console.log(&quot;jQuery ajax() Failed: &quot; + err);
                 alert(&quot;jQuery ajax() Failed: &quot; + err);
@@ -1026,7 +1044,7 @@ $('#btnAddTreeIcons').click(function() {
 
 &lt;p&gt;그리드 툴 박스는 각각의 그리드에 대한 정보를 조회할 수 있는 툴버튼과 공통기능 동작을 위한 버튼으로 구성됩니다.&lt;/p&gt;
 
-&lt;p&gt;툴 박스는 그리드나 트리의 아래쪽에 표시됩니다. 툴 박스를 보이지 않기 위해서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox=false&lt;/code&gt;로 인자의 값을 입력하시면 됩니다.&lt;/p&gt;
+&lt;p&gt;툴 박스는 그리드나 트리의 아래쪽에 표시됩니다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;필드정보 보기&lt;/li&gt;
@@ -1036,7 +1054,15 @@ $('#btnAddTreeIcons').click(function() {
   &lt;li&gt;데이터 보기&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;툴 박스 없는 그리드 만들기&lt;/p&gt;
+&lt;h4 id=&quot;section-11&quot;&gt;툴 박스 없는 그리드 만들기&lt;/h4&gt;
+
+&lt;p&gt;툴 박스를 보이지 않기 위해서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox=false&lt;/code&gt;로 인자의 값을 입력하시면 됩니다.&lt;/p&gt;
+
+&lt;script&gt;
+var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
+  dataProvider1.setRows(data);
+}
+&lt;/script&gt;
 
 &lt;div id=&quot;realgrid1&quot; class=&quot;realgrid&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
 
@@ -1108,7 +1134,59 @@ $('#btnAddTreeIcons').click(function() {
         
 
         
+            
 
+            $.getJSON(&quot;/demo/resource/option/dataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
+                dataProvider1.setOptions(data);
+
+                $('.codeview.realgrid1dpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView1.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = &quot;gridView1 failDpOptionSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON(&quot;/demo/resource/option/gridOption1.json&quot;, function (data, textStatus, jqXHR) {
+                gridView1.setOptions(data);
+
+                $('.codeview.realgrid1viewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView1.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = &quot;gridView1 failGridOptionSet: &quot; + err;
+                  console &amp;&amp; console.log(msg);
+                  alert(msg);
+                
+            });
         
 
         
@@ -1142,26 +1220,30 @@ $('#btnAddTreeIcons').click(function() {
 
         
             
+            
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;/demo/resource/data/carData1&quot;,
+              url:&quot;/demo/resource/data/carData1.json&quot;,
               success: function(data, textStatus, jqXHR) {
                 
+                  onCarGridSuccessDataSet(data, textStatus, jqXHR);
+                
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               gridView1.setFocus();
-
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console &amp;&amp; console.log(&quot;jQuery ajax() Failed: &quot; + err);
                 alert(&quot;jQuery ajax() Failed: &quot; + err);
               
             });
+;
         
 
     });
