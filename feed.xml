@@ -5,8 +5,8 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/demo/</link>
     <atom:link href="demo.realgrid.com/demo/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Nov 2016 01:59:55 +0900</pubDate>
-    <lastBuildDate>Fri, 25 Nov 2016 01:59:55 +0900</lastBuildDate>
+    <pubDate>Fri, 25 Nov 2016 13:05:37 +0900</pubDate>
+    <lastBuildDate>Fri, 25 Nov 2016 13:05:37 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -295,59 +295,97 @@ function myFunction() {
 &lt;h2 id=&quot;section-grid-&quot;&gt;&lt;section-grid&gt;그리드 표시하기&lt;/section-grid&gt;&lt;/h2&gt;
 
 &lt;p&gt;그리드를 페이지에 표시하는 기본방법은 페이지에 아래와 같은 코드를 입력하면 됩니다.
-아래 코드는 jekyll 템플릿으로 완성된 그리드를 미리 렌더링 하여 페이지에 그리드가 표시되게 하고 원하는 데이터까지 불러 올 수 있습니다.
-물론, 그리드의 레이아웃이나 데이터는 모두 미리 정의 되어 있어야 합니다.&lt;/p&gt;
+아래 코드는 jekyll 템플릿으로 완성된 그리드를 미리 렌더링 하여 페이지에 그리드가 표시되게 하고
+원하는 데이터까지 불러 올 수 있습니다. 물론, 그리드의 레이아웃이나 데이터는 모두 별도의 파일로
+미리 정의 되어 있어야 합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;원격으로 데이터를 불러온 다음 그리드에 데이터를 넣는 과정은 직접 코드를 작성해서 처리해야 합니다.
+이 부분은 처음과 변경된 부분입니다.
+아래 코드에서 onTreeSuccessDataSet() 함수를 콜백으로 처리하여 setRows()호출 하는 과정을
+참고하세요.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;pre&gt;
+&amp;lt;script&amp;gt;
+  var onTreeSuccessDataSet = function(data, textStatus, jqXHR) {
+    dataProvider.setRows(data);
+  }
+
+  var onDoneDataSet = function() {
+  }
+&amp;lt;/script&amp;gt;
+
 {% include realgrid.html
+
   gridVar=&quot;gridView&quot;
   dpVar=&quot;dataProvider&quot;
-  &lt;mark&gt;fieldSet=&quot;fieldset1&quot;
+  gridId=&quot;realgrid&quot;
+
+  &lt;mark&gt;fieldSet=&quot;fieldset1&quot;&lt;/mark&gt;
   successFieldSet=&quot;onSuccessFieldSet&quot;
   doneFieldSet=&quot;onDoneFieldSet&quot;
   failFieldSet=&quot;onFailFieldSet&quot;
-  columnSet=&quot;columnset1&quot;
-  dpOptionSet=&quot;dataProviderOption1&quot;
-  gridOptionSet=&quot;gridOption1&quot;
-  styleSet=&quot;defaultStyle&quot;
-  dataSet=&quot;griddata1&quot;&lt;/mark&gt;
-  gridId=&quot;realgrid&quot;
-  showToolbox=&quot;true&quot;
+
+  &lt;mark&gt;columnSet=&quot;columnset1&quot;&lt;/mark&gt;
+  &lt;mark&gt;dpOptionSet=&quot;dataProviderOption1&quot;&lt;/mark&gt;
+  &lt;mark&gt;gridOptionSet=&quot;gridOption1&quot;&lt;/mark&gt;
+  &lt;mark&gt;styleSet=&quot;defaultStyle&quot;&lt;/mark&gt;
+
+  &lt;mark&gt;dataSet=&quot;griddata1.json&quot;&lt;/mark&gt;
+  successDataSet=&quot;onGridSuccessDataSet&quot;
+
   gridWidth=&quot;100%&quot;
   gridHeight=&quot;300px&quot; %}
 &lt;/pre&gt;
 
-&lt;p&gt;각 행의 명령과 인자에 대해 아래 설명을 참조하세요.&lt;/p&gt;
+&lt;h4 id=&quot;section-3&quot;&gt;각 인자에 대한 설명&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt;:  템플릿 파일명으로 항상 &lt;code class=&quot;highlighter-rouge&quot;&gt;realgrid.html&lt;/code&gt;을 입력합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt;:  템플릿 파일명으로 항상 &lt;code class=&quot;highlighter-rouge&quot;&gt;realgrid.html&lt;/code&gt;을 입력합니다.
+    &lt;h5 id=&quot;section-4&quot;&gt;&lt;strong&gt;변수&lt;/strong&gt;&lt;/h5&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridVar&lt;/code&gt;:  페이지 전체에서 사용할 grid 변수&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dpVar&lt;/code&gt;: 페이지에서 사용할 data provider 변수&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridId&lt;/code&gt;: 그리드가 위치할 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tag id attribute
+    &lt;h5 id=&quot;section-5&quot;&gt;&lt;strong&gt;필드 정보&lt;/strong&gt;&lt;/h5&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fieldSet&lt;/code&gt;: 그리드의 field 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successFieldSet&lt;/code&gt;: 필드파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneFieldSet&lt;/code&gt;: 필드파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successFieldSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failFieldSet&lt;/code&gt;: 필드파일 읽어오기 실패한 경우 호출됩니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failFieldSet&lt;/code&gt;: 필드파일 읽어오기 실패한 경우 호출됩니다.
+    &lt;h5 id=&quot;section-6&quot;&gt;&lt;strong&gt;컬럼 정보&lt;/strong&gt;&lt;/h5&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;columnSet&lt;/code&gt;: 그리드의 column 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successColumnSet&lt;/code&gt;: 컬럼파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneColumnSet&lt;/code&gt;: 컬럼파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successColumnSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failColumnSet&lt;/code&gt;: 컬럼파일 읽어오기 실패한 경우 호출됩니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failColumnSet&lt;/code&gt;: 컬럼파일 읽어오기 실패한 경우 호출됩니다.
+    &lt;h5 id=&quot;dataprovider-&quot;&gt;&lt;strong&gt;DataProvider 옵션정보&lt;/strong&gt;&lt;/h5&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dpOptionSet&lt;/code&gt;: 그리드의 data provider option 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successDpOptionSet&lt;/code&gt;: 옵션파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneDpOptionSet&lt;/code&gt;: 옵션파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDpOptionSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failDpOptionSet&lt;/code&gt;: 옵션파일 읽어오기 실패한 경우 호출됩니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failDpOptionSet&lt;/code&gt;: 옵션파일 읽어오기 실패한 경우 호출됩니다.
+    &lt;h5 id=&quot;gridview-&quot;&gt;&lt;strong&gt;GridView 옵션정보&lt;/strong&gt;&lt;/h5&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridOptionSet&lt;/code&gt;: 그리드의 option 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successGridOptionSet&lt;/code&gt;: 옵션파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneGridOptionSet&lt;/code&gt;: 옵션파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successGridOptionSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failGridOptionSet&lt;/code&gt;: 옵션파일 읽어오기 실패한 경우 호출됩니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failGridOptionSet&lt;/code&gt;: 옵션파일 읽어오기 실패한 경우 호출됩니다.
+    &lt;h5 id=&quot;section-7&quot;&gt;&lt;strong&gt;스타일 정보&lt;/strong&gt;&lt;/h5&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;styleSet&lt;/code&gt;: 그리드의 style 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successStyleSet&lt;/code&gt;: 스타일파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneStyleSet&lt;/code&gt;: 스타일파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successStyleSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failStyleSet&lt;/code&gt;: 스타일파일을 읽어오기 실패한 경우 호출됩니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failStyleSet&lt;/code&gt;: 스타일파일을 읽어오기 실패한 경우 호출됩니다.
+    &lt;h5 id=&quot;section-8&quot;&gt;&lt;strong&gt;데이터 정보&lt;/strong&gt;&lt;/h5&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet&lt;/code&gt;: 그리드의 data 를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/code&gt;: 데이터파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneDataSet&lt;/code&gt;: 데이터파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failDataSet&lt;/code&gt;: 데이터파일을 읽어오기 실패한 경우 호출됩니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridId&lt;/code&gt;: 그리드가 위치할 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tag id attribute&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failDataSet&lt;/code&gt;: 데이터파일을 읽어오기 실패한 경우 호출됩니다.
+    &lt;h5 id=&quot;section-9&quot;&gt;&lt;strong&gt;기타 정보&lt;/strong&gt;&lt;/h5&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; 하면 툴박스 보여줍니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridWidth&lt;/code&gt;: grid width style&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridHeight&lt;/code&gt;: grid height style&lt;/li&gt;
@@ -355,6 +393,8 @@ function myFunction() {
 
 &lt;p&gt;그리드의 레이아웃이나 데이터는 모두 &lt;code class=&quot;highlighter-rouge&quot;&gt;\resource&lt;/code&gt; 폴더에 각각 &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;option&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt; 이라 이름의 하위 폴더에 json 포멧의 파일로 작성합니다.
 작성된 json파일의 파일명을 해당 인자의 값으로 넘겨주면 됩니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;resource-&quot;&gt;물리적인 파일 위치 &lt;code class=&quot;highlighter-rouge&quot;&gt;\resource&lt;/code&gt; 폴더&lt;/h4&gt;
 
 &lt;p&gt;위 코드중 마킹된 영역의 파일에 해당하는 인자들이 실제 어떤 경로에 위치해야 하는지 정보를 정리해 보겠습니다.&lt;/p&gt;
 
@@ -364,10 +404,10 @@ function myFunction() {
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dpOptionSet=&quot;dataProviderOption1&quot;&lt;/code&gt;: \resource\option\dataProviderOption1.json&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridOptionSet=&quot;gridOption1&quot;&lt;/code&gt;: \resource\option\gridOption1.json&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;styleSet=&quot;style1&quot;&lt;/code&gt;: \resource\style\style1.json&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet=&quot;griddata1&quot;&lt;/code&gt;: \resource\data\griddata1.json&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet=&quot;griddata1.json&quot;&lt;/code&gt;: \resource\data\griddata1.json&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;section-3&quot;&gt;그리드 구성시 콜백 처리방법&lt;/h4&gt;
+&lt;h4 id=&quot;section-10&quot;&gt;그리드 구성시 콜백 처리방법&lt;/h4&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;field&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;column&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;dataProviderOption&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;gridOption&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt;은 각각 인자로 넘겨준 파일에서 그 정보를 읽어 그리드에 적용됩니다.
 이때 각각의 파일은 jquery.getJSON()함수를 통해 불러오는데, &lt;code class=&quot;highlighter-rouge&quot;&gt;success&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;done&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;fail&lt;/code&gt;이 발생한 이후 처리를 위해 콜백함수를 인자로 넘겨줄수 있습니다.&lt;/p&gt;
@@ -376,50 +416,50 @@ function myFunction() {
 
 &lt;p&gt;콜백함수의 인자는 jquery XHR function의 인자와 동일한 구조입니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onSuccessFieldSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;textStatus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jqXHR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'success:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onDoneFieldSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;textStatus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jqXHR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'done:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onFailFieldSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jqxhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;textStatus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fail:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
 &lt;pre&gt;
 
+&amp;lt;script&amp;gt;
+var &lt;mark&gt;onGridSuccessDataSet&lt;/mark&gt; = function(data, textStatus, jqXHR) {
+  dataProvider.setRows(data);
+}
+var onSuccessFieldSet = function(data, textStatus, jqXHR) {
+    console.log(&amp;apos;[EVENT LOG] onSuccessFieldSet&amp;apos;);
+}
+var onDoneFieldSet = function(data, textStatus, jqXHR) {
+    console.log(&amp;apos;[EVENT LOG] onDoneFieldSet&amp;apos;);
+}
+var onFailFieldSet = function(jqxhr, textStatus, error) {
+    console.log(&amp;apos;[EVENT LOG] onFailFieldSet&amp;apos;);
+}
+&amp;lt;/script&amp;gt;
+
 {% include realgrid.html
-  gridVar=&quot;gridView&quot;
-  dpVar=&quot;dataProvider&quot;
-  fieldSet=&quot;fieldset1&quot;
-  &lt;mark&gt;successFieldSet=&quot;onSuccessFieldSet&quot;&lt;/mark&gt;
-  ...
-%}
+gridVar=&quot;gridView&quot;
+dpVar=&quot;dataProvider&quot;
+gridId=&quot;realgrid&quot;
+
+fieldSet=&quot;fieldset1&quot;
+successFieldSet=&quot;onSuccessFieldSet&quot;
+doneFieldSet=&quot;onDoneFieldSet&quot;
+failFieldSet=&quot;onFailFieldSet&quot;
+
+columnSet=&quot;columnset1&quot;
+dpOptionSet=&quot;dataProviderOption1&quot;
+gridOptionSet=&quot;gridOption1&quot;
+styleSet=&quot;defaultStyle&quot;
+
+dataSet=&quot;griddata1.json&quot;
+&lt;mark&gt;successDataSet=&quot;onGridSuccessDataSet&quot;&lt;/mark&gt;
+
+gridWidth=&quot;100%&quot;
+gridHeight=&quot;300px&quot; %}
 
 &lt;/pre&gt;
 
 &lt;script&gt;
+var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+  dataProvider.setRows(data);
+}
 var onSuccessFieldSet = function(data, textStatus, jqXHR) {
     console.log('[EVENT LOG] onSuccessFieldSet');
 }
@@ -605,25 +645,27 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 
         
             
-
-            $.getJSON(&quot;/demo/resource/data/griddata1.json&quot;, function (data, textStatus, jqXHR) {
-                dataProvider.setRows(data);
-
+            $.ajax({
+              type: &quot;GET&quot;,
+              url:&quot;/demo/resource/data/griddata1&quot;,
+              success: function(data, textStatus, jqXHR) {
                 
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
             })
-            .done(function (data, textStatus, jqXHR) {
-                gridView.setFocus();
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
 
-                
+              
             })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
 
-                
-                  var msg = &quot;gridView failDataSet: &quot; + err;
-                  console &amp;&amp; console.log(msg);
-                  alert(msg);
-                
+              
+                console &amp;&amp; console.log(&quot;jQuery ajax() Failed: &quot; + err);
+                alert(&quot;jQuery ajax() Failed: &quot; + err);
+              
             });
         
 
@@ -632,28 +674,53 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 
 &lt;h2 id=&quot;section-tree-&quot;&gt;&lt;section-tree&gt;트리 표시하기&lt;/section-tree&gt;&lt;/h2&gt;
 
-&lt;p&gt;트리도 그리드와 동일한 방법으로 페이지에 추가합니다. 단지, 아래와 같이 몇 개의 인자명만 바꿔주면 됩니다.&lt;/p&gt;
+&lt;p&gt;트리도 그리드와 동일한 방법으로 페이지에 추가합니다. &lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet&lt;/code&gt;의 데이터를 ajax()로 읽어오고,
+success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/code&gt;에 연결된 함수를 호출합니다. 따라서 트리에 데이터를 입력하는 코드는
+아래와 같이 onSuccessdDataSet() 함수내에서 처리해 주면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;mark&gt;한 화면에 그리드나 트리가 여러개인 경우 함수형 변수의 이름이 중복되지 않도록 주의하세요.&lt;/mark&gt;&lt;/p&gt;
 
 &lt;pre&gt;
-{% include &lt;mark&gt;realtree.html&lt;/mark&gt;
-  &lt;mark&gt;treeVar&lt;/mark&gt;=&quot;treeView&quot;
-  dpVar=&quot;dataProvider&quot;
-  fieldSet=&quot;fieldset1&quot;
-  columnSet=&quot;columnset1&quot;
+&amp;lt;script&amp;gt;
+  var onTreeSuccessDataSet = function(data, textStatus, jqXHR) {
+    treeDataProvider.setRows(data, &amp;quot;tree&amp;quot;, true, &amp;quot;&amp;quot;, &amp;quot;icon&amp;quot;);
+  }
+
+  var onDoneDataSet = function() {
+    // 트리에 아이콘을 추가 하는 작업등 데이터를 그리드에 뿌린 이후 작업
+  }
+&amp;lt;/script&amp;gt;
+
+{% include realtree.html
+  treeVar=&quot;treeView&quot;
+  dpVar=&quot;treeDataProvider&quot;
+  treeId=&quot;realtree&quot;
+
+  fieldSet=&quot;treeFieldset1&quot;
+  columnSet=&quot;treeColumnset1&quot;
   dpOptionSet=&quot;treeDataProviderOption1&quot;
-  &lt;mark&gt;treeOptionSet&lt;/mark&gt;=&quot;treeOption1&quot;
-  styleSet=&quot;style1&quot;
-  dataSet=&quot;griddata1&quot;
-  &lt;mark&gt;treeId&lt;/mark&gt;=&quot;realtree&quot;
-  &lt;mark&gt;treeField&lt;/mark&gt;=&quot;tree&quot;
-  &lt;mark&gt;needSorting&lt;/mark&gt;=&quot;true&quot;
-  &lt;mark&gt;childrenField&lt;/mark&gt;=&quot;&quot;
-  &lt;mark&gt;iconField&lt;/mark&gt;=&quot;icon&quot;
-  &lt;mark&gt;treeWidth&lt;/mark&gt;=&quot;100%&quot;
-  &lt;mark&gt;treeHeight&lt;/mark&gt;=&quot;300px&quot; %}
+  treeOptionSet=&quot;treeOption1&quot;
+  styleSet=&quot;treeStyle1&quot;
+
+  dataSet=&quot;treedata1.json&quot;
+  successDataSet=&quot;onTreeSuccessDataSet&quot;
+  doneDataSet=&quot;onDoneDataSet&quot;
+
+  showToolbox=&quot;true&quot;
+  treeWidth=&quot;100%&quot;
+  treeHeight=&quot;300px&quot; %}
 &lt;/pre&gt;
 
 &lt;p&gt;위 코드를 입력하면 트리는 아래와 같이 표시됩니다.&lt;/p&gt;
+
+&lt;script&gt;
+  var onTreeSuccessDataSet = function(data, textStatus, jqXHR) {
+    treeDataProvider.setRows(data, &quot;tree&quot;, true, &quot;&quot;, &quot;icon&quot;);
+  }
+
+  var onDoneDataSet = function() {
+  }
+&lt;/script&gt;
 
 &lt;div id=&quot;realtree&quot; class=&quot;realgrid&quot; style=&quot;width:100%; height:300px&quot;&gt;&lt;/div&gt;
 
@@ -822,43 +889,36 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 
         
             
-
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;/demo/resource/data/treedata1&quot;,
-              success: function (data, textStatus, jqXHR) {
+              url:&quot;/demo/resource/data/treedata1.json&quot;,
+              success: function(data, textStatus, jqXHR) {
                 
-
-                // 
-                //   treeDataProvider.setRows(
-                //     data
-                //      ,&quot;tree&quot; 
-                //      ,true 
-                //      ,&quot;&quot; 
-                //      ,&quot;icon&quot; 
-                //   );
-                // 
-              },
-              done: function (data, textStatus, jqXHR) {
-                treeView.setFocus();
-
-                
-              },
-              fail: function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
-
-                
-                  console &amp;&amp; console.log(&quot;jQuery ajax() Failed: &quot; + err);
-                  alert(&quot;jQuery ajax() Failed: &quot; + err);
+                  onSuccessDataSet(data, textStatus, jqXHR);
                 
               }
+            })
+            .done( function(data, textStatus, jqXHR) {
+              treeView.setFocus();
+
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+
+              
+                console &amp;&amp; console.log(&quot;jQuery ajax() Failed: &quot; + err);
+                alert(&quot;jQuery ajax() Failed: &quot; + err);
+              
             });
         
 
     });
 &lt;/script&gt;
 
-&lt;p&gt;그리드(또는 트리)는 인자로 입력했던 변수명을 이용해 그리드를 컨트롤 할 수 있습니다.
+&lt;p&gt;그리드(또는 트리)는 인자로 입력했던 변수명(위에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;treeView&lt;/code&gt; 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;treeDataProvider&lt;/code&gt;)을 이용해 그리드를 컨트롤 할 수 있습니다.
 아래 버튼을 눌러 위에 표시된 트리에 아이콘을 입력하는 동작을 실행해 보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a class=&quot;btn primary small round lowercase&quot; id=&quot;btnAddTreeIcons&quot;&gt;트리에 아이콘 넣기&lt;/a&gt;&lt;/p&gt;
@@ -1082,25 +1142,25 @@ $('#btnAddTreeIcons').click(function() {
 
         
             
-
-            $.getJSON(&quot;/demo/resource/data/carData1.json&quot;, function (data, textStatus, jqXHR) {
-                dataProvider1.setRows(data);
-
+            $.ajax({
+              type: &quot;GET&quot;,
+              url:&quot;/demo/resource/data/carData1&quot;,
+              success: function(data, textStatus, jqXHR) {
                 
+              }
             })
-            .done(function (data, textStatus, jqXHR) {
-                gridView1.setFocus();
+            .done( function(data, textStatus, jqXHR) {
+              gridView1.setFocus();
 
-                
+              
             })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
 
-                
-                  var msg = &quot;gridView1 failDataSet: &quot; + err;
-                  console &amp;&amp; console.log(msg);
-                  alert(msg);
-                
+              
+                console &amp;&amp; console.log(&quot;jQuery ajax() Failed: &quot; + err);
+                alert(&quot;jQuery ajax() Failed: &quot; + err);
+              
             });
         
 

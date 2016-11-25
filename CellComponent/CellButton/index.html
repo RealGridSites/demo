@@ -16567,27 +16567,27 @@
 
         
             
-
-            $.getJSON("/demo/resource/data/griddata1.json", function (data, textStatus, jqXHR) {
-                dataProvider.setRows(data);
-
+            $.ajax({
+              type: "GET",
+              url:"/demo/resource/data/griddata1",
+              success: function(data, textStatus, jqXHR) {
                 
+              }
             })
-            .done(function (data, textStatus, jqXHR) {
-                gridView.setFocus();
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
 
-                
-                  onDoneDataSet(data, textStatus, jqXHR);
-                
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
             })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
 
-                
-                  var msg = "gridView failDataSet: " + err;
-                  console && console.log(msg);
-                  alert(msg);
-                
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
             });
         
 
