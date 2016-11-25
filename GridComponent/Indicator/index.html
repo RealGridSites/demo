@@ -16538,26 +16538,28 @@
 
         
             
+            
             $.ajax({
               type: "GET",
               url:"/demo/resource/data/griddata1",
               success: function(data, textStatus, jqXHR) {
                 
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               gridView.setFocus();
-
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console && console.log("jQuery ajax() Failed: " + err);
                 alert("jQuery ajax() Failed: " + err);
               
             });
+;
         
 
     });

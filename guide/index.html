@@ -16682,6 +16682,7 @@ function myFunction() {
   <mark>styleSet="defaultStyle"</mark>
 
   <mark>dataSet="griddata1.json"</mark>
+  showProgress="true"
   successDataSet="onGridSuccessDataSet"
 
   gridWidth="100%"
@@ -16730,12 +16731,13 @@ function myFunction() {
     <h5 id="section-8"><strong>데이터 정보</strong></h5>
   </li>
   <li><code class="highlighter-rouge">dataSet</code>: 그리드의 data 를 담고 있는 json 파일의 이름</li>
+  <li><code class="highlighter-rouge">showProgress</code>: <code class="highlighter-rouge">true</code>면 데이터를 가져오는 동안 프로그래스를 보여줍니다.</li>
   <li><code class="highlighter-rouge">successDataSet</code>: 데이터파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneDataSet</code>: 데이터파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successDataSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failDataSet</code>: 데이터파일을 읽어오기 실패한 경우 호출됩니다.
     <h5 id="section-9"><strong>기타 정보</strong></h5>
   </li>
-  <li><code class="highlighter-rouge">showToolbox</code>: <code class="highlighter-rouge">true</code> 하면 툴박스 보여줍니다.</li>
+  <li><code class="highlighter-rouge">showToolbox</code>: <code class="highlighter-rouge">false</code>가 아니면 무조건 툴박스 보여줍니다.</li>
   <li><code class="highlighter-rouge">gridWidth</code>: grid width style</li>
   <li><code class="highlighter-rouge">gridHeight</code>: grid height style</li>
 </ul>
@@ -16994,6 +16996,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 
         
             
+            
             $.ajax({
               type: "GET",
               url:"/demo/resource/data/griddata1.json",
@@ -17002,20 +17005,21 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
                   onGridSuccessDataSet(data, textStatus, jqXHR);
                 
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               gridView.setFocus();
-
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console && console.log("jQuery ajax() Failed: " + err);
                 alert("jQuery ajax() Failed: " + err);
               
             });
+;
         
 
     });
@@ -17055,7 +17059,6 @@ success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 �
   successDataSet="onTreeSuccessDataSet"
   doneDataSet="onDoneDataSet"
 
-  showToolbox="true"
   treeWidth="100%"
   treeHeight="300px" %}
 </pre>
@@ -17238,6 +17241,9 @@ success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 �
 
         
             
+              treeView.showProgress();
+            
+            
             $.ajax({
               type: "GET",
               url:"/demo/resource/data/treedata1.json",
@@ -17246,17 +17252,29 @@ success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 �
                   onTreeSuccessDataSet(data, textStatus, jqXHR);
                 
               }
+              
+              ,xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                xhr.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        treeView.setProgress(0, evt.total, evt.loaded);
+                    }
+                }, false);
+                return xhr;
+              }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               treeView.setFocus();
-
               
                 onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+                treeView.closeProgress();
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console && console.log("jQuery ajax() Failed: " + err);
                 alert("jQuery ajax() Failed: " + err);
@@ -17551,6 +17569,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
         
             
+            
             $.ajax({
               type: "GET",
               url:"/demo/resource/data/carData1.json",
@@ -17559,20 +17578,21 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
                   onCarGridSuccessDataSet(data, textStatus, jqXHR);
                 
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               gridView1.setFocus();
-
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console && console.log("jQuery ajax() Failed: " + err);
                 alert("jQuery ajax() Failed: " + err);
               
             });
+;
         
 
     });

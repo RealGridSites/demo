@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     셀 버튼
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="셀 버튼은 action, popup, image 중 하나로 지정할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -16364,36 +16364,37 @@
         </div>
 
         <div class="document-formatting">
-            <script>
-	var onDoneDataSet = function() {
-		gridView.setDisplayOptions({rowHeight:30})
+            <p>셀 버튼은 <code class="highlighter-rouge">action</code>, <code class="highlighter-rouge">popup</code>, <code class="highlighter-rouge">image</code> 중 하나로 지정할 수 있습니다.</p>
 
-		var menu = [{
-	        label: "menu1 입니다."
-	    }, {
-	        label: "menu2 입니다."
-	    }, {
-	        label: "menu3 입니다."
-	    }];
-	    gridView.addPopupMenu("customerPopup", menu);
+<script>
+  var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+    dataProvider.setRows(data);
+  }
+  var onDoneDataSet = function() {
+    gridView.setDisplayOptions({rowHeight:30})
 
-	    gridView.onMenuItemClicked = function (grid, data) {
-	        alert(data.label);
-	    };
+    var menu = [{
+          label: "menu1 입니다."
+      }, {
+          label: "menu2 입니다."
+      }, {
+          label: "menu3 입니다."
+      }];
+      gridView.addPopupMenu("customerPopup", menu);
 
-		gridView.onCellButtonClicked = function (grid, itemIndex, column) {
-	        alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
-	    };
- 
-    	gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
-	        alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
-	    };
-	}
+      gridView.onMenuItemClicked = function (grid, data) {
+          alert(data.label);
+      };
+
+    gridView.onCellButtonClicked = function (grid, itemIndex, column) {
+          alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+      };
+
+      gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+          alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
+      };
+  }
 </script>
-
-<p>셀 버튼은 <code class="highlighter-rouge">action</code>, <code class="highlighter-rouge">popup</code>, <code class="highlighter-rouge">image</code> 중 하나로 지정할 수 있습니다.</p>
-
-<p></p>
 
 <div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
 
@@ -16567,33 +16568,52 @@
 
         
             
+            
             $.ajax({
               type: "GET",
-              url:"/demo/resource/data/griddata1",
+              url:"/demo/resource/data/griddata1.json",
               success: function(data, textStatus, jqXHR) {
                 
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               gridView.setFocus();
-
               
                 onDoneDataSet(data, textStatus, jqXHR);
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console && console.log("jQuery ajax() Failed: " + err);
                 alert("jQuery ajax() Failed: " + err);
               
             });
+;
         
 
     });
 </script>
 
+<!-- 비교해 보고 나중에 지우세요.
+  include realgrid.html
+  gridVar="gridView"
+  dpVar="dataProvider"
+  fieldSet="cellButtonField"
+  columnSet="cellButtonColumn"
+  dpOptionSet="dataProviderOption1"
+  gridOptionSet="gridOption1"
+  doneDataSet="onDoneDataSet"
+  styleSet="style1"
+  dataSet="griddata1"
+  gridId="realgrid"
+  gridWidth="100%"
+  gridHeight="300px"
+-->
 
             <p>
 

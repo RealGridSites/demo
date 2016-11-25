@@ -16545,6 +16545,7 @@
 
         
             
+            
             $.ajax({
               type: "GET",
               url:"/demo/resource/data/treedata3.json",
@@ -16553,17 +16554,17 @@
                   onSuccessDataSet(data, textStatus, jqXHR);
                 
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               treeView.setFocus();
-
               
                 onDoneDataSet(data, textStatus, jqXHR);
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console && console.log("jQuery ajax() Failed: " + err);
                 alert("jQuery ajax() Failed: " + err);

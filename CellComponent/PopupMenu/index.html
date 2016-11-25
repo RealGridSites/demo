@@ -16367,48 +16367,52 @@
             <p>Javascript 설정으로 컬럼 셀에 팝업메뉴를 추가할 수 있습니다.</p>
 
 <script>
-	var onDoneDataSet = function() {
-		var menu = [{
-	        label: "menu1 입니다.",
-	        enabled: true,
-	        children: [{
-	            label: "submenu1 입니다."
-	        }, {
-	            label: "submenu2 입니다."
-	        }]
-	    }, {
-	        label: "menu2 입니다",
-	        enabled: false
-	    }, {
-	        label: "-"
-	    }, {
-	        label: "menu3 입니다",
-	        type: "check",
-	        checked: true,
-	        tag: "check_menu"
-	    }, {
-	        label: "group menu",
-	        children: [{
-	            label: "group1 - 첫번째",
-	            type: "radio",
-	            group: "group1",
-	            checked: true
-	        }, {
-	            label: "group1 - 두번째",
-	            type: "radio",
-	            group: "group1"
-	        }, {
-	            label: "group1 - 세번째",
-	            type: "radio",
-	            group: "group1"
-	        }]
-	    }];
-	    gridView.addPopupMenu("menu1", menu);
+  var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+    dataProvider.setRows(data);
+  }
 
-	    gridView.onMenuItemClicked = function (grid, data, index) {
-	        alert(data.label);
-	    };
-	}
+  var onDoneDataSet = function() {
+    var menu = [{
+          label: "menu1 입니다.",
+          enabled: true,
+          children: [{
+              label: "submenu1 입니다."
+          }, {
+              label: "submenu2 입니다."
+          }]
+      }, {
+          label: "menu2 입니다",
+          enabled: false
+      }, {
+          label: "-"
+      }, {
+          label: "menu3 입니다",
+          type: "check",
+          checked: true,
+          tag: "check_menu"
+      }, {
+          label: "group menu",
+          children: [{
+              label: "group1 - 첫번째",
+              type: "radio",
+              group: "group1",
+              checked: true
+          }, {
+              label: "group1 - 두번째",
+              type: "radio",
+              group: "group1"
+          }, {
+              label: "group1 - 세번째",
+              type: "radio",
+              group: "group1"
+          }]
+      }];
+      gridView.addPopupMenu("menu1", menu);
+
+      gridView.onMenuItemClicked = function (grid, data, index) {
+          alert(data.label);
+      };
+  }
 </script>
 
 <div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
@@ -16583,33 +16587,96 @@
 
         
             
+            
             $.ajax({
               type: "GET",
-              url:"/demo/resource/data/griddata1",
+              url:"/demo/resource/data/griddata1.json",
               success: function(data, textStatus, jqXHR) {
                 
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               gridView.setFocus();
-
               
                 onDoneDataSet(data, textStatus, jqXHR);
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console && console.log("jQuery ajax() Failed: " + err);
                 alert("jQuery ajax() Failed: " + err);
               
             });
+;
         
 
     });
 </script>
 
+<!-- 비교하고 지우세요.
+<script>
+	var onDoneDataSet = function() {
+		var menu = [{
+	        label: "menu1 입니다.",
+	        enabled: true,
+	        children: [{
+	            label: "submenu1 입니다."
+	        }, {
+	            label: "submenu2 입니다."
+	        }]
+	    }, {
+	        label: "menu2 입니다",
+	        enabled: false
+	    }, {
+	        label: "-"
+	    }, {
+	        label: "menu3 입니다",
+	        type: "check",
+	        checked: true,
+	        tag: "check_menu"
+	    }, {
+	        label: "group menu",
+	        children: [{
+	            label: "group1 - 첫번째",
+	            type: "radio",
+	            group: "group1",
+	            checked: true
+	        }, {
+	            label: "group1 - 두번째",
+	            type: "radio",
+	            group: "group1"
+	        }, {
+	            label: "group1 - 세번째",
+	            type: "radio",
+	            group: "group1"
+	        }]
+	    }];
+	    gridView.addPopupMenu("menu1", menu);
+
+	    gridView.onMenuItemClicked = function (grid, data, index) {
+	        alert(data.label);
+	    };
+	}
+</script>
+
+{ % include realgrid.html
+  gridVar="gridView"
+  dpVar="dataProvider"
+  fieldSet="popupField"
+  columnSet="popupColumn"
+  dpOptionSet="dataProviderOption1"
+  gridOptionSet="gridOption1"
+  doneDataSet="onDoneDataSet"
+  styleSet="style1"
+  dataSet="griddata1"
+  gridId="realgrid"
+  gridWidth="100%"
+  gridHeight="300px" % } -->
 
             <p>
 

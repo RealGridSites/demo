@@ -16366,6 +16366,12 @@
         <div class="document-formatting">
             <p>컬럼에 속한 셀들을 묶어서 표시할 수 있습니다.</p>
 
+<script>
+var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+  dataProvider.setRows(data);
+}
+</script>
+
 <div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
 
 <div class="toolbox">
@@ -16538,31 +16544,49 @@
 
         
             
+            
             $.ajax({
               type: "GET",
-              url:"/demo/resource/data/griddata1",
+              url:"/demo/resource/data/griddata1.json",
               success: function(data, textStatus, jqXHR) {
                 
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
               }
+              
             })
             .done( function(data, textStatus, jqXHR) {
               gridView.setFocus();
-
+              
               
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               
                 console && console.log("jQuery ajax() Failed: " + err);
                 alert("jQuery ajax() Failed: " + err);
               
             });
+;
         
 
     });
 </script>
 
+<!-- 비교해보고 나중에 지우세요.
+  include realgrid.html
+  gridVar="gridView"
+  dpVar="dataProvider"
+  fieldSet="cellMergingField"
+  columnSet="cellMergingColumn"
+  dpOptionSet="dataProviderOption1"
+  gridOptionSet="gridOption1"
+  styleSet="style1"
+  dataSet="griddata1"
+  gridId="realgrid"
+  gridWidth="100%"
+  gridHeight="300px"
+-->
 
             <p>
 
