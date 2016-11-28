@@ -15325,7 +15325,7 @@
               
               <li class="item-toc ">
                 <a href="/demo/Tree/TreeCheckBox/"
-                  class=" sidebar-link">
+                  class=" ">
                   <span>트리뷰의 특별한 체크박스</span>
                   <span style="display: none;">
                   트리, Tree
@@ -16631,6 +16631,8 @@
 
 <p><code class="highlighter-rouge">values</code>값을 <code class="highlighter-rouge">labels</code>로 표시될 목록을 지정하면 <code class="highlighter-rouge">values</code>값의 위치에 맞는 <code class="highlighter-rouge">labels</code> 항목이 표시됩니다.</p>
 
+<p>values/labels 컬럼에 <code class="highlighter-rouge">values</code>로 설정된 값 중 하나를 입력해 보세요.</p>
+
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -16737,6 +16739,20 @@
 </div>
 </div>
 
+<p><a class="btn primary small round lowercase" id="getFieldValues">Label Field컬럼 값 확인</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"Age"</span><span class="p">))</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="getLabelValues">labelField 값 확인</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"AgeLabel"</span><span class="p">))</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <h4 id="dropdown-lookup-">dropDown lookup 설정</h4>
 
 <p>values와 labels 목록은 <code class="highlighter-rouge">DropDown</code> 편집기의 lookup 목록으로 사용될 수도 있습니다.</p>
@@ -16824,6 +16840,14 @@ $('#getValue').click(function() {
     var focusIndex = gridView.getCurrent().itemIndex;
 	var focusField = gridView.getCurrent().fieldName;
 	alert(gridView.getValue(focusIndex, focusField))
+});
+
+$('#getFieldValues').click(function() {
+    alert(dataProvider.getFieldValues("Age"))
+});
+
+$('#getLabelValues').click(function() {
+    alert(dataProvider.getFieldValues("AgeLabel"))
 });
 </script>
 
