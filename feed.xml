@@ -5,8 +5,8 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/demo/</link>
     <atom:link href="demo.realgrid.com/demo/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Nov 2016 09:59:05 +0900</pubDate>
-    <lastBuildDate>Mon, 28 Nov 2016 09:59:05 +0900</lastBuildDate>
+    <pubDate>Wed, 30 Nov 2016 16:25:16 +0900</pubDate>
+    <lastBuildDate>Wed, 30 Nov 2016 16:25:16 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -505,7 +505,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
         
             
 
-            $.getJSON(&quot;/demo/resource/layout/fieldset1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/demo/resource/layout/fieldset1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
 
                 $('.codeview.realgridfield').html(
@@ -650,7 +650,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
             
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;/demo/resource/data/griddata1.json&quot;,
+              url:&quot;/demo/resource/data/griddata1.json?__time__=&quot; + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
                   onGridSuccessDataSet(data, textStatus, jqXHR);
@@ -757,7 +757,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
         
             
 
-            $.getJSON(&quot;/demo/resource/layout/treeFieldset1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/demo/resource/layout/treeFieldset1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
                 treeDataProvider.setFields(data);
 
                 $('.codeview.realtreefield').html(
@@ -897,7 +897,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
             
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;/demo/resource/data/treedata1.json&quot;,
+              url:&quot;/demo/resource/data/treedata1.json?__time__=&quot; + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
                   onTreeSuccessDataSet(data, textStatus, jqXHR);
@@ -1080,7 +1080,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;/demo/resource/layout/carFields1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/demo/resource/layout/carFields1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider1.setFields(data);
 
                 $('.codeview.realgrid1field').html(
@@ -1223,7 +1223,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
             
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;/demo/resource/data/carData1.json&quot;,
+              url:&quot;/demo/resource/data/carData1.json?__time__=&quot; + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
                   onCarGridSuccessDataSet(data, textStatus, jqXHR);
