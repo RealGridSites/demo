@@ -77,6 +77,8 @@ dataProvider.fillJsonData(data, {fillMode: "set"});
 <a class="btn primary small round lowercase" id="fillJsonData2">name: value형 JSON 데이터 로드</a>
 
 
+{% include_relative devbox/FillDataOptions.md %}
+
 
 <script>
 $('#fillJsonData1').click(function() {
