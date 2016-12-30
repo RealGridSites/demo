@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     행 유효성 검사
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="사용자가 시작한 행 편집이 완료될 때, 그리드에 설정된 행 Validation들이 지정한 순서대로 검사됩니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -419,6 +419,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -1309,6 +1313,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -2189,6 +2197,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -3019,6 +3031,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -3869,6 +3885,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -4689,6 +4709,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -5559,6 +5583,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -6439,6 +6467,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -7239,6 +7271,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -8049,6 +8085,20 @@
               
 
               
+
+              
+              <li class="item-toc current">
+                <a href="/demo/Validation/RowValidation/"
+                class="current sidebar-link ">
+                  <span>행 유효성 검사</span>
+                  <span style="display: none;">
+                  validation, 유효성
+                  </span>
+                </a>
+              </li>
+              
+
+            
               
               
 
@@ -8849,6 +8899,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -9669,6 +9723,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -10489,6 +10547,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -11319,6 +11381,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -12119,6 +12185,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -12919,6 +12989,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -13739,6 +13813,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -14629,6 +14707,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -15217,18 +15299,241 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">행 유효성 검사</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>사용자가 시작한 행 편집이 완료될 때, 그리드에 설정된 행 Validation들이 지정한 순서대로 검사됩니다.</p>
+
+<script>
+var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+	dataProvider.setRows(data);
+}
+var onDoneDataSet = function() {
+
+}
+</script>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.20");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/demo/resource/layout/validationFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/validationColumns.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/gridOption1.json", function (data, textStatus, jqXHR) {
+                gridView.setOptions(data);
+
+                $('.codeview.realgridviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+            
+            $.ajax({
+              type: "GET",
+              url:"/demo/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+;
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -15237,6 +15542,107 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="section">유효성 검사</h4>
+
+<p>Validation.criteria 수식에 어긋나는 입력이면 Validation.level 에 해당하는 에러 상태가 되고, 그리드 EditOptions.commitLevel 지정에 따라 에러 상태의 행은 편집을 완료(commit)할 수 없게 됩니다.</p>
+
+<h4 id="validationlevel">ValidationLevel</h4>
+
+<p>Level은 <code class="highlighter-rouge">"error"</code>, <code class="highlighter-rouge">"warning"</code>, <code class="highlighter-rouge">"info"</code> 세 단계로 지정할 수 있습니다.</p>
+
+<ul>
+  <li>ERROR</li>
+  <li>WARNING</li>
+  <li>INFO</li>
+</ul>
+
+<p>컬럼 validation에서 에러 상태는 셀의 오른쪽에 <code class="highlighter-rouge">아이콘</code>으로 표시되었지만 RowValidation은 Validation.<code class="highlighter-rouge">message</code>에 지정된 메시지만 팝업 시킵니다.</p>
+
+<h4 id="validationmode">ValidationMode</h4>
+
+<ul>
+  <li>ALWAYS - 추가, 수정된 행이 Commit될 경우</li>
+  <li>INSERT - 추가된 행이 Commit될 경우</li>
+  <li>UPDATE - 수정된 행이 Commit될 경우</li>
+</ul>
+
+<p>Valiadtion은 mode 설정에 따라 행 수정 시에만 검사할 지, 새로운 행 추가 시에만 검사할 지 혹은 모든 경우에 검사할 지를 지정할 수도 있습니다.</p>
+
+<h4 id="validation-">validation 설정</h4>
+
+<p>행(row) 수준의 편집 EditValidation 목록을 설정합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetValidation">RowValidation 적용</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td><td class="code"><pre><span class="nx">validations</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value['CustomerID'] is not empty"</span><span class="p">,</span>
+    <span class="na">message</span><span class="p">:</span> <span class="s2">"CustomerID는 반드시 필요합니다."</span><span class="p">,</span>
+    <span class="na">mode</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+    <span class="na">level</span><span class="p">:</span> <span class="s2">"error"</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"(values['Quantity'] &gt;= 100) and (values['UnitPrice'] &gt;= 50)"</span><span class="p">,</span>
+    <span class="na">message</span><span class="p">:</span> <span class="s2">"Quantity는 100보다 크고 UnitPrice는 50보다 커야합니다!"</span><span class="p">,</span>
+    <span class="na">mode</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+    <span class="na">level</span><span class="p">:</span> <span class="s2">"error"</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"values['Quantity'] &lt;= 200"</span><span class="p">,</span>
+    <span class="na">message</span><span class="p">:</span> <span class="s2">"Quantity는 200보다 작아야 합니다"</span><span class="p">,</span>
+    <span class="na">mode</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+    <span class="na">level</span><span class="p">:</span> <span class="s2">"warning"</span>
+<span class="p">}];</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setValidations</span><span class="p">(</span><span class="nx">validations</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+$('#btnSetValidation').click(function() {
+	validations = [{
+        criteria: "value['CustomerID'] is not empty",
+        message: "CustomerID는 반드시 필요합니다.",
+        mode: "always",
+        level: "error"
+    }, {
+        criteria: "(values['Quantity'] >= 100) and (values['UnitPrice'] >= 50)",
+        message: "Quantity는 100보다 크고 UnitPrice는 50보다 커야합니다!",
+        mode: "always",
+        level: "error"
+    }, {
+        criteria: "values['Quantity'] <= 200",
+        message: "Quantity는 200보다 작아야 합니다",
+        mode: "always",
+        level: "warning"
+    }];
+ 
+    gridView.setValidations(validations);
+});
+</script>
+
+
+  </div>
+</div>
 
 
 
