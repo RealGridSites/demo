@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     행 병합 그룹핑
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="그리드 rowGroup.merged 속성을 true로 설정하면, 행 Grouping 시 묶여진 컬럼 셀들을 병합셀로 표시합니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -467,6 +467,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -1417,6 +1421,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -2367,6 +2375,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -3317,6 +3329,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -4237,6 +4253,20 @@
               
 
               
+
+              
+              <li class="item-toc current">
+                <a href="/demo/RowGroup/MergedRowGrouping/"
+                class="current sidebar-link ">
+                  <span>행 병합 그룹핑</span>
+                  <span style="display: none;">
+                  grouping, merge
+                  </span>
+                </a>
+              </li>
+              
+
+            
               
               
 
@@ -5117,6 +5147,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -6047,6 +6081,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -6997,6 +7035,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -7857,6 +7899,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -8737,6 +8783,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -9617,6 +9667,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -10507,6 +10561,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -11387,6 +11445,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -12277,6 +12339,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -13157,6 +13223,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -14027,6 +14097,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -14907,6 +14981,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -15857,6 +15935,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -16457,18 +16539,242 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">행 병합 그룹핑</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>그리드 rowGroup.merged 속성을 true로 설정하면, 행 Grouping 시 묶여진 컬럼 셀들을 병합셀로 표시합니다.</p>
+
+<script>
+var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+  dataProvider.setRows(data);
+}
+var onDoneDataSet = function() {
+  gridView.setPanel({visible: true})
+  gridView.setRowGroup({mergeMode:true, expandedAdornments: "footer", collapsedAdornments:"footer"})
+}
+</script>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.20");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/demo/resource/layout/rowGroupingField.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/rowGroupingColumn.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/gridOption1.json", function (data, textStatus, jqXHR) {
+                gridView.setOptions(data);
+
+                $('.codeview.realgridviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+            
+            $.ajax({
+              type: "GET",
+              url:"/demo/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+;
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -16477,6 +16783,108 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="section">행 병합 그루핑</h4>
+
+<p><a href="/demo/RowGroup/RowGrouping/">행 그룹핑</a>과 마찬가지로 그룹마다 Header나 Footer를 추가하여 표시할 수 있습니다.<br />
+ 마찬가지로, 그룹 헤더에 표시할 텍스트는 <code class="highlighter-rouge">rowGroup.headerStatement</code> 속성으로 지정하고, 각 Footer 셀에 표시할 값은 <code class="highlighter-rouge">Column.footer.groupExpression</code>으로 지정할 수 있습니다.</p>
+
+<h4 id="rowgroup-">RowGroup 설정</h4>
+
+<p><a href="http://help.realgrid.com/api/GridBase/setRowGroup/">setRowGroup()</a>함수는 그리드 RowGroup과 관련된 정보들을 설정합니다.</p>
+
+<p>rowGrouping 상태일 때 그룹의 펼침 또는 접힘 상태에 따라 그룹푸터와 그룹헤더의 표시방법을 설정 할 수 있습니다.</p>
+
+<p><strong>자식들이 <code class="highlighter-rouge">표시</code>되고 있을 때</strong><br />
+<input type="radio" name="expanded" value="footer" checked="checked" />
+<label style="vertical-align:middle">FOOTER</label>    
+<input type="radio" name="expanded" value="header" />
+<label style="vertical-align:middle">HEADER</label>    
+<input type="radio" name="expanded" value="both" />
+<label style="vertical-align:middle">BOTH</label>    
+<input type="radio" name="expanded" value="none" />
+<label style="vertical-align:middle">NONE</label></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
+    <span class="na">expandedAdornments</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="expanded"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><em>자식들이 <code class="highlighter-rouge">감춰진 상태</code>일 때</em><br />
+<input type="radio" name="collapsed" value="footer" checked="checked" />
+<label style="vertical-align:middle">FOOTER</label>    
+<input type="radio" name="collapsed" value="header" />
+<label style="vertical-align:middle">HEADER</label>    
+<input type="radio" name="collapsed" value="both" />
+<label style="vertical-align:middle">BOTH</label></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
+    <span class="na">collapsedAdornments</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="collapsed"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><em>Expander 표시</em> <br />
+<input type="radio" name="expander" value="true" checked="checked" />
+<label style="vertical-align:middle">표시</label>    
+<input type="radio" name="expander" value="" />
+<label style="vertical-align:middle">감춤</label></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
+    <span class="na">mergeExpander</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="expander"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="section-1">제한 사항</h4>
+
+<p>병합 모드에서 제한 되는 부분은 아래와 같습니다.</p>
+
+<ul>
+  <li>Grouping 된 컬럼은 순서대로 그리드 앞쪽 순서대로 배치됩니다.</li>
+  <li>Grouping 된 컬럼은 위치를 변경할 수 없습니다.</li>
+</ul>
+
+<script>
+$(":radio[name='expanded']").change(expandedAdornmentsChange);
+$(":radio[name='collapsed']").change(collapsedAdornmentsChange);
+$(":radio[name='expander']").change(expanderChange);
+
+function expandedAdornmentsChange(e) {
+    gridView.setRowGroup({
+        expandedAdornments: $(':radio[name="expanded"]:checked').val()
+    });
+}
+ 
+function collapsedAdornmentsChange(e) {
+    gridView.setRowGroup({
+        collapsedAdornments: $(':radio[name="collapsed"]:checked').val()
+    });
+}
+ 
+function expanderChange(e) {
+    gridView.setRowGroup({
+        mergeExpander: $(':radio[name="expander"]:checked').val()
+    });
+}
+</script>
+
+
+  </div>
+</div>
 
 
 
