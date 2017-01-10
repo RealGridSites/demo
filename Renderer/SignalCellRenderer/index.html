@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     시그널 렌더러
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="시그널바 셀 렌더러는 컬럼 스타일 figureState 값과 렌더러의 barCount 속성을 이용해 데이터 셀 값을 신호 세기로 표시합니다.정확한 값보다는 일정 단계의 상태를 표시하는데 사용돼야 합니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/demo/images/favicon.ico">
@@ -867,6 +867,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -1837,6 +1841,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -2797,6 +2805,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -3777,6 +3789,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -4687,6 +4703,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -5617,6 +5637,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -6577,6 +6601,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -7517,6 +7545,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -8397,6 +8429,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -9297,6 +9333,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -10217,6 +10257,20 @@
               
 
               
+
+              
+              <li class="item-toc current">
+                <a href="/demo/Renderer/SignalCellRenderer/"
+                class="current sidebar-link ">
+                  <span>시그널 렌더러</span>
+                  <span style="display: none;">
+                  렌더러, renderer
+                  </span>
+                </a>
+              </li>
+              
+
+            
               
               
 
@@ -11127,6 +11181,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -12047,6 +12105,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -12937,6 +12999,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -13857,6 +13923,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -14737,6 +14807,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -15677,6 +15751,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -16607,6 +16685,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -16867,18 +16949,242 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">시그널 렌더러</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>시그널바 셀 렌더러는 컬럼 스타일 figureState 값과 렌더러의 barCount 속성을 이용해 데이터 셀 값을 신호 세기로 표시합니다.<br />
+정확한 값보다는 일정 단계의 상태를 표시하는데 사용돼야 합니다.</p>
+
+<script>
+var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+  dataProvider.setRows(data);
+}
+var onDoneDataSet = function() {
+
+}
+</script>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/demo/lib/realgrid/realgridjs_eval.1.1.21");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/demo/resource/layout/rendererFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/layout/signalCellRendererColumns.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/option/gridOption1.json", function (data, textStatus, jqXHR) {
+                gridView.setOptions(data);
+
+                $('.codeview.realgridviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/demo/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+            
+            $.ajax({
+              type: "GET",
+              url:"/demo/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+;
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -16887,6 +17193,154 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="section">시그널 렌더러 표시 방법</h4>
+
+<p><code class="highlighter-rouge">SignalCellRenderer</code>를 설정 해보겠습니다.</p>
+
+<ul>
+  <li>시그널을 표시하기 위해서는 renderer의 type을 <code class="highlighter-rouge">signal</code>로 설정합니다.</li>
+  <li>시그널을 표시하기 위한 바의 개수를 지정합니다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="nx">renderer</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">type</span><span class="p">:</span> <span class="s2">"signal"</span><span class="p">,</span>
+    <span class="nx">barCount</span><span class="err">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>다음으로 시그널의 색상과 신호바의 세기를 설정합니다.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">figureBackground</code>로 색상 또한 다양하게 설정할 수 있습니다.</li>
+  <li><code class="highlighter-rouge">figureState</code>는 신호바의 세기로 사용됩니다.</li>
+  <li>(figureState가 3이면 세 개의 시그널 바에 신호가 표시됩니다.)</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="nx">styles</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">figureBackground</span><span class="p">:</span> <span class="s2">"#ffff00ff"</span><span class="p">,</span>
+    <span class="nx">figureState</span><span class="err">:</span> <span class="s2">"value"</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="section-1">시그널 렌더러 표시하기</h4>
+
+<p>버튼 클릭시 <code class="highlighter-rouge">Employee ID 2</code> 컬럼에 기본 설정의 시그널을 표시합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSignalEmployee">시그널 표시하기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID2"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span><span class="s2">"signal"</span><span class="p">,</span> <span class="na">barCount</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID2"</span><span class="p">,</span> <span class="s2">"styles"</span><span class="p">,</span> <span class="p">{</span><span class="na">figureState</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>버튼 클릭시 <code class="highlighter-rouge">Quantity 2</code> 컬럼에 값에 따른 동적 시그널을 표시합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSignalQuantity">시그널 표시하기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Quantity2"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span><span class="s2">"signal"</span><span class="p">,</span> <span class="na">barCount</span><span class="p">:</span><span class="mi">20</span><span class="p">});</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Quantity2"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &lt; 10"</span><span class="p">,</span>
+        <span class="na">styles</span><span class="p">:</span> <span class="s2">"figureBackground=#66ffff00;figureState=2"</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 10"</span><span class="p">,</span>
+        <span class="na">styles</span><span class="p">:</span> <span class="s2">"figureBackground=#66ff0000;figureState=4"</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 40"</span><span class="p">,</span>
+        <span class="na">styles</span><span class="p">:</span> <span class="s2">"figureBackground=#88ff0000;figureState=6"</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 60"</span><span class="p">,</span>
+        <span class="na">styles</span><span class="p">:</span> <span class="s2">"figureBackground=#aa0000ff;figureState=12"</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 80"</span><span class="p">,</span>
+        <span class="na">styles</span><span class="p">:</span> <span class="s2">"figureBackground=#aa0000ff;figureState=15"</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 100"</span><span class="p">,</span>
+        <span class="na">styles</span><span class="p">:</span> <span class="s2">"figureBackground=#ff0000ff;figureState=20"</span>
+    <span class="p">}</span>
+<span class="p">]);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+$('#btnSignalEmployee').click(function() {
+	gridView.setColumnProperty("EmployeeID2", "renderer", {type:"signal", barCount:10});
+
+	gridView.setColumnProperty("EmployeeID2", "styles", {figureState: "value"});
+});
+
+$('#btnSignalQuantity').click(function() {
+	gridView.setColumnProperty("Quantity2", "renderer", {type:"signal", barCount:20});
+
+	gridView.setColumnProperty("Quantity2", "dynamicStyles", [
+	    {
+	        criteria: "value < 10",
+	        styles: "figureBackground=#66ffff00;figureState=2"
+	    }, {
+	        criteria: "value >= 10",
+	        styles: "figureBackground=#66ff0000;figureState=4"
+	    }, {
+	        criteria: "value >= 40",
+	        styles: "figureBackground=#88ff0000;figureState=6"
+	    }, {
+	        criteria: "value >= 60",
+	        styles: "figureBackground=#aa0000ff;figureState=12"
+	    }, {
+	        criteria: "value >= 80",
+	        styles: "figureBackground=#aa0000ff;figureState=15"
+	    }, {
+	        criteria: "value >= 100",
+	        styles: "figureBackground=#ff0000ff;figureState=20"
+	    }
+	]);
+});
+</script>
+
+
+  </div>
+</div>
 
 
 
