@@ -17772,7 +17772,7 @@
         
             
 
-            $.getJSON("/demo/resource/layout/DynamicStylesonColumnsFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+            $.getJSON("/demo/resource/layout/dynamicStylesonColumnsFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
 
                 $('.codeview.realgridfield').html(
@@ -17800,7 +17800,7 @@
         
             
 
-            $.getJSON("/demo/resource/layout/DynamicStylesonColumns.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/demo/resource/layout/dynamicStylesonColumns.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
                 $('.codeview.realgridcolumn').html(
