@@ -17957,7 +17957,7 @@
 14</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">loadNext</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">newStart</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"/demo/resource/data/cardata2.json"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"/demo/resource/data/carData2.json"</span><span class="p">,</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span>
         <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="s2">"append"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="nx">newStart</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">100</span><span class="p">});</span>
@@ -18001,7 +18001,7 @@
 19</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">loadNext</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">newStart</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"/demo/resource/data/cardata2.json"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"/demo/resource/data/carData2.json"</span><span class="p">,</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span>
         <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="s2">"append"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="nx">newStart</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">100</span><span class="p">});</span>
@@ -18025,7 +18025,7 @@
 function loadNext() {
   var newStart = dataProvider.getRowCount();
   $.ajax({
-    url: "/demo/resource/data/cardata2.json",
+    url: "/demo/resource/data/carData2.json",
     success: function(data) {
       dataProvider.fillJsonData(data, {fillMode: "append", start: newStart, count: 100});
     }
