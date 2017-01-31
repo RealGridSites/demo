@@ -18706,7 +18706,7 @@ var onDoneDataSet = function() {
 <p><a class="btn primary small round lowercase" id="card_number">신용카드 컬럼 마스킹 처리</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"card_number"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">(\d{4})(\d{4})(\d{4})(\d{4})</span><span class="sr">$/</span><span class="p">)</span>
+2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"card_number"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})</span><span class="sr">$/</span><span class="p">)</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"card_number"</span><span class="p">,</span><span class="s2">"displayReplace"</span><span class="p">,</span> <span class="s2">"$1-$2-****-$4"</span><span class="p">)</span>
 </pre></td></tr></tbody></table>
 </div>
@@ -18736,7 +18736,7 @@ var onDoneDataSet = function() {
         <span class="s2">"font"</span><span class="p">:</span> <span class="s2">"arial"</span><span class="p">,</span>
         <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ffffff99"</span>
     <span class="p">},</span>
-    <span class="s2">"displayRegExp"</span><span class="p">:</span> <span class="o">/^</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">(([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">)(</span><span class="err">\</span><span class="nx">d</span><span class="p">{</span><span class="mi">3</span><span class="p">})(</span><span class="err">\</span><span class="nx">d</span><span class="p">{</span><span class="mi">4</span><span class="p">})</span><span class="nx">$</span><span class="o">/</span><span class="p">,</span> 
+    <span class="s2">"displayRegExp"</span><span class="p">:</span> <span class="o">/^</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">(([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">)([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">3</span><span class="p">})([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">4</span><span class="p">})</span><span class="nx">$</span><span class="o">/</span><span class="p">,</span> 
     <span class="s2">"displayReplace"</span><span class="p">:</span> <span class="s2">"$1-$2-$3-$4"</span>
 <span class="p">}];</span>
 
@@ -18767,7 +18767,7 @@ $('#ip_address').click(function() {
 });
 
 $('#card_number').click(function() {
-    gridView.setColumnProperty("card_number","displayRegExp", /^(\d{4})(\d{4})(\d{4})(\d{4})$/)
+    gridView.setColumnProperty("card_number","displayRegExp", /^([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})$/)
     gridView.setColumnProperty("card_number","displayReplace", "$1-$2-****-$4")
     gridView.setColumnProperty("card_number", "styles", {background:"#ffffff99"})
 });
@@ -18782,7 +18782,7 @@ $('#regularColumn').click(function() {
 	        "font": "arial",
 	        "background": "#ffffff99"
 	    },
-	    "displayRegExp": /^([0-9]+)\(([0-9]+)\)(\d{3})(\d{4})$/, 
+	    "displayRegExp": /^([0-9]+)\(([0-9]+)\)([0-9]{3})([0-9]{4})$/, 
 	    "displayReplace": "$1-$2-$3-$4"
 	}];
 
