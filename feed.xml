@@ -3,10 +3,10 @@
   <channel>
     <title>RealGrid DEMO</title>
     <description>RealGrid 데모사이트 입니다.</description>
-    <link>demo.realgrid.com//</link>
-    <atom:link href="demo.realgrid.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Feb 2017 01:58:33 +0900</pubDate>
-    <lastBuildDate>Wed, 01 Feb 2017 01:58:33 +0900</lastBuildDate>
+    <link>demo.realgrid.com/</link>
+    <atom:link href="demo.realgrid.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 01 Feb 2017 02:07:08 +0900</pubDate>
+    <lastBuildDate>Wed, 01 Feb 2017 02:07:08 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -299,7 +299,7 @@ $('input[type=radio]').on('change', function() {
 
 &lt;p&gt;우리는 현재 &lt;code class=&quot;highlighter-rouge&quot;&gt;/demo&lt;/code&gt;라는 &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt;을 사용하기 때문에 위 코드는 &lt;code class=&quot;highlighter-rouge&quot;&gt;/demo/GridComponent/Indicator&lt;/code&gt; 로 렌더링 됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;//GridComponent/Indicator/&quot;&gt;인디케이터 데모 페이지 링크&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/GridComponent/Indicator/&quot;&gt;인디케이터 데모 페이지 링크&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-image-&quot;&gt;&lt;section-image&gt;이미지 표시하기&lt;/section-image&gt;&lt;/h2&gt;
 
@@ -314,7 +314,7 @@ $('input[type=radio]').on('change', function() {
 
 &lt;p&gt;위 코드를 입력하면 아래와 같이 이미지가 표시됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//resource/image/sampleimage.png&quot; alt=&quot;이미지타이틀&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/resource/image/sampleimage.png&quot; alt=&quot;이미지타이틀&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-code-&quot;&gt;&lt;section-code&gt;코드 표시하기&lt;/section-code&gt;&lt;/h2&gt;
 
@@ -618,7 +618,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext(&quot;//lib/realgrid/realgridjs_eval.1.1.21&quot;);
+        RealGridJS.setRootContext(&quot;/lib/realgrid/realgridjs_eval.1.1.21&quot;);
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView(&quot;realgrid&quot;);
@@ -627,7 +627,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
         
             
 
-            $.getJSON(&quot;//resource/layout/fieldset1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/layout/fieldset1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
 
                 $('.codeview.realgridfield').html(
@@ -657,7 +657,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
         
             
 
-            $.getJSON(&quot;//resource/layout/columnset1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/layout/columnset1.json&quot;, function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
                 $('.codeview.realgridcolumn').html(
@@ -685,7 +685,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
         
             
 
-            $.getJSON(&quot;//resource/option/dataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/option/dataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
                 dataProvider.setOptions(data);
 
                 $('.codeview.realgriddpoption').html(
@@ -713,7 +713,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
         
             
 
-            $.getJSON(&quot;//resource/option/gridOption1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/option/gridOption1.json&quot;, function (data, textStatus, jqXHR) {
                 gridView.setOptions(data);
 
                 $('.codeview.realgridviewoption').html(
@@ -741,7 +741,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
         
             
 
-            $.getJSON(&quot;//resource/style/defaultStyle.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/style/defaultStyle.json&quot;, function (data, textStatus, jqXHR) {
                 gridView.setStyles(data);
 
                 $('.codeview.realgridstyle').html(
@@ -772,7 +772,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
             
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;//resource/data/griddata1.json?__time__=&quot; + new Date().getTime(),
+              url:&quot;/resource/data/griddata1.json?__time__=&quot; + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
                   onGridSuccessDataSet(data, textStatus, jqXHR);
@@ -870,7 +870,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
     var treeDataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext(&quot;//lib/realgrid/realgridjs_eval.1.1.21&quot;);
+        RealGridJS.setRootContext(&quot;/lib/realgrid/realgridjs_eval.1.1.21&quot;);
 
         treeDataProvider = new RealGridJS.LocalTreeDataProvider();
         treeView = new RealGridJS.TreeView(&quot;realtree&quot;);
@@ -879,7 +879,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
         
             
 
-            $.getJSON(&quot;//resource/layout/treeFieldset1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/layout/treeFieldset1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
                 treeDataProvider.setFields(data);
 
                 $('.codeview.realtreefield').html(
@@ -906,7 +906,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
         
             
 
-            $.getJSON(&quot;//resource/layout/treeColumnset1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/layout/treeColumnset1.json&quot;, function (data, textStatus, jqXHR) {
                 treeView.setColumns(data);
 
                 $('.codeview.realtreecolumn').html(
@@ -933,7 +933,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
         
             
 
-            $.getJSON(&quot;//resource/option/treeDataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/option/treeDataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
                 treeDataProvider.setOptions(data);
 
                 $('.codeview.realtreedpoption').html(
@@ -960,7 +960,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
         
             
 
-            $.getJSON(&quot;//resource/option/treeOption1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/option/treeOption1.json&quot;, function (data, textStatus, jqXHR) {
                 treeView.setOptions(data);
 
                 $('.codeview.realtreeviewoption').html(
@@ -987,7 +987,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
         
             
 
-            $.getJSON(&quot;//resource/style/treeStyle1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/style/treeStyle1.json&quot;, function (data, textStatus, jqXHR) {
                 treeView.setStyles(data);
 
                 $('.codeview.realtreestyle').html(
@@ -1019,7 +1019,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
             
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;//resource/data/treedata1.json?__time__=&quot; + new Date().getTime(),
+              url:&quot;/resource/data/treedata1.json?__time__=&quot; + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
                   onTreeSuccessDataSet(data, textStatus, jqXHR);
@@ -1137,7 +1137,7 @@ $('#btnAddTreeIcons').click(function() {
                 &quot;us.png&quot;,
                 &quot;ve.png&quot;
     ];
-    var imageList = new RealGridJS.ImageList(&quot;images&quot;, &quot;//resource/image/smallflag/&quot;);
+    var imageList = new RealGridJS.ImageList(&quot;images&quot;, &quot;/resource/image/smallflag/&quot;);
 
     imageList.addUrls(imgFiles);
     treeView.registerImageList(imageList);
@@ -1159,7 +1159,7 @@ $('#btnAddTreeIcons').click(function() {
 
 &lt;ul&gt;
   &lt;li&gt;데브박스에 부제목 넣기: 데브박스 작성시 부제목은 ####(샵샵샵샵)을 사용하면 됩니다.&lt;/li&gt;
-  &lt;li&gt;데브박스에 버튼 및 체크박스 넣기: &lt;a href=&quot;//Tree/TreeNodeControl/&quot;&gt;트리노드 페이지 참조&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;데브박스에 버튼 및 체크박스 넣기: &lt;a href=&quot;/Tree/TreeNodeControl/&quot;&gt;트리노드 페이지 참조&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;grid-toolbox--&quot;&gt;&lt;grid-toolbox&gt;그리드 툴 박스&lt;/grid-toolbox&gt;&lt;/h2&gt;
@@ -1193,7 +1193,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
     var dataProvider1;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext(&quot;//lib/realgrid/realgridjs_eval.1.1.21&quot;);
+        RealGridJS.setRootContext(&quot;/lib/realgrid/realgridjs_eval.1.1.21&quot;);
 
         dataProvider1 = new RealGridJS.LocalDataProvider();
         gridView1 = new RealGridJS.GridView(&quot;realgrid1&quot;);
@@ -1202,7 +1202,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;//resource/layout/carFields1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/layout/carFields1.json?__time__=&quot; + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider1.setFields(data);
 
                 $('.codeview.realgrid1field').html(
@@ -1230,7 +1230,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;//resource/layout/carColumns1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/layout/carColumns1.json&quot;, function (data, textStatus, jqXHR) {
                 gridView1.setColumns(data);
 
                 $('.codeview.realgrid1column').html(
@@ -1258,7 +1258,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;//resource/option/dataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/option/dataProviderOption1.json&quot;, function (data, textStatus, jqXHR) {
                 dataProvider1.setOptions(data);
 
                 $('.codeview.realgrid1dpoption').html(
@@ -1286,7 +1286,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;//resource/option/gridOption1.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/option/gridOption1.json&quot;, function (data, textStatus, jqXHR) {
                 gridView1.setOptions(data);
 
                 $('.codeview.realgrid1viewoption').html(
@@ -1314,7 +1314,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON(&quot;//resource/style/defaultStyle.json&quot;, function (data, textStatus, jqXHR) {
+            $.getJSON(&quot;/resource/style/defaultStyle.json&quot;, function (data, textStatus, jqXHR) {
                 gridView1.setStyles(data);
 
                 $('.codeview.realgrid1style').html(
@@ -1345,7 +1345,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
             
             $.ajax({
               type: &quot;GET&quot;,
-              url:&quot;//resource/data/carData1.json?__time__=&quot; + new Date().getTime(),
+              url:&quot;/resource/data/carData1.json?__time__=&quot; + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
                   onCarGridSuccessDataSet(data, textStatus, jqXHR);
@@ -1378,8 +1378,8 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
 &lt;p&gt;2016년 11월 현재 CSS의 row와 column 관련 스타일만 적용하고 있습니다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 06 Oct 2016 00:00:00 +0900</pubDate>
-        <link>demo.realgrid.com//guide/</link>
-        <guid isPermaLink="true">demo.realgrid.com//guide/</guid>
+        <link>demo.realgrid.com/guide/</link>
+        <guid isPermaLink="true">demo.realgrid.com/guide/</guid>
         
         
         <category>intro</category>
