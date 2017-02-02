@@ -5,8 +5,8 @@
     <description>RealGrid 데모사이트 입니다.</description>
     <link>demo.realgrid.com/</link>
     <atom:link href="demo.realgrid.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Feb 2017 02:29:34 +0900</pubDate>
-    <lastBuildDate>Wed, 01 Feb 2017 02:29:34 +0900</lastBuildDate>
+    <pubDate>Thu, 02 Feb 2017 13:41:55 +0900</pubDate>
+    <lastBuildDate>Thu, 02 Feb 2017 13:41:55 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -100,7 +100,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;devbox&lt;/code&gt;등 문서에서 사용되는 기본 버튼 입니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -132,7 +132,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 &lt;p&gt;특수용도로 사용하기 위해 만든 버튼 입니다. 문서내에서는 사용하지 마세요.&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -160,7 +160,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 &lt;p&gt;체크박스는 아래와 같은 형식으로 입력합니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -198,7 +198,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 &lt;p&gt;스크립트에서는 jQuery를 이용해 아래와 같이 가져올 수 있습니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;recursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;checkRecursive&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;force&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;checkForce&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -209,7 +209,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 &lt;p&gt;라디오버튼은 아래와 같은 형식으로 입력합니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -336,7 +336,7 @@ function funcExample(param1, param2) {
 
 &lt;p&gt;javascript 코드를 위와 같이 입력하면 아래와 같이 표시됩니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -377,7 +377,7 @@ function myFunction() {
 
 &lt;p&gt;위 코드는 아래와 같이 표시됩니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -466,50 +466,42 @@ function myFunction() {
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt;:  템플릿 파일명으로 항상 &lt;code class=&quot;highlighter-rouge&quot;&gt;realgrid.html&lt;/code&gt;을 입력합니다.
-    &lt;h5 id=&quot;section-4&quot;&gt;&lt;strong&gt;변수&lt;/strong&gt;&lt;/h5&gt;
-  &lt;/li&gt;
+##### &lt;strong&gt;변수&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridVar&lt;/code&gt;:  페이지 전체에서 사용할 grid 변수&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dpVar&lt;/code&gt;: 페이지에서 사용할 data provider 변수&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridId&lt;/code&gt;: 그리드가 위치할 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tag id attribute
-    &lt;h5 id=&quot;section-5&quot;&gt;&lt;strong&gt;필드 정보&lt;/strong&gt;&lt;/h5&gt;
-  &lt;/li&gt;
+##### &lt;strong&gt;필드 정보&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fieldSet&lt;/code&gt;: 그리드의 field 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successFieldSet&lt;/code&gt;: 필드파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneFieldSet&lt;/code&gt;: 필드파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successFieldSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failFieldSet&lt;/code&gt;: 필드파일 읽어오기 실패한 경우 호출됩니다.
-    &lt;h5 id=&quot;section-6&quot;&gt;&lt;strong&gt;컬럼 정보&lt;/strong&gt;&lt;/h5&gt;
-  &lt;/li&gt;
+##### &lt;strong&gt;컬럼 정보&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;columnSet&lt;/code&gt;: 그리드의 column 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successColumnSet&lt;/code&gt;: 컬럼파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneColumnSet&lt;/code&gt;: 컬럼파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successColumnSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failColumnSet&lt;/code&gt;: 컬럼파일 읽어오기 실패한 경우 호출됩니다.
-    &lt;h5 id=&quot;dataprovider-&quot;&gt;&lt;strong&gt;DataProvider 옵션정보&lt;/strong&gt;&lt;/h5&gt;
-  &lt;/li&gt;
+##### &lt;strong&gt;DataProvider 옵션정보&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dpOptionSet&lt;/code&gt;: 그리드의 data provider option 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successDpOptionSet&lt;/code&gt;: 옵션파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneDpOptionSet&lt;/code&gt;: 옵션파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDpOptionSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failDpOptionSet&lt;/code&gt;: 옵션파일 읽어오기 실패한 경우 호출됩니다.
-    &lt;h5 id=&quot;gridview-&quot;&gt;&lt;strong&gt;GridView 옵션정보&lt;/strong&gt;&lt;/h5&gt;
-  &lt;/li&gt;
+##### &lt;strong&gt;GridView 옵션정보&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridOptionSet&lt;/code&gt;: 그리드의 option 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successGridOptionSet&lt;/code&gt;: 옵션파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneGridOptionSet&lt;/code&gt;: 옵션파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successGridOptionSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failGridOptionSet&lt;/code&gt;: 옵션파일 읽어오기 실패한 경우 호출됩니다.
-    &lt;h5 id=&quot;section-7&quot;&gt;&lt;strong&gt;스타일 정보&lt;/strong&gt;&lt;/h5&gt;
-  &lt;/li&gt;
+##### &lt;strong&gt;스타일 정보&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;styleSet&lt;/code&gt;: 그리드의 style 정보를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successStyleSet&lt;/code&gt;: 스타일파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneStyleSet&lt;/code&gt;: 스타일파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successStyleSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failStyleSet&lt;/code&gt;: 스타일파일을 읽어오기 실패한 경우 호출됩니다.
-    &lt;h5 id=&quot;section-8&quot;&gt;&lt;strong&gt;데이터 정보&lt;/strong&gt;&lt;/h5&gt;
-  &lt;/li&gt;
+##### &lt;strong&gt;데이터 정보&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet&lt;/code&gt;: 그리드의 data 를 담고 있는 json 파일의 이름&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;showProgress&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;면 데이터를 가져오는 동안 프로그래스를 보여줍니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/code&gt;: 데이터파일을 성공적으로 읽어온 경우 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doneDataSet&lt;/code&gt;: 데이터파일을 성공적으로 읽어온 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet()&lt;/code&gt;이 호출된후 호출됩니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;failDataSet&lt;/code&gt;: 데이터파일을 읽어오기 실패한 경우 호출됩니다.
-    &lt;h5 id=&quot;section-9&quot;&gt;&lt;strong&gt;기타 정보&lt;/strong&gt;&lt;/h5&gt;
-  &lt;/li&gt;
+##### &lt;strong&gt;기타 정보&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;가 아니면 무조건 툴박스 보여줍니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridWidth&lt;/code&gt;: grid width style&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gridHeight&lt;/code&gt;: grid height style&lt;/li&gt;
@@ -531,7 +523,7 @@ function myFunction() {
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dataSet=&quot;griddata1.json&quot;&lt;/code&gt;: \resource\data\griddata1.json&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;section-10&quot;&gt;그리드 구성시 콜백 처리방법&lt;/h4&gt;
+&lt;h4 id=&quot;section-4&quot;&gt;그리드 구성시 콜백 처리방법&lt;/h4&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;field&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;column&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;dataProviderOption&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;gridOption&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt;은 각각 인자로 넘겨준 파일에서 그 정보를 읽어 그리드에 적용됩니다.
 이때 각각의 파일은 jquery.getJSON()함수를 통해 불러오는데, &lt;code class=&quot;highlighter-rouge&quot;&gt;success&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;done&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;fail&lt;/code&gt;이 발생한 이후 처리를 위해 콜백함수를 인자로 넘겨줄수 있습니다.&lt;/p&gt;
@@ -804,7 +796,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/code&gt;에 연결된 함수를 호출합니다. 따라서 트리에 데이터를 입력하는 코드는
 아래와 같이 onSuccessdDataSet() 함수내에서 처리해 주면 됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;mark&gt;한 화면에 그리드나 트리가 여러개인 경우 함수형 변수의 이름이 중복되지 않도록 주의하세요.&lt;/mark&gt;&lt;/p&gt;
+&lt;mark&gt;한 화면에 그리드나 트리가 여러개인 경우 함수형 변수의 이름이 중복되지 않도록 주의하세요.&lt;/mark&gt;
 
 &lt;pre&gt;
 &amp;lt;script&amp;gt;
@@ -1065,7 +1057,7 @@ success 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;successDataSet&lt;/c
 
 &lt;p&gt;위 버튼을 눌렀을때 트리에 아이콘을 추가하는 동작을 작동시키기 위해 아래 코드를 페이지에 삽입합니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -1176,7 +1168,7 @@ $('#btnAddTreeIcons').click(function() {
   &lt;li&gt;데이터 보기&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;section-11&quot;&gt;툴 박스 없는 그리드 만들기&lt;/h4&gt;
+&lt;h4 id=&quot;section-5&quot;&gt;툴 박스 없는 그리드 만들기&lt;/h4&gt;
 
 &lt;p&gt;툴 박스를 보이지 않기 위해서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;showToolbox=false&lt;/code&gt;로 인자의 값을 입력하시면 됩니다.&lt;/p&gt;
 
