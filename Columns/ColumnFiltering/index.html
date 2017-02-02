@@ -14,10 +14,20 @@
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
-
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
 
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-35988301-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
     <script type="text/javascript" src="/lib/jquery/jquery-1.11.2.min.js"></script>
 
     
@@ -18296,14 +18306,11 @@ gridView.onFilterActionClicked = function (grid, column, action, x, y) {
   if (action == "autoFilter") {
     var offset = $("#realgrid").offset();
 
-<<<<<<< HEAD
+
     showAutoFiltering(column, x + offset.left - 260, y + offset.top);
   }
 };    
-=======
-	    showAutoFiltering(column, x + offset.left, y + offset.top);
-	  }
-	};
+
 
 	var autoFiltercolumn;
 	var autoFilterItems = [];
@@ -18370,10 +18377,7 @@ gridView.onFilterActionClicked = function (grid, column, action, x, y) {
 	        maxHeight: 200
 	    }
 	});
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
+
   }
 </script>
 
@@ -18583,18 +18587,9 @@ gridView.onFilterActionClicked = function (grid, column, action, x, y) {
 <div id="divAutoFilter" style="display:none; position:absolute; height:260px; width:146px; background-color:#eeeeee; border:1px solid black;">
     <span id="spanFilters" style="overflow-y:scroll; display:block; width:100%; height:230px">
     </span>
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
     <a class="btn secondary small lowercase" id="applyAutoFilter">Apply</a>
     <a class="btn secondary small lowercase" id="cancelAutoFilter">Cancel</a>
-=======
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-    <a type="button" id="applyAutoFilter" onclick="applyAutoFilter();" />Apply
-    <a type="button" id="cancelAutoFilter" onclick="closeAutoFilter();" />Cancel
-=======
-    <a class="btn secondary small lowercase" id="applyAutoFilter">Apply</a>
-    <a class="btn secondary small lowercase" id="cancelAutoFilter">Cancel</a>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/master
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes
+
 </div>
 
             <p>
@@ -19239,38 +19234,6 @@ $("#btnSetFilterAction").click(function() {
     $("#btnFilter").attr("disabled", "disabled");
     $("#txtFilter").text("'CustomerId' 컬럼에 필터가 설정됐습니다.");  
 });
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-
-
-var autoFiltercolumn;
-var autoFilterItems = [];
-
-function showAutoFiltering(column, x, y) {
-  autoFiltercolumn = column;
-  var fieldName = gridView.columnByName(column).fieldName;
-  var values = dataProvider.getDistinctValues(fieldName, 100);
-
-  var span = $("#spanFilters");
-  span.empty();
-  values.forEach(function (v) {
-    var label = $("<label />").appendTo(span);
-    var existsFilter = autoFilterItems.indexOf(v) >= 0;
-    $("<input />", { type: "checkbox", name: "chkAutoFilterItem", value: v, checked: existsFilter}).appendTo(label);
-    label.append(v);
-    span.append("<br/>");
-  });
-
-  $("#divAutoFilter").css("left", x);
-  $("#divAutoFilter").css("top", y);
-
-  $("#divAutoFilter").show();
-}
->>>>>>> origin/master
 
 
 </script>
