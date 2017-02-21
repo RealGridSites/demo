@@ -19086,7 +19086,7 @@ function applyAutoFilter() {
     autoFilterItems.push(filterItems[i].value);
     if (filterExpr != "")
       filterExpr += " or ";
-    filterExpr += "(value = '" + filterItems[i].value + "')";
+    filterExpr += "(value like '%" + filterItems[i].value + "%')";
   };
   console.log(filterExpr);
   var filters = {
@@ -19096,7 +19096,7 @@ function applyAutoFilter() {
     hidden:true
   };
 
-  gridView.addColumnFilters("OrderID", filters, true);
+  gridView.addColumnFilters("CustomerID", filters, true);
   $("#divAutoFilter").hide();
 };
 
@@ -19332,7 +19332,7 @@ function closeAutoFilter() {
       
       <h4 id="section">사용자 필터링</h4>
 
-<p>Custom Filter버튼 클릭 시 <code class="highlighter-rouge">OrderID</code> 컬럼에 <code class="highlighter-rouge">Custom Filter</code>가 설정되며
+<p>Custom Filter버튼 클릭 시 <code class="highlighter-rouge">CustomerID</code> 컬럼에 <code class="highlighter-rouge">Custom Filter</code>가 설정되며
 Custom Filter의 textBox에 <code class="highlighter-rouge">value</code> 값 입력 후 Enter키 입력 시 필터가 추가됩니다.<br />
 해당 filter값을 체크 후 <code class="highlighter-rouge">Apply버튼</code>을 클릭하면 선택된 값으로 필터링 합니다.</p>
 
@@ -19374,7 +19374,7 @@ $("#btnSetFilters").click(function() {
 	  text: "CustomFilter",
 	  description: "Custom Filter Actions"
 	}];
-	gridView.setColumnFilterActions('OrderID', actions);
+	gridView.setColumnFilterActions('CustomerID', actions);
 
 	//사용자 필터 이벤트
 	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
