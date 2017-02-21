@@ -19288,19 +19288,30 @@
   <li><code class="highlighter-rouge">cellDynamicStyles</code>: 동적 스타일을 지정합니다.</li>
 </ul>
 
-<p><a class="btn primary small round lowercase" id="btnSetDynamicStyles">동적 컬럼 스타일 변경</a>
-```js
-var newDynamicStyles = [{
-    criteria: “value &gt;= 1000”,
-    styles: “background=#FF0000”
-}];</p>
+<p><a class="btn primary small round lowercase" id="btnSetDynamicStyles">동적 컬럼 스타일 변경</a></p>
 
-<p>gridView.setStyles({
-    body: {
-        cellDynamicStyles: newDynamicStyles
-    }
-});
-```</p>
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">newDynamicStyles</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 1000"</span><span class="p">,</span>
+    <span class="na">styles</span><span class="p">:</span> <span class="s2">"background=#FF0000"</span>
+<span class="p">}];</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">({</span>
+    <span class="na">body</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">cellDynamicStyles</span><span class="p">:</span> <span class="nx">newDynamicStyles</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
 
 <script>
   $('#btnSetDynamicStyles').click(function() {

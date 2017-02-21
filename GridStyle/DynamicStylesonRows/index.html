@@ -19290,19 +19290,30 @@
   <li><code class="highlighter-rouge">dynamicStyles</code>: 동적 스타일을 적용할 조건과 표현식을 지정합니다.</li>
 </ul>
 
-<p><a class="btn primary small round lowercase" id="btnSetDynamicStyles">동적 행 스타일 변경</a>
-```js
-var newDynamicStyles = [{
-    criteria: “row mod 2 &lt;&gt; 0”,
-    styles: “background=#D4F4FA”
-}];</p>
+<p><a class="btn primary small round lowercase" id="btnSetDynamicStyles">동적 행 스타일 변경</a></p>
 
-<p>gridView.setStyles({
-    body: {
-        dynamicStyles: newDynamicStyles
-    }
-});
-```</p>
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">newDynamicStyles</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"row mod 2 &lt;&gt; 0"</span><span class="p">,</span>
+    <span class="na">styles</span><span class="p">:</span> <span class="s2">"background=#D4F4FA"</span>
+<span class="p">}];</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">({</span>
+    <span class="na">body</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">dynamicStyles</span><span class="p">:</span> <span class="nx">newDynamicStyles</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
 
 <h4 id="section-1">동적 행 스타일</h4>
 <p>행 동적 스타일 적용 순서를 컬럼 배경으로 셀에 스타일을 적용합니다.</p>
@@ -19312,14 +19323,20 @@ var newDynamicStyles = [{
 </ul>
 
 <p><a class="btn primary small round lowercase" id="btnSetRowStylesFirst">행 동적 스타일 먼저 실행</a>
-<a class="btn primary small round lowercase" id="btnSetRowStylesBack">행 동적 스타일 나중에 실행</a>
-<code class="highlighter-rouge">js
-gridView.setOptions({
-    body: {
-        rowStylesFirst: "true"
-    }
-});
-</code></p>
+<a class="btn primary small round lowercase" id="btnSetRowStylesBack">행 동적 스타일 나중에 실행</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
+    <span class="na">body</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">rowStylesFirst</span><span class="p">:</span> <span class="s2">"true"</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
 
 <script>
   $('#btnSetDynamicStyles').click(function() {
