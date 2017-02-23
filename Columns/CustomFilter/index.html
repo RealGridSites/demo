@@ -1249,6 +1249,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -2317,6 +2321,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -3405,6 +3413,20 @@
               
 
               
+
+              
+              <li class="item-toc current">
+                <a href="/Columns/CustomFilter/"
+                class="current sidebar-link ">
+                  <span>사용자 필터링(Custom Filter)</span>
+                  <span style="display: none;">
+                  Filtering, 필터링, 필터, Custom
+                  </span>
+                </a>
+              </li>
+              
+
+            
               
               
 
@@ -4473,6 +4495,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -5481,6 +5507,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -6549,6 +6579,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -7637,6 +7671,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -8635,6 +8673,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -9713,6 +9755,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -10741,6 +10787,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -11829,6 +11879,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -12847,6 +12901,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -13895,6 +13953,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -14903,6 +14965,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -15921,6 +15987,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -16929,6 +16999,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -18027,6 +18101,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -19015,6 +19093,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -19067,6 +19149,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 }
 
 var onDoneDataSet = function() {
+	gridView.setColumnProperty("CustomerID","header",{styles:{background:"linear,#22ffd500,#ffffd500,90"}})
 	//사용자 필터 이벤트
 	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
 	  
@@ -19107,40 +19190,42 @@ function setCustomFilter(){
 }
 
 function applyAutoFilter() {
-  var filterExpr = "";
-  var filterItems = $('input[name="chkAutoFilterItem"]:checked');
-  autoFilterItems = [];
-  for (var i = 0; i < filterItems.length; i++) {
-    autoFilterItems.push(filterItems[i].value);
-    if (filterExpr != "")
-      filterExpr += " or ";
-    filterExpr += "(value like '%" + filterItems[i].value + "%')";
-  };
-  console.log(filterExpr);
-  var filters = {
-    name: "auto_result",
-    criteria: filterExpr,
-    active: true,
-    hidden:true
-  };
+	var filterExpr = "";
+	var filterItems = $('input[name="chkAutoFilterItem"]:checked');
+	autoFilterItems = [];
+	for (var i = 0; i < filterItems.length; i++) {
+		autoFilterItems.push(filterItems[i].value);
+		if (filterExpr != "")
+		filterExpr += " or ";
+		filterExpr += "(value like '%" + filterItems[i].value + "%')";
+	};
+	console.log(filterExpr);
+	var filters = {
+		name: "auto_result",
+		criteria: filterExpr,
+		active: true,
+		hidden:true
+	};
 
-  gridView.addColumnFilters("CustomerID", filters, true);
-  $("#divAutoFilter").hide();
-  var chkArr = [];
-  $("input[name=chkAutoFilterItem]:checked").each(function() {
-	  chkArr.push($(this).val());
-  });
-  chkID = chkArr;
+	gridView.addColumnFilters("CustomerID", filters, true);
+	$("#divAutoFilter").hide();
+	var chkArr = [];
+	$("input[name=chkAutoFilterItem]:checked").each(function() {
+		chkArr.push($(this).val());
+	});
+	chkID = chkArr;
 };
 
 function closeAutoFilter() {
-  $("#divAutoFilter").hide();
-  $("input[name=chkAutoFilterItem]:checkbox").each(function() {
-	$(this).attr("checked", false);
-  });
-  for(var i = 0; i < chkID.length; i++){
-  	document.getElementById(chkID[i]).checked = true
-  }
+	$("#divAutoFilter").hide();
+	$("input[name=chkAutoFilterItem]:checkbox").each(function() {
+		$(this).attr("checked", false);
+	});
+	if(chkID !== undefined){
+		for(var i = 0; i < chkID.length; i++){
+			document.getElementById(chkID[i]).checked = true
+		}
+	}
 }
 
 </script>
@@ -19354,7 +19439,6 @@ function closeAutoFilter() {
 
     <a class="btn secondary small lowercase" onclick="applyAutoFilter();" id="applyAutoFilter">Apply</a>
     <a class="btn secondary small lowercase" onclick="closeAutoFilter();" id="cancelAutoFilter">Cancel</a>
-
 </div>
 
             <p>
@@ -19376,51 +19460,206 @@ Custom Filter의 textBox에 <code class="highlighter-rouge">value</code> 값 입
 
 <p><a class="btn primary small round lowercase" id="btnSetFilters">Custom Filter</a></p>
 
-<script>
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</pre></td><td class="code"><pre><span class="c1">//필터 액션 설정</span>
+<span class="kd">var</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s2">"CustomFilter"</span><span class="p">,</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s2">"CustomFilter"</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="s2">"Custom Filter Actions"</span>
+<span class="p">}];</span>
 
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilterActions</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="nx">actions</span><span class="p">);</span>
+
+<span class="c1">//사용자 필터 이벤트</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">onFilterActionClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">action</span> <span class="o">==</span> <span class="s2">"CustomFilter"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">offset</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#realgrid"</span><span class="p">).</span><span class="nx">offset</span><span class="p">();</span>
+    	<span class="nx">showAutoFiltering</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">offset</span><span class="p">.</span><span class="nx">left</span> <span class="o">-</span> <span class="mi">260</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">offset</span><span class="p">.</span><span class="nx">top</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"customerText"</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="c1">///////////////////////////////////////////////////////////////</span>
+<span class="c1">//동작 함수</span>
+<span class="kd">function</span> <span class="nx">showAutoFiltering</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"left"</span><span class="p">,</span> <span class="nx">x</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"top"</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setCustomFilter</span><span class="p">(){</span>
+	<span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">())){</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">"이미 해당 필터 조건이 존재합니다."</span><span class="p">)</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">""</span><span class="p">){</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">"필터로 검색할 값을 입력하세요."</span><span class="p">)</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="kd">var</span> <span class="nx">span</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#spanFilters"</span><span class="p">);</span>
+		<span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;label /&gt;"</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">span</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;input /&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="s2">"checkbox"</span><span class="p">,</span> <span class="na">id</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"chkAutoFilterItem"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="na">checked</span><span class="p">:</span> <span class="kc">true</span><span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+		<span class="nx">label</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+		<span class="nx">span</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"&lt;br/&gt;"</span><span class="p">);</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"customerText"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">""</span>
+		<span class="nx">applyAutoFilter</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">applyAutoFilter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">filterExpr</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">filterItems</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'input[name="chkAutoFilterItem"]:checked'</span><span class="p">);</span>
+    <span class="nx">autoFilterItems</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">filterItems</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">autoFilterItems</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">filterItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">filterExpr</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">)</span>
+        <span class="nx">filterExpr</span> <span class="o">+=</span> <span class="s2">" or "</span><span class="p">;</span>
+        <span class="nx">filterExpr</span> <span class="o">+=</span> <span class="s2">"(value like '%"</span> <span class="o">+</span> <span class="nx">filterItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">+</span> <span class="s2">"%')"</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="s2">"auto_result"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="nx">filterExpr</span><span class="p">,</span>
+        <span class="na">active</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">hidden</span><span class="p">:</span><span class="kc">true</span>
+    <span class="p">};</span>
+
+    <span class="nx">gridView</span><span class="p">.</span><span class="nx">addColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="nx">filters</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">chkArr</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"input[name=chkAutoFilterItem]:checked"</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">chkArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+    <span class="p">});</span>
+    <span class="nx">chkID</span> <span class="o">=</span> <span class="nx">chkArr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">closeAutoFilter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"input[name=chkAutoFilterItem]:checkbox"</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"checked"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">chkID</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">chkID</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">chkID</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+
+<span class="c1">///////////////////////////////////////////////////////////////</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"divAutoFilter"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"display:none; position:absolute; height:280px; width:146px; background-color:#eeeeee; border:1px solid black;"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"customerText"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Custom Filter"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"height:20px;width:144px"</span> <span class="nx">onkeypress</span><span class="o">=</span><span class="s2">"if(event.keyCode==13) {setCustomFilter();}"</span> <span class="nx">autofocus</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"spanFilters"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"overflow-y:scroll; display:block; width:100%; height:230px"</span><span class="o">&gt;&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>
+    <span class="o">&lt;</span><span class="nx">a</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"btn secondary small lowercase"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"applyAutoFilter();"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"applyAutoFilter"</span><span class="o">&gt;</span><span class="nx">Apply</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">a</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"btn secondary small lowercase"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"closeAutoFilter();"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"cancelAutoFilter"</span><span class="o">&gt;</span><span class="nx">Cancel</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
 var oldFilterColumn;
 $("#btnSetFilters").click(function() { 
-	/*
-	//var filterColumn = $("#selFilterColumn").val();
-    //var filterOper = $("#selFilterOperator").val();
-    //var filterValue;
-    var filterColumn = "OrderID";
-    var filterOper = "="
-    var filterValue = "10248"
-
-    if ($("#selFilterType").val() == "value") {
-        filterValue = "'" + $("#txtFilterValue").val() + "'";
-    } else {
-        var targetField = grdMain.getColumnProperty($("#selCompareColumn").val(), "fieldName");
-        filterValue = "values['" + targetField + "']";
-    }
-
-    var filters = {
-        name: "custom_filter",
-        criteria: "value " + filterOper + " " + filterValue,
-        active: true
-    };
- 
-    // 이전 customer filter를 제거
-    if (oldFilterColumn)
-    gridView.removeColumnFilters(oldFilterColumn, "custom_filter");
-    gridView.addColumnFilters(filterColumn, filters, true);
- 
-    oldFilterColumn = filterColumn;
-    */
     var actions = [{
 	  name: "CustomFilter",
 	  text: "CustomFilter",
 	  description: "Custom Filter Actions"
 	}];
 	gridView.setColumnFilterActions('CustomerID', actions);
-
-
-
-	var autoFiltercolumn;
-	var autoFilterItems = [];
-
-	
 });
 </script>
 
