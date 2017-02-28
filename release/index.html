@@ -19143,65 +19143,110 @@
     <ul>
       <li>컬럼정렬시 정렬순서를 표시하는 기능이 추가되었습니다.</li>
       <li>SortingOptions.showSortOrder 를 true로 변경하면 Sort표시 오른쪽에 정렬순서가 표시됩니다.</li>
-      <li>SortingOptins.sortOrderStyles를 이용하여 폰트를 변경할수 있습니다.
-<code class="highlighter-rouge">js
-grid.setSortingOptions({showSortOrder:true, sortOrderStyles:{font:"굴림체", fontSize:10, fontBold:true, foreground:"#ffff8888", textAlignment:"far"});
-</code></li>
+      <li>SortingOptins.sortOrderStyles를 이용하여 폰트를 변경할수 있습니다.</li>
     </ul>
   </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span><span class="na">showSortOrder</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="na">sortOrderStyles</span><span class="p">:{</span><span class="na">font</span><span class="p">:</span><span class="s2">"굴림체"</span><span class="p">,</span> <span class="na">fontSize</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="na">fontBold</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="na">foreground</span><span class="p">:</span><span class="s2">"#ffff8888"</span><span class="p">,</span> <span class="na">textAlignment</span><span class="p">:</span><span class="s2">"far"</span><span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
   <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
     <ul>
       <li>선택된 셀의 row를 표시할수 있는 rowFocus가 추가되었습니다.</li>
-      <li>DisplayOptions.rowFocusVisible 을 true로 변경하면 선택된 row의 배경색이 지정된 색상으로 표시됩니다.
-<code class="highlighter-rouge">js
-  grid.setDisplayOptions({rowFocusVisible:true, rowFocusBackground:"#340000ff"})
-</code></li>
-      <li>DisplayOptions.rowFocusMask는 “data”,”row”,”fill”의 값을 가질수 있습니다.</li>
+      <li>DisplayOptions.rowFocusVisible 을 true로 변경하면 선택된 row의 배경색이 지정된 색상으로 표시됩니다.</li>
     </ul>
   </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">grid</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span><span class="na">rowFocusVisible</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="na">rowFocusBackground</span><span class="p">:</span><span class="s2">"#340000ff"</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<ul>
+  <li>DisplayOptions.rowFocusMask는 “data”,”row”,”fill”의 값을 가질수 있습니다.</li>
+</ul>
+
+<ol>
   <li><a href="http://help.realgrid.com/api/DataProvider/addField/">dataProvider.addField</a>와 <a href="http://help.realgrid.com/api/GridBase/addColumn/">grid.addColumn</a>, <a href="http://help.realgrid.com/api/GridBase/removeColumn/">grid.removeColumn</a>이 추가되었습니다.
     <ul>
-      <li>그리드를 생성하고 난후 필드를 추가하거나 또는 컬럼을 추가해야 하는 경우 사용할수 있도록 addField, addColumn, removeColumn이 추가되었습니다.
-<code class="highlighter-rouge">js
-  dataprovider.addField({fieldName:"fieldName", dataType:"text"});
-  grid.addColumn({fieldName:"fieldName",name:"name", ...})
-</code></li>
+      <li>그리드를 생성하고 난후 필드를 추가하거나 또는 컬럼을 추가해야 하는 경우 사용할수 있도록 addField, addColumn, removeColumn이 추가되었습니다.</li>
     </ul>
   </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>  <span class="nx">dataprovider</span><span class="p">.</span><span class="nx">addField</span><span class="p">({</span><span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName"</span><span class="p">,</span> <span class="na">dataType</span><span class="p">:</span><span class="s2">"text"</span><span class="p">});</span>
+  <span class="nx">grid</span><span class="p">.</span><span class="nx">addColumn</span><span class="p">({</span><span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName"</span><span class="p">,</span><span class="na">name</span><span class="p">:</span><span class="s2">"name"</span><span class="p">,</span> <span class="p">...})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
   <li><code class="highlighter-rouge">날짜등의 특정포맷에 대한 Mask기능</code>
     <ul>
       <li>LineCellEditor와 DateCellEditor에서 사용할수 있는 mask속성이 추가되었습니다.</li>
-      <li>Cell 편집시에 적용되는 속성이며 표시되는 값을 변경하는 경우 datetimeFormat또는 displayRegExp등을 이용해서 변경해야 합니다.
-<code class="highlighter-rouge">js
-grid.setColumns([
-{
-  fieldName:"fieldName",
-  name:"name",
-  editor:{
- type:"date",
- mask:{
-   editMask:"9999-99-99",
-   includedFormat:true //
- }
-  },
-  styles:{
- datetimeFormat:"yyyy-MM-dd"
-  }
-}])
-</code></li>
-      <li>자세한 내용은 <a href="http://help.realgrid.com/api/types/Mask/">Mask</a>를 참조하세요.</li>
+      <li>Cell 편집시에 적용되는 속성이며 표시되는 값을 변경하는 경우 datetimeFormat또는 displayRegExp등을 이용해서 변경해야 합니다.</li>
     </ul>
   </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td><td class="code"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([</span>
+<span class="p">{</span>
+  <span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName"</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span><span class="s2">"name"</span><span class="p">,</span>
+  <span class="na">editor</span><span class="p">:{</span>
+    <span class="na">type</span><span class="p">:</span><span class="s2">"date"</span><span class="p">,</span>
+    <span class="na">mask</span><span class="p">:{</span>
+      <span class="na">editMask</span><span class="p">:</span><span class="s2">"9999-99-99"</span><span class="p">,</span>
+      <span class="na">includedFormat</span><span class="p">:</span><span class="kc">true</span> <span class="c1">//</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">styles</span><span class="p">:{</span>
+    <span class="na">datetimeFormat</span><span class="p">:</span><span class="s2">"yyyy-MM-dd"</span>
+  <span class="p">}</span>
+<span class="p">}])</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<ul>
+  <li>자세한 내용은 <a href="http://help.realgrid.com/api/types/Mask/">Mask</a>를 참조하세요.</li>
+</ul>
+
+<ol>
   <li>그리드 빈공간의 배경색을 변경할수 있도록 개선되었습니다.
     <ul>
       <li>그리드의 body.empty.background의 색상을 지정하여 그리드 빈영역의 배경색을 지정할 수 있도록 개선되었습니다.</li>
-      <li>그리드에 표시되는 데이터가 한건도 없는 경우 사용자에게 메세지를 표시할수 있도록 DisplayOptions.showEmptyMessage가 추가되었습니다.
-<code class="highlighter-rouge">js
-grid.setDisplayOptions({showEmptyMessage:true, emptyMessage:"자료가 없습니다"});
-grid.setStyles({body:{empty:{background:"#2100ff00", textAlignment:"center", lineAlignment:"center", fontSize:15, fontBold:true}}});
-</code></li>
+      <li>그리드에 표시되는 데이터가 한건도 없는 경우 사용자에게 메세지를 표시할수 있도록 DisplayOptions.showEmptyMessage가 추가되었습니다.</li>
     </ul>
   </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span><span class="na">showEmptyMessage</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="na">emptyMessage</span><span class="p">:</span><span class="s2">"자료가 없습니다"</span><span class="p">});</span>
+<span class="nx">grid</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">({</span><span class="na">body</span><span class="p">:{</span><span class="na">empty</span><span class="p">:{</span><span class="na">background</span><span class="p">:</span><span class="s2">"#2100ff00"</span><span class="p">,</span> <span class="na">textAlignment</span><span class="p">:</span><span class="s2">"center"</span><span class="p">,</span> <span class="na">lineAlignment</span><span class="p">:</span><span class="s2">"center"</span><span class="p">,</span> <span class="na">fontSize</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span> <span class="na">fontBold</span><span class="p">:</span><span class="kc">true</span><span class="p">}}});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
   <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
     <ul>
       <li>포커스된 셀의 background를 변경할 수 있도록 focusBackground 속성이 추가되었습니다.</li>
