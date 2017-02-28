@@ -19530,7 +19530,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="userID">사용자 Id 컬럼 마스킹 처리</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="c1">//displayReplace에 대체문자열 사용</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"userid"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">a-z0-9</span><span class="se">]{3})([</span><span class="sr">a-z0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">)</span>
@@ -19541,7 +19541,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="email">E-Mail 컬럼 마스킹 처리</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19556,7 +19556,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="ip_address">IP Address 컬럼 마스킹 처리</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ip_address"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.)([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.)([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)(\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">)</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ip_address"</span><span class="p">,</span><span class="s2">"displayReplace"</span><span class="p">,</span> <span class="s2">"$1$2***$4"</span><span class="p">)</span>
 </pre></td></tr></tbody></table>
@@ -19565,7 +19565,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="card_number">신용카드 컬럼 마스킹 처리</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"card_number"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})</span><span class="sr">$/</span><span class="p">)</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"card_number"</span><span class="p">,</span><span class="s2">"displayReplace"</span><span class="p">,</span> <span class="s2">"$1-$2-****-$4"</span><span class="p">)</span>
 </pre></td></tr></tbody></table>
@@ -19574,7 +19574,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="regularColumn">정규식을 이용한 컬럼 생성</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19591,13 +19591,13 @@ var onDoneDataSet = function() {
     <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"phone"</span><span class="p">,</span>
     <span class="s2">"width"</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
     <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"전화번호"</span> <span class="p">},</span>
-    <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"near"</span><span class="p">,</span>
-        <span class="s2">"font"</span><span class="err">:</span> <span class="s2">"arial"</span><span class="p">,</span>
-        <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"#ffffff99"</span>
+    <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"near"</span><span class="p">,</span>
+        <span class="s2">"font"</span><span class="p">:</span> <span class="s2">"arial"</span><span class="p">,</span>
+        <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ffffff99"</span>
     <span class="p">},</span>
-    <span class="s2">"displayRegExp"</span><span class="err">:</span> <span class="o">/^</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">(([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">)([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">3</span><span class="p">})([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">4</span><span class="p">})</span><span class="nx">$</span><span class="o">/</span><span class="p">,</span> 
-    <span class="s2">"displayReplace"</span><span class="err">:</span> <span class="s2">"$1-$2-$3-$4"</span>
+    <span class="s2">"displayRegExp"</span><span class="p">:</span> <span class="o">/^</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">(([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">)([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">3</span><span class="p">})([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">4</span><span class="p">})</span><span class="nx">$</span><span class="o">/</span><span class="p">,</span> 
+    <span class="s2">"displayReplace"</span><span class="p">:</span> <span class="s2">"$1-$2-$3-$4"</span>
 <span class="p">}];</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>

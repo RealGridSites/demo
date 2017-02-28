@@ -19382,54 +19382,61 @@
   <li><code class="highlighter-rouge">collapseParent</code>: 지정한 아이템이 row이거나 footer인경우 그룹을 접습니다.</li>
 </ul>
 
-<p><a class="btn primary small round lowercase" id="btnGroupBy">groupBy</a>
-<code class="highlighter-rouge">js
-  gridView.groupBy(["OrderID","CustomerID"]);
-</code>
-<a class="btn primary small round lowercase" id="btnUnGroupBy">그룹해제</a>
-<code class="highlighter-rouge">js
-  gridView.groupBy([]);
-</code>
-<a class="btn primary small round lowercase" id="btnIsGrouped">isGrouped</a>
-<code class="highlighter-rouge">js
-  alert(gridView.isGrouped());
-</code>
-<a class="btn primary small round lowercase" id="btnIsMergedGrouped">isMergedGrouped</a>
-<code class="highlighter-rouge">js
-  alert(gridView.isMergedGrouped());
-</code></p>
+<p><a class="btn primary small round lowercase" id="btnGroupBy">groupBy</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">groupBy</span><span class="p">([</span><span class="s2">"OrderID"</span><span class="p">,</span><span class="s2">"CustomerID"</span><span class="p">]);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<p><a class="btn primary small round lowercase" id="btnUnGroupBy">그룹해제</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">groupBy</span><span class="p">([]);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<p><a class="btn primary small round lowercase" id="btnIsGrouped">isGrouped</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">alert</span><span class="p">(</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">isGrouped</span><span class="p">());</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<p><a class="btn primary small round lowercase" id="btnIsMergedGrouped">isMergedGrouped</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">alert</span><span class="p">(</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">isMergedGrouped</span><span class="p">());</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
 
-<p><a class="btn primary small round lowercase" id="btnGetGroupFields">getGroupFields</a>
-<code class="highlighter-rouge">js
-  alert(gridView.getGroupFields());
-</code>
-<a class="btn primary small round lowercase" id="btnGetGroupFieldNames">getGroupFieldNames</a>
-<label for="chkOrgFieldName">OrgFieldName<input type="checkbox" id="chkOrgFieldName" checked="checked" /></label>
-<code class="highlighter-rouge">js
-  alert(gridView.getGroupFieldNames($("#chkOrgFieldName").is(":checked")));
-</code>
-<script></script></p>
+<p><a class="btn primary small round lowercase" id="btnGetGroupFields">getGroupFields</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">alert</span><span class="p">(</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getGroupFields</span><span class="p">());</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<p><a class="btn primary small round lowercase" id="btnGetGroupFieldNames">getGroupFieldNames</a>
+<label for="chkOrgFieldName">OrgFieldName<input type="checkbox" id="chkOrgFieldName" checked="checked" /></label></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">alert</span><span class="p">(</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getGroupFieldNames</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#chkOrgFieldName"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">)));</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<script>
 
-<p>$(‘#btnGroupBy’).click(function() {
-    gridView.groupBy([“OrderID”,”CustomerID”]);
-  });</p>
+  $('#btnGroupBy').click(function() {
+    gridView.groupBy(["OrderID","CustomerID"]);
+  });
 
-<p>$(‘#btnUnGroupBy’).click(function() {
+  $('#btnUnGroupBy').click(function() {
     gridView.groupBy([]);
   });
-  $(‘#btnIsGrouped’).click(function() {
+  $('#btnIsGrouped').click(function() {
     alert(gridView.isGrouped());
   });
-  $(‘#btnIsMergedGrouped’).click(function() {
+  $('#btnIsMergedGrouped').click(function() {
     alert(gridView.isMergedGrouped());
   });
-  $(‘#btnGetGroupFields’).click(function() {
+  $('#btnGetGroupFields').click(function() {
     alert(gridView.getGroupFields());
   });
-  $(‘#btnGetGroupFieldNames’).click(function() {
-    alert(gridView.getGroupFieldNames($(“#chkOrgFieldName”).is(“:checked”)));
+  $('#btnGetGroupFieldNames').click(function() {
+    alert(gridView.getGroupFieldNames($("#chkOrgFieldName").is(":checked")));
   });
-&lt;/script&gt;</p>
+</script>
+
 
   </div>
 </div>

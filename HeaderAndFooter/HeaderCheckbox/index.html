@@ -19378,7 +19378,7 @@
   <li><code class="highlighter-rouge">checkLocation</code>: 헤더 체크박스의 위치를 지정합니다.</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19397,11 +19397,11 @@
     <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"center"</span>
     <span class="p">},</span>
-    <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Order Date"</span><span class="p">,</span>
-        <span class="s2">"checkLocation"</span><span class="err">:</span> <span class="s2">"left"</span>
+    <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Order Date"</span><span class="p">,</span>
+        <span class="s2">"checkLocation"</span><span class="p">:</span> <span class="s2">"left"</span>
     <span class="p">},</span>
-    <span class="s2">"checkded"</span><span class="err">:</span> <span class="s2">"true"</span>
+    <span class="s2">"checkded"</span><span class="p">:</span> <span class="s2">"true"</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>
@@ -19413,12 +19413,15 @@
 </ul>
 
 <p><a class="btn primary small round lowercase" id="btnSetColumnUnChecked">헤더 체크 해제하기</a>
-<a class="btn primary small round lowercase" id="btnSetColumnChecked">헤더 체크 선택하기</a>
-<code class="highlighter-rouge">js
-  var checkColumn = gridView.columnByName("GroupIds");
-  checkColumn.checked = true;
-  gridView.setColumn(checkColumn);
-</code></p>
+<a class="btn primary small round lowercase" id="btnSetColumnChecked">헤더 체크 선택하기</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre>  <span class="kd">var</span> <span class="nx">checkColumn</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"GroupIds"</span><span class="p">);</span>
+  <span class="nx">checkColumn</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">checkColumn</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
 
 <script>
 

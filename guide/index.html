@@ -19227,7 +19227,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 <p><code class="highlighter-rouge">devbox</code>등 문서에서 사용되는 기본 버튼 입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19259,7 +19259,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 <p>특수용도로 사용하기 위해 만든 버튼 입니다. 문서내에서는 사용하지 마세요.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19287,7 +19287,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 <p>체크박스는 아래와 같은 형식으로 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19325,7 +19325,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 <p>스크립트에서는 jQuery를 이용해 아래와 같이 가져올 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">recursive</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"checkRecursive"</span><span class="p">).</span><span class="nx">checked</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">force</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"checkForce"</span><span class="p">).</span><span class="nx">checked</span><span class="p">;</span>
@@ -19336,7 +19336,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 <p>라디오버튼은 아래와 같은 형식으로 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19463,7 +19463,7 @@ function funcExample(param1, param2) {
 
 <p>javascript 코드를 위와 같이 입력하면 아래와 같이 표시됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19504,7 +19504,7 @@ function myFunction() {
 
 <p>위 코드는 아래와 같이 표시됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19593,42 +19593,50 @@ function myFunction() {
 
 <ul>
   <li><code class="highlighter-rouge">include</code>:  템플릿 파일명으로 항상 <code class="highlighter-rouge">realgrid.html</code>을 입력합니다.
-##### <strong>변수</strong></li>
+    <h5 id="section-4"><strong>변수</strong></h5>
+  </li>
   <li><code class="highlighter-rouge">gridVar</code>:  페이지 전체에서 사용할 grid 변수</li>
   <li><code class="highlighter-rouge">dpVar</code>: 페이지에서 사용할 data provider 변수</li>
   <li><code class="highlighter-rouge">gridId</code>: 그리드가 위치할 <code class="highlighter-rouge">&lt;div&gt;</code> tag id attribute
-##### <strong>필드 정보</strong></li>
+    <h5 id="section-5"><strong>필드 정보</strong></h5>
+  </li>
   <li><code class="highlighter-rouge">fieldSet</code>: 그리드의 field 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successFieldSet</code>: 필드파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneFieldSet</code>: 필드파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successFieldSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failFieldSet</code>: 필드파일 읽어오기 실패한 경우 호출됩니다.
-##### <strong>컬럼 정보</strong></li>
+    <h5 id="section-6"><strong>컬럼 정보</strong></h5>
+  </li>
   <li><code class="highlighter-rouge">columnSet</code>: 그리드의 column 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successColumnSet</code>: 컬럼파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneColumnSet</code>: 컬럼파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successColumnSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failColumnSet</code>: 컬럼파일 읽어오기 실패한 경우 호출됩니다.
-##### <strong>DataProvider 옵션정보</strong></li>
+    <h5 id="dataprovider-"><strong>DataProvider 옵션정보</strong></h5>
+  </li>
   <li><code class="highlighter-rouge">dpOptionSet</code>: 그리드의 data provider option 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successDpOptionSet</code>: 옵션파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneDpOptionSet</code>: 옵션파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successDpOptionSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failDpOptionSet</code>: 옵션파일 읽어오기 실패한 경우 호출됩니다.
-##### <strong>GridView 옵션정보</strong></li>
+    <h5 id="gridview-"><strong>GridView 옵션정보</strong></h5>
+  </li>
   <li><code class="highlighter-rouge">gridOptionSet</code>: 그리드의 option 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successGridOptionSet</code>: 옵션파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneGridOptionSet</code>: 옵션파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successGridOptionSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failGridOptionSet</code>: 옵션파일 읽어오기 실패한 경우 호출됩니다.
-##### <strong>스타일 정보</strong></li>
+    <h5 id="section-7"><strong>스타일 정보</strong></h5>
+  </li>
   <li><code class="highlighter-rouge">styleSet</code>: 그리드의 style 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successStyleSet</code>: 스타일파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneStyleSet</code>: 스타일파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successStyleSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failStyleSet</code>: 스타일파일을 읽어오기 실패한 경우 호출됩니다.
-##### <strong>데이터 정보</strong></li>
+    <h5 id="section-8"><strong>데이터 정보</strong></h5>
+  </li>
   <li><code class="highlighter-rouge">dataSet</code>: 그리드의 data 를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">showProgress</code>: <code class="highlighter-rouge">true</code>면 데이터를 가져오는 동안 프로그래스를 보여줍니다.</li>
   <li><code class="highlighter-rouge">successDataSet</code>: 데이터파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneDataSet</code>: 데이터파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successDataSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failDataSet</code>: 데이터파일을 읽어오기 실패한 경우 호출됩니다.
-##### <strong>기타 정보</strong></li>
+    <h5 id="section-9"><strong>기타 정보</strong></h5>
+  </li>
   <li><code class="highlighter-rouge">showToolbox</code>: <code class="highlighter-rouge">false</code>가 아니면 무조건 툴박스 보여줍니다.</li>
   <li><code class="highlighter-rouge">gridWidth</code>: grid width style</li>
   <li><code class="highlighter-rouge">gridHeight</code>: grid height style</li>
@@ -19650,7 +19658,7 @@ function myFunction() {
   <li><code class="highlighter-rouge">dataSet="griddata1.json"</code>: \resource\data\griddata1.json</li>
 </ul>
 
-<h4 id="section-4">그리드 구성시 콜백 처리방법</h4>
+<h4 id="section-10">그리드 구성시 콜백 처리방법</h4>
 
 <p><code class="highlighter-rouge">field</code>, <code class="highlighter-rouge">column</code>, <code class="highlighter-rouge">dataProviderOption</code>, <code class="highlighter-rouge">gridOption</code>, <code class="highlighter-rouge">style</code>은 각각 인자로 넘겨준 파일에서 그 정보를 읽어 그리드에 적용됩니다.
 이때 각각의 파일은 jquery.getJSON()함수를 통해 불러오는데, <code class="highlighter-rouge">success</code>, <code class="highlighter-rouge">done</code>, <code class="highlighter-rouge">fail</code>이 발생한 이후 처리를 위해 콜백함수를 인자로 넘겨줄수 있습니다.</p>
@@ -19923,7 +19931,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 함수를 호출합니다. 따라서 트리에 데이터를 입력하는 코드는
 아래와 같이 onSuccessdDataSet() 함수내에서 처리해 주면 됩니다.</p>
 
-<mark>한 화면에 그리드나 트리가 여러개인 경우 함수형 변수의 이름이 중복되지 않도록 주의하세요.</mark>
+<p><mark>한 화면에 그리드나 트리가 여러개인 경우 함수형 변수의 이름이 중복되지 않도록 주의하세요.</mark></p>
 
 <pre>
 &lt;script&gt;
@@ -20184,7 +20192,7 @@ success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 �
 
 <p>위 버튼을 눌렀을때 트리에 아이콘을 추가하는 동작을 작동시키기 위해 아래 코드를 페이지에 삽입합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -20295,7 +20303,7 @@ $('#btnAddTreeIcons').click(function() {
   <li>데이터 보기</li>
 </ul>
 
-<h4 id="section-5">툴 박스 없는 그리드 만들기</h4>
+<h4 id="section-11">툴 박스 없는 그리드 만들기</h4>
 
 <p>툴 박스를 보이지 않기 위해서는 <code class="highlighter-rouge">showToolbox=false</code>로 인자의 값을 입력하시면 됩니다.</p>
 

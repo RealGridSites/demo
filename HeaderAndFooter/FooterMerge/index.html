@@ -19376,7 +19376,7 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
   <li><code class="highlighter-rouge">footer.cellMerge</code>: Footer내 특정 Cell들을 Merge합니다.</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19399,21 +19399,29 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
 </div>
 </div>
 
-<p><a class="btn primary small round lowercase" id="btnSetGroupFooterMerge">그룹핑 컬럼 Cell 병합</a>
-<code class="highlighter-rouge">js
-  gridView.setRowGroup({ footerCellMerge: true });  
-</code></p>
+<p><a class="btn primary small round lowercase" id="btnSetGroupFooterMerge">그룹핑 컬럼 Cell 병합</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span> <span class="na">footerCellMerge</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>  
+</pre></td></tr></tbody></table>
+</div>
+</div>
 
-<p><a class="btn primary small round lowercase" id="btnSetFooterMerge">Footer Cell 병합</a>
-<code class="highlighter-rouge">js
-  gridView.setFooter({
-            mergeCells:
-                [
-                    ["QuantityPerUnit Column", "Country Column", "CompanyName Column", "Order Column"],
-                    ["UnitPrice Column", "Customer Column"]
-                ]
-        });
-</code></p>
+<p><a class="btn primary small round lowercase" id="btnSetFooterMerge">Footer Cell 병합</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
+            <span class="na">mergeCells</span><span class="p">:</span>
+                <span class="p">[</span>
+                    <span class="p">[</span><span class="s2">"QuantityPerUnit Column"</span><span class="p">,</span> <span class="s2">"Country Column"</span><span class="p">,</span> <span class="s2">"CompanyName Column"</span><span class="p">,</span> <span class="s2">"Order Column"</span><span class="p">],</span>
+                    <span class="p">[</span><span class="s2">"UnitPrice Column"</span><span class="p">,</span> <span class="s2">"Customer Column"</span><span class="p">]</span>
+                <span class="p">]</span>
+        <span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
 
 <p>Help 사이트의 <a href="http://help.realgrid.com/api/types/SummaryMode/" target="_blank">summary Mode</a> 참고 바랍니다.</p>
 

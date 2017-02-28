@@ -19395,7 +19395,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="getValue">getValue</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="nx">current</span><span class="p">.</span><span class="nx">fieldName</span><span class="p">);</span>
@@ -19408,7 +19408,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="getValues">getValues</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="s2">"row: "</span> <span class="o">+</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span> <span class="o">+</span> <span class="s2">"\n"</span> <span class="o">+</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getValues</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">));</span>
 </pre></td></tr></tbody></table>
@@ -19419,7 +19419,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="getJsonRow">getJsonRow</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getJsonRow</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">)</span>
@@ -19434,7 +19434,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="getRows">getRows</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRows</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRows</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">));</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
@@ -19445,7 +19445,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="getJsonRows">getJsonRows</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getJsonRows</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)));</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getJsonRows</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)));</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
@@ -19454,7 +19454,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="getFieldValues">getFieldValues</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="s2">"field: "</span> <span class="o">+</span> <span class="nx">current</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">+</span> <span class="s2">"\n"</span> <span class="o">+</span> <span class="s2">"fieldValues: "</span> <span class="o">+</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">fieldName</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">));</span>
 </pre></td></tr></tbody></table>

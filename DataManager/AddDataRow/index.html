@@ -19423,7 +19423,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="addRow">addRow</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">""</span><span class="p">,</span> <span class="s2">"addRow"</span><span class="p">,</span> <span class="s2">"회사"</span><span class="p">,</span> <span class="s2">"이름"</span><span class="p">,</span> <span class="s2">"성"</span><span class="p">,</span> <span class="s2">"성별"</span><span class="p">,</span> <span class="s2">"E-Mail"</span><span class="p">];</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">addRow</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
@@ -19434,7 +19434,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="insertRow">insertRow</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">""</span><span class="p">,</span> <span class="s2">"insertRow"</span><span class="p">,</span> <span class="s2">"회사"</span><span class="p">,</span> <span class="s2">"이름"</span><span class="p">,</span> <span class="s2">"성"</span><span class="p">,</span> <span class="s2">"성별"</span><span class="p">,</span> <span class="s2">"E-Mail"</span><span class="p">];</span>
@@ -19454,7 +19454,7 @@ var onDoneDataSet = function() {
 
 <p><a href="http://help.realgrid.com/api/LocalDataProvider/onRowInserting/">onRowInserting()</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">onRowInserting</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"1. onRowInserting이벤트 row = "</span> <span class="o">+</span> <span class="nx">row</span><span class="p">)</span>
@@ -19467,7 +19467,7 @@ var onDoneDataSet = function() {
 
 <p><a href="http://help.realgrid.com/api/LocalDataProvider/onRowInserted/">onRowInserted()</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">onRowInserted</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"2. onRowInserted이벤트 row = "</span> <span class="o">+</span> <span class="nx">row</span><span class="p">)</span>
@@ -19480,7 +19480,7 @@ var onDoneDataSet = function() {
 
 <p><a href="http://help.realgrid.com/api/LocalDataProvider/onRowCountChanged/">onRowCountChanged()</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">onRowCountChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">count</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"3. onRowCountChanged이벤트 count = "</span> <span class="o">+</span> <span class="nx">count</span><span class="p">)</span>

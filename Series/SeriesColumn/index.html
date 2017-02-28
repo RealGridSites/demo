@@ -19386,7 +19386,7 @@ var onDoneDataSet = function() {
 예제는 <em>통계청 포탈에서 제공하는 세계 경제 지표</em> 데이터입니다.<br />
 “Series” 컬럼은 필드들의 값을 텍스트로 나열하는 <em>기본 시리즈 렌더러</em>가 설정되었고, “Spark” 컬럼은 <em>Spark line chart 렌더러</em>로 설정됐습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19407,7 +19407,7 @@ var onDoneDataSet = function() {
 
 <p>컬럼의 type은 <code class="highlighter-rouge">"series"</code>로 지정하고, 표시할 컬럼은 fieldNames 속성으로 지정합니다. fieldNames에 콤마로 나누어진 필드 목록을 지정하는 데, 데이터 프로바이더에 추가한 컬럼 순서대로 이어진 필드들을 지정할 때는 <code class="highlighter-rouge">field1..fieldn</code> 처럼 할 수도 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -19458,14 +19458,14 @@ var onDoneDataSet = function() {
         <span class="s2">"lowFill"</span><span class="p">:</span> <span class="s2">"#ffff0000"</span><span class="p">,</span>
         <span class="s2">"lastFill"</span><span class="p">:</span> <span class="s2">"#ff888888"</span>
     <span class="p">},</span>
-    <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span> <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Spark"</span> <span class="p">},</span>
-    <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span> 
-        <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"#08000000"</span><span class="p">,</span>
-        <span class="s2">"figureBackground"</span><span class="err">:</span> <span class="s2">"#ff888888"</span><span class="p">,</span> 
-        <span class="s2">"paddingLeft"</span><span class="err">:</span><span class="mi">4</span><span class="p">,</span> 
-        <span class="s2">"paddingRight"</span><span class="err">:</span><span class="mi">4</span> <span class="p">,</span>
-        <span class="s2">"paddingTop"</span><span class="err">:</span><span class="mi">4</span><span class="p">,</span>
-        <span class="s2">"paddingBottom"</span><span class="err">:</span><span class="mi">4</span>
+    <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Spark"</span> <span class="p">},</span>
+    <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span> 
+        <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#08000000"</span><span class="p">,</span>
+        <span class="s2">"figureBackground"</span><span class="p">:</span> <span class="s2">"#ff888888"</span><span class="p">,</span> 
+        <span class="s2">"paddingLeft"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> 
+        <span class="s2">"paddingRight"</span><span class="p">:</span><span class="mi">4</span> <span class="p">,</span>
+        <span class="s2">"paddingTop"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span>
+        <span class="s2">"paddingBottom"</span><span class="p">:</span><span class="mi">4</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
