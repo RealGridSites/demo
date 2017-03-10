@@ -19703,6 +19703,27 @@
 </div>
 </div>
 
+<p><code class="highlighter-rouge">1997</code>컬럼에 동적 스타일을 지정합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetColumnDynamicStyles">동적 컬럼 스타일 변경</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span>
+    <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByField</span><span class="p">(</span><span class="s2">"1997"</span><span class="p">),</span>
+    <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"(value &gt;= 500) and (value &lt; 1000)"</span><span class="p">,</span>
+        <span class="na">styles</span><span class="p">:</span> <span class="s2">"background=#FF0000"</span>
+    <span class="p">}]</span>
+<span class="p">)</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
   $('#btnSetDynamicStyles').click(function() {
     var newDynamicStyles = [{
@@ -19715,6 +19736,16 @@
             cellDynamicStyles: newDynamicStyles
         }
     });
+  });
+
+  $('#btnSetColumnDynamicStyles').click(function() {
+    gridView.setColumnProperty(
+        gridView.columnByField("1997"),
+        "dynamicStyles", [{
+            criteria: "(value >= 500) and (value < 1000)",
+            styles: "background=#FF0000"
+        }]
+    );
   });
 </script>
 
