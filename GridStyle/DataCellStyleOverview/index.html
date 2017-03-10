@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     DataCellStyle Overview
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="리얼그리드에서 데이터 셀의 표시 방식은 기본적으로 컬럼 스타일로 지정할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1003,6 +1003,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -2111,6 +2115,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -3199,6 +3207,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -4327,6 +4339,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -5355,6 +5371,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -6413,6 +6433,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -7521,6 +7545,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -8579,6 +8607,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -9647,6 +9679,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -10735,6 +10771,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -11813,6 +11853,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -12881,6 +12925,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -13949,6 +13997,20 @@
               
 
               
+
+              
+              <li class="item-toc current">
+                <a href="/GridStyle/DataCellStyleOverview/"
+                class="current sidebar-link ">
+                  <span>DataCellStyle Overview</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
+                </a>
+              </li>
+              
+
+            
               
               
 
@@ -14967,6 +15029,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -16015,6 +16081,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -17043,6 +17113,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -18121,6 +18195,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -19169,6 +19247,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -19429,18 +19511,216 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">DataCellStyle Overview</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>리얼그리드에서 데이터 셀의 표시 방식은 기본적으로 컬럼 스타일로 지정할 수 있습니다.</p>
+
+<script>
+  var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+    dataProvider.setRows(data);
+  }
+
+  var onDoneDataSet = function() {
+    
+  }
+</script>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/resource/layout/dynamicStylesonColumnsFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/layout/dynamicStylesonColumns.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+
+        
+            
+
+            $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+            
+            $.ajax({
+              type: "GET",
+              url:"/resource/data/FireDamage.json?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+;
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -19449,6 +19729,222 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="datacellstyle-설명">DataCellStyle 설명</h4>
+
+<p>DataCellStyle은 아이템과 컬럼이 아니라 데이터행과 데이터필드를 기준으로 지정합니다.<br />
+Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 유지됩니다. <br />
+다만 스타일 자체는 그리드에서 보관하고, 데이터셀에 대한 스타일 지정 정보는 Item Model에서 보관합니다.<br />
+또, DataCellStyle로 지정한 스타일은 기존의 컬럼 스타일 및 동적 스타일들이 적용된 후 마지막으로 적용됩니다.<br />
+즉, DataCellStyle이 우선적으로 데이터셀 표시에 반영됩니다.</p>
+
+<h4 id="datacellstyle-설정하기">DataCellStyle 설정하기</h4>
+
+<p>DataCellStyle은 id를 갖는 표시 스타일 속성들 및 편집 관련 속성들로 구성된 객체입니다.<br />
+ 이 스타일들을 GridBase.addCellStyle(id, style) 함수로 그리드에 미리 등록하고, GridBase.setCellStyles(dataRow, field, style) 함수로 특정한 데이터셀에 스타일을 지정합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnAddCellStyles">스타일 추가하기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyles</span><span class="p">([{</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"style1"</span><span class="p">,</span>
+    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffffff"</span><span class="p">,</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff333333"</span><span class="p">,</span>
+    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"editable"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"style2"</span><span class="p">,</span>
+    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffff00"</span><span class="p">,</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff111111"</span><span class="p">,</span>
+    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"readOnly"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"style3"</span><span class="p">,</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#110000ff"</span><span class="p">,</span>
+    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ff000088"</span><span class="p">,</span>
+    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"center"</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"styleNew"</span><span class="p">,</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#33ffff00"</span>
+<span class="p">}]);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="btnSetRowClickHandler">선택 행 전체 스타일 적용</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#4400ff00"</span><span class="p">,</span>
+    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s2">"paddingTop"</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">});</span>
+<span class="c1">// field가 -1이면 행 전체 셀들에 대해 지정한다.</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"style01"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"style2"</span><span class="p">);</span>
+<span class="c1">// row가 -1이면 추가 중인 행에 대해 적용된다.</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"styleNew"</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="btnSetFieldClickHandler">개별 스타일 적용</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style02"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s2">"paddingLeft"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span>
+    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffff"</span>
+<span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="btnSetRangeClickHandler">여러 셀 동시 적용</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style03"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#cc880000"</span><span class="p">,</span>
+    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffff"</span><span class="p">,</span>
+    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">14</span>
+<span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="s2">"style03"</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>셀들에 지정했던 모든 설정을 제거합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnClearAllClickHandler">스타일 설정 초기화</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearCellStyles</span><span class="p">();</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+$('#btnAddCellStyles').click(function() {
+	gridView.addCellStyles([{
+	    "id": "style1",
+	    "foreground": "#ffffffff",
+	    "background": "#ff333333",
+	    "fontSize": 14,
+	    "fontBold": true,
+	    "editable": false
+	}, {
+	    "id": "style11",
+	    "foreground": "#ffffff00",
+	    "background": "#ff111111",
+	    "fontSize": 16,
+	    "fontBold": true,
+	    "readOnly": false
+	}, {
+	    "id": "style2",
+	    "background": "#110000ff",
+	    "foreground": "#ff000088",
+	    "fontSize": 13,
+	    "fontBold": true,
+	    "textAlignment": "center"
+	}, {
+	    "id": "styleNew",
+	    "background": "#33ffff00"
+	}]);
+});
+
+$('#btnSetRowClickHandler').click(function() {
+	 gridView.addCellStyle("style01", {
+        "background": "#4400ff00",
+        "fontSize": 14,
+        "paddingTop": 5
+    });
+    // field가 -1이면 행 전체 셀들에 대해 지정한다.
+    gridView.setCellStyles([1, 3], -1, "style01");
+    gridView.setCellStyles([7, 8], -1, "style2");
+    // row가 -1이면 추가 중인 행에 대해 적용된다.
+    gridView.setCellStyle(-1, -1, "styleNew");
+});
+
+$('#btnSetFieldClickHandler').click(function() {
+	gridView.addCellStyle("style02", {
+        "paddingLeft": 15,
+        "background": "#000000",
+        "foreground": "#ffffff"
+    }, true);
+    gridView.setCellStyle(4, 1, "style02");
+    gridView.setCellStyle(4, 3, "style02");
+    gridView.setCellStyle(3, 2, "style02");
+});
+
+$('#btnSetRangeClickHandler').click(function() {
+	gridView.addCellStyle("style03", {
+        "background": "#cc880000",
+        "foreground": "#ffffff",
+        "fontSize": 14
+    }, true);
+    gridView.setCellStyles([6,7,8,9], [2,3,4,5,6], "style03");
+});
+
+
+$('#btnClearAllClickHandler').click(function() {
+	gridView.clearCellStyles();
+});
+
+</script>
+
+
+  </div>
+</div>
 
 
 
