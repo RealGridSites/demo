@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# 기존 빌드 제거
+echo "---------------------"
+echo " jekyll clean "
+echo "---------------------"
+
+jekyll clean
+git clone https://github.com/RealGridSites/demo.git -o deploy _site/
+
 # 실행환경으로 빌드한다.
 echo "---------------------"
 echo " jekyll build "
