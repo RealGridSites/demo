@@ -19528,7 +19528,7 @@
         </div>
 
         <div class="document-formatting">
-            <h2 id="목차">목차</h2>
+            <h2 id="section">목차</h2>
 
 <p>기본적으로 데모페이지는 markdown 문서로 작성합니다. 지킬(jekyll)의 리퀴드(liquid) 템플릿을 사용할 수도 있습니다.
 문서내용은 자유로운 편집을 보장하지만, 정해진 서식을 지켜야 합니다.</p>
@@ -19552,7 +19552,7 @@
   <li><a href="#bootstrap">Bootstrap</a></li>
 </ul>
 
-<h2 id="메뉴-및-제목-표시하기"><section-sidebar>메뉴 및 제목 표시하기</section-sidebar></h2>
+<h2 id="section-sidebar---"><section-sidebar>메뉴 및 제목 표시하기</section-sidebar></h2>
 
 <p>왼쪽에 보이는 메뉴영역에는 굵은글씨로 카테고리(category)가 표시되고 그 아래 해당 카테고리에 포함된 데모페이지들이 프론트메터의 <code class="highlighter-rouge">order</code>의 순서로 표시됩니다.</p>
 
@@ -19567,19 +19567,19 @@
 <p>하지만, 권장하건데 그리드 데모가 위주인 데모페이지에서는 사용자의 시선을 데모에 집중시키기 위해 부제목을 표시하지 않는 것이 좋습니다.
 아래 제목표시 포멧을 확인하고 문서에 활용하세요.</p>
 
-<h2 id="제목-title-2--샵샵">제목 Title 2 : 샵샵</h2>
+<h2 id="title-2--">제목 Title 2 : 샵샵</h2>
 
 <p>제목 2의 폰트 크기는 26px 입니다.</p>
 
-<h3 id="제목-title-3--샵샵샵">제목 Title 3 : 샵샵샵</h3>
+<h3 id="title-3--">제목 Title 3 : 샵샵샵</h3>
 
 <p>제목 3의 폰트 크기는 22px 입니다.</p>
 
-<h4 id="제목-title-4--샵샵샵샵">제목 Title 4 : 샵샵샵샵</h4>
+<h4 id="title-4--">제목 Title 4 : 샵샵샵샵</h4>
 
 <p>제목 4의 폰트 크기는 20px 입니다.</p>
 
-<h2 id="프론트메터front-matter">프론트메터(front-matter)</h2>
+<h2 id="front-matter">프론트메터(front-matter)</h2>
 
 <p>데모페이지 작성시 프론트메터는 문서의 상단에 반드시 기입해야 합니다. 프론트메터는 아래와 같은 기준으로 작성합니다.</p>
 
@@ -19609,11 +19609,11 @@ tags: ['indicator', 'item', 'number', '행번호']
 ---
 </pre>
 
-<h2 id="버튼-표시하기"><section-button>버튼 표시하기</section-button></h2>
+<h2 id="section-button-"><section-button>버튼 표시하기</section-button></h2>
 
 <p>버튼은 html의 <code class="highlighter-rouge">&lt;a&gt;</code> 태그를 이용해 화면에 추가하며, javascript 함수를 호출하는 방식으로 동작을 구현할 수 있습니다.</p>
 
-<h4 id="기본-버튼">기본 버튼</h4>
+<h4 id="section-1">기본 버튼</h4>
 
 <p><code class="highlighter-rouge">devbox</code>등 문서에서 사용되는 기본 버튼 입니다.</p>
 
@@ -19645,7 +19645,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 
 <p><a class="btn primary small round lowercase">primary</a></p>
 
-<h4 id="추가-버튼특수용도">추가 버튼(특수용도)</h4>
+<h4 id="section-2">추가 버튼(특수용도)</h4>
 
 <p>특수용도로 사용하기 위해 만든 버튼 입니다. 문서내에서는 사용하지 마세요.</p>
 
@@ -19673,7 +19673,7 @@ tags: ['indicator', 'item', 'number', '행번호']
 <a class="btn orange small lowercase">orange</a>
 <a class="btn danger small lowercase">danger</a></p>
 
-<h2 id="체크-라디오박스"><section-check>체크 라디오박스</section-check></h2>
+<h2 id="section-check-"><section-check>체크 라디오박스</section-check></h2>
 
 <p>체크박스는 아래와 같은 형식으로 입력합니다.</p>
 
@@ -19794,7 +19794,7 @@ $('input[type=radio]').on('change', function() {
 });
 </script>
 
-<h2 id="링크-표시하기"><section-link>링크 표시하기</section-link></h2>
+<h2 id="section-link-"><section-link>링크 표시하기</section-link></h2>
 
 <p>페이지에 링크를 삽입하려면 마크다운 문법을 사용하시면 됩니다.</p>
 
@@ -19818,7 +19818,7 @@ $('input[type=radio]').on('change', function() {
 
 <p><a href="/GridComponent/Indicator/">인디케이터 데모 페이지 링크</a></p>
 
-<h2 id="이미지-표시하기"><section-image>이미지 표시하기</section-image></h2>
+<h2 id="section-image-"><section-image>이미지 표시하기</section-image></h2>
 
 <p>데모 페이지에서 사용하는 이미지는 <code class="highlighter-rouge">resource/image/</code>폴더에 해당 데모의 카테고리 영문명을 폴더로 만들어 추가합니다.
 이미지를 페이지에 표시할때에도 <code class="highlighter-rouge">baseurl</code>을 <code class="highlighter-rouge">prepend</code>해 주어야 합니다.</p>
@@ -19833,7 +19833,7 @@ $('input[type=radio]').on('change', function() {
 
 <p><img src="/resource/image/sampleimage.png" alt="이미지타이틀" /></p>
 
-<h2 id="코드-표시하기"><section-code>코드 표시하기</section-code></h2>
+<h2 id="section-code-"><section-code>코드 표시하기</section-code></h2>
 
 <p>데모페이지의 코드표시기(highlighter)는 <a href="http://rouge.jneen.net/" target="_blank">rouge</a> 입니다.</p>
 
@@ -19931,7 +19931,7 @@ function myFunction() {
 </div>
 </div>
 
-<h2 id="그리드-표시하기"><section-grid>그리드 표시하기</section-grid></h2>
+<h2 id="section-grid-"><section-grid>그리드 표시하기</section-grid></h2>
 
 <p>그리드를 페이지에 표시하는 기본방법은 페이지에 아래와 같은 코드를 입력하면 됩니다.
 아래 코드는 jekyll 템플릿으로 완성된 그리드를 미리 렌더링 하여 페이지에 그리드가 표시되게 하고
@@ -19979,53 +19979,53 @@ function myFunction() {
   gridHeight="300px" %}
 </pre>
 
-<h4 id="각-인자에-대한-설명">각 인자에 대한 설명</h4>
+<h4 id="section-3">각 인자에 대한 설명</h4>
 
 <ul>
   <li><code class="highlighter-rouge">include</code>:  템플릿 파일명으로 항상 <code class="highlighter-rouge">realgrid.html</code>을 입력합니다.
-    <h5 id="변수"><strong>변수</strong></h5>
+    <h5 id="section-4"><strong>변수</strong></h5>
   </li>
   <li><code class="highlighter-rouge">gridVar</code>:  페이지 전체에서 사용할 grid 변수</li>
   <li><code class="highlighter-rouge">dpVar</code>: 페이지에서 사용할 data provider 변수</li>
   <li><code class="highlighter-rouge">gridId</code>: 그리드가 위치할 <code class="highlighter-rouge">&lt;div&gt;</code> tag id attribute
-    <h5 id="필드-정보"><strong>필드 정보</strong></h5>
+    <h5 id="section-5"><strong>필드 정보</strong></h5>
   </li>
   <li><code class="highlighter-rouge">fieldSet</code>: 그리드의 field 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successFieldSet</code>: 필드파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneFieldSet</code>: 필드파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successFieldSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failFieldSet</code>: 필드파일 읽어오기 실패한 경우 호출됩니다.
-    <h5 id="컬럼-정보"><strong>컬럼 정보</strong></h5>
+    <h5 id="section-6"><strong>컬럼 정보</strong></h5>
   </li>
   <li><code class="highlighter-rouge">columnSet</code>: 그리드의 column 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successColumnSet</code>: 컬럼파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneColumnSet</code>: 컬럼파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successColumnSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failColumnSet</code>: 컬럼파일 읽어오기 실패한 경우 호출됩니다.
-    <h5 id="dataprovider-옵션정보"><strong>DataProvider 옵션정보</strong></h5>
+    <h5 id="dataprovider-"><strong>DataProvider 옵션정보</strong></h5>
   </li>
   <li><code class="highlighter-rouge">dpOptionSet</code>: 그리드의 data provider option 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successDpOptionSet</code>: 옵션파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneDpOptionSet</code>: 옵션파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successDpOptionSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failDpOptionSet</code>: 옵션파일 읽어오기 실패한 경우 호출됩니다.
-    <h5 id="gridview-옵션정보"><strong>GridView 옵션정보</strong></h5>
+    <h5 id="gridview-"><strong>GridView 옵션정보</strong></h5>
   </li>
   <li><code class="highlighter-rouge">gridOptionSet</code>: 그리드의 option 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successGridOptionSet</code>: 옵션파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneGridOptionSet</code>: 옵션파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successGridOptionSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failGridOptionSet</code>: 옵션파일 읽어오기 실패한 경우 호출됩니다.
-    <h5 id="스타일-정보"><strong>스타일 정보</strong></h5>
+    <h5 id="section-7"><strong>스타일 정보</strong></h5>
   </li>
   <li><code class="highlighter-rouge">styleSet</code>: 그리드의 style 정보를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">successStyleSet</code>: 스타일파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneStyleSet</code>: 스타일파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successStyleSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failStyleSet</code>: 스타일파일을 읽어오기 실패한 경우 호출됩니다.
-    <h5 id="데이터-정보"><strong>데이터 정보</strong></h5>
+    <h5 id="section-8"><strong>데이터 정보</strong></h5>
   </li>
   <li><code class="highlighter-rouge">dataSet</code>: 그리드의 data 를 담고 있는 json 파일의 이름</li>
   <li><code class="highlighter-rouge">showProgress</code>: <code class="highlighter-rouge">true</code>면 데이터를 가져오는 동안 프로그래스를 보여줍니다.</li>
   <li><code class="highlighter-rouge">successDataSet</code>: 데이터파일을 성공적으로 읽어온 경우 호출됩니다.</li>
   <li><code class="highlighter-rouge">doneDataSet</code>: 데이터파일을 성공적으로 읽어온 경우 <code class="highlighter-rouge">successDataSet()</code>이 호출된후 호출됩니다.</li>
   <li><code class="highlighter-rouge">failDataSet</code>: 데이터파일을 읽어오기 실패한 경우 호출됩니다.
-    <h5 id="기타-정보"><strong>기타 정보</strong></h5>
+    <h5 id="section-9"><strong>기타 정보</strong></h5>
   </li>
   <li><code class="highlighter-rouge">showToolbox</code>: <code class="highlighter-rouge">false</code>가 아니면 무조건 툴박스 보여줍니다.</li>
   <li><code class="highlighter-rouge">gridWidth</code>: grid width style</li>
@@ -20035,7 +20035,7 @@ function myFunction() {
 <p>그리드의 레이아웃이나 데이터는 모두 <code class="highlighter-rouge">\resource</code> 폴더에 각각 <code class="highlighter-rouge">data</code>, <code class="highlighter-rouge">layout</code>, <code class="highlighter-rouge">option</code>, <code class="highlighter-rouge">style</code> 이라 이름의 하위 폴더에 json 포멧의 파일로 작성합니다.
 작성된 json파일의 파일명을 해당 인자의 값으로 넘겨주면 됩니다.</p>
 
-<h4 id="물리적인-파일-위치-resource-폴더">물리적인 파일 위치 <code class="highlighter-rouge">\resource</code> 폴더</h4>
+<h4 id="resource-">물리적인 파일 위치 <code class="highlighter-rouge">\resource</code> 폴더</h4>
 
 <p>위 코드중 마킹된 영역의 파일에 해당하는 인자들이 실제 어떤 경로에 위치해야 하는지 정보를 정리해 보겠습니다.</p>
 
@@ -20048,7 +20048,7 @@ function myFunction() {
   <li><code class="highlighter-rouge">dataSet="griddata1.json"</code>: \resource\data\griddata1.json</li>
 </ul>
 
-<h4 id="그리드-구성시-콜백-처리방법">그리드 구성시 콜백 처리방법</h4>
+<h4 id="section-10">그리드 구성시 콜백 처리방법</h4>
 
 <p><code class="highlighter-rouge">field</code>, <code class="highlighter-rouge">column</code>, <code class="highlighter-rouge">dataProviderOption</code>, <code class="highlighter-rouge">gridOption</code>, <code class="highlighter-rouge">style</code>은 각각 인자로 넘겨준 파일에서 그 정보를 읽어 그리드에 적용됩니다.
 이때 각각의 파일은 jquery.getJSON()함수를 통해 불러오는데, <code class="highlighter-rouge">success</code>, <code class="highlighter-rouge">done</code>, <code class="highlighter-rouge">fail</code>이 발생한 이후 처리를 위해 콜백함수를 인자로 넘겨줄수 있습니다.</p>
@@ -20315,7 +20315,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
     });
 </script>
 
-<h2 id="트리-표시하기"><section-tree>트리 표시하기</section-tree></h2>
+<h2 id="section-tree-"><section-tree>트리 표시하기</section-tree></h2>
 
 <p>트리도 그리드와 동일한 방법으로 페이지에 추가합니다. <code class="highlighter-rouge">dataSet</code>의 데이터를 ajax()로 읽어오고,
 success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 함수를 호출합니다. 따라서 트리에 데이터를 입력하는 코드는
@@ -20666,7 +20666,7 @@ $('#btnAddTreeIcons').click(function() {
 });
 </script>
 
-<h2 id="데브-박스dev-box">데브 박스(dev. box)</h2>
+<h2 id="dev-box">데브 박스(dev. box)</h2>
 
 <p>데브박스는 오른쪽에 표시되는 코드 입력창이며, 기본적으로 지킬에 의해 markdown 렌더링 되기 때문에 위에 작성한 문서 작성방법과 동일한 방법으로 문서를 작성 하시면 됩니다.</p>
 
@@ -20679,7 +20679,7 @@ $('#btnAddTreeIcons').click(function() {
   <li>데브박스에 버튼 및 체크박스 넣기: <a href="/Tree/TreeNodeControl/">트리노드 페이지 참조</a></li>
 </ul>
 
-<h2 id="그리드-툴-박스"><grid-toolbox>그리드 툴 박스</grid-toolbox></h2>
+<h2 id="grid-toolbox--"><grid-toolbox>그리드 툴 박스</grid-toolbox></h2>
 
 <p>그리드 툴 박스는 각각의 그리드에 대한 정보를 조회할 수 있는 툴버튼과 공통기능 동작을 위한 버튼으로 구성됩니다.</p>
 
@@ -20693,7 +20693,7 @@ $('#btnAddTreeIcons').click(function() {
   <li>데이터 보기</li>
 </ul>
 
-<h4 id="툴-박스-없는-그리드-만들기">툴 박스 없는 그리드 만들기</h4>
+<h4 id="section-11">툴 박스 없는 그리드 만들기</h4>
 
 <p>툴 박스를 보이지 않기 위해서는 <code class="highlighter-rouge">showToolbox=false</code>로 인자의 값을 입력하시면 됩니다.</p>
 
