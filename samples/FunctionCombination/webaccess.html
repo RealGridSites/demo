@@ -181,8 +181,8 @@
 		        }
 		    },
 		    {
-		        "name": "CustomerID2",
-		        "fieldName": "CustomerID",
+		        "name": "CustomerNames2",
+		        "fieldName": "CustomerID2",
 		        "width": "150",
 		        "sortable": false,
 		        "editor": {
@@ -215,8 +215,8 @@
 		        }
 		    },
 		    {
-		        "name": "CustomerID3",
-		        "fieldName": "CustomerID",
+		        "name": "CustomerNames3",
+		        "fieldName": "CustomerID2",
 		        "width": "150",
 		        "sortable": false,
 		        "editor": {
@@ -452,7 +452,7 @@
 		gridView.setDisplayOptions({rowHeight:30});
 
 		var layout = [
-			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerNames","Country","CustomerID2","CustomerID3","OrderDate","ShipCountry"
+			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerNames","CustomerNames2","CustomerNames3","Country","CustomerID2","CustomerID3","OrderDate","ShipCountry"
 		];
 		gridView.setColumnLayout(layout);
 
@@ -461,13 +461,13 @@
 
 	function columnGroup() {
 		gridView.setDisplayOptions({rowHeight:80});
-		gridView.setColumnLayout([{name:"button",orientation: "horizontal",width:250,columns:["EmployeeID","EmployeeID2"]},"OrderID","CompanyName","Quantity","CustomerNames",{name:"lookupTree",orientation: "vertical",width:200,columns:["Country","CustomerID2","CustomerID3"]},"OrderDate","ShipCountry"]);
+		gridView.setColumnLayout([{name:"button",orientation: "horizontal",width:250,columns:["EmployeeID","EmployeeID2"]},"OrderID","CompanyName","Quantity",{name:"dropdown",orientation: "vertical",width:200,columns:["CustomerNames","CustomerNames2","CustomerNames3"]},{name:"lookupTree",orientation: "vertical",width:200,columns:["Country","CustomerID2","CustomerID3"]},"OrderDate","ShipCountry"]);
 	};
 
 	function rowGrouping(){
 		gridView.setDisplayOptions({rowHeight:30});
 		var layout = [
-			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerNames","Country","CustomerID2","CustomerID3","OrderDate","ShipCountry"
+			"EmployeeID","EmployeeID2","OrderID","CompanyName","CustomerNames2","CustomerNames3","Quantity","CustomerNames","Country","CustomerID2","CustomerID3","OrderDate","ShipCountry"
 		];
 		gridView.setColumnLayout(layout);
 
