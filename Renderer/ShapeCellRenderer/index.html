@@ -19539,7 +19539,14 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   dataProvider.setRows(data);
 }
 var onDoneDataSet = function() {
+  gridView.setColumnProperty("OrderID", "renderer", {type:"shape"});
 
+  gridView.setColumnProperty("OrderID", "styles", {
+      figureBackground: "#ff008800",
+      figureName: "ellipse",
+      iconLocation: "right",
+      paddingRight: 6
+  });
 }
 </script>
 
@@ -19802,9 +19809,7 @@ var onDoneDataSet = function() {
 
 <h4 id="도형-표시하기">도형 표시하기</h4>
 
-<p>버튼 클릭시 <code class="highlighter-rouge">OrderID</code> 컬럼에 원 도형을 표시합니다.</p>
-
-<p><a class="btn primary small round lowercase" id="btnSetShapeOrderID">도형 표시하기</a></p>
+<p><code class="highlighter-rouge">OrderID</code> 컬럼에 원 도형을 표시합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -19928,16 +19933,6 @@ var onDoneDataSet = function() {
 </div>
 
 <script>
-$('#btnSetShapeOrderID').click(function() {
-	gridView.setColumnProperty("OrderID", "renderer", {type:"shape"});
-
-	gridView.setColumnProperty("OrderID", "styles", {
-	    figureBackground: "#ff008800",
-	    figureName: "ellipse",
-	    iconLocation: "right",
-	    paddingRight: 6
-	});
-});
 
 $('#btnSetShapeCustomerID').click(function() {
 	gridView.setColumnProperty("CustomerID", "renderer", {type:"shape"});

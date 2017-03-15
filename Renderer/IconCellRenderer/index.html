@@ -19540,6 +19540,27 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 }
 var onDoneDataSet = function() {
 	gridView.setDisplayOptions({rowHeight:50});
+  
+  var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
+    imgs.addUrls([
+        "be.png",
+        "br.png",
+        "fr.png",
+        "de.png",
+        "us.png"
+    ]);
+
+  gridView.registerImageList(imgs);
+  gridView.setColumnProperty("left","imageList", "images1");
+  gridView.setColumnProperty("left","renderer",{type:"icon"});
+  gridView.setColumnProperty("left","styles", {
+      textAlignment: "near",
+      iconIndex: 0,
+      iconLocation: "left",
+      iconAlignment: "center",
+      iconOffset: 4,
+      iconPadding: 4
+  });
 }
 </script>
 
@@ -19771,7 +19792,7 @@ var onDoneDataSet = function() {
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">imgs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images1"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/icon/"</span><span class="p">);</span>
+10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">imgs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images1"</span><span class="p">,</span> <span class="s2">"/resource/image/icon/"</span><span class="p">);</span>
     <span class="nx">imgs</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">([</span>
         <span class="s2">"be.png"</span><span class="p">,</span>
         <span class="s2">"br.png"</span><span class="p">,</span>
@@ -19815,8 +19836,6 @@ var onDoneDataSet = function() {
 
 <p><code class="highlighter-rouge">LEFT</code> 컬럼에 이미지 리스트의 iconIndex가 0인 아이콘을 동일하게 표시합니다.</p>
 
-<p><a class="btn primary small round lowercase" id="btnSetIcon">아이콘 표시</a></p>
-
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -19845,7 +19864,7 @@ var onDoneDataSet = function() {
 26
 27
 28</pre></td><td class="code"><pre><span class="c1">//아이콘 리스트 및 이름 생성</span>
-<span class="kd">var</span> <span class="nx">imgs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images1"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/icon/"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">imgs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images1"</span><span class="p">,</span> <span class="s2">"/resource/image/icon/"</span><span class="p">);</span>
     <span class="nx">imgs</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">([</span>
         <span class="s2">"be.png"</span><span class="p">,</span>
         <span class="s2">"br.png"</span><span class="p">,</span>
@@ -19964,32 +19983,9 @@ var onDoneDataSet = function() {
 </div>
 
 <script>
-$('#btnSetIcon').click(function() {
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
-    imgs.addUrls([
-        "be.png",
-        "br.png",
-        "fr.png",
-        "de.png",
-        "us.png"
-    ]);
-
-	gridView.registerImageList(imgs);
-	gridView.setColumnProperty("left","imageList", "images1");
-	gridView.setColumnProperty("left","renderer",{type:"icon"});
-	gridView.setColumnProperty("left","styles", {
-	    textAlignment: "near",
-	    iconIndex: 0,
-	    iconLocation: "left",
-	    iconAlignment: "center",
-	    iconOffset: 4,
-	    iconPadding: 4
-	});
-});
-
 $('#btnSetDynamicIconRight').click(function() {
 	//아이콘 리스트 및 이름 생성
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",
@@ -20043,7 +20039,7 @@ $('#btnSetDynamicIconRight').click(function() {
 
 $('#btnSetDynamicIconTop').click(function() {
 	//아이콘 리스트 및 이름 생성
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",
@@ -20097,7 +20093,7 @@ $('#btnSetDynamicIconTop').click(function() {
 
 $('#btnSetDynamicIconBottom').click(function() {
 	//아이콘 리스트 및 이름 생성
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",
@@ -20151,7 +20147,7 @@ $('#btnSetDynamicIconBottom').click(function() {
 
 $('#btnSetDynamicIconCenter').click(function() {
 	//아이콘 리스트 및 이름 생성
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",
@@ -20204,7 +20200,7 @@ $('#btnSetDynamicIconCenter').click(function() {
 });
 
 $('#btnTextVisible').click(function() {
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",

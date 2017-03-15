@@ -19540,6 +19540,11 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 }
 var onDoneDataSet = function() {
 	gridView.setDisplayOptions({rowHeight:50})
+
+  gridView.setColumnProperty("OrderID2", "renderer", {type:"code128"});
+
+  gridView.setColumnProperty("Country2", "renderer", {type:"code128"});
+  gridView.setColumnProperty("Country2", "styles", {figureBackground: "#ff111111"});
 }
 </script>
 
@@ -19771,8 +19776,6 @@ var onDoneDataSet = function() {
 
 <p><code class="highlighter-rouge">Code128</code> 컬럼에 Code128 Barcode를 적용시킵니다.</p>
 
-<p><a class="btn primary small round lowercase" id="btnCode128">바코드 적용</a></p>
-
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -19796,13 +19799,6 @@ var onDoneDataSet = function() {
 </div>
 
 <script>
-$('#btnCode128').click(function() {
-	gridView.setColumnProperty("OrderID2", "renderer", {type:"code128"});
-
-	gridView.setColumnProperty("Country2", "renderer", {type:"code128"});
-	gridView.setColumnProperty("Country2", "styles", {figureBackground: "#ff111111"});
-});
-
 $('#btnCode39').click(function() {
 	gridView.setColumnProperty("CustomerID2", "renderer", {type:"code39"});
 	gridView.setColumnProperty("CustomerID2", "styles", {figureBackground: "#ff000088"});

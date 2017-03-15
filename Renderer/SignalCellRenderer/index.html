@@ -19540,7 +19540,9 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   dataProvider.setRows(data);
 }
 var onDoneDataSet = function() {
+  gridView.setColumnProperty("EmployeeID2", "renderer", {type:"signal", barCount:10});
 
+  gridView.setColumnProperty("EmployeeID2", "styles", {figureState: "value"});
 }
 </script>
 
@@ -19800,9 +19802,7 @@ var onDoneDataSet = function() {
 
 <h4 id="시그널-렌더러-표시하기">시그널 렌더러 표시하기</h4>
 
-<p>버튼 클릭시 <code class="highlighter-rouge">Employee ID 2</code> 컬럼에 기본 설정의 시그널을 표시합니다.</p>
-
-<p><a class="btn primary small round lowercase" id="btnSignalEmployee">시그널 표시하기</a></p>
+<p><code class="highlighter-rouge">Employee ID 2</code> 컬럼에 기본 설정의 시그널을 표시합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -19867,12 +19867,6 @@ var onDoneDataSet = function() {
 </div>
 
 <script>
-$('#btnSignalEmployee').click(function() {
-	gridView.setColumnProperty("EmployeeID2", "renderer", {type:"signal", barCount:10});
-
-	gridView.setColumnProperty("EmployeeID2", "styles", {figureState: "value"});
-});
-
 $('#btnSignalQuantity').click(function() {
 	gridView.setColumnProperty("Quantity2", "renderer", {type:"signal", barCount:20});
 
