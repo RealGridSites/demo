@@ -82,7 +82,7 @@
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "imageButton"
+		            "text": "직원 조회"
 		        }
 		    },
 		    {
@@ -94,7 +94,7 @@
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "buttonAction"
+		            "text": "직원 번호"
 		        }
 		    },
 		    {
@@ -109,7 +109,7 @@
 		        },
 		        "textInputCase": "upper",
 		        "header": {
-		            "text": "Text editor"
+		            "text": "아이디"
 		        }
 		    },
 		    {
@@ -125,7 +125,7 @@
 		            "textWrap": "normal"
 		        },
 		        "header": {
-		            "text": "Multiline Edit"
+		            "text": "메모"
 		        }
 		    },
 		    {
@@ -144,7 +144,7 @@
 		            "numberFormat": "#,##0.##"
 		        },
 		        "header": {
-		            "text": "Number Edit"
+		            "text": "금액"
 		        }
 		    },
 		    {
@@ -177,7 +177,7 @@
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "DropDown Edit"
+		            "text": "국가1"
 		        }
 		    },
 		    {
@@ -211,7 +211,7 @@
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "Domain Only"
+		            "text": "국가2"
 		        }
 		    },
 		    {
@@ -230,7 +230,7 @@
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "Search Editor "
+		            "text": "국가3"
 		        }
 		    },
 		    {
@@ -267,7 +267,7 @@
 		            "type": "dropDown"
 		        },
 		        "header": {
-		            "text": "lookupTree1"
+		            "text": "국가명"
 		        }
 		    },
 		    {
@@ -287,7 +287,7 @@
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "lookupTree2"
+		            "text": "고객 ID"
 		        }
 		    },
 		    {
@@ -305,7 +305,7 @@
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "lookupTree3"
+		            "text": "회사명"
 		        }
 		    },
 		    {
@@ -322,7 +322,7 @@
 		            "datetimeFormat": "yyyy.MM.dd"
 		        },
 		        "header": {
-		            "text": "Date Edit"
+		            "text": "날짜"
 		        }
 		    },
 		    {
@@ -333,7 +333,7 @@
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "LinkCellRenderer"
+		            "text": "상세보기"
 		        }
 		    }
 		]);
@@ -461,7 +461,35 @@
 
 	function columnGroup() {
 		gridView.setDisplayOptions({rowHeight:80});
-		gridView.setColumnLayout([{name:"button",orientation: "horizontal",width:250,columns:["EmployeeID","EmployeeID2"]},"OrderID","CompanyName","Quantity",{name:"dropdown",orientation: "vertical",width:200,columns:["CustomerNames","CustomerNames2","CustomerNames3"]},{name:"lookupTree",orientation: "vertical",width:200,columns:["Country","CustomerID2","CustomerID3"]},"OrderDate","ShipCountry"]);
+		gridView.setColumnLayout([
+			{
+				name: "button",
+				header: {
+					text:"직원"
+				},
+				orientation: "horizontal",
+				width:250,
+				columns:["EmployeeID","EmployeeID2"]
+			},
+			"OrderID","CompanyName","Quantity",
+			{
+				name:"dropdown",
+				header:{
+					text:"국가 선택"
+				},
+				orientation: "vertical",
+				width:200,
+				columns:["CustomerNames","CustomerNames2","CustomerNames3"]
+			},{
+				name:"lookupTree",
+				header:{
+					text:"상세정보"
+				},
+				orientation: "vertical",
+				width:200,
+				columns:["Country","CustomerID2","CustomerID3"]
+			},"OrderDate","ShipCountry"
+		]);
 	};
 
 	function rowGrouping(){
@@ -485,9 +513,10 @@
         <input id="txtMin" style="width: 60px;display: none"/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" id="btnMainGrid" onclick="mainGrid()" value="일반 그리드"/>
-        <input type="button" id="btnColumnGroup" onclick="columnGroup()" value="columnGrouping"/>
-        <input type="button" id="btnRowGroup" onclick="rowGrouping()" value="columnGrouping"/>
+        그리드 배치 설정 &nbsp;&nbsp;&nbsp;
+        <input type="button" id="btnMainGrid" onclick="mainGrid()" value="일반 그리드"/>&nbsp;&nbsp;&nbsp;
+        <input type="button" id="btnColumnGroup" onclick="columnGroup()" value="컬럼 그룹"/>&nbsp;&nbsp;&nbsp;
+        <input type="button" id="btnRowGroup" onclick="rowGrouping()" value="행 그룹"/>
   	</div>
 
 <div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
