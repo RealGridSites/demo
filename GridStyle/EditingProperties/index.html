@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    Editing Properties
+    편집관련 속성들
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="DataCellStyle로 특정 데이터셀의 editable과 readOnly 속성을 지정할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1053,6 +1053,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -2163,6 +2167,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -3263,6 +3271,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -4403,6 +4415,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -5463,6 +5479,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -6543,6 +6563,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -7653,6 +7677,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -8723,6 +8751,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -9803,6 +9835,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -10903,6 +10939,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -11993,6 +12033,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -13073,6 +13117,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -14163,6 +14211,20 @@
               
 
               
+
+              
+              <li class="item-toc current">
+                <a href="/GridStyle/EditingProperties/"
+                class="current sidebar-link ">
+                  <span>편집관련 속성들</span>
+                  <span style="display: none;">
+                  style, 스타일
+                  </span>
+                </a>
+              </li>
+              
+
+            
               
               
 
@@ -15203,6 +15265,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -16253,6 +16319,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -17293,6 +17363,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -18383,6 +18457,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -19443,6 +19521,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -19675,18 +19757,216 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">Editing Properties</h1>
+            <h1 class="title-page">편집관련 속성들</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>DataCellStyle로 특정 데이터셀의 editable과 readOnly 속성을 지정할 수 있습니다.</p>
+
+<script>
+  var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+    dataProvider.setRows(data);
+  }
+  var onDoneDataSet = function() {
+
+  }
+
+</script>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/resource/layout/dynamicStylesonColumnsFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/layout/EditingPropertiesColumns.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+
+        
+            
+
+            $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+            
+            $.ajax({
+              type: "GET",
+              url:"/resource/data/FireDamage.json?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+;
+        
+
+    });
+</script>
+
 
             <p>
 
@@ -19695,6 +19975,100 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      
+<h4 id="datacellstyle-설정하기">DataCellStyle 설정하기</h4>
+
+<p>DataCellStyle은 id를 갖는 표시 스타일 속성들 및 편집 관련 속성들로 구성된 객체입니다.<br />
+ 이 스타일들을 GridBase.addCellStyle(id, style) 함수로 그리드에 미리 등록하고, GridBase.setCellStyles(dataRow, field, style) 함수로 특정한 데이터셀에 스타일을 지정합니다.<br />
+ Editing 관련 속성으로는 editable과 readOnly 속성을 지원합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnAddCellStyles">셀 스타일 추가하기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffffff"</span><span class="p">,</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff333333"</span><span class="p">,</span>
+    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"editable"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style02"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ff000000"</span><span class="p">,</span>
+    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ffcccccc"</span><span class="p">,</span>
+    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s2">"readOnly"</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>검정 바탕의 셀은 editable 속성이 false 이고 회색 바탕의 셀은 readOnly 속성이 true가 되도록 영역의 DataCellStyle들을 지정했습니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetCellStyles">셀 스타일 적용하기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s2">"term"</span><span class="p">,</span> <span class="s2">"1997"</span><span class="p">,</span> <span class="s2">"1998"</span><span class="p">],</span> <span class="s2">"style01"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s2">"2000"</span><span class="p">,</span> <span class="s2">"2001"</span><span class="p">,</span> <span class="s2">"2002"</span><span class="p">],</span> <span class="s2">"style02"</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>셀들에 지정했던 모든 설정을 제거합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnClearAllClickHandler">스타일 설정 초기화</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearCellStyles</span><span class="p">();</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+$('#btnAddCellStyles').click(function() {
+    gridView.addCellStyle("style01", {
+        "foreground": "#ffffffff",
+        "background": "#ff333333",
+        "fontSize": 13,
+        "fontBold": true,
+        "editable": false
+    });
+    gridView.addCellStyle("style02", {
+        "foreground": "#ff000000",
+        "background": "#ffcccccc",
+        "fontSize": 13,
+        "readOnly": true
+    });
+});
+
+$('#btnSetCellStyles').click(function() {
+    gridView.setCellStyles([0, 1, 2, 3, 4, 5, 6], ["term", "1997", "1998"], "style01");
+    gridView.setCellStyles([0, 1, 2, 3, 4, 5, 6], ["2000", "2001", "2002"], "style02");
+});
+
+
+$('#btnClearAllClickHandler').click(function() {
+    gridView.clearCellStyles();
+});
+
+</script>
+
+
+  </div>
+</div>
 
 
 
