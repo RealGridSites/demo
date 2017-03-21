@@ -4986,7 +4986,7 @@
                 class=" sidebar-link ">
                   <span>행 병합 그룹핑</span>
                   <span style="display: none;">
-                  grouping, merge
+                  grouping, merge, 병합
                   </span>
                 </a>
               </li>
@@ -19789,91 +19789,6 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 var onDoneDataSet = function() {
 	gridView.setDisplayOptions({rowHeight:30});
 	gridView.setFooter({visible: false});
-  gridView.checkItems([0,1,2,3,4,5], true);
-
-  gridView.addCellRenderers([{
-      "id": "bar01",
-      "type": "bar"
-  }, {
-      "id": "bar02",
-      "type": "bar",
-      "maximum": 100,
-      "showLabel": false
-  }, {
-      "id": "check01",
-      "type": "check",
-      "editable": true,
-      "startEditOnClick": true,
-      "trueValues": "True",
-      "falseValues": "False",
-      "labelPosition": "right"        
-  }, {
-      "id": "shape01",
-      "type": "shape"
-  }, {
-      "id": "signal01",
-      "type": "signal",
-      "barCount": 10,
-      "minimum": 0,
-      "maximum": 100
-  }, {
-      "id": "signal02",
-      "type": "signal",
-      "barCount": 20,
-      "minimum": 0,
-      "maximum": 100
-  }]);
-
-  gridView.setColumnProperty("Quantity2", "dynamicStyles", [{
-      "criteria": "value >= 0",
-      "styles": {
-          "renderer": "signal01",
-          "figureBackground": "#ffffff7f",
-          "figureState": "value"
-      }
-  }, {
-      "criteria": "value >= 30",
-      "styles": {
-          "renderer": "signal02",
-          "figureBackground": "#ffd4ff55",
-          "figureState": "value"
-      }
-  }, {
-      "criteria": "value >= 60",
-      "styles": {
-          "renderer": "bar01",
-          "figureBackground": "#ffd4ff55",
-          "figureSize": "30%",
-          "figureState": "value"
-      }
-  }, {
-      "criteria": "value >= 90",
-      "styles": {
-          "renderer": "shape01",
-          "figureName": "ellipse",
-          "figureBackground": "#ffff0000",
-          "figureSize": 12
-      }
-  }]);
-
-  gridView.setColumnProperty("Quantity1", "dynamicStyles", [{
-      "criteria": "checked",
-      "styles": {
-          "renderer": "shape01"
-      }
-  }, {
-        "criteria": "(value < 20) and (checked)",
-        "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=itriangle"
-    }, {
-        "criteria": "(value < 10) and (checked)",
-        "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=downarrow"
-    }, {
-        "criteria": "(value >= 20) and (checked)",
-        "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=triangle"
-    }, {
-        "criteria": "(value > 80) and (checked)",
-        "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=uparrow"
-    }]);
 }
 </script>
 
@@ -20098,6 +20013,8 @@ var onDoneDataSet = function() {
 
 <p>컬럼 동적 스타일에 추가한 renderer 값을 이용하면, 같은 컬럼에서 값에 따라 다른 렌더러의 <code class="highlighter-rouge">id</code>를 사용하여 셀을 표시할 수 있습니다.</p>
 
+<p><a class="btn primary small round lowercase" id="btnAddCellRenderers">렌더러 정보 추가</a></p>
+
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -20242,7 +20159,7 @@ var onDoneDataSet = function() {
 
 <p><code class="highlighter-rouge">체크박스에 체크된 행</code>에 shape renderer를 적용 합니다.</p>
 
-<p><code class="highlighter-rouge">UnitPrice1</code> 컬럼에 체크 시 적용되는 <code class="highlighter-rouge">shape</code> 렌더러를 확인해 보세요.</p>
+<p><code class="highlighter-rouge">UnitPrice1</code>, <code class="highlighter-rouge">Quantity1</code> 컬럼에 체크 시 적용되는 <code class="highlighter-rouge">shape</code> 렌더러를 확인해 보세요.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetCheckRenderer">체크시 렌더러 적용</a></p>
 
@@ -20286,6 +20203,41 @@ var onDoneDataSet = function() {
 </div>
 
 <script>
+$('#btnAddCellRenderers').click(function() {
+	gridView.addCellRenderers([{
+	    "id": "bar01",
+	    "type": "bar"
+	}, {
+	    "id": "bar02",
+	    "type": "bar",
+	    "maximum": 100,
+	    "showLabel": false
+	}, {
+	    "id": "check01",
+	    "type": "check",
+	    "editable": true,
+	    "startEditOnClick": true,
+	    "trueValues": "True",
+	    "falseValues": "False",
+	    "labelPosition": "right"				
+	}, {
+	    "id": "shape01",
+	    "type": "shape"
+	}, {
+	    "id": "signal01",
+	    "type": "signal",
+	    "barCount": 10,
+	    "minimum": 0,
+	    "maximum": 100
+	}, {
+	    "id": "signal02",
+	    "type": "signal",
+	    "barCount": 20,
+	    "minimum": 0,
+	    "maximum": 100
+	}]);
+});
+
 $('#btnSetRendererUnitPrice2').click(function() {
 	gridView.setColumnProperty("UnitPrice2", "dynamicStyles", [{
 	    "criteria": "value >= 0",
@@ -20318,6 +20270,38 @@ $('#btnSetRendererUnitPrice2').click(function() {
 	        "figureSize": 12
 	    }
 	}]);
+
+    gridView.setColumnProperty("Quantity2", "dynamicStyles", [{
+	    "criteria": "value >= 0",
+	    "styles": {
+	        "renderer": "signal01",
+	        "figureBackground": "#ffffff7f",
+	        "figureState": "value"
+	    }
+	}, {
+	    "criteria": "value >= 30",
+	    "styles": {
+	        "renderer": "signal02",
+	        "figureBackground": "#ffd4ff55",
+	        "figureState": "value"
+	    }
+	}, {
+	    "criteria": "value >= 60",
+	    "styles": {
+	        "renderer": "bar01",
+	        "figureBackground": "#ffd4ff55",
+	        "figureSize": "30%",
+	        "figureState": "value"
+	    }
+	}, {
+	    "criteria": "value >= 90",
+	    "styles": {
+	        "renderer": "shape01",
+	        "figureName": "ellipse",
+	        "figureBackground": "#ffff0000",
+	        "figureSize": 12
+	    }
+	}]);
 });
 
 $('#btnSetCheckRenderer').click(function() {
@@ -20329,6 +20313,25 @@ $('#btnSetCheckRenderer').click(function() {
 	        "foreground": "#ff0000ff",
 	        "figureName":"star",
 	        "figureSize": 15
+	    }
+	}, {
+        "criteria": "(value < 20) and (checked)",
+        "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=itriangle"
+    }, {
+        "criteria": "(value < 10) and (checked)",
+        "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=downarrow"
+    }, {
+        "criteria": "(value >= 20) and (checked)",
+        "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=triangle"
+    }, {
+        "criteria": "(value > 80) and (checked)",
+        "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=uparrow"
+    }]);
+
+	gridView.setColumnProperty("Quantity1", "dynamicStyles", [{
+	    "criteria": "checked",
+	    "styles": {
+	        "renderer": "shape01"
 	    }
 	}, {
         "criteria": "(value < 20) and (checked)",
