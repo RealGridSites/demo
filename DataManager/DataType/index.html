@@ -19790,21 +19790,21 @@ Text, Number, Boolean, Datetime이 그것들인데, RealGrids.DataType 상수로
 
 <hr />
 
-<h4 id="1-text">1). Text</h4>
+<h4 id="text">1). Text</h4>
 
 <p>문자열입니다. loadData()나 setRows() 등을 통해 리얼그리드 DataProvider에 전달되는 문자열은 utf-8로 인코딩되어야 합니다.<br />
 Local DataProvider에는 <mark>문자열이 아닌 값은 문자열로 변환되어 DataProvider에 저장됩니다. undefined는 undefined로 저장됩니다.</mark></p>
 
 <hr />
 
-<h4 id="2-number">2). Number</h4>
+<h4 id="number">2). Number</h4>
 
 <p>IEEE-754 double 정밀도 부동 소수점 값입니다. Javascript의 Number와 동일합니다. 정수형 data type은 별도로 존재하지 않습니다.<br />
 Local DataProvider에는 <mark>Number가 아닌 값은 Number로 변환되어 DataProvider에 저장됩니다.. undefined는 undefined로 저장됩니다.</mark></p>
 
 <hr />
 
-<h4 id="3-boolean">3). Boolean</h4>
+<h4 id="boolean">3). Boolean</h4>
 
 <p>false, true 둘 중 하나의 값으로 저장됩니다. 즉, loadData()나 setRows() 등으로 외부 데이터가 Boolean 필드에 저장될 때, <mark>Boolean이 아닌 원본 값은 보존되지 않고 true/false로 변환됩니다. undefined는 undefined로 저장됩니다.</mark> 아래의 값들이 false로, 나머지 값들은 true로 변환됩니다.</p>
 
@@ -19912,7 +19912,7 @@ emptyValue 속성에 빈문자열을 입력할 때 변환될 값을 지정합니
 
 <hr />
 
-<h4 id="4-datetime">4). Datetime</h4>
+<h4 id="datetime">4). Datetime</h4>
 
 <p>Datetime 필드의 값들은 DataProvider에 Flash player가 생성하는 Date 객체로 저장됩니다.<br />
 undefined는 undefined로 저장됩니다. 하지만, RealGrid 사용자는 주로 Text로 변환된 값이나, Javascript 함수를 통해 Javascript Date 객체로 변환되어 전달되는 값을 사용하게 됩니다. <br />
@@ -19920,7 +19920,7 @@ undefined는 undefined로 저장됩니다. 하지만, RealGrid 사용자는 주�
 
 <hr />
 
-<h4 id="41-load">4.1). load</h4>
+<h4 id="load">4.1). load</h4>
 
 <p>loadData()를 통해 Datetime 형의 값이 문자열로 전달되거나, setRows() 함수 등으로 javascript에서 문자열로 Date 필드의 값을 전달할 때, 그 문자열은 아래와 같이 리얼그리드가 Datetime 형의 값으로 인식할 수 있는 몇가지 형식으로 반드시 구성되어야 합니다. 이 형식의 종류는 DataProvider나 DataField의 datetimeFormat 속성 및 관련된 속성들에 지정할 수 있습니다. DataProvider와 DataField에 모두 설정된 경우 DataField에 지정한 것이 우선합니다.</p>
 
@@ -20214,7 +20214,7 @@ Flash 플랫폼이 native로 지원하는 형식입니다. . 년도가 두자리
 
 <hr />
 
-<h4 id="42-rendering">4.2) rendering</h4>
+<h4 id="rendering">4.2) rendering</h4>
 <p>Datetime 필드의 값을 표시하는 셀 렌더러는 datetimeFormat 스타일 값을 사용합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
@@ -20354,7 +20354,7 @@ dateFormat 스타일 값을 없애고 datetimeFormat 스타일 값으로 재설�
 
 <hr />
 
-<h4 id="43-editing">4.3) editing</h4>
+<h4 id="editing">4.3) editing</h4>
 <p>Datetime 필드의 값을 입력하는 셀 에디터 또한 사용자의 입력을 Datetime 값으로 변환하고, Datetime 값을 에디터에 표시하기 위한 형식이 필요합니다.<br />
 셀 에디터의 datetimeFormat 속성에 아래와 같은 형식으로 지정합니다.</p>
 
