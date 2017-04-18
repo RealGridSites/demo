@@ -10,7 +10,7 @@
       "minHeight":30
    },
    "footer": {
-            "visible": true
+      "visible": true
    },
    "edit":{
       "insertable":true,

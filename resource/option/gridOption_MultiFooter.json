@@ -1,0 +1,21 @@
+{
+   "summaryMode": "statistical",
+   "panel":{
+      "visible":false
+   },
+   "stateBar":{
+      "visible":false
+   },
+   "header":{
+      "minHeight":30
+   },
+   "footer": {
+      "visible": true,
+      "count": 2,
+      "height": 50
+   },
+   "edit":{
+      "insertable":true,
+      "appendable":true
+   }
+}
