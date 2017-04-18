@@ -20809,6 +20809,29 @@
 </div>
 </div>
 
+<p><a class="btn primary small round lowercase" id="btnStateStyles">상태별 배경색</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
+    <span class="na">mark</span><span class="p">:</span><span class="s2">"text"</span><span class="p">,</span>
+    <span class="na">styles</span><span class="p">:{</span><span class="na">font</span><span class="p">:</span><span class="s2">"나눔고딕코딩"</span><span class="p">},</span>
+    <span class="na">stateStyles</span><span class="p">:{</span> 
+        <span class="s2">"updated"</span><span class="p">:{</span><span class="s2">"background"</span><span class="p">:</span><span class="s2">"#FF00FF00"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="s2">"나눔고딕코딩"</span><span class="p">},</span>
+        <span class="s2">"created"</span><span class="p">:{</span><span class="s2">"background"</span><span class="p">:</span><span class="s2">"#44FF22FF"</span><span class="p">,</span> <span class="na">figureBackground</span><span class="p">:</span><span class="s2">"#88888888"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="s2">"굴림체"</span><span class="p">},</span>
+        <span class="s2">"deleted"</span><span class="p">:{</span><span class="s2">"background"</span><span class="p">:</span><span class="s2">"#44000000"</span><span class="p">,</span> <span class="na">foreground</span><span class="p">:</span><span class="s2">"#FF88FF88"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="s2">"바탕체"</span><span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
 
   $('#btnSetVisibleFalse').click(function() {
@@ -20864,6 +20887,18 @@
       footImageUrl: "/resource/image/common/" + "/dot_arrow2_bottom.gif"  
     });
   });  
+
+  $('#btnStateStyles').click(function() {
+    gridView.setStateBar({
+      mark:"text",
+      styles:{font:"나눔고딕코딩"},
+      stateStyles:{ 
+          "updated":{"background":"#FF00FF00", font:"나눔고딕코딩"},
+          "created":{"background":"#44FF22FF", figureBackground:"#88888888", font:"굴림체"},
+          "deleted":{"background":"#44000000", foreground:"#FF88FF88", font:"바탕체"}
+      }
+    });
+  });
 
 </script>
 
