@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    Array 데이타 가져오기
+    자동 필터링(Auto Filter)
     </title>
-    <meta name="description" content="RealGrid는 LocalDataProvider.setRows() 함수를 이용해 배열형 데이터를 읽어 올 수 있습니다.">
+    <meta name="description" content="">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -3673,9 +3673,9 @@
               
 
               
-              <li class="item-toc ">
+              <li class="item-toc current">
                 <a href="/Columns/AutoFilter/"
-                class=" sidebar-link ">
+                class="current sidebar-link ">
                   <span>자동 필터링(Auto Filter)</span>
                   <span style="display: none;">
                   Filtering, 필터링, 필터, Custom, 자동, auto
@@ -6043,9 +6043,9 @@
               
 
               
-              <li class="item-toc current">
+              <li class="item-toc ">
                 <a href="/FillData/LoadArrayData/"
-                class="current sidebar-link ">
+                class=" sidebar-link ">
                   <span>Array 데이타 가져오기</span>
                   <span style="display: none;">
                   filldata, json
@@ -20539,7 +20539,7 @@
 
     <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">Array 데이타 가져오기</h1>
+            <h1 class="title-page">자동 필터링(Auto Filter)</h1>
             
 
             
@@ -20558,7 +20558,121 @@
         </div>
 
         <div class="document-formatting">
-            <p>RealGrid는 <a href="http://help.realgrid.com/api/LocalDataProvider/setRows/">LocalDataProvider.setRows()</a> 함수를 이용해 배열형 데이터를 읽어 올 수 있습니다.</p>
+            <link rel="stylesheet" href="/lib/css/jquery-ui-1.12.1.css" />
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+var chkID;
+var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+	dataProvider.setRows(data);
+}
+
+var onDoneDataSet = function() {
+	gridView.setColumnProperty("CustomerID","header",{styles:{background:"linear,#22ffd500,#ffffd500,90"}})
+	//사용자 필터 이벤트
+	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
+	  
+	  console.log("onFilterActionClicked");
+	  if (action == "CustomFilter") {
+	    var offset = $("#realgrid").offset();
+
+	    showAutoFiltering(column, x + offset.left - 260, y + offset.top);
+	  }
+	  setTimeout(function(){
+	    document.getElementById("customerText").focus();
+	  }, 100)
+
+	};
+
+	$(".btn.small").css("padding", ".25rem 1.16rem")
+
+	//자동완성
+	var autocomplete_text = dataProvider.getDistinctValues("CustomerID");
+
+	$("#customerText").autocomplete({
+		source: autocomplete_text
+	});
+
+	//자동 필터 목록 생성
+	var customerText = dataProvider.getDistinctValues("CustomerID");
+	for(var i = 0; i < customerText.length; i++){
+		var span = $("#spanFilters");
+		var label = $("<label />").appendTo(span);
+		$("<input />", { type: "checkbox", id: customerText[i], name: "chkAutoFilterItem", value: customerText[i], checked: false}).appendTo(label);
+		label.append(customerText[i]);
+		span.append("<br/>");
+		document.getElementById("customerText").value = ""
+	}
+	
+}
+
+function showAutoFiltering(column, x, y) {
+    $("#divAutoFilter").css("left", x);
+    $("#divAutoFilter").css("top", y);
+ 
+    $("#divAutoFilter").show();
+}
+
+function setCustomFilter(){
+	var elementText = document.getElementById($("#customerText").val());
+	if(elementText){
+		elementText.checked = true
+		applyAutoFilter();
+		document.getElementById("customerText").value = ""
+	} else if ($("#customerText").val() == ""){
+		alert("필터로 검색할 값을 입력하세요.")
+	}else{
+		var span = $("#spanFilters");
+		var label = $("<label />").appendTo(span);
+		$("<input />", { type: "checkbox", id: $("#customerText").val(), name: "chkAutoFilterItem", value: $("#customerText").val(), checked: true}).appendTo(label);
+		label.append($("#customerText").val());
+		span.append("<br/>");
+		document.getElementById("customerText").value = ""
+		applyAutoFilter();
+	}
+}
+
+function applyAutoFilter() {
+	var filterExpr = "";
+	var filterItems = $('input[name="chkAutoFilterItem"]:checked');
+	autoFilterItems = [];
+	for (var i = 0; i < filterItems.length; i++) {
+		autoFilterItems.push(filterItems[i].value);
+		if (filterExpr != "")
+		filterExpr += " or ";
+		filterExpr += "(value like '%" + filterItems[i].value + "%')";
+	};
+
+	var filters = {
+		name: "auto_result",
+		criteria: filterExpr,
+		active: true,
+		hidden:true
+	};
+
+	gridView.addColumnFilters("CustomerID", filters, true);
+	$("#divAutoFilter").hide();
+	var chkArr = [];
+	$("input[name=chkAutoFilterItem]:checked").each(function() {
+		chkArr.push($(this).val());
+	});
+	chkID = chkArr;
+};
+
+function closeAutoFilter() {
+	$("#divAutoFilter").hide();
+	$("input[name=chkAutoFilterItem]:checkbox").each(function() {
+		$(this).attr("checked", false);
+	});
+	if(chkID !== undefined){
+		for(var i = 0; i < chkID.length; i++){
+			document.getElementById(chkID[i]).checked = true
+		}
+	}
+}
+
+</script>
 
 <div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
 
@@ -20592,7 +20706,7 @@
         
             
 
-            $.getJSON("/resource/layout/carFields2.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+            $.getJSON("/resource/layout/DefaultField.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
 
                 $('.codeview.realgridfield').html(
@@ -20620,7 +20734,7 @@
         
             
 
-            $.getJSON("/resource/layout/carColumns2.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/resource/layout/DefaultColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
                 $('.codeview.realgridcolumn').html(
@@ -20676,7 +20790,7 @@
         
             
 
-            $.getJSON("/resource/option/gridOption1.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/resource/option/DefaultGridOption.json", function (data, textStatus, jqXHR) {
                 gridView.setOptions(data);
 
                 $('.codeview.realgridviewoption').html(
@@ -20731,10 +20845,45 @@
 
 
         
+            
+            
+            $.ajax({
+              type: "GET",
+              url:"/resource/data/DefaultDataSet.json?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+;
+        
 
     });
 </script>
 
+<div id="divAutoFilter" style="display:none; position:absolute; height:280px; width:149px; background-color:#eeeeee; border:1px solid black;">
+	<input type="text" id="customerText" placeholder="Custom Filter" style="height:20px;width:146px" onkeypress="if(event.keyCode==13) {setCustomFilter();}" autofocus="" />
+    <span id="spanFilters" style="overflow-y:scroll; display:block; width:100%; height:230px"></span>
+
+    <a class="btn secondary small lowercase" onclick="applyAutoFilter();" id="applyAutoFilter">Apply</a>&nbsp;
+    <a class="btn secondary small lowercase" onclick="closeAutoFilter();" id="cancelAutoFilter">Cancel</a>
+</div>
 
             <p>
 
@@ -20747,26 +20896,12 @@
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      
-<h4 id="array-데이터">Array 데이터</h4>
+      <h4 id="자동-필터링">자동 필터링</h4>
 
-<p>아래와 같은 배열형 데이터를 GridView에 담을 수 있습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5</pre></td><td class="code"><pre><span class="p">[</span>
-  <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"기아"</span><span class="p">,</span> <span class="s2">"15"</span><span class="p">,</span> <span class="s2">"더 뉴 K9"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"16"</span><span class="p">,</span> <span class="s2">"8620"</span><span class="p">,</span> <span class="s2">"대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/215.png"</span><span class="p">,</span> <span class="s2">"images/215.png"</span><span class="p">],</span>
-  <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"르노삼성"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"QM6"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"이온 실버"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"71"</span><span class="p">,</span> <span class="s2">"3470"</span><span class="p">,</span> <span class="s2">"중형SUV"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/502.png"</span><span class="p">,</span> <span class="s2">"images/502.png"</span><span class="p">],</span>
-  <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"르노삼성"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"SM7"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"26"</span><span class="p">,</span> <span class="s2">"3820"</span><span class="p">,</span> <span class="s2">"준대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/505.png"</span><span class="p">,</span> <span class="s2">"images/505.png"</span><span class="p">]</span>
-<span class="p">]</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>javascript 배열형 데이터를 그리드에 담기 위해 <a href="http://help.realgrid.com/api/LocalDataProvider/setRows/">LocalDataProvider.setRows()</a> 함수를 사용합니다.
-배열 데이터는 필드의 순서대로 입력이 되며, 필드보다 데이터가 많던 적던 오류없이 입력됩니다.</p>
+<p>Auto Filter버튼 클릭 시 <code class="highlighter-rouge">CustomerID</code> 컬럼에 <code class="highlighter-rouge">Auto Filter</code>가 설정되며
+Auto Filter의 textBox에 <code class="highlighter-rouge">value</code> 값 입력 후 Enter키 입력 시 필터가 추가됩니다.<br />
+Auto Filter의 textBox에 ‘value’ 값을 입력하면 해당 컬럼의 데이터를 기준으로 자동완성 기능이 활성화됩니다.<br />
+해당 filter값을 체크 후 <code class="highlighter-rouge">Apply버튼</code>을 클릭하면 선택된 값으로 필터링 합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -20774,22 +20909,46 @@
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"기아"</span><span class="p">,</span> <span class="s2">"15"</span><span class="p">,</span> <span class="s2">"더 뉴 K9"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"16"</span><span class="p">,</span> <span class="s2">"8620"</span><span class="p">,</span> <span class="s2">"대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/215.png"</span><span class="p">,</span> <span class="s2">"images/215.png"</span><span class="p">],</span>
-  <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"르노삼성"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"QM6"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"이온 실버"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"71"</span><span class="p">,</span> <span class="s2">"3470"</span><span class="p">,</span> <span class="s2">"중형SUV"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/502.png"</span><span class="p">,</span> <span class="s2">"images/502.png"</span><span class="p">],</span>
-  <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"르노삼성"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"SM7"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"26"</span><span class="p">,</span> <span class="s2">"3820"</span><span class="p">,</span> <span class="s2">"준대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/505.png"</span><span class="p">,</span> <span class="s2">"images/505.png"</span><span class="p">]</span>
-<span class="p">]</span>
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></td><td class="code"><pre><span class="c1">//자동완성 기능을 위한 jquery-ui, css </span>
+<span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"/lib/css/jquery-ui-1.12.1.css"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"/lib/jquery/jquery-ui-1.12.1.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="c1">//자동완성</span>
+<span class="kd">var</span> <span class="nx">autocomplete_text</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getDistinctValues</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">);</span>
 
-<span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">autocomplete</span><span class="p">({</span>
+    <span class="na">source</span><span class="p">:</span> <span class="nx">autocomplete_text</span>
+<span class="p">});</span>
+
+<span class="c1">//자동 필터 목록 생성</span>
+<span class="kd">var</span> <span class="nx">customerText</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getDistinctValues</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">customerText</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">span</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#spanFilters"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;label /&gt;"</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">span</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;input /&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="s2">"checkbox"</span><span class="p">,</span> <span class="na">id</span><span class="p">:</span> <span class="nx">customerText</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"chkAutoFilterItem"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">customerText</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="na">checked</span><span class="p">:</span> <span class="kc">false</span><span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+    <span class="nx">label</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">customerText</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="nx">span</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"&lt;br/&gt;"</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"customerText"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
-<p><a class="btn primary small round lowercase" id="setRows">배열형 데이터 추가</a></p>
-
-<h4 id="object-array-데이터">Object Array 데이터</h4>
-
-<p><code class="highlighter-rouge">setRows()</code>함수는 javascript객체를 배열에 담아 그리드에 추가 할 수 도 있습니다.</p>
+<p><a class="btn primary small round lowercase" id="btnSetFilters">Auto Filter</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -20829,117 +20988,169 @@
 36
 37
 38
-39</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data2</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-        <span class="s2">"produce"</span><span class="p">:</span> <span class="s2">"수입차"</span><span class="p">,</span>
-        <span class="s2">"country"</span><span class="p">:</span> <span class="s2">"유럽"</span><span class="p">,</span>
-        <span class="s2">"brandNo"</span><span class="p">:</span> <span class="s2">"14"</span><span class="p">,</span>
-        <span class="s2">"brandName"</span><span class="p">:</span> <span class="s2">"재규어"</span><span class="p">,</span>
-        <span class="s2">"modelNo"</span><span class="p">:</span> <span class="s2">"3"</span><span class="p">,</span>
-        <span class="s2">"modelName"</span><span class="p">:</span> <span class="s2">"All New XF 20t"</span><span class="p">,</span>
-        <span class="s2">"colorNo"</span><span class="p">:</span> <span class="s2">"3"</span><span class="p">,</span>
-        <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"이온 실버"</span><span class="p">,</span>
-        <span class="s2">"salesDay"</span><span class="p">:</span> <span class="s2">"2016-01-01"</span><span class="p">,</span>
-        <span class="s2">"salesQty"</span><span class="p">:</span> <span class="s2">"3"</span><span class="p">,</span>
-        <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"9090"</span><span class="p">,</span>
-        <span class="s2">"vehicleType"</span><span class="p">:</span> <span class="s2">"중형"</span><span class="p">,</span>
-        <span class="s2">"fuel"</span><span class="p">:</span> <span class="s2">"휘발유"</span><span class="p">,</span>
-        <span class="s2">"사진파일명"</span><span class="p">:</span> <span class="s2">"images/1403.png"</span><span class="p">,</span>
-        <span class="s2">"판매월"</span><span class="p">:</span> <span class="s2">"1"</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">"produce"</span><span class="p">:</span> <span class="s2">"수입차"</span><span class="p">,</span>
-        <span class="s2">"country"</span><span class="p">:</span> <span class="s2">"유럽"</span><span class="p">,</span>
-        <span class="s2">"brandNo"</span><span class="p">:</span> <span class="s2">"14"</span><span class="p">,</span>
-        <span class="s2">"brandName"</span><span class="p">:</span> <span class="s2">"재규어"</span><span class="p">,</span>
-        <span class="s2">"modelNo"</span><span class="p">:</span> <span class="s2">"5"</span><span class="p">,</span>
-        <span class="s2">"modelName"</span><span class="p">:</span> <span class="s2">"XE 20d"</span><span class="p">,</span>
-        <span class="s2">"colorNo"</span><span class="p">:</span> <span class="s2">"5"</span><span class="p">,</span>
-        <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"소닉 실버"</span><span class="p">,</span>
-        <span class="s2">"salesDay"</span><span class="p">:</span> <span class="s2">"2016-01-01"</span><span class="p">,</span>
-        <span class="s2">"salesQty"</span><span class="p">:</span> <span class="s2">"10"</span><span class="p">,</span>
-        <span class="s2">"price"</span><span class="p">:</span> <span class="s2">"4990"</span><span class="p">,</span>
-        <span class="s2">"vehicleType"</span><span class="p">:</span> <span class="s2">"준중형"</span><span class="p">,</span>
-        <span class="s2">"fuel"</span><span class="p">:</span> <span class="s2">"휘발유"</span><span class="p">,</span>
-        <span class="s2">"사진파일명"</span><span class="p">:</span> <span class="s2">"images/1405.png"</span><span class="p">,</span>
-        <span class="s2">"판매월"</span><span class="p">:</span> <span class="s2">"1"</span>
-    <span class="p">}</span>
-<span class="p">]</span>
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</pre></td><td class="code"><pre><span class="c1">//필터 액션 설정</span>
+<span class="kd">var</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s2">"CustomFilter"</span><span class="p">,</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s2">"CustomFilter"</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="s2">"Custom Filter Actions"</span>
+<span class="p">}];</span>
 
-<span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilterActions</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="nx">actions</span><span class="p">);</span>
 
+<span class="c1">//사용자 필터 이벤트</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">onFilterActionClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">action</span> <span class="o">==</span> <span class="s2">"CustomFilter"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">offset</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#realgrid"</span><span class="p">).</span><span class="nx">offset</span><span class="p">();</span>
+    	<span class="nx">showAutoFiltering</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">offset</span><span class="p">.</span><span class="nx">left</span> <span class="o">-</span> <span class="mi">260</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">offset</span><span class="p">.</span><span class="nx">top</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"customerText"</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="c1">///////////////////////////////////////////////////////////////</span>
+<span class="c1">//동작 함수</span>
+<span class="kd">function</span> <span class="nx">showAutoFiltering</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"left"</span><span class="p">,</span> <span class="nx">x</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"top"</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setCustomFilter</span><span class="p">(){</span>
+	<span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">())){</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">"이미 해당 필터 조건이 존재합니다."</span><span class="p">)</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">""</span><span class="p">){</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">"필터로 검색할 값을 입력하세요."</span><span class="p">)</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="kd">var</span> <span class="nx">span</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#spanFilters"</span><span class="p">);</span>
+		<span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;label /&gt;"</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">span</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;input /&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="s2">"checkbox"</span><span class="p">,</span> <span class="na">id</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"chkAutoFilterItem"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="na">checked</span><span class="p">:</span> <span class="kc">true</span><span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+		<span class="nx">label</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#customerText"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+		<span class="nx">span</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"&lt;br/&gt;"</span><span class="p">);</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"customerText"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">""</span>
+		<span class="nx">applyAutoFilter</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">applyAutoFilter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">filterExpr</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">filterItems</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'input[name="chkAutoFilterItem"]:checked'</span><span class="p">);</span>
+    <span class="nx">autoFilterItems</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">filterItems</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">autoFilterItems</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">filterItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">filterExpr</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">)</span>
+        <span class="nx">filterExpr</span> <span class="o">+=</span> <span class="s2">" or "</span><span class="p">;</span>
+        <span class="nx">filterExpr</span> <span class="o">+=</span> <span class="s2">"(value like '%"</span> <span class="o">+</span> <span class="nx">filterItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">+</span> <span class="s2">"%')"</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="s2">"auto_result"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="nx">filterExpr</span><span class="p">,</span>
+        <span class="na">active</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">hidden</span><span class="p">:</span><span class="kc">true</span>
+    <span class="p">};</span>
+
+    <span class="nx">gridView</span><span class="p">.</span><span class="nx">addColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="nx">filters</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">chkArr</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"input[name=chkAutoFilterItem]:checked"</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">chkArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+    <span class="p">});</span>
+    <span class="nx">chkID</span> <span class="o">=</span> <span class="nx">chkArr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">closeAutoFilter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"input[name=chkAutoFilterItem]:checkbox"</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"checked"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">chkID</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">chkID</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">chkID</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+
+<span class="c1">///////////////////////////////////////////////////////////////</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"divAutoFilter"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"display:none; position:absolute; height:280px; width:146px; background-color:#eeeeee; border:1px solid black;"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"customerText"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Custom Filter"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"height:20px;width:144px"</span> <span class="nx">onkeypress</span><span class="o">=</span><span class="s2">"if(event.keyCode==13) {setCustomFilter();}"</span> <span class="nx">autofocus</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"spanFilters"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"overflow-y:scroll; display:block; width:100%; height:230px"</span><span class="o">&gt;&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>
+    <span class="o">&lt;</span><span class="nx">a</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"btn secondary small lowercase"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"applyAutoFilter();"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"applyAutoFilter"</span><span class="o">&gt;</span><span class="nx">Apply</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">a</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"btn secondary small lowercase"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"closeAutoFilter();"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"cancelAutoFilter"</span><span class="o">&gt;</span><span class="nx">Cancel</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
-<p>버튼을 눌러 실행하기 전에 왼쪽 그리드의 툴바에서 <code class="highlighter-rouge">필드</code>를 펼쳐 그리드에 적용된 필드 이름을 확인 하세요.
-객체의 <code class="highlighter-rouge">name: value</code>에서 속성명인 <code class="highlighter-rouge">name</code>은 필드 이름과 매핑되며 해당 <code class="highlighter-rouge">value</code>가 필드의 값으로 입력됩니다. 아래 버튼을 눌러 동작을 확인하세요.</p>
-
-<p><a class="btn primary small round lowercase" id="setRows2">객체 배열 데이터 추가</a></p>
-
-<h4 id="localdataprovidersetrows-함수">LocalDataProvider.setRows() 함수</h4>
-
-<p><a href="http://help.realgrid.com/api/LocalDataProvider/setRows/">LocalDataProvider.setRows()</a>함수는 DataProvider에 들어 있던 기존의 데이터를 모두 초기화한 다음 새로운 데이터를 추가합니다.</p>
-
-<ul>
-  <li><code class="highlighter-rouge">start</code> - 입력할 데이터의 시작 행</li>
-  <li><code class="highlighter-rouge">count</code> - 입력할 데이터의 행 수</li>
-</ul>
-
-<p>인자를 이용해 데이터의 입력 위치 및 갯수를 제한 할 수 있습니다. 링크된 도움말 사이트를 참고하세요.</p>
-
 <script>
-$('#setRows').click(function() {
-  var data = [
-    ["국산", "국산", "2", "기아", "15", "더 뉴 K9", "9", "미드나이트 블랙", "2016-01-01", "16", "8620", "대형", "휘발유", "images/215.png", "images/215.png"],
-    ["국산", "국산", "5", "르노삼성", "2", "QM6", "3", "이온 실버", "2016-01-01", "71", "3470", "중형SUV", "휘발유", "images/502.png", "images/502.png"],
-    ["국산", "국산", "5", "르노삼성", "5", "SM7", "9", "미드나이트 블랙", "2016-01-01", "26", "3820", "준대형", "휘발유", "images/505.png", "images/505.png"]
-  ];
-
-  dataProvider.setRows(data);
+var oldFilterColumn;
+$("#btnSetFilters").click(function() { 
+    var actions = [{
+	  name: "CustomFilter",
+	  text: "CustomFilter",
+	  description: "Custom Filter Actions"
+	}];
+	gridView.setColumnFilterActions('CustomerID', actions);
 });
-
-$('#setRows2').click(function() {
-  var data2 = [
-    {
-          "produce": "수입차",
-          "country": "유럽",
-          "brandNo": "14",
-          "brandName": "재규어",
-          "modelNo": "3",
-          "modelName": "All New XF 20t",
-          "colorNo": "3",
-          "color": "이온 실버",
-          "salesDay": "2016-01-01",
-          "salesQty": "3",
-          "price": "9090",
-          "vehicleType": "중형",
-          "fuel": "휘발유",
-          "사진파일명": "images/1403.png",
-          "판매월": "1"
-      },
-      {
-          "produce": "수입차",
-          "country": "유럽",
-          "brandNo": "14",
-          "brandName": "재규어",
-          "modelNo": "5",
-          "modelName": "XE 20d",
-          "colorNo": "5",
-          "color": "소닉 실버",
-          "salesDay": "2016-01-01",
-          "salesQty": "10",
-          "price": "4990",
-          "vehicleType": "준중형",
-          "fuel": "휘발유",
-          "사진파일명": "images/1405.png",
-          "판매월": "1"
-      }
-  ]
-
-  dataProvider.setRows(data2);
-});
-
 </script>
 
 
