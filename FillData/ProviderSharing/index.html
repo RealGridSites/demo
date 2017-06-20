@@ -20643,15 +20643,20 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
             });
         
 
-        $.ajaxSetup({
-          async: false
-        });
-
         
             
 
+            $.ajaxSetup({
+              async: false
+            });
+
             $.getJSON("/resource/layout/economicGrowthColumn1.json", function (data, textStatus, jqXHR) {
                 gridView1.setColumns(data);
+
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgrid1column').html(
                   JSON.stringify(data, null, 4)
@@ -20675,9 +20680,7 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
             });
         
 
-        $.ajaxSetup({
-          async: true
-        });
+       
 
         
             
@@ -20879,15 +20882,20 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
             });
         
 
-        $.ajaxSetup({
-          async: false
-        });
-
         
             
 
+            $.ajaxSetup({
+              async: false
+            });
+
             $.getJSON("/resource/layout/economicGrowthColumn2.json", function (data, textStatus, jqXHR) {
                 gridView2.setColumns(data);
+
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgrid2column').html(
                   JSON.stringify(data, null, 4)
@@ -20911,9 +20919,7 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
             });
         
 
-        $.ajaxSetup({
-          async: true
-        });
+       
 
         
             

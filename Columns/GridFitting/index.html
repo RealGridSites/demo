@@ -20631,15 +20631,20 @@ DevBox에서 기능을 확인해보세요.</p>
             });
         
 
-        $.ajaxSetup({
-          async: false
-        });
-
         
             
 
+            $.ajaxSetup({
+              async: false
+            });
+
             $.getJSON("/resource/layout/GridFittingColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
+
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
@@ -20663,9 +20668,7 @@ DevBox에서 기능을 확인해보세요.</p>
             });
         
 
-        $.ajaxSetup({
-          async: true
-        });
+       
 
         
             
