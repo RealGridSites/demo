@@ -20595,6 +20595,9 @@ fixedHeight의 합이 Header높이보다 크거나 모든 컬럼 Level이 fixedH
     var dataProvider;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20769,7 +20772,6 @@ fixedHeight의 합이 Header높이보다 크거나 모든 컬럼 Level이 fixedH
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });

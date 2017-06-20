@@ -20594,6 +20594,9 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
     var dataProvider;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20768,7 +20771,6 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });

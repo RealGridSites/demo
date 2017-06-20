@@ -20613,6 +20613,9 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
     var dataProvider;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20789,7 +20792,6 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });

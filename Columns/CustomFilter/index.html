@@ -20672,6 +20672,9 @@ function closeAutoFilter() {
     var dataProvider;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20846,7 +20849,6 @@ function closeAutoFilter() {
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });

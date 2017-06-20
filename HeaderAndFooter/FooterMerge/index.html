@@ -20594,6 +20594,9 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
     var dataProvider;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20768,7 +20771,6 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });

@@ -21203,6 +21203,9 @@ ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
     var dataProvider;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -21351,7 +21354,6 @@ ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });

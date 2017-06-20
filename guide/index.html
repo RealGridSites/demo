@@ -21162,6 +21162,9 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
     var dataProvider;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -21336,7 +21339,6 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });
@@ -21765,6 +21767,9 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
     var dataProvider1;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider1 = new RealGridJS.LocalDataProvider();
@@ -21937,7 +21942,6 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });

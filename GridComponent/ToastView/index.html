@@ -20602,6 +20602,9 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
     var dataProvider;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20776,7 +20779,6 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });

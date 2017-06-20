@@ -20864,6 +20864,9 @@ function onbtnDetailSave(evt) {
     var dpMain;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dpMain = new RealGridJS.LocalDataProvider();
@@ -21056,6 +21059,9 @@ function onbtnDetailSave(evt) {
     var dpDetail;
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dpDetail = new RealGridJS.LocalDataProvider();
@@ -21176,7 +21182,6 @@ function onbtnDetailSave(evt) {
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });
