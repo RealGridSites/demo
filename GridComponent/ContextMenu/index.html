@@ -20599,9 +20599,6 @@
     var dataProvider;
 
     $(document).ready( function(){
-        $.ajaxSetup({
-          async: false
-        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20636,6 +20633,10 @@
             });
         
 
+        $.ajaxSetup({
+          async: false
+        });
+
         
             
 
@@ -20663,6 +20664,10 @@
                 
             });
         
+
+        $.ajaxSetup({
+          async: true
+        });
 
         
             

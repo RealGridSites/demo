@@ -20607,9 +20607,6 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
     var dataProvider1;
 
     $(document).ready( function(){
-        $.ajaxSetup({
-          async: false
-        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider1 = new RealGridJS.LocalDataProvider();
@@ -20646,6 +20643,10 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
             });
         
 
+        $.ajaxSetup({
+          async: false
+        });
+
         
             
 
@@ -20673,6 +20674,10 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
                 
             });
         
+
+        $.ajaxSetup({
+          async: true
+        });
 
         
             
@@ -20838,9 +20843,6 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
     var dataProvider2;
 
     $(document).ready( function(){
-        $.ajaxSetup({
-          async: false
-        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider2 = new RealGridJS.LocalDataProvider();
@@ -20877,6 +20879,10 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
             });
         
 
+        $.ajaxSetup({
+          async: false
+        });
+
         
             
 
@@ -20904,6 +20910,10 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
                 
             });
         
+
+        $.ajaxSetup({
+          async: true
+        });
 
         
             

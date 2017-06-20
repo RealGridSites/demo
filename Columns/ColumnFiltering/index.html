@@ -20723,9 +20723,6 @@ if (column) {
     var dataProvider;
 
     $(document).ready( function(){
-        $.ajaxSetup({
-          async: false
-        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20760,6 +20757,10 @@ if (column) {
             });
         
 
+        $.ajaxSetup({
+          async: false
+        });
+
         
             
 
@@ -20787,6 +20788,10 @@ if (column) {
                 
             });
         
+
+        $.ajaxSetup({
+          async: true
+        });
 
         
             

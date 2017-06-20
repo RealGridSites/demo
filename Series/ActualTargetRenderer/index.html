@@ -20591,9 +20591,6 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     var dataProvider;
 
     $(document).ready( function(){
-        $.ajaxSetup({
-          async: false
-        });
         RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
@@ -20628,6 +20625,10 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
             });
         
 
+        $.ajaxSetup({
+          async: false
+        });
+
         
             
 
@@ -20655,6 +20656,10 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
                 
             });
         
+
+        $.ajaxSetup({
+          async: true
+        });
 
         
             
