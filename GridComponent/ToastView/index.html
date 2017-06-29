@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.24</span>
+                            <span>최신버전 1.1.23</span>
                         </a>
                     </li>
                     
@@ -191,6 +191,7 @@
           
             <div class="heading-toc">그리드 구성요소</div>
           
+
           <ul class="list-toc">
             
             
@@ -1344,6 +1345,7 @@
           
             <div class="heading-toc">셀 구성요소</div>
           
+
           <ul class="list-toc">
             
             
@@ -2497,6 +2499,7 @@
           
             <div class="heading-toc">컬럼</div>
           
+
           <ul class="list-toc">
             
             
@@ -3690,6 +3693,7 @@
           
             <div class="heading-toc">헤더와 푸터</div>
           
+
           <ul class="list-toc">
             
             
@@ -4833,6 +4837,7 @@
           
             <div class="heading-toc">행 그룹</div>
           
+
           <ul class="list-toc">
             
             
@@ -5936,6 +5941,7 @@
           
             <div class="heading-toc">데이터 가져오기</div>
           
+
           <ul class="list-toc">
             
             
@@ -7089,6 +7095,7 @@
           
             <div class="heading-toc">데이터 관리</div>
           
+
           <ul class="list-toc">
             
             
@@ -8252,6 +8259,7 @@
           
             <div class="heading-toc">페이지 처리</div>
           
+
           <ul class="list-toc">
             
             
@@ -9325,6 +9333,7 @@
           
             <div class="heading-toc">그리드 편집</div>
           
+
           <ul class="list-toc">
             
             
@@ -10478,6 +10487,7 @@
           
             <div class="heading-toc">유효성 검사</div>
           
+
           <ul class="list-toc">
             
             
@@ -11591,6 +11601,7 @@
           
             <div class="heading-toc">렌더러</div>
           
+
           <ul class="list-toc">
             
             
@@ -12754,6 +12765,7 @@
           
             <div class="heading-toc">시리즈 컬럼</div>
           
+
           <ul class="list-toc">
             
             
@@ -13847,6 +13859,7 @@
           
             <div class="heading-toc">그리드 스타일</div>
           
+
           <ul class="list-toc">
             
             
@@ -14990,6 +15003,7 @@
           
             <div class="heading-toc">엑셀 내보내기</div>
           
+
           <ul class="list-toc">
             
             
@@ -16073,6 +16087,7 @@
           
             <div class="heading-toc">성능</div>
           
+
           <ul class="list-toc">
             
             
@@ -17166,6 +17181,7 @@
           
             <div class="heading-toc">이벤트</div>
           
+
           <ul class="list-toc">
             
             
@@ -18249,6 +18265,7 @@
           
             <div class="heading-toc">트리뷰(TreeView)</div>
           
+
           <ul class="list-toc">
             
             
@@ -19422,6 +19439,7 @@
           
             <div class="heading-toc">차트 및 리포트 연동</div>
           
+
           <ul class="list-toc">
             
             
@@ -20584,7 +20602,7 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.24");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -20621,17 +20639,8 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
-
             $.getJSON("/resource/layout/toastViewColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
-
-                console.log("비동기 재설정");
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
@@ -20654,8 +20663,6 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
                 
             });
         
-
-       
 
         
             
@@ -20769,6 +20776,7 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
                 alert("jQuery ajax() Failed: " + err);
               
             });
+;
         
 
     });
@@ -20893,9 +20901,9 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs_eval.1.1.24.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs-api.1.1.24.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.23/realgridjs_eval.1.1.23.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.23/realgridjs-api.1.1.23.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.23/jszip.min.js"></script>
 
 
 </body>
