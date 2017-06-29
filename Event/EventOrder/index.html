@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.23</span>
+                            <span>최신버전 1.1.24</span>
                         </a>
                     </li>
                     
@@ -20613,28 +20613,37 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     };
  
     gridView.onGetEditValue = function (grid, index, editResult) {
-        addLog("onGetEditValue: " + JSON.stringify(editResult));
+        addLog("grid.onGetEditValue: " + JSON.stringify(editResult));
     };
  
     gridView.onSorting = function (grid, field, directions) {
-        addLog("onSorting: " + JSON.stringify(field) + ", " + JSON.stringify(directions));
+        addLog("grid.onSorting: " + JSON.stringify(field) + ", " + JSON.stringify(directions));
     };
  
     gridView.onSortingChanged = function (grid) {
-        addLog("onSortingChanged");
+        addLog("grid.onSortingChanged");
     };
  
     gridView.onFiltering = function (grid) {
-        addLog("onFiltering");
+        addLog("grid.onFiltering");
     };
  
     gridView.onFilteringChanged = function (grid) {
-        addLog("onFilteringChanged");
+        addLog("grid.onFilteringChanged");
     };
  
     gridView.onTopItemIndexChanged = function (grid, itemIndex) {
-        addLog("onTopItemIndexChanged! Top " + itemIndex);
+        addLog("grid.onTopItemIndexChanged! Top " + itemIndex);
     }
+
+    gridView.onRowsPasted =  function (grid, items) {
+        addLog("grid.onRowsPasted" + items);
+    };
+
+    gridView.onEditRowPasted = function(grid, itemIndex, dataRow, fields, oldValues, newValues){
+        var text = "grid.onEditRowPasted : itemIndex = "+itemIndex+", oldValues = "+ oldValues.toString() +", newValues = "+newValues.toString();
+        addLog(text);
+    };
  
     dataProvider.onValueChanged = function (provider, row, field) {
         addLog("dp.onValueChanged:" + row + "," + field);
@@ -21134,7 +21143,16 @@ function findField(field, fieldName) {
 149
 150
 151
-152</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onCurrentChanging</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">oldIndex</span><span class="p">,</span> <span class="nx">newIndex</span><span class="p">)</span> <span class="p">{</span>
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onCurrentChanging</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">oldIndex</span><span class="p">,</span> <span class="nx">newIndex</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"grid.onCurrentChanging: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">oldIndex</span><span class="p">.</span><span class="nx">itemIndex</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">oldIndex</span><span class="p">.</span><span class="nx">column</span> <span class="o">+</span> <span class="s2">") =&gt; ("</span> <span class="o">+</span> <span class="nx">newIndex</span><span class="p">.</span><span class="nx">itemIndex</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">newIndex</span><span class="p">.</span><span class="nx">column</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
@@ -21222,6 +21240,15 @@ function findField(field, fieldName) {
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onTopItemIndexChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onTopItemIndexChanged! Top "</span> <span class="o">+</span> <span class="nx">itemIndex</span><span class="p">);</span>
 <span class="p">}</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowsPasted</span> <span class="o">=</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"grid.onRowsPasted"</span> <span class="o">+</span> <span class="nx">items</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">onEditRowPasted</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">dataRow</span><span class="p">,</span> <span class="nx">fields</span><span class="p">,</span> <span class="nx">oldValues</span><span class="p">,</span> <span class="nx">newValues</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s2">"grid.onEditRowPasted : itemIndex = "</span><span class="o">+</span><span class="nx">itemIndex</span><span class="o">+</span><span class="s2">", oldValues = "</span><span class="o">+</span> <span class="nx">oldValues</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span><span class="s2">", newValues = "</span><span class="o">+</span><span class="nx">newValues</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="p">};</span>
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">onValueChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">row</span><span class="p">,</span> <span class="nx">field</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"dp.onValueChanged:"</span> <span class="o">+</span> <span class="nx">row</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="nx">field</span><span class="p">);</span>

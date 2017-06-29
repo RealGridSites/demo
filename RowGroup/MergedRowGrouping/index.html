@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.23</span>
+                            <span>최신버전 1.1.24</span>
                         </a>
                     </li>
                     
@@ -20617,7 +20617,7 @@ var onDoneDataSet = function() {
               async: false
             });
 
-            $.getJSON("/resource/layout/rowGroupingColumn.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/resource/layout/mergedRowGroupingColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
                 console.log("비동기 재설정");
@@ -20854,6 +20854,66 @@ var onDoneDataSet = function() {
 </div>
 </div>
 
+<h4 id="footer-상단표시">Footer 상단표시</h4>
+
+<p><em>Footer 상단표시</em></p>
+
+<p><a class="btn primary small round lowercase" id="btnSetSummary">상단에 보이기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">({</span><span class="na">summary</span><span class="p">:{</span><span class="na">visible</span><span class="p">:</span><span class="kc">true</span><span class="p">}});</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span><span class="na">visible</span><span class="p">:</span><span class="kc">false</span><span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><em>상단 Footer 스타일</em></p>
+
+<p><a class="btn primary small round lowercase" id="btnSetSummaryStyles">스타일 설정</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">({</span><span class="na">header</span><span class="p">:{</span><span class="na">summary</span><span class="p">:{</span><span class="na">background</span><span class="p">:</span><span class="s2">"#ffdee2e7"</span><span class="p">}}});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><em>상단 Footer 값 설정</em></p>
+
+<p>header.summary에 footer와 같은 속성 설정 <br />
+<a href="http://demo.realgrid.com/HeaderAndFooter/ColumnFooter/">컬럼 푸터</a>데모를 참조하세요.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td><td class="code"><pre><span class="p">...</span>
+<span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
+    <span class="s2">"summary"</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
+            <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"far"</span><span class="p">,</span>
+            <span class="s2">"numberFormat"</span><span class="err">:</span> <span class="s2">"#,##0"</span><span class="p">,</span>
+            <span class="s2">"suffix"</span><span class="err">:</span> <span class="s2">" $"</span><span class="p">,</span>
+            <span class="s2">"font"</span><span class="err">:</span> <span class="s2">"Arial,12"</span>
+        <span class="p">},</span>
+        <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Variance"</span><span class="p">,</span>
+        <span class="s2">"expression"</span><span class="err">:</span> <span class="s2">"sum"</span>
+    <span class="p">}</span>
+<span class="p">},</span>
+<span class="p">...</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <h4 id="제한-사항">제한 사항</h4>
 
 <p>병합 모드에서 제한 되는 부분은 아래와 같습니다.</p>
@@ -20885,6 +20945,15 @@ function expanderChange(e) {
         mergeExpander: $(':radio[name="expander"]:checked').val()
     });
 }
+
+$('#btnSetSummary').click(function() {
+    gridView.setHeader({summary:{visible:true}});
+    gridView.setFooter({visible:false});
+});
+
+$('#btnSetSummaryStyles').click(function() {
+    gridView.setStyles({header:{summary:{background:"#ffdee2e7"}}});
+});
 </script>
 
 
