@@ -191,7 +191,6 @@
           
             <div class="heading-toc">그리드 구성요소</div>
           
-
           <ul class="list-toc">
             
             
@@ -1345,7 +1344,6 @@
           
             <div class="heading-toc">셀 구성요소</div>
           
-
           <ul class="list-toc">
             
             
@@ -2499,7 +2497,6 @@
           
             <div class="heading-toc">컬럼</div>
           
-
           <ul class="list-toc">
             
             
@@ -3693,7 +3690,6 @@
           
             <div class="heading-toc">헤더와 푸터</div>
           
-
           <ul class="list-toc">
             
             
@@ -4837,7 +4833,6 @@
           
             <div class="heading-toc">행 그룹</div>
           
-
           <ul class="list-toc">
             
             
@@ -5941,7 +5936,6 @@
           
             <div class="heading-toc">데이터 가져오기</div>
           
-
           <ul class="list-toc">
             
             
@@ -7095,7 +7089,6 @@
           
             <div class="heading-toc">데이터 관리</div>
           
-
           <ul class="list-toc">
             
             
@@ -8259,7 +8252,6 @@
           
             <div class="heading-toc">페이지 처리</div>
           
-
           <ul class="list-toc">
             
             
@@ -9333,7 +9325,6 @@
           
             <div class="heading-toc">그리드 편집</div>
           
-
           <ul class="list-toc">
             
             
@@ -10487,7 +10478,6 @@
           
             <div class="heading-toc">유효성 검사</div>
           
-
           <ul class="list-toc">
             
             
@@ -11601,7 +11591,6 @@
           
             <div class="heading-toc">렌더러</div>
           
-
           <ul class="list-toc">
             
             
@@ -12765,7 +12754,6 @@
           
             <div class="heading-toc">시리즈 컬럼</div>
           
-
           <ul class="list-toc">
             
             
@@ -13859,7 +13847,6 @@
           
             <div class="heading-toc">그리드 스타일</div>
           
-
           <ul class="list-toc">
             
             
@@ -15003,7 +14990,6 @@
           
             <div class="heading-toc">엑셀 내보내기</div>
           
-
           <ul class="list-toc">
             
             
@@ -16087,7 +16073,6 @@
           
             <div class="heading-toc">성능</div>
           
-
           <ul class="list-toc">
             
             
@@ -17181,7 +17166,6 @@
           
             <div class="heading-toc">이벤트</div>
           
-
           <ul class="list-toc">
             
             
@@ -18265,7 +18249,6 @@
           
             <div class="heading-toc">트리뷰(TreeView)</div>
           
-
           <ul class="list-toc">
             
             
@@ -19439,7 +19422,6 @@
           
             <div class="heading-toc">차트 및 리포트 연동</div>
           
-
           <ul class="list-toc">
             
             
@@ -20634,8 +20616,17 @@ DevBox에서 기능을 확인해보세요.</p>
         
             
 
+            $.ajaxSetup({
+              async: false
+            });
+
             $.getJSON("/resource/layout/GridFittingColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
+
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
@@ -20658,6 +20649,8 @@ DevBox에서 기능을 확인해보세요.</p>
                 
             });
         
+
+       
 
         
             
@@ -20771,7 +20764,6 @@ DevBox에서 기능을 확인해보세요.</p>
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });
