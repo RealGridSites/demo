@@ -21222,17 +21222,11 @@ ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/CSSStylesColumns.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
-                console.log("비동기 재설정");
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)

@@ -20621,17 +20621,11 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/toastViewColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
-                console.log("비동기 재설정");
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)

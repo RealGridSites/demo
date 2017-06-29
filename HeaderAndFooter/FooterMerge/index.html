@@ -20613,17 +20613,11 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/footerMergeColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
-                console.log("비동기 재설정");
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)

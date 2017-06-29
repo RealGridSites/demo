@@ -20613,17 +20613,11 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/MultiFooterColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
-                console.log("비동기 재설정");
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)

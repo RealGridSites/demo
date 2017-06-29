@@ -20610,17 +20610,11 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/actualTargetRendererColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
-                console.log("비동기 재설정");
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
