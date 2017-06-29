@@ -20883,11 +20883,17 @@ function onbtnDetailSave(evt) {
         
             
 
-
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/setMasterColumns.json", function (data, textStatus, jqXHR) {
                 mainGrid.setColumns(data);
 
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.maincolumn').html(
                   JSON.stringify(data, null, 4)
@@ -21080,11 +21086,17 @@ function onbtnDetailSave(evt) {
         
             
 
-
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/setDetailColumns.json", function (data, textStatus, jqXHR) {
                 detailGrid.setColumns(data);
 
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.detailcolumn').html(
                   JSON.stringify(data, null, 4)

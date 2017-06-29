@@ -20632,11 +20632,17 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
         
             
 
-
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/DefaultColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
 
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
