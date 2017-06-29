@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.23</span>
+                            <span>최신버전 1.1.24</span>
                         </a>
                     </li>
                     
@@ -191,7 +191,6 @@
           
             <div class="heading-toc">그리드 구성요소</div>
           
-
           <ul class="list-toc">
             
             
@@ -1345,7 +1344,6 @@
           
             <div class="heading-toc">셀 구성요소</div>
           
-
           <ul class="list-toc">
             
             
@@ -2499,7 +2497,6 @@
           
             <div class="heading-toc">컬럼</div>
           
-
           <ul class="list-toc">
             
             
@@ -3693,7 +3690,6 @@
           
             <div class="heading-toc">헤더와 푸터</div>
           
-
           <ul class="list-toc">
             
             
@@ -4837,7 +4833,6 @@
           
             <div class="heading-toc">행 그룹</div>
           
-
           <ul class="list-toc">
             
             
@@ -5941,7 +5936,6 @@
           
             <div class="heading-toc">데이터 가져오기</div>
           
-
           <ul class="list-toc">
             
             
@@ -7095,7 +7089,6 @@
           
             <div class="heading-toc">데이터 관리</div>
           
-
           <ul class="list-toc">
             
             
@@ -8259,7 +8252,6 @@
           
             <div class="heading-toc">페이지 처리</div>
           
-
           <ul class="list-toc">
             
             
@@ -9333,7 +9325,6 @@
           
             <div class="heading-toc">그리드 편집</div>
           
-
           <ul class="list-toc">
             
             
@@ -10487,7 +10478,6 @@
           
             <div class="heading-toc">유효성 검사</div>
           
-
           <ul class="list-toc">
             
             
@@ -11601,7 +11591,6 @@
           
             <div class="heading-toc">렌더러</div>
           
-
           <ul class="list-toc">
             
             
@@ -12765,7 +12754,6 @@
           
             <div class="heading-toc">시리즈 컬럼</div>
           
-
           <ul class="list-toc">
             
             
@@ -13859,7 +13847,6 @@
           
             <div class="heading-toc">그리드 스타일</div>
           
-
           <ul class="list-toc">
             
             
@@ -15003,7 +14990,6 @@
           
             <div class="heading-toc">엑셀 내보내기</div>
           
-
           <ul class="list-toc">
             
             
@@ -16087,7 +16073,6 @@
           
             <div class="heading-toc">성능</div>
           
-
           <ul class="list-toc">
             
             
@@ -17181,7 +17166,6 @@
           
             <div class="heading-toc">이벤트</div>
           
-
           <ul class="list-toc">
             
             
@@ -18265,7 +18249,6 @@
           
             <div class="heading-toc">트리뷰(TreeView)</div>
           
-
           <ul class="list-toc">
             
             
@@ -19439,7 +19422,6 @@
           
             <div class="heading-toc">차트 및 리포트 연동</div>
           
-
           <ul class="list-toc">
             
             
@@ -20594,7 +20576,7 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.23");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.24");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -20631,8 +20613,17 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
         
             
 
+            $.ajaxSetup({
+              async: false
+            });
+
             $.getJSON("/resource/layout/MultiFooterColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
+
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
@@ -20655,6 +20646,8 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
                 
             });
         
+
+       
 
         
             
@@ -20768,7 +20761,6 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
                 alert("jQuery ajax() Failed: " + err);
               
             });
-;
         
 
     });
@@ -20949,6 +20941,68 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 </div>
 </div>
 
+<p><em>멀티 푸터 스타일 설정</em></p>
+
+<p>버튼 클릭 시 “Quantity” 컬럼의 footer행 별로 스타일을 설정할 수 있습니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetMultiFooterStyles">동적 컬럼 푸터 스타일</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Quantity"</span><span class="p">,</span><span class="s2">"footer"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">styles</span><span class="p">:[{</span>
+        <span class="na">background</span><span class="p">:</span><span class="s2">"#ffffff00"</span><span class="p">,</span>
+        <span class="na">textAlignment</span><span class="p">:</span><span class="s2">"far"</span><span class="p">,</span>
+        <span class="na">numberFormat</span><span class="p">:</span><span class="s2">"#,##0.#"</span>
+    <span class="p">},{</span>
+        <span class="na">background</span><span class="p">:</span><span class="s2">"#ff00ffff"</span><span class="p">,</span>
+        <span class="na">textAlignment</span><span class="p">:</span><span class="s2">"far"</span><span class="p">,</span>
+        <span class="na">numberFormat</span><span class="p">:</span><span class="s2">"#,##0.##"</span>
+    <span class="p">},{</span>
+        <span class="na">background</span><span class="p">:</span><span class="s2">"#ff11ff55"</span><span class="p">,</span>
+        <span class="na">textAlignment</span><span class="p">:</span><span class="s2">"far"</span><span class="p">,</span>
+        <span class="na">numberFormat</span><span class="p">:</span><span class="s2">"#,##0.###"</span>
+    <span class="p">}]</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>모든 푸터 행에 스타일을 설정할 수 있습니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetMultiFooterStyleRows">전체 푸터 행 스타일</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span><span class="na">styles</span><span class="p">:[{</span>
+        <span class="na">background</span><span class="p">:</span><span class="s2">"#ffffff00"</span>
+    <span class="p">},{</span>
+        <span class="na">background</span><span class="p">:</span><span class="s2">"#ff00ffff"</span>
+    <span class="p">},{</span>
+        <span class="na">background</span><span class="p">:</span><span class="s2">"#ff11ff55"</span>
+    <span class="p">}]</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
 
   $('#btnSetFooter').click(function() {
@@ -20970,6 +21024,35 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
     gridView.setColumnProperty("Quantity", "footer", footer);      
   });
 
+  $('#btnSetMultiFooterStyles').click(function() {
+    gridView.setColumnProperty("Quantity","footer", {
+        styles:[{
+            background:"#ffffff00",
+            textAlignment:"far",
+            numberFormat:"#,##0.#"
+        },{
+            background:"#ff00ffff",
+            textAlignment:"far",
+            numberFormat:"#,##0.##"
+        },{
+            background:"#ff11ff55",
+            textAlignment:"far",
+            numberFormat:"#,##0.###"
+        }]
+    });
+  });
+
+  $('#btnSetMultiFooterStyleRows').click(function() {
+    gridView.setFooter({styles:[{
+            background:"#ffffff00"
+        },{
+            background:"#ff00ffff"
+        },{
+            background:"#ff11ff55"
+        }]
+    })
+  });
+
 
 </script>
 
@@ -20989,9 +21072,9 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.23/realgridjs_eval.1.1.23.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.23/realgridjs-api.1.1.23.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.23/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs_eval.1.1.24.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs-api.1.1.24.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/jszip.min.js"></script>
 
 
 </body>
