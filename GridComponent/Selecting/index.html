@@ -20900,14 +20900,13 @@
 
 <p>현재 마우스가 위치한 지점의 hoverMask속성에 따른 영역의 배경색상을 표시할 수 있습니다.</p>
 
-<p><input type="radio" name="hoverMask" value="cell" checked="checked" />
-<label style="vertical-align:middle">cell</label>    
-<input type="radio" name="hoverMask" value="data" />
-<label style="vertical-align:middle">data</label>    
-<input type="radio" name="hoverMask" value="row" />
-<label style="vertical-align:middle">row</label>    
-<input type="radio" name="hoverMask" value="fill" />
-<label style="vertical-align:middle">fill</label>    </p>
+<p><select id="selHoverMask">
+  <option selected="selected" value="row">row</option>
+  <option value="data">data</option>
+  <option value="cell">cell</option>
+  <option value="fill">fill</option>
+</select>
+<a class="btn primary small round lowercase" id="btnSetRowHoverMask">적용</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -20917,13 +20916,15 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+9
+10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">hoverMaskValue</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selHoverMask'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
   <span class="na">rowHoverMask</span><span class="p">:{</span>
     <span class="na">visible</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
     <span class="na">styles</span><span class="p">:{</span>
       <span class="na">background</span><span class="p">:</span><span class="s2">"#2065686b"</span>
     <span class="p">},</span>
-    <span class="na">hoverMask</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="hoverMask"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+    <span class="na">hoverMask</span><span class="p">:</span> <span class="nx">hoverMaskValue</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table>
@@ -20931,8 +20932,6 @@
 </div>
 
 <script>
-  $(":radio[name='hoverMask']").change(setRowHoverMask);
-
   $('#btnSetBlock').click(function() {
     gridView.setSelectOptions({
       style: 'block'
@@ -20978,14 +20977,15 @@
     });
   });
 
-  $('#setRowHoverMask').click(function() {
+  $('#btnSetRowHoverMask').click(function() {
+    var hoverMaskValue = $('#selHoverMask').val();
     gridView.setDisplayOptions({
       rowHoverMask:{
         visible:true,
         styles:{
           background:"#2065686b"
         },
-        hoverMask: $(':radio[name="hoverMask"]:checked').val()
+        hoverMask: hoverMaskValue
       }
     });
   });
