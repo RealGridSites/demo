@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>RealGridJS ImageButton sample page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs_eval.1.1.24.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs-api.1.1.24.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script language="javascript">
+	var dataProvider;
+	var gridView;
+	var firstFocus = true;
+	$(document).ready( function(){
+	    RealGridJS.setTrace(false);
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.24/");
+	    
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    dataProvider.setFields([{
+	            fieldName: "field1",
+	        }]);
+	    gridView = new RealGridJS.GridView("realgrid", true);
+	    gridView.setDataSource(dataProvider);  
+
+	    var columns = [{
+		    fieldName: "field1",
+		    name: "column1",
+		    width: 200,
+		    renderer: {
+		        type: "imageButton",
+		        showTooltip: true,
+		        text: "",
+		        imageUrl: "/resource/image/btnImages/search_normal.png",
+		        hoverUrl: "/resource/image/btnImages/search_hover.png",
+		        activeUrl: "/resource/image/btnImages/search_click.png"
+		    },     
+		    header: { "text": "Image Button" },
+		    styles: { "textAlignment": "center", "font": "Tahoma" }
+		}];
+
+		gridView.setColumns(columns); 
+
+		dataProvider.setRowCount(10, true);
+
+		gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+          console.log("itemIndex: " + itemIndex);
+          console.log("column: " + column);
+          console.log("buttonIndex: " + buttonIndex);
+        }
+
+	});
+
+
+	</script>
+</head>
+<body>
+<div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
+</body>
+</html>
