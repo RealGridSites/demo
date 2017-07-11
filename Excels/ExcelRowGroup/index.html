@@ -20966,8 +20966,8 @@ var onDoneDataSet = function() {
 <input type="radio" name="excelType" value="2007" /><label style="vertical-align: middle">MS Excel 2007 </label>    
 <input type="radio" name="excelType" value="2010" checked="checked" /><label style="vertical-align: middle">MS Excel 2010 이상</label></p>
 
-<p><strong>감춰진 행을 출력 여부</strong><br />
-<input type="checkbox" id="chkAllItems" /> <label style="vertical-align: middle">allItems</label></p>
+<p><strong>export시 감춰진 행 출력 여부</strong>
+<input type="checkbox" id="chkAllItems" /> <label style="vertical-align: middle">All Items</label></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -20982,13 +20982,13 @@ var onDoneDataSet = function() {
 11
 12
 13</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">excelType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="excelType"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"2007"</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">allItems</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkAllItems"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">allitems</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkAllitems"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
     <span class="na">type</span><span class="p">:</span> <span class="s2">"excel"</span><span class="p">,</span>
     <span class="na">target</span><span class="p">:</span> <span class="s2">"local"</span><span class="p">,</span>
     <span class="na">fileName</span><span class="p">:</span> <span class="s2">"gridExportSample.xlsx"</span><span class="p">,</span>
-    <span class="na">allItems</span><span class="p">:</span> <span class="nx">allItems</span><span class="p">,</span>
+    <span class="na">allitems</span><span class="p">:</span> <span class="nx">allitems</span><span class="p">,</span>
     <span class="na">compatibility</span><span class="p">:</span> <span class="nx">excelType</span><span class="p">,</span>
     <span class="na">done</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>  <span class="c1">//내보내기 완료 후 실행되는 함수</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s2">"done excel export"</span><span class="p">)</span>
@@ -21005,13 +21005,13 @@ var onDoneDataSet = function() {
 <script>
 $('#btnExportGrid').click(function() {
 	var excelType = $(':radio[name="excelType"]:checked').val() == "2007";
-	var allItems = $("#chkAllItems").is(":checked");
+	var allitems = $("#chkAllitems").is(":checked");
 
 	gridView.exportGrid({
 	    type: "excel",
 	    target: "local",
 	    fileName: "gridExportSample.xlsx",
-	    allItems: allItems,
+	    allitems: allitems,
 	    compatibility: excelType,
 	    done: function () {  //내보내기 완료 후 실행되는 함수
 	        alert("done excel export")
