@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     Excel - TreeView
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="현재 트리에 표시된 컬럼 구조대로 데이터셋을 엑셀 파일로 변환해서 로컬파일로 저장합니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -970,6 +970,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -2139,6 +2143,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -3308,6 +3316,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -4517,6 +4529,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -5656,6 +5672,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -6785,6 +6805,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -7954,6 +7978,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -9093,6 +9121,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -10222,6 +10254,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -11391,6 +11427,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -12530,6 +12570,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -13679,6 +13723,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -14818,6 +14866,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -15967,6 +16019,20 @@
               
 
               
+
+              
+              <li class="item-toc current">
+                <a href="/Excels/ExcelTreeView/"
+                class="current sidebar-link ">
+                  <span>Excel - TreeView</span>
+                  <span style="display: none;">
+                  excel, export, tree
+                  </span>
+                </a>
+              </li>
+              
+
+            
               
               
 
@@ -17086,6 +17152,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -18185,6 +18255,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -19324,6 +19398,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -20473,6 +20551,10 @@
               
 
               
+
+              
+
+            
               
               
 
@@ -20847,18 +20929,259 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">Excel - TreeView</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>현재 트리에 표시된 컬럼 구조대로 데이터셋을 엑셀 파일로 변환해서 로컬파일로 저장합니다.</p>
+
+<script>
+  var onSuccessDataSet = function(data, textStatus, jqXHR) {
+    treeDataProvider.fillCsvData(
+      data,
+      {
+        tree: "tree",
+        icon: "icon",
+        children: "childrenField",
+        quoted: true,
+        start: 0
+      }
+    );
+  }
+
+  var onDoneDataSet = function() {
+
+  }
+</script>
+
+<div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase active" id="btnDevbox" onclick="setDevbox()">설명 보이기</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreefield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreecolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreedpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreeviewoption')">Tree 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreestyle')">스타일</a>
+  </div>
+  <pre class="codeview realtreefield"></pre>
+  <pre class="codeview realtreecolumn"></pre>
+  <pre class="codeview realtreedpoption"></pre>
+  <pre class="codeview realtreeviewoption"></pre>
+  <pre class="codeview realtreestyle"></pre>
+</div>
+
+<script>
+    var treeView;
+    var treeDataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.24");
+
+        treeDataProvider = new RealGridJS.LocalTreeDataProvider();
+        treeView = new RealGridJS.TreeView("realtree");
+        treeView.setDataSource(treeDataProvider);
+
+        
             
+
+            $.getJSON("/resource/layout/treeFieldset5.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                treeDataProvider.setFields(data);
+
+                $('.codeview.realtreefield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/layout/treeColumnset1.json", function (data, textStatus, jqXHR) {
+                treeView.setColumns(data);
+
+                $('.codeview.realtreecolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/option/treeDataProviderOption1.json", function (data, textStatus, jqXHR) {
+                treeDataProvider.setOptions(data);
+
+                $('.codeview.realtreedpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/option/treeOption1.json", function (data, textStatus, jqXHR) {
+                treeView.setOptions(data);
+
+                $('.codeview.realtreeviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/style/treeStyle1.json", function (data, textStatus, jqXHR) {
+                treeView.setStyles(data);
+
+                $('.codeview.realtreestyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                treeView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                
+            });
+        
+
+
+        
+            
+            
+            $.ajax({
+              type: "GET",
+              url:"/resource/data/treedata5.txt?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              treeView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+        
+
+    });
+  function setDevbox() {
+      if($('#devbox')[0].clientHeight > 0){
+        $("#devbox").hide();
+        document.getElementById("btnDevbox").className = "btn tertiary small lowercase";
+        $(".with-devbox").attr("style","margin-right: 0%");
+        treeView.resetSize(); 
+      }else{
+        $("#devbox").show();
+        document.getElementById("btnDevbox").className = "btn tertiary small lowercase active";
+        $(".with-devbox").attr("style","margin-right: 40%");
+        treeView.resetSize();
+      }
+    }
+</script>
+
 
             <p>
 
@@ -20867,6 +21190,112 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="treeview-excel-내보내기">TreeView Excel 내보내기</h4>
+
+<p><a href="http://help.realgrid.com/api/GridBase/exportGrid/">exportGrid()</a>함수로 지정한 설정에 따라 현재 그리드의 모양과 데이터를 외부 문서로 내보냅니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnExportGrid">Export실행</a></p>
+
+<p><strong>엑셀타입 설정</strong><br />
+<input type="radio" name="excelType" value="2007" /><label style="vertical-align: middle">MS Excel 2007 </label>    
+<input type="radio" name="excelType" value="2010" checked="checked" /><label style="vertical-align: middle">MS Excel 2010 이상</label></p>
+
+<p><strong>감춰진 행 출력 여부</strong> <br />
+<input type="checkbox" id="chkAllItems" /> <label style="vertical-align: middle">All Items</label></p>
+
+<h4 id="영역-표시-방법-설정">영역 표시 방법 설정</h4>
+
+<p><em>indicator</em><br />
+<input type="radio" name="indicator" value="default" checked="checked" /><label style="vertical-align: middle">default</label>    
+<input type="radio" name="indicator" value="visible" /><label style="vertical-align: middle">visible</label>    
+<input type="radio" name="indicator" value="hidden" /><label style="vertical-align: middle">hidden</label></p>
+
+<p><em>header</em> <br />
+<input type="radio" name="header" value="default" checked="checked" /><label style="vertical-align: middle">default</label>    
+<input type="radio" name="header" value="visible" /><label style="vertical-align: middle">visible</label>    
+<input type="radio" name="header" value="hidden" /><label style="vertical-align: middle">hidden</label></p>
+
+<p><em>footer</em><br />
+<input type="radio" name="footer" value="default" checked="checked" /><label style="vertical-align: middle">default</label>    
+<input type="radio" name="footer" value="visible" /><label style="vertical-align: middle">visible</label>    
+<input type="radio" name="footer" value="hidden" /><label style="vertical-align: middle">hidden</label></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">excelType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="excelType"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"2007"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">indicator</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="indicator"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">header</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="header"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">footer</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="footer"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">allItems</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkAllItems"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">);</span>
+
+<span class="nx">treeView</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"excel"</span><span class="p">,</span>
+    <span class="na">target</span><span class="p">:</span> <span class="s2">"local"</span><span class="p">,</span>
+    <span class="na">fileName</span><span class="p">:</span> <span class="s2">"gridExportSample.xlsx"</span><span class="p">,</span>
+    <span class="na">indicator</span><span class="p">:</span> <span class="nx">indicator</span><span class="p">,</span>
+    <span class="na">header</span><span class="p">:</span> <span class="nx">header</span><span class="p">,</span>
+    <span class="na">footer</span><span class="p">:</span> <span class="nx">footer</span><span class="p">,</span>
+    <span class="na">allItems</span><span class="p">:</span> <span class="nx">allItems</span><span class="p">,</span>
+    <span class="na">compatibility</span><span class="p">:</span> <span class="nx">excelType</span><span class="p">,</span>
+    <span class="na">done</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>  <span class="c1">//내보내기 완료 후 실행되는 함수</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">"done excel export"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="export-내보내기-옵션">export 내보내기 옵션</h4>
+
+<p><a href="http://help.realgrid.com/api/types/GridExportOptions/">GridExportOptions</a> API문서에서 화면에 표시되는 그리드를 엑셀 등의 외부 문서로 내보내기할 때 지정하는 설정 모델을 확인할 수 있습니다.</p>
+
+<script>
+$('#btnExportGrid').click(function() {
+	var excelType = $(':radio[name="excelType"]:checked').val() == "2007";
+	var indicator = $(':radio[name="indicator"]:checked').val();
+	var header = $(':radio[name="header"]:checked').val();
+	var footer = $(':radio[name="footer"]:checked').val();
+	var allItems = $("#chkAllItems").is(":checked");
+
+	treeView.exportGrid({
+	    type: "excel",
+	    target: "local",
+	    fileName: "gridExportSample.xlsx",
+	    indicator: indicator,
+	    header: header,
+	    footer: footer,
+	    allItems: allItems,
+	    compatibility: excelType,
+	    done: function () {  //내보내기 완료 후 실행되는 함수
+	        alert("done excel export")
+	    }
+	});
+});
+</script>
+
+
+  </div>
+</div>
 
 
 
