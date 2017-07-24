@@ -21867,8 +21867,17 @@ success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 �
         
             
 
+            $.ajaxSetup({
+              async: false
+            });
+
             $.getJSON("/resource/layout/treeColumnset1.json", function (data, textStatus, jqXHR) {
                 treeView.setColumns(data);
+
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realtreecolumn').html(
                   JSON.stringify(data, null, 4)
