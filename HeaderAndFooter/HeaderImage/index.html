@@ -1766,7 +1766,7 @@
 8
 9
 10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
-    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Country Column"</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Country"</span><span class="p">,</span>
     <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"Country"</span><span class="p">,</span>
     <span class="s2">"width"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
     <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
@@ -1787,7 +1787,7 @@
 3
 4
 5</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span>
-    <span class="s2">"Country Column"</span><span class="p">,</span>
+    <span class="s2">"Country"</span><span class="p">,</span>
     <span class="s2">"header"</span><span class="p">,</span>
     <span class="p">{</span> <span class="na">imageLocation</span><span class="p">:</span> <span class="s2">"right"</span> <span class="p">}</span>
   <span class="p">);</span>
@@ -1798,11 +1798,11 @@
 <script>
 
   $('#btnSetImageLocationRight').click(function() {
-    gridView.setColumnProperty("Country Column", "header", {imageLocation: "right"});
+    gridView.setColumnProperty("Country", "header", {imageLocation: "right"});
   });
 
   $('#btnSetImageLocationLeft').click(function() {
-    gridView.setColumnProperty("Country Column", "header", {imageLocation: "left"});
+    gridView.setColumnProperty("Country", "header", {imageLocation: "left"});
   });
 
 </script>
