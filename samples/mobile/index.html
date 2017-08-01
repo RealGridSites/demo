@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>RealGridJS ImageButton sample page</title>
-	<meta name="viewport" content="width=500, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="/lib/realgrid/realgridjs-lic.js"></script>
 	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
 	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
@@ -19,6 +19,16 @@
 	            fieldName: "field1",
 	        }, {
 	        	fieldName: "field2"
+	        }, {
+	        	fieldName: "field3"
+	        }, {
+	        	fieldName: "field4"
+	        }, {
+	        	fieldName: "field5"
+	        }, {
+	        	fieldName: "field6"
+	        }, {
+	        	fieldName: "field7"
 	        }]);
 	    gridView = new RealGridJS.GridView("realgrid");
 	    gridView.setDataSource(dataProvider);  
@@ -67,6 +77,50 @@
         header: {
             "text": "imageButtons"
         }
+    }, {
+    	name: "column3",
+    	fieldName: "field3",
+    	header:{
+    		text: "button"
+    	},
+    	width: "100",
+    	button:"action"
+    }, {
+    	name: "column4",
+    	fieldName: "field4",
+    	header: {
+    		text: "popupButton"
+    	},
+    	width: "100",
+    	button:"popup",
+    	popupMenu: "menu1",
+    }, {
+    	name: "column5",
+    	fieldName: "field5",
+    	header: {
+    		text: "dropdown"
+    	},
+    	lookupDisplay: true,
+        values: [
+            "VINET",
+            "HANAR",
+            "SUPRD",
+            "VICTE",
+            "THREE",
+            "SEVEN"
+        ],
+        labels: [
+            "<VINET>",
+	        "<HANAR>",
+	        "<SUPRD>",
+	        "<VICTE>",
+	        "<THREE>",
+	        "<SEVEN>"
+        ],
+        editor: {
+        	type:"dropdown"
+        },
+    	width: "100"
     }];
 
 		gridView.setColumns(columns); 
@@ -78,12 +132,58 @@
           alert("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex);
         }
 
+        var menu = [{
+		    label: "menu1 입니다.",
+		    enabled: true,
+		    children: [{
+		        label: "submenu1 입니다."
+		    }, {
+		        label: "submenu2 입니다."
+		    }]
+		}, {
+		    label: "menu2 입니다",
+		    enabled: false
+		}, {
+		    label: "-"
+		}, {
+		    label: "menu3 입니다",
+		    type: "check", //check 설정
+		    checked: true, //check 상태
+		    tag: "check_menu"
+		}, {
+		    label: "group menu", //group 및 radio
+		    children: [{
+		        label: "group1 - 첫번째",
+		        type: "radio",
+		        group: "group1",
+		        checked: true
+		    }, {
+		        label: "group1 - 두번째",
+		        type: "radio",
+		        group: "group1"
+		    }, {
+		        label: "group1 - 세번째",
+		        type: "radio",
+		        group: "group1"
+		    }]
+		}];
+
+		gridView.addPopupMenu("menu1", menu);
+
+		gridView.onMenuItemClicked = function (grid, data, index) {
+		    alert(data.label);
+		};
+
+		gridView.onCellButtonClicked = function (grid, itemIndex, column) {
+		    alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+		};
+
 	});
 
 
 	</script>
 </head>
 <body>
-<div id="realgrid" style="height:383px;width:500px;" title="리얼그리드"></div>
+<div id="realgrid" style="height:383px;width:100%;" title="리얼그리드"></div>
 </body>
 </html>
