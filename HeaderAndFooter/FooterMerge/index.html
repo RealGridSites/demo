@@ -570,6 +570,15 @@
                   footer, summary, 합계, 푸터, 멀티푸터, 여러줄, multi footer
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/HeaderAndFooter/GroupColumnFooterMerge/"
+                class=" sidebar-link ">
+                  <span>그룹컬럼 푸터 병합</span>
+                  <span style="display: none;">
+                  footer, merge, 푸터, 병합, 머지
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -1766,7 +1775,7 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
     <span class="na">footerCellMerge</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
 
-<span class="nx">grdMain</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
     <span class="na">mergeCells</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">[</span><span class="s2">"QuantityPerUnit"</span><span class="p">,</span> <span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"CompanyName"</span><span class="p">,</span> <span class="s2">"OrderID"</span><span class="p">],</span>
             <span class="p">[</span><span class="s2">"UnitPrice"</span><span class="p">,</span> <span class="s2">"CustomerID"</span><span class="p">]</span>
