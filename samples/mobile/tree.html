@@ -159,7 +159,49 @@
 
     dataProvider.setRows(rows, "tree");
 	treeView.setDisplayOptions({rowHeight:30}); 
-	   
+
+	treeView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+      alert("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex);
+    }
+
+    var menu = [{
+	    label: "menu1 입니다.",
+	    enabled: true,
+	    children: [{
+	        label: "submenu1 입니다."
+	    }, {
+	        label: "submenu2 입니다."
+	    }]
+	}, {
+	    label: "menu2 입니다",
+	    enabled: false
+	}, {
+	    label: "-"
+	}, {
+	    label: "menu3 입니다",
+	    type: "check", //check 설정
+	    checked: true, //check 상태
+	    tag: "check_menu"
+	}, {
+	    label: "group menu", //group 및 radio
+	    children: [{
+	        label: "group1 - 첫번째",
+	        type: "radio",
+	        group: "group1",
+	        checked: true
+	    }, {
+	        label: "group1 - 두번째",
+	        type: "radio",
+	        group: "group1"
+	    }, {
+	        label: "group1 - 세번째",
+	        type: "radio",
+	        group: "group1"
+	    }]
+	}];
+
+	treeView.addPopupMenu("menu1", menu);
+
 	treeView.onMenuItemClicked = function (grid, data, index) {
 		    alert(data.label);
 		};
