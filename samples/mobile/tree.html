@@ -158,7 +158,15 @@
     }]);
 
     dataProvider.setRows(rows, "tree");
-	treeView.setDisplayOptions({rowHeight:30});    
+	treeView.setDisplayOptions({rowHeight:30}); 
+	   
+	treeView.onMenuItemClicked = function (grid, data, index) {
+		    alert(data.label);
+		};
+
+	treeView.onCellButtonClicked = function (grid, itemIndex, column) {
+	    alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+	};
   })
 </script>
 </head>
