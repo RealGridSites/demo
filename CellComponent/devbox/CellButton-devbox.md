@@ -96,7 +96,7 @@ gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, 
 
   $('#btnButtonDefault').click(function() {
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "default");
-    gridView.setColumnProperty("OrderID", "buttonVisibility", "default");
+    gridView.setColumnProperty("Order0ID", "buttonVisibility", "default");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "default");
   });
 
