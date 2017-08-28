@@ -229,7 +229,7 @@
 			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
 			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
 			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8"의"123456789","field9":"20170831"},
 			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
 			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
 			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
@@ -258,12 +258,58 @@
 
 	});
 
+function setMobileOptions() {
+	var long = $('#selLongTab :selected').val();
+	var double = $('#selDoubleTab :selected').val();
+	var threshold = $('#selTabThreshold :selected').val();
+	gridView.setMobileOptions({
+		longTapDuration: long,
+		doubleTapInterval: double,
+		tapThreshold: threshold,
+	})
+}
+
 
 	</script>
 </head>
 <body>
-<h3>모바일 테스트를 위한 페이지입니다.</h3>
-<h4>각 컬럼명에 맞는 기능들을 테스트할 수 있습니다.</h4>
+<h3>1.1.25버전 모바일 테스트를 위한 페이지입니다.</h3>
+
+<H3>테스트 케이스</H3>
+<H4>ISSUE: 702</H4>
+1. 각 컬럼의 버튼이 정상적으로 표시되는지 확인<br/>
+2. 각 버튼의 동작(클릭)이 되는지 확인<br/>
+
+<H4>ISSUE: 943</H4>
+1. 편집 기능이 정상적으로 되는지 확인<br/>
+2. imageButton, editButton, dataButton 버튼 기능 확인<br/>
+3. longTap 시간 설정<br/>
+4. doubleTap interval 시간 설정<br/>
+5. tapThreshold(탭을 판단하는 거리)<br/>
+
+<h4>신규 모바일 옵션</h4>
+longTab:
+<select id="selLongTab">
+  <option selected="selected">300</option>
+  <option>500</option>
+  <option>1000</option>
+  <option>2000</option>
+</select>
+&nbsp;&nbsp;doubleTab:
+<select id="selDoubleTab">
+  <option selected="selected">300</option>
+  <option>500</option>
+  <option>1000</option>
+  <option>2000</option>
+</select>
+&nbsp;&nbsp;tabThreshold:
+<select id="selTabThreshold">
+  <option selected="selected">4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+</select>
+<input type="button" onclick="setMobileOptions()" value="적용"><br/><br/>
 
 <div id="realgrid" style="height:383px;width:100%;" title="리얼그리드"></div>
 </body>
