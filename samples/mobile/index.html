@@ -11,6 +11,8 @@
 	var dataProvider;
 	var gridView;
 	var firstFocus = true;
+	var events = 0;
+
 	$(document).ready( function(){
 	    RealGridJS.setTrace(false);
 	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
@@ -55,7 +57,7 @@
 		        hoverUrl: "/resource/image/btnImages/search_hover.png",
 		        activeUrl: "/resource/image/btnImages/search_click.png"
 		    },     
-		    header: { "text": "Image Button" },
+		    header: { "text": "ImageButton" },
 		    styles: { "textAlignment": "center", "font": "Tahoma" }
 		}, {
         name: "column2",
@@ -85,7 +87,7 @@
             "textAlignment": "center"
         },
         header: {
-            "text": "imageButtons"
+            "text": "ImageButtons"
         }
     }, {
     	name: "column3",
@@ -172,7 +174,8 @@
     	},
     	width: "100",
     	editor:{
-    		type:"date"
+    		type:"date",
+    		datetimeFormat:"yyyy-MM-dd"
     	},
     	styles:{
     		datetimeFormat:"yyyy-MM-dd"
@@ -185,7 +188,8 @@
 		gridView.setDisplayOptions({rowHeight  : "40"});
 
 		gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
-          alert("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex);
+			addLog("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex + ", name: " + name);
+          //alert("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex + ", name:" + name);
         }
 
         var menu = [{
@@ -227,11 +231,11 @@
 		gridView.addPopupMenu("menu1", menu);
 
 		gridView.onMenuItemClicked = function (grid, data, index) {
-		    alert(data.label);
+		    addLog(data.label);
 		};
 
 		gridView.onCellButtonClicked = function (grid, itemIndex, column) {
-		    alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+		    addLog("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
 		};
 
 		var data = [
@@ -277,17 +281,25 @@
 
 	});
 
-function setMobileOptions() {
-	var long = $('#selLongTab :selected').val();
-	var double = $('#selDoubleTab :selected').val();
-	var threshold = $('#selTabThreshold :selected').val();
-	gridView.setMobileOptions({
-		longTapDuration: long,
-		doubleTapInterval: double,
-		tapThreshold: threshold,
-	})
-}
+	function setMobileOptions() {
+		var long = $('#selLongTab :selected').val();
+		var double = $('#selDoubleTab :selected').val();
+		gridView.setMobileOptions({
+			longTapDuration: long,
+			doubleTapInterval: double
+		})
+	}
 
+	function addLog(log) {
+	    var prevLog = $("#eventLog").val();
+	    $("#eventLog").val(prevLog + "[" + events++ + "] " + log + "\n");
+	    $("#eventLog").scrollTop($("#eventLog")[0].scrollHeight);
+	};  
+
+	function clearLog() {
+		events = 0;
+	    $("#eventLog").val('');
+	}
 
 	</script>
 </head>
@@ -304,32 +316,25 @@ function setMobileOptions() {
 2. imageButton, editButton, dataButton 버튼 기능 확인<br/>
 3. longTap 시간 설정<br/>
 4. doubleTap interval 시간 설정<br/>
-5. tapThreshold(탭을 판단하는 거리)<br/>
 
 <h4>신규 모바일 옵션</h4>
-longTab:
+longTap:
 <select id="selLongTab">
   <option selected="selected">300</option>
   <option>500</option>
   <option>1000</option>
   <option>2000</option>
 </select>
-&nbsp;&nbsp;doubleTab:
+&nbsp;&nbsp;doubleTap:
 <select id="selDoubleTab">
   <option selected="selected">300</option>
   <option>500</option>
   <option>1000</option>
   <option>2000</option>
 </select>
-&nbsp;&nbsp;tabThreshold:
-<select id="selTabThreshold">
-  <option selected="selected">4</option>
-  <option>5</option>
-  <option>6</option>
-  <option>7</option>
-</select>
 <input type="button" onclick="setMobileOptions()" value="적용"><br/><br/>
-
+Event Log&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="clearLog()" value="지우기"/>
+<textarea id="eventLog" style="width:100%; height:200px; border: 2px solid #5d8cc9"></textarea>
 <div id="realgrid" style="height:383px;width:100%;" title="리얼그리드"></div>
 </body>
 </html>
