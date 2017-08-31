@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    최신버전 1.1.24
+    최신버전 1.1.25
     </title>
     <meta name="description" content="RealGrid 데모사이트 입니다.">
 
@@ -176,7 +176,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.24</span>
+                            <span>최신버전 1.1.25</span>
                         </a>
                     </li>
                     
@@ -1409,18 +1409,18 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Tree/TreeCheckBox/"
+                <a href="/Tree/TreeEditing/"
                 class=" sidebar-link ">
-                  <span>트리뷰의 특별한 체크박스</span>
+                  <span>트리뷰에서 추가/수정/삭제</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Tree/TreeEditing/"
+                <a href="/Tree/TreeCheckBox/"
                 class=" sidebar-link ">
-                  <span>트리뷰에서 추가/수정/삭제</span>
+                  <span>트리뷰의 특별한 체크박스</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
@@ -1432,6 +1432,15 @@
                   <span>트리뷰 아이콘 컨트롤하기</span>
                   <span style="display: none;">
                   트리, Tree
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Tree/TreeSearchRow/"
+                class=" sidebar-link ">
+                  <span>트리뷰 노드 검색하기</span>
+                  <span style="display: none;">
+                  트리, Tree, search
                   </span>
                 </a>
               </li></ul>
@@ -1484,7 +1493,7 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">최신버전 1.1.24</h1>
+            <h1 class="title-page">최신버전 1.1.25</h1>
             
 
             
@@ -1494,11 +1503,424 @@
 
         <div class="document-formatting">
             
-<h2 id="1124-2017년-6월">1.1.24 (2017년 6월)</h2>
+<h2 id="1125-2017년-8월">1.1.25 (2017년 8월)</h2>
 
 <hr />
 
 <h4 id="기능-개선">기능 개선</h4>
+<ol>
+  <li><a href="http://help.realgrid.com/api/GridBase/searchCell/">searchCell</a>
+    <ul>
+      <li>gridView.searchCell을 이용해서 date형식의 자료를 찾을때 일부만 입력하여 검색가능하도록 개선되었습니다.</li>
+      <li>구분자는 “.”, “-“, “/”를 사용할수 있으며 구분자없이 “201708”형태로도 검색가능합니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">serachCell</span><span class="p">({</span><span class="na">fields</span><span class="p">:[</span><span class="s2">"dateField1"</span><span class="p">,</span> <span class="s2">"dateField2"</span><span class="p">],</span> <span class="na">value</span><span class="p">:</span><span class="s2">"2017-08"</span><span class="p">,</span> <span class="na">partialMatch</span><span class="p">:</span><span class="kc">true</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/NumberCellEditor/">NumberCellEditor</a>
+    <ul>
+      <li>numberCellEditor에서 숫자 중간에 입력하는 경우 caret이 끝으로 이동하지 않도록 개선되었습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/GridBase/clearInvalidCellList/">clearInvalidCellList</a>
+    <ul>
+      <li>validation이 실패한 셀의 목록을 초기화 할수 있는 clearInvalidCellList함수가 추가되었습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/ColumnHeader/">ColumnHeader</a>
+    <ul>
+      <li>ColumnHeader의 image를 클릭시 발생하는 onColumnHeaderImageClicked 이벤트가 추가되었습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/GridBase/onBodyEmptyClicked/">onBodyEmptyClicked</a>
+    <ul>
+      <li>그리드의 빈 영역을 클릭했을때 발생하는 onBodyEmptyClicked 이벤트와 onBodyEmptyDblClicked이벤트가 추가되었습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/DynamicStyle/">DynamicStyle</a>
+    <ul>
+      <li>변경된 cell의 style을 변경할수 있도록 <a href="http://help.realgrid.com/api/features/Expression/">Expression</a>에 “changedcell” 조건이 추가 되었습니다.</li>
+      <li>changedcell조건을 사용하기 위해서는 DataProvider.restoreMode속성이 “explicit”이거나 또는 “auto”이어야 합니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span><span class="na">restoreMode</span><span class="p">:</span><span class="s2">"explicit"</span><span class="p">});</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">({</span>
+ <span class="na">body</span><span class="p">:{</span>
+   <span class="na">cellDynamicStyles</span><span class="p">:[{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"changedcell"</span><span class="p">,</span> <span class="na">styles</span><span class="p">:{</span><span class="na">figureName</span><span class="p">:</span><span class="s2">"leftTop"</span><span class="p">,</span> <span class="na">figureBackground</span><span class="p">:</span><span class="s2">"#FF00ebeb"</span><span class="p">,</span> <span class="na">figureSize</span><span class="p">:</span><span class="s2">"20%"</span><span class="p">}}];</span>
+ <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>Column별로 style을 변경하는 경우 column.dynamicStyles를 이용합니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnName"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"changedcell"</span><span class="p">,</span> <span class="na">styles</span><span class="p">:{</span><span class="na">figureName</span><span class="p">:</span><span class="s2">"leftTop"</span><span class="p">,</span> <span class="na">figureBackground</span><span class="p">:</span><span class="s2">"#FF00ebeb"</span><span class="p">,</span> <span class="na">figureSize</span><span class="p">:</span><span class="s2">"20%"</span><span class="p">}}]);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>자세한 내용은 <a href="/GridStyle/DynamicStylesonColumns/">DynamicStylesonColumns</a>데모를 참조하세요.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/GridExportOptions/">GridExportOptions</a>
+    <ul>
+      <li>그리드를 Excel로 Export할때 checkBar에 체크된 행만 Export할수 있도록 <code class="highlighter-rouge">GridExportOptions.onlyCheckedItems</code> 속성이 추가 되었습니다.</li>
+      <li>그리드가 RowGrouping상태이거나 TreeGrid의 경우에는 적용되지 않습니다.</li>
+      <li>Column.Header.subText가 있는 경우 subText도 출력되도록 수정되었습니다. (subTextStyle의 경우는 적용되지 않습니다)</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/GridView/collapseAll/">GridView.collapseAll</a>
+    <ul>
+      <li>그리드가 rowGrouping상태일때 모든 Group을 접도록 하는 collapseAll 함수가 추가되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">collapseAll</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>특정 Level까지의 Group을 펼치도록 하는 expandAll함수가 추가되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre>  <span class="kd">var</span> <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">fieldName</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">level</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getGroupFieldNames</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">fieldName</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+  <span class="nx">level</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">(</span><span class="nx">level</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/DataColumn/">DataColumn</a>
+    <ul>
+      <li>DataColumn.equalBlank가 true이고 셀이 merge된 상태에서 세로스크롤시 텍스트가 사라지지 않고 계속 표시되도록 수정되었습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">Mobile Edit</code>
+    <ul>
+      <li>MobileGrid에서도 제한적인 편집이 가능하도록 수정되었습니다.</li>
+      <li>cell을 doubleTouch하면 편집상태로 변경이 됩니다.</li>
+      <li>dropdownEditor, dateEditor의 경우 cell을 선택후 editButton을 touch하면 편집상태로 변경됩니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
+    <ul>
+      <li>DisplayOptions.rowFocusOption 속성이 추가 되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+ <span class="na">rowFocusOption</span><span class="p">:{</span>
+   <span class="na">visible</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+   <span class="na">rowFocusMask</span><span class="p">:</span><span class="s2">"row"</span><span class="p">,</span>
+   <span class="na">styles</span><span class="p">:{</span>
+ <span class="na">background</span><span class="p">:</span><span class="s2">"11008484"</span><span class="p">,</span>
+ <span class="na">border</span><span class="p">:</span><span class="s2">"#441212Fb,2"</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>이전버전의 <code class="highlighter-rouge">DisplayOptions.rowFocusVisible</code>, <code class="highlighter-rouge">DisplayOptions.rowFocusMask</code>, <code class="highlighter-rouge">DisplayOptions.rowFocusBackground</code>를 대체하는 속성입니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
+    <ul>
+      <li>progressView의 스타일을 사용자가 지정할수 있도록 DisplayOptions.useCssStyleProgress 속성이 추가 되었습니다.</li>
+      <li>progressView가 생성되기전에 useCssStyleProgress를 true로 설정해야 적용됩니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span><span class="na">useCssStyleProgress</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">showProgress</span><span class="p">();</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setProgress</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">,</span> <span class="nx">position</span><span class="p">,</span> <span class="s2">"progress Message"</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>자세한 내용은 <a href="/GridStyle/CSSStyles/">CSSStyles</a>데모를 참조하세요.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/GridBase/onGridActivated">onGridActivated</a>
+    <ul>
+      <li>그리드를 클릭하거나 gridView.setFocus()를 이용하여 그리드에 포커스를 이동시키면 발생하는 onGridActivated 이벤트가 추가되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onGridActivated</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nb">window</span><span class="p">.</span><span class="nx">activeGrid</span> <span class="o">=</span> <span class="nx">grid</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>RealGridJS.getActiveGrid 함수가 추가되었습니다. 화면에 여러개의 그리드가 있는 경우 마지막으로 포커스를 가진 그리드를 반환합니다.</li>
+      <li>div tag를 이용해서 tab화면을 구성한 경우 tab을 변경하여도 그리드가 focus를 가지기 전까지는 이벤트가 발생하지 않습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/ImageButtonsCellRenderer/">ImageButtonsCellRenderer</a>가 추가되었습니다.
+    <ul>
+      <li>조건에 따라 서로다른 이미지 버튼을 보여줄수 있는 ImageButtonosCellRenderer가 추가되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">imageButtons1</span> <span class="o">=</span> <span class="p">[{</span>
+ <span class="na">name</span><span class="p">:</span><span class="s2">"zoomin"</span><span class="p">,</span>
+ <span class="na">up</span><span class="p">:</span><span class="s2">"./image/zoomin.png"</span><span class="p">,</span>
+ <span class="na">width</span><span class="p">:</span><span class="mi">16</span>
+<span class="p">}];</span>
+<span class="kd">var</span> <span class="nx">imageButtons2</span> <span class="o">=</span> <span class="p">[{</span>
+ <span class="na">name</span><span class="p">:</span><span class="s2">"zoomout"</span><span class="p">,</span>
+ <span class="na">up</span><span class="p">:</span><span class="s2">"./image/zoomout.png"</span><span class="p">,</span>
+ <span class="na">width</span><span class="p">:</span><span class="mi">16</span>
+<span class="p">}];</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellRenderers</span><span class="p">([{</span>
+ <span class="s2">"id"</span><span class="p">:</span><span class="s2">"buttons1"</span><span class="p">,</span>
+ <span class="s2">"type"</span><span class="p">:</span><span class="s2">"imageButtons"</span><span class="p">,</span>
+ <span class="s2">"images"</span><span class="p">:</span> <span class="nx">imageButtons1</span>
+ <span class="p">},{</span>
+ <span class="s2">"id"</span><span class="p">:</span><span class="s2">"buttons2"</span><span class="p">,</span>
+ <span class="s2">"type"</span><span class="p">:</span><span class="s2">"imageButtons"</span><span class="p">,</span>
+ <span class="s2">"images"</span><span class="p">:</span> <span class="nx">imageButtons2</span>
+<span class="p">}]);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
+ <span class="na">name</span><span class="p">:</span><span class="s2">"column1"</span><span class="p">,</span>
+ <span class="na">fieldName</span><span class="p">:</span><span class="s2">"field1"</span><span class="p">,</span>
+ <span class="na">dynamicStyles</span><span class="p">:[{</span>
+  <span class="na">criteria</span><span class="p">:[</span><span class="s2">"value = 'A'"</span><span class="p">,</span> <span class="s2">"value = 'B'"</span><span class="p">],</span>
+  <span class="na">styles</span><span class="p">:[</span><span class="s2">"renderer=buttons1"</span><span class="p">,</span> <span class="s2">"renderer=buttons2"</span><span class="p">]</span>
+ <span class="p">}]</span>
+<span class="p">}]);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+        <p>자세한 내용은 <a href="/CellComponent/CellButton/">셀 버튼</a>데모를 참조하세요.</p>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/LocalDataProvider/searchData/">DataProvider.searchData</a>
+    <ul>
+      <li>gridView.searchItem과 유사한 역활을 하는 dataProvider.searchDataRow함수가 추가 되었습니다.</li>
+      <li>gridView.searchCell과 유사한 역활을 하는 dataProvider.serachData함수가 추가 되었습니다.<br />
+  자세한 내용은 <a href="/Tree/TreeSearchRow/">트리뷰 노드 검색하기</a>데모를 참조하세요.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/GroupingOptions/">GropingOptions</a>
+    <ul>
+      <li>rowGroup을 해제할수 있는 removeButton 속성이 추가되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setGroupingOptions</span><span class="p">({</span>
+ <span class="na">removeButton</span><span class="p">:{</span>
+   <span class="na">visible</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+   <span class="na">color</span><span class="p">:</span><span class="s2">"#FF00FFF0"</span><span class="p">,</span>
+   <span class="na">hoveredColor</span><span class="p">:</span><span class="s2">"#FFFF000F"</span><span class="p">,</span>
+   <span class="na">size</span><span class="p">:</span><span class="mi">12</span>
+ <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>removeButton.visible이 true인 경우 groupPanel의 ColumnView의 오른쪽에 “X”표시가 생성되며 클릭시 해당 column은 rowGroup에서 제외됩니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/ColumnHeader/">ColumnHeader</a>
+    <ul>
+      <li>column의 Header에 popupButton이 추가되었습니다.</li>
+      <li>popupMenu를 그리드에 추가한후 popupMenu명을 Column.Header.popup에 등록한후 사용할수 있습니다.</li>
+      <li>Column.Header.popup을 직접 정의하여 사용할수 있습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="p">[{</span>
+ <span class="na">label</span><span class="p">:</span> <span class="s2">"menu1 입니다."</span><span class="p">,</span>
+ <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+ <span class="na">children</span><span class="p">:</span> <span class="p">[{</span>
+  <span class="na">label</span><span class="p">:</span> <span class="s2">"submenu1 입니다."</span><span class="p">,</span>
+  <span class="na">callback</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">)}</span>
+ <span class="p">},</span> <span class="p">{</span>
+  <span class="na">label</span><span class="p">:</span> <span class="s2">"submenu2 입니다."</span>
+ <span class="p">}]</span>
+ <span class="p">},</span> <span class="p">{</span>
+  <span class="na">label</span><span class="p">:</span> <span class="s2">"menu2 입니다"</span><span class="p">,</span>
+  <span class="na">enabled</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}];</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">addPopupMenu</span><span class="p">(</span><span class="s2">"menu1"</span><span class="p">,</span> <span class="nx">menu</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
+ <span class="na">name</span><span class="p">:</span><span class="s2">"column1"</span><span class="p">,</span> <span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName1"</span><span class="p">,</span>
+ <span class="na">header</span><span class="p">:{</span>
+  <span class="na">popupMenu</span><span class="p">:</span><span class="s2">"menu1"</span>
+ <span class="p">}</span>
+<span class="p">},{</span>
+ <span class="na">name</span><span class="p">:</span><span class="s2">"column2"</span><span class="p">,</span> <span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName2"</span><span class="p">,</span>
+ <span class="na">header</span><span class="p">:{</span>
+  <span class="na">popupMenu</span><span class="p">:[{</span><span class="na">label</span><span class="p">:</span><span class="s2">"popupMenu"</span><span class="p">,</span> <span class="na">callback</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"test"</span><span class="p">)}}]</span>
+ <span class="p">}</span>
+<span class="p">}]);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li><a href="http://help.realgrid.com/api/types/ColumnHeaderOptions/">ColumnHeaderOptions</a>에 popupMenu관련 속성이 추가 되었습니다.</li>
+      <li>popupMenuColor: popupMenuButton의 색상을 입력합니다.</li>
+      <li>hoveredPopupMenuColor: MouseOver시 popupMenuButton의 색상을 입력합니다.</li>
+      <li>popupMenuWidth: popupMenuButton의 넓이를 입력합니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnHeaderOptions</span><span class="p">({</span>
+ <span class="na">popupMenuWidth</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span>
+ <span class="na">popupMenuColor</span><span class="p">:</span><span class="s2">"#ff696969"</span><span class="p">,</span>
+ <span class="na">hoveredPopupMenuColor</span><span class="p">:</span><span class="s2">"#FFFF0000"</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="오류-수정">오류 수정</h4>
+<ol>
+  <li><code class="highlighter-rouge">searchCell</code>
+    <ul>
+      <li>gridView.searchCell을 이용해서 찾기시 “undefined”를 찾으면 value가 undefined인 cell이 검색되는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">checkBar</code>
+    <ul>
+      <li>checkBar의 check를 클릭하였을때 그리드가 스크롤되는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">dataProvider.getUpdatedCells</code>
+    <ul>
+      <li><a href="http://help.realgrid.com/api/DataProvider/getUpdatedCells/">dataProvider.getUpdatedCells</a>를 이용해서 수정된 cell을 가져올때 수정된 행을 모두 가져오지 못하는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">gridExport.documentTitle</code>
+    <ul>
+      <li>1.1.24버전에서 gridExport.documentTitle.spaceTop을 설정했을때 발생하는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">selectOptionis.style</code>
+    <ul>
+      <li>selectOptions.style이 “rows”일때 아래쪽에서 위로 범위 설정후 마우스 우클릭시 범위 설정이 해제되는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">displayOptions.rowHeight</code>
+    <ul>
+      <li>displayOptions.rowHeight의 값을 잘못된 값으로 설정시 그리드가 깨지는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">Mobile TreeGrid</code>
+    <ul>
+      <li>Mobile TreeGrid에서 화면 touch를 이용해서 스크롤할때 이동되지 않는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">GridExport</code>
+    <ul>
+      <li>DataField의 DataType이 number이고 Column.styles.numberFormat이 <code class="highlighter-rouge">"#,##0;,;."</code>인 컬럼을 Excel로 Export하는 경우 음수인 Data가 Excel에서 정상적으로 보이지 않는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">DataField.defaultValue</code>
+    <ul>
+      <li>DataField.defaultValue가 설정되어있어도 insert 또는 append시 적용되지 않는 오류가 수정되었습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">paste</code>
+    <ul>
+      <li>편집 불가 상태의 cell에 열단위 붙여넣기를 했을때 붙여넣기가 되지 않는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">onCurrentChanged</code>
+    <ul>
+      <li>그리드가 포커스를 가지고 있지 않은 상태에서 그리드의 (0,0) cell이 아닌 다른 cell을 클릭시 onCurrentChanged이벤트가 2번 발생하는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">showSortOrder</code>
+    <ul>
+      <li>sortOrder가 간혹 사라지는 현상이 수정되었습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">onHideEditor</code>
+    <ul>
+      <li>onHideEditor 이벤트가 발생하는 않는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/ActualTargetBulletRenderer/">ActualTargetBulletRenderer</a>
+    <ul>
+      <li>actualTargetBulletRenderer의 dynamicStyles가 적용되지 않는 오류가 수정되었습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="1124-2017년-6월">1.1.24 (2017년 6월)</h2>
+
+<hr />
+
+<h4 id="기능-개선-1">기능 개선</h4>
 <ol>
   <li><code class="highlighter-rouge">MergedRowGroup의 Footer 상단표시</code>
     <ul>
@@ -1666,7 +2088,7 @@
   </li>
 </ol>
 
-<h3 id="오류-수정">오류 수정</h3>
+<h3 id="오류-수정-1">오류 수정</h3>
 <ol>
   <li><code class="highlighter-rouge">dataProvider.getFields</code>
     <ul>
@@ -1729,7 +2151,7 @@
 
 <hr />
 
-<h4 id="기능-개선-1">기능 개선</h4>
+<h4 id="기능-개선-2">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/TextWrap/">TextWrap</a>
     <ul>
@@ -1858,7 +2280,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-1">오류 수정</h4>
+<h4 id="오류-수정-2">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">getStyles</code>
     <ul>
@@ -1901,7 +2323,7 @@
 
 <hr />
 
-<h4 id="기능-개선-2">기능 개선</h4>
+<h4 id="기능-개선-3">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/SortingOptions/">SortingOptions</a>
     <ul>
@@ -2086,7 +2508,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-2">오류 수정</h4>
+<h4 id="오류-수정-3">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">getDisplayValues</code>
     <ul>
@@ -2164,7 +2586,7 @@
 
 <hr />
 
-<h4 id="기능-개선-3">기능 개선</h4>
+<h4 id="기능-개선-4">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
@@ -2213,7 +2635,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-3">오류 수정</h4>
+<h4 id="오류-수정-4">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">RowGrouping 상태에서 ExcelExport</code>
@@ -2279,7 +2701,7 @@
 
 <hr />
 
-<h4 id="기능-개선-4">기능 개선</h4>
+<h4 id="기능-개선-5">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/checkValidateCells/">GridBase.checkValidateCells()</a>
@@ -2331,7 +2753,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-4">오류 수정</h4>
+<h4 id="오류-수정-5">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">commit()함수 호출시 메시지 팝업 오류</code>
@@ -2403,7 +2825,7 @@
 <p>1.1.19버전에서는 새로운 기능이 추가 되거나 개선되었습니다. 또, 지난 버전 이후 문제되었던 크고 작은 오류들도 해결되었습니다.<br />
 아래에서 내용을 확인하고 링크를 클릭하여 자세한 사용방법등을 알아보세요.</p>
 
-<h4 id="기능-개선-5">기능 개선</h4>
+<h4 id="기능-개선-6">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/TextCellRenderer/">Renderer.showTooltip</a>
@@ -2526,7 +2948,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-5">오류 수정</h4>
+<h4 id="오류-수정-6">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">onRowInserted이벤트에서 dataProvider.setValue()함수 사용시 오류 발생 현상</code>
@@ -2635,9 +3057,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs_eval.1.1.24.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs-api.1.1.24.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
 
 
 </body>

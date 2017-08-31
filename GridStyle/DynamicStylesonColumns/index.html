@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.24</span>
+                            <span>최신버전 1.1.25</span>
                         </a>
                     </li>
                     
@@ -1409,18 +1409,18 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Tree/TreeCheckBox/"
+                <a href="/Tree/TreeEditing/"
                 class=" sidebar-link ">
-                  <span>트리뷰의 특별한 체크박스</span>
+                  <span>트리뷰에서 추가/수정/삭제</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Tree/TreeEditing/"
+                <a href="/Tree/TreeCheckBox/"
                 class=" sidebar-link ">
-                  <span>트리뷰에서 추가/수정/삭제</span>
+                  <span>트리뷰의 특별한 체크박스</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
@@ -1432,6 +1432,15 @@
                   <span>트리뷰 아이콘 컨트롤하기</span>
                   <span style="display: none;">
                   트리, Tree
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Tree/TreeSearchRow/"
+                class=" sidebar-link ">
+                  <span>트리뷰 노드 검색하기</span>
+                  <span style="display: none;">
+                  트리, Tree, search
                   </span>
                 </a>
               </li></ul>
@@ -1559,7 +1568,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.24");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -1802,6 +1811,49 @@
 </div>
 </div>
 
+<h4 id="편집된-셀-동적-스타일">편집된 셀 동적 스타일</h4>
+<p>값이 수정된 셀에 해당 스타일을 적용합니다.<br />
+changedcell조건을 사용하기 위해서는 DataProvider.restoreMode속성이 “explicit”이거나 또는 “auto”이어야 합니다.</p>
+
+<p>버튼 클릭 시 상태가 none 인 행의 값 수정 시 해당 셀의 leftTop렌더러를 표시합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnChangedcell">편집 셀 스타일</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span><span class="na">restoreMode</span><span class="p">:</span><span class="s2">"explicit"</span><span class="p">});</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">({</span>
+    <span class="na">body</span><span class="p">:{</span>
+        <span class="na">cellDynamicStyles</span><span class="p">:[{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"changedcell"</span><span class="p">,</span> <span class="na">styles</span><span class="p">:{</span><span class="na">figureName</span><span class="p">:</span><span class="s2">"leftTop"</span><span class="p">,</span> <span class="na">figureBackground</span><span class="p">:</span><span class="s2">"#FF00ebeb"</span><span class="p">,</span> <span class="na">figureSize</span><span class="p">:</span><span class="s2">"30%"</span><span class="p">}}]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>컬럼별로 스타일을 적용하는 경우에는 column.dynamicStyles를 사용합니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnName"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
+    <span class="na">criteria</span><span class="p">:</span><span class="s2">"changedcell"</span><span class="p">,</span> 
+    <span class="na">styles</span><span class="p">:{</span>
+        <span class="na">figureName</span><span class="p">:</span><span class="s2">"leftTop"</span><span class="p">,</span> 
+        <span class="na">figureBackground</span><span class="p">:</span><span class="s2">"#FF00ebeb"</span><span class="p">,</span> 
+        <span class="na">figureSize</span><span class="p">:</span><span class="s2">"20%"</span>
+    <span class="p">}</span>
+<span class="p">}]);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
   $('#btnSetDynamicStyles').click(function() {
     var newDynamicStyles = [{
@@ -1825,6 +1877,15 @@
         }]
     );
   });
+
+  $('#btnChangedcell').click(function() {
+    dataProvider.setOptions({restoreMode:"explicit"});
+    gridView.setStyles({
+        body:{
+            cellDynamicStyles:[{criteria:"changedcell", styles:{figureName:"leftTop", figureBackground:"#FF00ebeb", figureSize:"30%"}}]
+        }
+    });
+  });
 </script>
 
 
@@ -1843,9 +1904,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs_eval.1.1.24.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs-api.1.1.24.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
 
 
 </body>

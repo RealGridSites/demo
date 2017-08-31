@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.24</span>
+                            <span>최신버전 1.1.25</span>
                         </a>
                     </li>
                     
@@ -1409,18 +1409,18 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Tree/TreeCheckBox/"
+                <a href="/Tree/TreeEditing/"
                 class=" sidebar-link ">
-                  <span>트리뷰의 특별한 체크박스</span>
+                  <span>트리뷰에서 추가/수정/삭제</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Tree/TreeEditing/"
+                <a href="/Tree/TreeCheckBox/"
                 class=" sidebar-link ">
-                  <span>트리뷰에서 추가/수정/삭제</span>
+                  <span>트리뷰의 특별한 체크박스</span>
                   <span style="display: none;">
                   트리, Tree
                   </span>
@@ -1432,6 +1432,15 @@
                   <span>트리뷰 아이콘 컨트롤하기</span>
                   <span style="display: none;">
                   트리, Tree
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Tree/TreeSearchRow/"
+                class=" sidebar-link ">
+                  <span>트리뷰 노드 검색하기</span>
+                  <span style="display: none;">
+                  트리, Tree, search
                   </span>
                 </a>
               </li></ul>
@@ -1529,9 +1538,41 @@
           alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
       };
 
-      gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
-          alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
-      };
+    var imageButtons1 = [{
+      "name": "팝업버튼",
+      "up": "/resource/image/btnImages/popup_normal.png",
+      "hover": "/resource/image/btnImages/popup_hover.png",
+      "down": "/resource/image/btnImages/popup_click.png",
+      "width":50
+    }];
+    var imageButtons2 = [{
+      "name": "조회버튼",
+      "up": "/resource/image/btnImages/search_normal.png",
+      "hover": "/resource/image/btnImages/search_hover.png",
+      "down": "/resource/image/btnImages/search_click.png",
+      "width":50
+    }];
+    gridView.addCellRenderers([{
+     "id":"buttons1",
+     "type":"imageButtons",
+     "images": imageButtons1,
+     "margin":10
+     },{
+     "id":"buttons2",
+     "type":"imageButtons",
+     "images": imageButtons2,
+     "margin":10
+    }]);
+
+    gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+        alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
+    };
+
+    var data = ["팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회"]
+
+    for(var i = 0; i < data.length; i++){
+      dataProvider.setValue(i,"ImageButton",data[i])
+    }
   }
 </script>
 
@@ -1559,7 +1600,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.24");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -1763,21 +1804,6 @@
   }
 </script>
 
-<!-- 비교해 보고 나중에 지우세요.
-  include realgrid.html
-  gridVar="gridView"
-  dpVar="dataProvider"
-  fieldSet="cellButtonField"
-  columnSet="cellButtonColumn"
-  dpOptionSet="dataProviderOption1"
-  gridOptionSet="gridOption1"
-  doneDataSet="onDoneDataSet"
-  styleSet="style1"
-  dataSet="griddata1"
-  gridId="realgrid"
-  gridWidth="100%"
-  gridHeight="300px"
--->
 
             <p>
 
@@ -1798,7 +1824,9 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
+3
+4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
@@ -1819,7 +1847,9 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
+3
+4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
@@ -1830,7 +1860,9 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
+3
+4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
@@ -1841,7 +1873,9 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
+3
+4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
@@ -1852,7 +1886,9 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
+3
+4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
@@ -1905,32 +1941,134 @@
 </div>
 </div>
 
+<h4 id="동적-이미지-버튼">동적 이미지 버튼</h4>
+
+<p>조건에 따라 서로다른 이미지 버튼을 보여줄수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre></td><td class="code"><pre><span class="c1">//이미지 버튼 생성</span>
+<span class="kd">var</span> <span class="nx">imageButtons1</span> <span class="o">=</span> <span class="p">[{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"팝업버튼"</span><span class="p">,</span>
+  <span class="s2">"up"</span><span class="p">:</span> <span class="s2">"/resource/image/btnImages/popup_normal.png"</span><span class="p">,</span>
+  <span class="s2">"hover"</span><span class="p">:</span> <span class="s2">"/resource/image/btnImages/popup_hover.png"</span><span class="p">,</span>
+  <span class="s2">"down"</span><span class="p">:</span> <span class="s2">"/resource/image/btnImages/popup_click.png"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span><span class="mi">50</span>
+<span class="p">}];</span>
+<span class="kd">var</span> <span class="nx">imageButtons2</span> <span class="o">=</span> <span class="p">[{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"조회버튼"</span><span class="p">,</span>
+  <span class="s2">"up"</span><span class="p">:</span> <span class="s2">"/resource/image/btnImages/search_normal.png"</span><span class="p">,</span>
+  <span class="s2">"hover"</span><span class="p">:</span> <span class="s2">"/resource/image/btnImages/search_hover.png"</span><span class="p">,</span>
+  <span class="s2">"down"</span><span class="p">:</span> <span class="s2">"/resource/image/btnImages/search_click.png"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span><span class="mi">50</span>
+<span class="p">}];</span>
+
+<span class="c1">//이미지 버튼 추가</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellRenderers</span><span class="p">([{</span>
+  <span class="s2">"id"</span><span class="p">:</span><span class="s2">"buttons1"</span><span class="p">,</span>
+  <span class="s2">"type"</span><span class="p">:</span><span class="s2">"imageButtons"</span><span class="p">,</span>
+  <span class="s2">"images"</span><span class="p">:</span> <span class="nx">imageButtons1</span><span class="p">,</span>
+  <span class="s2">"margin"</span><span class="p">:</span><span class="mi">10</span>
+<span class="p">},{</span>
+  <span class="s2">"id"</span><span class="p">:</span><span class="s2">"buttons2"</span><span class="p">,</span>
+  <span class="s2">"type"</span><span class="p">:</span><span class="s2">"imageButtons"</span><span class="p">,</span>
+  <span class="s2">"images"</span><span class="p">:</span> <span class="nx">imageButtons2</span><span class="p">,</span>
+  <span class="s2">"margin"</span><span class="p">:</span><span class="mi">10</span>
+<span class="p">}]);</span>
+
+<span class="c1">//컬럼 설정</span>
+<span class="p">{</span>
+  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"ImageButton"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"ImageButton"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"100"</span><span class="p">,</span>
+  <span class="s2">"dynamicStyles"</span><span class="err">:</span><span class="p">[{</span>
+    <span class="s2">"criteria"</span><span class="p">:[</span><span class="s2">"value = '팝업'"</span><span class="p">,</span> <span class="s2">"value = '조회'"</span><span class="p">],</span>
+    <span class="s2">"styles"</span><span class="p">:[</span><span class="s2">"renderer=buttons1"</span><span class="p">,</span> <span class="s2">"renderer=buttons2"</span><span class="p">]</span>
+  <span class="p">}],</span>
+  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
+   <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"near"</span>
+  <span class="p">},</span>
+  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"동적 버튼"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
   $('#btnButtonAlwaysShowButton').click(function() {
+    gridView.setColumnProperty("ImageButton", "alwaysShowButton", "true");
     gridView.setColumnProperty("EmployeeID", "alwaysShowButton", "true");
     gridView.setColumnProperty("OrderID", "alwaysShowButton", "true");
     gridView.setColumnProperty("CustomerID", "alwaysShowButton", "true");
   });
 
   $('#btnButtonAlways').click(function() {
+    gridView.setColumnProperty("ImageButton", "buttonVisibility", "always");
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "always");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "always");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "always");
   });
 
   $('#btnButtonDefault').click(function() {
+    gridView.setColumnProperty("ImageButton", "buttonVisibility", "default");
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "default");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "default");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "default");
   });
 
   $('#btnButtonVisible').click(function() {
+    gridView.setColumnProperty("ImageButton", "buttonVisibility", "visible");
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "visible");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "visible");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "visible");
   });
 
   $('#btnButtonHidden').click(function() {
+    gridView.setColumnProperty("ImageButton", "buttonVisibility", "hidden");
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "hidden");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "hidden");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "hidden");
@@ -1954,9 +2092,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs_eval.1.1.24.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs-api.1.1.24.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.24/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
 
 
 </body>
