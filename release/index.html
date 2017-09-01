@@ -1511,8 +1511,8 @@
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/searchCell/">searchCell</a>
     <ul>
-      <li>gridView.searchCell을 이용해서 date형식의 자료를 찾을때 일부만 입력하여 검색가능하도록 개선되었습니다.</li>
-      <li>구분자는 “.”, “-“, “/”를 사용할수 있으며 구분자없이 “201708”형태로도 검색가능합니다.
+      <li>gridView.searchCell을 이용해서 date형식의 자료를 찾을 때 일부만 입력하여 검색가능하도록 개선되었습니다.</li>
+      <li>구분자는 “.”, “-“, “/”를 사용할수 있으며 구분자 없이 “201708”형태로도 검색 가능합니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">serachCell</span><span class="p">({</span><span class="na">fields</span><span class="p">:[</span><span class="s2">"dateField1"</span><span class="p">,</span> <span class="s2">"dateField2"</span><span class="p">],</span> <span class="na">value</span><span class="p">:</span><span class="s2">"2017-08"</span><span class="p">,</span> <span class="na">partialMatch</span><span class="p">:</span><span class="kc">true</span><span class="p">})</span>
 </pre></td></tr></tbody></table>
 </div>
@@ -1537,12 +1537,12 @@
   </li>
   <li><a href="http://help.realgrid.com/api/GridBase/onBodyEmptyClicked/">onBodyEmptyClicked</a>
     <ul>
-      <li>그리드의 빈 영역을 클릭했을때 발생하는 onBodyEmptyClicked 이벤트와 onBodyEmptyDblClicked이벤트가 추가되었습니다.</li>
+      <li>그리드의 빈 영역을 클릭했을 때 발생하는 onBodyEmptyClicked 이벤트와 onBodyEmptyDblClicked이벤트가 추가되었습니다.</li>
     </ul>
   </li>
   <li><a href="http://help.realgrid.com/api/types/DynamicStyle/">DynamicStyle</a>
     <ul>
-      <li>변경된 cell의 style을 변경할수 있도록 <a href="http://help.realgrid.com/api/features/Expression/">Expression</a>에 “changedcell” 조건이 추가 되었습니다.</li>
+      <li>변경된 cell의 style을 변경할 수 있도록 <a href="http://help.realgrid.com/api/features/Expression/">Expression</a>에 “changedcell” 조건이 추가 되었습니다.</li>
       <li>changedcell조건을 사용하기 위해서는 DataProvider.restoreMode속성이 “explicit”이거나 또는 “auto”이어야 합니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1570,7 +1570,7 @@
   </li>
   <li><a href="http://help.realgrid.com/api/types/GridExportOptions/">GridExportOptions</a>
     <ul>
-      <li>그리드를 Excel로 Export할때 checkBar에 체크된 행만 Export할수 있도록 <code class="highlighter-rouge">GridExportOptions.onlyCheckedItems</code> 속성이 추가 되었습니다.</li>
+      <li>그리드를 Excel로 Export할 때 checkBar에 체크된 행만 Export할수 있도록 <code class="highlighter-rouge">GridExportOptions.onlyCheckedItems</code> 속성이 추가 되었습니다.</li>
       <li>그리드가 RowGrouping상태이거나 TreeGrid의 경우에는 적용되지 않습니다.</li>
       <li>Column.Header.subText가 있는 경우 subText도 출력되도록 수정되었습니다. (subTextStyle의 경우는 적용되지 않습니다)</li>
     </ul>
