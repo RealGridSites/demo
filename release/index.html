@@ -1512,7 +1512,7 @@
   <li><a href="http://help.realgrid.com/api/GridBase/searchCell/">searchCell</a>
     <ul>
       <li>gridView.searchCell을 이용해서 date형식의 자료를 찾을 때 일부만 입력하여 검색가능하도록 개선되었습니다.</li>
-      <li>구분자는 “.”, “-“, “/”를 사용할수 있으며 구분자 없이 “201708”형태로도 검색 가능합니다.
+      <li>구분자는 “.”, “-“, “/”를 사용할 수 있으며 구분자 없이 “201708”형태로도 검색 가능합니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">serachCell</span><span class="p">({</span><span class="na">fields</span><span class="p">:[</span><span class="s2">"dateField1"</span><span class="p">,</span> <span class="s2">"dateField2"</span><span class="p">],</span> <span class="na">value</span><span class="p">:</span><span class="s2">"2017-08"</span><span class="p">,</span> <span class="na">partialMatch</span><span class="p">:</span><span class="kc">true</span><span class="p">})</span>
 </pre></td></tr></tbody></table>
 </div>
@@ -1527,12 +1527,12 @@
   </li>
   <li><a href="http://help.realgrid.com/api/GridBase/clearInvalidCellList/">clearInvalidCellList</a>
     <ul>
-      <li>validation이 실패한 셀의 목록을 초기화 할수 있는 clearInvalidCellList함수가 추가되었습니다.</li>
+      <li>validation이 실패한 셀의 목록을 초기화 할 수 있는 clearInvalidCellList함수가 추가되었습니다.</li>
     </ul>
   </li>
   <li><a href="http://help.realgrid.com/api/types/ColumnHeader/">ColumnHeader</a>
     <ul>
-      <li>ColumnHeader의 image를 클릭시 발생하는 onColumnHeaderImageClicked 이벤트가 추가되었습니다.</li>
+      <li>ColumnHeader의 image를 클릭 시 발생하는 onColumnHeaderImageClicked 이벤트가 추가되었습니다.</li>
     </ul>
   </li>
   <li><a href="http://help.realgrid.com/api/GridBase/onBodyEmptyClicked/">onBodyEmptyClicked</a>
@@ -1542,7 +1542,7 @@
   </li>
   <li><a href="http://help.realgrid.com/api/types/DynamicStyle/">DynamicStyle</a>
     <ul>
-      <li>변경된 cell의 style을 변경할 수 있도록 <a href="http://help.realgrid.com/api/features/Expression/">Expression</a>에 “changedcell” 조건이 추가 되었습니다.</li>
+      <li>변경된 cell의 style을 변경할 수 있도록 <a href="http://help.realgrid.com/api/features/Expression/">Expression</a>에 “changedcell” 조건이 추가되었습니다.</li>
       <li>changedcell조건을 사용하기 위해서는 DataProvider.restoreMode속성이 “explicit”이거나 또는 “auto”이어야 합니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1570,7 +1570,7 @@
   </li>
   <li><a href="http://help.realgrid.com/api/types/GridExportOptions/">GridExportOptions</a>
     <ul>
-      <li>그리드를 Excel로 Export할 때 checkBar에 체크된 행만 Export할수 있도록 <code class="highlighter-rouge">GridExportOptions.onlyCheckedItems</code> 속성이 추가 되었습니다.</li>
+      <li>그리드를 Excel로 Export할 때 checkBar에 체크된 행만 Export할수 있도록 <code class="highlighter-rouge">GridExportOptions.onlyCheckedItems</code> 속성이 추가되었습니다.</li>
       <li>그리드가 RowGrouping상태이거나 TreeGrid의 경우에는 적용되지 않습니다.</li>
       <li>Column.Header.subText가 있는 경우 subText도 출력되도록 수정되었습니다. (subTextStyle의 경우는 적용되지 않습니다)</li>
     </ul>
@@ -1609,7 +1609,7 @@
   </li>
   <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
     <ul>
-      <li>DisplayOptions.rowFocusOption 속성이 추가 되었습니다.
+      <li>DisplayOptions.rowFocusOption 속성이 추가되었습니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -1638,7 +1638,7 @@
   </li>
   <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
     <ul>
-      <li>progressView의 스타일을 사용자가 지정할수 있도록 DisplayOptions.useCssStyleProgress 속성이 추가 되었습니다.</li>
+      <li>progressView의 스타일을 사용자가 지정할수 있도록 DisplayOptions.useCssStyleProgress 속성이 추가되었습니다.</li>
       <li>progressView가 생성되기전에 useCssStyleProgress를 true로 설정해야 적용됩니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1733,8 +1733,8 @@
   </li>
   <li><a href="http://help.realgrid.com/api/LocalDataProvider/searchData/">DataProvider.searchData</a>
     <ul>
-      <li>gridView.searchItem과 유사한 역활을 하는 dataProvider.searchDataRow함수가 추가 되었습니다.</li>
-      <li>gridView.searchCell과 유사한 역활을 하는 dataProvider.serachData함수가 추가 되었습니다.<br />
+      <li>gridView.searchItem과 유사한 역활을 하는 dataProvider.searchDataRow함수가 추가되었습니다.</li>
+      <li>gridView.searchCell과 유사한 역활을 하는 dataProvider.serachData함수가 추가되었습니다.<br />
   자세한 내용은 <a href="/Tree/TreeSearchRow/">트리뷰 노드 검색하기</a>데모를 참조하세요.</li>
     </ul>
   </li>
@@ -1821,7 +1821,7 @@
 </div>
         </div>
       </li>
-      <li><a href="http://help.realgrid.com/api/types/ColumnHeaderOptions/">ColumnHeaderOptions</a>에 popupMenu관련 속성이 추가 되었습니다.</li>
+      <li><a href="http://help.realgrid.com/api/types/ColumnHeaderOptions/">ColumnHeaderOptions</a>에 popupMenu관련 속성이 추가되었습니다.</li>
       <li>popupMenuColor: popupMenuButton의 색상을 입력합니다.</li>
       <li>hoveredPopupMenuColor: MouseOver시 popupMenuButton의 색상을 입력합니다.</li>
       <li>popupMenuWidth: popupMenuButton의 넓이를 입력합니다.
@@ -1846,37 +1846,37 @@
 <ol>
   <li><code class="highlighter-rouge">searchCell</code>
     <ul>
-      <li>gridView.searchCell을 이용해서 찾기시 “undefined”를 찾으면 value가 undefined인 cell이 검색되는 현상을 수정하였습니다.</li>
+      <li>gridView.searchCell을 이용해서 찾기 시 “undefined”를 찾으면 value가 undefined인 cell이 검색되는 현상을 수정하였습니다.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">checkBar</code>
     <ul>
-      <li>checkBar의 check를 클릭하였을때 그리드가 스크롤되는 현상을 수정하였습니다.</li>
+      <li>checkBar의 check를 클릭하였을 때 그리드가 스크롤 되는 현상을 수정하였습니다.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">dataProvider.getUpdatedCells</code>
     <ul>
-      <li><a href="http://help.realgrid.com/api/DataProvider/getUpdatedCells/">dataProvider.getUpdatedCells</a>를 이용해서 수정된 cell을 가져올때 수정된 행을 모두 가져오지 못하는 오류를 수정하였습니다.</li>
+      <li><a href="http://help.realgrid.com/api/DataProvider/getUpdatedCells/">dataProvider.getUpdatedCells</a>를 이용해서 수정된 cell을 가져올 때 수정된 행을 모두 가져오지 못하는 오류를 수정하였습니다.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">gridExport.documentTitle</code>
     <ul>
-      <li>1.1.24버전에서 gridExport.documentTitle.spaceTop을 설정했을때 발생하는 오류를 수정하였습니다.</li>
+      <li>1.1.24버전에서 gridExport.documentTitle.spaceTop을 설정했을 때 발생하는 오류를 수정하였습니다.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">selectOptionis.style</code>
     <ul>
-      <li>selectOptions.style이 “rows”일때 아래쪽에서 위로 범위 설정후 마우스 우클릭시 범위 설정이 해제되는 오류를 수정하였습니다.</li>
+      <li>selectOptions.style이 “rows”일 때 아래쪽에서 위로 범위 설정 후 마우스 우클릭 시 범위 설정이 해제되는 오류를 수정하였습니다.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">displayOptions.rowHeight</code>
     <ul>
-      <li>displayOptions.rowHeight의 값을 잘못된 값으로 설정시 그리드가 깨지는 오류를 수정하였습니다.</li>
+      <li>displayOptions.rowHeight의 값을 잘못된 값으로 설정 시 그리드가 깨지는 오류를 수정하였습니다.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">Mobile TreeGrid</code>
     <ul>
-      <li>Mobile TreeGrid에서 화면 touch를 이용해서 스크롤할때 이동되지 않는 오류를 수정하였습니다.</li>
+      <li>Mobile TreeGrid에서 화면 touch를 이용해서 스크롤 할 때 이동되지 않는 오류를 수정하였습니다.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">GridExport</code>
@@ -1891,7 +1891,7 @@
   </li>
   <li><code class="highlighter-rouge">paste</code>
     <ul>
-      <li>편집 불가 상태의 cell에 열단위 붙여넣기를 했을때 붙여넣기가 되지 않는 현상을 수정하였습니다.</li>
+      <li>편집 불가 상태의 cell에 열 단위 붙여넣기를 했을 때 붙여넣기가 되지 않는 현상을 수정하였습니다.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">onCurrentChanged</code>
@@ -2061,7 +2061,7 @@
   </li>
   <li><code class="highlighter-rouge">DisplayOptions</code>
     <ul>
-      <li>사용자가 마우스를 움직일때 마우스 위치에 해당하는 DataRow를 보여줄수 있도록 <a href="http://help.realgrid.com/api/types/RowHoverMask/">rowHoverMask</a>속성이 추가 되었습니다.
+      <li>사용자가 마우스를 움직일때 마우스 위치에 해당하는 DataRow를 보여줄수 있도록 <a href="http://help.realgrid.com/api/types/RowHoverMask/">rowHoverMask</a>속성이 추가되었습니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -2220,7 +2220,7 @@
   </li>
   <li><a href="http://help.realgrid.com/api/types/GridExportOptions/">ExportOptions</a>
     <ul>
-      <li>Export시 전체 data를 출력할수 있는 pagingAllItems 옵션이 추가 되었습니다.
+      <li>Export시 전체 data를 출력할수 있는 pagingAllItems 옵션이 추가되었습니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
