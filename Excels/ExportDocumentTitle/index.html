@@ -1839,7 +1839,8 @@ var onDoneDataSet = function() {
 36
 37
 38
-39</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">excelType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="excelType"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"2007"</span><span class="p">;</span>
+39
+40</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">excelType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="excelType"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"2007"</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
     <span class="na">type</span><span class="p">:</span> <span class="s2">"excel"</span><span class="p">,</span>
     <span class="na">target</span><span class="p">:</span> <span class="s2">"local"</span><span class="p">,</span>
@@ -1855,6 +1856,7 @@ var onDoneDataSet = function() {
             <span class="na">lineAlignment</span><span class="p">:</span> <span class="s2">"center"</span><span class="p">,</span>
             <span class="na">background</span><span class="p">:</span> <span class="s2">"#08f90000"</span>
         <span class="p">},</span>
+        <span class="na">spaceTop</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="na">spaceBottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="na">height</span><span class="p">:</span> <span class="mi">60</span>
     <span class="p">},</span>
@@ -1900,7 +1902,7 @@ $('#btnExportGrid').click(function() {
                 lineAlignment: "center",
                 background: "#08f90000"
             },
-            //spaceTop: 1,
+            spaceTop: 1,
             spaceBottom: 0,
             height: 60
         },
