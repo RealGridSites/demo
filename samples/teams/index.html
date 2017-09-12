@@ -204,7 +204,8 @@
             grid:{
                 font: "돋움",
                 fontSize:13,
-                border:"#ff000000,1"
+                border:"#ff000000,1",
+                foreground:"#ff7f7f7f"
             },
             body:{
                 dynamicStyles:[{
@@ -224,18 +225,7 @@
             },
             checkBar:{
                 borderRight:"#ffd2d2d2,1",
-                borderBottom:"#ffd2d2d2,1",
-                dynamicStyles:[{
-                    criteria:"(row mod 2) = 0",
-                    styles:{
-                        background:"#ffffffff"
-                    }
-                }, {
-                    criteria:"(row mod 2) = 1", 
-                    styles:{
-                        background:"#fff5f5f5"
-                    }
-                }]
+                borderBottom:"#ffd2d2d2,1"
             }
         })
 
@@ -265,6 +255,6 @@
 <br/>
 <h3>범죄예방정보화센터 teams 그리드 화면을 RealGrid로 구현한 화면입니다.</h3>
 ※ 검색결과
-<div id="realgrid" style="height:383px;width:100%"></div>
+<div id="realgrid" style="height:383px;width:700px"></div>
 </body>
 </html>
