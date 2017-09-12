@@ -224,7 +224,18 @@
             },
             checkBar:{
                 borderRight:"#ffd2d2d2,1",
-                borderBottom:"#ffd2d2d2,1"
+                borderBottom:"#ffd2d2d2,1",
+                dynamicStyles:[{
+                    criteria:"(row mod 2) = 0",
+                    styles:{
+                        background:"#ffffffff"
+                    }
+                }, {
+                    criteria:"(row mod 2) = 1", 
+                    styles:{
+                        background:"#fff5f5f5"
+                    }
+                }]
             }
         })
 
