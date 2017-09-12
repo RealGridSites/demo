@@ -1458,34 +1458,43 @@
         
         <li>
           
-            <div class="heading-toc">차트 및 리포트 연동</div>
+            <div class="heading-toc">피벗(RealPivot)</div>
           
           <ul class="list-toc">
             
               <li class="item-toc ">
-                <a href="/Interface/UbiReport/"
+                <a href="/Pivot/PivotTutorial/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>RealPivot 설치하기</span>
                   <span style="display: none;">
-                  연동, interface
+                  pivot
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc current">
+                <a href="/Pivot/PivotSorting/"
+                class="current sidebar-link ">
+                  <span>RealPivot 정렬(Sorting)</span>
+                  <span style="display: none;">
+                  pivot, sort
                   </span>
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Interface/CrownixReport/"
+                <a href="/Pivot/PivotFiltering/"
                 class=" sidebar-link ">
-                  <span>Crownix 리포트 연동</span>
+                  <span>RealPivot 필터링(Filtering)</span>
                   <span style="display: none;">
-                  연동, interface
+                  pivot, filter
                   </span>
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Interface/OZReport/"
+                <a href="/Pivot/PivotRegions/"
                 class=" sidebar-link ">
-                  <span>OZ 리포트 연동</span>
+                  <span>PivotRegions</span>
                   <span style="display: none;">
-                  연동, interface
+                  pivot, Regions
                   </span>
                 </a>
               </li></ul>
@@ -1661,6 +1670,8 @@ $(document).ready( function() {
       
       <h4 id="label-기준-정렬">label 기준 정렬</h4>
 
+<p><a class="btn primary small round lowercase" id="btnSetLabelSort">label 기준 정렬</a></p>
+
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -1694,6 +1705,8 @@ $(document).ready( function() {
 
 <h4 id="value-기준-정렬">value 기준 정렬</h4>
 
+<p><a class="btn primary small round lowercase" id="btnSetValueSort">value 기준 정렬</a></p>
+
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -1710,6 +1723,37 @@ $(document).ready( function() {
 </pre></td></tr></tbody></table>
 </div>
 </div>
+
+<script>
+$('#btnSetLabelSort').click(function() {
+	pivot.sort({
+	  column: {
+	      method: "label",
+	      labels: [  
+	        { name: "판매분기", direction: "descending"}
+	     ]
+	  },
+	  row: {
+	    method:"label",
+	    labels: [  
+	        { name: "브랜드명", direction: "descending"}
+	     ]
+	  }
+	});
+});
+
+$('#btnSetValueSort').click(function() {
+	pivot.sort({
+	  row: {
+	      method: "value",
+	      fieldName: "차량가격", 
+	      direction: "descending"
+	  }
+	});
+});
+
+</script>
+
 
   </div>
 </div>

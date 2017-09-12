@@ -1458,34 +1458,43 @@
         
         <li>
           
-            <div class="heading-toc">차트 및 리포트 연동</div>
+            <div class="heading-toc">피벗(RealPivot)</div>
           
           <ul class="list-toc">
             
               <li class="item-toc ">
-                <a href="/Interface/UbiReport/"
+                <a href="/Pivot/PivotTutorial/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>RealPivot 설치하기</span>
                   <span style="display: none;">
-                  연동, interface
+                  pivot
                   </span>
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Interface/CrownixReport/"
+                <a href="/Pivot/PivotSorting/"
                 class=" sidebar-link ">
-                  <span>Crownix 리포트 연동</span>
+                  <span>RealPivot 정렬(Sorting)</span>
                   <span style="display: none;">
-                  연동, interface
+                  pivot, sort
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc current">
+                <a href="/Pivot/PivotFiltering/"
+                class="current sidebar-link ">
+                  <span>RealPivot 필터링(Filtering)</span>
+                  <span style="display: none;">
+                  pivot, filter
                   </span>
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Interface/OZReport/"
+                <a href="/Pivot/PivotRegions/"
                 class=" sidebar-link ">
-                  <span>OZ 리포트 연동</span>
+                  <span>PivotRegions</span>
                   <span style="display: none;">
-                  연동, interface
+                  pivot, Regions
                   </span>
                 </a>
               </li></ul>
@@ -1661,6 +1670,8 @@ $(document).ready( function() {
       
       <h4 id="필터링-설정">필터링 설정</h4>
 
+<p><a class="btn primary small round lowercase" id="btnSetFilter1">필터링 옵션 적용</a></p>
+
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -1677,6 +1688,7 @@ $(document).ready( function() {
 </pre></td></tr></tbody></table>
 </div>
 </div>
+<p><a class="btn primary small round lowercase" id="btnSetFilter2">필터링 옵션 적용</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1694,6 +1706,29 @@ $(document).ready( function() {
 </pre></td></tr></tbody></table>
 </div>
 </div>
+
+<script>
+$('#btnSetFilter1').click(function() {
+	pivot.filter({
+	    operation: "and",  // and | or
+	    conditions: [
+	        { name: "판매분기", criteria: "value >= 2" },
+	        { name: "브랜드명", criteria: "value = '기아'" }
+	    ]
+	});
+});
+
+$('#btnSetFilter2').click(function() {
+	pivot.filter({
+	    operation: "and",  // and | or
+	    conditions: [
+	        { name: "판매월", criteria: "value >= 10" },
+	        { name: "차종", criteria: "value = '중형'" }
+	    ]
+	});
+});
+</script>
+
 
   </div>
 </div>
