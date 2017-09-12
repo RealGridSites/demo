@@ -203,23 +203,28 @@
         gridView.setStyles({
             grid:{
                 font: "돋움",
-                fontSize:13
+                fontSize:13,
+                border:"#ff000000,1"
             },
             body:{
                 dynamicStyles:[{
                     criteria:"(row mod 2) = 0",
                     styles:{
-                        background:"#fff5f5f5"
+                        background:"#ffffffff"
                     }
                 }, {
                     criteria:"(row mod 2) = 1", 
                     styles:{
-                        background:"#ffffffff"
+                        background:"#fff5f5f5"
                     }
                 }]
             },
             header:{
                 background:"#ffe6ebef"
+            },
+            checkBar:{
+                borderRight:"#ffd2d2d2,1",
+                borderBottom:"#ffd2d2d2,1"
             }
         })
 
