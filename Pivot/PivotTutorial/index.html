@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    RealPivot 설치하기
+    피벗 설치하기
     </title>
     <meta name="description" content="">
 
@@ -1502,7 +1502,7 @@
 
     <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">RealPivot 설치하기</h1>
+            <h1 class="title-page">피벗 설치하기</h1>
             
 
             
@@ -1552,6 +1552,7 @@ $('#btnStep1').click(function() {
   if(step == 1){
     dataProvider = new RealGridJS.LocalDataProvider();
     pivot = new RealPivot("realpivot");
+    pivot.setOptions({header:{menuButtonVisible:false,setupButtonVisible:false}})
     pivot.setDataProvider(dataProvider);
     pivot.drawView();
     $("#btnStep1").css("background-color","silver");
