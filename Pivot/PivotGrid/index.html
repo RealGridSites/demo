@@ -1523,12 +1523,12 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.1/realpivot_eval.0.0.1.min.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.1/realpivot_eval.0.0.2.min.js"></script>
 
-<h2>RealGrid</h2>
+<font size="6">RealGrid</font>
 <div id="realgrid" style="width:100%;height:500px;"></div>
 <p><br /></p>
-<h2>RealPivot</h2>
+<font size="6">RealPivot</font>
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
 <script>
@@ -1543,7 +1543,7 @@ $(document).ready( function() {
     gridView = new RealGridJS.GridView("realgrid");
     gridView.setDataSource(dataProvider);
 
-    gridView.setStyles(basicBlueSkin);
+    gridView.setStyles(OfficeBlueSkin);
 
     pivot = new RealPivot("realpivot");
     pivot.setDataProvider(dataProvider);
@@ -1602,6 +1602,10 @@ $(document).ready( function() {
         width: 70,
         header: {
             text: "브랜드번호"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
         }
     },{
         name: "브랜드명",
@@ -1616,6 +1620,10 @@ $(document).ready( function() {
         width: 70,
         header: {
             text: "모델번호"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
         }
     },{
         name: "모델명",
@@ -1630,6 +1638,10 @@ $(document).ready( function() {
         width: 70,
         header: {
             text: "색상번호"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
         }
     },{
         name: "색상",
@@ -1651,6 +1663,10 @@ $(document).ready( function() {
         width: 70,
         header: {
             text: "판매수량"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
         }
     },{
         name: "차량가격",
@@ -1658,6 +1674,10 @@ $(document).ready( function() {
         width: 100,
         header: {
             text: "차량가격"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
         }
     },{
         name: "차종",

@@ -55,6 +55,7 @@ div.rp-value-header, div.rp-row-header, div.rp-col-header {
 	border-bottom: 1px solid #5d8cc9;
 	border-right: 1px solid #5d8cc9;
 	background: linear-gradient(#e9f0f8,#c3d8f1);
+    overflow: hidden;
 }
 
 img.rp-title-menu {
@@ -89,9 +90,8 @@ div.rp-col-header-text, div.rp-row-header-text, div.rp-value-header-text {
     white-space: nowrap;
     background-color: white;
     opacity: 0.7;
-    margin: 2px 0px 0px 2px;
+    margin: 1px 0px 0px 1px;
     border: 1px solid #909090;
-    padding: 1px 1px 1px 1px;
 } 
 
 div.rp-col-label {
@@ -150,6 +150,7 @@ div.rp-row-sum {
 div.rp-body-value {
 	border-right: 1px solid #dedede;
 	border-bottom: 1px solid #dedede;
+	padding-right: 1px;
 	background-color: #ffffff;
 	font-family: "Arial";
     display: flex; 
@@ -162,6 +163,7 @@ div.rp-body-value {
 div.rp-body-sum {
 	border-right: 1px solid #dedede;
 	border-bottom: 1px solid #dedede;
+	padding-right: 1px;
 	background-color: #ffffff;
 	font-family: "Arial";
 	font-weight: bold;
@@ -172,15 +174,7 @@ div.rp-body-sum {
     white-space: nowrap;
 }
 
-div.rp-body-odd {
-	background-color: #eefaf6;	
-}
-div.rp-body-even {
-	background-color: #d4f7eb;
-}
-
-div.rp-col-group {
-	padding-left: 20px;
+div.rp-col-group, div.rp-row-group {
 }
 
 div.rp-sbar {
@@ -204,6 +198,10 @@ div.rp-sbar-button {
 	background: rgb(210, 210, 210);
 }
 
+div.rp-sbar-button-pressed {
+	background: rgb(110, 110, 110); 
+}
+
 div.rp-sbar-button:hover {
 	background: rgb(192, 192, 192);
 }
@@ -215,6 +213,10 @@ div.rp-sbar-thumb {
 	margin: 0px; 
 	-webkit-print-color-adjust: exact; 
 	background: rgb(192, 192, 192); 
+}
+
+div.rp-sbar-thumb-pressed {
+	background: rgb(110, 110, 110); 
 }
 
 div.rp-sbar-thumb:hover {
@@ -248,7 +250,7 @@ div.rp-sbar-hfbutton {
 
 div.rp-expander {
 	margin: 0px;
-	padding: 0px;
+	padding: 0px 1px 0px 0px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -268,3 +270,4 @@ div.rp-expander-collapse {
 .document-formatting img {
 	padding: 0;
 }
+

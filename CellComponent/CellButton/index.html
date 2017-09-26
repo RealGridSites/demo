@@ -1998,7 +1998,10 @@
 42
 43
 44
-45</pre></td><td class="code"><pre><span class="c1">//이미지 버튼 생성</span>
+45
+46
+47
+48</pre></td><td class="code"><pre><span class="c1">//이미지 버튼 생성</span>
 <span class="kd">var</span> <span class="nx">imageButtons1</span> <span class="o">=</span> <span class="p">[{</span>
   <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"팝업버튼"</span><span class="p">,</span>
   <span class="s2">"up"</span><span class="p">:</span> <span class="s2">"/resource/image/btnImages/popup_normal.png"</span><span class="p">,</span>
@@ -2028,21 +2031,24 @@
 <span class="p">}]);</span>
 
 <span class="c1">//컬럼 설정</span>
-<span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"ImageButton"</span><span class="p">,</span>
-  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"ImageButton"</span><span class="p">,</span>
-  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"100"</span><span class="p">,</span>
-  <span class="s2">"dynamicStyles"</span><span class="err">:</span><span class="p">[{</span>
+<span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"ImageButton"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"ImageButton"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"100"</span><span class="p">,</span>
+  <span class="s2">"dynamicStyles"</span><span class="p">:[{</span>
     <span class="s2">"criteria"</span><span class="p">:[</span><span class="s2">"value = '팝업'"</span><span class="p">,</span> <span class="s2">"value = '조회'"</span><span class="p">],</span>
     <span class="s2">"styles"</span><span class="p">:[</span><span class="s2">"renderer=buttons1"</span><span class="p">,</span> <span class="s2">"renderer=buttons2"</span><span class="p">]</span>
   <span class="p">}],</span>
-  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"near"</span>
+  <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"near"</span>
   <span class="p">},</span>
-  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"동적 버튼"</span>
+  <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"동적 버튼"</span>
   <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}];</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
+
 </pre></td></tr></tbody></table>
 </div>
 </div>
