@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    피벗 세팅
+    피벗 필드 재설정
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="Pivot의 columns, rows, values 값을 직접 설정해서 Pivot 화면을 구성할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1502,7 +1502,7 @@
 
     <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">피벗 세팅</h1>
+            <h1 class="title-page">피벗 필드 재설정</h1>
             
 
             
@@ -1521,7 +1521,11 @@
         </div>
 
         <div class="document-formatting">
-            <link rel="stylesheet" type="text/css" href="/lib/css/pivot_default.css" />
+            <p>Pivot의 columns, rows, values 값을 직접 설정해서 Pivot 화면을 구성할 수 있습니다.</p>
+
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.4/css/default.css" />
+
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.4/css/demo_css.css" />
 
 <script type="text/javascript" src="/lib/jquery/jquery-1.11.2.min.js"></script>
 
@@ -1531,7 +1535,7 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.1/realpivot_eval.0.0.2.min.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.4/realpivot_eval.0.0.4.min.js"></script>
 
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
@@ -1606,6 +1610,50 @@ $(document).ready( function() {
         displayFormat: "${value}월",
         summaryFormat: "${value}월 합"
     },{
+        name: "판매일",
+        sourceField: "판매날짜",
+        dateType: "day",
+        fieldHeader: "일",
+        displayFormat: "${value}일",
+        summaryFormat: "${value}일 합"
+    },{
+        name: "판매주",
+        sourceField: "판매날짜",
+        dateType: "weekofmonth",
+        fieldHeader: "주",
+        displayFormat: "${value}주",
+        summaryFormat: "${value}주 합"
+    },{
+        name: "half",
+        sourceField: "판매날짜",
+        dateType: "half",
+        fieldHeader: "주",
+        displayFormat: "${value}주",
+        summaryFormat: "${value}주 합"
+    },{
+        name: "weekofyear",
+        sourceField: "판매날짜",
+        dateType: "weekofyear",
+        fieldHeader: "주",
+        displayFormat: "${value}주",
+        summaryFormat: "${value}주 합"
+    },{
+        name: "판매요일",
+        sourceField: "판매날짜",
+        dateType: "weekday",
+        fieldHeader: "요일",
+        displayLabels: { 
+            0: "월요일",
+            1: "화요일",
+            2: "수요일",
+            3: "목요일",
+            4: "금요일",
+            5: "토요일",
+            6: "일요일"
+        },
+        //displayFormat: "${value}주",
+        summaryFormat: "${value}주 합"
+    },{
         name: "판매수량",
         sourceField: "판매수량",
         numberFormat:"#,##0"
@@ -1616,11 +1664,14 @@ $(document).ready( function() {
     },{
         name:"차종",
         sourceField:"차종"
+    },{
+        name:"연료",
+        sourceField:"연료"
     }]);
 
     pivot.setPivotFields({
-        columns: ["판매월"],
-        rows: ["판매분기"],
+        columns: ["판매년도","판매월"],
+        rows: ["국가","브랜드명","차종"],
         values: [{
             name: "차량가격",
             expression: "sum"
@@ -1637,11 +1688,11 @@ $(document).ready( function() {
             dataProvider.fillJsonData(data,{count:5000});
         },
         complete: function(data){
-
+            pivot.drawView();
         }
     });
 
-    pivot.drawView();
+    
 });
 
 
@@ -1659,18 +1710,140 @@ $(document).ready( function() {
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      <p><a class="btn primary small round lowercase" id="btnSetPivot">피벗 생성</a></p>
+      
+<h4 id="피벗필드-재설정">피벗필드 재설정</h4>
 
-<h4 id="columns-설정">columns 설정</h4>
+<p>pivot 화면을 구성할 값들을 선택 후 버튼 클릭 시 피벗필드를 재설정 합니다.</p>
 
-<h4 id="rows-설정">rows 설정</h4>
+<p><a class="btn primary small round lowercase" id="btnSetPivot">피벗 필드 재설정</a></p>
+
+<hr />
+
+<ul>
+  <li>columns 설정</li>
+</ul>
+
+<form name="columnsFrm">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="columnsBox" value="판매년도" checked="checked" />&nbsp;판매년도<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="columnsBox" value="판매분기" checked="checked" />&nbsp;판매분기<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="columnsBox" value="판매월" />&nbsp;판매월<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="columnsBox" value="판매요일" />&nbsp;판매요일<br />
+</form>
+
+<hr />
+
+<ul>
+  <li>rows 설정</li>
+</ul>
+
+<form name="rowsFrm">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="rowsBox" value="국가" checked="checked" />&nbsp;국가<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="rowsBox" value="브랜드명" checked="checked" />&nbsp;브랜드명<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="rowsBox" value="차종" checked="checked" />&nbsp;차종<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="rowsBox" value="연료" />&nbsp;연료<br />
+</form>
+
+<hr />
+
+<ul>
+  <li>values 설정</li>
+</ul>
+
+<form name="valuesFrm">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="valuesBox" value="차량가격" checked="checked" />&nbsp;차량가격
+	<select name="valueType">
+	    <option value="sum">sum</option>
+	    <option value="count">count</option>
+	    <option value="min">min</option>
+	    <option value="max">max</option>
+	    <option value="average">average</option>
+	    <option value="DISTINCT">distinct</option>
+	</select>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="valuesBox" value="판매수량" checked="checked" />&nbsp;판매수량
+	<select name="valueType">
+	    <option value="sum">sum</option>
+	    <option value="count">count</option>
+	    <option value="min">min</option>
+	    <option value="max">max</option>
+	    <option value="average">average</option>
+	    <option value="DISTINCT">distinct</option>
+&lt;/form&gt;
+
+***
+
 
 <script>
-	$('#btnSetPivot').click(function() {
 
+function columnsCheck(){
+	var columnsArr = []
+
+
+	for(var i = 0; i < columnsFrm.columnsBox.length; i++)
+	{
+		if(columnsFrm.columnsBox[i].checked)
+		{
+			columnsArr.push(columnsFrm.columnsBox[i].value);
+		}
+	}
+
+
+	if(columnsArr.length == 0){ 
+		alert("하나 이상의 columns 목록을 체크해야 합니다.")
+		return false
+	}
+
+	return columnsArr;
+}
+function rowsCheck(){
+	var rowsArr = []
+	 
+	for(var i = 0; i < rowsFrm.rowsBox.length; i++)
+	{
+		if(rowsFrm.rowsBox[i].checked)
+		{
+			rowsArr.push(rowsFrm.rowsBox[i].value);
+		}
+	}
+
+	if(rowsArr.length == 0){ 
+		alert("하나 이상의 rows 목록을 체크해야 합니다.")
+		return false
+	}
+
+	return rowsArr;
+}
+function valuesCheck(){
+	var valuesArr = [];
+	for(var i = 0; i < valuesFrm.valuesBox.length; i++)
+	{
+		if(valuesFrm.valuesBox[i].checked)
+		{
+			valuesArr.push({name:valuesFrm.valuesBox[i].value, expression:valuesFrm.valueType[i].value});
+		}
+	}
+
+	if(valuesArr.length == 0){ 
+		alert("하나 이상의 values 목록을 체크해야 합니다.")
+		return false
+	}
+
+	return valuesArr;
+}
+
+	$('#btnSetPivot').click(function() {
+		if(columnsCheck() == false || rowsCheck() == false || valuesCheck() == false){
+
+		} else {
+			pivot.setPivotFields({
+		        columns: columnsCheck(),
+		        rows: rowsCheck(),
+		        values: valuesCheck()
+		    });
+		}
     });
 </script>
-
+</select></form>
 
   </div>
 </div>

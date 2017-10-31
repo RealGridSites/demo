@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     피벗 필터링(Filtering)
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="Pivot의 필터링 기능을 적용시켜서 원하는 조건으로 데이터를 조회합니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1521,7 +1521,11 @@
         </div>
 
         <div class="document-formatting">
-            <link rel="stylesheet" type="text/css" href="/lib/css/pivot_default.css" />
+            <p>Pivot의 필터링 기능을 적용시켜서 원하는 조건으로 데이터를 조회합니다.</p>
+
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.4/css/default.css" />
+
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.4/css/demo_css.css" />
 
 <script type="text/javascript" src="/lib/jquery/jquery-1.11.2.min.js"></script>
 
@@ -1531,7 +1535,7 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.1/realpivot_eval.0.0.2.min.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.4/realpivot_eval.0.0.4.min.js"></script>
 
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
@@ -1637,11 +1641,9 @@ $(document).ready( function() {
             dataProvider.fillJsonData(data,{count:5000});
         },
         complete: function(data){
-
+        	pivot.drawView();
         }
     });
-
-    pivot.drawView();
 });
 
 
@@ -1661,6 +1663,8 @@ $(document).ready( function() {
       
       <h4 id="필터링-설정">필터링 설정</h4>
 
+<p>판매분기, 브랜드명의 조건으로 필터링합니다.</p>
+
 <p><a class="btn primary small round lowercase" id="btnSetFilter1">필터링 옵션 적용</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
@@ -1679,6 +1683,8 @@ $(document).ready( function() {
 </pre></td></tr></tbody></table>
 </div>
 </div>
+<p>판매월, 차종의 조건으로 필터링합니다.</p>
+
 <p><a class="btn primary small round lowercase" id="btnSetFilter2">필터링 옵션 적용</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
