@@ -193,7 +193,8 @@
     	fieldName: "field10",
     	header: {
     		text: "textSort"
-    	}
+    	},
+        width:30
     },{
     	name: "column11",
     	fieldName: "field11",
@@ -214,6 +215,12 @@
 
         gridView.onColumnHeaderImageClicked =  function (grid, column) {
             addLog("column: " + column.name); 
+        };
+
+        gridView.onColumnHeaderDblClicked =  function (grid, column) {
+            if (column.name == "column10") {
+                gridView.fitColumnWidth('column10', 200, 10, true);
+            }
         };
 
         var menu = [{
