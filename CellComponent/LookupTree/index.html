@@ -1555,6 +1555,8 @@
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   dataProvider.setRows(data);
+
+  
 }
 
 var onDoneDataSet = function() {
@@ -1576,6 +1578,8 @@ var onDoneDataSet = function() {
   };
 
   gridView.addLookupSource(source);
+
+  console.log("laddLookupSource")
 
   gridView.onEditCommit = function (id, index, oldValue, newValue) {
     if (index.field == "Country") {
@@ -1618,7 +1622,6 @@ var onDoneDataSet = function() {
       oldKey = keyValue;
     }
   }
-
 }
 </script>
 
