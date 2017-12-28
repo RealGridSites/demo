@@ -2045,6 +2045,26 @@
 </div>
 </div>
 
+<h4 id="선택된-행-값-가져오기">선택된 행 값 가져오기</h4>
+
+<p><a class="btn primary small round lowercase" id="btnGetCheckedRows">선택된 rowId 값 가져오기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckedRows</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">rows</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="btnGetCheckedItems">선택된 itemIndex 값 가져오기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckedItems</span><span class="p">();</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
 
   $('#btnSetVisibleFalse').click(function() {
@@ -2152,6 +2172,24 @@
   $('#btnResetCheckables').click(function() {
     gridView.resetCheckables(); 
   });   
+
+  $('#btnGetCheckedRows').click(function() {
+    var rows = gridView.getCheckedRows(true);
+    if(rows.length == 0){
+      alert("선택된 행이 없습니다.");
+    }else {
+      alert("선택된 행의 dataRow값은: " + rows + "입니다.");
+    }
+  });
+
+  $('#btnGetCheckedItems').click(function() {
+    var items = gridView.getCheckedItems();
+    if(items.length == 0){
+      alert("선택된 행이 없습니다.");
+    }else {
+      alert("선택된 행의 itemIndex값은: " + items + "입니다.");
+    }
+  });
 
 </script>
 
