@@ -35,9 +35,6 @@
 		        "fieldName": "CustomerID"
 		    },
 		    {
-		        "fieldName": "CustomerID2"
-		    },
-		    {
 		        "fieldName": "EmployeeID"
 		    },
 		    {
@@ -78,7 +75,7 @@
 					"textAlignment": "near"
 				},
 				"header": {
-					"text": "팝업 버튼"
+					"text": "팝업"
 				}
 			},
 		    {
@@ -101,7 +98,7 @@
 		        },
 		        "editable": false,
 		        "header": {
-		            "text": "직원 조회"
+		            "text": "직원"
 		        }
 		    },
 		    {
@@ -197,59 +194,6 @@
 		        },
 		        "header": {
 		            "text": "국가1"
-		        }
-		    },
-		    {
-		        "name": "CustomerNames2",
-		        "fieldName": "CustomerID2",
-		        "width": "150",
-		        "sortable": false,
-		        "editor": {
-		            "type": "dropDown",
-		            "dropDownCount": 4,
-		            "domainOnly": true,
-		            "textReadOnly": true,
-		            "values": [
-		                "VINET",
-		                "HANAR",
-		                "SUPRD",
-		                "VICTE",
-		                "THREE",
-		                "SEVEN"
-		            ],
-		            "labels": [
-		                "<VINET>",
-		                "<HANAR>",
-		                "<SUPRD>",
-		                "<VICTE>",
-		                "<THREE>",
-		                "<SEVEN>"
-		            ]
-		        },
-		        "styles": {
-		            "textAlignment": "center"
-		        },
-		        "header": {
-		            "text": "국가2"
-		        }
-		    },
-		    {
-		        "name": "CustomerNames3",
-		        "fieldName": "CustomerID2",
-		        "width": "150",
-		        "sortable": false,
-		        "editor": {
-		            "type": "search",
-		            "searchLength": 1,
-		            "searchDelay": 1000,
-		            "useCtrlEnterKey": true,
-		            "useEnterKey": true
-		        },
-		        "styles": {
-		            "textAlignment": "center"
-		        },
-		        "header": {
-		            "text": "국가3"
 		        }
 		    },
 		    {
@@ -358,13 +302,7 @@
 		]);
 		
 		loadData(dataProvider);
-/*
-		var data = ["팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회"]
 
-	    for(var i = 0; i < data.length; i++){
-	      dataProvider.setValue(i,"ImageButton",data[i])
-	    }
-*/
 		gridView.setDisplayOptions({rowHeight:30});
 		gridView.setColumnProperty("EmployeeID", "buttonVisibility", "always");
 		gridView.setColumnProperty("EmployeeID2", "buttonVisibility", "always");
