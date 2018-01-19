@@ -1859,6 +1859,28 @@ DevBox에서 기능을 확인해보세요.</p>
 </div>
 </div>
 
+<h4 id="그룹컬럼-보기">그룹컬럼 보기</h4>
+<p>버튼 클릭 시 그룹컬럼이 그리드에 표시됩니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnGroupColumnVisible">그룹컬럼 보이기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">groupVisible</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">groupVisible</span><span class="p">){</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnPropert</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnPropert</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
 
 $("#btnNone").click(function() { 
@@ -1883,6 +1905,18 @@ $("#btnFill").click(function() {
   gridView.setDisplayOptions({
     fitStyle: "fill"
   });
+});
+
+$("#btnGroupColumnVisible").click(function() { 
+  var groupVisible = gridView.getColumnProperty("GroupOrder","visible");
+
+  if(groupVisible){
+    gridView.setColumnProperty("GroupOrder", "visible", false);
+    document.getElementById("btnGroupColumnVisible").innerHTML = "그룹컬럼 보이기"
+  } else {
+    gridView.setColumnProperty("GroupOrder","visible", true);
+    document.getElementById("btnGroupColumnVisible").innerHTML = "그룹컬럼 숨기기"
+  }
 });
 </script>
 
