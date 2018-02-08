@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.26</span>
+                            <span>최신버전 1.1.27</span>
                         </a>
                     </li>
                     
@@ -813,6 +813,15 @@
                   data, SearchItem, 검색
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/DataManager/hideRow/"
+                class=" sidebar-link ">
+                  <span>그리드 행 숨기기</span>
+                  <span style="display: none;">
+                  data, hide
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -1299,6 +1308,15 @@
                   excel, export, group
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Excels/ExportToCsv/"
+                class=" sidebar-link ">
+                  <span>ExportToCsv</span>
+                  <span style="display: none;">
+                  excel, export, csv
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -1603,7 +1621,7 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.26");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -1990,9 +2008,9 @@ $("#btnClearCellStyles").click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs_eval.1.1.26.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs-api.1.1.26.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/jszip.min.js"></script>
 
 
 </body>

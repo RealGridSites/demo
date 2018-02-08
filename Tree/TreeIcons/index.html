@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.26</span>
+                            <span>최신버전 1.1.27</span>
                         </a>
                     </li>
                     
@@ -813,6 +813,15 @@
                   data, SearchItem, 검색
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/DataManager/hideRow/"
+                class=" sidebar-link ">
+                  <span>그리드 행 숨기기</span>
+                  <span style="display: none;">
+                  data, hide
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -1299,6 +1308,15 @@
                   excel, export, group
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Excels/ExportToCsv/"
+                class=" sidebar-link ">
+                  <span>ExportToCsv</span>
+                  <span style="display: none;">
+                  excel, export, csv
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -1586,7 +1604,7 @@
     var treeDataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.26");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27");
 
         treeDataProvider = new RealGridJS.LocalTreeDataProvider();
         treeView = new RealGridJS.TreeView("realtree");
@@ -2006,6 +2024,42 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 </div>
 </div>
 
+<h4 id="expander-이미지로-바꾸기">expander 이미지로 바꾸기</h4>
+
+<p>트리를 접거나 펼칠때 expander 이미지를 아래 두 함수를 사용해서 변경할 수 있습니다.</p>
+
+<ul>
+  <li>expandImage</li>
+  <li>collapseImage</li>
+</ul>
+
+<p><a class="btn primary small round lowercase" id="setExpandImage">expand 이미지 변경</a></p>
+
+<p>expand 표시를 해당 경로의 이미지 파일로 변경합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">expandImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_col.png"</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="setCollapseImage">collapse 이미지 변경</a></p>
+
+<p>collapse 표시를 해당 경로의 이미지 파일로 변경합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">collapseImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_exp.png"</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="setLineVisible">트리 라인 숨기기</a></p>
+
+<p>트리의 라인을 표시하지 않습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">lineVisible</span><span class="p">:</span><span class="kc">false</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
   $('#setIcons').click(function() {
     var imageList = new RealGridJS.ImageList("images", "/resource/image/smallflag/");
@@ -2070,6 +2124,18 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
     }
   });
 
+  $('#setExpandImage').click(function() {
+    treeView.setTreeOptions({expandImage:"/resource/image/smallflag/icon_folder_col.png"});
+  });
+
+  $('#setCollapseImage').click(function() {
+    treeView.setTreeOptions({collapseImage:"/resource/image/smallflag/icon_folder_exp.png"});
+  });
+
+  $('#setLineVisible').click(function() {
+    treeView.setTreeOptions({lineVisible:false});
+  });
+
 </script>
 
 
@@ -2088,9 +2154,9 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs_eval.1.1.26.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs-api.1.1.26.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/jszip.min.js"></script>
 
 
 </body>

@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.26</span>
+                            <span>최신버전 1.1.27</span>
                         </a>
                     </li>
                     
@@ -813,6 +813,15 @@
                   data, SearchItem, 검색
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/DataManager/hideRow/"
+                class=" sidebar-link ">
+                  <span>그리드 행 숨기기</span>
+                  <span style="display: none;">
+                  data, hide
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -1297,6 +1306,15 @@
                   <span>Excel - MultiExport</span>
                   <span style="display: none;">
                   excel, export, group
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Excels/ExportToCsv/"
+                class=" sidebar-link ">
+                  <span>ExportToCsv</span>
+                  <span style="display: none;">
+                  excel, export, csv
                   </span>
                 </a>
               </li></ul>
@@ -1854,7 +1872,7 @@ function onbtnDetailSave(evt) {
     var dpMain;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.26");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27");
 
         dpMain = new RealGridJS.LocalDataProvider();
         mainGrid = new RealGridJS.GridView("main");
@@ -2057,7 +2075,7 @@ function onbtnDetailSave(evt) {
     var dpDetail;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.26");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27");
 
         dpDetail = new RealGridJS.LocalDataProvider();
         detailGrid = new RealGridJS.GridView("detail");
@@ -2824,9 +2842,9 @@ Detail의 “OrderID” 는 저장시 자동으로 입력되도록 코딩되어 
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs_eval.1.1.26.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs-api.1.1.26.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/jszip.min.js"></script>
 
 
 </body>

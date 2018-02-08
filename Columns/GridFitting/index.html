@@ -176,7 +176,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.26</span>
+                            <span>최신버전 1.1.27</span>
                         </a>
                     </li>
                     
@@ -813,6 +813,15 @@
                   data, SearchItem, 검색
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/DataManager/hideRow/"
+                class=" sidebar-link ">
+                  <span>그리드 행 숨기기</span>
+                  <span style="display: none;">
+                  data, hide
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -1299,6 +1308,15 @@
                   excel, export, group
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Excels/ExportToCsv/"
+                class=" sidebar-link ">
+                  <span>ExportToCsv</span>
+                  <span style="display: none;">
+                  excel, export, csv
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -1587,7 +1605,7 @@ DevBox에서 기능을 확인해보세요.</p>
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.26");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -1803,7 +1821,29 @@ DevBox에서 기능을 확인해보세요.</p>
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      
+      <h4 id="그룹컬럼-보기">그룹컬럼 보기</h4>
+<p>버튼 클릭으로 그룹 컬럼이 표시된 상태에서 컬럼 너비 자동 조정 기능을 적용시켜 보시기 바랍니다.<br />
+버튼 클릭 시 그룹컬럼이 그리드에 표시됩니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnGroupColumnVisible">그룹컬럼 보이기</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">groupVisible</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">groupVisible</span><span class="p">){</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnPropert</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnPropert</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <h4 id="none">none</h4>
 <p>채우기를 하지 않습니다.</p>
 
@@ -1855,28 +1895,6 @@ DevBox에서 기능을 확인해보세요.</p>
 3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
   <span class="na">fitStyle</span><span class="p">:</span> <span class="s2">"fill"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<h4 id="그룹컬럼-보기">그룹컬럼 보기</h4>
-<p>버튼 클릭 시 그룹컬럼이 그리드에 표시됩니다.</p>
-
-<p><a class="btn primary small round lowercase" id="btnGroupColumnVisible">그룹컬럼 보이기</a></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">groupVisible</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">);</span>
-
-<span class="k">if</span><span class="p">(</span><span class="nx">groupVisible</span><span class="p">){</span>
-  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnPropert</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnPropert</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
@@ -1936,9 +1954,9 @@ $("#btnGroupColumnVisible").click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs_eval.1.1.26.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs-api.1.1.26.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.26/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/jszip.min.js"></script>
 
 
 </body>
