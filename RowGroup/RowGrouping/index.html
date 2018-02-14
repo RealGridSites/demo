@@ -1508,6 +1508,33 @@
           <ul class="list-toc">
             
               <li class="item-toc ">
+                <a href="/Interface/ColumnSelecting/"
+                class=" sidebar-link ">
+                  <span>하이차트 연동 컬럼 선택</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/ColumnFiltering/"
+                class=" sidebar-link ">
+                  <span>하이차트 연동 컬럼 필터링</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/RowSelecting/"
+                class=" sidebar-link ">
+                  <span>하이차트 연동 행 선택</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
                   <span>유비아이 리포트 연동</span>
@@ -1915,6 +1942,19 @@ var onDoneDataSet = function() {
 <p>아래 옵션들의 설정에 따라 각 행 그룹들은 <code class="highlighter-rouge">그룹 헤더</code>를 표시할 수 있습니다.<br />
 그룹 헤더에 표시하는 텍스트는 GridBase.<a href="http://help.realgrid.com/api/GridBase/setRowGroup/">setRowGroup</a> 함수에 전달되는 설정 개체의 <code class="highlighter-rouge">headerStatement</code> 값으로 지정합니다. <br />
 <code class="highlighter-rouge">headerStatement</code>의 기본값은 <code class="highlighter-rouge">"${groupField}: ${groupValue} - ${rowCount} rows"</code> 입니다.</p>
+
+<p>headerStatement 속성으로는 아래와 같은 값들을 설정할 수 있습니다.</p>
+
+<ul>
+  <li>groupField</li>
+  <li>fieldHeader</li>
+  <li>groupColumn</li>
+  <li>columnHeader</li>
+  <li>columnFooter</li>
+  <li>groupValue</li>
+  <li>rowCount</li>
+  <li>sum, max, min, avg</li>
+</ul>
 
 <p>headerStatement: 
 <select id="selHeaderStatement">

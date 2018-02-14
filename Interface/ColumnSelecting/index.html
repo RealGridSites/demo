@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     하이차트 연동 컬럼 선택
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="RealGrid와 HighCharts를 사용하여 연계한 예제입니다. 컬럼 해더의 CheckBox를 클릭하면 발생하는 그리드의 이벤트함수 onColumnCheckedChanged를 사용하여 Highcharts의 컬럼을 숨기거나 보이도록 하였습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1507,6 +1507,33 @@
           
           <ul class="list-toc">
             
+              <li class="item-toc current">
+                <a href="/Interface/ColumnSelecting/"
+                class="current sidebar-link ">
+                  <span>하이차트 연동 컬럼 선택</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/ColumnFiltering/"
+                class=" sidebar-link ">
+                  <span>하이차트 연동 컬럼 필터링</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/RowSelecting/"
+                class=" sidebar-link ">
+                  <span>하이차트 연동 행 선택</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
@@ -1545,18 +1572,384 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">하이차트 연동 컬럼 선택</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>RealGrid와 HighCharts를 사용하여 연계한 예제입니다. <br />
+컬럼 해더의 CheckBox를 클릭하면 발생하는 그리드의 이벤트함수 onColumnCheckedChanged를 사용하여 Highcharts의 컬럼을 숨기거나 보이도록 하였습니다.</p>
+
+<script type="text/javascript" src="/lib/highcharts/highcharts.js"></script>
+
+<script>
+var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+  var columnNames = ["GDP", "GNI", "PGNI", "DIncome"];
+
+  for (var i = 0; i < columnNames.length; i++){
+  	gridView.setColumnProperty(columnNames[i],"header",{
+        "checkLocation": "left",
+        "checked": true});
+    gridView.setColumnProperty(columnNames[i],"checked",true);
+  }
+
+  gridEvents(gridView, dataProvider);
+
+  dataProvider.setRows(data);
+}
+var onDoneDataSet = function() {
+
+}
+
+function setHiChart(provider) {
+    var categories = provider.getFieldValues("year");
+    var diVal = provider.getFieldValues("DIncome");
+    $.each(diVal, function (k, v) {
+        if (v == undefined)
+            diVal[k] = null;
+    });
+ 
+    $('#container').highcharts({
+        title: {
+            text: '통계청 총생산소득',
+            x: -20
+        },
+        subtitle: {
+            text: 'www.realgrid.com',
+            x: -20
+        },
+        xAxis: {
+            categories: categories,
+            crosshair: true
+        },
+        yAxis: [{
+            title: {
+                text: '소득 ($)'
+            },
+            labels: {
+                format: '{value} $'
+            }
+        }],
+        tooltip: {
+            shared: true // 한 로우에 여러 컬럼의 값을 표시
+        },
+        legend: {
+            enabled : false
+        },
+        series: [{
+            name: "GDP",
+            data: provider.getFieldValues("GDP"),
+            tooltip: {
+                valueSuffix: "$ ($100 million)"
+            }
+        }, {
+            name: "GNI",
+            data: provider.getFieldValues("GNI"),
+            tooltip: {
+                valueSuffix: "$ ($100 million)"
+            }
+        }, {
+            name: "PGNI",
+            data: provider.getFieldValues("PGNI"),
+            tooltip: {
+                valueSuffix: "$"
+            }
+        }, {
+            name: "DIncome",
+            data: diVal,
+            tooltip: {
+                valueSuffix: "$"
+            }
+        }],
+        chart: {
+            type: 'column',
+            events: {
+                load: function () {
+                    var chart = $("#container").highcharts();
+                    $.each(chart.series, function () {
+                        var col = gridView.columnByName(this.name);
+                        col.styles = { background: this.color.replace("#", "#39") };
+                        gridView.setColumn(col);
+                    });
+                },
+                click: function (e) {
+                    console.log(e);
+                }
+            }
+        }
+    });
+}
+
+function setColumnColor(name, color, check) {
+    var col = gridView.columnByName(name);
+    col.styles = check ? { background: color.replace("#", "#39") } : { background: null };
+    gridView.setColumn(col);
+}
+
+function gridEvents(grid, provider) {
+    grid.onColumnCheckedChanged = function (grid, column, checked) {
+        var colName = column.name;
+        var chart = $("#container").highcharts();
+        $.each(chart.series, function () {
+            if (this.name === colName) {
+                this.setVisible(checked);
+                setColumnColor(this.name, this.color, checked);
+            }
+        });
+    }
+ 
+    provider.onRowCountChanged = function () {
+        setHiChart(dataProvider);
+    }
+}
+</script>
+
+<div id="container" style="height:400px;"></div>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase active" id="btnDevbox" onclick="setDevbox()">설명 보이기</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.getJSON("/resource/layout/highchartsFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.ajaxSetup({
+              async: false
+            });
+
+            $.getJSON("/resource/layout/highchartsColumns.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+       
+
+        
+            
+
+            $.getJSON("/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/option/gridOption1.json", function (data, textStatus, jqXHR) {
+                gridView.setOptions(data);
+
+                $('.codeview.realgridviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+            
+            $.ajax({
+              type: "GET",
+              url:"/resource/data/총생산소득.json?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+        
+
+    });
+
+  function setDevbox() {
+    if($('#devbox')[0].clientHeight > 0){
+      $("#devbox").hide();
+      document.getElementById("btnDevbox").className = "btn tertiary small lowercase";
+      $(".with-devbox").attr("style","margin-right: 0%");
+      gridView.resetSize(); 
+    }else{
+      $("#devbox").show();
+      document.getElementById("btnDevbox").className = "btn tertiary small lowercase active";
+      $(".with-devbox").attr("style","margin-right: 40%");
+      gridView.resetSize();
+    }
+  }
+</script>
+
 
             <p>
 
@@ -1565,6 +1958,229 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="realgrid와-highcharts를-연계">RealGrid와 HighCharts를 연계</h4>
+
+<p>HighCharts는 <a href="http://www.highcharts.com/download">http://www.highcharts.com/download</a> 페이지에서 다운 받을수 있습니다.</p>
+
+<h4 id="차트-생성-함수">차트 생성 함수</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setHiChart</span><span class="p">(</span><span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">categories</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"year"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">diVal</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"DIncome"</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">diVal</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">v</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span>
+            <span class="nx">diVal</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">});</span>
+ 
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">({</span>
+        <span class="na">title</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">text</span><span class="p">:</span> <span class="s1">'통계청 총생산소득'</span><span class="p">,</span>
+            <span class="na">x</span><span class="p">:</span> <span class="o">-</span><span class="mi">20</span>
+        <span class="p">},</span>
+        <span class="na">subtitle</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">text</span><span class="p">:</span> <span class="s1">'www.realgrid.com'</span><span class="p">,</span>
+            <span class="na">x</span><span class="p">:</span> <span class="o">-</span><span class="mi">20</span>
+        <span class="p">},</span>
+        <span class="na">xAxis</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">categories</span><span class="p">:</span> <span class="nx">categories</span><span class="p">,</span>
+            <span class="na">crosshair</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="na">yAxis</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="na">title</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">text</span><span class="p">:</span> <span class="s1">'소득 ($)'</span>
+            <span class="p">},</span>
+            <span class="na">labels</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">format</span><span class="p">:</span> <span class="s1">'{value} $'</span>
+            <span class="p">}</span>
+        <span class="p">}],</span>
+        <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">shared</span><span class="p">:</span> <span class="kc">true</span> <span class="c1">// 한 로우에 여러 컬럼의 값을 표시</span>
+        <span class="p">},</span>
+        <span class="na">legend</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">enabled</span> <span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="na">series</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s2">"GDP"</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"GDP"</span><span class="p">),</span>
+            <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s2">"$ ($100 million)"</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s2">"GNI"</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"GNI"</span><span class="p">),</span>
+            <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s2">"$ ($100 million)"</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s2">"PGNI"</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"PGNI"</span><span class="p">),</span>
+            <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s2">"$"</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s2">"DIncome"</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">diVal</span><span class="p">,</span>
+            <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s2">"$"</span>
+            <span class="p">}</span>
+        <span class="p">}],</span>
+        <span class="na">chart</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s1">'column'</span><span class="p">,</span>
+            <span class="na">events</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">load</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#container"</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">();</span>
+                    <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="kd">var</span> <span class="nx">col</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+                        <span class="nx">col</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"#"</span><span class="p">,</span> <span class="s2">"#39"</span><span class="p">)</span> <span class="p">};</span>
+                        <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">col</span><span class="p">);</span>
+                    <span class="p">});</span>
+                <span class="p">},</span>
+                <span class="na">click</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="컬럼-헤더-체크-및-데이터-행-변경-이벤트">컬럼 헤더 체크 및 데이터 행 변경 이벤트</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">gridEvents</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">grid</span><span class="p">.</span><span class="nx">onColumnCheckedChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">colName</span> <span class="o">=</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#container"</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">();</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">colName</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="nx">checked</span><span class="p">);</span>
+                <span class="nx">setColumnColor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="p">,</span> <span class="nx">checked</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">provider</span><span class="p">.</span><span class="nx">onRowCountChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">setHiChart</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="헤더-체크-상태에-따른-컬럼-색상-설정">헤더 체크 상태에 따른 컬럼 색상 설정</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setColumnColor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">check</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">col</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">col</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="nx">check</span> <span class="p">?</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="nx">color</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"#"</span><span class="p">,</span> <span class="s2">"#39"</span><span class="p">)</span> <span class="p">}</span> <span class="p">:</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="kc">null</span> <span class="p">};</span>
+    <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">col</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+  </div>
+</div>
 
 
 
