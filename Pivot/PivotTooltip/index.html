@@ -1503,6 +1503,105 @@
         
         <li>
           
+            <div class="heading-toc">피벗(RealPivot)</div>
+          
+          <ul class="list-toc">
+            
+              <li class="item-toc ">
+                <a href="/Pivot/PivotTutorial/"
+                class=" sidebar-link ">
+                  <span>피벗 설치하기</span>
+                  <span style="display: none;">
+                  pivot
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotGrid/"
+                class=" sidebar-link ">
+                  <span>피벗 & 그리드</span>
+                  <span style="display: none;">
+                  pivot, grid, 피벗
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotSorting/"
+                class=" sidebar-link ">
+                  <span>피벗 정렬(Sorting)</span>
+                  <span style="display: none;">
+                  pivot, sort
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotFiltering/"
+                class=" sidebar-link ">
+                  <span>피벗 필터링(Filtering)</span>
+                  <span style="display: none;">
+                  pivot, filter
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotDatetime1/"
+                class=" sidebar-link ">
+                  <span>피벗 날짜 타입</span>
+                  <span style="display: none;">
+                  pivot, datetime, 날짜
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotDatetime2/"
+                class=" sidebar-link ">
+                  <span>피벗 날짜 타입2</span>
+                  <span style="display: none;">
+                  pivot, datetime, 날짜
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotRegions/"
+                class=" sidebar-link ">
+                  <span>피벗 영역</span>
+                  <span style="display: none;">
+                  pivot, Regions
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc current">
+                <a href="/Pivot/PivotTooltip/"
+                class="current sidebar-link ">
+                  <span>피벗 툴팁</span>
+                  <span style="display: none;">
+                  pivot, tooltip
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotProgress/"
+                class=" sidebar-link ">
+                  <span>피벗 프로그레스바</span>
+                  <span style="display: none;">
+                  pivot, progress
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotContextMenu/"
+                class=" sidebar-link ">
+                  <span>피벗 컨텍스트 메뉴</span>
+                  <span style="display: none;">
+                  pivot, contextMenu
+                  </span>
+                </a>
+              </li></ul>
+
+        </li>
+        
+        <li>
+          
             <div class="heading-toc">차트 및 리포트 연동</div>
           
           <ul class="list-toc">
@@ -1595,7 +1694,7 @@
         <div class="document-formatting">
             <p>피벗 body 영역에 마우스 호버 시 해당 셀의 정보를 툴팁으로 보여줍니다.</p>
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.6/css/default.css" />
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.8.0/css/default.css" />
 
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css" />
 
@@ -1603,13 +1702,15 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.6/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/messages/realpivot-messages.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.6/realpivot_eval.0.0.6.min.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/realpivot_eval.0.8.0.min.js"></script>
+
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/domutils.js"></script>
 
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
@@ -1786,7 +1887,8 @@ $(document).ready( function() {
       
       <h4 id="피벗-툴팁-설정">피벗 툴팁 설정</h4>
 
-<p>피벗 툴팁 적용 버튼 클릭 시 pivot 화면에 툴팁 기능을 적용시킵니다.</p>
+<p>피벗 툴팁 적용 버튼 클릭 시 pivot 화면에 툴팁 기능을 적용시킵니다.
+<a href="http://help.realgrid.com/pivotApi/types/DisplayOptions/">http://help.realgrid.com/pivotApi/types/DisplayOptions/</a></p>
 
 <p><a class="btn primary small round lowercase" id="btnSetPivotTooltip">피벗 툴팁 적용</a></p>
 
