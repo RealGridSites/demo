@@ -1699,8 +1699,6 @@
     dataProvider.setRows(data);
   }
   var onDoneDataSet = function() {
-    gridView.setColumnProperty("time","displayRegExp", /^([0-9]{2})([0-9]{2})([0-9]{2})$/)
-    gridView.setColumnProperty("time","displayReplace", "$1:$2:$3")
   }
 </script>
 
@@ -2029,41 +2027,6 @@ mask: <code class="highlighter-rouge">"0000-0000"</code> 로 입력하는 경우
     <span class="p">},</span> 
     <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
         <span class="s2">"datetimeFormat"</span><span class="err">:</span><span class="s2">"yyyy-MM-dd"</span>
-    <span class="p">}</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<h4 id="timecelleditor-마스크-편집기">TimeCellEditor 마스크 편집기</h4>
-
-<p>텍스트타입 형태로된 시간 편집기를 구현할 수 있습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14</pre></td><td class="code"><pre><span class="p">{</span>
-    <span class="p">...</span>
-    <span class="s2">"editor"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"center"</span><span class="p">,</span>
-        <span class="s2">"mask"</span><span class="err">:</span><span class="p">{</span>
-            <span class="s2">"definitions"</span><span class="err">:</span> <span class="p">{</span><span class="s2">"b"</span><span class="err">:</span><span class="s2">"[0-2]"</span><span class="p">,</span><span class="s2">"c"</span><span class="err">:</span><span class="s2">"[0-3]"</span><span class="p">,</span><span class="s2">"d"</span><span class="err">:</span><span class="s2">"[0-5]"</span><span class="p">,</span><span class="s2">"e"</span><span class="err">:</span><span class="s2">"[0-9]"</span><span class="p">},</span>
-            <span class="s2">"editMask"</span><span class="err">:</span><span class="s2">"bc:de:de"</span><span class="p">,</span>  
-            <span class="s2">"includedFormat"</span><span class="err">:</span><span class="kc">true</span><span class="p">,</span>
-            <span class="s2">"placeHolder"</span><span class="err">:</span><span class="s2">"00:00:00"</span><span class="p">,</span>
-            <span class="s2">"overWrite"</span><span class="err">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
     <span class="p">}</span>
     <span class="p">...</span>
 <span class="p">}</span>
