@@ -2179,18 +2179,27 @@ var onDoneDataSet = function() {
 84
 85
 86
-87</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnHeaderClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
+87
+88
+89
+90
+91
+92
+93</pre></td><td class="code"><pre><span class="c1">//flash 지원</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnHeaderClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onColumnHeaderClicked: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
-<span class="p">};</span>
+<span class="p">}</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnHeaderDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onColumnHeaderDblClicked: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnCheckedChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onColumnCheckedChanged: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">checked</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
 <span class="p">};</span>
+<span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onDataCellClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onDataCellClicked: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
 <span class="p">};</span>
+<span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onDataCellDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onDataCellDblClicked: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
 <span class="p">};</span>
@@ -2200,12 +2209,15 @@ var onDoneDataSet = function() {
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onFooterCellDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onFooterCellDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
 <span class="p">};</span>
+<span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onItemChecked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onItemChecked: "</span> <span class="o">+</span> <span class="nx">itemIndex</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
 <span class="p">};</span>
+<span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onItemsChecked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">items</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onItemsChecked: "</span> <span class="o">+</span> <span class="nx">items</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
 <span class="p">};</span>
+<span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onItemAllChecked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onItemAllChecked: "</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
 <span class="p">};</span>
