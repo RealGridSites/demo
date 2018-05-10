@@ -1789,6 +1789,12 @@ var onDoneDataSet = function() {
     gridView.onRowGroupPanelDblClicked = function (grid, column) {
         addLog("onRowGroupPanelDblClicked : " + "(" + column.name + ")");
     };
+    gridView.onBodyEmptyClicked =  function (grid) {
+        addLog("onBodyEmptyClicked");
+    };
+    gridView.onBodyEmptyDblClicked =  function (grid) {
+        addLog("onBodyEmptyDblClicked");
+    };
 
     function addLog(log) {
 	    var prevLog = $("#eventLog").val();
@@ -2185,7 +2191,13 @@ var onDoneDataSet = function() {
 90
 91
 92
-93</pre></td><td class="code"><pre><span class="c1">//flash 지원</span>
+93
+94
+95
+96
+97
+98
+99</pre></td><td class="code"><pre><span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnHeaderClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onColumnHeaderClicked: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -2277,6 +2289,12 @@ var onDoneDataSet = function() {
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupPanelDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupPanelDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">onBodyEmptyClicked</span> <span class="o">=</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onBodyEmptyClicked"</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">onBodyEmptyDblClicked</span> <span class="o">=</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onBodyEmptyDblClicked"</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></td></tr></tbody></table>
 </div>
