@@ -1553,24 +1553,6 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotDatetime2/"
-                class=" sidebar-link ">
-                  <span>피벗 날짜 타입2</span>
-                  <span style="display: none;">
-                  pivot, datetime, 날짜
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Pivot/PivotRegions/"
-                class=" sidebar-link ">
-                  <span>피벗 영역</span>
-                  <span style="display: none;">
-                  pivot, Regions
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotTooltip/"
                 class=" sidebar-link ">
                   <span>피벗 툴팁</span>
@@ -1594,6 +1576,15 @@
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotRegionsMap/"
+                class=" sidebar-link ">
+                  <span>피벗 영역</span>
+                  <span style="display: none;">
+                  pivot, Regions
                   </span>
                 </a>
               </li></ul>
@@ -2341,8 +2332,6 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 
             $.getJSON("/resource/layout/columnset1.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
-
-                console.log("비동기 재설정");
                 $.ajaxSetup({
                   async: true
                 });
@@ -2615,8 +2604,6 @@ success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 �
 
             $.getJSON("/resource/layout/treeColumnset1.json", function (data, textStatus, jqXHR) {
                 treeView.setColumns(data);
-
-                console.log("비동기 재설정");
                 $.ajaxSetup({
                   async: true
                 });
@@ -2961,8 +2948,6 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
             $.getJSON("/resource/layout/carColumns1.json", function (data, textStatus, jqXHR) {
                 gridView1.setColumns(data);
-
-                console.log("비동기 재설정");
                 $.ajaxSetup({
                   async: true
                 });

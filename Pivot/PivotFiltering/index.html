@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     피벗 필터링(Filtering)
     </title>
-    <meta name="description" content="Pivot의 필터링 기능을 적용시켜서 원하는 조건으로 데이터를 조회합니다.">
+    <meta name="description" content="원본데이터에서 조건을 만족하는 데이터만 피벗으로 구성할 수 잇습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1553,24 +1553,6 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotDatetime2/"
-                class=" sidebar-link ">
-                  <span>피벗 날짜 타입2</span>
-                  <span style="display: none;">
-                  pivot, datetime, 날짜
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Pivot/PivotRegions/"
-                class=" sidebar-link ">
-                  <span>피벗 영역</span>
-                  <span style="display: none;">
-                  pivot, Regions
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotTooltip/"
                 class=" sidebar-link ">
                   <span>피벗 툴팁</span>
@@ -1594,6 +1576,15 @@
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotRegionsMap/"
+                class=" sidebar-link ">
+                  <span>피벗 영역</span>
+                  <span style="display: none;">
+                  pivot, Regions
                   </span>
                 </a>
               </li></ul>
@@ -1692,9 +1683,9 @@
         </div>
 
         <div class="document-formatting">
-            <p>Pivot의 필터링 기능을 적용시켜서 원하는 조건으로 데이터를 조회합니다.</p>
+            <p>원본데이터에서 조건을 만족하는 데이터만 피벗으로 구성할 수 잇습니다.</p>
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.8.0/css/default.css" />
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css" />
 
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css" />
 
@@ -1706,11 +1697,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/messages/realpivot-messages.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/realpivot_eval.0.8.0.min.js"></script>
-
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/domutils.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/realpivot_eval.0.9.0.min.js"></script>
 
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
@@ -1759,42 +1748,86 @@ $(document).ready( function() {
 
     pivot.setFieldMapping([{
         name: "국가",
-        sourceField: "국가"
+        sourceField: "국가",
+        valueEnable: false
     },{
         name: "브랜드명",
-        sourceField: "브랜드명"
+        sourceField: "브랜드명",
+        valueEnable: false
     },{
         name: "판매분기",
         sourceField: "판매날짜",
         dateType:"quarter",
-        fieldHeader:"분기",
+        fieldHeader:"판매분기",
         displayFormat: "${value}사분기",
-        summaryFormat: "${value}사분기 합"
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매년도",
         sourceField: "판매날짜",
         dateType: "year",
-        fieldHeader: "년도",
+        fieldHeader: "판매년도",
         displayFormat: "${value}년도",
-        summaryFormat: "${value}년도 합"
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매월",
         sourceField: "판매날짜",
         dateType: "month",
-        fieldHeader: "월",
+        fieldHeader: "판매월",
         displayFormat: "${value}월",
-        summaryFormat: "${value}월 합"
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매일",
+        sourceField: "판매날짜",
+        dateType: "day",
+        fieldHeader: "판매일",
+        displayFormat: "${value}일",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매주",
+        sourceField: "판매날짜",
+        dateType: "weekofmonth",
+        fieldHeader: "판매월주차",
+        displayFormat: "${value}주차",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "half",
+        sourceField: "판매날짜",
+        dateType: "half",
+        fieldHeader: "판매반기",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "weekofyear",
+        sourceField: "판매날짜",
+        dateType: "weekofyear",
+        fieldHeader: "판매연주차",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매수량",
         sourceField: "판매수량",
-        numberFormat:"#,##0"
+        numberFormat:"#,##0",
+        labelEnable: false
     },{
         name: "차량가격",
         sourceField: "차량가격",
-        numberFormat:"#,##0"
+        numberFormat:"#,##0",
+        labelEnable: false
     },{
         name:"차종",
-        sourceField:"차종"
+        sourceField:"차종",
+        valueEnable: false
+    },{
+        name:"연료",
+        sourceField:"연료",
+        valueEnable: false
     }]);
 
     pivot.setPivotFields({
@@ -1837,10 +1870,12 @@ $(document).ready( function() {
   <div class="sidebar-content devbox document-formatting">
       
       <h4 id="필터링-설정">필터링 설정</h4>
+<p>conditions속성으로 필터 조건을 지정하고 <a href="http://help.realgrid.com/api/types/FilteringOptions/">operation</a>속성에 조건간의 연산방식을 지정합니다.
+conditions에는 criteria로 식을 지정하거나, values에 특정 값을 지정할 수 있습니다.</p>
 
-<p>판매분기, 브랜드명의 조건으로 <a href="http://help.realgrid.com/pivotApi/RealPivot/filter/">필터링</a>합니다.</p>
+<p>이사분기 이상이고 브랜드명이 ‘기아’, 현대’인 데이터로 필터링 합니다.</p>
 
-<p><a class="btn primary small round lowercase" id="btnSetFilter1">필터링 옵션 적용</a></p>
+<p><a class="btn primary small round lowercase" id="btnSetFilter1">필터링</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1852,15 +1887,16 @@ $(document).ready( function() {
     <span class="na">operation</span><span class="p">:</span> <span class="s2">"and"</span><span class="p">,</span>  <span class="c1">// and | or</span>
     <span class="na">conditions</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 2"</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"브랜드명"</span><span class="p">,</span> <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = '기아'"</span> <span class="p">}</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"브랜드명"</span><span class="p">,</span> <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="s2">"기아"</span><span class="p">,</span> <span class="s2">"현대"</span><span class="p">]</span> <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
-<p>판매월, 차종의 조건으로 필터링합니다.</p>
 
-<p><a class="btn primary small round lowercase" id="btnSetFilter2">필터링 옵션 적용</a></p>
+<p>판매월이 9월 이후이고 차종이 중형인 데이터로 필터링합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetFilter2">필터링</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1871,13 +1907,24 @@ $(document).ready( function() {
 7</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">filter</span><span class="p">({</span>
     <span class="na">operation</span><span class="p">:</span> <span class="s2">"and"</span><span class="p">,</span>  <span class="c1">// and | or</span>
     <span class="na">conditions</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매월"</span><span class="p">,</span> <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 10"</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"차종"</span><span class="p">,</span> <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = '중형'"</span> <span class="p">}</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매월"</span><span class="p">,</span> <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 9"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"차종"</span><span class="p">,</span> <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="s2">"중형"</span><span class="p">]</span> <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
+
+<p><a class="btn primary small round lowercase" id="btnResetFilter">필터 초기화</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">resetFilter</span><span class="p">();</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="api-link">API LINK</h4>
+
+<p><a href="http://help.realgrid.com/pivotApi/RealPivot/filter/">filter()</a></p>
 
 <script>
 $('#btnSetFilter1').click(function() {
@@ -1885,7 +1932,7 @@ $('#btnSetFilter1').click(function() {
 	    operation: "and",  // and | or
 	    conditions: [
 	        { name: "판매분기", criteria: "value >= 2" },
-	        { name: "브랜드명", criteria: "value = '기아'" }
+	        { name: "브랜드명", values: ["기아", "현대"] }
 	    ]
 	});
 });
@@ -1894,11 +1941,15 @@ $('#btnSetFilter2').click(function() {
 	pivot.filter({
 	    operation: "and",  // and | or
 	    conditions: [
-	        { name: "판매월", criteria: "value >= 10" },
-	        { name: "차종", criteria: "value = '중형'" }
+	        { name: "판매월", criteria: "value >= 9" },
+	        { name: "차종", values: ["중형"] }
 	    ]
 	});
 });
+
+$('#btnResetFilter').click(function () {
+	pivot.resetFilter();
+})
 </script>
 
 

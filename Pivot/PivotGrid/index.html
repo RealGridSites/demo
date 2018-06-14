@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     피벗 & 그리드
     </title>
-    <meta name="description" content="그리드의 데이터를 Pivot으로 표현합니다.">
+    <meta name="description" content="동일한 DataProvider로 GridView와 PivotView로 표현한 예제입니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1553,24 +1553,6 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotDatetime2/"
-                class=" sidebar-link ">
-                  <span>피벗 날짜 타입2</span>
-                  <span style="display: none;">
-                  pivot, datetime, 날짜
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Pivot/PivotRegions/"
-                class=" sidebar-link ">
-                  <span>피벗 영역</span>
-                  <span style="display: none;">
-                  pivot, Regions
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotTooltip/"
                 class=" sidebar-link ">
                   <span>피벗 툴팁</span>
@@ -1594,6 +1576,15 @@
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotRegionsMap/"
+                class=" sidebar-link ">
+                  <span>피벗 영역</span>
+                  <span style="display: none;">
+                  pivot, Regions
                   </span>
                 </a>
               </li></ul>
@@ -1671,20 +1662,30 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">피벗 & 그리드</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
-            <p>그리드의 데이터를 Pivot으로 표현합니다.</p>
+            <p>동일한 DataProvider로 GridView와 PivotView로 표현한 예제입니다.</p>
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.8.0/css/default.css" />
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css" />
 
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css" />
 
@@ -1696,11 +1697,11 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/messages/realpivot-messages.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/realpivot_eval.0.8.0.min.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/realpivot_eval.0.9.0.min.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/domutils.js"></script>
+<script type="text/javascript" src="/lib/realgrid/RealGridSkins.js"></script>
 
 <font size="6">RealGrid</font>
 <div id="realgrid" style="width:100%;height:500px;"></div>
@@ -1715,7 +1716,7 @@ var pivot;
 
 $(document).ready( function() {
     RealGridJS.setTrace(false);
-    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
+    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27/");
     dataProvider = new RealGridJS.LocalDataProvider();
     gridView = new RealGridJS.GridView("realgrid");
     gridView.setDataSource(dataProvider);
@@ -1723,6 +1724,8 @@ $(document).ready( function() {
 
     pivot = new RealPivot("realpivot");
     pivot.setDataProvider(dataProvider);
+
+    gridView.setStyles(OfficeBlueSkin)
 
     var fields = [{
         fieldName:"국산/수입"
@@ -1875,42 +1878,86 @@ $(document).ready( function() {
 
     pivot.setFieldMapping([{
         name: "국가",
-        sourceField: "국가"
+        sourceField: "국가",
+        valueEnable: false
     },{
         name: "브랜드명",
-        sourceField: "브랜드명"
+        sourceField: "브랜드명",
+        valueEnable: false
     },{
         name: "판매분기",
         sourceField: "판매날짜",
         dateType:"quarter",
-        fieldHeader:"분기",
+        fieldHeader:"판매분기",
         displayFormat: "${value}사분기",
-        summaryFormat: "${value}사분기 합"
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매년도",
         sourceField: "판매날짜",
         dateType: "year",
-        fieldHeader: "년도",
+        fieldHeader: "판매년도",
         displayFormat: "${value}년도",
-        summaryFormat: "${value}년도 합"
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매월",
         sourceField: "판매날짜",
         dateType: "month",
-        fieldHeader: "월",
+        fieldHeader: "판매월",
         displayFormat: "${value}월",
-        summaryFormat: "${value}월 합"
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매일",
+        sourceField: "판매날짜",
+        dateType: "day",
+        fieldHeader: "판매일",
+        displayFormat: "${value}일",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매주",
+        sourceField: "판매날짜",
+        dateType: "weekofmonth",
+        fieldHeader: "판매월주차",
+        displayFormat: "${value}주차",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "half",
+        sourceField: "판매날짜",
+        dateType: "half",
+        fieldHeader: "판매반기",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "weekofyear",
+        sourceField: "판매날짜",
+        dateType: "weekofyear",
+        fieldHeader: "판매연주차",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매수량",
         sourceField: "판매수량",
-        numberFormat:"#,##0"
+        numberFormat:"#,##0",
+        labelEnable: false
     },{
         name: "차량가격",
         sourceField: "차량가격",
-        numberFormat:"#,##0"
+        numberFormat:"#,##0",
+        labelEnable: false
     },{
         name:"차종",
-        sourceField:"차종"
+        sourceField:"차종",
+        valueEnable: false
+    },{
+        name:"연료",
+        sourceField:"연료",
+        valueEnable: false
     }]);
 
     pivot.setPivotFields({
@@ -1949,6 +1996,28 @@ $(document).ready( function() {
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="피벗-and-그리드">피벗 AND 그리드</h4>
+
+<p><a class="btn primary small round lowercase" id="btnDrawPivot">변경내용을 피벗에 적용</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">buildPivot</span><span class="p">();</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+$('#btnDrawPivot').click(function() {
+	pivot.buildPivot();
+});
+</script>
+
+
+  </div>
+</div>
 
 
 

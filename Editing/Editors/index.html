@@ -1553,24 +1553,6 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotDatetime2/"
-                class=" sidebar-link ">
-                  <span>피벗 날짜 타입2</span>
-                  <span style="display: none;">
-                  pivot, datetime, 날짜
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Pivot/PivotRegions/"
-                class=" sidebar-link ">
-                  <span>피벗 영역</span>
-                  <span style="display: none;">
-                  pivot, Regions
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotTooltip/"
                 class=" sidebar-link ">
                   <span>피벗 툴팁</span>
@@ -1594,6 +1576,15 @@
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotRegionsMap/"
+                class=" sidebar-link ">
+                  <span>피벗 영역</span>
+                  <span style="display: none;">
+                  pivot, Regions
                   </span>
                 </a>
               </li></ul>
@@ -1702,7 +1693,6 @@
     var CustomerNames = ["ALFKI", "ANATR", "ANTON", "AROUT", "BERGS", "BLAUS", "BLONP", "BOLID", "BONAP", "BOTTM", "BSBEV", "CACTU", "CENTC", "CHOPS", "COMMI", "CONSH", "DRACD", "DUMON", "EASTC", "ERNSH", "FAMIA", "FISSA", "FOLIG", "FOLKO", "FRANK", "FRANR", "FRANS", "FURIB", "GALED", "GODOS", "GOURL", "GREAL", "GROSR", "HANAR", "HILAA", "HUNGC", "HUNGO", "ISLAT", "KOENE", "LACOR", "LAMAI", "LAUGB", "LAZYK", "LEHMS", "LETSS", "LILAS", "LINOD", "LONEP", "MAGAA", "MAISD", "MEREP", "MORGK", "NORTS", "OCEAN", "OLDWO", "OTTIK", "PARIS", "PERIC", "PICCO", "PRINI", "QUEDE", "QUEEN", "QUICK", "RANCH", "RATTC", "REGGC", "RICAR", "RICSU", "ROMEY", "SANTG", "SAVEA", "SEVES", "SIMOB", "SPECD", "SPLIR", "SUPRD", "THEBI", "THECR", "TOMSP", "TORTU", "TRADH", "TRAIH", "VAFFE", "VICTE", "VINET", "WANDK", "WARTH", "WELLI", "WHITC", "WILMK", "WOLZA"];
 
     gridView.onEditSearch = function (grid, index, text) {
-        console.log("onEditSearch:" + index.itemIndex + "," + index.column + ", " + text);
         var items = CustomerNames.filter(function (str) {
             return str.indexOf(text) == 0;
         });
@@ -1788,8 +1778,6 @@
 
             $.getJSON("/resource/layout/EditorColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
-
-                console.log("비동기 재설정");
                 $.ajaxSetup({
                   async: true
                 });

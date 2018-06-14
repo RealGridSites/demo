@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     피벗 정렬(Sorting)
     </title>
-    <meta name="description" content="Pivot의 정렬 기능을 사용해서 label 또는 value 값을 정렬할 수 있습니다.">
+    <meta name="description" content="라벨값 또는 특정 조건의 값을 기준으로 피벗을 정렬할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1553,24 +1553,6 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotDatetime2/"
-                class=" sidebar-link ">
-                  <span>피벗 날짜 타입2</span>
-                  <span style="display: none;">
-                  pivot, datetime, 날짜
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Pivot/PivotRegions/"
-                class=" sidebar-link ">
-                  <span>피벗 영역</span>
-                  <span style="display: none;">
-                  pivot, Regions
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotTooltip/"
                 class=" sidebar-link ">
                   <span>피벗 툴팁</span>
@@ -1594,6 +1576,15 @@
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotRegionsMap/"
+                class=" sidebar-link ">
+                  <span>피벗 영역</span>
+                  <span style="display: none;">
+                  pivot, Regions
                   </span>
                 </a>
               </li></ul>
@@ -1692,9 +1683,9 @@
         </div>
 
         <div class="document-formatting">
-            <p>Pivot의 정렬 기능을 사용해서 label 또는 value 값을 정렬할 수 있습니다.</p>
+            <p>라벨값 또는 특정 조건의 값을 기준으로 피벗을 정렬할 수 있습니다.</p>
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.8.0/css/default.css" />
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css" />
 
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css" />
 
@@ -1706,11 +1697,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/messages/realpivot-messages.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/realpivot_eval.0.8.0.min.js"></script>
-
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/domutils.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/realpivot_eval.0.9.0.min.js"></script>
 
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
@@ -1759,42 +1748,86 @@ $(document).ready( function() {
 
     pivot.setFieldMapping([{
         name: "국가",
-        sourceField: "국가"
+        sourceField: "국가",
+        valueEnable: false
     },{
         name: "브랜드명",
-        sourceField: "브랜드명"
+        sourceField: "브랜드명",
+        valueEnable: false
     },{
         name: "판매분기",
         sourceField: "판매날짜",
         dateType:"quarter",
-        fieldHeader:"분기",
+        fieldHeader:"판매분기",
         displayFormat: "${value}사분기",
-        summaryFormat: "${value}사분기 합"
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매년도",
         sourceField: "판매날짜",
         dateType: "year",
-        fieldHeader: "년도",
+        fieldHeader: "판매년도",
         displayFormat: "${value}년도",
-        summaryFormat: "${value}년도 합"
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매월",
         sourceField: "판매날짜",
         dateType: "month",
-        fieldHeader: "월",
+        fieldHeader: "판매월",
         displayFormat: "${value}월",
-        summaryFormat: "${value}월 합"
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매일",
+        sourceField: "판매날짜",
+        dateType: "day",
+        fieldHeader: "판매일",
+        displayFormat: "${value}일",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매주",
+        sourceField: "판매날짜",
+        dateType: "weekofmonth",
+        fieldHeader: "판매월주차",
+        displayFormat: "${value}주차",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "half",
+        sourceField: "판매날짜",
+        dateType: "half",
+        fieldHeader: "판매반기",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "weekofyear",
+        sourceField: "판매날짜",
+        dateType: "weekofyear",
+        fieldHeader: "판매연주차",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매수량",
         sourceField: "판매수량",
-        numberFormat:"#,##0"
+        numberFormat:"#,##0",
+        labelEnable: false
     },{
         name: "차량가격",
         sourceField: "차량가격",
-        numberFormat:"#,##0"
+        numberFormat:"#,##0",
+        labelEnable: false
     },{
         name:"차종",
-        sourceField:"차종"
+        sourceField:"차종",
+        valueEnable: false
+    },{
+        name:"연료",
+        sourceField:"연료",
+        valueEnable: false
     }]);
 
     pivot.setPivotFields({
@@ -1837,15 +1870,15 @@ $(document).ready( function() {
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      <h4 id="pivot-정렬">pivot 정렬</h4>
-<p>피벗 그리드를 label이나 value 기준으로 정렬하려 할 때 사용합니다.<br />
-<a href="http://help.realgrid.com/pivotApi/RealPivot/sort/">http://help.realgrid.com/pivotApi/RealPivot/sort/</a>
-<a href="http://help.realgrid.com/pivotApi/types/SortMethod/">http://help.realgrid.com/pivotApi/types/SortMethod/</a>
-<a href="http://help.realgrid.com/pivotApi/types/SortDirection/">http://help.realgrid.com/pivotApi/types/SortDirection/</a></p>
+      <h4 id="피벗-정렬">피벗 정렬</h4>
+<p>피벗에서 <a href="http://help.realgrid.com/pivotApi/types/SortMethod/" target="_blank">method 속성</a>을 지정하여 라벨값 또는 값을 기준으로 정렬할 수 있습니다.<br />
+라벨값 정렬은 컬럼/행에 표시되는 라벨의 알파벳 정렬이고,
+값 정렬은 특정 조건의 값을 기준으로 하는 정렬입니다. (예, 일사분기 판매수량 합계 역순으로 행을 정렬)</p>
 
-<h4 id="label-기준-정렬">label 기준 정렬</h4>
-
-<p><a class="btn primary small round lowercase" id="btnSetLabelSort">label 기준 정렬</a></p>
+<h4 id="라벨값-기준-정렬">라벨값 기준 정렬</h4>
+<p>라벨값 기준 정렬시 labels 속성이 필요합니다. 
+labels 속성에는 각 필드들의 이름과 <a href="http://help.realgrid.com/pivotApi/types/SortDirection/" target="_blank">정렬 순서</a>을 지정합니다.<br />
+<a class="btn primary small round lowercase" id="btnLabelSort">라벨값 기준 정렬</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1860,17 +1893,21 @@ $(document).ready( function() {
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">sort</span><span class="p">({</span>
+14
+15
+16</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">sort</span><span class="p">({</span>
   <span class="na">column</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">method</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
       <span class="na">labels</span><span class="p">:</span> <span class="p">[</span>  
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">}</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">},</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"월"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">}</span>
      <span class="p">]</span>
   <span class="p">},</span>
   <span class="na">row</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span><span class="s2">"label"</span><span class="p">,</span>
     <span class="na">labels</span><span class="p">:</span> <span class="p">[</span>  
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"브랜드명"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">}</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"브랜드명"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"ascending"</span><span class="p">},</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"차종"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"ascending"</span><span class="p">}</span>
      <span class="p">]</span>
   <span class="p">}</span>
 <span class="p">});</span>
@@ -1878,49 +1915,149 @@ $(document).ready( function() {
 </div>
 </div>
 
-<!--
-#### value 기준 정렬
+<h4 id="값-기준-정렬">값 기준 정렬</h4>
+<p>값 기준 정렬시 값필드 명(fieldName)과 <a href="http://help.realgrid.com/pivotApi/types/SortDirection/" target="_blank">정렬 순서</a> 그리고 정렬조건을 지정합니다.<br />
+conditions 속성은 정렬할 조건으로 column의 경우 행 필드가, row의 경우 컬럼 필드가 조건으로 명시되어야 합니다.<br />
+conditions가 생략되면 전체 요약 기준으로 정렬합니다.</p>
 
-<a class="btn primary small round lowercase" id="btnSetValueSort">value 기준 정렬</a>
+<p><a class="btn primary small round lowercase" id="btnValueSort">판매수량 값 기준 정렬</a></p>
 
-```js
-pivot.sort({
-  row: {
-      method: "value",
-      fieldName: "차량가격", 
-      direction: "descending"
-  }
-});
-```
--->
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">sort</span><span class="p">({</span>
+  <span class="na">column</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
+      <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span>
+      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">row</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
+      <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span> 
+      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span>
+      <span class="na">conditions</span><span class="p">:</span> <span class="p">[{</span>
+      	<span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">0</span>
+      <span class="p">}]</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="복합-정렬">복합 정렬</h4>
+<p>피벗에서 컬럼과 행의 정렬 기준을 따로 지정할 수 있습니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnComplexSort">복합 기준 정렬</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">sort</span><span class="p">({</span>
+  <span class="na">column</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+      <span class="na">labels</span><span class="p">:</span> <span class="p">[</span>  
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">},</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"월"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">}</span>
+     <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="na">row</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
+      <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span> 
+      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span>
+      <span class="na">conditions</span><span class="p">:</span> <span class="p">[{</span>
+      	<span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">0</span>
+      <span class="p">}]</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="api-link">API LINK</h4>
+<p><a href="http://help.realgrid.com/pivotApi/RealPivot/sort/" target="_blank">sort()</a></p>
+
 <script>
-$('#btnSetLabelSort').click(function() {
+$('#btnLabelSort').click(function() {
 	pivot.sort({
 	  column: {
 	      method: "label",
 	      labels: [  
-	        { name: "판매분기", direction: "descending"}
+	        { name: "판매분기", direction: "descending"},
+	        { name: "월", direction: "descending"}
 	     ]
 	  },
 	  row: {
 	    method:"label",
 	    labels: [  
-	        { name: "브랜드명", direction: "descending"}
+	        { name: "브랜드명", direction: "ascending"},
+	        { name: "차종", direction: "ascending"}
 	     ]
 	  }
 	});
 });
-/*
-$('#btnSetValueSort').click(function() {
+
+$('#btnValueSort').click(function() {
 	pivot.sort({
+	  column: {
+	      method: "value",
+	      fieldName: "판매수량",
+	      direction: "descending",
+	  },
 	  row: {
 	      method: "value",
-	      fieldName: "차량가격", 
-	      direction: "descending"
+	      fieldName: "판매수량", 
+	      direction: "descending",
+	      conditions: [{
+	      	name: "판매분기", value: 0
+	      }]
 	  }
 	});
 });
-*/
+
+$('#btnComplexSort').click(function() {
+	pivot.sort({
+	  column: {
+	      method: "label",
+	      labels: [  
+	        { name: "판매분기", direction: "descending"},
+	        { name: "월", direction: "descending"}
+	     ]
+	  },
+	  row: {
+	      method: "value",
+	      fieldName: "판매수량", 
+	      direction: "descending",
+	      conditions: [{
+	      	name: "판매분기", value: 0
+	      }]
+	  }
+	});
+});
+
 </script>
 
 
