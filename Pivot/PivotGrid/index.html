@@ -1662,11 +1662,21 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
             <h1 class="title-page">피벗 & 그리드</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
@@ -1984,6 +1994,28 @@ $(document).ready( function() {
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="피벗-and-그리드">피벗 AND 그리드</h4>
+
+<p><a class="btn primary small round lowercase" id="btnDrawPivot">변경내용을 피벗에 적용</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">buildPivot</span><span class="p">();</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<script>
+$('#btnDrawPivot').click(function() {
+	pivot.buildPivot();
+});
+</script>
+
+
+  </div>
+</div>
 
 
 
