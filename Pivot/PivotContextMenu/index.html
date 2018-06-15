@@ -1897,9 +1897,9 @@ $(document).ready( function() {
     <span class="na">text</span><span class="p">:</span> <span class="s2">"엑셀저장"</span><span class="p">,</span>
     <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="nx">pivot</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s2">"excel"</span><span class="p">,</span>
             <span class="na">target</span><span class="p">:</span> <span class="s2">"local"</span><span class="p">,</span>
-            <span class="na">fileName</span><span class="p">:</span> <span class="s2">"RealPivotExport.xlsx"</span><span class="p">,</span>
-            <span class="na">expandAll</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="na">fileName</span><span class="p">:</span> <span class="s2">"RealPivotExport.xlsx"</span>
         <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">}]);</span>
@@ -1913,9 +1913,9 @@ $('#btnSetContextMenu').click(function() {
         text: "엑셀저장",
         callback: function(){
             pivot.exportGrid({
+                type: "excel",
                 target: "local",
-                fileName: "RealPivotExport.xlsx",
-                expandAll: true
+                fileName: "RealPivotExport.xlsx"
             });
         }
     }]);
