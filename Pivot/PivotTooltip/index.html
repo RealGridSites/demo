@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     피벗 툴팁
     </title>
-    <meta name="description" content="피벗 body 영역에 마우스 호버 시 해당 셀의 정보를 툴팁으로 보여줍니다.">
+    <meta name="description" content="피벗 셀에 마우스 호버링 시 관련 정보를 툴팁으로 표시합니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1562,20 +1562,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotProgress/"
-                class=" sidebar-link ">
-                  <span>피벗 프로그레스바</span>
-                  <span style="display: none;">
-                  pivot, progress
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotContextMenu/"
                 class=" sidebar-link ">
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1683,7 +1683,7 @@
         </div>
 
         <div class="document-formatting">
-            <p>피벗 body 영역에 마우스 호버 시 해당 셀의 정보를 툴팁으로 보여줍니다.</p>
+            <p>피벗 셀에 마우스 호버링 시 관련 정보를 툴팁으로 표시합니다.</p>
 
 <link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css" />
 
@@ -1871,21 +1871,83 @@ $(document).ready( function() {
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      <h4 id="피벗-툴팁-설정">피벗 툴팁 설정</h4>
+      <h4 id="툴팁-표시-설정">툴팁 표시 설정</h4>
 
-<p>피벗 툴팁 적용 버튼 클릭 시 pivot 화면에 툴팁 기능을 적용시킵니다.
+<p>피벗에서 값 셀과 라빌 셀에 각각 툴팁을 표시할 수 있습니다.
 <a href="http://help.realgrid.com/pivotApi/types/DisplayOptions/">http://help.realgrid.com/pivotApi/types/DisplayOptions/</a></p>
 
-<p><a class="btn primary small round lowercase" id="btnSetPivotTooltip">피벗 툴팁 적용</a></p>
+<p><a class="btn primary small round lowercase" id="btnSetTooltip">값 툴팁 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span><span class="na">showTooltip</span><span class="p">:</span><span class="kc">true</span><span class="p">})</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+	<span class="na">showTooltip</span><span class="p">:</span><span class="kc">true</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a class="btn primary small round lowercase" id="btnSetLabelTooltip">라벨 툴팁 표시</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+	<span class="na">showLabelTooltip</span><span class="p">:</span><span class="kc">true</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>툴팁은 마우스 포인터가 셀에 일정 시간 머무르면 표시하도록 되어있습니다. 기본값은 200(millisecond)입니다.<br />
+<a class="btn primary small round lowercase" id="btnSetTooltipDelay">툴팁 지연시간 1초로 변경</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+	<span class="na">tooltipDelay</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="툴팁-내용-커스트마이징">툴팁 내용 커스트마이징</h4>
+
+<p>피벗에서는 툴팁의 내용을 개발자가 변경할 수 있도록 값 셀의 <a href="http://help.realgrid.com/pivotApi/RealPivot/onTooltip/">onTooltip</a> 콜백 과 라벨 셀의 <a href="http://help.realgrid.com/pivotApi/RealPivot/onLabelTooltip/">onLabelTooltip</a> 콜백을 제공합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetCallback">툴팁 콜백 지정</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">onTooltip</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">view</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">"사용자 지정 툴팁입니다."</span><span class="p">;</span> 
+<span class="p">}</span>
+<span class="nx">pivot</span><span class="p">.</span><span class="nx">onLabelTooltip</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">view</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">"사용자 지정 라벨 툴팁입니다."</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
 <script>
-	$('#btnSetPivotTooltip').click(function() {
-		pivot.setDisplayOptions({showTooltip:true})
+	$('#btnSetTooltip').click(function() {
+		pivot.setDisplayOptions({showTooltip:true});
+    });
+	$('#btnSetLabelTooltip').click(function() {
+		pivot.setDisplayOptions({showLabelTooltip:true});
+    });
+	$('#btnSetTooltipDelay').click(function() {
+		pivot.setDisplayOptions({tooltipDelay: 1000});
+    });
+	$('#btnSetCallback').click(function() {
+		pivot.onTooltip = function (view, index, s) {
+		    return "사용자 지정 툴팁입니다."; 
+		}
+		pivot.onLabelTooltip = function (view, index, s) {
+		    return "사용자 지정 라벨 툴팁입니다."
+		}
     });
 </script>
 

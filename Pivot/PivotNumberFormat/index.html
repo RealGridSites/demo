@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    피벗 프로그레스바
+    피벗 숫자포맷
     </title>
-    <meta name="description" content="피벗 데이터 로드 시 프로그레드바를 표시합니다.">
+    <meta name="description" content="numberFormat 기능을 사용해서 pivot에 표시될 데이터를 정수, 소수 형태로 설정할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1561,21 +1561,21 @@
                   </span>
                 </a>
               </li>
-              <li class="item-toc current">
-                <a href="/Pivot/PivotProgress/"
-                class="current sidebar-link ">
-                  <span>피벗 프로그레스바</span>
-                  <span style="display: none;">
-                  pivot, progress
-                  </span>
-                </a>
-              </li>
               <li class="item-toc ">
                 <a href="/Pivot/PivotContextMenu/"
                 class=" sidebar-link ">
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc current">
+                <a href="/Pivot/PivotNumberFormat/"
+                class="current sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1664,7 +1664,7 @@
 
     <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">피벗 프로그레스바</h1>
+            <h1 class="title-page">피벗 숫자포맷</h1>
             
 
             
@@ -1683,7 +1683,7 @@
         </div>
 
         <div class="document-formatting">
-            <p>피벗 데이터 로드 시 프로그레드바를 표시합니다.</p>
+            <p>numberFormat 기능을 사용해서 pivot에 표시될 데이터를 정수, 소수 형태로 설정할 수 있습니다.</p>
 
 <link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css" />
 
@@ -1872,20 +1872,273 @@ $(document).ready( function() {
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      <h4 id="피벗-프로그레그스바">피벗 프로그레그스바</h4>
+      <h4 id="피벗-숫자포맷">피벗 숫자포맷</h4>
 
-<p>피벗 데이터 로드 시 진행 상태를 <a href="http://help.realgrid.com/pivotApi/types/DisplayOptions/">프로그레스바</a>로 표시합니다.</p>
+<p>pivot setup화면의 값필드 설정 시 직접 변경할 수 있습니다.<br /></p>
 
-<p><a class="btn primary small round lowercase" id="btnDrawView">다시 그리기</a></p>
+<p>버튼 클릭 시 소수점 첫째자리 까지 표시됩니다.<br />
+<a class="btn primary small round lowercase" id="btnSetNumberFormat1">소수점 첫째자리 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span><span class="na">showProgress</span><span class="p">:</span><span class="kc">true</span><span class="p">})</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([</span>
+	<span class="p">{</span>
+	    <span class="na">name</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span>
+	    <span class="na">sourceField</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span>
+	    <span class="na">numberFormat</span><span class="p">:</span><span class="s2">"#,##0.0"</span><span class="p">,</span>
+	    <span class="na">labelEnable</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="p">},{</span>
+	    <span class="na">name</span><span class="p">:</span> <span class="s2">"차량가격"</span><span class="p">,</span>
+	    <span class="na">sourceField</span><span class="p">:</span> <span class="s2">"차량가격"</span><span class="p">,</span>
+	    <span class="na">numberFormat</span><span class="p">:</span><span class="s2">"#,##0.0"</span><span class="p">,</span>
+	    <span class="na">labelEnable</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="p">},</span>
+	<span class="p">...</span>
+<span class="p">]);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>버튼 클릭 시 소수점 첫째자리 까지 표시됩니다.<br />
+<a class="btn primary small round lowercase" id="btnSetNumberFormat2">소수점 둘째자리 표시</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([</span>
+	<span class="p">{</span>
+	    <span class="na">name</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span>
+	    <span class="na">sourceField</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span>
+	    <span class="na">numberFormat</span><span class="p">:</span><span class="s2">"#,##0.00"</span><span class="p">,</span>
+	    <span class="na">labelEnable</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="p">},{</span>
+	    <span class="na">name</span><span class="p">:</span> <span class="s2">"차량가격"</span><span class="p">,</span>
+	    <span class="na">sourceField</span><span class="p">:</span> <span class="s2">"차량가격"</span><span class="p">,</span>
+	    <span class="na">numberFormat</span><span class="p">:</span><span class="s2">"#,##0.00"</span><span class="p">,</span>
+	    <span class="na">labelEnable</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="p">},</span>
+	<span class="p">...</span>
+<span class="p">]);</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
 <script>
-$('#btnDrawView').click(function() {
-	pivot.drawView()
+$('#btnSetNumberFormat1').click(function() {
+	pivot.setFieldMapping([{
+        name: "국가",
+        sourceField: "국가",
+        valueEnable: false
+    },{
+        name: "브랜드명",
+        sourceField: "브랜드명",
+        valueEnable: false
+    },{
+        name: "판매분기",
+        sourceField: "판매날짜",
+        dateType:"quarter",
+        fieldHeader:"판매분기",
+        displayFormat: "${value}사분기",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매년도",
+        sourceField: "판매날짜",
+        dateType: "year",
+        fieldHeader: "판매년도",
+        displayFormat: "${value}년도",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매월",
+        sourceField: "판매날짜",
+        dateType: "month",
+        fieldHeader: "판매월",
+        displayFormat: "${value}월",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매일",
+        sourceField: "판매날짜",
+        dateType: "day",
+        fieldHeader: "판매일",
+        displayFormat: "${value}일",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매주",
+        sourceField: "판매날짜",
+        dateType: "weekofmonth",
+        fieldHeader: "판매월주차",
+        displayFormat: "${value}주차",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "half",
+        sourceField: "판매날짜",
+        dateType: "half",
+        fieldHeader: "판매반기",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "weekofyear",
+        sourceField: "판매날짜",
+        dateType: "weekofyear",
+        fieldHeader: "판매연주차",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매수량",
+        sourceField: "판매수량",
+        numberFormat:"#,##0.0",
+        labelEnable: false
+    },{
+        name: "차량가격",
+        sourceField: "차량가격",
+        numberFormat:"#,##0.0",
+        labelEnable: false
+    },{
+        name:"차종",
+        sourceField:"차종",
+        valueEnable: false
+    },{
+        name:"연료",
+        sourceField:"연료",
+        valueEnable: false
+    }]);
+
+    pivot.setPivotFields({
+        columns: ["판매년도","판매월"],
+        rows: ["국가","브랜드명","차종"],
+        values: [{
+            name: "차량가격",
+            expression: "sum"
+        }, {
+            name: "판매수량",
+            expression: "sum"
+        }]
+    });
+});
+
+$('#btnSetNumberFormat2').click(function() {
+	pivot.setFieldMapping([{
+        name: "국가",
+        sourceField: "국가",
+        valueEnable: false
+    },{
+        name: "브랜드명",
+        sourceField: "브랜드명",
+        valueEnable: false
+    },{
+        name: "판매분기",
+        sourceField: "판매날짜",
+        dateType:"quarter",
+        fieldHeader:"판매분기",
+        displayFormat: "${value}사분기",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매년도",
+        sourceField: "판매날짜",
+        dateType: "year",
+        fieldHeader: "판매년도",
+        displayFormat: "${value}년도",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매월",
+        sourceField: "판매날짜",
+        dateType: "month",
+        fieldHeader: "판매월",
+        displayFormat: "${value}월",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매일",
+        sourceField: "판매날짜",
+        dateType: "day",
+        fieldHeader: "판매일",
+        displayFormat: "${value}일",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매주",
+        sourceField: "판매날짜",
+        dateType: "weekofmonth",
+        fieldHeader: "판매월주차",
+        displayFormat: "${value}주차",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "half",
+        sourceField: "판매날짜",
+        dateType: "half",
+        fieldHeader: "판매반기",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "weekofyear",
+        sourceField: "판매날짜",
+        dateType: "weekofyear",
+        fieldHeader: "판매연주차",
+        displayFormat: "${value}주",
+        summaryFormat: "요약",
+        valueEnable: false
+    },{
+        name: "판매수량",
+        sourceField: "판매수량",
+        numberFormat:"#,##0.00",
+        labelEnable: false
+    },{
+        name: "차량가격",
+        sourceField: "차량가격",
+        numberFormat:"#,##0.00",
+        labelEnable: false
+    },{
+        name:"차종",
+        sourceField:"차종",
+        valueEnable: false
+    },{
+        name:"연료",
+        sourceField:"연료",
+        valueEnable: false
+    }]);
+
+    pivot.setPivotFields({
+        columns: ["판매년도","판매월"],
+        rows: ["국가","브랜드명","차종"],
+        values: [{
+            name: "차량가격",
+            expression: "sum"
+        }, {
+            name: "판매수량",
+            expression: "sum"
+        }]
+    });
 });
 </script>
 

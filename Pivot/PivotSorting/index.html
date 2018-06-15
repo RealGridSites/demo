@@ -1562,20 +1562,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotProgress/"
-                class=" sidebar-link ">
-                  <span>피벗 프로그레스바</span>
-                  <span style="display: none;">
-                  pivot, progress
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotContextMenu/"
                 class=" sidebar-link ">
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1871,14 +1871,24 @@ $(document).ready( function() {
   <div class="sidebar-content devbox document-formatting">
       
       <h4 id="피벗-정렬">피벗 정렬</h4>
-<p>피벗에서 <a href="http://help.realgrid.com/pivotApi/types/SortMethod/" target="_blank">method 속성</a>을 지정하여 라벨값 또는 값을 기준으로 정렬할 수 있습니다.<br />
-라벨값 정렬은 컬럼/행에 표시되는 라벨의 알파벳 정렬이고,
-값 정렬은 특정 조건의 값을 기준으로 하는 정렬입니다. (예, 일사분기 판매수량 합계 역순으로 행을 정렬)</p>
+
+<p>피벗에서 정렬하는 방식은 라벨 기준 정렬 방식과 특정 조건의 값 기준 정렬방식이 있습니다.<br />
+라벨 정렬은 컬럼/행에 존재하는 라벨기준 정렬이고, 값 정렬은 <code class="highlighter-rouge">일사분기 판매수량 합계가 큰 순서대로 정렬한다</code>와 같은 조건을 부여할 수 있습니다.</p>
+
+<p>피벗에서 데이터를 정렬하는 방법은 다음과 같습니다.</p>
+
+<ol>
+  <li>
+    <p><a href="http://help.realgrid.com/pivotApi/RealPivot/setFieldMapping/" target="_blank">setFieldMapping()</a>호출 시 <a href="/pivotApi/types/PivotField/" target="_blank">PivotField</a>의 <a href="http://help.realgrid.com/pivotApi/types/SortDirection/" target="_blank">sortDir속성</a>을 기본 정렬을 지정하는 방법 (라벨 정렬만 해당)</p>
+  </li>
+  <li><a href="http://help.realgrid.com/pivotApi/RealPivot/sort/" target="_blank">sort()</a> 함수로 정렬하는 방법 (라벨정렬과 값정렬 모두 해당)</li>
+  <li>피벗내 Setup UI를 이용한 방법</li>
+</ol>
 
 <h4 id="라벨값-기준-정렬">라벨값 기준 정렬</h4>
-<p>라벨값 기준 정렬시 labels 속성이 필요합니다. 
+<p>라벨 기준 정렬시 labels 속성이 필요합니다. 
 labels 속성에는 각 필드들의 이름과 <a href="http://help.realgrid.com/pivotApi/types/SortDirection/" target="_blank">정렬 순서</a>을 지정합니다.<br />
-<a class="btn primary small round lowercase" id="btnLabelSort">라벨값 기준 정렬</a></p>
+<a class="btn primary small round lowercase" id="btnLabelSort">라벨 기준 정렬</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1956,9 +1966,9 @@ conditions가 생략되면 전체 요약 기준으로 정렬합니다.</p>
 </div>
 
 <h4 id="복합-정렬">복합 정렬</h4>
-<p>피벗에서 컬럼과 행의 정렬 기준을 따로 지정할 수 있습니다.</p>
+<p>피벗에서 컬럼과 행의 정렬 기준을 각각 따로 지정할 수 있습니다.</p>
 
-<p><a class="btn primary small round lowercase" id="btnComplexSort">복합 기준 정렬</a></p>
+<p><a class="btn primary small round lowercase" id="btnComplexSort">복합 정렬</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1998,7 +2008,6 @@ conditions가 생략되면 전체 요약 기준으로 정렬합니다.</p>
 </div>
 
 <h4 id="api-link">API LINK</h4>
-<p><a href="http://help.realgrid.com/pivotApi/RealPivot/sort/" target="_blank">sort()</a></p>
 
 <script>
 $('#btnLabelSort').click(function() {

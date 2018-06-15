@@ -1561,21 +1561,21 @@
                   </span>
                 </a>
               </li>
-              <li class="item-toc ">
-                <a href="/Pivot/PivotProgress/"
-                class=" sidebar-link ">
-                  <span>피벗 프로그레스바</span>
-                  <span style="display: none;">
-                  pivot, progress
-                  </span>
-                </a>
-              </li>
               <li class="item-toc current">
                 <a href="/Pivot/PivotContextMenu/"
                 class="current sidebar-link ">
                   <span>피벗 컨텍스트 메뉴</span>
                   <span style="display: none;">
                   pivot, contextMenu
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1871,8 +1871,7 @@ $(document).ready( function() {
       
       <h4 id="피벗-컨텍스트-메뉴-설정">피벗 컨텍스트 메뉴 설정</h4>
 
-<p>왼쪽 최상단에 위치한 버튼을 클릭할때 표시할 메뉴를 지정합니다.<br />
-<a href="http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/">http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/</a></p>
+<p>왼쪽 최상단에 위치한 버튼을 클릭할때 표시할 메뉴를 <a href="http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/">setContextMenu()</a> 함수로 지정합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetContextMenu">컨텍스트 메뉴 적용</a></p>
 
@@ -1885,17 +1884,7 @@ $(document).ready( function() {
 7
 8
 9
-10
-11
-12
-13
-14
-15</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setContextMenu</span><span class="p">([{</span>
-    <span class="na">text</span><span class="p">:</span> <span class="s2">"버전확인"</span><span class="p">,</span>
-    <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getVersion</span><span class="p">())</span>
-    <span class="p">}</span>
-<span class="p">},</span> <span class="p">{</span>
+10</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setContextMenu</span><span class="p">([{</span>
     <span class="na">text</span><span class="p">:</span> <span class="s2">"엑셀저장"</span><span class="p">,</span>
     <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="nx">pivot</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
@@ -1912,11 +1901,6 @@ $(document).ready( function() {
 <script>
 $('#btnSetContextMenu').click(function() {
 	pivot.setContextMenu([{
-        text: "버전확인",
-        callback: function(){
-            alert(pivot.getVersion())
-        }
-    }, {
         text: "엑셀저장",
         callback: function(){
             pivot.exportGrid({
