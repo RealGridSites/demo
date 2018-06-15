@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    트리뷰 아이콘 컨트롤하기
+    Pivot 최신버전
     </title>
-    <meta name="description" content="트리뷰(TreeView)에는 트리컬럼의 왼쪽에 노드마다 서로 다른 아이콘을 표시할 수 있습니다.또, 아이콘 필드의 값을 변경 하면 노드의 펼쳐짐, 접힘상태에 따라 다른 아이콘을 표시할 수도 있습니다.">
+    <meta name="description" content="RealGrid 데모사이트 입니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -173,9 +173,9 @@
                     
                 
                     
-                    <li class="item-toc ">
+                    <li class="item-toc current ">
                         <a href="/pivotRelease.html"
-                          class="sidebar-link  ">
+                          class="sidebar-link  current">
                             <span>Pivot 최신버전</span>
                         </a>
                     </li>
@@ -1489,9 +1489,9 @@
                   </span>
                 </a>
               </li>
-              <li class="item-toc current">
+              <li class="item-toc ">
                 <a href="/Tree/TreeIcons/"
-                class="current sidebar-link ">
+                class=" sidebar-link ">
                   <span>트리뷰 아이콘 컨트롤하기</span>
                   <span style="display: none;">
                   트리, Tree
@@ -1671,259 +1671,40 @@
 
 <div class="content">
 
-    <div class="content-wrapper with-devbox">
+    <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">트리뷰 아이콘 컨트롤하기</h1>
+            <h1 class="title-page">Pivot 최신버전</h1>
+            
+                <div class="subtitle-page">
+                    
+                        
+                    
+                </div>
             
 
-            
-            <!-- <div class="page-actions">
-                <div class="actions-group">
-                    <a class="btn primary small lowercase"
-                        onclick="togglePageStyles();">
-                        <span class="icon-github"></span>
-                        <span>개발자용</span>
-                    </a>
-                </div>
-            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
-            <p><code class="highlighter-rouge">트리뷰(TreeView)</code>에는 트리컬럼의 왼쪽에 노드마다 서로 다른 아이콘을 표시할 수 있습니다.
-또, 아이콘 필드의 값을 변경 하면 노드의 <code class="highlighter-rouge">펼쳐짐</code>, <code class="highlighter-rouge">접힘</code>상태에 따라 다른 아이콘을 표시할 수도 있습니다.</p>
+            <p>Pivot 최신 버전 이력</p>
 
-<script>
-  var onSuccessDataSet = function(data, textStatus, jqXHR) {
-    treeDataProvider.setJsonRows(data, "rows", "", "icon");
-  }
+<h2 id="090">0.9.0</h2>
+<p>2018년 6월 15일</p>
+<ul>
+  <li>데이터 수집 속도가 개선되었습니다.</li>
+  <li>현재 보이는 부분만 그리는 Virtual Rendering이 기본 옵션으로 적용되었습니다. DisplayOptions.virtualRendering을 false로 하시면 끌 수 있습니다.</li>
+  <li>Setup에서 드래그 UI가 개선되어 Firefox, IE 9등의 브라우저에서 사용할 수 있도록 하였습니다.</li>
+  <li>Setup에서 필드 제거 버튼을 추가하였습니다.</li>
+  <li>DisplayOptions.rowHeight의 기본값이 25로 변경되었습니다.</li>
+  <li>rowHeight크기에 맞춰 스크롤 되도록 개선되었습니다.</li>
+  <li>많은 오류가 수정되었습니다.</li>
+</ul>
 
-  var onDoneDataSet = function() {
-    treeView.expand(0);
-    treeView.expand(1);
-  }
-</script>
-
-<div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
-
-<div class="toolbox">
-  <div class="buttonbox">
-    
-    <a class="btn tertiary small lowercase active" id="btnDevbox" onclick="setDevbox()">설명 보이기</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreefield')">필드</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreecolumn')">컬럼</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreedpoption')">Provider 옵션</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreeviewoption')">Tree 옵션</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realtreestyle')">스타일</a>
-  </div>
-  <pre class="codeview realtreefield"></pre>
-  <pre class="codeview realtreecolumn"></pre>
-  <pre class="codeview realtreedpoption"></pre>
-  <pre class="codeview realtreeviewoption"></pre>
-  <pre class="codeview realtreestyle"></pre>
-</div>
-
-<script>
-    var treeView;
-    var treeDataProvider;
-
-    $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27");
-
-        treeDataProvider = new RealGridJS.LocalTreeDataProvider();
-        treeView = new RealGridJS.TreeView("realtree");
-        treeView.setDataSource(treeDataProvider);
-
-        
-            
-
-            $.getJSON("/resource/layout/treeFieldset3.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
-                treeDataProvider.setFields(data);
-
-                $('.codeview.realtreefield').html(
-                  JSON.stringify(data, null, 4)
-                );
-
-                
-            })
-            .done(function (data, textStatus, jqXHR) {
-                treeView.setFocus();
-
-                
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
-
-                
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
-                
-            });
-        
-
-        
-            
-
-            $.ajaxSetup({
-              async: false
-            });
-
-            $.getJSON("/resource/layout/treeColumnset3.json", function (data, textStatus, jqXHR) {
-                treeView.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
-
-                $('.codeview.realtreecolumn').html(
-                  JSON.stringify(data, null, 4)
-                );
-
-                
-            })
-            .done(function (data, textStatus, jqXHR) {
-                treeView.setFocus();
-
-                
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
-
-                
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
-                
-            });
-        
-
-        
-            
-
-            $.getJSON("/resource/option/treeDataProviderOption1.json", function (data, textStatus, jqXHR) {
-                treeDataProvider.setOptions(data);
-
-                $('.codeview.realtreedpoption').html(
-                  JSON.stringify(data, null, 4)
-                );
-
-                
-            })
-            .done(function (data, textStatus, jqXHR) {
-                treeView.setFocus();
-
-                
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
-
-                
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
-                
-            });
-        
-
-        
-            
-
-            $.getJSON("/resource/option/treeOption1.json", function (data, textStatus, jqXHR) {
-                treeView.setOptions(data);
-
-                $('.codeview.realtreeviewoption').html(
-                  JSON.stringify(data, null, 4)
-                );
-
-                
-            })
-            .done(function (data, textStatus, jqXHR) {
-                treeView.setFocus();
-
-                
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
-
-                
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
-                
-            });
-        
-
-        
-            
-
-            $.getJSON("/resource/style/treeStyle1.json", function (data, textStatus, jqXHR) {
-                treeView.setStyles(data);
-
-                $('.codeview.realtreestyle').html(
-                  JSON.stringify(data, null, 4)
-                );
-
-                
-            })
-            .done(function (data, textStatus, jqXHR) {
-                treeView.setFocus();
-
-                
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
-
-                
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
-                
-            });
-        
-
-
-        
-            
-            
-            $.ajax({
-              type: "GET",
-              url:"/resource/data/treedata3.json?__time__=" + new Date().getTime(),
-              success: function(data, textStatus, jqXHR) {
-                
-                  onSuccessDataSet(data, textStatus, jqXHR);
-                
-              }
-              
-            })
-            .done( function(data, textStatus, jqXHR) {
-              treeView.setFocus();
-              
-                onDoneDataSet(data, textStatus, jqXHR);
-              
-              
-            })
-            .fail( function(jqxhr, textStatus, error) {
-              var err = textStatus + ', ' + error;
-              
-                console && console.log("jQuery ajax() Failed: " + err);
-                alert("jQuery ajax() Failed: " + err);
-              
-            });
-        
-
-    });
-  function setDevbox() {
-      if($('#devbox')[0].clientHeight > 0){
-        $("#devbox").hide();
-        document.getElementById("btnDevbox").className = "btn tertiary small lowercase";
-        $(".with-devbox").attr("style","margin-right: 0%");
-        treeView.resetSize(); 
-      }else{
-        $("#devbox").show();
-        document.getElementById("btnDevbox").className = "btn tertiary small lowercase active";
-        $(".with-devbox").attr("style","margin-right: 40%");
-        treeView.resetSize();
-      }
-    }
-</script>
-
+<h2 id="080">0.8.0</h2>
+<p>2018년 2월 28일
+ initial version</p>
 
             <p>
 
@@ -1932,339 +1713,6 @@
     </div>
 </div>
 
-
-<div class="sidebar devbox" id="devbox">
-  <div class="sidebar-content devbox document-formatting">
-      
-      
-<h4 id="realgrid의-image-list">RealGrid의 Image List</h4>
-
-<p>그리드뷰(GridView) 또는 트리뷰(TreeView)에서 이미지를 사용하려면 먼저,
-<a href="http://help.realgrid.com/api/types/ImageList/">ImageList</a>객체를 이용해 이미지파일의
-경로를 목록으로 만들어야 합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
-<span class="err">    </span><span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">([</span>
-<span class="err">                </span><span class="s2">"icon_male.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"icon_female.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"de.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"gr.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"hu.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"is.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="p">...</span>
-<span class="err">        </span><span class="p">]</span>
-<span class="err">    </span><span class="p">);</span>
-<span class="err"> </span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">registerImageList</span><span class="p">(</span><span class="nx">imageList</span><span class="p">);</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span>
-    <span class="na">iconImages</span><span class="p">:</span> <span class="nx">imageList</span><span class="p">.</span><span class="nx">getName</span><span class="p">(),</span>
-    <span class="na">iconWidth</span><span class="p">:</span> <span class="mi">20</span>
-<span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-<p>위 코드는 실제로 왼쪽 데모 화면에서 트리뷰(TreeView)에 아이콘을 적용하기 위해 이미지 목록을 만들고
-트리에 등록하는 코드입니다.
-이미지 목록을 트리에 등록하고 사용하려면</p>
-
-<ul>
-  <li><a href="http://help.realgrid.com/api/GridView/registerImageList/">GridBase.registerImageList()</a></li>
-  <li><a href="http://help.realgrid.com/api/GridView/registerImageList/">TreeView.setTreeOptions()</a></li>
-</ul>
-
-<p>함수를 사용하면 됩니다.</p>
-
-<h4 id="트리에-아이콘-표시하기">트리에 아이콘 표시하기</h4>
-
-<p>트리뷰(TreeView)에는 각 노드에 아이콘을 표시할 수 있습니다.</p>
-
-<p>아래 트리 구현 함수들에서는 함수의 마지막 인자인 <code class="highlighter-rouge">iconField</code>에 트리컬럼에 표시할 아이콘의 index값이
-들어 있는 필드명을 입력합니다. 이 필드에 들어있는 값이 트리노드의 기본 아이콘 인덱스(icon index)가 됩니다.</p>
-
-<ul>
-  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a></li>
-  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setJsonRows()</a></li>
-  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setXmlRows()</a></li>
-</ul>
-
-<p>또 다른 트리 구현 함수인 아래 함수들에서는 두 번째 인자인 <code class="highlighter-rouge">options</code>
-즉, <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
-<code class="highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
-
-<ul>
-  <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillJsonData/">TreeDataProvider.fillJsonData()</a></li>
-  <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillXmlData/">TreeDataProvider.fillXmlData()</a></li>
-  <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillCsvData/">TreeDataProvider.fillCsvData()</a></li>
-</ul>
-
-<p><a class="btn primary small round lowercase" id="setIcons">트리 아이콘 표시</a></p>
-
-<p>트리뷰에서 사용할 아이콘의 목록을 <a href="http://help.realgrid.com/api/features/Image%20List/">ImageList</a>로 작성하고 만들어진 ImageList를
-<a href="http://help.realgrid.com/api/GridView/registerImageList/">TreeView.registerImageList()</a>함수로
-TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는 아이콘에 트리노드에 표시됩니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></td><td class="code"><pre><span class="c1">// 이미지 리스트 만들기</span>
-<span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
-<span class="err">    </span><span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">([</span>
-<span class="err">                </span><span class="s2">"icon_male.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"icon_female.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"icon_folder_col.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"icon_folder-exp.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"de.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"gr.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"hu.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"is.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="p">...</span>
-<span class="err">        </span><span class="p">]</span>
-<span class="err">    </span><span class="p">);</span>
-<span class="err"> </span>
-<span class="c1">// 트리뷰에 이미지 리스트 등록하기</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">registerImageList</span><span class="p">(</span><span class="nx">imageList</span><span class="p">);</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span>
-    <span class="na">iconImages</span><span class="p">:</span> <span class="nx">imageList</span><span class="p">.</span><span class="nx">getName</span><span class="p">(),</span>
-    <span class="na">iconWidth</span><span class="p">:</span> <span class="mi">20</span>
-<span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<h4 id="트리-노드-아이콘-변경-하기">트리 노드 아이콘 변경 하기</h4>
-
-<p>트리 노드의 <code class="highlighter-rouge">아이콘 인덱스(icon index)</code>를 가져오고 지정하기 위해</p>
-
-<ul>
-  <li><a href="http://help.realgrid.com/api/TreeDataProvider/getIconIndex/">TreeDataProvider.getIconIndex()</a></li>
-  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setIconIndex/">TreeDataProvider.setIconIndex()</a></li>
-</ul>
-
-<p>함수를 사용합니다.</p>
-
-<p><a class="btn primary small round lowercase" id="setIconIndex">현재 노드의 아이콘 변경하기</a></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10</pre></td><td class="code"><pre><span class="c1">// 현재 노드의 아이콘을 2 또는 3으로 변경하기</span>
-<span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">current</span> <span class="o">&amp;&amp;</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">iidx</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getIconIndex</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">iidx</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setIconIndex</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setIconIndex</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<h4 id="트리를-접거나-펼칠때-아이콘-바꾸기">트리를 접거나 펼칠때 아이콘 바꾸기</h4>
-
-<p>트리를 접거나 펼칠때 아이콘을 변경하기 위해 아래 두 이벤트를 사용할 수 있습니다.</p>
-
-<ul>
-  <li><a href="http://help.realgrid.com/api/TreeView/onTreeItemExpanded/">TreeView.onTreeItemExpanded()</a>: 노드가 펼쳐진 다음 호출</li>
-  <li><a href="http://help.realgrid.com/api/TreeView/onTreeItemCollapsed/">TreeView.onTreeItemCollapsed()</a>: 노드가 접힌 다음 호출</li>
-</ul>
-
-<p>위 콜백 함수를 이용해 트리 노드를 접거나 펼칠때 폴더 모양의 아이콘을 변경하는 코드를 실행해 보세요.</p>
-
-<p><a class="btn primary small round lowercase" id="setDynamicIconIndex">노드를 접고 펼칠 때 아이콘 변경</a></p>
-
-<p>버튼을 누르면 트리의 두번째 레벨 노드를 접을때와 펼칠때 다른 아이콘이 표시됩니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15</pre></td><td class="code"><pre><span class="c1">// 노드를 펼칠때 아이콘 인덱스를 3으로 변경</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">onTreeItemExpanded</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tree</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">rowId</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">level</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getLevel</span><span class="p">(</span><span class="nx">rowId</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">level</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setIconIndex</span><span class="p">(</span><span class="nx">rowId</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// 노드를 접을때 아이콘 인덱스를 2로 변경</span>
-<span class="nx">treeView</span><span class="p">.</span><span class="nx">onTreeItemCollapsed</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tree</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">rowId</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">level</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getLevel</span><span class="p">(</span><span class="nx">rowId</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">level</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setIconIndex</span><span class="p">(</span><span class="nx">rowId</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<h4 id="expander-이미지로-바꾸기">expander 이미지로 바꾸기</h4>
-
-<p>트리를 접거나 펼칠때 expander 이미지를 아래 두 함수를 사용해서 변경할 수 있습니다.</p>
-
-<ul>
-  <li>expandImage</li>
-  <li>collapseImage</li>
-</ul>
-
-<p><a class="btn primary small round lowercase" id="setExpandImage">expand 이미지 변경</a></p>
-
-<p>expand 표시를 해당 경로의 이미지 파일로 변경합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">expandImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_col.png"</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p><a class="btn primary small round lowercase" id="setCollapseImage">collapse 이미지 변경</a></p>
-
-<p>collapse 표시를 해당 경로의 이미지 파일로 변경합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">collapseImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_exp.png"</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p><a class="btn primary small round lowercase" id="setLineVisible">트리 라인 숨기기</a></p>
-
-<p>트리의 라인을 표시하지 않습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">lineVisible</span><span class="p">:</span><span class="kc">false</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<script>
-  $('#setIcons').click(function() {
-    var imageList = new RealGridJS.ImageList("images", "/resource/image/smallflag/");
-    imageList.addUrls([
-                "icon_male.png",
-                "icon_female.png",
-                "icon_folder_col.png",
-                "icon_folder_exp.png",
-                "de.png",
-                "gr.png",
-                "hu.png",
-                "is.png",
-                "eg.png",
-                "au.png",
-                "nz.png",
-                "ph.png",
-                "sg.png",
-                "th.png",
-                "tr.png",
-                "ca.png",
-                "mx.png",
-                "us.png",
-                "bo.png",
-                "cr.png",
-                "pe.png",
-                "uy.png"
-        ]
-    );
- 
-    treeView.registerImageList(imageList);
-    treeView.setTreeOptions({
-        iconImages: imageList.getName(),
-        iconWidth: 20
-    });
-  });
-
-  $('#setIconIndex').click(function() {
-    var current = treeView.getCurrent();
-    if (current && current.dataRow) {
-      var iidx = treeDataProvider.getIconIndex(current.dataRow);
-      if (iidx == 3) {
-        treeDataProvider.setIconIndex(current.dataRow, 2);
-      } else {
-        treeDataProvider.setIconIndex(current.dataRow, 3);
-      }
-    }
-  });
-
-  $('#setDynamicIconIndex').click(function() {
-    treeView.onTreeItemCollapsed = function (tree, itemIndex, rowId) {
-      var level = treeDataProvider.getLevel(rowId);
-      if (level == 2) {
-        treeDataProvider.setIconIndex(rowId, 2);
-      }
-    }
-
-    treeView.onTreeItemExpanded = function (tree, itemIndex, rowId) {
-      var level = treeDataProvider.getLevel(rowId);
-      if (level == 2) {
-        treeDataProvider.setIconIndex(rowId, 3);
-      }
-    }
-  });
-
-  $('#setExpandImage').click(function() {
-    treeView.setTreeOptions({expandImage:"/resource/image/smallflag/icon_folder_col.png"});
-  });
-
-  $('#setCollapseImage').click(function() {
-    treeView.setTreeOptions({collapseImage:"/resource/image/smallflag/icon_folder_exp.png"});
-  });
-
-  $('#setLineVisible').click(function() {
-    treeView.setTreeOptions({lineVisible:false});
-  });
-
-</script>
-
-
-  </div>
-</div>
 
 
 
