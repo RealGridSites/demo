@@ -2011,9 +2011,9 @@ conditions가 생략되면 전체 요약 기준으로 정렬합니다.</p>
   <span class="na">row</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">method</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
       <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span> 
-      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span>
+      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">,</span>
       <span class="na">conditions</span><span class="p">:</span> <span class="p">[{</span>
-      	<span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">0</span>
+      	<span class="na">name</span><span class="p">:</span> <span class="s2">"판매년도"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">2016</span>
       <span class="p">}]</span>
   <span class="p">}</span>
 <span class="p">});</span>
@@ -2053,17 +2053,15 @@ conditions가 생략되면 전체 요약 기준으로 정렬합니다.</p>
   <span class="na">row</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">method</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
       <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span> 
-      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span>
+      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">,</span>
       <span class="na">conditions</span><span class="p">:</span> <span class="p">[{</span>
-      	<span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">0</span>
+      	<span class="na">name</span><span class="p">:</span> <span class="s2">"판매년도"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">2016</span>
       <span class="p">}]</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
-
-<h4 id="api-link">API LINK</h4>
 
 <script>
 $('#btnLabelSort').click(function() {
@@ -2097,7 +2095,7 @@ $('#btnValueSort').click(function() {
 	      fieldName: "판매수량", 
 	      direction: "descending",
 	      conditions: [{
-	      	name: "판매분기", value: 0
+	      	name: "판매년도", value: 2016
 	      }]
 	  }
 	});
@@ -2117,7 +2115,7 @@ $('#btnComplexSort').click(function() {
 	      fieldName: "판매수량", 
 	      direction: "descending",
 	      conditions: [{
-	      	name: "판매분기", value: 0
+	      	name: "판매년도", value: 2016
 	      }]
 	  }
 	});
