@@ -124,7 +124,6 @@
 
 <script> 
   $(document).ready( function() {
-
     $('input[id="desktop-search-input"]').keyup(function(){
 
       var that = this, $allListElements = $('ul[class="list-toc"] > li');
@@ -139,12 +138,72 @@
       $matchingListElements.show();
 
     });
+
+    $('.tab1').click(function() {
+        $('.toc').show();
+        $('.tocPivot').hide();
+    });
+
+    $('.tab2').click(function() {
+        $('.toc').hide();
+        $('.tocPivot').show();
+    });
+
+    if((window.location.hash == "#RealGrid") || (window.location.pathname.indexOf("Pivot") == -1)){
+        $('.toc').show();
+        $('.tocPivot').hide();
+        gridTab();
+    }else if((window.location.hash == "#RealPivot") || (window.location.pathname.indexOf("Pivot") > -1)){
+        $('.toc').hide();
+        $('.tocPivot').show();
+        pivotTab();
+    } 
+
+    $(".tab1").click(function() {
+        gridTab();
+    });
+    $(".tab2").click(function() {
+        pivotTab();
+    });
+
   });
+
+  function gridTab(){
+      document.getElementById("RealGrid").style.color = "#35aea2"
+      document.getElementById("RealPivot").style.color = null
+
+      document.getElementById("gridText").style.fontSize = "17px"
+      document.getElementById("pivotText").style.fontSize = "15px"
+  }
+
+  function pivotTab(){
+      document.getElementById("RealGrid").style.color = null
+      document.getElementById("RealPivot").style.color = "#35aea2"
+
+      document.getElementById("gridText").style.fontSize = "15px"
+      document.getElementById("pivotText").style.fontSize = "17px"
+  }
 </script>
 
 <div class="sidebar">
-
   <div class="wrapper-search">
+  <!-- tab -->
+    <div class="tab-wrap">
+      <ul>
+        <li><a class="tab1">tab1</a></li>
+        <li><a class="tab2">tab2</a></li>
+      </ul>
+
+      <div>
+        <article id="RealGrid">
+          <h1 id="gridText">RealGrid</h1>
+        </article>
+        <article id="RealPivot">
+          <h1 id="pivotText">RealPivot</h1>
+        </article>
+      </div>
+    </div>
+  <!-- -->
     <div class="input-symbol small round">
       <input type="text" placeholder="Search Demo" id="desktop-search-input" />
       <span class="icon-search"></span>
@@ -154,11 +213,16 @@
 
   <div class="sidebar-content">
     <div class="topcap">
-      <span class="title-sidebar">RealGrid 데모보기</span>
+
+
+    <!--
+      <span class="title-sidebar" style="cursor:pointer;width:220px">RealGrid  데모보기</span><br/>
+      <span class="title-pivot-sidebar" style="cursor:pointer;width:220px">RealPivot 데모보기</span>
+    -->
       
     </div>
 
-    <ul class="toc">
+    <ul class="toc" id="toc">
         <li>
             <ul class="list-toc release">
                 
@@ -1521,6 +1585,111 @@
         
         <li>
           
+            <div class="heading-toc">차트 및 리포트 연동</div>
+          
+          <ul class="list-toc">
+            
+              <li class="item-toc ">
+                <a href="/Interface/ColumnSelecting/"
+                class=" sidebar-link ">
+                  <span>하이차트 연동 컬럼 선택</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/ColumnFiltering/"
+                class=" sidebar-link ">
+                  <span>하이차트 연동 컬럼 필터링</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/RowSelecting/"
+                class=" sidebar-link ">
+                  <span>하이차트 연동 행 선택</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/UbiReport/"
+                class=" sidebar-link ">
+                  <span>유비아이 리포트 연동</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/CrownixReport/"
+                class=" sidebar-link ">
+                  <span>Crownix 리포트 연동</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Interface/OZReport/"
+                class=" sidebar-link ">
+                  <span>OZ 리포트 연동</span>
+                  <span style="display: none;">
+                  연동, interface
+                  </span>
+                </a>
+              </li></ul>
+
+        </li>
+        
+
+    </ul>
+
+    <!-- pivot list-->
+    <ul class="tocPivot" id="tocPivot" style="display:none">
+        <li>
+            <ul class="list-toc release">
+                
+                
+                    
+                    <li class="item-toc ">
+                        <a href="/"
+                          class="sidebar-link  ">
+                            <span>RealGrid DEMO</span>
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li class="item-toc ">
+                        <a href="/pivotRelease.html"
+                          class="sidebar-link  ">
+                            <span>Pivot 최신버전 1.0.0</span>
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li class="item-toc current ">
+                        <a href="/release/"
+                          class="sidebar-link  current">
+                            <span>최신버전 1.1.28</span>
+                        </a>
+                    </li>
+                    
+                
+
+                
+            </ul>
+        </li>
+
+        
+        <li>
+          
             <div class="heading-toc">피벗(RealPivot)</div>
           
           <ul class="list-toc">
@@ -1603,69 +1772,6 @@
                   <span>피벗 영역</span>
                   <span style="display: none;">
                   pivot, Regions
-                  </span>
-                </a>
-              </li></ul>
-
-        </li>
-        
-        <li>
-          
-            <div class="heading-toc">차트 및 리포트 연동</div>
-          
-          <ul class="list-toc">
-            
-              <li class="item-toc ">
-                <a href="/Interface/ColumnSelecting/"
-                class=" sidebar-link ">
-                  <span>하이차트 연동 컬럼 선택</span>
-                  <span style="display: none;">
-                  연동, interface
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Interface/ColumnFiltering/"
-                class=" sidebar-link ">
-                  <span>하이차트 연동 컬럼 필터링</span>
-                  <span style="display: none;">
-                  연동, interface
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Interface/RowSelecting/"
-                class=" sidebar-link ">
-                  <span>하이차트 연동 행 선택</span>
-                  <span style="display: none;">
-                  연동, interface
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Interface/UbiReport/"
-                class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
-                  <span style="display: none;">
-                  연동, interface
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Interface/CrownixReport/"
-                class=" sidebar-link ">
-                  <span>Crownix 리포트 연동</span>
-                  <span style="display: none;">
-                  연동, interface
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/Interface/OZReport/"
-                class=" sidebar-link ">
-                  <span>OZ 리포트 연동</span>
-                  <span style="display: none;">
-                  연동, interface
                   </span>
                 </a>
               </li></ul>
