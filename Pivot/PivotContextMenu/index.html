@@ -230,7 +230,7 @@
                     <li class="item-toc ">
                         <a href="/pivotRelease.html"
                           class="sidebar-link  ">
-                            <span>Pivot 최신버전 1.0.0</span>
+                            <span>Pivot 최신버전 1.0.1</span>
                         </a>
                     </li>
                     
@@ -1658,7 +1658,7 @@
                     <li class="item-toc ">
                         <a href="/pivotRelease.html"
                           class="sidebar-link  ">
-                            <span>Pivot 최신버전 1.0.0</span>
+                            <span>Pivot 최신버전 1.0.1</span>
                         </a>
                     </li>
                     
@@ -1748,6 +1748,24 @@
                 </a>
               </li>
               <li class="item-toc ">
+                <a href="/Pivot/PivotDistinct/"
+                class=" sidebar-link ">
+                  <span>피벗 고유값(distinct)</span>
+                  <span style="display: none;">
+                  pivot, 고유, distinct
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotFocus/"
+                class=" sidebar-link ">
+                  <span>피벗 포커스</span>
+                  <span style="display: none;">
+                  pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
                 <a href="/Pivot/PivotNumberFormat/"
                 class=" sidebar-link ">
                   <span>피벗 숫자포맷</span>
@@ -1799,22 +1817,6 @@
         <div class="document-formatting">
             <p>피벗 왼쪽 상단의 메뉴 아이콘 클릭 시 contextMenu에 설정한 메뉴를 표시합니다.</p>
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css" />
-
-<link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css" />
-
-<script type="text/javascript" src="/lib/jquery/jquery-1.11.2.min.js"></script>
-
-<script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
-
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
-
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
-
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.0/messages/realpivot-messages.js"></script>
-
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.0/realpivot_eval.1.0.0.min.js"></script>
-
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     dataProvider.setRows(data);
@@ -1839,7 +1841,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
     <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realpivotfieldMapping')">필드매핑</a>
     <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realpivotpivotFields')">피벗필드</a>
     <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realpivotpivotOptions')">피벗옵션</a>
-  </div>
+  </div>                                                                                                            
   <pre class="codeview realpivotfield"></pre>
   <pre class="codeview realpivotfieldMapping"></pre>
   <pre class="codeview realpivotpivotFields"></pre>
@@ -1862,7 +1864,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
               async: false
             });
 
-            $.getJSON("/resource/pivotLayout/pivotContextMenu_setFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+            $.getJSON("/resource/pivotLayout/pivot_setFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
                 $.ajaxSetup({
                   async: true
@@ -1896,7 +1898,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
               async: false
             });
 
-            $.getJSON("/resource/pivotLayout/pivotContextMenu_fieldMapping.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/resource/pivotLayout/pivot_fieldMapping.json", function (data, textStatus, jqXHR) {
                 pivot.setFieldMapping(data);
                    $.ajaxSetup({
                     async: true
@@ -1932,7 +1934,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
               async: false
             });
 
-            $.getJSON("/resource/pivotLayout/pivotContextMenu_pivotFields.json", function (data, textStatus, jqXHR) {
+            $.getJSON("/resource/pivotLayout/pivot_pivotFields.json", function (data, textStatus, jqXHR) {
                 pivot.setPivotFields(data);
                 $.ajaxSetup({
                   async: true
@@ -2024,7 +2026,34 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
       
       <h4 id="피벗-컨텍스트-메뉴-설정">피벗 컨텍스트 메뉴 설정</h4>
 
-<p>왼쪽 최상단에 위치한 버튼을 클릭할때 표시할 메뉴를 <a href="http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/">setContextMenu()</a> 함수로 지정합니다.</p>
+<p>왼쪽 최상단에 위치한 버튼을 클릭할때 표시할 메뉴를 <a href="http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/">setGlobalContextMenu()</a> 함수로 지정합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetGlobalContextMenu">컨텍스트 메뉴 적용</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setGlobalContextMenu</span><span class="p">([{</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s2">"엑셀저장"</span><span class="p">,</span>
+    <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">pivot</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s2">"excel"</span><span class="p">,</span>
+            <span class="na">target</span><span class="p">:</span> <span class="s2">"local"</span><span class="p">,</span>
+            <span class="na">fileName</span><span class="p">:</span> <span class="s2">"RealPivotExport.xlsx"</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}])</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>왼쪽 최상단에 위치한 버튼을 영역을 제외한 나머지 영역에 우클릭 시 표시할 메뉴를 <a href="http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/">setContextMenu()</a> 함수로 지정합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetContextMenu">컨텍스트 메뉴 적용</a></p>
 
@@ -2046,7 +2075,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
             <span class="na">fileName</span><span class="p">:</span> <span class="s2">"RealPivotExport.xlsx"</span>
         <span class="p">});</span>
     <span class="p">}</span>
-<span class="p">}]);</span>
+<span class="p">}])</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
@@ -2064,6 +2093,20 @@ $('#btnSetContextMenu').click(function() {
         }
     }]);
 });
+
+$('#btnSetGlobalContextMenu').click(function() {
+    pivot.setGlobalContextMenu([{
+        text: "엑셀저장",
+        callback: function(){
+            pivot.exportGrid({
+                type: "excel",
+                target: "local",
+                fileName: "RealPivotExport.xlsx"
+            });
+        }
+    }])
+});
+
 </script>
 
 
@@ -2079,6 +2122,8 @@ $('#btnSetContextMenu').click(function() {
 <script type="text/javascript" src="/lib/common/smooth-scroll.min.js"></script>
 <script type="text/javascript" src="/lib/common/main.js"></script>
 
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.1.0.1/css/default_blue.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
@@ -2086,6 +2131,8 @@ $('#btnSetContextMenu').click(function() {
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.28/realgridjs-api.1.1.28.js"></script>
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.28/jszip.min.js"></script>
 
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.1/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.1/realpivot_eval.1.0.1.min.js"></script>
 
 </body>
 

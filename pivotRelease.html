@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    Pivot 최신버전 1.0.0
+    Pivot 최신버전 1.0.1
     </title>
     <meta name="description" content="RealGrid 데모사이트 입니다.">
 
@@ -230,7 +230,7 @@
                     <li class="item-toc current ">
                         <a href="/pivotRelease.html"
                           class="sidebar-link  current">
-                            <span>Pivot 최신버전 1.0.0</span>
+                            <span>Pivot 최신버전 1.0.1</span>
                         </a>
                     </li>
                     
@@ -1658,7 +1658,7 @@
                     <li class="item-toc current ">
                         <a href="/pivotRelease.html"
                           class="sidebar-link  current">
-                            <span>Pivot 최신버전 1.0.0</span>
+                            <span>Pivot 최신버전 1.0.1</span>
                         </a>
                     </li>
                     
@@ -1748,6 +1748,24 @@
                 </a>
               </li>
               <li class="item-toc ">
+                <a href="/Pivot/PivotDistinct/"
+                class=" sidebar-link ">
+                  <span>피벗 고유값(distinct)</span>
+                  <span style="display: none;">
+                  pivot, 고유, distinct
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotFocus/"
+                class=" sidebar-link ">
+                  <span>피벗 포커스</span>
+                  <span style="display: none;">
+                  pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
                 <a href="/Pivot/PivotNumberFormat/"
                 class=" sidebar-link ">
                   <span>피벗 숫자포맷</span>
@@ -1778,7 +1796,7 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">Pivot 최신버전 1.0.0</h1>
+            <h1 class="title-page">Pivot 최신버전 1.0.1</h1>
             
                 <div class="subtitle-page">
                     
@@ -1794,6 +1812,96 @@
 
         <div class="document-formatting">
             <p>Pivot 최신 버전 이력</p>
+
+<h2 id="101-2018년-8월">1.0.1 (2018년 8월)</h2>
+
+<hr />
+
+<h4 id="기능-개선">기능 개선</h4>
+
+<ol>
+  <li>포커스
+    <ul>
+      <li><a href="http://help.realgrid.com/pivotApi/types/DisplayOptions/" target="_blank">DisplayOptions.showFocus</a> 속성으로 포커스를 표시하고 키보드로 이동할 수 있습니다.</li>
+      <li>다음과 같이 setDisplayOptions() 함수를 통해 포커스를 활성화할 수 있습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+ <span class="na">showFocus</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>포커스가 이동될때 <a href="http://help.realgrid.com/pivotApi/RealPivot/onCurrentChanged/" target="_blank">onCurrentChanged()</a>  콜백이 발생합니다.  </li>
+      <li><code class="highlighter-rouge">CSS</code> <code class="highlighter-rouge">realpivot-focus</code> class가 추가되었습니다.</li>
+    </ul>
+  </li>
+  <li>셀 복사
+    <ul>
+      <li>선택된 셀의 값을 Ctrl+C 단축키를 통해 클립보드로 복사할 수 있게 되었습니다.</li>
+      <li><a href="http://help.realgrid.com/pivotApi/types/CopyOptions/" target="_blank">CopyOptions.copyDisplayText</a>  속성이이 true이면 표시된 텍스트가 복사되고, false이면 원시 데이터가 복사됩니다.</li>
+    </ul>
+  </li>
+  <li>컨텍스트 메뉴
+    <ul>
+      <li>마우스 우측 버튼 클릭시 표시되는 컨텍스트 메뉴를 <a href="http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/" target="_blank">setContextMenu()</a> 를 통해 대체할 수 있습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setContextMenu</span><span class="p">([{</span>
+ <span class="na">text</span><span class="p">:</span> <span class="s2">"menu1"</span><span class="p">,</span>
+ <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"menu1 click"</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+ <span class="na">text</span><span class="p">:</span> <span class="s2">"menu2"</span><span class="p">,</span>
+ <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"menu2 click"</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+ <span class="na">text</span><span class="p">:</span> <span class="s2">"-"</span>
+<span class="p">},</span> <span class="p">{</span>
+ <span class="na">text</span><span class="p">:</span> <span class="s2">"menu3"</span><span class="p">,</span>
+ <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"menu3 click"</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}]);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li><a href="http://help.realgrid.com/pivotApi/RealPivot/getContextMenu/" target="_blank">getContextMenu()</a> 를 호출하여 설정된 컨텍스트 메뉴를 가져올 수 있습니다.</li>
+      <li>상단 Menu Icon을 통해 표시되는 메뉴에 관한 기능은 setGlobalContextMenu(), getGlobalContextMenu()로 이름이 변경되었습니다.</li>
+    </ul>
+  </li>
+  <li>Setup UI
+    <ul>
+      <li>Setup 화면 타이틀 부분을 드래그하여 이동할 수 있도록 개선하였습니다.</li>
+      <li>컬럼, 행 간 필드 이동이 가능하도록 개선하였습니다.</li>
+    </ul>
+  </li>
+  <li>기타 UI 개선
+    <ul>
+      <li>필드 헤더와 값 헤더 사이의 경계선을 이동하도록 개선하였습니다.</li>
+      <li>컬럼 헤더, 행 헤더, 값 헤더의 내용이 줄바꿈되도록 수정하였습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="오류-수정">오류 수정</h4>
+
+<ol>
+  <li>고유 값 처리
+    <ul>
+      <li>값 필드의 표현식이 고유(distinct)일 때 표시되지 않는 오류가 수정되었습니다.</li>
+      <li>고유 값일때 가운데 정렬하도록 개선하였습니다.</li>
+      <li><code class="highlighter-rouge">CSS</code> <code class="highlighter-rouge">span.distinct</code> class가 추가되었습니다.</li>
+    </ul>
+  </li>
+</ol>
 
 <h2 id="100-2018년-6월-15일">1.0.0 (2018년 6월 15일)</h2>
 
@@ -1828,6 +1936,8 @@
 <script type="text/javascript" src="/lib/common/smooth-scroll.min.js"></script>
 <script type="text/javascript" src="/lib/common/main.js"></script>
 
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.1.0.1/css/default_blue.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
@@ -1835,6 +1945,8 @@
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.28/realgridjs-api.1.1.28.js"></script>
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.28/jszip.min.js"></script>
 
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.1/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.1/realpivot_eval.1.0.1.min.js"></script>
 
 </body>
 
