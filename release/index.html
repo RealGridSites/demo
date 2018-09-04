@@ -1953,7 +1953,7 @@
   <li><a href="http://help.realgrid.com/api/GridBase/onCurrentChanging/">onCurrentChanging</a>
     <ul>
       <li>셀이 편집중인 경우 포커스의 이동을 제한할수 있도록 onCurrentChanging Event의 발생순서를 변경할수 있는 grid.changingMode 속성이 추가 되었습니다.</li>
-      <li>default는 ChangingMode([[Class 추가]]).NORMAL 이며 기존과 동일하게 editCommit후 onCurrentChanging Event가 발생됩니다.</li>
+      <li>default는 ChangingMode.NORMAL 이며 기존과 동일하게 editCommit후 onCurrentChanging Event가 발생됩니다.</li>
       <li>changingMode가 ChangingMode.BEFORE_EDITCOMMIT인 경우 editor commit이전에 onCurrentChaning이벤트가 호출됩니다. 이벤트의 결과값으로 false를 return하면 포커스 이동은 취소되고 편집중인 셀의 편집상태는 유지됩니다.
         <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
