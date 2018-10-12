@@ -1840,64 +1840,39 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
     pivot.onCurrentChanged = function (grid, index) {
 
-        var attrs = Object.keys(index.columns);
-        var level = attrs.filter(function (item) { return item == "__sum" || item == "valueField" ? false : true; }).length;
+      var attrs = Object.keys(index.columns);
+      var level = attrs.filter(function (item) { return item == "__sum" || item == "valueField" ? false : true; }).length;
 
-        var values = pivot.getAllValues(false).판매량;
-        // 선택한 행에 대한 값 가져오기
-        var rowFields = pivot.getRowFieldNames();
-        for (var i = 0; i < rowFields.length; i++) {
-            var fld = rowFields[i];
+      if(level == 0){
+        level = 1
+      } 
 
-            if (index.rows.hasOwnProperty(fld)) {
-                values = values.rows[index.rows[fld]];
-            } else {
-                break;
+      var columnLabels = pivot.getColumnLabels();
+      var columnList = getLevelLabels(columnLabels, 1, level)
+
+      var vals = []
+      var len = Object.keys(pivot.getRowValues("판매량", index.rows).descendants).length;
+      for (var i = 0; i < len; i++){
+          if(Object.keys(pivot.getRowValues("판매량", index.rows).descendants)[i].split(":::").length == level){
+              var key = Object.keys(pivot.getRowValues("판매량", index.rows).descendants)[i];
+              vals.push(pivot.getRowValues("판매량", index.rows).descendants[key])
+          }
+      }
+
+      setHighChart(dataProvider, vals, index, columnList);
+    }
+
+    function getLevelLabels(columnChilds, level, targetLevel) {
+        var list = [];
+        for (var i = 0, len = columnChilds.length; i < len; i++) {
+            if(level == targetLevel){
+                list.push(columnChilds[i].label)
+            } else if(level < targetLevel && columnChilds[i].hasOwnProperty("childs")) {
+                var levelLabels = getLevelLabels(columnChilds[i].childs, level + 1, targetLevel)
+                list.push.apply(list, levelLabels);
             }
         }
-
-        // 키+값을 매칭
-        var keys = [];
-        var vals = [];
-        var columnLabels = [];
-        switch(level) {
-            case 0:
-            case 1:
-                $.each(values.cols, function (attr1, obj1) { // 년도 Loop
-                    keys.push([attr1]);
-                    vals.push(obj1.value);
-                });
-                columnLabels.push(pivot.getColumnLabels()[0].label);
-                break;
-            case 2:
-                $.each(values.cols, function (attr1, obj1) { // 년도 Loop
-                    $.each(obj1.cols, function (attr2, obj2) { // 분기 Loop
-                        keys.push([attr1, attr2]);
-                        vals.push(obj2.value);
-                    });
-                });
-                for(var i = 0; i < Object.keys(pivot.getColumnLabels()[0].childs).length; i++){
-                    columnLabels.push(pivot.getColumnLabels()[0].childs[i].label);
-                }
-                break;
-            case 3:
-                $.each(values.cols, function (attr1, obj1) { // 년도 Loop
-                    $.each(obj1.cols, function (attr2, obj2) { // 분기 Loop
-                        $.each(obj2.cols, function (attr3, obj3) {  // 월 Loop
-                            keys.push([attr1, attr2, attr3]);
-                            vals.push(obj3.value);
-                        });
-                    });
-                });
-                for(var i = 0; i < Object.keys(pivot.getColumnLabels()[0].childs).length; i++){
-                    for(var j = 0; j < Object.keys(pivot.getColumnLabels()[0].childs[i].childs).length; j++){
-                        columnLabels.push(pivot.getColumnLabels()[0].childs[i].childs[j].label);
-                    }
-                }
-                break;
-        }
-
-        setHighChart(dataProvider, vals, index, columnLabels);
+        return list;
     }
 }
 var onDoneDataSet = function() {
@@ -1908,7 +1883,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
 }  
 
 
-function setHighChart(provider, vals, index, columnLabels) {
+function setHighChart(provider, vals, index, columnList) {
     var subtitle;
 
     if(Object.keys(index.rows)[0] == "__sum"){
@@ -1936,7 +1911,7 @@ function setHighChart(provider, vals, index, columnLabels) {
             x: -20
         },
         xAxis: {
-            categories: columnLabels,
+            categories: columnList,
             crosshair: true
         },
         yAxis: [{
@@ -1970,7 +1945,7 @@ function setHighChart(provider, vals, index, columnLabels) {
 
 </script>
 
-<div id="realpivot" class="realpivot" style="width:100%; height:500px"></div>
+<div id="realpivot" class="realpivot" style="width:100%; height:370px"></div>
 
 <div class="toolbox">
   <div class="buttonbox">
@@ -2151,7 +2126,7 @@ function setHighChart(provider, vals, index, columnLabels) {
   }
 </script>
 
-<div id="container" style="height:400px;"></div>
+<div id="container" style="height:300px;"></div>
 
             <p>
 
@@ -2206,95 +2181,37 @@ function setHighChart(provider, vals, index, columnLabels) {
 29
 30
 31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">onCurrentChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+32</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">onCurrentChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="kd">var</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">columns</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">level</span> <span class="o">=</span> <span class="nx">attrs</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">item</span> <span class="o">==</span> <span class="s2">"__sum"</span> <span class="o">||</span> <span class="nx">item</span> <span class="o">==</span> <span class="s2">"valueField"</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}).</span><span class="nx">length</span><span class="p">;</span>
 
-    <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="nx">pivot</span><span class="p">.</span><span class="nx">getAllValues</span><span class="p">(</span><span class="kc">false</span><span class="p">).</span><span class="err">판매량</span><span class="p">;</span>
-    <span class="c1">// 선택한 행에 대한 값 가져오기</span>
-    <span class="kd">var</span> <span class="nx">rowFields</span> <span class="o">=</span> <span class="nx">pivot</span><span class="p">.</span><span class="nx">getRowFieldNames</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">rowFields</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">fld</span> <span class="o">=</span> <span class="nx">rowFields</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">columnLabels</span> <span class="o">=</span> <span class="nx">pivot</span><span class="p">.</span><span class="nx">getColumnLabels</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">columnList</span> <span class="o">=</span> <span class="nx">getLevelLabels</span><span class="p">(</span><span class="nx">columnLabels</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">level</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">fld</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nx">values</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="nx">fld</span><span class="p">]];</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">break</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">vals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getRowValues</span><span class="p">(</span><span class="s2">"판매량"</span><span class="p">,</span> <span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">).</span><span class="nx">descendants</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getRowValues</span><span class="p">(</span><span class="s2">"판매량"</span><span class="p">,</span> <span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">).</span><span class="nx">descendants</span><span class="p">)[</span><span class="nx">i</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">":::"</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">level</span><span class="p">){</span>
+            <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getRowValues</span><span class="p">(</span><span class="s2">"판매량"</span><span class="p">,</span> <span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">).</span><span class="nx">descendants</span><span class="p">)[</span><span class="nx">i</span><span class="p">];</span>
+            <span class="nx">vals</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getRowValues</span><span class="p">(</span><span class="s2">"판매량"</span><span class="p">,</span> <span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">).</span><span class="nx">descendants</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="c1">// 키+값을 매칭</span>
-    <span class="kd">var</span> <span class="nx">keys</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="kd">var</span> <span class="nx">vals</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="kd">var</span> <span class="nx">columnLabels</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">switch</span><span class="p">(</span><span class="nx">level</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">values</span><span class="p">.</span><span class="nx">cols</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attr1</span><span class="p">,</span> <span class="nx">obj1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 년도 Loop</span>
-                <span class="nx">keys</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">attr1</span><span class="p">]);</span>
-                <span class="nx">vals</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-            <span class="p">});</span>
-            <span class="nx">columnLabels</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getColumnLabels</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">label</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">values</span><span class="p">.</span><span class="nx">cols</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attr1</span><span class="p">,</span> <span class="nx">obj1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 년도 Loop</span>
-                <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">cols</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attr2</span><span class="p">,</span> <span class="nx">obj2</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 분기 Loop</span>
-                    <span class="nx">keys</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">attr1</span><span class="p">,</span> <span class="nx">attr2</span><span class="p">]);</span>
-                    <span class="nx">vals</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">obj2</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-                <span class="p">});</span>
-            <span class="p">});</span>
-            <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getColumnLabels</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">childs</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-                <span class="nx">columnLabels</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getColumnLabels</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">childs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">label</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">values</span><span class="p">.</span><span class="nx">cols</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attr1</span><span class="p">,</span> <span class="nx">obj1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 년도 Loop</span>
-                <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">cols</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attr2</span><span class="p">,</span> <span class="nx">obj2</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 분기 Loop</span>
-                    <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">obj2</span><span class="p">.</span><span class="nx">cols</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attr3</span><span class="p">,</span> <span class="nx">obj3</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 월 Loop</span>
-                        <span class="nx">keys</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">attr1</span><span class="p">,</span> <span class="nx">attr2</span><span class="p">,</span> <span class="nx">attr3</span><span class="p">]);</span>
-                        <span class="nx">vals</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">obj3</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-                    <span class="p">});</span>
-                <span class="p">});</span>
-            <span class="p">});</span>
-            <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getColumnLabels</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">childs</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-                <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getColumnLabels</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">childs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">childs</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
-                    <span class="nx">columnLabels</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pivot</span><span class="p">.</span><span class="nx">getColumnLabels</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">childs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">childs</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">label</span><span class="p">);</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="nx">setHighChart</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">,</span> <span class="nx">vals</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">columnList</span><span class="p">);</span>
+<span class="p">}</span>
 
-    <span class="nx">setHighChart</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">,</span> <span class="nx">vals</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">columnLabels</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">getLevelLabels</span><span class="p">(</span><span class="nx">columnChilds</span><span class="p">,</span> <span class="nx">level</span><span class="p">,</span> <span class="nx">targetLevel</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">columnChilds</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">level</span> <span class="o">==</span> <span class="nx">targetLevel</span><span class="p">){</span>
+            <span class="nx">list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">columnChilds</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">label</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">level</span> <span class="o">&lt;</span> <span class="nx">targetLevel</span> <span class="o">&amp;&amp;</span> <span class="nx">columnChilds</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"childs"</span><span class="p">))</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">levelLabels</span> <span class="o">=</span> <span class="nx">getLevelLabels</span><span class="p">(</span><span class="nx">columnChilds</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">childs</span><span class="p">,</span> <span class="nx">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">targetLevel</span><span class="p">)</span>
+            <span class="nx">list</span><span class="p">.</span><span class="nx">push</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="nx">levelLabels</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">list</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>

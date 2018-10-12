@@ -1845,7 +1845,7 @@
         </div>
       </li>
       <li>피벗이 표시 된 후 다음의 함수를 통해 특정 레벨 또는 특정 라벨을 펼치고 닫을 수 있게 되었습니다.<br />
- <code class="highlighter-rouge">레벨단위</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/expandColumnLevel/" target="_blank">expandColumnLevel()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/expandRowLevel/" target="_blank">expandRowLevel()</a>
+ <code class="highlighter-rouge">레벨단위</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/expandColumnLevel/" target="_blank">expandColumnLevel()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/expandRowLevel/" target="_blank">expandRowLevel()</a><br />
  <code class="highlighter-rouge">라벨단위</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/expandColumn/" target="_blank">expandColumn()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/expandRow/" target="_blank">expandRow()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/collapseColumn/" target="_blank">collapseColumn()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/collapseRow/" target="_blank">collapseRow()</a></li>
       <li>Ctrl + Alt + 방향키로 컬럼과 행의 그룹을 접고 펼 수 있게 되었습니다.</li>
     </ul>
@@ -1853,20 +1853,23 @@
   <li>피벗 값 가져오기
     <ul>
       <li>피벗과 연동하여 차트등을 구현하기 위해서 피벗에 표시된 값을 가져올 수 있는 다음과 같은 함수가 추가되었습니다.<br />
- <code class="highlighter-rouge">필드정보</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/getColumnFieldNames/" target="_blank">getColumnFieldNames()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/getRowFieldNames/" target="_blank">getRowFieldNames()</a>
- <code class="highlighter-rouge">라벨정보</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/getColumnLabels/" target="_blank">getColumnLabels()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/getRowLabels/" target="_blank">getRowLabels()</a>
+ <code class="highlighter-rouge">필드정보</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/getColumnFieldNames/" target="_blank">getColumnFieldNames()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/getRowFieldNames/" target="_blank">getRowFieldNames()</a><br />
+ <code class="highlighter-rouge">라벨정보</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/getColumnLabels/" target="_blank">getColumnLabels()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/getRowLabels/" target="_blank">getRowLabels()</a><br />
  <code class="highlighter-rouge">데이터정보</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/getRowValues/" target="_blank">getRowValues()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/getColumnValues/" target="_blank">getColumnValues()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/getAllValues/" target="_blank">getAllValues()</a></li>
       <li><a href="/Pivot/PivotHighCharts/">HighCharts 연계 데모</a>가 추가되었습니다.</li>
     </ul>
   </li>
   <li>라벨 필드 정렬 별도 지정
     <ul>
-      <li>라벨 필드의 정렬 방식을 외부에서 직접 지정할 수 있게 되었습니다. <a href="http://help.realgrid.com/pivotApi/types/PivotField/#sortCallback">PivotField.sortCallback</a>에 compare함수를 지정하여 함수에서 정렬방법을 -1, 0, 1의 결과값으로 조정할 수 있습니다.</li>
+      <li>라벨 필드의 정렬 방식을 외부에서 직접 지정할 수 있게 되었습니다.<br />
+  <a href="http://help.realgrid.com/pivotApi/types/PivotField/#sortCallback" target="_blank">PivotField.sortCallback</a>에 compare함수를 지정하여 함수에서 정렬방법을 -1, 0, 1의 결과값으로 조정할 수 있습니다.</li>
     </ul>
   </li>
   <li>그리드 모드 헤더
     <ul>
-      <li><a href="http://help.realgrid.com/pivotApi/types/HeaderOptions/" target="_blank">HeaderOptions.formType</a>속성이 추가되었습니다. 이 속성을 “grid”로 지정하면 헤더 영역을 그리드와 같이 표시하도록 하였습니다. 이 헤더에서는 설정버튼이 제공되지 않으므로 필요시 <a href="http://help.realgrid.com/pivotApi/RealPivot/showSetupView/" target="_blank">showSetupView()</a> 함수를 이용해야 합니다.</li>
+      <li><a href="http://help.realgrid.com/pivotApi/types/HeaderOptions/" target="_blank">HeaderOptions.formType</a>속성이 추가되었습니다.<br />
+  이 속성을 “grid”로 지정하면 헤더 영역을 그리드와 같이 표시하도록 하였습니다.<br />
+  이 헤더에서는 설정버튼이 제공되지 않으므로 필요시 <a href="http://help.realgrid.com/pivotApi/RealPivot/showSetupView/" target="_blank">showSetupView()</a> 함수를 이용해야 합니다.</li>
     </ul>
   </li>
   <li>필드별 넓이 지정
