@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.29</span>
+                            <span>최신버전 1.1.30</span>
                         </a>
                     </li>
                     
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.29</span>
+                            <span>최신버전 1.1.30</span>
                         </a>
                     </li>
                     
@@ -1856,7 +1856,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.29");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.30");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2129,6 +2129,17 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 </div>
 </div>
 
+<h4 id="선행컬럼을-참조-병합">선행컬럼을 참조 병합</h4>
+
+<p>셀 병합 시 선행 컬럼 값을 참조해서 병합할 수 있습니다.</p>
+
+<p><a class="btn primary small round lowercase" id="prevvalues">선행컬럼 참조 병합</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span><span class="s2">"mergeRule"</span><span class="p">,{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"prevvalues+value"</span><span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
 $('#row3').click(function() {
   gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 3"})
@@ -2140,6 +2151,10 @@ $('#row5').click(function() {
 
 $('#value').click(function() {
   gridView.setColumnProperty("Country", "mergeRule", {criteria:"value"})
+});
+
+$('#prevvalues').click(function() {
+  gridView.setColumnProperty("Country","mergeRule",{criteria:"prevvalues+value"})
 });
 </script>
 
@@ -2161,9 +2176,9 @@ $('#value').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.29/realgridjs_eval.1.1.29.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.29/realgridjs-api.1.1.29.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.29/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.30/realgridjs_eval.1.1.30.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.30/realgridjs-api.1.1.30.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.30/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.2/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.2/realpivot_eval.1.0.2.min.js"></script>
