@@ -1825,7 +1825,7 @@
     <ul>
       <li>그리드 DIV의 넓이 또는 높이가 ‘100%’일때 IE에서 Browser의 크기변경시 resetSize가 실행되면서 깜박거리는 현상이 줄이기 위한 gridOptions.resizeDelay속성이 추가되었습니다.</li>
       <li>default는 undefined이며 resizeDelay가 설정되면 resize가 종료된후 resizeDelay에 지정된 시간이후에 resetSize가 실행됩니다.
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span><span class="na">resizeDelay</span><span class="p">:</span><span class="mi">250</span><span class="p">});</span>  
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span><span class="na">resizeDelay</span><span class="p">:</span><span class="mi">250</span><span class="p">});</span>  
 </pre></td></tr></tbody></table>
 </div>
         </div>
@@ -1836,7 +1836,7 @@
     <ul>
       <li>dataProvider에 setRows를 하거나 그리드를 refresh했을때 첫번째 셀에 자동으로 포커스가 생기지 않도록 하는 <code class="highlighter-rouge">keepNullFocus</code>속성이 추가되었습니다.</li>
       <li>그리드가 activeElement인 경우 keepNullFocus가 true여도 포커스가 표시됩니다.
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span><span class="na">keepNullFocus</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span><span class="na">keepNullFocus</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
 </pre></td></tr></tbody></table>
 </div>
         </div>
@@ -1856,7 +1856,7 @@
   <li><a href="http://help.realgrid.com/api/types/DataColumn/#equalBlankExpression">DataColumn.equalBlankExpression</a>
     <ul>
       <li>컬럼의 이전행과 동일한 값을 가지는 셀을 하나로 묶을때 다른 컬럼의 값을 참조할수 있도록 [equalBlankExpression] 조건이 추가되었습니다.
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnnName"</span><span class="p">,</span> <span class="s2">"equalBlankExpression"</span><span class="p">,</span><span class="s2">"values['col1']+value"</span><span class="p">);</span>
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnnName"</span><span class="p">,</span> <span class="s2">"equalBlankExpression"</span><span class="p">,</span><span class="s2">"values['col1']+value"</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
 </div>
         </div>
@@ -1880,18 +1880,18 @@
 9
 10
 11
-12</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFilteringOptions</span><span class="p">({</span>
+12</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFilteringOptions</span><span class="p">({</span>
  <span class="na">selector</span><span class="p">:{</span>
-   <span class="na">userFilterAddCallback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
- <span class="k">return</span> <span class="p">{</span>
-   <span class="na">name</span><span class="p">:</span> <span class="s2">"filter_"</span><span class="o">+</span><span class="nx">column</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s2">"_"</span><span class="o">+</span><span class="nx">text</span><span class="p">,</span>
-   <span class="na">text</span><span class="p">:</span> <span class="nx">text</span><span class="p">,</span>
-   <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value like '"</span><span class="o">+</span><span class="nx">text</span><span class="o">+</span><span class="s2">"%'"</span><span class="p">,</span>
-   <span class="na">active</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="na">userFilterAddCallback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="p">{</span>
+             <span class="na">name</span><span class="p">:</span> <span class="s2">"filter_"</span><span class="o">+</span><span class="nx">column</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s2">"_"</span><span class="o">+</span><span class="nx">text</span><span class="p">,</span>
+             <span class="na">text</span><span class="p">:</span> <span class="nx">text</span><span class="p">,</span>
+             <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value like '"</span><span class="o">+</span><span class="nx">text</span><span class="o">+</span><span class="s2">"%'"</span><span class="p">,</span>
+             <span class="na">active</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
  <span class="p">}</span>
-   <span class="p">}</span>
- <span class="p">}</span>
-  <span class="p">});</span>
+<span class="p">});</span>
 </pre></td></tr></tbody></table>
 </div>
         </div>
@@ -1900,32 +1900,27 @@
   </li>
   <li><a href="/CellComponent/CellMerging/">mergeRule</a>
     <ul>
-      <li>mergeRule을 이용해서 셀 병합시 선행컬럼을 참조할수 있는 ‘prevvalues’ 수식이 추가 되었습니다.</li>
-    </ul>
-  </li>
-</ol>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+      <li>mergeRule을 이용해서 셀 병합시 선행컬럼을 참조할수 있는 ‘prevvalues’ 수식이 추가 되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">({</span>
-    <span class="na">name</span><span class="p">:</span><span class="s2">"columnName"</span><span class="p">,</span>
-    <span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName"</span><span class="p">,</span>
-    <span class="na">mergeRule</span><span class="p">:{</span>
-      <span class="na">criteria</span><span class="p">:</span><span class="s2">"prevvalues+value"</span>
-    <span class="p">}</span>
-  <span class="p">})</span>
+7</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">({</span>
+ <span class="na">name</span><span class="p">:</span><span class="s2">"columnName"</span><span class="p">,</span>
+ <span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName"</span><span class="p">,</span>
+ <span class="na">mergeRule</span><span class="p">:{</span>
+     <span class="na">criteria</span><span class="p">:</span><span class="s2">"prevvalues+value"</span>
+ <span class="p">}</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table>
 </div>
-</div>
-<ul>
-  <li>병합될 컬럼의 왼쪽에 있는 컬럼들의 값이 동일한 경우에 병합됩니다.</li>
-</ul>
-
-<ol>
+        </div>
+      </li>
+      <li>병합될 컬럼의 왼쪽에 있는 컬럼들의 값이 동일한 경우에 병합됩니다.</li>
+    </ul>
+  </li>
   <li><a href="http://help.realgrid.com/api/types/GridOptions/#backgroundImage">GridOptions.backgroundImage</a>
     <ul>
       <li>그리드에 배경이미지를 그릴수 있는 기능이 추가되었습니다.
@@ -1936,14 +1931,14 @@
 5
 6
 7
-8</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
- <span class="na">backgroundImage</span><span class="p">:{</span>
+8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
+  <span class="na">backgroundImage</span><span class="p">:{</span>
    <span class="na">imageUrl</span><span class="p">:</span><span class="s2">"./image/realgrid.jpg"</span><span class="p">,</span> 
    <span class="na">alpha</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span> 
    <span class="na">location</span><span class="p">:</span><span class="s2">"center"</span><span class="p">,</span> 
    <span class="na">padding</span><span class="p">:</span><span class="mi">2</span>
- <span class="p">}</span>
-  <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table>
 </div>
         </div>
@@ -1964,14 +1959,14 @@
 5
 6
 7
-8</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
- <span class="na">name</span><span class="p">:</span><span class="s2">"columnName"</span><span class="p">,</span>
- <span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName"</span><span class="p">,</span>
- <span class="na">renderer</span><span class="p">:{</span>
+8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
+  <span class="na">name</span><span class="p">:</span><span class="s2">"columnName"</span><span class="p">,</span>
+  <span class="na">fieldName</span><span class="p">:</span><span class="s2">"fieldName"</span><span class="p">,</span>
+  <span class="na">renderer</span><span class="p">:{</span>
    <span class="na">type</span><span class="p">:</span><span class="s2">"text"</span><span class="p">,</span>
    <span class="na">hoveredUnderline</span><span class="p">:</span><span class="kc">true</span>
- <span class="p">}</span>
-  <span class="p">}])</span>
+  <span class="p">}</span>
+<span class="p">}])</span>
 </pre></td></tr></tbody></table>
 </div>
         </div>
@@ -2014,11 +2009,11 @@
 2
 3
 4
-5</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnName"</span><span class="p">,</span> <span class="s2">"validations"</span><span class="p">,</span> <span class="p">[{</span>
- <span class="na">criteria</span><span class="p">:</span><span class="s2">"((values['test1'] = 'A') and (value &gt;= 10)) or (values['test1'] &lt;&gt; 'A') "</span><span class="p">,</span>
- <span class="na">level</span><span class="p">:</span><span class="s2">"error"</span><span class="p">,</span>
- <span class="na">message</span><span class="p">:</span><span class="s2">"test1이 'A'인 경우 10 이상의 값을 입력해야 합니다."</span>
-  <span class="p">}])</span>
+5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnName"</span><span class="p">,</span> <span class="s2">"validations"</span><span class="p">,</span> <span class="p">[{</span>
+  <span class="na">criteria</span><span class="p">:</span><span class="s2">"((values['test1'] = 'A') and (value &gt;= 10)) or (values['test1'] &lt;&gt; 'A') "</span><span class="p">,</span>
+  <span class="na">level</span><span class="p">:</span><span class="s2">"error"</span><span class="p">,</span>
+  <span class="na">message</span><span class="p">:</span><span class="s2">"test1이 'A'인 경우 10 이상의 값을 입력해야 합니다."</span>
+<span class="p">}])</span>
 </pre></td></tr></tbody></table>
 </div>
         </div>
@@ -2033,12 +2028,12 @@
 3
 4
 5
-6</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnName"</span><span class="p">,</span> <span class="s2">"editor"</span><span class="p">,</span> <span class="p">{</span>
+6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnName"</span><span class="p">,</span> <span class="s2">"editor"</span><span class="p">,</span> <span class="p">{</span>
  <span class="na">type</span><span class="p">:</span><span class="s2">"dropdown"</span><span class="p">,</span>
  <span class="na">separator</span><span class="p">:</span> <span class="s2">" "</span><span class="p">,</span>
  <span class="na">itemColumned</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
  <span class="na">displayLabels</span><span class="p">:</span> <span class="s2">"valueLabel"</span>
-  <span class="p">})</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table>
 </div>
         </div>
