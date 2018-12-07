@@ -2138,7 +2138,18 @@ var onDoneDataSet = function() {
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="nx">validations</span> <span class="o">=</span> <span class="p">[{</span>
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></td><td class="code"><pre><span class="nx">validations</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt; 100"</span><span class="p">,</span>
     <span class="na">message</span><span class="p">:</span> <span class="s2">"Quantity는 100보다 커야 합니다!"</span><span class="p">,</span>
     <span class="na">mode</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
@@ -2166,6 +2177,17 @@ var onDoneDataSet = function() {
     <span class="na">level</span><span class="p">:</span> <span class="s2">"error"</span>
 <span class="p">}];</span>
 <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">);</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">validations</span> <span class="o">=</span> <span class="nx">validations</span><span class="p">;</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
+
+<span class="c1">//다른 컬럼 값 참조(1.1.30버전 이상)</span>
+<span class="nx">validations</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"values['UnitPrice'] &gt; 10"</span><span class="p">,</span>
+    <span class="na">message</span><span class="p">:</span> <span class="s2">"UnitPrice는 10보다 커야합니다."</span><span class="p">,</span>
+    <span class="na">mode</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+    <span class="na">level</span><span class="p">:</span> <span class="s2">"error"</span>
+<span class="p">}];</span>
+<span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"Quantity"</span><span class="p">);</span>
 <span class="nx">column</span><span class="p">.</span><span class="nx">validations</span> <span class="o">=</span> <span class="nx">validations</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
@@ -2202,6 +2224,17 @@ $('#btnSetValidation').click(function() {
 	    level: "error"
 	}];
 	column = gridView.columnByName("CustomerID");
+	column.validations = validations;
+	gridView.setColumn(column);
+
+	//다른 컬럼 값 참조(1.1.30버전 이상)
+	validations = [{
+	    criteria: "values['UnitPrice'] > 10",
+	    message: "UnitPrice는 10보다 커야합니다.",
+	    mode: "always",
+	    level: "error"
+	}];
+	column = gridView.columnByName("Quantity");
 	column.validations = validations;
 	gridView.setColumn(column);
 });

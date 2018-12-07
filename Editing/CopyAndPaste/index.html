@@ -2107,8 +2107,10 @@
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCopyOptions</span><span class="p">({</span>
+5
+6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCopyOptions</span><span class="p">({</span>
   <span class="na">singleMode</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkSingleMode"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
+  <span class="na">enabled</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkEnabled"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
   <span class="na">datetimeFormat</span><span class="p">:</span> <span class="s2">"yyyy/MM/dd"</span><span class="p">,</span>
   <span class="na">booleanFormat</span><span class="p">:</span><span class="s2">"N;Y"</span>
 <span class="p">});</span>
@@ -2175,10 +2177,10 @@
 </div>
 </div>
 <script>
-
   $('#btnSetCopyOptions').click(function() {
     gridView.setCopyOptions({
       singleMode: $("#chkSingleMode").is(":checked"),
+      enabled: $("#chkEnabled").is(":checked"),
       datetimeFormat: "yyyy/MM/dd",
       booleanFormat:"N;Y"
     });
