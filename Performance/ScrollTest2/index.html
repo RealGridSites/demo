@@ -1985,6 +1985,7 @@
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/celloData.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

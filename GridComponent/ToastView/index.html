@@ -2029,6 +2029,7 @@ Toast View는 특별히 느리지 않다고 여겨지는 상태라면 표시하�
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/LargeDataSet.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

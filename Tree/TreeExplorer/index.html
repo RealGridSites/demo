@@ -2221,6 +2221,7 @@
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/griddata1?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

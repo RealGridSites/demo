@@ -2024,6 +2024,7 @@ DevBox에서 기능을 확인해보세요.</p>
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

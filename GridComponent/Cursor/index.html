@@ -2012,6 +2012,7 @@
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/CursorDataSet.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

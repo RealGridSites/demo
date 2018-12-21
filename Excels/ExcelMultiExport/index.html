@@ -2022,6 +2022,7 @@ var onDoneDataSet = function() {
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
@@ -2250,6 +2251,7 @@ var onDoneDataSet = function() {
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/griddata1.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

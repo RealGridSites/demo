@@ -2147,6 +2147,7 @@ if (column) {
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/DefaultDataSet.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

@@ -1995,6 +1995,7 @@
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/FireDamage.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

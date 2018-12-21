@@ -2162,6 +2162,7 @@ function setHiChart(provider) {
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/총생산소득.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

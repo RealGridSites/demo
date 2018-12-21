@@ -2624,6 +2624,7 @@ ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

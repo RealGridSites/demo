@@ -2591,6 +2591,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/griddata1.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
@@ -3207,6 +3208,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/carData1.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

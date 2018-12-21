@@ -2022,6 +2022,7 @@ fixedHeight의 합이 Header높이보다 크거나 모든 컬럼 Level이 fixedH
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

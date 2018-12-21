@@ -2022,6 +2022,7 @@ yyyyWW -&gt; yyyy-WW 컬럼은 yyyyWW 형태의 데이터를 그리드에서 마
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/weekDateData.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

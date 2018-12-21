@@ -2042,6 +2042,7 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/DefaultDataSet.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 

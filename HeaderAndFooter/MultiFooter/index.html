@@ -2022,6 +2022,7 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
             
             $.ajax({
               type: "GET",
+              async : true,
               url:"/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
