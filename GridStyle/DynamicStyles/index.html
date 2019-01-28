@@ -1873,11 +1873,11 @@
         switch (col1Value) {
           case '편집가능' :
             ret.editable = true;
-            ret.readOnly = false;
+            //ret.readOnly = false;
             break;
           case '편집불가' :
             ret.editable = false;
-            ret.readOnly = false;
+            //ret.readOnly = true;
             ret.background = "#ffff0000";
        }
        return ret;
@@ -2165,11 +2165,11 @@
     switch (col1Value) {
       case '편집가능' :
         ret.editable = true;
-        ret.readOnly = false;
+        //ret.readOnly = false;
         break;
       case '편집불가' :
         ret.editable = false;
-        ret.readOnly = false;
+        //ret.readOnly = true;
         ret.background = "#ffff0000";
    }
    return ret;
