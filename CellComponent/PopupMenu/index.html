@@ -1869,6 +1869,24 @@
       }];
       gridView.addPopupMenu("menu1", menu);
 
+      
+      var menu = [{
+       label: "menu1 입니다.",
+       enabled: true,
+       children: [{
+        label: "submenu1 입니다.",
+        callback:function(grid, index){console.log(index)}
+       }, {
+        label: "submenu2 입니다."
+       }]
+       }, {
+        label: "menu2 입니다",
+        enabled: false
+      }];
+      gridView.addPopupMenu("menu2", menu);
+
+      gridView.setColumnProperty("OrderID","header",{popupMenu:"menu2"});
+
       gridView.onMenuItemClicked = function (grid, data, index) {
           alert(data.label);
       };
@@ -2269,6 +2287,46 @@
 3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onMenuItemClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">label</span><span class="p">);</span>
 <span class="p">};</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="해더-popupmenu-추가">해더 PopupMenu 추가</h4>
+
+<p>위에서 구성된 메뉴 정보를 그리드 <a href="http://help.realgrid.com/api/GridBase/addPopupMenu/">addPopupMenu</a> 함수로 추가할 수 있습니다.<br />
+추가된 <code class="highlighter-rouge">menu2</code> 를 컬럼 해더에 설정하는 방법은 아래를 참조하세요.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre>var menu = [{
+ label: "menu1 입니다.",
+ enabled: true,
+ children: [{
+  label: "submenu1 입니다.",
+  callback:function(grid, index){console.log(index)}
+ }, {
+  label: "submenu2 입니다."
+ }]
+ }, {
+  label: "menu2 입니다",
+  enabled: false
+}];
+gridView.addPopupMenu("menu2", menu);
+
+gridView.setColumnProperty("OrderID","header",{popupMenu:"menu2"});
 </pre></td></tr></tbody></table>
 </div>
 </div>
