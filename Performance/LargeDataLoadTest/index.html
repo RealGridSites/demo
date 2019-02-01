@@ -2055,17 +2055,7 @@
 20
 21
 22
-23
-24
-25
-26
-27
-28
-29
-30
-31</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">showProgress</span><span class="p">();</span>
-
-<span class="kd">var</span> <span class="nx">startTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+23</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">startTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"/resource/data/TooLargeDataSet.csv?__time__="</span> <span class="o">+</span> <span class="nx">startTime</span><span class="p">,</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -2081,16 +2071,10 @@
         <span class="nx">$</span><span class="p">(</span><span class="s2">"#btnLoad"</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">);</span>
     <span class="p">},</span>
     <span class="na">complete</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">gridView</span><span class="p">.</span><span class="nx">closeProgress</span><span class="p">();</span>
+
     <span class="p">},</span>
     <span class="na">xhr</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">window</span><span class="p">.</span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
-        <span class="c1">//Download progress</span>
-        <span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"progress"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">lengthComputable</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">gridView</span><span class="p">.</span><span class="nx">setProgress</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">total</span><span class="p">,</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">loaded</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
         <span class="k">return</span> <span class="nx">xhr</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">});</span>
