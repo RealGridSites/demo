@@ -2188,7 +2188,7 @@ var onDoneDataSet = function() {
     <span class="na">mode</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
     <span class="na">level</span><span class="p">:</span> <span class="s2">"error"</span>
 <span class="p">}];</span>
-<span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"Quantity"</span><span class="p">);</span>
+<span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"UnitPrice"</span><span class="p">);</span>
 <span class="nx">column</span><span class="p">.</span><span class="nx">validations</span> <span class="o">=</span> <span class="nx">validations</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
 </pre></td></tr></tbody></table>
@@ -2235,7 +2235,7 @@ $('#btnSetValidation').click(function() {
 	    mode: "always",
 	    level: "error"
 	}];
-	column = gridView.columnByName("Quantity");
+	column = gridView.columnByName("UnitPrice");
 	column.validations = validations;
 	gridView.setColumn(column);
 });
