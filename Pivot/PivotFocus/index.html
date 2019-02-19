@@ -230,7 +230,7 @@
                     <li class="item-toc ">
                         <a href="/pivotRelease.html"
                           class="sidebar-link  ">
-                            <span>Pivot 최신버전 1.0.2</span>
+                            <span>Pivot 최신버전 1.0.3</span>
                         </a>
                     </li>
                     
@@ -1658,7 +1658,7 @@
                     <li class="item-toc ">
                         <a href="/pivotRelease.html"
                           class="sidebar-link  ">
-                            <span>Pivot 최신버전 1.0.2</span>
+                            <span>Pivot 최신버전 1.0.3</span>
                         </a>
                     </li>
                     
@@ -2038,13 +2038,14 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
       
       <h4 id="피벗-포커스-설정">피벗 포커스 설정</h4>
 
-<p><a href="http://help.realgrid.com/pivotApi/types/DisplayOptions/" target="_blank">DisplayOptions.showFocus</a>속성으로 포커스를 표시하고 키보드로 이동할 수 있습니다.<br />
+<p><a href="http://help.realgrid.com/pivotApi/types/DisplayOptions/" target="_blank">DisplayOptions.showFocus</a>속성으로 포커스를 표시하고 키보드로 이동할 수 있습니다. 
+포커스가 위한 행과 열에 가이드 라인을 표시할 수 있습니다. <br />
 다음과 같이 setDisplayOptions() 함수를 통해 포커스를 활성화할 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetDisplayOptions">포커스 표시</a></p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre>pivot.setDisplayOptions({showFocus:true})
+2</pre></td><td class="code"><pre>pivot.setDisplayOptions({showFocus:true, showFocusGuide:true})
 pivot.drawView();
 </pre></td></tr></tbody></table>
 </div>
@@ -2065,7 +2066,7 @@ pivot.drawView();
 
 <script>
 $('#btnSetDisplayOptions').click(function() {
-	pivot.setDisplayOptions({showFocus:true})
+	pivot.setDisplayOptions({showFocus:true, showFocusGuide:true})
 	pivot.drawView();
 });
 
@@ -2084,7 +2085,7 @@ $('#btnSetDisplayOptions').click(function() {
 <script type="text/javascript" src="/lib/common/smooth-scroll.min.js"></script>
 <script type="text/javascript" src="/lib/common/main.js"></script>
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.1.0.2/css/default_blue.css">
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.1.0.3/css/default_blue.css">
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
@@ -2093,8 +2094,8 @@ $('#btnSetDisplayOptions').click(function() {
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs-api.1.1.31.js"></script>
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/jszip.min.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.2/messages/realpivot-messages.js"></script>
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.2/realpivot_eval.1.0.2.min.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>
 
 </body>
 

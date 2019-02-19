@@ -47,7 +47,7 @@
   background: white;
 }
 
-.realpivot div.realpivot-cell.realpivot-body-sum-tot, .realpivot div.realpivot-cell.realpivot-body-sum-tot-fixed {
+.realpivot div.realpivot-cell.realpivot-body-sum-tot {
   background-color: #feefb5 !important;
   font-weight: bold;
 }
@@ -292,6 +292,22 @@ div.realpivot-empty {
 
 .realpivot div.realpivot-cell.realpivot-row-sum {
   font-weight: bold;
+}
+
+.realpivot div.realpivot-cell.realpivot-col-split {
+  border-left: 1px solid #84a2c9;
+}
+
+.realpivot div.realpivot-cell.realpivot-row-split {
+  border-top: 1px solid #84a2c9;
+}
+
+.realpivot div.realpivot-cell.realpivot-body-left-split {
+  border-left: 1px solid #b7b7b7;
+}
+
+.realpivot div.realpivot-cell.realpivot-body-top-split {
+  border-top: 1px solid #b7b7b7;
 }
 
 .realpivot div.realpivot-cell span {
@@ -692,7 +708,7 @@ select.realpivot-setup-field-value {
   margin-top: 1px;
 }
 
-button.realpivot-setup-field-value {
+input[type=button].realpivot-setup-field-value {
   float: right;
   margin-top: 1px;
 }
@@ -795,7 +811,7 @@ div.realpivot-filter-setup .realpivot-filter-setup-foot {
 /**
  * Button ...
  */
-button.realpivot-setup {
+input[type=button].realpivot-setup {
   display: inline-block;
   padding: 4px 12px;
   font-size: 12px;
@@ -817,34 +833,34 @@ button.realpivot-setup {
   /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-button.realpivot-setup:active {
+input[type=button].realpivot-setup:active {
   outline: none;
   border: none;
 }
 
-button.btn-default {
+input[type=button].btn-default {
   margin: 0px 2px;
   color: #333;
   background: #fff;
   border: 1px solid #cccccc;
 }
 
-button.btn-default:hover {
+input[type=button].btn-default:hover {
   background-color: #e6e6e6;
 }
 
-button.btn-primary {
+input[type=button].btn-primary {
   margin: 0px 2px;
   color: #fff;
   background: #2892f7;
   border: 1px solid #075fb2;
 }
 
-button.btn-primary:hover {
+input[type=button].btn-primary:hover {
   background-color: #0879e4;
 }
 
-button.btn-small {
+input[type=button].btn-small {
   display: inline-block;
   width: 25px;
   height: 20px;
@@ -859,7 +875,7 @@ button.btn-small {
   border-radius: 3px;
 }
 
-button.btn-small:hover {
+input[type=button].btn-small:hover {
   background-color: #e6e6e6;
 }
 

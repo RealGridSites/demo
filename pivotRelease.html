@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    Pivot 최신버전 1.0.2
+    Pivot 최신버전 1.0.3
     </title>
     <meta name="description" content="RealGrid 데모사이트 입니다.">
 
@@ -230,7 +230,7 @@
                     <li class="item-toc current ">
                         <a href="/pivotRelease.html"
                           class="sidebar-link  current">
-                            <span>Pivot 최신버전 1.0.2</span>
+                            <span>Pivot 최신버전 1.0.3</span>
                         </a>
                     </li>
                     
@@ -1658,7 +1658,7 @@
                     <li class="item-toc current ">
                         <a href="/pivotRelease.html"
                           class="sidebar-link  current">
-                            <span>Pivot 최신버전 1.0.2</span>
+                            <span>Pivot 최신버전 1.0.3</span>
                         </a>
                     </li>
                     
@@ -1805,7 +1805,7 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">Pivot 최신버전 1.0.2</h1>
+            <h1 class="title-page">Pivot 최신버전 1.0.3</h1>
             
                 <div class="subtitle-page">
                     
@@ -1822,11 +1822,128 @@
         <div class="document-formatting">
             <p>Pivot 최신 버전 이력</p>
 
-<h2 id="102-2018년-10월">1.0.2 (2018년 10월)</h2>
+<h2 id="103-2019년-2월">1.0.3 (2019년 2월)</h2>
 
 <hr />
 
 <h4 id="기능-개선">기능 개선</h4>
+
+<ol>
+  <li>Focus 가이드 표시
+    <ul>
+      <li><a href="http://help.realgrid.com/pivotApi/types/GroupOptions/#showFocusGuide" target="_blank">DisplayOptions</a>의 showFocusGuide 속성이 추가되었습니다. showFocus와 showFocusGuide가 true이면 선택된 셀의 가로와 세로에 배경색을 표시할 수 있습니다.</li>
+      <li>다음과 같이 setDisplayOptions() 함수를 통해 사용 할 수 있습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+  <span class="na">showFocus</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">showFocusGuide</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li><code class="highlighter-rouge">CSS</code> <code class="highlighter-rouge">realpivot-focus-guide</code> class가 추가되었습니다.</li>
+    </ul>
+  </li>
+  <li>메모리 최적화
+    <ul>
+      <li>컬럼과 행의 수가 대량일 때 Memory Overflow로 동작이 멈추는 현상이 있어 메모리 사용량을 최적화 하였습니다.</li>
+    </ul>
+  </li>
+  <li>값필드 가로 맞춤 설정
+    <ul>
+      <li>이전 버전까지 expression이 “distinct”인 경우 중앙, 그 외의 경우 우측으로 가로 정렬로 고정되어 있었는데, 값 필드 별로 정렬 방식을 지정할 수 있게 하였습니다.</li>
+      <li><a href="http://help.realgrid.com/pivotApi/types/PivotField/#valueAlignment" target="_blank">PivotField.valueAlignment</a> 속성을 “near”, “center”, “far”로 지정하여 맞춤 설정 할 수 있습니다.</li>
+      <li>설정 화면에서 값 설정의 맞춤 방식 선택 박스가 추가 되었습니다.</li>
+      <li><code class="highlighter-rouge">CSS</code> realpivot-cell 하위의 <code class="highlighter-rouge">span.near</code>, <code class="highlighter-rouge">span.center</code> class가 추가되었습니다.</li>
+    </ul>
+  </li>
+  <li>커스텀 날짜 표현
+    <ul>
+      <li>필드의 <a href="http://help.realgrid.com/pivotApi/types/DateValueType/" target="_blank">dateType</a>을 “custom”으로 설정 하면 <a href="http://help.realgrid.com/pivotApi/types/PivotField/" target="_blank">PivotField.dateFormat</a>에 맞추어 표시합니다.</li>
+      <li>포맷에 사용하는 문자열은 Data Provider와 동일합니다.</li>
+    </ul>
+  </li>
+  <li>스크롤 UI 개선
+    <ul>
+      <li>스크롤 버튼을 누르고 있는 동안 계속적으로 스크롤되도록 개선하였습니다.</li>
+      <li>스크롤 바를 드래그해서 이동하는 중에 마이스 포인터가 Pivot을 벗어나도 가능하도록 개선하였습니다.</li>
+    </ul>
+  </li>
+  <li>공백을 &amp;nbsp;로 치환
+    <ul>
+      <li>Pivot은 HTML Dom방식이라 앞뒤 공백이나 연속되는 공백이 화면상에 표시 되지 않았습니다.</li>
+      <li><a href="http://help.realgrid.com/pivotApi/types/GroupOptions/#keepLabelSpace" target="_blank">DisplayOptions</a>의 keepLabelSpace 속성이 true이면 라벨상의 모든 공백을 &amp;nbsp;로 치환하여 표시합니다.</li>
+    </ul>
+  </li>
+  <li>라벨 prefix/suffix
+    <ul>
+      <li>필드의 displayFormat, summaryFormat에 사용되는 문자열이 특정 웹서버에서 예약어로 사용되어 사용하기 어려운 경우가 있었습니다.</li>
+      <li><a href="http://help.realgrid.com/pivotApi/types/PivotField/#labelPrefix" target="_blank">PivotField.labelPrefix</a>, <a href="http://help.realgrid.com/pivotApi/types/PivotField/#labelSuffix" target="_blank">PivotField.labelSuffix</a>를 사용 해 displayFormat과 유사한 동작을 하도록 하였습니다.</li>
+      <li>요약을 위한 <a href="http://help.realgrid.com/pivotApi/types/PivotField/#summaryPrefix" target="_blank">PivotField.summaryPrefix</a>, <a href="http://help.realgrid.com/pivotApi/types/PivotField/#summarySuffix" target="_blank">PivotField.summarySuffix</a>도 추가하였습니다.</li>
+      <li>[format 사용예]
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre> <span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([{</span>
+ <span class="p">...</span>
+ <span class="na">displayFormat</span><span class="p">:</span> <span class="s2">"${value}년도"</span><span class="p">,</span>
+ <span class="na">summaryFormat</span><span class="p">:</span> <span class="s2">"${value}년도 합"</span><span class="p">,</span>
+ <span class="p">...</span>
+ <span class="p">}]);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>[prefix/suffix 사용예]
+        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre> <span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([{</span>
+ <span class="p">...</span>
+ <span class="na">labelSuffix</span><span class="p">:</span><span class="s2">"년도"</span><span class="p">,</span>
+ <span class="na">summarySuffix</span><span class="p">:</span><span class="s2">"년도 합"</span><span class="p">,</span>
+ <span class="p">...</span>
+ <span class="p">}]);</span>
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="오류-수정">오류 수정</h4>
+
+<ol>
+  <li>form 태그
+    <ul>
+      <li>form 태그 안에 피벗 컨테이너가 있는 경우 설정화면의 버튼이 커밋 버튼으로 오동작하는 문제를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li>필드 정렬
+    <ul>
+      <li>필드의 sortDir 속성을 기본 정의하지 않았을 때 제대로 정렬되지 않는 문제를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li>컬럼 필드가 없을때 설정 화면 오류
+    <ul>
+      <li>컬럼 필드가 없을때 설정화면에서 값 필드의 정렬 방식 선택 UI에서 오류가 발생하는 문제를 수정하였습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="102-2018년-10월">1.0.2 (2018년 10월)</h2>
+
+<hr />
+
+<h4 id="기능-개선-1">기능 개선</h4>
 
 <ol>
   <li>Expand/Collapse
@@ -1837,7 +1954,7 @@
 2
 3
 4</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setGroupOptions</span><span class="p">({</span>
-  <span class="na">columnExpand</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="na">columnExpand</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="na">rowExpand</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table>
@@ -1880,7 +1997,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정">오류 수정</h4>
+<h4 id="오류-수정-1">오류 수정</h4>
 
 <ol>
   <li>
@@ -1898,7 +2015,7 @@
 
 <hr />
 
-<h4 id="기능-개선-1">기능 개선</h4>
+<h4 id="기능-개선-2">기능 개선</h4>
 
 <ol>
   <li>포커스
@@ -1972,7 +2089,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-1">오류 수정</h4>
+<h4 id="오류-수정-2">오류 수정</h4>
 
 <ol>
   <li>고유 값 처리
@@ -2017,7 +2134,7 @@
 <script type="text/javascript" src="/lib/common/smooth-scroll.min.js"></script>
 <script type="text/javascript" src="/lib/common/main.js"></script>
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.1.0.2/css/default_blue.css">
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.1.0.3/css/default_blue.css">
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
@@ -2026,8 +2143,8 @@
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs-api.1.1.31.js"></script>
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/jszip.min.js"></script>
 
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.2/messages/realpivot-messages.js"></script>
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.2/realpivot_eval.1.0.2.min.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>
 
 </body>
 
