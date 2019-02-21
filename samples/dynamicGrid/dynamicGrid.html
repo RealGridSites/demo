@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Event</title>
+
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.22/realgridjs_eval.1.1.22.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.22/realgridjs-api.1.1.22.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.22/jszip.min.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+
+<script type="text/javascript">
+
+	var gridView;
+	var dataProvider;
+
+	window.onload = function () {
+	    console.log("==> RealGrid loaded.");
+
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22/");
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    gridView = new RealGridJS.GridView("realgrid");
+	    gridView.setDataSource(dataProvider);
+
+	    setFields(dataProvider);
+	    setColumns(gridView);
+	    setOptions(gridView);
+
+	    gridView.linearizeColumns();
+			
+	    loadData(dataProvider);
+
+	    $(window).resize(function () {
+	        var width = $("#realgrid").width();
+
+	        console.log(width);
+
+//	        setTimeout(function () {
+	            if (width < 1000) {
+	                gridView.restoreColumns();
+	            }
+	            else {
+	                gridView.linearizeColumns();
+	            }
+	//        }, 200);
+		});
+	};
+	
+	function setFields(provider) {
+		var fields = [{
+			"fieldName": "id"
+		}, {
+			"fieldName": "userid"
+		}, {
+			"fieldName": "company"
+		}, {
+			"fieldName": "first_name"
+		}, {
+			"fieldName": "last_name"
+		}, {
+			"fieldName": "gender"
+		}, {
+			"fieldName": "email"
+		}, {
+			"fieldName": "city"
+		}, {
+			"fieldName": "ip_address"
+		}, {
+			"fieldName": "birthday"
+		}, {
+			"fieldName": "pay",
+			"dataType": "number"
+		}, {
+			"fieldName": "card_number"
+		}, {
+			"fieldName": "card_type"
+		}]		
+		provider.setFields(fields);
+	};
+	
+	function setColumns(grid) {
+	    var columns = [{
+	        "name": "group1",
+	        "type": "group",
+	        "width": 550,
+	        "header": { "visible": false },
+            "orientation": "vertical",
+	        "columns": [{            
+	        "name": "group11",
+	        "type": "group",
+	        "width": 480,
+	        "header": { "visible": false },
+	        "columns": [{
+	            "fieldName": "userid",
+	            "name": "userid",
+	            "width": 80,
+	            "header": { "text": "사용자 Id" },
+	            "styles": { "textAlignment": "near", "font": "Tahoma" }
+	        }, {
+	            "fieldName": "company",
+	            "name": "company",
+	            "width": 80,
+	            "header": { "text": "회사" },
+	            "styles": { "textAlignment": "near", "font": "Tahoma" }
+	        }, {
+	            "fieldName": "first_name",
+	            "name": "first_name",
+	            "width": 80,
+	            "header": { "text": "이름" },
+	            "styles": { "textAlignment": "near", "font": "Tahoma" }
+	        }, {
+	            "fieldName": "last_name",
+	            "name": "last_name",
+	            "width": 80,
+	            "header": { "text": "성" },
+	            "styles": { "textAlignment": "near", "font": "Tahoma" }
+	        }, {
+	            "fieldName": "gender",
+	            "name": "gender",
+	            "width": 80,
+	            "header": { "text": "성별" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" }
+	        }, {
+	            "fieldName": "email",
+	            "name": "email",
+	            "width": 80,
+	            "header": { "text": "E-Mail" },
+	            "styles": { "textAlignment": "near", "font": "Tahoma" }
+	        }]
+	        }, {
+	            "name": "group12",
+	            "type": "group",
+	            "width": 480,
+	            "header": { "visible": false },
+	            "columns": [{
+	                "fieldName": "city",
+	                "name": "city",
+	                "width": 80,
+	                "header": { "text": "시" },
+	                "styles": { "textAlignment": "near", "font": "Tahoma" }				
+	            }, {
+	                "fieldName": "ip_address",
+	                "name": "ip_address",
+	                "width": 80,
+	                "header": { "text": "IP Address" },
+	                "styles": { "textAlignment": "near", "font": "Tahoma" }
+	            }, {
+	                "fieldName": "birthday",
+	                "name": "birthday",
+	                "width": 80,
+	                "header": { "text": "생년월일" },
+	                "styles": {
+	                    "textAlignment": "center",
+	                    "font": "Tahoma",
+	                    "datetimeFormat": "yyyy/MM/dd"
+	                }
+	            }, {
+	                "fieldName": "pay",
+	                "name": "pay",
+	                "width": 80,
+	                "header": { "text": "급여" },
+	                "editor": {
+	                    "type": "number"
+	                },
+	                "styles": {
+	                    "textAlignment": "far",	
+	                    "font": "Tahoma"
+	                }			
+	            }, {
+	                "fieldName": "card_number",
+	                "name": "card_number",
+	                "width": 80,
+	                "header": { "text": "신용카드" },
+	                "styles": { "textAlignment": "near", "font": "Tahoma" }
+	            }, {
+	                "fieldName": "card_type",
+	                "name": "card_type",
+	                "width": 80,
+	                "header": { "text": "카드종류" },
+	                "styles": { "textAlignment": "near", "font": "Tahoma" }
+	            }]
+	        }]
+		}];
+
+		grid.setColumns(columns);
+	}		
+			
+
+	function setOptions(grid) {
+		grid.setOptions({
+			stateBar: {
+				visible: false
+			},
+			checkBar: {
+			    visible: false
+			},
+			select: {
+			    style: RealGridJS.SelectionStyle.ROWS
+			},
+			footer: {
+				visible: true
+			},
+			display: {
+                fitStyle: "even"
+			}
+		});
+	}
+	
+	
+	function loadData(provider) {
+
+	    $.ajax({
+	        url: "/resource/data/regularExpressionData.json?__time__=" + new Date().getTime(),
+	        success: function (data) {
+	            dataProvider.fillJsonData(data, {});
+	        },
+	        error: function (xhr, status, error) {
+	        },
+	        complete: function (data) {
+	            gridView.setFocus();
+	        },
+	        xhr: function () {
+	            var xhr = new window.XMLHttpRequest();
+	            //Download progress
+	            xhr.addEventListener("progress", function (evt) {
+	                if (evt.lengthComputable) {
+	                    gridView.setProgress(0, evt.total, evt.loaded);
+	                }
+	            }, false);
+	            return xhr;
+	        }
+	    });
+	}
+	
+
+	
+///////////////////////////////////////////////////////////////////////////////
+
+	function buttonClick() {
+
+	};
+
+</script>
+</head>
+<body>
+  	<div id="realgrid" style="width: 100%; height: 800px"></div>
+    <button onclick="buttonClick()"></button>
+</body>
+</html>
