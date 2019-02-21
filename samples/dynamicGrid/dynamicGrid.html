@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>Mobile View</title>
 
-	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+    <script src="/lib/realgrid/realgridjs-lic.js"></script>
 	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
 	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
 	<script src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
 	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+
 
 <script type="text/javascript">
 
@@ -240,8 +241,8 @@
 	            }]
 	        }]
 		}];
-		
-	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22/");
+
+	    RealGridJS.setRootContext("scripts");
 	    dataProvider = new RealGridJS.LocalDataProvider();
 	    gridView = new RealGridJS.GridView("realgrid");
 	    gridView.setDataSource(dataProvider);
@@ -254,20 +255,52 @@
 			
 	    loadData(dataProvider);
 
+	    var width = $("#realgrid").width();
+
+        if (width > 1000) {
+            gridView.linearizeColumns();
+        } else if (width > 600) { 
+        	gridView.setColumns(columns2);
+        } else {
+            gridView.setColumns(columns3);
+        }
+
 	    $(window).resize(function () {
 	        var width = $("#realgrid").width();
 
-	        console.log(width);
-
-//	        setTimeout(function () {
-	            if (width < 1000) {
-	                gridView.restoreColumns();
-	            }
-	            else {
-	                gridView.linearizeColumns();
-	            }
-	//        }, 200);
+	        if (width > 1000) {
+	            gridView.linearizeColumns();
+	        } else if (width > 600) { 
+	        	gridView.setColumns(columns2);
+	        } else {
+	            gridView.setColumns(columns3);
+	        }
 		});
+
+/*
+    	var width = $("#realgrid").width();
+
+        if (width > 1000) {
+            gridView.linearizeColumns();
+        } else if (width > 600) { 
+        	gridView.setColumnLayout(layout2Row);
+        } else {
+            gridView.setColumnLayout(layout3Row);
+        }
+
+	    $(window).resize(function () {
+	        var width = $("#realgrid").width();
+
+            if (width > 1000) {
+                gridView.linearizeColumns();
+            } else if (width > 600) { 
+            	gridView.setColumnLayout(layout2Row);
+            } else {
+                gridView.setColumnLayout(layout3Row);
+            }
+		});
+
+		*/
 	};
 	
 	function setFields(provider) {
@@ -303,56 +336,63 @@
 	};
 	
 	function setColumns(grid) {
+
 	    var columns = [{
 	        "name": "group1",
 	        "type": "group",
-	        "width": 550,
+	        "width": 240,
 	        "header": { "visible": false },
-            "orientation": "vertical",
-	        "columns": [{            
-	        "name": "group11",
-	        "type": "group",
-	        "width": 480,
-	        "header": { "visible": false },
+	        "orientation": "vertical",
 	        "columns": [{
-	            "fieldName": "userid",
-	            "name": "userid",
-	            "width": 80,
-	            "header": { "text": "사용자 Id" },
-	            "styles": { "textAlignment": "near", "font": "Tahoma" }
+	        	"name": "group21",
+	        	"type": "group",
+	        	"width": 240,
+	        	"header": { "visible": false },
+	        	"columns": [{
+		            "fieldName": "userid",
+		            "name": "userid",
+		            "width": 80,
+		            "header": { "text": "사용자 Id" },
+		            "styles": { "textAlignment": "center", "font": "Tahoma" }
+		        }, {
+		            "fieldName": "company",
+		            "name": "company",
+		            "width": 80,
+		            "header": { "text": "회사" },
+		            "styles": { "textAlignment": "center", "font": "Tahoma" }
+		        }, {
+		            "fieldName": "first_name",
+		            "name": "first_name",
+		            "width": 80,
+		            "header": { "text": "이름" },
+		            "styles": { "textAlignment": "center", "font": "Tahoma" }
+		        }],
+		    }, {
+	        	"name": "group22",
+	        	"type": "group",
+	        	"width": 240,
+	        	"header": { "visible": false },
+	        	"columns": [{
+		            "fieldName": "last_name",
+		            "name": "last_name",
+		            "width": 80,
+		            "header": { "text": "성" },
+		            "styles": { "textAlignment": "center", "font": "Tahoma" }
+		        }, {
+		            "fieldName": "gender",
+		            "name": "gender",
+		            "width": 80,
+		            "header": { "text": "성별" },
+		            "styles": { "textAlignment": "center", "font": "Tahoma" }
+		        }, {
+		            "fieldName": "email",
+		            "name": "email",
+		            "width": 80,
+		            "header": { "text": "E-Mail" },
+		            "styles": { "textAlignment": "center", "font": "Tahoma" }
+		        }]
 	        }, {
-	            "fieldName": "company",
-	            "name": "company",
-	            "width": 80,
-	            "header": { "text": "회사" },
-	            "styles": { "textAlignment": "near", "font": "Tahoma" }
-	        }, {
-	            "fieldName": "first_name",
-	            "name": "first_name",
-	            "width": 80,
-	            "header": { "text": "이름" },
-	            "styles": { "textAlignment": "near", "font": "Tahoma" }
-	        }, {
-	            "fieldName": "last_name",
-	            "name": "last_name",
-	            "width": 80,
-	            "header": { "text": "성" },
-	            "styles": { "textAlignment": "near", "font": "Tahoma" }
-	        }, {
-	            "fieldName": "gender",
-	            "name": "gender",
-	            "width": 80,
-	            "header": { "text": "성별" },
-	            "styles": { "textAlignment": "center", "font": "Tahoma" }
-	        }, {
-	            "fieldName": "email",
-	            "name": "email",
-	            "width": 80,
-	            "header": { "text": "E-Mail" },
-	            "styles": { "textAlignment": "near", "font": "Tahoma" }
-	        }]
-	        }, {
-	            "name": "group12",
+	            "name": "group23",
 	            "type": "group",
 	            "width": 480,
 	            "header": { "visible": false },
@@ -361,13 +401,13 @@
 	                "name": "city",
 	                "width": 80,
 	                "header": { "text": "시" },
-	                "styles": { "textAlignment": "near", "font": "Tahoma" }				
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }				
 	            }, {
 	                "fieldName": "ip_address",
 	                "name": "ip_address",
 	                "width": 80,
 	                "header": { "text": "IP Address" },
-	                "styles": { "textAlignment": "near", "font": "Tahoma" }
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }
 	            }, {
 	                "fieldName": "birthday",
 	                "name": "birthday",
@@ -378,7 +418,13 @@
 	                    "font": "Tahoma",
 	                    "datetimeFormat": "yyyy/MM/dd"
 	                }
-	            }, {
+	            }]
+	        }, {
+	        	"name": "group24",
+	            "type": "group",
+	            "width": 480,
+	            "header": { "visible": false },
+	            "columns": [{
 	                "fieldName": "pay",
 	                "name": "pay",
 	                "width": 80,
@@ -387,7 +433,7 @@
 	                    "type": "number"
 	                },
 	                "styles": {
-	                    "textAlignment": "far",	
+	                    "textAlignment": "center",	
 	                    "font": "Tahoma"
 	                }			
 	            }, {
@@ -395,13 +441,13 @@
 	                "name": "card_number",
 	                "width": 80,
 	                "header": { "text": "신용카드" },
-	                "styles": { "textAlignment": "near", "font": "Tahoma" }
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }
 	            }, {
 	                "fieldName": "card_type",
 	                "name": "card_type",
 	                "width": 80,
 	                "header": { "text": "카드종류" },
-	                "styles": { "textAlignment": "near", "font": "Tahoma" }
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }
 	            }]
 	        }]
 		}];
@@ -434,7 +480,7 @@
 	function loadData(provider) {
 
 	    $.ajax({
-	        url: "/resource/data/regularExpressionData.json?__time__=" + new Date().getTime(),
+	        url: "./demoData/defaultdemodata.json?__time__=" + new Date().getTime(),
 	        success: function (data) {
 	            dataProvider.fillJsonData(data, {});
 	        },
@@ -467,7 +513,7 @@
 </script>
 </head>
 <body>
-  	<div id="realgrid" style="width: 100%; height: 800px"></div>
+  	<div id="realgrid" style="width: 95%; height: 800px"></div>
     <button onclick="buttonClick()"></button>
 </body>
 </html>
