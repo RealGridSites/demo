@@ -242,7 +242,7 @@
 	        }]
 		}];
 
-	    RealGridJS.setRootContext("scripts");
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
 	    dataProvider = new RealGridJS.LocalDataProvider();
 	    gridView = new RealGridJS.GridView("realgrid");
 	    gridView.setDataSource(dataProvider);
@@ -480,7 +480,7 @@
 	function loadData(provider) {
 
 	    $.ajax({
-	        url: "./demoData/defaultdemodata.json?__time__=" + new Date().getTime(),
+	        url: "/resource/data/regularExpressionData.json?__time__=" + new Date().getTime(),
 	        success: function (data) {
 	            dataProvider.fillJsonData(data, {});
 	        },
