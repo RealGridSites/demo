@@ -34,34 +34,43 @@
     };
 
     function setContextMenu(grid) {
-        var contextMenu = [{
-            label: '엑셀 내보내기',
-            tag: 'excel'
-        }, {
-            label: '필터 만들기',
-            tag: 'filter'
-        }, {
-            label: '컬럼 보이기/숨기기',
-            children: getContextColumnObject()
-        }];
-        
-        grid.setContextMenu(contextMenu);
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: '필터 만들기',
+           tag: 'filter'
+       }, {
+           label: "-"
+       }, {
+           label: '컬럼 숨기기',
+           tag: 'visibleFalse'
+       }, {
+           label: '컬럼 모두 보이기',
+           tag: 'visibleTrue'
+       }];
 
-        grid.onContextMenuItemClicked = function (grid, data, index) {
-            if (data.tag == 'excel') {
-                grid.exportGrid({
-                    type: "excel",
-                    target: "local",
-                    fileName: "gridExportSample.xlsx"
-                });
-            } else if (data.tag == 'filter' && index.column) {
-                createColumnFilter(grid, index.column);
-            } else if (data.group == 'columnVisible') {
-                grid.setColumnProperty(data.tag, "visible", data.checked);
+       grid.setContextMenu(contextMenu);
 
-            }
-        };
-    }
+
+       grid.onContextMenuItemClicked = function (grid, data, index) {
+           if (data.tag == 'excel') {
+               grid.exportGrid({
+                   type: "excel",
+                   target: "local",
+                   fileName: "gridExportSample.xlsx"
+               });
+           } else if (data.tag == 'visibleTrue') {
+               var columns = grid.getColumns();
+
+               for (var i in columns) {
+                   grid.setColumnProperty(columns[i].name, "visible", true);
+               }
+           } else if (data.tag == 'visibleFalse') {
+               grid.setColumnProperty(index.column, "visible", false);
+           }
+       };
+   };
 
     function setFields(provider) {
         var fields = [{
