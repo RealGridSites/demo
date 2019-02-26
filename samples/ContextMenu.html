@@ -123,6 +123,27 @@
        grid.setContextMenu(contextMenu);
    }
 
+   function toggleColumnVisible(grid, val) {
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: '필터 만들기',
+           tag: 'filter'
+       }, {
+           label: "-"
+       }, {
+           label: '컬럼 숨기기',
+           tag: 'visibleFalse'
+       }, {
+           label: '컬럼 모두 보이기',
+           tag: 'visibleTrue',
+           enabled: val
+       }];
+
+       grid.setContextMenu(contextMenu);
+   }
+
     function setFields(provider) {
         var fields = [{
             "fieldName": "id"
