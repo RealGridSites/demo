@@ -15,6 +15,7 @@
 
     var gridView;
     var dataProvider;
+    var toggle = false;
 
     window.onload = function () {
         console.log("==> RealGrid loaded.");
@@ -34,7 +35,6 @@
     };
 
     function setContextMenu(grid) {
-       toggleColumnVisible(grid, false);
 
        grid.onContextMenuItemClicked = function (grid, data, index) {
            if (data.tag == 'excel') {
@@ -51,17 +51,38 @@
                for (var i in columns) {
                    grid.setColumnProperty(columns[i].name, "visible", true);
                }
-               toggleColumnVisible(grid, false);
-
+               toggle = false;
+               toggleColumnVisible(grid, toggle);
            } else if (data.tag == 'visibleFalse') {
                grid.setColumnProperty(index.column, "visible", false);
 
-               toggleColumnVisible(grid, true);
+               toggle = true;
+               toggleColumnVisible(grid, toggle);
+           } else if (data.tag == 'fixedCol') {
+               var count = grid.getColumnProperty(index.column, "displayIndex") + 1;
+               grid.setFixedOptions({ colCount: count });
+           } else if (data.tag == 'fixedRow') {
+               var count = index.itemIndex + 1;
+               grid.setFixedOptions({ rowCount: count });
+           } else if (data.tag == 'fixedCancel') {
+               grid.setFixedOptions({ colCount: 0, rowCount: 0 });
+           };
+       }
+
+       grid.onContextMenuPopup = function (grid, x, y, elementName) {
+           if (elementName == 'HeaderCell') {
+               setHeaderCellContextMenu(grid, toggle);
+           } else if (elementName == 'DataCell') {
+               setDataCellContextMenu(grid);
+           } else {
+               return false;
            }
        };
+
+       setDataCellContextMenu(grid);
    }
 
-   function toggleColumnVisible(grid, val) {
+   function setHeaderCellContextMenu(grid, val) {
        var contextMenu = [{
            label: '엑셀 내보내기',
            tag: 'excel'
@@ -77,6 +98,26 @@
            label: '컬럼 모두 보이기',
            tag: 'visibleTrue',
            enabled: val
+       }];
+
+       grid.setContextMenu(contextMenu);
+   }
+
+   function setDataCellContextMenu(grid) {
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: "-"
+       }, {
+           label: '열 고정',
+           tag: 'fixedCol'
+       }, {
+           label: '행 고정',
+           tag: 'fixedRow'
+       }, {
+           label: '고정 취소',
+           tag: 'fixedCancel'
        }];
 
        grid.setContextMenu(contextMenu);
@@ -187,12 +228,6 @@
                 "font": "Tahoma"
             }
         }, {
-            "fieldName": "card_number",
-            "name": "card_number",
-            "width": 80,
-            "header": { "text": "신용카드" },
-            "styles": { "textAlignment": "center", "font": "Tahoma" }
-        }, {
             "fieldName": "card_type",
             "name": "card_type",
             "width": 80,
@@ -300,11 +335,22 @@
         gridView.fitColumnWidth(null, 200, 10, true)
     }
 
+    function btnAddColumn() {
+       gridView.addColumn({
+           "fieldName": "card_number",
+           "name": "card_number",
+           "width": 80,
+           "header": { "text": "신용카드" },
+           "styles": { "textAlignment": "center", "font": "Tahoma" }
+       });
+    }
+
 </script>
 </head>
 <body>
-  	<div id="realgrid" style="width: 70%; height: 500px"></div>
+     <div id="realgrid" style="width: 70%; height: 500px"></div>
 
-    <button onclick="btnFitColumnWidth()">컬럼너비 자동지정</button>
+   <button onclick="btnFitColumnWidth()">컬럼너비 자동지정</button>
+   <button onclick="btnAddColumn()">컬럼 추가</button>
 </body>
 </html>
