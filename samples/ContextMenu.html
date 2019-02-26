@@ -52,12 +52,12 @@
                    grid.setColumnProperty(columns[i].name, "visible", true);
                }
                toggle = false;
-               toggleColumnVisible(grid, toggle);
+               setHeaderCellContextMenu(grid, toggle);
            } else if (data.tag == 'visibleFalse') {
                grid.setColumnProperty(index.column, "visible", false);
 
                toggle = true;
-               toggleColumnVisible(grid, toggle);
+               setHeaderCellContextMenu(grid, toggle);
            } else if (data.tag == 'fixedCol') {
                var count = grid.getColumnProperty(index.column, "displayIndex") + 1;
                grid.setFixedOptions({ colCount: count });
@@ -118,27 +118,6 @@
        }, {
            label: '고정 취소',
            tag: 'fixedCancel'
-       }];
-
-       grid.setContextMenu(contextMenu);
-   }
-
-   function toggleColumnVisible(grid, val) {
-       var contextMenu = [{
-           label: '엑셀 내보내기',
-           tag: 'excel'
-       }, {
-           label: '필터 만들기',
-           tag: 'filter'
-       }, {
-           label: "-"
-       }, {
-           label: '컬럼 숨기기',
-           tag: 'visibleFalse'
-       }, {
-           label: '컬럼 모두 보이기',
-           tag: 'visibleTrue',
-           enabled: val
        }];
 
        grid.setContextMenu(contextMenu);
@@ -357,13 +336,17 @@
     }
 
     function btnAddColumn() {
-       gridView.addColumn({
-           "fieldName": "card_number",
-           "name": "card_number",
-           "width": 80,
-           "header": { "text": "신용카드" },
-           "styles": { "textAlignment": "center", "font": "Tahoma" }
-       });
+       var column = gridView.columnByName('card_number');
+
+       if (!column) {
+           gridView.addColumn({
+               "fieldName": "card_number",
+               "name": "card_number",
+               "width": 80,
+               "header": { "text": "신용카드" },
+               "styles": { "textAlignment": "center", "font": "Tahoma" }
+           });
+       }
     }
 
 </script>
