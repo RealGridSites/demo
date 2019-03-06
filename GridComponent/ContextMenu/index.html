@@ -1636,6 +1636,24 @@
 
         </li>
         
+        <li>
+          
+            <div class="heading-toc">기타</div>
+          
+          <ul class="list-toc">
+            
+              <li class="item-toc ">
+                <a href="/Etc/FileUpload/"
+                class=" sidebar-link ">
+                  <span>파일 업로드</span>
+                  <span style="display: none;">
+                  업로드, 파일, upload, file
+                  </span>
+                </a>
+              </li></ul>
+
+        </li>
+        
 
     </ul>
 
@@ -1757,20 +1775,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2150,6 +2168,301 @@
 </div>
 </div>
 
+<h4 id="동적-컨텍스트-메뉴">동적 컨텍스트 메뉴</h4>
+
+<p><a class="btn primary small round lowercase" id="btnSetContextMenu2">동적 컨텍스트 메뉴 설정</a></p>
+
+<p>컬럼 해더와 데이터 셀 영역에 다른 컨텍스트 메뉴와 동작들로 구성한 예제입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143</pre></td><td class="code"><pre>var toggle = false;
+function setContextMenu(grid) {
+   grid.onContextMenuItemClicked = function (grid, data, index) {
+       if (data.tag == 'excel') {
+           grid.exportGrid({
+               type: "excel",
+               target: "local",
+               fileName: "gridExportSample.xlsx"
+           });
+       } else if (data.tag == 'filter' &amp;&amp; index.column) {
+           createColumnFilter(grid, index.column);
+       } else if (data.tag == 'visibleTrue') {
+           var columns = grid.getColumns();
+
+           for (var i in columns) {
+               grid.setColumnProperty(columns[i].name, "visible", true);
+           }
+           toggle = false;
+           setHeaderCellContextMenu(grid, toggle);
+       } else if (data.tag == 'visibleFalse') {
+           grid.setColumnProperty(index.column, "visible", false);
+
+           toggle = true;
+           setHeaderCellContextMenu(grid, toggle);
+       } else if (data.tag == 'fixedCol') {
+           var count = grid.getColumnProperty(index.column, "displayIndex") + 1;
+           grid.setFixedOptions({ colCount: count });
+       } else if (data.tag == 'fixedRow') {
+           var count = index.itemIndex + 1;
+           grid.setFixedOptions({ rowCount: count });
+       } else if (data.tag == 'fixedCancel') {
+           grid.setFixedOptions({ colCount: 0, rowCount: 0 });
+       };
+   }
+
+   grid.onContextMenuPopup = function (grid, x, y, elementName) {
+       if (elementName == 'HeaderCell') {
+           setHeaderCellContextMenu(grid, toggle);
+       } else if (elementName == 'DataCell') {
+           setDataCellContextMenu(grid);
+       } else {
+           return false;
+       }
+   };
+
+   setDataCellContextMenu(grid);
+}
+
+function setHeaderCellContextMenu(grid, val) {
+   var contextMenu = [{
+       label: '엑셀 내보내기',
+       tag: 'excel'
+   }, {
+       label: '필터 만들기',
+       tag: 'filter'
+   }, {
+       label: "-"
+   }, {
+       label: '컬럼 숨기기',
+       tag: 'visibleFalse'
+   }, {
+       label: '컬럼 모두 보이기',
+       tag: 'visibleTrue',
+       enabled: val
+   }];
+
+   grid.setContextMenu(contextMenu);
+}
+
+function setDataCellContextMenu(grid) {
+   var contextMenu = [{
+       label: '엑셀 내보내기',
+       tag: 'excel'
+   }, {
+       label: "-"
+   }, {
+       label: '열 고정',
+       tag: 'fixedCol'
+   }, {
+       label: '행 고정',
+       tag: 'fixedRow'
+   }, {
+       label: '고정 취소',
+       tag: 'fixedCancel'
+   }];
+
+   grid.setContextMenu(contextMenu);
+}
+
+function setHeaderCellContextMenu(grid, val) {
+   var contextMenu = [{
+       label: '엑셀 내보내기',
+       tag: 'excel'
+   }, {
+       label: '필터 만들기',
+       tag: 'filter'
+   }, {
+       label: "-"
+   }, {
+       label: '컬럼 숨기기',
+       tag: 'visibleFalse'
+   }, {
+       label: '컬럼 모두 보이기',
+       tag: 'visibleTrue',
+       enabled: val
+   }];
+
+   grid.setContextMenu(contextMenu);
+}
+
+function setDataCellContextMenu(grid) {
+   var contextMenu = [{
+       label: '엑셀 내보내기',
+       tag: 'excel'
+   }, {
+       label: "-"
+   }, {
+       label: '열 고정',
+       tag: 'fixedCol'
+   }, {
+       label: '행 고정',
+       tag: 'fixedRow'
+   }, {
+       label: '고정 취소',
+       tag: 'fixedCancel'
+   }];
+
+   grid.setContextMenu(contextMenu);
+}
+
+function createColumnFilter(grid, colName) {
+    var fieldName = grid.getColumnProperty(colName, "fieldName");
+    var distinctValues = dataProvider.getDistinctValues(fieldName);
+    var filters = [];
+
+    for (var i = 0; i &lt; distinctValues.length; i++) {
+        filters.push({ name: distinctValues[i], criteria: "value = " + "'" + distinctValues[i] + "'" });
+    }
+
+    gridView.setColumnFilters(colName, filters);
+}
+
+setContextMenu(gridView);
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
 
   $('#btnSetContextMenu').click(function() {
@@ -2181,6 +2494,153 @@
           });
       };
     };
+  });
+
+  $('#btnSetContextMenu2').click(function() {
+    var toggle = false;
+    function setContextMenu(grid) {
+
+       grid.onContextMenuItemClicked = function (grid, data, index) {
+           if (data.tag == 'excel') {
+               grid.exportGrid({
+                   type: "excel",
+                   target: "local",
+                   fileName: "gridExportSample.xlsx"
+               });
+           } else if (data.tag == 'filter' && index.column) {
+               createColumnFilter(grid, index.column);
+           } else if (data.tag == 'visibleTrue') {
+               var columns = grid.getColumns();
+
+               for (var i in columns) {
+                   grid.setColumnProperty(columns[i].name, "visible", true);
+               }
+               toggle = false;
+               setHeaderCellContextMenu(grid, toggle);
+           } else if (data.tag == 'visibleFalse') {
+               grid.setColumnProperty(index.column, "visible", false);
+
+               toggle = true;
+               setHeaderCellContextMenu(grid, toggle);
+           } else if (data.tag == 'fixedCol') {
+               var count = grid.getColumnProperty(index.column, "displayIndex") + 1;
+               grid.setFixedOptions({ colCount: count });
+           } else if (data.tag == 'fixedRow') {
+               var count = index.itemIndex + 1;
+               grid.setFixedOptions({ rowCount: count });
+           } else if (data.tag == 'fixedCancel') {
+               grid.setFixedOptions({ colCount: 0, rowCount: 0 });
+           };
+       }
+
+       grid.onContextMenuPopup = function (grid, x, y, elementName) {
+           if (elementName == 'HeaderCell') {
+               setHeaderCellContextMenu(grid, toggle);
+           } else if (elementName == 'DataCell') {
+               setDataCellContextMenu(grid);
+           } else {
+               return false;
+           }
+       };
+
+       setDataCellContextMenu(grid);
+   }
+
+   function setHeaderCellContextMenu(grid, val) {
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: '필터 만들기',
+           tag: 'filter'
+       }, {
+           label: "-"
+       }, {
+           label: '컬럼 숨기기',
+           tag: 'visibleFalse'
+       }, {
+           label: '컬럼 모두 보이기',
+           tag: 'visibleTrue',
+           enabled: val
+       }];
+
+       grid.setContextMenu(contextMenu);
+   }
+
+   function setDataCellContextMenu(grid) {
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: "-"
+       }, {
+           label: '열 고정',
+           tag: 'fixedCol'
+       }, {
+           label: '행 고정',
+           tag: 'fixedRow'
+       }, {
+           label: '고정 취소',
+           tag: 'fixedCancel'
+       }];
+
+       grid.setContextMenu(contextMenu);
+   }
+   
+    function setHeaderCellContextMenu(grid, val) {
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: '필터 만들기',
+           tag: 'filter'
+       }, {
+           label: "-"
+       }, {
+           label: '컬럼 숨기기',
+           tag: 'visibleFalse'
+       }, {
+           label: '컬럼 모두 보이기',
+           tag: 'visibleTrue',
+           enabled: val
+       }];
+
+       grid.setContextMenu(contextMenu);
+   }
+
+   function setDataCellContextMenu(grid) {
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: "-"
+       }, {
+           label: '열 고정',
+           tag: 'fixedCol'
+       }, {
+           label: '행 고정',
+           tag: 'fixedRow'
+       }, {
+           label: '고정 취소',
+           tag: 'fixedCancel'
+       }];
+
+       grid.setContextMenu(contextMenu);
+   }
+
+   function createColumnFilter(grid, colName) {
+        var fieldName = grid.getColumnProperty(colName, "fieldName");
+        var distinctValues = dataProvider.getDistinctValues(fieldName);
+        var filters = [];
+
+        for (var i = 0; i < distinctValues.length; i++) {
+            filters.push({ name: distinctValues[i], criteria: "value = " + "'" + distinctValues[i] + "'" });
+        }
+
+        gridView.setColumnFilters(colName, filters);
+    }
+
+   setContextMenu(gridView);
   });
 
 </script>
