@@ -10,7 +10,7 @@
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
     파일 업로드
     </title>
-    <meta name="description" content="그리드에 실제 파일을 올릴 수는 없으며 파일 첨부 기능과 같이 동작하도록 구현 할 수 있습니다.">
+    <meta name="description" content="그리드에 실제 파일이 올라가는것은 아니며 파일 첨부 기능과 같이 동작하도록 구현 할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1842,7 +1842,9 @@
         </div>
 
         <div class="document-formatting">
-            <p>그리드에 실제 파일을 올릴 수는 없으며 파일 첨부 기능과 같이 동작하도록 구현 할 수 있습니다.</p>
+            <p>그리드에 실제 파일이 올라가는것은 아니며 파일 첨부 기능과 같이 동작하도록 구현 할 수 있습니다.</p>
+
+<p><code class="highlighter-rouge">그리드는 클라이언트단 까지만 지원할 수 있으며 서버 모듈은 직접 구현해서 사용해주셔야 합니다.</code></p>
 
 <script>
   var selectFiles = {};
@@ -1855,8 +1857,7 @@
         var input = document.createElement("input");
         input.type="file"
         input.onchange = function(event) {
-          var file = event.currentTarget.files[0];
-          var dataRow = grid.getDataRow(itemIndex);      
+          var file = event.currentTarget.files[0];     
           grid.setValue(itemIndex, "fileUpload", file.name);
           selectFiles[file.name] = file;
         };
@@ -2265,8 +2266,7 @@ gridView.onCellButtonClicked = function (grid, itemIndex, column) {
         var input = document.createElement("input");
         input.type="file"
         input.onchange = function(event) {
-            var file = event.currentTarget.files[0];
-            var dataRow = grid.getDataRow(itemIndex);      
+            var file = event.currentTarget.files[0];     
             grid.setValue(itemIndex, "fileUpload", file.name);
             selectFiles[file.name] = file;
         };
@@ -2300,8 +2300,9 @@ $("#btnUpload").on("click",function(event) {
     datas.length &gt; 0 &amp;&amp; formData.append("datas", JSON.stringify(datas));
       
     //FormData() Ajax 파일업로드 SUBMIT 스크립트 코드
+    //Ajax 파일업로드 SUBMIT 코드는 직접 구현해서 사용해야 합니다.
     var ajaxReq = $.ajax({
-        url : './*.do',
+        url : './fileupload.do',
         type : 'POST',
         data : formData,
         cache : false,
@@ -2335,8 +2336,6 @@ $("#btnUpload").on("click",function(event) {
 </pre></td></tr></tbody></table>
 </div>
 </div>
-
-<p><code class="highlighter-rouge">그리드는 클라이언트단 까지만 지원이 가능하며 서버 모듈은 직접 구현해서 사용해주셔야 합니다.</code></p>
 
   </div>
 </div>
