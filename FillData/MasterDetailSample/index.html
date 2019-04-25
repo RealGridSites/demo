@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -2130,7 +2130,7 @@ function onbtnDetailSave(evt) {
     var dpMain;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         dpMain = new RealGridJS.LocalDataProvider();
         mainGrid = new RealGridJS.GridView("main");
@@ -2138,6 +2138,10 @@ function onbtnDetailSave(evt) {
 
         
             
+
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/setMasterFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dpMain.setFields(data);
@@ -2167,15 +2171,10 @@ function onbtnDetailSave(evt) {
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/setMasterColumns.json", function (data, textStatus, jqXHR) {
                 mainGrid.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.maincolumn').html(
                   JSON.stringify(data, null, 4)
@@ -2262,6 +2261,9 @@ function onbtnDetailSave(evt) {
 
             $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
                 mainGrid.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.mainstyle').html(
                   JSON.stringify(data, null, 4)
@@ -2331,7 +2333,7 @@ function onbtnDetailSave(evt) {
     var dpDetail;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         dpDetail = new RealGridJS.LocalDataProvider();
         detailGrid = new RealGridJS.GridView("detail");
@@ -2339,6 +2341,10 @@ function onbtnDetailSave(evt) {
 
         
             
+
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/setDetailFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dpDetail.setFields(data);
@@ -2368,15 +2374,10 @@ function onbtnDetailSave(evt) {
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/setDetailColumns.json", function (data, textStatus, jqXHR) {
                 detailGrid.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.detailcolumn').html(
                   JSON.stringify(data, null, 4)
@@ -2411,6 +2412,9 @@ function onbtnDetailSave(evt) {
 
             $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
                 detailGrid.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.detailstyle').html(
                   JSON.stringify(data, null, 4)
@@ -3099,9 +3103,9 @@ Detail의 “OrderID” 는 저장시 자동으로 입력되도록 코딩되어 
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs_eval.1.1.31.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs-api.1.1.31.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs_eval.1.1.32.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs-api.1.1.32.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -1868,7 +1868,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -1876,6 +1876,10 @@
 
         
             
+
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/DefaultField.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
@@ -1905,15 +1909,10 @@
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/ColumnHeightColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
@@ -2000,6 +1999,9 @@
 
             $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
                 gridView.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgridstyle').html(
                   JSON.stringify(data, null, 4)
@@ -2212,9 +2214,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs_eval.1.1.31.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs-api.1.1.31.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs_eval.1.1.32.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs-api.1.1.32.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

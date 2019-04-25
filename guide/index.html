@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -2428,7 +2428,7 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2436,6 +2436,10 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 
         
             
+
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/fieldset1.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
@@ -2467,15 +2471,10 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/columnset1.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
@@ -2562,6 +2561,9 @@ var onFailFieldSet = function(jqxhr, textStatus, error) {
 
             $.getJSON("/resource/style/defaultStyle.json", function (data, textStatus, jqXHR) {
                 gridView.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgridstyle').html(
                   JSON.stringify(data, null, 4)
@@ -2704,7 +2706,7 @@ success 시 <code class="highlighter-rouge">successDataSet</code>에 연결된 �
     var treeDataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         treeDataProvider = new RealGridJS.LocalTreeDataProvider();
         treeView = new RealGridJS.TreeView("realtree");
@@ -3047,7 +3049,7 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
     var dataProvider1;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         dataProvider1 = new RealGridJS.LocalDataProvider();
         gridView1 = new RealGridJS.GridView("realgrid1");
@@ -3055,6 +3057,10 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
         
             
+
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/carFields1.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider1.setFields(data);
@@ -3084,15 +3090,10 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/carColumns1.json", function (data, textStatus, jqXHR) {
                 gridView1.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgrid1column').html(
                   JSON.stringify(data, null, 4)
@@ -3179,6 +3180,9 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
             $.getJSON("/resource/style/defaultStyle.json", function (data, textStatus, jqXHR) {
                 gridView1.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgrid1style').html(
                   JSON.stringify(data, null, 4)
@@ -3276,9 +3280,9 @@ var onCarGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs_eval.1.1.31.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs-api.1.1.31.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs_eval.1.1.32.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs-api.1.1.32.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

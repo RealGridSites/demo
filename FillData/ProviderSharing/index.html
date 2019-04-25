@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -1873,7 +1873,7 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
     var dataProvider1;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         dataProvider1 = new RealGridJS.LocalDataProvider();
         gridView1 = new RealGridJS.GridView("realgrid1");
@@ -1881,6 +1881,10 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
 
         
             
+
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/economicGrowthField.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider1.setFields(data);
@@ -1912,15 +1916,10 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/economicGrowthColumn1.json", function (data, textStatus, jqXHR) {
                 gridView1.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgrid1column').html(
                   JSON.stringify(data, null, 4)
@@ -2007,6 +2006,9 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
 
             $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
                 gridView1.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgrid1style').html(
                   JSON.stringify(data, null, 4)
@@ -2111,7 +2113,7 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
     var dataProvider2;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         dataProvider2 = new RealGridJS.LocalDataProvider();
         gridView2 = new RealGridJS.GridView("realgrid2");
@@ -2119,6 +2121,10 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
 
         
             
+
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/economicGrowthField.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider2.setFields(data);
@@ -2150,15 +2156,10 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/economicGrowthColumn2.json", function (data, textStatus, jqXHR) {
                 gridView2.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgrid2column').html(
                   JSON.stringify(data, null, 4)
@@ -2245,6 +2246,9 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
 
             $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
                 gridView2.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgrid2style').html(
                   JSON.stringify(data, null, 4)
@@ -2374,9 +2378,9 @@ $('#setValues').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs_eval.1.1.31.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs-api.1.1.31.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs_eval.1.1.32.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs-api.1.1.32.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

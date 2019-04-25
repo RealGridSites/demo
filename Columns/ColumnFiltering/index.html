@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.31</span>
+                            <span>최신버전 1.1.32</span>
                         </a>
                     </li>
                     
@@ -1986,7 +1986,7 @@ if (column) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -1994,6 +1994,10 @@ if (column) {
 
         
             
+
+            $.ajaxSetup({
+              async: false
+            });
 
             $.getJSON("/resource/layout/DefaultField.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
@@ -2023,15 +2027,10 @@ if (column) {
         
             
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("/resource/layout/DefaultColumn.json", function (data, textStatus, jqXHR) {
                 gridView.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.realgridcolumn').html(
                   JSON.stringify(data, null, 4)
@@ -2118,6 +2117,9 @@ if (column) {
 
             $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
                 gridView.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.realgridstyle').html(
                   JSON.stringify(data, null, 4)
@@ -2690,6 +2692,75 @@ if (column) {
 </div>
 </div>
 
+<h4 id="필터-조건-함수로-설정">필터 조건 함수로 설정</h4>
+
+<p>필터링 조건을 함수형태로 설정합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetFilterFunc">컬럼 검색 상자 추가</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">filterFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">,</span> <span class="nx">dataRow</span><span class="p">,</span> <span class="nx">fieldName</span> <span class="p">,</span> <span class="nx">filter</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"VINET"</span><span class="p">){</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"VICTE"</span><span class="p">){</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+     <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"HANAR"</span><span class="p">){</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> 
+   <span class="na">name</span><span class="p">:</span><span class="s2">"filter1"</span><span class="p">,</span>
+   <span class="na">text</span><span class="p">:</span><span class="s2">"VINET"</span><span class="p">,</span>
+   <span class="na">tag</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+   <span class="na">criteria</span><span class="p">:</span><span class="nx">filterFunc</span>
+    <span class="p">},{</span> 
+   <span class="na">name</span><span class="p">:</span><span class="s2">"filter2"</span><span class="p">,</span>
+   <span class="na">text</span><span class="p">:</span><span class="s2">"VICTE"</span><span class="p">,</span>
+   <span class="na">tag</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+   <span class="na">criteria</span><span class="p">:</span><span class="nx">filterFunc</span>
+    <span class="p">},{</span> 
+   <span class="na">name</span><span class="p">:</span><span class="s2">"filter3"</span><span class="p">,</span>
+   <span class="na">text</span><span class="p">:</span><span class="s2">"HANAR"</span><span class="p">,</span>
+   <span class="na">tag</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+   <span class="na">criteria</span><span class="p">:</span><span class="nx">filterFunc</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="nx">filters</span><span class="p">);</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
 <script>
 var autoFiltercolumn;
 var autoFilterItems = [];
@@ -2844,6 +2915,39 @@ $("#btnShowSearchInput").click(function() {
   })
 });
 
+$("#btnSetFilterFunc").click(function() { 
+  var filterFunc = function(dataProvider, dataRow, fieldName , filter, value) {
+    if(filter.tag == 1 && value == "VINET"){
+      return true;
+    }else if(filter.tag == 2 && value == "VICTE"){
+      return true;
+     }else if(filter.tag == 3 && value == "HANAR"){
+      return true;
+     }else{
+      return false;
+    }
+  }
+  var filters = [
+    { 
+   name:"filter1",
+   text:"VINET",
+   tag:1,
+   criteria:filterFunc
+    },{ 
+   name:"filter2",
+   text:"VICTE",
+   tag:2,
+   criteria:filterFunc
+    },{ 
+   name:"filter3",
+   text:"HANAR",
+   tag:3,
+   criteria:filterFunc
+    }
+  ]
+  gridView.setColumnFilters("CustomerID", filters);
+});
+
 
 </script>
 
@@ -2865,9 +2969,9 @@ $("#btnShowSearchInput").click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs_eval.1.1.31.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs-api.1.1.31.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.31/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs_eval.1.1.32.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs-api.1.1.32.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>
