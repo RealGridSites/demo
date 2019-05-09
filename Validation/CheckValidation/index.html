@@ -2166,7 +2166,7 @@ var onDoneDataSet = function() {
 
 <h4 id="유효성-확인-실패-목록">유효성 확인 실패 목록</h4>
 
-<p>gridView.checkValidateCells(itemIndices)](http://help.realgrid.com/api/GridBase/checkValidateCells/) 후에 오류 값들을 수정하고 잘못된 값들이 있는지 다시 확인할 때 <a href="http://help.realgrid.com/api/GridBase/getInvalidCellList/">gridView.getInvalidCellList()</a>를 사용 합니다.</p>
+<p><a href="http://help.realgrid.com/api/GridBase/checkValidateCells/">gridView.checkValidateCells(itemIndices)</a> 후에 오류 값들을 수정하고 잘못된 값들이 있는지 다시 확인할 때 <a href="http://help.realgrid.com/api/GridBase/getInvalidCellList/">gridView.getInvalidCellList()</a>를 사용 합니다.</p>
 
 <p>유효성 확인 실패된 행을 수정하고 버튼을 클릭하여 수정한 행이 제외되었는지 확인하세요.</p>
 
@@ -2175,6 +2175,18 @@ var onDoneDataSet = function() {
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getInvalidCellList</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">log</span><span class="p">));</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="검증실패-목록-초기화">검증실패 목록 초기화</h4>
+
+<p>값 검증에 실패한 셀 정보들을 삭제한다.<br />
+<a href="http://help.realgrid.com/api/GridBase/checkValidateCells/">gridView.checkValidateCells(itemIndices)</a> 를 먼저 실행한 후 가져온 검증에 실패한 데이터의 목록을 지울때 사용합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnClearInvalidCellList">getInvalidCellList()</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>gridView.clearInvalidCellList();
 </pre></td></tr></tbody></table>
 </div>
 </div>
@@ -2221,6 +2233,10 @@ alert(JSON.stringify(log));
 $('#btnGetInvalidCellList').click(function() {
 var log = gridView.getInvalidCellList();
 alert(JSON.stringify(log));
+});
+
+$('#btnClearInvalidCellList').click(function() {
+    gridView.clearInvalidCellList();
 });
 </script>
 
