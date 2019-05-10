@@ -151,7 +151,7 @@ gridView.setColumns(columns);
 
 
 ```
-gridView.setColumnProperty("column2","renderer",{
+gridView.setColumnProperty("EmployeeID","renderer",{
   "type": "imageButtons", 
   "editable": false, 
   "imageGap":5,
@@ -160,13 +160,13 @@ gridView.setColumnProperty("column2","renderer",{
     "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
     "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
     "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
-    "width":45
+    "width":50
   },{
     "name": "팝업버튼",
     "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
     "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
     "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
-    "width":45
+    "width":50
   }],
   "alignment": "center" //버튼 정렬 near, far
 })
@@ -210,7 +210,7 @@ gridView.setColumnProperty("column2","renderer",{
   });
 
   $('#btnButtonAlignment').click(function() {
-    gridView.setColumnProperty("column2","renderer",{
+    gridView.setColumnProperty("EmployeeID","renderer",{
       "type": "imageButtons", 
       "editable": false, 
       "imageGap":5,
@@ -219,13 +219,13 @@ gridView.setColumnProperty("column2","renderer",{
         "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
         "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
         "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
-        "width":45
+        "width":50
       },{
         "name": "팝업버튼",
         "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
         "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
         "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
-        "width":45
+        "width":50
       }],
       "alignment": "center" //버튼 정렬 near, far
     })
