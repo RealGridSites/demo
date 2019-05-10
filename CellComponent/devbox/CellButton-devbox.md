@@ -146,24 +146,27 @@ gridView.setColumns(columns);
 [alignment](http://help.realgrid.com/api/types/ImageButtonsCellRenderer/)속성으로 셀 안의 버튼의 위치를 지정할 수 있습니다.   
 “near”, “center” 지정시 셀의 값이 표시되지 않습니다. 
 
-버튼 클릭 시 EmployeeID 컬럼의 버튼이 가운데 정렬됩니다.  
+버튼 클릭 시 EmployeeID 컬럼의 버튼이 가운데 정렬됩니다. 
 <a class="btn primary small round lowercase" id="btnButtonAlignment">이미지 버튼 가운데 정렬</a>
 
 
 ```
-gridView.setColumnProperty("EmployeeID","renderer",{
+gridView.setColumnProperty("column2","renderer",{
   "type": "imageButtons", 
   "editable": false, 
+  "imageGap":5,
   "images": [{
     "name": "팝업버튼",
-    "up": "/resource/image/btnImages/popup_normal.png",
-    "hover": "/resource/image/btnImages/popup_hover.png",
-    "down": "/resource/image/btnImages/popup_click.png"
-  }, {
-    "name": "조회버튼",
-    "up": "/resource/image/btnImages/search_normal.png",
-    "hover": "/resource/image/btnImages/search_hover.png",
-    "down": "/resource/image/btnImages/search_click.png"
+    "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
+    "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
+    "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
+    "width":45
+  },{
+    "name": "팝업버튼",
+    "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
+    "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
+    "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
+    "width":45
   }],
   "alignment": "center" //버튼 정렬 near, far
 })
@@ -207,19 +210,22 @@ gridView.setColumnProperty("EmployeeID","renderer",{
   });
 
   $('#btnButtonAlignment').click(function() {
-    gridView.setColumnProperty("EmployeeID","renderer",{
+    gridView.setColumnProperty("column2","renderer",{
       "type": "imageButtons", 
       "editable": false, 
+      "imageGap":5,
       "images": [{
         "name": "팝업버튼",
-        "up": "/resource/image/btnImages/popup_normal.png",
-        "hover": "/resource/image/btnImages/popup_hover.png",
-        "down": "/resource/image/btnImages/popup_click.png"
-      }, {
-        "name": "조회버튼",
-        "up": "/resource/image/btnImages/search_normal.png",
-        "hover": "/resource/image/btnImages/search_hover.png",
-        "down": "/resource/image/btnImages/search_click.png"
+        "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
+        "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
+        "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
+        "width":45
+      },{
+        "name": "팝업버튼",
+        "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
+        "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
+        "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
+        "width":45
       }],
       "alignment": "center" //버튼 정렬 near, far
     })
