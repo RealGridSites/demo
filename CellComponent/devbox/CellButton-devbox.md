@@ -147,6 +147,7 @@ gridView.setColumns(columns);
 “near”, “center” 지정시 셀의 값이 표시되지 않습니다. 
 
 버튼 클릭 시 EmployeeID 컬럼의 버튼이 가운데 정렬됩니다. 
+
 <a class="btn primary small round lowercase" id="btnButtonAlignment">이미지 버튼 가운데 정렬</a>
 
 
@@ -154,7 +155,6 @@ gridView.setColumns(columns);
 gridView.setColumnProperty("EmployeeID","renderer",{
   "type": "imageButtons", 
   "editable": false, 
-  "imageGap":5,
   "images": [{
     "name": "팝업버튼",
     "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
@@ -213,7 +213,6 @@ gridView.setColumnProperty("EmployeeID","renderer",{
     gridView.setColumnProperty("EmployeeID","renderer",{
       "type": "imageButtons", 
       "editable": false, 
-      "imageGap":5,
       "images": [{
         "name": "팝업버튼",
         "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
