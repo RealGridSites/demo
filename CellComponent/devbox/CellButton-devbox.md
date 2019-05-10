@@ -154,8 +154,6 @@ gridView.setColumns(columns);
 gridView.setColumnProperty("EmployeeID","renderer",{
   "type": "imageButtons", 
   "editable": false, 
-  "imageGap":30,
-  "margin":30,
   "images": [{
     "name": "팝업버튼",
     "up": "/resource/image/btnImages/popup_normal.png",
@@ -212,8 +210,6 @@ gridView.setColumnProperty("EmployeeID","renderer",{
     gridView.setColumnProperty("EmployeeID","renderer",{
       "type": "imageButtons", 
       "editable": false, 
-      "imageGap":30,
-      "margin":30,
       "images": [{
         "name": "팝업버튼",
         "up": "/resource/image/btnImages/popup_normal.png",

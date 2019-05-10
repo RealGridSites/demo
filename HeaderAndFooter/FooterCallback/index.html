@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    DataCellStyle
+    푸터 콜백
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="footer.callback, footer.groupCallback 은 함수 형태로 원하는 값을 직접 return 값으로 사용해서 푸터, 그룹 푸터 영역에 보여지도록 설정할 수 있습니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -634,9 +634,9 @@
                   </span>
                 </a>
               </li>
-              <li class="item-toc ">
+              <li class="item-toc current">
                 <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
+                class="current sidebar-link ">
                   <span>푸터 콜백</span>
                   <span style="display: none;">
                   footer, summary, 합계, 푸터, callback, footerCallback
@@ -1812,18 +1812,268 @@
 
 <div class="content">
 
-    <div class="content-wrapper no-devbox">
+    <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">DataCellStyle</h1>
+            <h1 class="title-page">푸터 콜백</h1>
             
 
+            
+            <!-- <div class="page-actions">
+                <div class="actions-group">
+                    <a class="btn primary small lowercase"
+                        onclick="togglePageStyles();">
+                        <span class="icon-github"></span>
+                        <span>개발자용</span>
+                    </a>
+                </div>
+            </div> -->
             
 
             
         </div>
 
         <div class="document-formatting">
+            <p>footer.callback, footer.groupCallback 은 함수 형태로 원하는 값을 직접 return 값으로 사용해서 푸터, 그룹 푸터 영역에 보여지도록 설정할 수 있습니다.</p>
+
+<script>
+  var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+    dataProvider.setRows(data);
+    gridView.groupBy(["OrderID", "CustomerID"]);
+  }
+  var onDoneDataSet = function() {
+    
+  }
+</script>
+
+<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+
+<div class="toolbox">
+  <div class="buttonbox">
+    
+    <a class="btn tertiary small lowercase active" id="btnDevbox" onclick="setDevbox()">설명 보이기</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
+  </div>
+  <pre class="codeview realgridfield"></pre>
+  <pre class="codeview realgridcolumn"></pre>
+  <pre class="codeview realgriddpoption"></pre>
+  <pre class="codeview realgridviewoption"></pre>
+  <pre class="codeview realgridstyle"></pre>
+</div>
+
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        
             
+
+            $.ajaxSetup({
+              async: false
+            });
+
+            $.getJSON("/resource/layout/fieldset1.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                dataProvider.setFields(data);
+
+                $('.codeview.realgridfield').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+
+
+            $.getJSON("/resource/layout/footerCallbackColumns.json", function (data, textStatus, jqXHR) {
+                gridView.setColumns(data);
+
+                $('.codeview.realgridcolumn').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+       
+
+        
+            
+
+            $.getJSON("/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
+                dataProvider.setOptions(data);
+
+                $('.codeview.realgriddpoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/option/DefaultGridOption.json", function (data, textStatus, jqXHR) {
+                gridView.setOptions(data);
+
+                $('.codeview.realgridviewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+        
+            
+
+            $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
+                gridView.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
+
+                $('.codeview.realgridstyle').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                
+            })
+            .done(function (data, textStatus, jqXHR) {
+                gridView.setFocus();
+
+                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                
+                  var msg = "gridView failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                
+            });
+        
+
+
+        
+            
+            
+            $.ajax({
+              type: "GET",
+              async : true,
+              url:"/resource/data/CustomOrders.json?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                
+                  onGridSuccessDataSet(data, textStatus, jqXHR);
+                
+              }
+              
+            })
+            .done( function(data, textStatus, jqXHR) {
+              gridView.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
+              
+              
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              
+            });
+        
+
+    });
+
+  function setDevbox() {
+    if($('#devbox')[0].clientHeight > 0){
+      $("#devbox").hide();
+      document.getElementById("btnDevbox").className = "btn tertiary small lowercase";
+      $(".with-devbox").attr("style","margin-right: 0%");
+      gridView.resetSize(); 
+    }else{
+      $("#devbox").show();
+      document.getElementById("btnDevbox").className = "btn tertiary small lowercase active";
+      $(".with-devbox").attr("style","margin-right: 40%");
+      gridView.resetSize();
+    }
+  }
+</script>
+
 
             <p>
 
@@ -1832,6 +2082,81 @@
     </div>
 </div>
 
+
+<div class="sidebar devbox" id="devbox">
+  <div class="sidebar-content devbox document-formatting">
+      
+      <h4 id="푸터-콜백">푸터 콜백</h4>
+
+<p>버튼 클릭 시 Quantity컬럼 푸터에 합계를 표시합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetFooterCallback">푸터 콜백 적용</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>gridView.setColumnProperty("Quantity", "footer", {
+    callback: function(column){
+      return gridView.getSummary("Quantity","sum")
+    }
+})
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="그룹-푸터-콜백">그룹 푸터 콜백</h4>
+
+<p>버튼 클릭 시 Quantity 그룹 푸터의 1레벨에만 그룹 계를 표시합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="btnSetGroupFooterCallBack">그룹 푸터 콜백 적용</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre>gridView.setColumnProperty("Quantity", "footer", {
+    //그룹푸터 1레벨만 합계 표시
+    groupCallback: function(itemIndex, column, grid, groupModel){
+      if(groupModel.level == 1){
+        return gridView.getGroupSummary(groupModel, "Quantity").sum
+      }
+    }
+})
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><em>주의사항</em><br />
+GroupFooter Callback은 cell 값을 읽으려는 때마다 발생하는 것이기 때문에 여러 컬럼에서 사용하면 성능 이슈가 생길 수 있습니다.</p>
+
+<script>
+$('#btnSetFooterCallback').click(function() {
+  gridView.setColumnProperty("Quantity", "footer", {
+        callback: function(column){
+          return gridView.getSummary("Quantity","sum")
+        }
+    })
+});
+
+$('#btnSetGroupFooterCallBack').click(function() {
+  gridView.setColumnProperty("Quantity", "footer", {
+        //그룹푸터 1레벨만 합계 표시
+        groupCallback: function(itemIndex, column, grid, groupModel){
+          if(groupModel.level == 1){
+            return gridView.getGroupSummary(groupModel, "Quantity").sum
+          }
+        }
+    })
+});
+</script>
+
+
+  </div>
+</div>
 
 
 

@@ -39,6 +39,14 @@ gridView.setColumnProperty("Country", "mergeRule", {criteria:"value"})
 
 셀 병합 시 선행 컬럼 값을 참조해서 병합할 수 있습니다.
 
+<a class="btn primary small round lowercase" id="values">선행컬럼 참조 병합</a>
+
+```js
+gridView.setColumnProperty("Country","mergeRule",{criteria:"values['OrderID']+value"});
+```
+
+셀 병합 시 선행 컬럼 값을 참조해서 병합할 수 있습니다.(1.1.31 이상)
+
 <a class="btn primary small round lowercase" id="prevvalues">선행컬럼 참조 병합</a>
 
 ```js
@@ -47,18 +55,22 @@ gridView.setColumnProperty("Country","mergeRule",{criteria:"prevvalues+value"});
 
 <script>
 $('#row3').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 3"})
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 3"});
 });
 
 $('#row5').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 5"})
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 5"});
 });
 
 $('#value').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"value"})
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"value"});
+});
+
+$('#values').click(function() {
+  gridView.setColumnProperty("Country","mergeRule",{criteria:"values['OrderID']+value"});
 });
 
 $('#prevvalues').click(function() {
-  gridView.setColumnProperty("Country","mergeRule",{criteria:"prevvalues+value"})
+  gridView.setColumnProperty("Country","mergeRule",{criteria:"prevvalues+value"});
 });
 </script>

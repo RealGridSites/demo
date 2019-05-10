@@ -1,0 +1,95 @@
+[{
+        "name": "OrderID",
+        "fieldName": "OrderID",
+        "type": "data",
+        "width": 90,
+        "styles": {
+            "textAlignment": "center"
+            },
+        "header": {
+            "text": "Order ID"
+            }
+    }, {
+        "name": "QuantityPerUnit",
+        "fieldName": "QuantityPerUnit",
+        "type": "data",
+        "width": 140,
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Quantity / Unit"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "font": "굴림,12"
+            }
+        }
+    }, {
+        "name": "Quantity",
+        "fieldName": "Quantity",
+        "type": "data",
+        "width": 100,
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Quantity"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "#,##0",
+                "suffix": " $",
+                "font": "Arial,12"
+            }
+        }
+    }, {
+        "name": "CustomerID",
+        "fieldName": "CustomerID",
+        "type": "data",
+        "width": 130,
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Customer ID"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "font": "굴림,12"
+            }
+        }
+    }, {
+        "name": "UnitPrice",
+        "fieldName": "UnitPrice",
+        "type": "data",
+        "width": 100,
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Unit Price"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "#,##0",
+                "suffix": " $",
+                "font": "Arial,12"
+            }
+        }
+    },  {
+        "name": "CompanyName",
+        "fieldName": "CompanyName",
+        "type": "data",
+        "width": 200,
+        "styles": {
+            "textAlignment": "near"
+            },
+        "header": {
+            "text": "Company Name"
+            }
+    }]

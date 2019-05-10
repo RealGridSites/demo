@@ -633,6 +633,15 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/HeaderAndFooter/FooterCallback/"
+                class=" sidebar-link ">
+                  <span>푸터 콜백</span>
+                  <span style="display: none;">
+                  footer, summary, 합계, 푸터, callback, footerCallback
+                  </span>
+                </a>
               </li></ul>
 
         </li>
@@ -2136,6 +2145,15 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p>셀 병합 시 선행 컬럼 값을 참조해서 병합할 수 있습니다.</p>
 
+<p><a class="btn primary small round lowercase" id="values">선행컬럼 참조 병합</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span><span class="s2">"mergeRule"</span><span class="p">,{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"values['OrderID']+value"</span><span class="p">});</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>셀 병합 시 선행 컬럼 값을 참조해서 병합할 수 있습니다.(1.1.31 이상)</p>
+
 <p><a class="btn primary small round lowercase" id="prevvalues">선행컬럼 참조 병합</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span><span class="s2">"mergeRule"</span><span class="p">,{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"prevvalues+value"</span><span class="p">});</span>
@@ -2145,19 +2163,23 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <script>
 $('#row3').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 3"})
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 3"});
 });
 
 $('#row5').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 5"})
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 5"});
 });
 
 $('#value').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"value"})
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"value"});
+});
+
+$('#values').click(function() {
+  gridView.setColumnProperty("Country","mergeRule",{criteria:"values['OrderID']+value"});
 });
 
 $('#prevvalues').click(function() {
-  gridView.setColumnProperty("Country","mergeRule",{criteria:"prevvalues+value"})
+  gridView.setColumnProperty("Country","mergeRule",{criteria:"prevvalues+value"});
 });
 </script>
 
