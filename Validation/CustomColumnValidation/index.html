@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2095,7 +2086,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnOnValidateColumn">onValidateColumn 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2110,7 +2101,8 @@ var onDoneDataSet = function() {
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onValidateColumn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">inserting</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+16
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onValidateColumn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">inserting</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">error</span> <span class="o">=</span> <span class="p">{};</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">===</span> <span class="s2">"Quantity"</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
@@ -2126,9 +2118,7 @@ var onDoneDataSet = function() {
     <span class="p">};</span>
     <span class="k">return</span> <span class="nx">error</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>레벨, 메시지, 에러 상태 등에 대해서는 <a href="/demo/Validation/ColumnValidation/">셀 Validation</a>을 참조하세요.</p>
 

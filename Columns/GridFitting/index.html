@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2095,77 +2086,72 @@ DevBox에서 기능을 확인해보세요.</p>
 
 <p><a class="btn primary small round lowercase" id="btnGroupColumnVisible">그룹컬럼 보이기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">groupVisible</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">);</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">groupVisible</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">);</span>
 
 <span class="k">if</span><span class="p">(</span><span class="nx">groupVisible</span><span class="p">){</span>
   <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnPropert</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnPropert</span><span class="p">(</span><span class="s2">"GroupOrder"</span><span class="p">,</span><span class="s2">"visible"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="none">none</h4>
 <p>채우기를 하지 않습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnNone">none</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
   <span class="na">fitStyle</span><span class="p">:</span> <span class="s2">"none"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="even">even</h4>
 <p>컬럼 전체의 너비가 그리드 영역보다 작으면 각 컬럼의 너비를 width 속성값에 맞춰 그리드의 너비에 맞게 비례적으로 배분합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnEven">even</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
   <span class="na">fitStyle</span><span class="p">:</span> <span class="s2">"even"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <h4 id="evenfill">evenFill</h4>
 <p>컬럼 전체 너비와 상관없이 각 컬럼의 너비를 width 속성값에 맞춰 그리드의 너비에 맞게 비례적으로 항상 배분합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnEvenFill">evenFill</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
   <span class="na">fitStyle</span><span class="p">:</span> <span class="s2">"evenFill"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="fill">fill</h4>
 <p>컬럼 전체의 너비가 그리드 영역보다 작으면 fillWidth 값이 0 이하인 컬럼은 손대지 않고, 0보다 큰 컬럼들을 fillWidth 비율대로 배분합니다. 아래 예제에서는 “Customer ID”, “Employee ID” 컬럼들만 fillWidth 값이 1로 설정됐습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnFill">fill</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
   <span class="na">fitStyle</span><span class="p">:</span> <span class="s2">"fill"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

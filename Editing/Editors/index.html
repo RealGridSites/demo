@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2112,19 +2103,18 @@
 <p><a class="btn primary small round lowercase" id="btnTextCase">TextCase
 </a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">textCase</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="rbTextCase"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">textCase</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="rbTextCase"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"editor"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"textCase"</span><span class="p">:</span> <span class="nx">textCase</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="멀티라인-편집기"><a href="http://help.realgrid.com/api/types/MultiLineCellEditor/" target="_blank">멀티라인 편집기</a></h4>
 <p><a href="http://help.realgrid.com/api/types/MultiLineCellEditor/" target="_blank">멀티라인 편집기</a>는 라인 구분자로 나누어지는 여러 줄의 텍스트를 입력할 수 있습니다. 입력되는 텍스트에 맞춰 편집기의 크기가 조정됩니다. Ctrl+Enter로 줄 나누기를 할 수 있습니다.</p>
 
 <p>styles의 textWrap 속성을 반드시 지정해주어야 하며 <code class="highlighter-rouge">explicit</code> 인 경우 문자열 내에 명시적으로 행바꿈(\n) 코드가 있을 경우 행바꿈이 이루어지고  <code class="highlighter-rouge">normal</code>인 경우 문자열이 컬럼의 폭보다 긴 경우 자동으로 줄 행바꿈이 이루어 집니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2145,31 +2135,30 @@
 19
 20
 21
-22</pre></td><td class="code"><pre><span class="p">...</span>
+22
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="c1">//컬럼설정</span>
 <span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"CompanyName"</span><span class="p">,</span>
-  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"CompanyName"</span><span class="p">,</span>
-  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"200"</span><span class="p">,</span>
-  <span class="s2">"editor"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"multiline"</span><span class="p">,</span>
-    <span class="s2">"textCase"</span><span class="err">:</span> <span class="s2">"upper"</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"CompanyName"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"CompanyName"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"editor"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiline"</span><span class="p">,</span>
+    <span class="s2">"textCase"</span><span class="p">:</span> <span class="s2">"upper"</span>
   <span class="p">},</span>
-  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"near"</span><span class="p">,</span>
-    <span class="s2">"textWrap"</span><span class="err">:</span> <span class="s2">"normal"</span>    <span class="c1">//"normal" or "explicit"</span>
+  <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"near"</span><span class="p">,</span>
+    <span class="s2">"textWrap"</span><span class="p">:</span> <span class="s2">"normal"</span>    <span class="c1">//"normal" or "explicit"</span>
   <span class="p">},</span>
-  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Multiline Edit"</span><span class="p">,</span>
-      <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-          <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
+  <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Multiline Edit"</span><span class="p">,</span>
+      <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
       <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">...</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="숫자-편집기"><a href="http://help.realgrid.com/api/types/NumberCellEditor/" target="_blank">숫자 편집기</a></h4>
 <p><a href="http://help.realgrid.com/api/types/NumberCellEditor/" target="_blank">숫자 편집기</a>는 숫자를 입력할 수 있는 편집기 입니다.</p>
@@ -2179,78 +2168,7 @@
 
 <p>editor.editFormat을 “#,##0.##”로 지정한 경우 소수점이하 자리는 최대 2자릿수만큼만 입력됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></td><td class="code"><pre><span class="p">...</span>
-<span class="c1">//컬럼설정</span>
-<span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
-  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
-  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"100"</span><span class="p">,</span>
-  <span class="s2">"sortable"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"editor"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"number"</span><span class="p">,</span>
-    <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"far"</span><span class="p">,</span>
-    <span class="s2">"editFormat"</span><span class="err">:</span> <span class="s2">"#,##0.##"</span><span class="p">,</span>
-    <span class="s2">"multipleChar"</span><span class="err">:</span> <span class="s2">"+"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"far"</span><span class="p">,</span>
-    <span class="s2">"numberFormat"</span><span class="err">:</span> <span class="s2">"#,##0.##"</span>
-  <span class="p">},</span>
-  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Number Edit"</span><span class="p">,</span>
-    <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="p">...</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>일부 국가에서는 천단위 구분기호 ‘,’와 소수점 ‘.’을 반대로 사용하는 경우가 있습니다.(천단위 구분기호 ‘.’, 소수점 ‘,’)<br />
-이 경우 format 문자열을 ; 으로 구분하여 첫번째는 숫자를 표현하는 형식을 두번째는 소숫점 기호를 세번째는 천단위 구분기호를 지정합니다.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>numberFormat: "#,##0.##;,;."   //12345.67 인 경우 12.345,56 으로 표시
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>입력시 에디터에도 같은 포맷을 가지려면 동일하게 지정하면 됩니다.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>editFormat: "#,##0.##;,;."   //12345.67 인 경우 12.345,56 으로 표시
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p><a class="btn primary small round lowercase" id="btnNumberFormat">천단위 구분기호, 소수점 기호 변경하기<br />
-</a></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2275,97 +2193,108 @@
 23
 24
 25
-26</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="p">[</span>
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="c1">//컬럼설정</span>
+<span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"100"</span><span class="p">,</span>
+  <span class="s2">"sortable"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"editor"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"number"</span><span class="p">,</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"far"</span><span class="p">,</span>
+    <span class="s2">"editFormat"</span><span class="p">:</span> <span class="s2">"#,##0.##"</span><span class="p">,</span>
+    <span class="s2">"multipleChar"</span><span class="p">:</span> <span class="s2">"+"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"far"</span><span class="p">,</span>
+    <span class="s2">"numberFormat"</span><span class="p">:</span> <span class="s2">"#,##0.##"</span>
+  <span class="p">},</span>
+  <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Number Edit"</span><span class="p">,</span>
+    <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>일부 국가에서는 천단위 구분기호 ‘,’와 소수점 ‘.’을 반대로 사용하는 경우가 있습니다.(천단위 구분기호 ‘.’, 소수점 ‘,’)<br />
+이 경우 format 문자열을 ; 으로 구분하여 첫번째는 숫자를 표현하는 형식을 두번째는 소숫점 기호를 세번째는 천단위 구분기호를 지정합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>numberFormat: "#,##0.##;,;."   //12345.67 인 경우 12.345,56 으로 표시
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>입력시 에디터에도 같은 포맷을 가지려면 동일하게 지정하면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>editFormat: "#,##0.##;,;."   //12345.67 인 경우 12.345,56 으로 표시
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><a class="btn primary small round lowercase" id="btnNumberFormat">천단위 구분기호, 소수점 기호 변경하기<br />
+</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="p">[</span>
 <span class="p">...</span>
 <span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
-  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
-  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"100"</span><span class="p">,</span>
-  <span class="s2">"sortable"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"editor"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"number"</span><span class="p">,</span>
-    <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"far"</span><span class="p">,</span>
-    <span class="s2">"editFormat"</span><span class="err">:</span> <span class="s2">"#,##0.##;,;."</span><span class="p">,</span>
-    <span class="s2">"multipleChar"</span><span class="err">:</span> <span class="s2">"+"</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"100"</span><span class="p">,</span>
+  <span class="s2">"sortable"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"editor"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"number"</span><span class="p">,</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"far"</span><span class="p">,</span>
+    <span class="s2">"editFormat"</span><span class="p">:</span> <span class="s2">"#,##0.##;,;."</span><span class="p">,</span>
+    <span class="s2">"multipleChar"</span><span class="p">:</span> <span class="s2">"+"</span><span class="p">,</span>
   <span class="p">},</span>
-  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"far"</span><span class="p">,</span>
-    <span class="s2">"numberFormat"</span><span class="err">:</span> <span class="s2">"#,##0.##;,;."</span>
+  <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"far"</span><span class="p">,</span>
+    <span class="s2">"numberFormat"</span><span class="p">:</span> <span class="s2">"#,##0.##;,;."</span>
   <span class="p">},</span>
-  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Number Edit"</span><span class="p">,</span>
-    <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
+  <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Number Edit"</span><span class="p">,</span>
+    <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">...</span>
 <span class="p">];</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="드롭다운-편집기"><a href="http://help.realgrid.com/api/types/DropDownCellEditor/" target="_blank">드롭다운 편집기</a></h4>
 <p><a href="http://help.realgrid.com/api/types/DropDownCellEditor/" target="_blank">드롭다운 편집기</a>  는 <code class="highlighter-rouge">values</code>속성으로 지정된 목록 중 한 값을 선택합니다. 또한, <code class="highlighter-rouge">labels</code>에 <code class="highlighter-rouge">values</code> 대신 드롭다운 리스트에 표시될 텍스트들을 지정할 수 있습니다. <br />
 <code class="highlighter-rouge">labels</code>의 항목 수가 values 항목 수 이상이어야 하고, 에디터에 <code class="highlighter-rouge">values</code>를 지정하지 않으면 컬럼에 지정된 <code class="highlighter-rouge">values</code>, <code class="highlighter-rouge">labels</code> 목록이나 <code class="highlighter-rouge">lookupSource</code>의 목록을 대신 사용합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></td><td class="code"><pre><span class="p">...</span>
-<span class="c1">//컬럼설정</span>
-<span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"150"</span><span class="p">,</span>
-  <span class="s2">"sortable"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"lookupDisplay"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">//라벨로 표시</span>
-  <span class="s2">"values"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"HANAR"</span><span class="p">,</span> <span class="s2">"SUPRD"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">,</span> <span class="s2">"THREE"</span><span class="p">,</span> <span class="s2">"SEVEN"</span><span class="p">],</span>
-  <span class="s2">"labels"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"&lt;VINET&gt;"</span><span class="p">,</span> <span class="s2">"&lt;HANAR&gt;"</span><span class="p">,</span> <span class="s2">"&lt;SUPRD&gt;"</span><span class="p">,</span> <span class="s2">"&lt;VICTE&gt;"</span><span class="p">,</span> <span class="s2">"&lt;THREE&gt;"</span><span class="p">,</span> <span class="s2">"&lt;SEVEN&gt;"</span><span class="p">],</span>
-  <span class="s2">"editor"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"dropDown"</span><span class="p">,</span>
-      <span class="s2">"dropDownCount"</span><span class="err">:</span> <span class="mi">4</span>
-  <span class="p">},</span>
-  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"center"</span>
-  <span class="p">},</span>
-  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"DropDown Edit"</span><span class="p">,</span>
-      <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-          <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="p">...</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p><code class="highlighter-rouge">domainOnly</code>가 true이면 목록에 있는 값들만 선택할 수 있습니다.<br />
-<code class="highlighter-rouge">textReadOnly</code>가 true이면 키 입력이 안되며 선택만 할 수 있습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2390,41 +2319,95 @@
 23
 24
 25
-26</pre></td><td class="code"><pre><span class="p">...</span>
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="c1">//컬럼설정</span>
 <span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"CustomerID2"</span><span class="p">,</span>
-  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"150"</span><span class="p">,</span>
-  <span class="s2">"sortable"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"editor"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"dropDown"</span><span class="p">,</span>
-    <span class="s2">"dropDownCount"</span><span class="err">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="s2">"domainOnly"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"textReadOnly"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"values"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"HANAR"</span><span class="p">,</span> <span class="s2">"SUPRD"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">,</span> <span class="s2">"THREE"</span><span class="p">,</span> <span class="s2">"SEVEN"</span><span class="p">],</span>
-    <span class="s2">"labels"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"&lt;VINET&gt;"</span><span class="p">,</span> <span class="s2">"&lt;HANAR&gt;"</span><span class="p">,</span> <span class="s2">"&lt;SUPRD&gt;"</span><span class="p">,</span> <span class="s2">"&lt;VICTE&gt;"</span><span class="p">,</span> <span class="s2">"&lt;THREE&gt;"</span><span class="p">,</span> <span class="s2">"&lt;SEVEN&gt;"</span><span class="p">]</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"150"</span><span class="p">,</span>
+  <span class="s2">"sortable"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"lookupDisplay"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">//라벨로 표시</span>
+  <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"HANAR"</span><span class="p">,</span> <span class="s2">"SUPRD"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">,</span> <span class="s2">"THREE"</span><span class="p">,</span> <span class="s2">"SEVEN"</span><span class="p">],</span>
+  <span class="s2">"labels"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"&lt;VINET&gt;"</span><span class="p">,</span> <span class="s2">"&lt;HANAR&gt;"</span><span class="p">,</span> <span class="s2">"&lt;SUPRD&gt;"</span><span class="p">,</span> <span class="s2">"&lt;VICTE&gt;"</span><span class="p">,</span> <span class="s2">"&lt;THREE&gt;"</span><span class="p">,</span> <span class="s2">"&lt;SEVEN&gt;"</span><span class="p">],</span>
+  <span class="s2">"editor"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"dropDown"</span><span class="p">,</span>
+      <span class="s2">"dropDownCount"</span><span class="p">:</span> <span class="mi">4</span>
   <span class="p">},</span>
-  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"center"</span>
+  <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"center"</span>
   <span class="p">},</span>
-  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Domain Only"</span><span class="p">,</span>
-    <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
+  <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"DropDown Edit"</span><span class="p">,</span>
+      <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="highlighter-rouge">domainOnly</code>가 true이면 목록에 있는 값들만 선택할 수 있습니다.<br />
+<code class="highlighter-rouge">textReadOnly</code>가 true이면 키 입력이 안되며 선택만 할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="c1">//컬럼설정</span>
+<span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"CustomerID2"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"150"</span><span class="p">,</span>
+  <span class="s2">"sortable"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"editor"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"dropDown"</span><span class="p">,</span>
+    <span class="s2">"dropDownCount"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">"domainOnly"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"textReadOnly"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"HANAR"</span><span class="p">,</span> <span class="s2">"SUPRD"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">,</span> <span class="s2">"THREE"</span><span class="p">,</span> <span class="s2">"SEVEN"</span><span class="p">],</span>
+    <span class="s2">"labels"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"&lt;VINET&gt;"</span><span class="p">,</span> <span class="s2">"&lt;HANAR&gt;"</span><span class="p">,</span> <span class="s2">"&lt;SUPRD&gt;"</span><span class="p">,</span> <span class="s2">"&lt;VICTE&gt;"</span><span class="p">,</span> <span class="s2">"&lt;THREE&gt;"</span><span class="p">,</span> <span class="s2">"&lt;SEVEN&gt;"</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"center"</span>
+  <span class="p">},</span>
+  <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Domain Only"</span><span class="p">,</span>
+    <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">...</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="검색-편집기"><a href="http://help.realgrid.com/api/types/SearchCellEditor/" target="_blank">검색 편집기</a></h4>
 <p><a href="http://help.realgrid.com/api/types/SearchCellEditor/" target="_blank">검색 편집기</a>는 설정된 값 중에 일치되는 값이 드롭다운 목록에 표시되는 에디터 이다. 
 검색이 시작되면 <a href="http://help.realgrid.com/api/GridBase/onEditSearch/" target="_blank">gridView.onEditSearch()</a> 이벤트가 발생하며, 이 이벤트 내에서 검색 처리 후 <a href="http://help.realgrid.com/api/GridBase/fillEditSearchItems/" target="_blank">gridView.fillEditSearchItems()</a>을 실행해 드롭다운 목록을 채워준다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2459,7 +2442,8 @@
 33
 34
 35
-36</pre></td><td class="code"><pre><span class="p">...</span>
+36
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="kd">var</span> <span class="nx">CustomerNames</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"ALFKI"</span><span class="p">,</span> <span class="s2">"ANATR"</span><span class="p">,</span> <span class="s2">"ANTON"</span><span class="p">,</span> <span class="s2">"AROUT"</span><span class="p">,</span> <span class="s2">"BERGS"</span><span class="p">,</span> <span class="s2">"BLAUS"</span><span class="p">,</span> <span class="s2">"BLONP"</span><span class="p">,</span> <span class="s2">"BOLID"</span><span class="p">,</span> <span class="s2">"BONAP"</span><span class="p">,</span> <span class="s2">"BOTTM"</span><span class="p">,</span> <span class="s2">"BSBEV"</span><span class="p">,</span> <span class="s2">"CACTU"</span><span class="p">,</span> <span class="s2">"CENTC"</span><span class="p">,</span> <span class="s2">"CHOPS"</span><span class="p">,</span> <span class="s2">"COMMI"</span><span class="p">,</span> <span class="s2">"CONSH"</span><span class="p">,</span> <span class="s2">"DRACD"</span><span class="p">,</span> <span class="s2">"DUMON"</span><span class="p">,</span> <span class="s2">"EASTC"</span><span class="p">,</span> <span class="s2">"ERNSH"</span><span class="p">,</span> <span class="s2">"FAMIA"</span><span class="p">,</span> <span class="s2">"FISSA"</span><span class="p">,</span> <span class="s2">"FOLIG"</span><span class="p">,</span> <span class="s2">"FOLKO"</span><span class="p">,</span> <span class="s2">"FRANK"</span><span class="p">,</span> <span class="s2">"FRANR"</span><span class="p">,</span> <span class="s2">"FRANS"</span><span class="p">,</span> <span class="s2">"FURIB"</span><span class="p">,</span> <span class="s2">"GALED"</span><span class="p">,</span> <span class="s2">"GODOS"</span><span class="p">,</span> <span class="s2">"GOURL"</span><span class="p">,</span> <span class="s2">"GREAL"</span><span class="p">,</span> <span class="s2">"GROSR"</span><span class="p">,</span> <span class="s2">"HANAR"</span><span class="p">,</span> <span class="s2">"HILAA"</span><span class="p">,</span> <span class="s2">"HUNGC"</span><span class="p">,</span> <span class="s2">"HUNGO"</span><span class="p">,</span> <span class="s2">"ISLAT"</span><span class="p">,</span> <span class="s2">"KOENE"</span><span class="p">,</span> <span class="s2">"LACOR"</span><span class="p">,</span> <span class="s2">"LAMAI"</span><span class="p">,</span> <span class="s2">"LAUGB"</span><span class="p">,</span> <span class="s2">"LAZYK"</span><span class="p">,</span> <span class="s2">"LEHMS"</span><span class="p">,</span> <span class="s2">"LETSS"</span><span class="p">,</span> <span class="s2">"LILAS"</span><span class="p">,</span> <span class="s2">"LINOD"</span><span class="p">,</span> <span class="s2">"LONEP"</span><span class="p">,</span> <span class="s2">"MAGAA"</span><span class="p">,</span> <span class="s2">"MAISD"</span><span class="p">,</span> <span class="s2">"MEREP"</span><span class="p">,</span> <span class="s2">"MORGK"</span><span class="p">,</span> <span class="s2">"NORTS"</span><span class="p">,</span> <span class="s2">"OCEAN"</span><span class="p">,</span> <span class="s2">"OLDWO"</span><span class="p">,</span> <span class="s2">"OTTIK"</span><span class="p">,</span> <span class="s2">"PARIS"</span><span class="p">,</span> <span class="s2">"PERIC"</span><span class="p">,</span> <span class="s2">"PICCO"</span><span class="p">,</span> <span class="s2">"PRINI"</span><span class="p">,</span> <span class="s2">"QUEDE"</span><span class="p">,</span> <span class="s2">"QUEEN"</span><span class="p">,</span> <span class="s2">"QUICK"</span><span class="p">,</span> <span class="s2">"RANCH"</span><span class="p">,</span> <span class="s2">"RATTC"</span><span class="p">,</span> <span class="s2">"REGGC"</span><span class="p">,</span> <span class="s2">"RICAR"</span><span class="p">,</span> <span class="s2">"RICSU"</span><span class="p">,</span> <span class="s2">"ROMEY"</span><span class="p">,</span> <span class="s2">"SANTG"</span><span class="p">,</span> <span class="s2">"SAVEA"</span><span class="p">,</span> <span class="s2">"SEVES"</span><span class="p">,</span> <span class="s2">"SIMOB"</span><span class="p">,</span> <span class="s2">"SPECD"</span><span class="p">,</span> <span class="s2">"SPLIR"</span><span class="p">,</span> <span class="s2">"SUPRD"</span><span class="p">,</span> <span class="s2">"THEBI"</span><span class="p">,</span> <span class="s2">"THECR"</span><span class="p">,</span> <span class="s2">"TOMSP"</span><span class="p">,</span> <span class="s2">"TORTU"</span><span class="p">,</span> <span class="s2">"TRADH"</span><span class="p">,</span> <span class="s2">"TRAIH"</span><span class="p">,</span> <span class="s2">"VAFFE"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">,</span> <span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"WANDK"</span><span class="p">,</span> <span class="s2">"WARTH"</span><span class="p">,</span> <span class="s2">"WELLI"</span><span class="p">,</span> <span class="s2">"WHITC"</span><span class="p">,</span> <span class="s2">"WILMK"</span><span class="p">,</span> <span class="s2">"WOLZA"</span><span class="p">];</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onEditSearch</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
@@ -2473,36 +2457,34 @@
 <span class="p">...</span> 
 <span class="c1">//컬럼설정</span>
 <span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"CustomerID3"</span><span class="p">,</span>
-  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"150"</span><span class="p">,</span>
-  <span class="s2">"sortable"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"editor"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"search"</span><span class="p">,</span>
-    <span class="s2">"searchLength"</span><span class="err">:</span> <span class="mi">1</span><span class="p">,</span>  
-    <span class="s2">"searchDelay"</span><span class="err">:</span> <span class="mi">1000</span><span class="p">,</span>
-    <span class="s2">"useCtrlEnterKey"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"useEnterKey"</span><span class="err">:</span> <span class="kc">true</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"CustomerID3"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"150"</span><span class="p">,</span>
+  <span class="s2">"sortable"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"editor"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"search"</span><span class="p">,</span>
+    <span class="s2">"searchLength"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  
+    <span class="s2">"searchDelay"</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">"useCtrlEnterKey"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"useEnterKey"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">},</span>
-  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"center"</span>
+  <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"center"</span>
   <span class="p">},</span>
-  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Search Editor "</span><span class="p">,</span>
-    <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
+  <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Search Editor "</span><span class="p">,</span>
+    <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">...</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="날짜-편집기"><a href="http://help.realgrid.com/api/types/DateCellEditor/" target="_blank">날짜 편집기</a></h4>
 <p><a href="http://help.realgrid.com/api/types/DateCellEditor/" target="_blank">날짜 편집기</a>를 사용하면 키보드로 날짜를 입력하거나 달력 팝업을 사용하여 날짜를 선택할 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2525,52 +2507,50 @@
 21
 22
 23
-24</pre></td><td class="code"><pre><span class="p">...</span>
+24
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="c1">//컬럼설정</span>
 <span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"OrderDate"</span><span class="p">,</span>
-  <span class="s2">"fieldName"</span><span class="err">:</span> <span class="s2">"OrderDate"</span><span class="p">,</span>
-  <span class="s2">"width"</span><span class="err">:</span> <span class="s2">"180"</span><span class="p">,</span>
-  <span class="s2">"sortable"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"editor"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"date"</span><span class="p">,</span>
-    <span class="s2">"datetimeFormat"</span><span class="err">:</span> <span class="s2">"yyyy.MM.dd"</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"OrderDate"</span><span class="p">,</span>
+  <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"OrderDate"</span><span class="p">,</span>
+  <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"180"</span><span class="p">,</span>
+  <span class="s2">"sortable"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"editor"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"date"</span><span class="p">,</span>
+    <span class="s2">"datetimeFormat"</span><span class="p">:</span> <span class="s2">"yyyy.MM.dd"</span>
   <span class="p">},</span>
-  <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"center"</span><span class="p">,</span>
-    <span class="s2">"datetimeFormat"</span><span class="err">:</span> <span class="s2">"yyyy.MM.dd"</span>
+  <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"center"</span><span class="p">,</span>
+    <span class="s2">"datetimeFormat"</span><span class="p">:</span> <span class="s2">"yyyy.MM.dd"</span>
   <span class="p">},</span>
-  <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Date Edit"</span><span class="p">,</span>
-      <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span>
-          <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
+  <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Date Edit"</span><span class="p">,</span>
+      <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
       <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">...</span>
 
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>minDate, maxDate를 지정하여 특정기간만 선택할 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetDateEditor">날짜 선택 범위 지정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderDate"</span><span class="p">,</span><span class="s2">"editor"</span><span class="p">,</span> <span class="p">{</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderDate"</span><span class="p">,</span><span class="s2">"editor"</span><span class="p">,</span> <span class="p">{</span>
   <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"date"</span><span class="p">,</span>
   <span class="s2">"datetimeFormat"</span><span class="p">:</span> <span class="s2">"yyyy.MM.dd"</span><span class="p">,</span>
   <span class="s2">"minDate"</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s2">"2017-06-1"</span><span class="p">),</span> 
   <span class="s2">"maxDate"</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s2">"2017-06-30"</span><span class="p">)</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="editor의-textalignment를-변경">editor의 textAlignment를 변경</h4>
 
@@ -2580,10 +2560,9 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetEditor">편집 정렬</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span><span class="s2">"editor"</span><span class="p">,{</span><span class="na">textAlignment</span><span class="p">:</span><span class="s2">"center"</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span><span class="s2">"editor"</span><span class="p">,{</span><span class="na">textAlignment</span><span class="p">:</span><span class="s2">"center"</span><span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
   $('#btnTextCase').click(function() {

@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2131,35 +2122,35 @@
 
 <p><a class="btn primary small round lowercase" id="addChildRow">최상위 노드 추가</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7</pre></td><td class="code"><pre><span class="c1">// 최상위 노드에 행 추가</span>
-<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">addChildRow</span><span class="p">(</span>
-  <span class="o">-</span><span class="mi">1</span><span class="p">,</span>     <span class="c1">// parent rowId</span>
-  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"최상위 노드"</span><span class="p">],</span>
-  <span class="mi">3</span><span class="p">,</span>      <span class="c1">// icon index</span>
-  <span class="kc">false</span>   <span class="c1">// children(자식 보유 여부)</span>
-<span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>자식 노드가 여러개인 경우, 자식 노드들은 <code class="highlighter-rouge">순서(index)</code>를 가지고 있습니다. 따라서, 자식노드를 추가할 때 특정 순서의 위치에 추가하고 싶다면 <a href="http://help.realgrid.com/api/TreeDataProvider/insertChildRow/">insertChildRow()</a> 함수를 호출 하면서 두 번째 인자에 자식 노드의 index를 입력합니다.</p>
-
-<p><a class="btn primary small round lowercase" id="insertChildRow">‘아시아’의 세 번째 자식 노드 추가</a></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="c1">// '아시아'의 세 번째 자식 노드 추가</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">// 최상위 노드에 행 추가</span>
+<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">addChildRow</span><span class="p">(</span>
+  <span class="o">-</span><span class="mi">1</span><span class="p">,</span>     <span class="c1">// parent rowId</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"최상위 노드"</span><span class="p">],</span>
+  <span class="mi">3</span><span class="p">,</span>      <span class="c1">// icon index</span>
+  <span class="kc">false</span>   <span class="c1">// children(자식 보유 여부)</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>자식 노드가 여러개인 경우, 자식 노드들은 <code class="highlighter-rouge">순서(index)</code>를 가지고 있습니다. 따라서, 자식노드를 추가할 때 특정 순서의 위치에 추가하고 싶다면 <a href="http://help.realgrid.com/api/TreeDataProvider/insertChildRow/">insertChildRow()</a> 함수를 호출 하면서 두 번째 인자에 자식 노드의 index를 입력합니다.</p>
+
+<p><a class="btn primary small round lowercase" id="insertChildRow">‘아시아’의 세 번째 자식 노드 추가</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c1">// '아시아'의 세 번째 자식 노드 추가</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">insertChildRow</span><span class="p">(</span>
   <span class="mi">2</span><span class="p">,</span>      <span class="c1">// parent rowId</span>
   <span class="mi">2</span><span class="p">,</span>      <span class="c1">// child index</span>
@@ -2167,9 +2158,7 @@
   <span class="mi">8</span><span class="p">,</span>      <span class="c1">// icon index</span>
   <span class="kc">false</span>   <span class="c1">// children(자식 보유 여부)</span>
 <span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="수정">수정</h4>
 
@@ -2183,18 +2172,17 @@
 <p><a class="btn primary small round lowercase" id="updateRow">‘일본’을 ‘Japan’으로 수정</a>
 <a class="btn primary small round lowercase" id="updateStrictRow">‘마카오’를 ‘홍콩’으로 수정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="c1">// '일본'을 'Japan'으로 수정, '일본'의 rowId=4</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">// '일본'을 'Japan'으로 수정, '일본'의 rowId=4</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">updateRow</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"Japan"</span><span class="p">]);</span>
 
 <span class="c1">// '마카오'를 '홍콩'으로 수정, '마카오'의 rowId=3</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">updateStrictRow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">{</span><span class="na">Col0</span><span class="p">:</span> <span class="s2">"홍콩"</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="삭제">삭제</h4>
 
@@ -2224,12 +2212,11 @@
 
 <p>부모가 삭제되면 자식도 모두 삭제됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="c1">// rowId=2인 '아시아' 삭제</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1">// rowId=2인 '아시아' 삭제</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">removeRow</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="단축-키보드short-cut-key">단축 키보드(Short-Cut Key)</h4>
 

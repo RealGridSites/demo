@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1861,16 +1852,15 @@
 
 <p><strong>ozGroupSample.html</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">preview</span><span class="p">()</span> <span class="p">{</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">preview</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"http://URL/oz70/ozGroup.html"</span><span class="p">,</span> <span class="s2">"open"</span><span class="p">,</span> <span class="s2">"height=900,width=1300,resizable=yes"</span><span class="p">);</span>
     <span class="nx">popup</span><span class="p">.</span><span class="nx">sampleData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getOutputRows</span><span class="p">({</span><span class="na">datetimeFormat</span><span class="p">:</span> <span class="s2">"yyyy/MM/dd"</span><span class="p">}));</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="리포트-서버에-데이터-채우기-및-화면-출력">리포트 서버에 데이터 채우기 및 화면 출력</h4>
 
@@ -1878,7 +1868,7 @@
 
 <p><strong>ozGroup.html</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1890,7 +1880,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">gridData</span> <span class="o">=</span> <span class="nx">sampleData</span><span class="p">;</span>
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">gridData</span> <span class="o">=</span> <span class="nx">sampleData</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">SetOZParamters_OZViewer</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">oz</span><span class="p">;</span>
@@ -1903,9 +1894,7 @@
     <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">start_ozjs</span><span class="p">(</span><span class="s2">"OZViewer"</span><span class="p">,</span><span class="s2">"http://URL/oz70/ozhviewer70/"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

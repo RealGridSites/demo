@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2097,25 +2088,23 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetVisibleFalse">표시하지 않음</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">visible</span><span class="p">:</span> <span class="kc">false</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetVisibleTrue">표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="한-행만-체크-가능라디오-버튼">한 행만 체크 가능(라디오 버튼)</h4>
 <p>체크바의 속성중 exclusive 속성을 true 로 설정하면 라디오 버튼처럼 하나의 행만 체크할 수 있습니다.</p>
@@ -2126,25 +2115,23 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetExclusiveTrue">하나의 행만 체크 가능</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">exclusive</span><span class="p">:</span> <span class="kc">true</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetExclusiveFalse">모든 행 체크 가능</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">exclusive</span><span class="p">:</span> <span class="kc">false</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="모두-체크">모두 체크</h4>
 <p>기본값으로 체크바의 헤드영역에 v 표시가 되어 있습니다. 이 영역을 클릭하게 되면 모든 행이 체크되게 됩니다.</p>
@@ -2155,25 +2142,23 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetShowAllFalse">표시하지 않음</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">showAll</span><span class="p">:</span> <span class="kc">false</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetShowAllTrue">표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">showAll</span><span class="p">:</span> <span class="kc">true</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="체크하기">체크하기</h4>
 <p><code class="highlighter-rouge">한 행씩 체크할 수 있는 API</code>: <a href="http://help.realgrid.com/api/GridBase/checkItem/" target="_blank">checkItem()</a>, <a href="http://help.realgrid.com/api/GridBase/checkRow/" target="_blank">checkRow()</a><br />
@@ -2182,62 +2167,54 @@
 
 <p><a class="btn primary small round lowercase" id="btnCheckItemTrue">checkItem: 0행 체크</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkItem</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkItem</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnCheckItemFalse">checkItem: 0행 체크 해제</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkItem</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkItem</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>아무 컬럼이나 컬럼의 헤더를 클릭하여 소트 후 아래 버튼을 클릭하세요.<br />
 <a class="btn primary small round lowercase" id="btnCheckRowTrue">checkRow: 0행 체크</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkRow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkRow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnCheckRowFalse">checkRow: 0행 체크 해제</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkRow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkRow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>dataRow, itemIndex가 다르기 때문에 결과가 다릅니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnCheckItemsTrue">checkItems: [1, 2]행 체크</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkItems</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkItems</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnCheckItemsFalse">checkItems: [1, 2]행 체크 해제</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkItems</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkItems</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>아무 컬럼의 헤더를 클릭하여 소트 후 아래 버튼을 클릭하세요.<br />
 <a class="btn primary small round lowercase" id="btnCheckRowsTrue">checkRows: [1, 2]행 체크</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkRows</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkRows</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnCheckRowsFalse">checkRows: [1, 2]행 체크 해제</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkRows</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">checkRows</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="headfoot-only-js-support">Head/Foot <code class="highlighter-rouge">(Only JS Support)</code></h4>
 <p>체크바의 헤드와 풋 영역에 글자나 이미지를 표시할 수 있습니다.<br />
@@ -2252,41 +2229,39 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetText">Text 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">showAll</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="na">headText</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>  
   <span class="na">footText</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
   <span class="na">headImageUrl</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>  
   <span class="na">footImageUrl</span><span class="p">:</span> <span class="kc">null</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetImage">Image 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">showAll</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="na">headText</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>  
   <span class="na">footText</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="na">headImageUrl</span><span class="p">:</span> <span class="s2">"/resource/image/common/dot_arrow2_top.gif"</span><span class="p">,</span>  
   <span class="na">footImageUrl</span><span class="p">:</span> <span class="s2">"/resource/image/common/dot_arrow2_bottom.gif"</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="checkable-제어">Checkable 제어</h4>
 <p>아래와 같은 수식을 사용하여 체크바에 체크 가능 여부를 제어할 수 있습니다. <a href="http://help.realgrid.com/api/features/Expression/" target="_blank">expression 참고</a><br />
@@ -2301,55 +2276,49 @@
 
 <p><a class="btn primary small round lowercase" id="btnCheckableExpression">수식만 설정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
   <span class="na">checkableExpression</span><span class="p">:</span> <span class="s2">"values['OrderID'] = '10248'"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnApplyCheckables">수식을 그리드에 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">applyCheckables</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">applyCheckables</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetCheckableExpression">수식의 설정과 적용을 동시에</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckableExpression</span><span class="p">(</span><span class="s2">"row &lt; 10"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckableExpression</span><span class="p">(</span><span class="s2">"row &lt; 10"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnResetCheckables">초기화</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">resetCheckables</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">resetCheckables</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="선택된-행-값-가져오기">선택된 행 값 가져오기</h4>
 
 <p><a class="btn primary small round lowercase" id="btnGetCheckedRows">선택된 rowId 값 가져오기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckedRows</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckedRows</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">rows</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnGetCheckedItems">선택된 itemIndex 값 가져오기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckedItems</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckedItems</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2044,7 +2035,7 @@
 
 <p>아래 코드는 트리를 구현하기 위한 XML형식의 데이터 입니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2059,7 +2050,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span>
+16
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span>
   <span class="s2">"&lt;rows&gt;"</span><span class="o">+</span>
   <span class="s2">"  &lt;row icon='0' do='경기도'&gt;"</span><span class="o">+</span>
   <span class="s2">"    &lt;row icon='0' do='경기도' si='성남시'&gt;"</span><span class="o">+</span>
@@ -2075,9 +2067,7 @@
   <span class="s2">"    &lt;row icon='0' do='경기도' si='김포시' /&gt;"</span><span class="o">+</span>
   <span class="s2">"  &lt;/row&gt;"</span><span class="o">+</span>
   <span class="s2">"&lt;/rows&gt;"</span><span class="p">;</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="xml-데이터로-트리-구현-only-js-support">XML 데이터로 트리 구현 <code class="highlighter-rouge">(Only JS Support)</code></h4>
 
@@ -2094,14 +2084,13 @@
 <p><a class="btn primary small round lowercase clearRows">데이터 지우기</a>
 <a class="btn primary small round lowercase" id="setXmlRows">setXmlRows()로 트리 구현</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="c1">// XML 데이터 입력하기</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="c1">// XML 데이터 입력하기</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setXmlRows</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="s2">"row"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"icon"</span><span class="p">);</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>같은 데이터를 <a href="http://help.realgrid.com/api/TreeDataProvider/fillXmlData/">fillXmlData()</a>
 함수를 사용해 트리를 구현해 보겠습니다.</p>
@@ -2109,20 +2098,19 @@
 <p><a class="btn primary small round lowercase clearRows">데이터 지우기</a>
 <a class="btn primary small round lowercase" id="fillXmlData">fillXmlData()로 트리 구현</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="c1">// 데이터 지우기</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="c1">// 데이터 지우기</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">clearRows</span><span class="p">();</span>
 
 <span class="c1">// XML 데이터 입력하기</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">fillXmlData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span><span class="na">rows</span><span class="p">:</span> <span class="s2">"row"</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s2">"icon"</span><span class="p">});</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>두 함수의 실행 결과는 동일 합니다.</p>
 
@@ -2130,22 +2118,21 @@
 
 <p>XML의 노드는 반드시 시작 태그(start-tag)와 끝 태그(end-tag)가 쌍을 이루어야 합니다.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nt">&lt;rows&gt;</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;rows&gt;</span>
   <span class="nt">&lt;row</span> <span class="na">field=</span><span class="s">value</span><span class="nt">&gt;</span>      <span class="c">&lt;!-- 부모 노드 --&gt;</span>
     <span class="nt">&lt;row</span> <span class="na">field=</span><span class="s">value</span> <span class="nt">/&gt;</span>  <span class="c">&lt;!-- 자식 노드 --&gt;</span>
     ...
     <span class="nt">&lt;row</span> <span class="na">field=</span><span class="s">value</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/row&gt;</span>
 <span class="nt">&lt;/rows&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><code class="highlighter-rouge">부모 노드(위에서 rows tag)</code>의 시작 태그와 끝 태그 사이에 들어 있는 또 다른 노드는 <code class="highlighter-rouge">자식 노드(위에서 row tag)</code>를 의미하게 됩니다.</p>
 
@@ -2155,19 +2142,17 @@
 <p>아래는 <a href="http://help.realgrid.com/api/TreeDataProvider/setXmlRows/">TreeDataProvider.setXmlRows()</a>함수의 정의 입니다.
 위 속성명인 <code class="highlighter-rouge">'rows'</code>는 이 함수의 두 번째 인자인 <code class="highlighter-rouge">rowsElement</code>의 값으로 넘겨 주어야</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setXmlRows</span><span class="p">(</span><span class="nx">xml</span><span class="p">,</span> <span class="nx">rowElement</span><span class="p">,</span> <span class="nx">childrenField</span><span class="p">,</span> <span class="nx">iconField</span><span class="p">)</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setXmlRows</span><span class="p">(</span><span class="nx">xml</span><span class="p">,</span> <span class="nx">rowElement</span><span class="p">,</span> <span class="nx">childrenField</span><span class="p">,</span> <span class="nx">iconField</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>아래는 <a href="http://help.realgrid.com/api/TreeDataProvider/fillXmlData/">TreeDataProvider.fillXmlData()</a>함수의 정의 입니다.
 두 번째 인자인 <code class="highlighter-rouge">options</code> 즉 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
 <code class="highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">fillXmlData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">fillXmlData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>RealGrid 튜토리얼에 계층 구조 표현을 위한 데이터 구조에 대해 좀더 자세히 다루고 있는 문서들이 있습니다. 아래 링크를 참조하세요.</p>
 
@@ -2206,7 +2191,7 @@
 <a href="http://help.realgrid.com/api/GridView/registerImageList/">TreeView.registerImageList()</a>함수로
 TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는 아이콘에 트리노드에 표시됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2228,7 +2213,8 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 20
 21
 22
-23</pre></td><td class="code"><pre><span class="c1">// 이미지 리스트 만들기</span>
+23
+</pre></td><td class="rouge-code"><pre><span class="c1">// 이미지 리스트 만들기</span>
 <span class="kd">var</span> <span class="nx">imgFiles</span> <span class="o">=</span> <span class="p">[</span>
               <span class="s2">"kr.png"</span><span class="p">,</span>
               <span class="s2">"br.png"</span><span class="p">,</span>
@@ -2251,9 +2237,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
     <span class="na">iconImages</span><span class="p">:</span> <span class="nx">imageList</span><span class="p">.</span><span class="nx">getName</span><span class="p">(),</span>
     <span class="na">iconWidth</span><span class="p">:</span> <span class="mi">20</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="트리-노드-아이콘-변경-하기">트리 노드 아이콘 변경 하기</h4>
 
@@ -2268,7 +2252,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <p><a class="btn primary small round lowercase" id="setIconIndex">현재 노드의 아이콘 변경하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2277,7 +2261,8 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="c1">// 현재 노드의 아이콘을 9 또는 10으로 변경하기</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="c1">// 현재 노드의 아이콘을 9 또는 10으로 변경하기</span>
 <span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">current</span> <span class="o">&amp;&amp;</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">iidx</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getIconIndex</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
@@ -2287,9 +2272,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
     <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setIconIndex</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
   $('#setIcons').click(function() {

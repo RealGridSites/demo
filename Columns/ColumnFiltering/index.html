@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2223,7 +2214,7 @@ if (column) {
 
 <p><code class="highlighter-rouge">"CustmerID"</code> 필드에 대한 컬럼 필터 적용 예제입니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2278,7 +2269,8 @@ if (column) {
 53
 54
 55
-56</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">);</span>
+56
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[{</span>
         <span class="na">name</span><span class="p">:</span> <span class="s2">"VINET"</span><span class="p">,</span>
@@ -2334,14 +2326,12 @@ if (column) {
     <span class="c1">//column.filters = filters;</span>
     <span class="c1">//gridView.setColumn(column);</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>“OrderDate” 필드에 대한 컬럼 필터 적용 예제입니다.<br />
 <a class="btn primary small round lowercase" id="btnSetFilters_datetime">Set Filters(datetime)</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2365,7 +2355,8 @@ if (column) {
 22
 23
 24
-25</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s1">'OrderDate'</span><span class="p">);</span>
+25
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s1">'OrderDate'</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[{</span>
         <span class="na">name</span><span class="p">:</span> <span class="s2">"1996년"</span><span class="p">,</span>
@@ -2390,19 +2381,16 @@ if (column) {
     <span class="nx">column</span><span class="p">.</span><span class="nx">filters</span> <span class="o">=</span> <span class="nx">filters</span><span class="p">;</span>
     <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-지우기">필터 지우기</h4>
 
 <p>Column에 등록된 ColumnFilter들을 모두 제거한다.<br />
 <a class="btn primary small round lowercase" id="btnClearColumnFilters">ClearColumnFilters</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-추가하기">필터 추가하기</h4>
 
@@ -2410,7 +2398,7 @@ if (column) {
 
 <p><a class="btn primary small round lowercase" id="btnAddColumnFilters">AddColumnFilters</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2424,7 +2412,8 @@ if (column) {
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[{</span>
+15
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">name</span><span class="p">:</span> <span class="s2">"VINET"</span><span class="p">,</span>
     <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'VINET'"</span><span class="p">,</span>
     <span class="na">active</span><span class="p">:</span> <span class="kc">false</span>
@@ -2439,60 +2428,53 @@ if (column) {
 <span class="kd">var</span> <span class="nx">overwrite</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// false면 기존에 같은 이름의 필터가 있을 때 예외 발생.</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">addColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="nx">filters</span><span class="p">,</span> <span class="nx">overwrite</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-제거하기">필터 제거하기</h4>
 
 <p>Column에 등록된 ColumnFilter의 필터를 일부 제거한다.<br />
 <a class="btn primary small round lowercase" id="btnRemoveColumnFilters">RemoveColumnFilters</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">removeColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">removeColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터링-하기">필터링 하기</h4>
 
 <p>필터 적용하기  <br />
 <a class="btn primary small round lowercase" id="btnActivateColumnFilters">ActivateColumnFilters</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>필터 해제하기  <br />
 <a class="btn primary small round lowercase" id="btnDeactivateColumnFilters">DeactivateColumnFilters</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>모든 필터 적용하기  <br />
 <a class="btn primary small round lowercase" id="btnActivateAllColumnFilters">ActivateAllColumnFilters</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateAllColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateAllColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>모든 필터 해제하기  <br />
 <a class="btn primary small round lowercase" id="btnDeactivateAllColumnFilters">DeactivateAllColumnFilters</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateAllColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateAllColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-액션">필터 액션</h4>
 
 <p>필터액션을 사용하여 auto filter를 작성하는 방법  <br />
 <a class="btn primary small round lowercase" id="btnSetFilterAction">setFilterAction</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2570,7 +2552,8 @@ if (column) {
 76
 77
 78
-79</pre></td><td class="code"><pre>
+79
+</pre></td><td class="rouge-code"><pre>
 <span class="kd">var</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[{</span>
   <span class="na">name</span><span class="p">:</span> <span class="s2">"autoFilter"</span><span class="p">,</span>
   <span class="na">text</span><span class="p">:</span> <span class="s2">"Auto Filter"</span><span class="p">,</span>
@@ -2646,12 +2629,10 @@ if (column) {
 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"divAutoFilter"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"display:none; position:absolute; height:260px; background-color:#eeeeee; border:1px solid black;"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"spanFilters"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"overflow-y:scroll; display:block; width:100%; height:230px"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"applyAutoFilter"</span> <span class="nx">value</span><span class="o">=</span><span class="s2">"Apply"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"applyAutoFilter();"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"button gray medium3"</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"cancelAutoFilter"</span> <span class="nx">value</span><span class="o">=</span><span class="s2">"Cancel"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"closeAutoFilter();"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"button gray medium3"</span> <span class="o">/&gt;</span>
+</span>    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"applyAutoFilter"</span> <span class="nx">value</span><span class="o">=</span><span class="s2">"Apply"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"applyAutoFilter();"</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"button gray medium3"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"cancelAutoFilter"</span> <span class="nx">value</span><span class="o">=</span><span class="s2">"Cancel"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"closeAutoFilter();"</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"button gray medium3"</span> <span class="o">/&gt;</span>
 <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span></pre></td></tr></tbody></table>
-</div>
-</div>
+</span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="컬럼-필터-숨기기">컬럼 필터 숨기기</h4>
 
@@ -2659,19 +2640,17 @@ if (column) {
 
 <p><a class="btn primary small round lowercase" id="btnHideColumnFilters">컬럼 필터 값 숨기기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">hideColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">hideColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>CustomerID에 설정된 필터 전체 목록을 숨깁니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnHideAllColumnFilters">컬럼 필터 값 숨기기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">hideAllColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">hideAllColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-검색-기능-설정">필터 검색 기능 설정</h4>
 
@@ -2680,7 +2659,7 @@ if (column) {
 
 <p><a class="btn primary small round lowercase" id="btnShowSearchInput">컬럼 검색 상자 추가</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2688,7 +2667,8 @@ if (column) {
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFilteringOptions</span><span class="p">({</span>
+9
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFilteringOptions</span><span class="p">({</span>
   <span class="na">clearWhenSearchCheck</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">selector</span><span class="p">:{</span>
     <span class="na">showSearchInput</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -2697,9 +2677,7 @@ if (column) {
     <span class="na">cancelText</span><span class="p">:</span><span class="s2">"취소"</span>
   <span class="p">}</span>
 <span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-조건-함수로-설정">필터 조건 함수로 설정</h4>
 
@@ -2707,7 +2685,7 @@ if (column) {
 
 <p><a class="btn primary small round lowercase" id="btnSetFilterFunc">컬럼 검색 상자 추가</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2736,7 +2714,8 @@ if (column) {
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">filterFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">,</span> <span class="nx">dataRow</span><span class="p">,</span> <span class="nx">fieldName</span> <span class="p">,</span> <span class="nx">filter</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+30
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">filterFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">,</span> <span class="nx">dataRow</span><span class="p">,</span> <span class="nx">fieldName</span> <span class="p">,</span> <span class="nx">filter</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"VINET"</span><span class="p">){</span>
       <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"VICTE"</span><span class="p">){</span>
@@ -2766,9 +2745,7 @@ if (column) {
     <span class="p">}</span>
   <span class="p">]</span>
   <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="nx">filters</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 var autoFiltercolumn;

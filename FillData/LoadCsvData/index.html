@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2062,20 +2053,19 @@
 
 <p><a class="btn primary small round lowercase" id="fillCsvData1">CSV 데이터 로드</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'\
-국산,국산,2,기아,15,더 뉴 K9,9,미드나이트 블랙,2016/01/01,16,8620,대형,휘발유,images/215.png, images/215.png\n\
-국산,국산,5,르노삼성,2,QM6,3,이온 실버,2016/01/01,71,3470,중형SUV,휘발유,images/502.png, images/502.png\
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'</span><span class="err">\</span><span class="s1">
+국산,국산,2,기아,15,더 뉴 K9,9,미드나이트 블랙,2016/01/01,16,8620,대형,휘발유,images/215.png, images/215.png</span><span class="err">\</span><span class="s1">n</span><span class="err">\</span><span class="s1">
+국산,국산,5,르노삼성,2,QM6,3,이온 실버,2016/01/01,71,3470,중형SUV,휘발유,images/502.png, images/502.png</span><span class="err">\</span><span class="s1">
 '</span><span class="p">;</span>
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillCsvData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="쌍따옴표로-값이-싸여진-csv-데이터">쌍따옴표로 값이 싸여진 CSV 데이터</h4>
 
@@ -2083,22 +2073,21 @@
 
 <p><a class="btn primary small round lowercase" id="fillCsvData2">쌍따옴표로 둘러싸인 데이터 로드</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'\
-"국산","국산","2","기아","15","더 뉴 K9","9","미드나이트 블랙","2016/01/01", 16, 8620,"대형","휘발유","images/215.png","images/215.png"\n\
-"국산","국산","5","르노삼성","2","QM6","3","이온 실버","2016/01/01", 71, 3470,"중형SUV","휘발유","images/502.png","images/502.png"\
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'</span><span class="err">\</span><span class="s1">
+"국산","국산","2","기아","15","더 뉴 K9","9","미드나이트 블랙","2016/01/01", 16, 8620,"대형","휘발유","images/215.png","images/215.png"</span><span class="err">\</span><span class="s1">n</span><span class="err">\</span><span class="s1">
+"국산","국산","5","르노삼성","2","QM6","3","이온 실버","2016/01/01", 71, 3470,"중형SUV","휘발유","images/502.png","images/502.png"</span><span class="err">\</span><span class="s1">
 '</span><span class="p">;</span>
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillCsvData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span><span class="s2">"append"</span><span class="p">,</span> <span class="na">quoted</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="헤더header가-있는-csv-데이터">헤더(Header)가 있는 CSV 데이터</h4>
 
@@ -2106,20 +2095,19 @@
 
 <p><a class="btn primary small round lowercase" id="fillCsvData3">헤더가 있는 CSV 데이터 로드</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'\
-"head1","head2","head3","head4","head5","head6","head7","head8"\
-"국산","국산","2","기아","15","더 뉴 K9","9","미드나이트 블랙","2016/01/01","16","8620","대형","휘발유","images/215.png","images/215.png"\
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'</span><span class="err">\</span><span class="s1">
+"head1","head2","head3","head4","head5","head6","head7","head8"</span><span class="err">\</span><span class="s1">
+"국산","국산","2","기아","15","더 뉴 K9","9","미드나이트 블랙","2016/01/01","16","8620","대형","휘발유","images/215.png","images/215.png"</span><span class="err">\</span><span class="s1">
 '</span><span class="p">;</span>
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillCsvData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span><span class="s2">"append"</span><span class="p">,</span> <span class="na">quoted</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="mi">1</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="구분자가-콤마comma가-아닌-데이터">구분자가 콤마(comma)가 아닌 데이터</h4>
 
@@ -2127,18 +2115,17 @@
 
 <p><a class="btn primary small round lowercase" id="fillCsvData4">탭으로 구분된 데이터 로드</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'\
-"국산"\t"국산"\t"5"\t"르노삼성"\t"2"\t"QM6"\t"3"\t"이온 실버"\t"2016/01/01"\t"71"\t"3470"\t"중형SUV"\t"휘발유"\t"images/502.png"\t"images/502.png"\
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'</span><span class="err">\</span><span class="s1">
+"국산"</span><span class="err">\</span><span class="s1">t"국산"</span><span class="err">\</span><span class="s1">t"5"</span><span class="err">\</span><span class="s1">t"르노삼성"</span><span class="err">\</span><span class="s1">t"2"</span><span class="err">\</span><span class="s1">t"QM6"</span><span class="err">\</span><span class="s1">t"3"</span><span class="err">\</span><span class="s1">t"이온 실버"</span><span class="err">\</span><span class="s1">t"2016/01/01"</span><span class="err">\</span><span class="s1">t"71"</span><span class="err">\</span><span class="s1">t"3470"</span><span class="err">\</span><span class="s1">t"중형SUV"</span><span class="err">\</span><span class="s1">t"휘발유"</span><span class="err">\</span><span class="s1">t"images/502.png"</span><span class="err">\</span><span class="s1">t"images/502.png"</span><span class="err">\</span><span class="s1">
 '</span><span class="p">;</span>
 
-<span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillCsvData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span><span class="s2">"append"</span><span class="p">,</span> <span class="na">quoted</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">delimiter</span><span class="p">:</span><span class="s2">"\t"</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillCsvData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span><span class="s2">"append"</span><span class="p">,</span> <span class="na">quoted</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">delimiter</span><span class="p">:</span><span class="s2">"</span><span class="err">\</span><span class="s2">t"</span><span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a href="http://help.realgrid.com/api/LocalDataProvider/fillJsonData/">LocalDataProvider.fillJsonData()</a>함수의 인자는 <code class="highlighter-rouge">data</code>와 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>객체인 <code class="highlighter-rouge">options</code>가 있습니다.</p>
 
@@ -2164,7 +2151,7 @@
 
 <p><a class="btn primary small round lowercase" id="fillModeSet">SET으로 채우기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2173,7 +2160,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s2">"수입차"</span><span class="p">,</span> <span class="s2">"유럽"</span><span class="p">,</span> <span class="s2">"15"</span><span class="p">,</span> <span class="s2">"랜드로버"</span><span class="p">,</span> <span class="s2">"7"</span><span class="p">,</span> <span class="s2">"Range Rover 3.0 TDV6"</span><span class="p">,</span> <span class="s2">"4"</span><span class="p">,</span> <span class="s2">"슬릭 실버"</span><span class="p">,</span> <span class="s2">"2016-01-03"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"16780"</span><span class="p">,</span> <span class="s2">"대형SUV"</span><span class="p">,</span> <span class="s2">"경유"</span><span class="p">,</span> <span class="s2">"images/1507.png"</span><span class="p">,</span> <span class="s2">"images/1507.png"</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">"수입차"</span><span class="p">,</span> <span class="s2">"유럽"</span><span class="p">,</span> <span class="s2">"17"</span><span class="p">,</span> <span class="s2">"랜드로버"</span><span class="p">,</span> <span class="s2">"6"</span><span class="p">,</span> <span class="s2">"IS 200t"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"소닉 실버"</span><span class="p">,</span> <span class="s2">"2016-01-03"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"5730"</span><span class="p">,</span> <span class="s2">"중형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/1706.png"</span><span class="p">,</span> <span class="s2">"images/1706.png"</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">"수입차"</span><span class="p">,</span> <span class="s2">"유럽"</span><span class="p">,</span> <span class="s2">"18"</span><span class="p">,</span> <span class="s2">"랜드로버"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"Accord 3.5"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"2016-01-03"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span> <span class="s2">"4260"</span><span class="p">,</span> <span class="s2">"준대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/1802.png"</span><span class="p">,</span> <span class="s2">"images/1802.png"</span><span class="p">],</span>
@@ -2183,15 +2171,13 @@
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">,</span> 
   <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="s2">"set"</span><span class="p">}</span>
 <span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="fillModeAppend">APPEND로 추가하기</a></p>
 
 <p>그리드의 마지막행 뒤에 <code class="highlighter-rouge">jsonData</code>의 첫 번째 행에서 두개 행(<code class="highlighter-rouge">BMW 데이터</code>)을 가져와 <code class="highlighter-rouge">추가(Append)</code> 합니다. 이 작업을 위해 <code class="highlighter-rouge">DataFillOptions</code>의 <code class="highlighter-rouge">start</code>, <code class="highlighter-rouge">count</code>속성을 사용합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2202,7 +2188,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="p">[</span>
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s2">"수입차"</span><span class="p">,</span> <span class="s2">"유럽"</span><span class="p">,</span> <span class="s2">"7"</span><span class="p">,</span> <span class="s2">"BMW"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span> <span class="s2">"520D"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"화이트 크림"</span><span class="p">,</span> <span class="s2">"2016-01-01"</span><span class="p">,</span> <span class="s2">"7"</span><span class="p">,</span> <span class="s2">"6370"</span><span class="p">,</span> <span class="s2">"준대형"</span><span class="p">,</span> <span class="s2">"경유"</span><span class="p">,</span> <span class="s2">"images/701.png"</span><span class="p">,</span> <span class="s2">"images/701.png"</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">"수입차"</span><span class="p">,</span> <span class="s2">"유럽"</span><span class="p">,</span> <span class="s2">"7"</span><span class="p">,</span> <span class="s2">"BMW"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"730Ld"</span><span class="p">,</span> <span class="s2">"7"</span><span class="p">,</span> <span class="s2">"커피 빈"</span><span class="p">,</span> <span class="s2">"2016-01-03"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span> <span class="s2">"13270"</span><span class="p">,</span> <span class="s2">"대형"</span><span class="p">,</span> <span class="s2">"경유"</span><span class="p">,</span> <span class="s2">"images/705.png"</span><span class="p">,</span> <span class="s2">"images/705.png"</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">"수입차"</span><span class="p">,</span> <span class="s2">"유럽"</span><span class="p">,</span> <span class="s2">"8"</span><span class="p">,</span> <span class="s2">"벤츠"</span><span class="p">,</span> <span class="s2">"10"</span><span class="p">,</span> <span class="s2">"SL400"</span><span class="p">,</span> <span class="s2">"11"</span><span class="p">,</span> <span class="s2">"폴리시드 메탈"</span><span class="p">,</span> <span class="s2">"2016-11-14"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span> <span class="s2">"13200"</span><span class="p">,</span> <span class="s2">"스포츠카"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/810.png"</span><span class="p">,</span> <span class="s2">"images/810.png"</span><span class="p">]</span><span class="s2">", "</span>
@@ -2214,35 +2201,31 @@
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillXmlData</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">,</span> 
   <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="s2">"append"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><code class="highlighter-rouge">jsonData</code>에서 <code class="highlighter-rouge">벤츠</code> 데이터를 가져와 2행 위치에 <code class="highlighter-rouge">삽입(Insert)</code> 합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="fillModeInsert">INSERT로 삽입하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">,</span> 
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">,</span> 
   <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="s2">"insert"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">fillPos</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><code class="highlighter-rouge">jsonData</code>에서 <code class="highlighter-rouge">아우디</code> 데이터를 가져와 5행 위치에 있는 데이터를 <code class="highlighter-rouge">덮어쓰기(Update)</code> 합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="fillModeUpdate">UPDATE로 덮어쓰기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">,</span> 
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">,</span> 
   <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="s2">"update"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">fillPos</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 <span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
     var jsonData1 = [

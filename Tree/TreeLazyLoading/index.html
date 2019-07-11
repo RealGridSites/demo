@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2106,7 +2097,7 @@
 
 <p>버튼을 클릭하면 노드의 (+) 버튼을 눌러 펼칠때 원격 데이터를 비동기 방식으로 불러와 자식 노드를 만듭니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2135,7 +2126,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="c1">// onTreeItemExpanding 이벤트에서 자식 노드 추가</span>
+30
+</pre></td><td class="rouge-code"><pre><span class="c1">// onTreeItemExpanding 이벤트에서 자식 노드 추가</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">onTreeItemExpanding</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tree</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">rowId</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// expanding 중인 행이 자식이 하나도 없다면 hasChildren이 설정된 행이다.</span>
   <span class="c1">// 자식들을 가져와 그 행에 추가한다.</span>
@@ -2165,9 +2157,7 @@
   <span class="p">}</span>
   <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>참고로, 트리가 접힐때 호출되는 콜백 함수는</p>
 

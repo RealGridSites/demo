@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2094,7 +2085,7 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
   <li><code class="highlighter-rouge">footer.cellMerge</code>: Footer내 특정 Cell들을 Merge합니다.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2103,7 +2094,8 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
     <span class="na">footerCellMerge</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
 
@@ -2113,33 +2105,29 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
             <span class="p">[</span><span class="s2">"UnitPrice"</span><span class="p">,</span> <span class="s2">"CustomerID"</span><span class="p">]</span>
         <span class="p">]</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetGroupFooterMerge">그룹핑 컬럼 Cell 병합</a></p>
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span> <span class="na">footerCellMerge</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span> <span class="na">footerCellMerge</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetFooterMerge">Footer Cell 병합</a></p>
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
+7
+</pre></td><td class="rouge-code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
             <span class="na">mergeCells</span><span class="p">:</span>
                 <span class="p">[</span>
                     <span class="p">[</span><span class="s2">"QuantityPerUnit"</span><span class="p">,</span> <span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"CompanyName"</span><span class="p">,</span> <span class="s2">"OrderID"</span><span class="p">],</span>
                     <span class="p">[</span><span class="s2">"UnitPrice"</span><span class="p">,</span> <span class="s2">"CustomerID"</span><span class="p">]</span>
                 <span class="p">]</span>
         <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Help 사이트의 <a href="http://help.realgrid.com/api/types/SummaryMode/" target="_blank">summary Mode</a> 참고 바랍니다.</p>
 

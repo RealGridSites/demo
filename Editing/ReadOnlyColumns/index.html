@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2113,14 +2104,13 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 
 <p><input type="checkbox" id="chkSkipReadOnly" />skipReadOnly <a class="btn primary small round lowercase" id="btnSetEditOptions">설정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setEditOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setEditOptions</span><span class="p">({</span>
   <span class="na">skipReadOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkSkipReadOnly"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">)</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="readonly-editable">readOnly, editable</h4>
 <p><a href="http://help.realgrid.com/api/types/DataColumn/" target="_blank">DataColumn</a>의 readOnly 속성을 true로 하거나, editable을 false로 설정하면 해당 컬럼의 셀들에서는 사용자가 입력을 할 수 없게 됩니다.</p>
@@ -2129,36 +2119,34 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 
 <p><input type="checkbox" id="chkReadOnly" />readOnly <a class="btn primary small round lowercase" id="btnSetColumnPropertyReadOnly">적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"readOnly"</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkReadOnly"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">));</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><input type="checkbox" id="chkEditable" />editable <a class="btn primary small round lowercase" id="btnSetColumnPropertyEditable">적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"editable"</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkEditable"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">));</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="datacellstyle">DataCellStyle</h4>
 <p>DataCellStyle의 편집 속성을 지정해서 특정 데이터셀을 read-only로 지정할 수 있습니다.</p>
 
 <p>** CellStyle 정의</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2170,7 +2158,8 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
+13
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
 	<span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffffff"</span><span class="p">,</span>
 	<span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff333333"</span><span class="p">,</span>
 	<span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
@@ -2183,36 +2172,31 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 	<span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
 	<span class="s2">"readOnly"</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnReadOnly">ReadOnly 설정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="s2">"CompanyName"</span><span class="p">],</span> <span class="s2">"style01"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="s2">"CompanyName"</span><span class="p">],</span> <span class="s2">"style01"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnEditable">Editable 설정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="s2">"CustomerID"</span><span class="p">],</span> <span class="s2">"style02"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="s2">"CustomerID"</span><span class="p">],</span> <span class="s2">"style02"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnClearCellStyles">Style 해제</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearCellStyles</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearCellStyles</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 function createColumnList(grid) {

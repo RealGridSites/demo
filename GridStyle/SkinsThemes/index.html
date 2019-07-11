@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2118,18 +2109,17 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetTheme">테마 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">skins</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selGridTheme'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="nx">skins</span><span class="p">));</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">skins</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selGridTheme'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">(</span><span class="kr">eval</span><span class="p">(</span><span class="nx">skins</span><span class="p">));</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="스킨파일-예제">스킨파일 예제</h4>
 
 <p>basicBlueSkin.js</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2161,7 +2151,8 @@
 30
 31
 32
-33</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">basicBlueSkin</span> <span class="o">=</span> <span class="p">{</span>  
+33
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">basicBlueSkin</span> <span class="o">=</span> <span class="p">{</span>  
    <span class="s2">"grid"</span><span class="p">:{</span>  
       <span class="s2">"foreground"</span><span class="p">:</span><span class="s2">"#ff000000"</span><span class="p">,</span>
       <span class="s2">"iconOffset"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span>
@@ -2194,9 +2185,7 @@
    <span class="p">},</span>
    <span class="p">...</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
   $('#btnSetTheme').click(function() {

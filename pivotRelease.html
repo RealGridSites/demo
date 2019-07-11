@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1842,16 +1833,15 @@
     <ul>
       <li><a href="http://help.realgrid.com/pivotApi/types/DisplayOptions/#showFocusGuide" target="_blank">DisplayOptions</a>의 showFocusGuide 속성이 추가되었습니다. showFocus와 showFocusGuide가 true이면 선택된 셀의 가로와 세로에 배경색을 표시할 수 있습니다.</li>
       <li>다음과 같이 setDisplayOptions() 함수를 통해 사용 할 수 있습니다.
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
   <span class="na">showFocus</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">showFocusGuide</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-        </div>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
       <li><code class="highlighter-rouge">CSS</code> <code class="highlighter-rouge">realpivot-focus-guide</code> class가 추가되었습니다.</li>
     </ul>
@@ -1893,36 +1883,34 @@
       <li><a href="http://help.realgrid.com/pivotApi/types/PivotField/#labelPrefix" target="_blank">PivotField.labelPrefix</a>, <a href="http://help.realgrid.com/pivotApi/types/PivotField/#labelSuffix" target="_blank">PivotField.labelSuffix</a>를 사용 해 displayFormat과 유사한 동작을 하도록 하였습니다.</li>
       <li>요약을 위한 <a href="http://help.realgrid.com/pivotApi/types/PivotField/#summaryPrefix" target="_blank">PivotField.summaryPrefix</a>, <a href="http://help.realgrid.com/pivotApi/types/PivotField/#summarySuffix" target="_blank">PivotField.summarySuffix</a>도 추가하였습니다.</li>
       <li>[format 사용예]
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre> <span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([{</span>
+6
+</pre></td><td class="rouge-code"><pre> <span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([{</span>
  <span class="p">...</span>
  <span class="na">displayFormat</span><span class="p">:</span> <span class="s2">"${value}년도"</span><span class="p">,</span>
  <span class="na">summaryFormat</span><span class="p">:</span> <span class="s2">"${value}년도 합"</span><span class="p">,</span>
  <span class="p">...</span>
  <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-        </div>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
       <li>[prefix/suffix 사용예]
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre> <span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([{</span>
+6
+</pre></td><td class="rouge-code"><pre> <span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([{</span>
  <span class="p">...</span>
  <span class="na">labelSuffix</span><span class="p">:</span><span class="s2">"년도"</span><span class="p">,</span>
  <span class="na">summarySuffix</span><span class="p">:</span><span class="s2">"년도 합"</span><span class="p">,</span>
  <span class="p">...</span>
  <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-        </div>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
     </ul>
   </li>
@@ -1960,16 +1948,15 @@
     <ul>
       <li><a href="http://help.realgrid.com/pivotApi/types/GroupOptions/" target="_blank">GroupOptions</a>의 columnExpand, rowExpand 속성으로 컬럼과 행의 그룹을 기본으로 특정 레벨까지 펼치도록 지정할 수 있게 되었습니다.</li>
       <li>다음과 같이 setGroupOptions() 함수를 통해 사용 할 수 있게 되었습니다.
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setGroupOptions</span><span class="p">({</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setGroupOptions</span><span class="p">({</span>
   <span class="na">columnExpand</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="na">rowExpand</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-        </div>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
       <li>피벗이 표시 된 후 다음의 함수를 통해 특정 레벨 또는 특정 라벨을 펼치고 닫을 수 있게 되었습니다.<br />
  <code class="highlighter-rouge">레벨단위</code>: <a href="http://help.realgrid.com/pivotApi/RealPivot/expandColumnLevel/" target="_blank">expandColumnLevel()</a>, <a href="http://help.realgrid.com/pivotApi/RealPivot/expandRowLevel/" target="_blank">expandRowLevel()</a><br />
@@ -2032,14 +2019,13 @@
     <ul>
       <li><a href="http://help.realgrid.com/pivotApi/types/DisplayOptions/" target="_blank">DisplayOptions.showFocus</a> 속성으로 포커스를 표시하고 키보드로 이동할 수 있습니다.</li>
       <li>다음과 같이 setDisplayOptions() 함수를 통해 포커스를 활성화할 수 있습니다.
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
  <span class="na">showFocus</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-        </div>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
       <li>포커스가 이동될때 <a href="http://help.realgrid.com/pivotApi/RealPivot/onCurrentChanged/" target="_blank">onCurrentChanged()</a>  콜백이 발생합니다.  </li>
       <li><code class="highlighter-rouge">CSS</code> <code class="highlighter-rouge">realpivot-focus</code> class가 추가되었습니다.</li>
@@ -2054,7 +2040,7 @@
   <li>컨텍스트 메뉴
     <ul>
       <li>마우스 우측 버튼 클릭시 표시되는 컨텍스트 메뉴를 <a href="http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/" target="_blank">setContextMenu()</a> 를 통해 대체할 수 있습니다.
-        <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2065,7 +2051,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setContextMenu</span><span class="p">([{</span>
+12
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setContextMenu</span><span class="p">([{</span>
  <span class="na">text</span><span class="p">:</span> <span class="s2">"menu1"</span><span class="p">,</span>
  <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"menu1 click"</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
@@ -2077,9 +2064,7 @@
  <span class="na">text</span><span class="p">:</span> <span class="s2">"menu3"</span><span class="p">,</span>
  <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"menu3 click"</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-        </div>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
       <li><a href="http://help.realgrid.com/pivotApi/RealPivot/getContextMenu/" target="_blank">getContextMenu()</a> 를 호출하여 설정된 컨텍스트 메뉴를 가져올 수 있습니다.</li>
       <li>상단 Menu Icon을 통해 표시되는 메뉴에 관한 기능은 setGlobalContextMenu(), getGlobalContextMenu()로 이름이 변경되었습니다.</li>

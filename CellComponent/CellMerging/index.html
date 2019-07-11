@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2099,22 +2090,21 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 <p><code class="highlighter-rouge">mergeRule.criteria</code>속성에 이전 행의 셀과 병합할 수식을 설정합니다.<br />
 컬럼 설정 정보를 확인해 보세요.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="p">...</span>
     <span class="na">mergeRule</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value"</span>
     <span class="p">}</span>
     <span class="p">...</span>
 <span class="p">}]</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="행들을-묶어서-표시하기">행들을 묶어서 표시하기</h4>
 
@@ -2122,64 +2112,47 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="row3">3행씩 병합</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"mergeRule"</span><span class="p">,</span> <span class="p">{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"row div 3"</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"mergeRule"</span><span class="p">,</span> <span class="p">{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"row div 3"</span><span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="row5">5행씩 병합</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"mergeRule"</span><span class="p">,</span> <span class="p">{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"row div 5"</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"mergeRule"</span><span class="p">,</span> <span class="p">{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"row div 5"</span><span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="value">동일 행 병합</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"mergeRule"</span><span class="p">,</span> <span class="p">{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"value"</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"mergeRule"</span><span class="p">,</span> <span class="p">{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"value"</span><span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="선행컬럼을-참조-병합">선행컬럼을 참조 병합</h4>
 
 <p>셀 병합 시 선행 컬럼 값을 참조해서 병합할 수 있습니다.</p>
 
-<p><a class="btn primary small round lowercase" id="values">선행컬럼 참조 병합</a></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span><span class="s2">"mergeRule"</span><span class="p">,{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"values['OrderID']+value"</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>셀 병합 시 선행 컬럼 값을 참조해서 병합할 수 있습니다.(1.1.31 이상)</p>
-
 <p><a class="btn primary small round lowercase" id="prevvalues">선행컬럼 참조 병합</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span><span class="s2">"mergeRule"</span><span class="p">,{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"prevvalues+value"</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">,</span><span class="s2">"mergeRule"</span><span class="p">,{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"prevvalues+value"</span><span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#row3').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 3"});
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 3"})
 });
 
 $('#row5').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 5"});
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"row div 5"})
 });
 
 $('#value').click(function() {
-  gridView.setColumnProperty("Country", "mergeRule", {criteria:"value"});
-});
-
-$('#values').click(function() {
-  gridView.setColumnProperty("Country","mergeRule",{criteria:"values['OrderID']+value"});
+  gridView.setColumnProperty("Country", "mergeRule", {criteria:"value"})
 });
 
 $('#prevvalues').click(function() {
-  gridView.setColumnProperty("Country","mergeRule",{criteria:"prevvalues+value"});
+  gridView.setColumnProperty("Country","mergeRule",{criteria:"prevvalues+value"})
 });
 </script>
 

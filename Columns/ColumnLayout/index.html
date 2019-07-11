@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2099,45 +2090,42 @@
 
 <p><a class="btn primary small round lowercase" id="btnLinearizeColumn">Linearize</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">restoreColumns</span><span class="p">();</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">restoreColumns</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">linearizeColumns</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>다시 원래대로 복원할 수도 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnRestore">Restore</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">restoreColumns</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">restoreColumns</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="컬럼-레이아웃-지정하기">컬럼 레이아웃 지정하기</h4>
 <p><a href="http://help.realgrid.com/api/GridBase/setColumnLayout/" target="_blank">setColumnLayout()</a> 함수를 통해 컬럼 layout을 최초 설정한 컬럼들의 이름들로 지정할 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetColumnLayout">Set Column Layout</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">layout</span> <span class="o">=</span> <span class="p">[</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">layout</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"OrderDate"</span><span class="p">,</span> <span class="s2">"CompanyName"</span><span class="p">,</span> <span class="s2">"CustomerID"</span>
 <span class="p">];</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnLayout</span><span class="p">(</span><span class="nx">layout</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="컬럼-레이아웃-등록-사용하기">컬럼 레이아웃 등록, 사용하기</h4>
 <p><a href="http://help.realgrid.com/api/GridBase/registerColumnLayouts/" target="_blank">registerColumnLayouts()</a> 함수로 실행 시간에 지정할 컬럼 layout들을 미리 저장한 후, setColumnLayout() 함수로 layout 이름을 지정해서 변경할 수 있습니다.</p>
@@ -2146,7 +2134,7 @@
 
 <p><a class="btn primary small round lowercase" id="btnRegisterColumnLayouts">layout1, layout2 만들기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2172,7 +2160,8 @@
 24
 25
 26
-27</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">layouts</span> <span class="o">=</span> <span class="p">[{</span>
+27
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">layouts</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">name</span><span class="p">:</span> <span class="s2">"layout1"</span><span class="p">,</span>
     <span class="na">columns</span><span class="p">:</span> <span class="p">[</span>
         <span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"OrderDate"</span>
@@ -2199,49 +2188,43 @@
 <span class="p">}];</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">registerColumnLayouts</span><span class="p">(</span><span class="nx">layouts</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a href="http://help.realgrid.com/api/GridBase/registerColumnLayouts/" target="_blank">registerColumnLayouts()</a>으로 설정한 컬럼 레이아웃으로 설정하기.</p>
 
 <p><a class="btn primary small round lowercase" id="btnLayout1">layout1 로 설정하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">restoreColumns</span><span class="p">();</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">restoreColumns</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnLayout</span><span class="p">(</span><span class="s2">"layout1"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnLayout2">layout2 로 설정하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">restoreColumns</span><span class="p">();</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">restoreColumns</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnLayout</span><span class="p">(</span><span class="s2">"layout2"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="현재-컬럼-레이아웃-저장하고-복원하기">현재 컬럼 레이아웃 저장하고 복원하기</h4>
 <p><a href="http://help.realgrid.com/api/GridBase/saveColumnLayout/" target="_blank">saveColumnLayout</a> 함수로 현재 상태를 저장한 후, 저장된 값을 가져와서 setColumnLayout 함수로 layout을 변경할 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSaveColumnLayout">현재상태 저정하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">dispCols</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">saveColumnLayout</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">dispCols</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">saveColumnLayout</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><a class="btn primary small round lowercase" id="btnLoadLayout">저장된 레이아웃으로 복원</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnLayout</span><span class="p">(</span><span class="nx">dispCols</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnLayout</span><span class="p">(</span><span class="nx">dispCols</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 var dispCols = [];

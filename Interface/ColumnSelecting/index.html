@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2209,7 +2200,7 @@ function gridEvents(grid, provider) {
 
 <h4 id="차트-생성-함수">차트 생성 함수</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2286,7 +2277,8 @@ function gridEvents(grid, provider) {
 75
 76
 77
-78</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setHiChart</span><span class="p">(</span><span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
+78
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setHiChart</span><span class="p">(</span><span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">categories</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"year"</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">diVal</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"DIncome"</span><span class="p">);</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">diVal</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
@@ -2364,13 +2356,11 @@ function gridEvents(grid, provider) {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="컬럼-헤더-체크-및-데이터-행-변경-이벤트">컬럼 헤더 체크 및 데이터 행 변경 이벤트</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2385,7 +2375,8 @@ function gridEvents(grid, provider) {
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">gridEvents</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
+16
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">gridEvents</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">grid</span><span class="p">.</span><span class="nx">onColumnCheckedChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">colName</span> <span class="o">=</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
         <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#container"</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">();</span>
@@ -2401,24 +2392,21 @@ function gridEvents(grid, provider) {
         <span class="nx">setHiChart</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="헤더-체크-상태에-따른-컬럼-색상-설정">헤더 체크 상태에 따른 컬럼 색상 설정</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setColumnColor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">check</span><span class="p">)</span> <span class="p">{</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setColumnColor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">check</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">col</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
     <span class="nx">col</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="nx">check</span> <span class="p">?</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="nx">color</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"#"</span><span class="p">,</span> <span class="s2">"#39"</span><span class="p">)</span> <span class="p">}</span> <span class="p">:</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="kc">null</span> <span class="p">};</span>
     <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">col</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

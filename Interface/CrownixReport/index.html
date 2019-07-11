@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1861,7 +1852,7 @@
 
 <p><strong>m2soft_report.html</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1900,13 +1891,14 @@
 37
 38
 39
-40</pre></td><td class="code"><pre><span class="c1">// 리포팅 데이터 생성</span>
+40
+</pre></td><td class="rouge-code"><pre><span class="c1">// 리포팅 데이터 생성</span>
 <span class="kd">function</span> <span class="nx">dataProduction</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">dataValue</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
         <span class="nx">idx</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getDataRow</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
-        <span class="nx">dataValue</span> <span class="o">+=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getValues</span><span class="p">(</span><span class="nx">idx</span><span class="p">)</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="s2">"\n"</span><span class="p">;</span>
+        <span class="nx">dataValue</span> <span class="o">+=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getValues</span><span class="p">(</span><span class="nx">idx</span><span class="p">)</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="c1">// 최종 리포트 데이터</span>
     <span class="nx">reportingData</span> <span class="o">=</span> <span class="nx">dataValue</span><span class="p">;</span>
@@ -1940,9 +1932,7 @@
     <span class="nx">f</span><span class="p">.</span><span class="nx">method</span> <span class="o">=</span> <span class="s2">"post"</span><span class="p">;</span>
     <span class="nx">f</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="리포트-서버에-데이터-채우기-및-화면-출력">리포트 서버에 데이터 채우기 및 화면 출력</h4>
 
@@ -1950,22 +1940,21 @@
 
 <p><strong>preview.jsp</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">RD_data</span> <span class="o">=</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="s2">"&lt;%=R_data%&gt;"</span><span class="p">);</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">RD_data</span> <span class="o">=</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="s2">"&lt;%=R_data%&gt;"</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">RD_style</span> <span class="o">=</span> <span class="s2">"&lt;%=R_style%&gt;"</span><span class="p">;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">m2soft</span><span class="p">.</span><span class="nx">crownix</span><span class="p">.</span><span class="nx">Viewer</span><span class="p">(</span><span class="s1">'http://URL/service'</span><span class="p">,</span> <span class="s1">'crownix-viewer'</span><span class="p">);</span>
     <span class="nx">viewer</span><span class="p">.</span><span class="nx">setRData</span><span class="p">(</span><span class="nx">RD_data</span><span class="p">);</span>
     <span class="nx">viewer</span><span class="p">.</span><span class="nx">openFile</span><span class="p">(</span><span class="s1">'gridSample.mrd'</span><span class="p">,</span> <span class="s1">'/rnl [^^&amp;]'</span><span class="p">);</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

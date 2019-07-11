@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2107,18 +2098,17 @@ var onDoneDataSet = function() {
 </div>
 <p><a class="btn primary small round lowercase" id="btnOnGrouping">그룹핑 하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">fieldNames</span> <span class="o">=</span> <span class="p">[];</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fieldNames</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">"input[name='chkFieldName']:checked"</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">fieldNames</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
 <span class="p">});</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">groupBy</span><span class="p">(</span><span class="nx">fieldNames</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="그룹핑-이벤트">그룹핑 이벤트</h4>
 
@@ -2131,14 +2121,15 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnOnGroupingChanged">이벤트 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onGrouping</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">){</span>
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onGrouping</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">){</span>
   <span class="nx">alert</span><span class="p">(</span><span class="s2">"onGrouping 이벤트가 발생했습니다. true를 반환합니다."</span><span class="p">);</span>
   <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
@@ -2146,9 +2137,7 @@ var onDoneDataSet = function() {
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onGroupingChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="s2">"onGroupingChanged : isGrouped = "</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">isGrouped</span><span class="p">()</span> <span class="o">+</span> <span class="s2">", isMergedGrouped  = "</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">isMergedGrouped</span><span class="p">());</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="그룹-푸터-값-표시">그룹 푸터 값 표시</h4>
 
@@ -2165,18 +2154,17 @@ var onDoneDataSet = function() {
 </select>
 <a class="btn primary small round lowercase" id="btnSetFooterStatement">적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">statement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selFooterStatement'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">statement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selFooterStatement'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="nx">statement</span> <span class="o">=</span> <span class="nx">statement</span> <span class="p">?</span> <span class="nx">statement</span> <span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
   <span class="na">footerStatement</span><span class="p">:</span> <span class="nx">statement</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="그룹-헤더-값-표시">그룹 헤더 값 표시</h4>
 
@@ -2206,16 +2194,15 @@ var onDoneDataSet = function() {
 </select>
 <a class="btn primary small round lowercase" id="btnSetHeaderStatement">적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">statement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selHeaderStatement'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">statement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selHeaderStatement'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
     <span class="na">headerStatement</span><span class="p">:</span> <span class="nx">statement</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="그루핑-옵션-설정">그루핑 옵션 설정</h4>
 
@@ -2227,7 +2214,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnSetGroupingOptions">Grouping 옵션 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2236,7 +2223,8 @@ var onDoneDataSet = function() {
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setGroupingOptions</span><span class="p">({</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setGroupingOptions</span><span class="p">({</span>
     <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
     <span class="na">prompt</span><span class="p">:</span> <span class="s2">"컬럼 헤더를 이 곳으로 끌어다 놓으면 그 컬럼으로 그룹핑합니다."</span><span class="p">,</span> 
     <span class="na">linear</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> 
@@ -2246,9 +2234,7 @@ var onDoneDataSet = function() {
         <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a href="http://help.realgrid.com/api/types/RowGroupOptions/">setRowGroup()</a>함수로 RowGrouping과 관련된 영역들의 표시 방법 등에 대한 설정합니다.</p>
 
@@ -2287,24 +2273,23 @@ collapsedAdornments:
 
 <p><a class="btn primary small round lowercase" id="btnSetRowGroup2">옵션 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
   <span class="na">summaryMode</span><span class="p">:</span> <span class="s2">"aggregate"</span><span class="p">,</span>
   <span class="na">sorting</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
   <span class="na">footerStatement</span><span class="p">:</span> <span class="s2">"행 그룹핑된 컬럼의 풋터입니다."</span><span class="p">,</span>
   <span class="na">footerCellMerge</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetRowLevels">levels 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2368,7 +2353,8 @@ collapsedAdornments:
 62
 63
 64
-65</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
+65
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
   <span class="na">levels</span><span class="p">:</span> <span class="p">[{</span>
     <span class="na">headerStyles</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF008800"</span><span class="p">,</span>
@@ -2433,9 +2419,7 @@ collapsedAdornments:
    <span class="p">}</span>
   <span class="p">}]</span> 
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#btnOnGrouping').click(function() {

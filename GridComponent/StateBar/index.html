@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2126,25 +2117,23 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetVisibleFalse">표시하지 않음</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
   <span class="na">visible</span><span class="p">:</span> <span class="kc">false</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetVisibleTrue">표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
   <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="행-상태-변경하기">행 상태 변경하기</h4>
 <p>행 상태(RowState)는 사용자의 키 입력에 의해서 변경되지만 개발자가 임의로 설정할 수 있습니다.<br />
@@ -2162,14 +2151,13 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetRowState">행 상태 변경하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">rowState</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">":input:radio[name='rowState']:checked"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRowState</span><span class="p">(</span><span class="nx">curr</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="nx">rowState</span><span class="p">)</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="표시형태-변경하기-only-js-support">표시형태 변경하기 <code class="highlighter-rouge">(Only JS Support)</code></h4>
 <p>기본적으로 각 행의 상태는 아이콘으로 표시 됩니다. 그라나 필요에 따라 text로 보여주기를 원할때도 있습니다.
@@ -2177,7 +2165,7 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetCheckBarText">Text로 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2185,7 +2173,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
+9
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
     <span class="na">mark</span><span class="p">:</span> <span class="s2">"text"</span><span class="p">,</span>
     <span class="na">stateTexts</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">created</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
@@ -2194,20 +2183,17 @@
         <span class="na">createAndDeleted</span><span class="p">:</span> <span class="s2">"X"</span>
     <span class="p">}</span>
 <span class="p">});</span>    
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetCheckBarDefault">Default로 표시(아이콘)</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
     <span class="na">mark</span><span class="p">:</span> <span class="s2">"default"</span>
 <span class="p">});</span> 
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="headfoot-only-js-support">Head/Foot <code class="highlighter-rouge">(Only JS Support)</code></h4>
 <p>상태 바의 헤드와 풋 영역에 글자나 이미지를 표시할 수 있습니다.</p>
@@ -2221,41 +2207,39 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetText">Text 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
   <span class="na">headText</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>  
   <span class="na">footText</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
   <span class="na">headImageUrl</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>  
   <span class="na">footImageUrl</span><span class="p">:</span> <span class="kc">null</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetImage">Image 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
   <span class="na">headText</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>  
   <span class="na">footText</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="na">headImageUrl</span><span class="p">:</span> <span class="s2">"/resource/image/common/dot_arrow2_top.gif"</span><span class="p">,</span>  
   <span class="na">footImageUrl</span><span class="p">:</span> <span class="s2">"/resource/image/common/dot_arrow2_bottom.gif"</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnStateStyles">상태별 배경색</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2263,7 +2247,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
+9
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
     <span class="na">mark</span><span class="p">:</span><span class="s2">"text"</span><span class="p">,</span>
     <span class="na">styles</span><span class="p">:{</span><span class="na">font</span><span class="p">:</span><span class="s2">"나눔고딕코딩"</span><span class="p">},</span>
     <span class="na">stateStyles</span><span class="p">:{</span> 
@@ -2272,9 +2257,7 @@
         <span class="s2">"deleted"</span><span class="p">:{</span><span class="s2">"background"</span><span class="p">:</span><span class="s2">"#44000000"</span><span class="p">,</span> <span class="na">foreground</span><span class="p">:</span><span class="s2">"#FF88FF88"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="s2">"바탕체"</span><span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

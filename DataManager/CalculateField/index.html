@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2140,7 +2131,7 @@ $.getJSON("/resource/data/calculateFieldData.json", function (data) {
 Calculate Field와 연결된 컬럼은 readOnly가 됩니다.
 <code class="highlighter-rouge">※ 자기 자신 필드를 calculateExpression에 사용할 수 없습니다.</code></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2150,7 +2141,8 @@ Calculate Field와 연결된 컬럼은 readOnly가 됩니다.
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
     <span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span>
 <span class="p">},</span> <span class="p">{</span>
@@ -2161,15 +2153,13 @@ Calculate Field와 연결된 컬럼은 readOnly가 됩니다.
     <span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span><span class="p">,</span>
     <span class="na">calculateExpression</span><span class="p">:</span> <span class="s2">"values['Quantity'] * values['UnitPrice']"</span>
 <span class="p">}]</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="calculatecallback-설정">calculateCallback 설정</h4>
 
 <p>계산식으로 표현하기 어려운 경우 <code class="highlighter-rouge">calculateCallback</code>함수를 통해 값을 구할 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2186,7 +2176,8 @@ Calculate Field와 연결된 컬럼은 readOnly가 됩니다.
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
+18
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
     <span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span>
 <span class="p">},</span> <span class="p">{</span>
@@ -2204,9 +2195,7 @@ Calculate Field와 연결된 컬럼은 readOnly가 됩니다.
 	        <span class="k">return</span> <span class="nx">quantity</span> <span class="o">&gt;=</span> <span class="mi">1000</span> <span class="p">?</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">quantity</span> <span class="o">*</span> <span class="nx">unitprice</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">)</span> <span class="p">:</span> <span class="nx">quantity</span> <span class="o">*</span> <span class="nx">unitprice</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="p">}]</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

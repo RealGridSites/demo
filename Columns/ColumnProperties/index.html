@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2027,84 +2018,79 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="btnToggleVisible">표시 여부</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">visible</span> <span class="o">=</span> <span class="o">!</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
-  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">,</span> <span class="nx">visible</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p><a class="btn primary small round lowercase" id="btnIncWidth">너비 증가</a></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">visible</span> <span class="o">=</span> <span class="o">!</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">,</span> <span class="nx">visible</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><a class="btn primary small round lowercase" id="btnIncWidth">너비 증가</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
   <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">,</span> <span class="nx">width</span><span class="p">);</span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnDecWidth">너비 감소</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre>
+5
+</pre></td><td class="rouge-code"><pre>
 <span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span><span class="p">;</span>
   <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">,</span> <span class="nx">width</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>헤더의 우측 경계를 Drag하여 컬럼 크기 변경 가능 여부를 결정합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnToggleResizable">크기변경 여부</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">resizable</span> <span class="o">=</span> <span class="o">!</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"resizable"</span><span class="p">);</span>
   <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"resizable"</span><span class="p">,</span> <span class="nx">resizable</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>헤더를 클릭하여 정렬 가능 여부를 결정합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnToggleSortable">정렬 여부</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">sortable</span> <span class="o">=</span> <span class="o">!</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"sortable"</span><span class="p">);</span>
   <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"sortable"</span><span class="p">,</span> <span class="nx">sortable</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 function createColumnList(grid) {

@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2320,23 +2311,21 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="setDataSource1">첫 번째 그리드에 데이터 연결</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="c1">// 첫 번째 그리드의 변수는 gridView1</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1">// 첫 번째 그리드의 변수는 gridView1</span>
 <span class="nx">gridView1</span><span class="p">.</span><span class="nx">setDataProvider</span><span class="p">(</span><span class="nx">dataProvider1</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>오른쪽 그리드에도 동일한 DataProvider를 연결해 보겠습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="setDataSource2">두 번째 그리드에 데이터 연결</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="c1">// 두 번째 그리드의 변수는 gridView2</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1">// 두 번째 그리드의 변수는 gridView2</span>
 <span class="nx">gridView2</span><span class="p">.</span><span class="nx">setDataProvider</span><span class="p">(</span><span class="nx">dataProvider1</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="데이터-변경">데이터 변경</h4>
 
@@ -2344,14 +2333,13 @@ var onSuccessFieldSet2 = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="setValues">DataProvider의 값 변경하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">dataProvider1</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider1</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 <span class="nx">dataProvider1</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'2001'</span><span class="p">,</span><span class="mi">80</span><span class="p">);</span>
 <span class="nx">dataProvider1</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'2002'</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#setDataSource1').click(function() {

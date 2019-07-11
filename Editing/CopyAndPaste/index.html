@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2115,20 +2106,19 @@
 <p><a class="btn primary small round lowercase" id="btnSetCopyOptions">setCopyOptions()
 </a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCopyOptions</span><span class="p">({</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCopyOptions</span><span class="p">({</span>
   <span class="na">singleMode</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkSingleMode"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
   <span class="na">enabled</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkEnabled"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
   <span class="na">datetimeFormat</span><span class="p">:</span> <span class="s2">"yyyy/MM/dd"</span><span class="p">,</span>
   <span class="na">booleanFormat</span><span class="p">:</span><span class="s2">"N;Y"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="paste-options"><a href="http://help.realgrid.com/api/types/PasteOptions/" target="_blank">Paste Options</a></h4>
 <p><a href="http://help.realgrid.com/api/types/PasteOptions/" target="_blank">Paste Options</a>을 설정하여 붙여넣기시에 요구되는 다양한 옵션들을 설정할 수 있습니다.</p>
@@ -2152,7 +2142,7 @@
 <p><a class="btn primary small round lowercase" id="btnSetPasteOptions">setPasteOptions()
 </a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2168,7 +2158,8 @@
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setPasteOptions</span><span class="p">({</span>
+17
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setPasteOptions</span><span class="p">({</span>
   <span class="na">singleMode</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkPasteSingleMode"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
   <span class="na">enabled</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkPasteEnabled"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
   <span class="na">startEdit</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkStartEdit"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
@@ -2185,9 +2176,7 @@
   <span class="na">checkReadOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkCheckReadOnly"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
   <span class="na">checkDomainOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkCheckDomainOnly"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">)</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <script>
   $('#btnSetCopyOptions').click(function() {
     gridView.setCopyOptions({

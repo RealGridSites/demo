@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2095,7 +2086,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnSetValidation">컬럼 유효성 설정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2124,7 +2115,8 @@ var onDoneDataSet = function() {
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">validations</span> <span class="o">=</span> <span class="p">[{</span>
+30
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">validations</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &lt; 1000"</span><span class="p">,</span>
     <span class="na">message</span><span class="p">:</span> <span class="s2">"Quantity는 1000보다 작아야 합니다!"</span><span class="p">,</span>
     <span class="na">mode</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
@@ -2154,9 +2146,7 @@ var onDoneDataSet = function() {
 <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">);</span>
 <span class="nx">column</span><span class="p">.</span><span class="nx">validations</span> <span class="o">=</span> <span class="nx">validations</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="일괄-유효성-확인-only-js-support">일괄 유효성 확인 <code class="highlighter-rouge">(Only JS Support)</code></h4>
 
@@ -2166,12 +2156,11 @@ var onDoneDataSet = function() {
 <p>전달 인자로 아무것도 입력하지 않으면 모든 행에 대하여 유효성 확인을 수행하고 특정 행 들만 유효성 확인시에는 행 번호들을 배열로 전달하면 됩니다 <br />
 <a class="btn primary small round lowercase" id="btnCheckValidateCells">checkValidateCells()</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">checkValidateCells</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">checkValidateCells</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">log</span><span class="p">));</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="유효성-확인-실패-목록">유효성 확인 실패 목록</h4>
 
@@ -2181,12 +2170,11 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnGetInvalidCellList">getInvalidCellList()</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getInvalidCellList</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getInvalidCellList</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">log</span><span class="p">));</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="검증실패-목록-초기화">검증실패 목록 초기화</h4>
 
@@ -2195,10 +2183,9 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnClearInvalidCellList">getInvalidCellList()</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>gridView.clearInvalidCellList();
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>gridView.clearInvalidCellList();
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#btnSetValidation').click(function() {

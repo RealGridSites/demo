@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2053,38 +2044,36 @@
 
 <p>아래와 같은 배열형 데이터를 GridView에 담을 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">[</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="p">[</span>
   <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"기아"</span><span class="p">,</span> <span class="s2">"15"</span><span class="p">,</span> <span class="s2">"더 뉴 K9"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"16"</span><span class="p">,</span> <span class="s2">"8620"</span><span class="p">,</span> <span class="s2">"대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/215.png"</span><span class="p">,</span> <span class="s2">"images/215.png"</span><span class="p">],</span>
   <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"르노삼성"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"QM6"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"이온 실버"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"71"</span><span class="p">,</span> <span class="s2">"3470"</span><span class="p">,</span> <span class="s2">"중형SUV"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/502.png"</span><span class="p">,</span> <span class="s2">"images/502.png"</span><span class="p">],</span>
   <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"르노삼성"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"SM7"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"26"</span><span class="p">,</span> <span class="s2">"3820"</span><span class="p">,</span> <span class="s2">"준대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/505.png"</span><span class="p">,</span> <span class="s2">"images/505.png"</span><span class="p">]</span>
 <span class="p">]</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>javascript 배열형 데이터를 그리드에 담기 위해 <a href="http://help.realgrid.com/api/LocalDataProvider/setRows/">LocalDataProvider.setRows()</a> 함수를 사용합니다.
 배열 데이터는 필드의 순서대로 입력이 되며, 필드보다 데이터가 많던 적던 오류없이 입력됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"기아"</span><span class="p">,</span> <span class="s2">"15"</span><span class="p">,</span> <span class="s2">"더 뉴 K9"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"16"</span><span class="p">,</span> <span class="s2">"8620"</span><span class="p">,</span> <span class="s2">"대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/215.png"</span><span class="p">,</span> <span class="s2">"images/215.png"</span><span class="p">],</span>
   <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"르노삼성"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"QM6"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"이온 실버"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"71"</span><span class="p">,</span> <span class="s2">"3470"</span><span class="p">,</span> <span class="s2">"중형SUV"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/502.png"</span><span class="p">,</span> <span class="s2">"images/502.png"</span><span class="p">],</span>
   <span class="p">[</span><span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"국산"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"르노삼성"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"SM7"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"미드나이트 블랙"</span><span class="p">,</span> <span class="s2">"Fri Jan 01 2016 00:00:00 GMT+0900 (KST)"</span><span class="p">,</span> <span class="s2">"26"</span><span class="p">,</span> <span class="s2">"3820"</span><span class="p">,</span> <span class="s2">"준대형"</span><span class="p">,</span> <span class="s2">"휘발유"</span><span class="p">,</span> <span class="s2">"images/505.png"</span><span class="p">,</span> <span class="s2">"images/505.png"</span><span class="p">]</span>
 <span class="p">]</span>
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="setRows">배열형 데이터 추가</a></p>
 
@@ -2092,7 +2081,7 @@
 
 <p><code class="highlighter-rouge">setRows()</code>함수는 javascript객체를 배열에 담아 그리드에 추가 할 수 도 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2130,7 +2119,8 @@
 36
 37
 38
-39</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data2</span> <span class="o">=</span> <span class="p">[</span>
+39
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data2</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
         <span class="s2">"produce"</span><span class="p">:</span> <span class="s2">"수입차"</span><span class="p">,</span>
         <span class="s2">"country"</span><span class="p">:</span> <span class="s2">"유럽"</span><span class="p">,</span>
@@ -2169,9 +2159,7 @@
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>버튼을 눌러 실행하기 전에 왼쪽 그리드의 툴바에서 <code class="highlighter-rouge">필드</code>를 펼쳐 그리드에 적용된 필드 이름을 확인 하세요.
 객체의 <code class="highlighter-rouge">name: value</code>에서 속성명인 <code class="highlighter-rouge">name</code>은 필드 이름과 매핑되며 해당 <code class="highlighter-rouge">value</code>가 필드의 값으로 입력됩니다. 아래 버튼을 눌러 동작을 확인하세요.</p>

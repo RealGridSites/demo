@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2251,51 +2242,47 @@ var onDoneDataSet = function() {
 
 <p>사용자Id 컬럼에 정규식 표현을 설정합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="c1">//displayReplace에 대체문자열 사용</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="c1">//displayReplace에 대체문자열 사용</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"userid"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">a-z0-9</span><span class="se">]{3})([</span><span class="sr">a-z0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">)</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"userid"</span><span class="p">,</span><span class="s2">"displayReplace"</span><span class="p">,</span> <span class="s2">"$1***"</span><span class="p">)</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="email">E-Mail 컬럼 마스킹 처리</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="c1">//displayReplace에 Callback 사용</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">//displayReplace에 Callback 사용</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"email"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">a-zA-Z0-9._%+-</span><span class="se">]</span><span class="sr">+</span><span class="se">)(</span><span class="sr">@</span><span class="se">[</span><span class="sr">a-zA-Z0-9.-</span><span class="se">]</span><span class="sr">+</span><span class="se">\.[</span><span class="sr">a-zA-Z</span><span class="se">]{2,4})</span><span class="sr">$/</span><span class="p">)</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"email"</span><span class="p">,</span><span class="s2">"displayReplace"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">match</span><span class="p">,</span> <span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">,</span> <span class="nx">offset</span><span class="p">,</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nx">p1</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"****"</span> <span class="o">+</span> <span class="nx">p2</span><span class="p">;</span>
 <span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="ip_address">IP Address 컬럼 마스킹 처리</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ip_address"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.)([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.)([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)(\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ip_address"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.)([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.)([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)(\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">)</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ip_address"</span><span class="p">,</span><span class="s2">"displayReplace"</span><span class="p">,</span> <span class="s2">"$1$2***$4"</span><span class="p">)</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="card_number">신용카드 컬럼 마스킹 처리</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"card_number"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})</span><span class="sr">$/</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"card_number"</span><span class="p">,</span><span class="s2">"displayRegExp"</span><span class="p">,</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})([</span><span class="sr">0-9</span><span class="se">]{4})</span><span class="sr">$/</span><span class="p">)</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"card_number"</span><span class="p">,</span><span class="s2">"displayReplace"</span><span class="p">,</span> <span class="s2">"$1-$2-****-$4"</span><span class="p">)</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="regularColumn">정규식을 이용한 컬럼 생성</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2308,7 +2295,8 @@ var onDoneDataSet = function() {
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+14
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"phone"</span><span class="p">,</span>
     <span class="s2">"width"</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
     <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"전화번호"</span> <span class="p">},</span>
@@ -2322,9 +2310,7 @@ var onDoneDataSet = function() {
 <span class="p">}];</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#email').click(function() {

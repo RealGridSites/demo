@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2092,16 +2083,15 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetEditOptions">설정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setEditOptions</span><span class="p">({</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setEditOptions</span><span class="p">({</span>
   <span class="na">editable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">updatable</span><span class="p">:</span> <span class="kc">true</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="편집">편집</h4>
 
@@ -2109,23 +2099,22 @@
 
 <p><a class="btn primary small round lowercase" id="btnBeginUpdateRow">편집</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">beginUpdateRow</span><span class="p">(</span><span class="nx">curr</span><span class="p">.</span><span class="nx">itemIndex</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">showEditor</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="dataprovider에-편집-값이-전달된-시점">DataProvider에 편집 값이 전달된 시점</h4>
 <p>그리드에서 편집이 완료되면 편집된 값들은 dataProvider에 전달이 됩니다. 이때 <a href="http://help.realgrid.com/api/LocalDataProvider/onRowUpdating/" target="_blank">dataProvider.onRowUpdating()</a> 이벤트가 발생하며 false를 리턴하면 편집이 취소  됩니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnOnRowUpdating">onRowUpdating</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2134,7 +2123,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">onRowUpdating</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">onRowUpdating</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getEditingItem</span><span class="p">();</span> <span class="c1">// 현재 편집 중인 행 정보와 값을 가져옵니다.</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span> 
     <span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">values</span><span class="p">[</span><span class="s2">"OrderID"</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
@@ -2144,25 +2134,22 @@
   <span class="p">}</span>
   <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="dataprovider에-편집-값이-저장-완료된-시점">DataProvider에 편집 값이 저장 완료된 시점</h4>
 <p>편집이 완료되면 <a href="http://help.realgrid.com/api/LocalDataProvider/onRowUpdating/" target="_blank">dataProvider.onRowUpdating()</a> 발생 후 dataProvider에 저장이 완료되면 <a href="http://help.realgrid.com/api/LocalDataProvider/onRowUpdated/" target="_blank">dataProvider.onRowUpdated()</a>가 발생 합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnOnRowUpdated">onRowUpdated</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">onRowUpdated</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">onRowUpdated</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getJsonRow</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">r</span><span class="p">));</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2085,7 +2076,7 @@
 
 <p><a class="btn primary small round lowercase" id="setFilters1">르노삼성 필터링</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2096,7 +2087,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span>
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s2">"value['brandName']='르노삼성'"</span>
 <span class="p">];</span>
 
@@ -2108,9 +2100,7 @@
     <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>DataProvider에 데이터를 로드 할 때 조건에 맞는 데이터만 걸러서 가져오기 위한 필터링 기능은 <a href="http://help.realgrid.com/api/LocalDataProvider/setFilters/">LocalDataProvider.setFilters()</a>함수를 통해 구현할 수 있습니다.</p>
 
 <p>이 함수의 인자는</p>
@@ -2124,7 +2114,7 @@
 
 <p><a class="btn primary small round lowercase" id="setFilters2">르노삼성 브랜드중 3천만원 미만 필터링</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2136,7 +2126,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span>
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s2">"value['brandName'] = '르노삼성'"</span><span class="p">,</span>
   <span class="s2">"value['price'] &lt; 3000"</span>
 <span class="p">];</span>
@@ -2149,9 +2140,7 @@
     <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>코드를 보면 아시겠지만, 이 방법은 실행 시점에 원격의 데이터를 모두 로컬로 내려받은 후 데이터를 필터링 하는 동작이기 때문에 특별한 경우가 아니라면 추천할 만한 방법이 아닙니다. 과도한 네트웍 리소스의 사용과 로컬에서의 성능상 문제가 생길 수도 있기 때문입니다.</p>
 

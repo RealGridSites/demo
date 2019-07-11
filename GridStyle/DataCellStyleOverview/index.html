@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2076,7 +2067,7 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 
 <p><a class="btn primary small round lowercase" id="btnAddCellStyles">스타일 추가하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2100,7 +2091,8 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 22
 23
 24
-25</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyles</span><span class="p">([{</span>
+25
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyles</span><span class="p">([{</span>
     <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"style1"</span><span class="p">,</span>
     <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffffff"</span><span class="p">,</span>
     <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff333333"</span><span class="p">,</span>
@@ -2125,13 +2117,11 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
     <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"styleNew"</span><span class="p">,</span>
     <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#33ffff00"</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetRowClickHandler">선택 행 전체 스타일 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2140,7 +2130,8 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
     <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#4400ff00"</span><span class="p">,</span>
     <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
     <span class="s2">"paddingTop"</span><span class="p">:</span> <span class="mi">5</span>
@@ -2150,20 +2141,19 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"style2"</span><span class="p">);</span>
 <span class="c1">// row가 -1이면 추가 중인 행에 대해 적용된다.</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"styleNew"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetFieldClickHandler">개별 스타일 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style02"</span><span class="p">,</span> <span class="p">{</span>
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style02"</span><span class="p">,</span> <span class="p">{</span>
     <span class="s2">"paddingLeft"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
     <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span>
     <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffff"</span>
@@ -2171,35 +2161,31 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetRangeClickHandler">여러 셀 동시 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style03"</span><span class="p">,</span> <span class="p">{</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style03"</span><span class="p">,</span> <span class="p">{</span>
     <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#cc880000"</span><span class="p">,</span>
     <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffff"</span><span class="p">,</span>
     <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">14</span>
 <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="s2">"style03"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>셀들에 지정했던 모든 설정을 제거합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnClearAllClickHandler">스타일 설정 초기화</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearCellStyles</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearCellStyles</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#btnAddCellStyles').click(function() {

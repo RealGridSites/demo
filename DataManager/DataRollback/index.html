@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2121,20 +2112,19 @@ var onDoneDataSet = function() {
 최초복제된 데이터셋은 rollBack을 이용해서 복원은 할수 있지만 삭제를 할수 없기 때문에 DataProvider <a href="http://help.realgrid.com/api/DataProvider/clearSavePoints/">clearSavePoints</a> 를 이용하여 삭제합니다. <br />
 <code class="highlighter-rouge">savePoint</code>를 지정하지 않으면 최초복제로 복원됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="c1">//savePoint 생성</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="c1">//savePoint 생성</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">savePoint</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 <span class="c1">//롤백</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">rollback</span><span class="p">(</span><span class="nx">savePoint</span><span class="p">);</span>
 <span class="c1">//savePoint 초기화</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">clearSavePoints</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="데이터-복원하기">데이터 복원하기</h4>
 
@@ -2157,7 +2147,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnClearPoints">savePoint 초기화</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2187,7 +2177,8 @@ var onDoneDataSet = function() {
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="c1">//복원시점 만들기</span>
+31
+</pre></td><td class="rouge-code"><pre><span class="c1">//복원시점 만들기</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'#btnSavePoint'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">gridView</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span>
     <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">savePoint</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#chkStates"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">));</span>
@@ -2218,9 +2209,7 @@ var onDoneDataSet = function() {
         <span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;option /&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="nx">c</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span> <span class="s2">"savePoint_"</span> <span class="o">+</span> <span class="nx">c</span> <span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">list</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

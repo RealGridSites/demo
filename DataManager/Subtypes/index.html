@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1886,7 +1877,7 @@
   </tbody>
 </table>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1897,7 +1888,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre>"fields": [{
+12
+</pre></td><td class="rouge-code"><pre>"fields": [{
     "fieldName": "ItemId",
     "dataType": "number",
     "subtype": "unum"
@@ -1909,9 +1901,7 @@
 },{
 ...
 }];
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
 
@@ -1923,20 +1913,19 @@
 이 속성들은 <em>Number, Datetime</em> 자료형에 지정할 수 있습니다.<br />
 Datetime 필드에 이 속성을 지정할 때는 해당 필드의 datatimeFormat이나, 필드에 지정되지 않은 경우 DataProvider에 설정된 datetimeFormat에 맞는 문자열로 지정합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre>"fields": [{
+6
+</pre></td><td class="rouge-code"><pre>"fields": [{
    "fieldName": "Price",
    "dataType": "number",
    "min": 100,
    "max": 200
    ...
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
 
@@ -1944,16 +1933,15 @@ Datetime 필드에 이 속성을 지정할 때는 해당 필드의 datatimeForma
 
 <p><em>Boolean</em> 자료형을 제외한 나머지 자료형의 DataField에 <em>“set”</em> 배열 속성 값을 지정해서, 배열에 포함된 값이 아니면 <em>undefined</em>로 저장되도록 할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre>"fields": [{
+4
+</pre></td><td class="rouge-code"><pre>"fields": [{
    "fieldName": "State",
    "set": ["ab", "cd", ...],
    ...
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
 

@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2144,16 +2135,15 @@
 
 <p><a class="btn primary small round lowercase" id="btnButtonAlwaysShowButton">버튼 항상 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"alwaysShowButton"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p></p>
 
 <h4 id="데이터-셀에-버튼을-표시하는-방법">데이터 셀에 버튼을 표시하는 방법</h4>
@@ -2167,55 +2157,51 @@
 
 <p><a class="btn primary small round lowercase" id="btnButtonAlways">항상 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"always"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnButtonDefault">hovering, 포커스 상태만 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnButtonVisible">포커스 상태만 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"visible"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnButtonHidden">표시 안함</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"ImageButton"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"EmployeeID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"buttonVisibility"</span><span class="p">,</span> <span class="s2">"hidden"</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="버튼-클릭-이벤트">버튼 클릭 이벤트</h4>
 
@@ -2225,28 +2211,26 @@
   <li><a href="http://help.realgrid.com/api/GridBase/onMenuItemClicked/">onMenuItemClicked</a></li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onMenuItemClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onMenuItemClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">label</span><span class="p">);</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>셀버튼 클릭 이벤트</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/GridBase/onCellButtonClicked/">onCellButtonClicked</a></li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onCellButtonClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onCellButtonClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s2">"CellButton Clicked: itemIndex="</span> <span class="o">+</span> <span class="nx">itemIndex</span> <span class="o">+</span> <span class="s2">", fieldName="</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span><span class="p">);</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>이미지 버튼 클릭 이벤트 <code class="highlighter-rouge">(Only JS Support)</code></p>
 
@@ -2254,20 +2238,19 @@
   <li><a href="http://help.realgrid.com/api/GridBase/onImageButtonClicked/">onImageButtonClicked</a></li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onImageButtonClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">buttonIndex</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onImageButtonClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">buttonIndex</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s2">"onImageButtonClicked: "</span> <span class="o">+</span> <span class="nx">itemIndex</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s2">", "</span> <span class="o">+</span> <span class="nx">buttonIndex</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="동적-이미지-버튼">동적 이미지 버튼</h4>
 
 <p>조건에 따라 서로다른 이미지 버튼을 보여줄수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2314,7 +2297,8 @@
 45
 46
 47
-48</pre></td><td class="code"><pre><span class="c1">//이미지 버튼 생성</span>
+48
+</pre></td><td class="rouge-code"><pre><span class="c1">//이미지 버튼 생성</span>
 <span class="kd">var</span> <span class="nx">imageButtons1</span> <span class="o">=</span> <span class="p">[{</span>
   <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"팝업버튼"</span><span class="p">,</span>
   <span class="s2">"up"</span><span class="p">:</span> <span class="s2">"/resource/image/btnImages/popup_normal.png"</span><span class="p">,</span>
@@ -2362,20 +2346,17 @@
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
 
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="이미지-버튼-정렬">이미지 버튼 정렬</h4>
 
 <p><a href="http://help.realgrid.com/api/types/ImageButtonsCellRenderer/">alignment</a>속성으로 셀 안의 버튼의 위치를 지정할 수 있습니다. <br />
 “near”, “center” 지정시 셀의 값이 표시되지 않습니다.</p>
 
-<p>버튼 클릭 시 EmployeeID 컬럼의 버튼이 가운데 정렬됩니다.</p>
+<p>버튼 클릭 시 EmployeeID 컬럼의 버튼이 가운데 정렬됩니다.<br />
+<a class="btn primary small round lowercase" id="btnButtonAlignment">이미지 버튼 가운데 정렬</a></p>
 
-<p><a class="btn primary small round lowercase" id="btnButtonAlignment">이미지 버튼 가운데 정렬</a></p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2392,27 +2373,26 @@
 15
 16
 17
-18</pre></td><td class="code"><pre>gridView.setColumnProperty("EmployeeID","renderer",{
+18
+</pre></td><td class="rouge-code"><pre>gridView.setColumnProperty("EmployeeID","renderer",{
   "type": "imageButtons", 
   "editable": false, 
+  "imageGap":30,
+  "margin":30,
   "images": [{
     "name": "팝업버튼",
-    "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
-    "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
-    "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
-    "width":50
-  },{
-    "name": "팝업버튼",
-    "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
-    "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
-    "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
-    "width":50
+    "up": "/resource/image/btnImages/popup_normal.png",
+    "hover": "/resource/image/btnImages/popup_hover.png",
+    "down": "/resource/image/btnImages/popup_click.png"
+  }, {
+    "name": "조회버튼",
+    "up": "/resource/image/btnImages/search_normal.png",
+    "hover": "/resource/image/btnImages/search_hover.png",
+    "down": "/resource/image/btnImages/search_click.png"
   }],
   "alignment": "center" //버튼 정렬 near, far
 })
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
   $('#btnButtonAlwaysShowButton').click(function() {
@@ -2454,18 +2434,18 @@
     gridView.setColumnProperty("EmployeeID","renderer",{
       "type": "imageButtons", 
       "editable": false, 
+      "imageGap":30,
+      "margin":30,
       "images": [{
         "name": "팝업버튼",
-        "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
-        "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
-        "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
-        "width":50
-      },{
-        "name": "팝업버튼",
-        "up": "http://demo.realgrid.com/resource/image/btnImages/popup_normal.png",
-        "hover": "http://demo.realgrid.com/resource/image/btnImages/popup_hover.png",
-        "down": "http://demo.realgrid.com/resource/image/btnImages/popup_click.png",
-        "width":50
+        "up": "/resource/image/btnImages/popup_normal.png",
+        "hover": "/resource/image/btnImages/popup_hover.png",
+        "down": "/resource/image/btnImages/popup_click.png"
+      }, {
+        "name": "조회버튼",
+        "up": "/resource/image/btnImages/search_normal.png",
+        "hover": "/resource/image/btnImages/search_hover.png",
+        "down": "/resource/image/btnImages/search_click.png"
       }],
       "alignment": "center" //버튼 정렬 near, far
     })

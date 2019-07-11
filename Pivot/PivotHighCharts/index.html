@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2159,7 +2150,7 @@ function setHighChart(provider, vals, index, columnList) {
 
 <p>사용 목적에 맞게 가져온 데이터를 원하는 형태로 가공해서 사용할 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2190,7 +2181,8 @@ function setHighChart(provider, vals, index, columnList) {
 29
 30
 31
-32</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">onCurrentChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+32
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">onCurrentChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="kd">var</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">columns</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">level</span> <span class="o">=</span> <span class="nx">attrs</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">item</span> <span class="o">==</span> <span class="s2">"__sum"</span> <span class="o">||</span> <span class="nx">item</span> <span class="o">==</span> <span class="s2">"valueField"</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}).</span><span class="nx">length</span><span class="p">;</span>
@@ -2222,13 +2214,11 @@ function setHighChart(provider, vals, index, columnList) {
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">list</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="차트-생성-함수">차트 생성 함수</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2286,7 +2276,8 @@ function setHighChart(provider, vals, index, columnList) {
 56
 57
 58
-59</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setHighChart</span><span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">vals</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">columnLabels</span><span class="p">)</span> <span class="p">{</span>
+59
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setHighChart</span><span class="p">(</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">vals</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">columnLabels</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">subtitle</span><span class="p">;</span>
 
     <span class="k">if</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"__sum"</span><span class="p">){</span>
@@ -2345,9 +2336,7 @@ function setHighChart(provider, vals, index, columnList) {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

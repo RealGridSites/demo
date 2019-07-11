@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2090,7 +2081,7 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetDynamicStyles">동적 컬럼 스타일 변경</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2099,7 +2090,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">newDynamicStyles</span> <span class="o">=</span> <span class="p">[{</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">newDynamicStyles</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 1000"</span><span class="p">,</span>
     <span class="na">styles</span><span class="p">:</span> <span class="s2">"background=#FF0000"</span>
 <span class="p">}];</span>
@@ -2109,30 +2101,27 @@
         <span class="na">cellDynamicStyles</span><span class="p">:</span> <span class="nx">newDynamicStyles</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><code class="highlighter-rouge">1997</code>컬럼에 동적 스타일을 지정합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetColumnDynamicStyles">동적 컬럼 스타일 변경</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span>
     <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByField</span><span class="p">(</span><span class="s2">"1997"</span><span class="p">),</span>
     <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
         <span class="na">criteria</span><span class="p">:</span> <span class="s2">"(value &gt;= 500) and (value &lt; 1000)"</span><span class="p">,</span>
         <span class="na">styles</span><span class="p">:</span> <span class="s2">"background=#FF0000"</span>
     <span class="p">}]</span>
 <span class="p">)</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="편집된-셀-동적-스타일">편집된 셀 동적 스타일</h4>
 <p>값이 수정된 셀에 해당 스타일을 적용합니다.<br />
@@ -2142,30 +2131,30 @@ changedcell조건을 사용하기 위해서는 DataProvider.restoreMode속성이
 
 <p><a class="btn primary small round lowercase" id="btnChangedcell">편집 셀 스타일</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span><span class="na">restoreMode</span><span class="p">:</span><span class="s2">"explicit"</span><span class="p">});</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span><span class="na">restoreMode</span><span class="p">:</span><span class="s2">"explicit"</span><span class="p">});</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setStyles</span><span class="p">({</span>
     <span class="na">body</span><span class="p">:{</span>
         <span class="na">cellDynamicStyles</span><span class="p">:[{</span><span class="na">criteria</span><span class="p">:</span><span class="s2">"changedcell"</span><span class="p">,</span> <span class="na">styles</span><span class="p">:{</span><span class="na">figureName</span><span class="p">:</span><span class="s2">"leftTop"</span><span class="p">,</span> <span class="na">figureBackground</span><span class="p">:</span><span class="s2">"#FF00ebeb"</span><span class="p">,</span> <span class="na">figureSize</span><span class="p">:</span><span class="s2">"30%"</span><span class="p">}}]</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>컬럼별로 스타일을 적용하는 경우에는 column.dynamicStyles를 사용합니다.</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnName"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"columnName"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
     <span class="na">criteria</span><span class="p">:</span><span class="s2">"changedcell"</span><span class="p">,</span> 
     <span class="na">styles</span><span class="p">:{</span>
         <span class="na">figureName</span><span class="p">:</span><span class="s2">"leftTop"</span><span class="p">,</span> 
@@ -2173,9 +2162,7 @@ changedcell조건을 사용하기 위해서는 DataProvider.restoreMode속성이
         <span class="na">figureSize</span><span class="p">:</span><span class="s2">"20%"</span>
     <span class="p">}</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="동적-스타일-함수로-지정">동적 스타일 함수로 지정</h4>
 
@@ -2183,18 +2170,17 @@ changedcell조건을 사용하기 위해서는 DataProvider.restoreMode속성이
 
 <p><a class="btn primary small round lowercase" id="btnSetColumnDynamicFunctionStyles">동적 컬럼 스타일 변경</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"1997"</span><span class="p">,</span><span class="s2">"dynamicStyles"</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"1997"</span><span class="p">,</span><span class="s2">"dynamicStyles"</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span><span class="na">foreground</span><span class="p">:</span><span class="s2">"#FFFF0000"</span><span class="p">}</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
   $('#btnSetDynamicStyles').click(function() {

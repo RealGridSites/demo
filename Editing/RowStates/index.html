@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2115,26 +2106,24 @@
 <p><a class="btn primary small round lowercase" id="btnSetRowState">setRowState
 </a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="rbRowState"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRowState</span><span class="p">(</span><span class="nx">curr</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetRowStates">setRowStates(체크바에 체크된 행들을 변경)
 </a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">dataRows</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckedRows</span><span class="p">();</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">dataRows</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckedRows</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="rbRowState"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRowStates</span><span class="p">(</span><span class="nx">dataRows</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="행-상태별-행-번호-가져오기">행 상태별 행 번호 가져오기</h4>
 <p>상태를 가진 행들의 행번호 배열을 가져옵니다.</p>
@@ -2148,14 +2137,15 @@
 
 <p><a class="btn primary small round lowercase" id="btnRowStateArray">가져오기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="rbRowStateArray"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">state</span> <span class="o">||</span> <span class="nx">state</span> <span class="o">==</span> <span class="s2">"all"</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">rows</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getAllStateRows</span><span class="p">();</span> <span class="c1">// RowState.NONE은 포함되지 않는다.</span>
@@ -2163,9 +2153,7 @@
   <span class="nx">rows</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getStateRows</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">rows</span><span class="p">));</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="변경-행의-갯수-가져오기">변경 행의 갯수 가져오기</h4>
 <p>상태를 가진 행들의 갯수 가져옵니다.</p>
@@ -2179,14 +2167,13 @@
 
 <p><a class="btn primary small round lowercase" id="btnRowStateCount">가져오기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="rbRowStateCount"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="rbRowStateCount"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRowStateCount</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

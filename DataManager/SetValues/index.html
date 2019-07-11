@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2111,27 +2102,26 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="setValue">setValue</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">field</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">fieldIndex</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="s2">"Cell ("</span> <span class="o">+</span> <span class="nx">field</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">row</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">;</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">field</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>지정한 데이터행의 모든 필드 값들을 수정할 수 있습니다.<br />
 values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-rouge">Array</code>형태 또는 <code class="highlighter-rouge">Array of Array</code>형태로 전달합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="updateRow">updateRow</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2144,7 +2134,8 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
+14
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">id</span><span class="p">:</span> <span class="s2">"1111"</span><span class="p">,</span>
     <span class="na">userid</span><span class="p">:</span> <span class="s2">"userid1"</span><span class="p">,</span>
@@ -2158,16 +2149,14 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
 <span class="p">};</span>
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">updateRow</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>지정한 데이터행의 필드 값들을 수정합니다.<br />
 <code class="highlighter-rouge">undefined로 지정하거나 명시되지 않은 경우 기존의 값을 유지합니다.</code></p>
 
 <p><a class="btn primary small round lowercase" id="updateStrictRow">updateStrictRow</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2179,7 +2168,8 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">id</span><span class="p">:</span> <span class="s2">"1111"</span><span class="p">,</span>
     <span class="na">userid</span><span class="p">:</span> <span class="s2">"userid1"</span><span class="p">,</span>
@@ -2192,16 +2182,14 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
     <span class="na">pay</span><span class="p">:</span> <span class="kc">undefined</span>
 <span class="p">};</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">updateStrictRow</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>지정한 데이터 행으로부터 한 행 이상의 값을 수정합니다.<br />
 <code class="highlighter-rouge">row</code>로 설정한 행 위치부터 <code class="highlighter-rouge">rows</code>에 저장된 배열의 <code class="highlighter-rouge">시작위치(start)</code>와 <code class="highlighter-rouge">행의 개수(count)</code>만큼의 데이터로 한 행 이상 값을 수정합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="updateRows">updateRows</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2209,7 +2197,8 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s2">"1234"</span><span class="p">,</span> <span class="s2">"userid3"</span><span class="p">,</span> <span class="s2">"company3"</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">],</span> <span class="c1">// Array</span>
     <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="s2">"5678"</span><span class="p">,</span> <span class="na">userid</span><span class="p">:</span><span class="s2">"userid4"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span><span class="s2">"company4"</span><span class="p">,</span> <span class="na">first_name</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="na">last_name</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="na">gender</span><span class="p">:</span><span class="kc">undefined</span><span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="na">birthday</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="na">pay</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">},</span> <span class="c1">// Object</span>
@@ -2218,9 +2207,7 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
 <span class="p">];</span>
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">updateRows</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>지정한 데이터 행으로부터 한 행 이상의 값을 수정합니다.<br />
 <code class="highlighter-rouge">row</code>로 설정한 행 위치부터 <code class="highlighter-rouge">rows</code>에 저장된 배열의 <code class="highlighter-rouge">시작위치(start)</code>와 <code class="highlighter-rouge">행의 개수(count)</code>만큼의 데이터로 한 행 이상 값을 수정합니다.<br />
@@ -2228,7 +2215,7 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
 
 <p><a class="btn primary small round lowercase" id="updateStrictRows">updateStrictRows</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2236,7 +2223,8 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">dataRow</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s2">"1234"</span><span class="p">,</span> <span class="s2">"userid3"</span><span class="p">,</span> <span class="s2">"company3"</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">],</span> <span class="c1">// Array</span>
     <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="s2">"5678"</span><span class="p">,</span> <span class="na">userid</span><span class="p">:</span><span class="s2">"userid4"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span><span class="s2">"company4"</span><span class="p">,</span> <span class="na">first_name</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="na">last_name</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="na">gender</span><span class="p">:</span><span class="kc">undefined</span><span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="na">birthday</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="na">pay</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">},</span> <span class="c1">// Object</span>
@@ -2245,9 +2233,7 @@ values는 <code class="highlighter-rouge">Json</code>, <code class="highlighter-
 <span class="p">];</span>
  
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">updateStrictRows</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="주의사항">주의사항</h4>
 

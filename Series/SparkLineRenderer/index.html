@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2104,7 +2095,7 @@ var onDoneDataSet = function() {
 
 <p><strong>sparkLine 타입</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2124,34 +2115,33 @@ var onDoneDataSet = function() {
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="p">{</span>
+21
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
     <span class="nl">name</span><span class="p">:</span> <span class="s2">"colLine"</span><span class="p">,</span>
-    <span class="nx">type</span><span class="err">:</span> <span class="s2">"series"</span><span class="p">,</span>
-    <span class="nx">fieldNames</span><span class="err">:</span> <span class="s2">"2000..2010"</span><span class="p">,</span>
-    <span class="nx">width</span><span class="err">:</span> <span class="mi">150</span><span class="p">,</span>
-    <span class="nx">renderer</span><span class="err">:</span> <span class="p">{</span> 
+    <span class="nx">type</span><span class="p">:</span> <span class="s2">"series"</span><span class="p">,</span>
+    <span class="nx">fieldNames</span><span class="p">:</span> <span class="s2">"2000..2010"</span><span class="p">,</span>
+    <span class="nx">width</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="nx">renderer</span><span class="p">:</span> <span class="p">{</span> 
         <span class="nl">type</span><span class="p">:</span> <span class="s2">"sparkLine"</span><span class="p">,</span>
-        <span class="nx">highFill</span><span class="err">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
-        <span class="nx">lowFill</span><span class="err">:</span> <span class="s2">"#ffff0000"</span><span class="p">,</span>
-        <span class="nx">lastFill</span><span class="err">:</span> <span class="s2">"#ff888888"</span>
+        <span class="nx">highFill</span><span class="p">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
+        <span class="nx">lowFill</span><span class="p">:</span> <span class="s2">"#ffff0000"</span><span class="p">,</span>
+        <span class="nx">lastFill</span><span class="p">:</span> <span class="s2">"#ff888888"</span>
     <span class="p">},</span>
-    <span class="nx">header</span><span class="err">:</span> <span class="p">{</span> <span class="nl">text</span><span class="p">:</span> <span class="s2">"Spark Line"</span> <span class="p">},</span>
-    <span class="nx">styles</span><span class="err">:</span> <span class="p">{</span> 
+    <span class="nx">header</span><span class="p">:</span> <span class="p">{</span> <span class="nl">text</span><span class="p">:</span> <span class="s2">"Spark Line"</span> <span class="p">},</span>
+    <span class="nx">styles</span><span class="p">:</span> <span class="p">{</span> 
         <span class="nl">background</span><span class="p">:</span> <span class="s2">"#080000ff"</span><span class="p">,</span>
-        <span class="nx">figureBackground</span><span class="err">:</span> <span class="s2">"#ff888888"</span><span class="p">,</span> 
-        <span class="nx">paddingLeft</span><span class="err">:</span><span class="mi">4</span><span class="p">,</span> 
-        <span class="nx">paddingRight</span><span class="err">:</span><span class="mi">4</span> <span class="p">,</span>
-        <span class="nx">paddingTop</span><span class="err">:</span><span class="mi">4</span><span class="p">,</span>
-        <span class="nx">paddingBottom</span><span class="err">:</span><span class="mi">4</span>
+        <span class="nx">figureBackground</span><span class="p">:</span> <span class="s2">"#ff888888"</span><span class="p">,</span> 
+        <span class="nx">paddingLeft</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> 
+        <span class="nx">paddingRight</span><span class="p">:</span><span class="mi">4</span> <span class="p">,</span>
+        <span class="nx">paddingTop</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span>
+        <span class="nx">paddingBottom</span><span class="p">:</span><span class="mi">4</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><strong>sparkColumn 타입</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2170,33 +2160,32 @@ var onDoneDataSet = function() {
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">{</span>
+20
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
     <span class="nl">name</span><span class="p">:</span> <span class="s2">"colColumn"</span><span class="p">,</span>
-    <span class="nx">type</span><span class="err">:</span> <span class="s2">"series"</span><span class="p">,</span>
-    <span class="nx">fieldNames</span><span class="err">:</span> <span class="s2">"2000..2010"</span><span class="p">,</span>
-    <span class="nx">width</span><span class="err">:</span> <span class="mi">150</span><span class="p">,</span>
-    <span class="nx">renderer</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="p">:</span> <span class="s2">"series"</span><span class="p">,</span>
+    <span class="nx">fieldNames</span><span class="p">:</span> <span class="s2">"2000..2010"</span><span class="p">,</span>
+    <span class="nx">width</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="nx">renderer</span><span class="p">:</span> <span class="p">{</span>
         <span class="nl">type</span><span class="p">:</span> <span class="s2">"sparkColumn"</span><span class="p">,</span>
-        <span class="nx">highFill</span><span class="err">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
-        <span class="nx">lowFill</span><span class="err">:</span> <span class="s2">"#ffff0000"</span><span class="p">,</span>
-        <span class="nx">lastFill</span><span class="err">:</span> <span class="s2">"#ff888888"</span>
+        <span class="nx">highFill</span><span class="p">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
+        <span class="nx">lowFill</span><span class="p">:</span> <span class="s2">"#ffff0000"</span><span class="p">,</span>
+        <span class="nx">lastFill</span><span class="p">:</span> <span class="s2">"#ff888888"</span>
     <span class="p">},</span>
-    <span class="nx">header</span><span class="err">:</span> <span class="p">{</span> <span class="nl">text</span><span class="p">:</span> <span class="s2">"Spark Column"</span> <span class="p">},</span>
-    <span class="nx">styles</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nx">header</span><span class="p">:</span> <span class="p">{</span> <span class="nl">text</span><span class="p">:</span> <span class="s2">"Spark Column"</span> <span class="p">},</span>
+    <span class="nx">styles</span><span class="p">:</span> <span class="p">{</span>
         <span class="nl">figureBackground</span><span class="p">:</span> <span class="s2">"#ff888888"</span><span class="p">,</span>
-        <span class="nx">paddingLeft</span><span class="err">:</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="nx">paddingRight</span><span class="err">:</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="nx">paddingTop</span><span class="err">:</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="nx">paddingBottom</span><span class="err">:</span> <span class="mi">4</span>
+        <span class="nx">paddingLeft</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="nx">paddingRight</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="nx">paddingTop</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="nx">paddingBottom</span><span class="p">:</span> <span class="mi">4</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><strong>sparkWinLoss 타입</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2215,29 +2204,28 @@ var onDoneDataSet = function() {
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">{</span>
+20
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
     <span class="nl">name</span><span class="p">:</span> <span class="s2">"colWinLoss"</span><span class="p">,</span>
-    <span class="nx">type</span><span class="err">:</span> <span class="s2">"series"</span><span class="p">,</span>
-    <span class="nx">fieldNames</span><span class="err">:</span> <span class="s2">"2000..2010"</span><span class="p">,</span>
-    <span class="nx">width</span><span class="err">:</span> <span class="mi">150</span><span class="p">,</span>
-    <span class="nx">renderer</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="p">:</span> <span class="s2">"series"</span><span class="p">,</span>
+    <span class="nx">fieldNames</span><span class="p">:</span> <span class="s2">"2000..2010"</span><span class="p">,</span>
+    <span class="nx">width</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="nx">renderer</span><span class="p">:</span> <span class="p">{</span>
         <span class="nl">belowHeight</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">,</span>
-        <span class="nx">type</span><span class="err">:</span> <span class="s2">"sparkWinLoss"</span><span class="p">,</span>
-        <span class="nx">belowFill</span><span class="err">:</span> <span class="s2">"#ffff0000"</span>
+        <span class="nx">type</span><span class="p">:</span> <span class="s2">"sparkWinLoss"</span><span class="p">,</span>
+        <span class="nx">belowFill</span><span class="p">:</span> <span class="s2">"#ffff0000"</span>
     <span class="p">},</span>
-    <span class="nx">header</span><span class="err">:</span> <span class="p">{</span> <span class="nl">text</span><span class="p">:</span> <span class="s2">"Spark WinLoss"</span> <span class="p">},</span>
-    <span class="nx">styles</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nx">header</span><span class="p">:</span> <span class="p">{</span> <span class="nl">text</span><span class="p">:</span> <span class="s2">"Spark WinLoss"</span> <span class="p">},</span>
+    <span class="nx">styles</span><span class="p">:</span> <span class="p">{</span>
         <span class="nl">background</span><span class="p">:</span> <span class="s2">"#080000ff"</span><span class="p">,</span>
-        <span class="nx">figureBackground</span><span class="err">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
-        <span class="nx">paddingLeft</span><span class="err">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nx">paddingRight</span><span class="err">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nx">paddingTop</span><span class="err">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nx">paddingBottom</span><span class="err">:</span> <span class="mi">2</span>
+        <span class="nx">figureBackground</span><span class="p">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
+        <span class="nx">paddingLeft</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nx">paddingRight</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nx">paddingTop</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nx">paddingBottom</span><span class="p">:</span> <span class="mi">2</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

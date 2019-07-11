@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2098,14 +2089,15 @@ var onDoneDataSet = function() {
 
 <p>Title옵션의 세부 속성은 아래와 같습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nx">GridExportOptions</span><span class="p">.</span><span class="nx">documentTitle</span> <span class="o">=</span> <span class="p">{</span>
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">GridExportOptions</span><span class="p">.</span><span class="nx">documentTitle</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">message</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="na">styles</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -2113,9 +2105,7 @@ var onDoneDataSet = function() {
     <span class="na">spaceBottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// 하단 여백</span>
     <span class="na">height</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>      <span class="c1">// 엑셀의 행 높이</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnExportGrid">Export실행</a></p>
 
@@ -2123,7 +2113,7 @@ var onDoneDataSet = function() {
 <input type="radio" name="excelType" value="2007" /><label style="vertical-align: middle">MS Excel 2007 </label>    
 <input type="radio" name="excelType" value="2010" checked="checked" /><label style="vertical-align: middle">MS Excel 2010 이상</label></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2162,7 +2152,8 @@ var onDoneDataSet = function() {
 37
 38
 39
-40</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">excelType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="excelType"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"2007"</span><span class="p">;</span>
+40
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">excelType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="excelType"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"2007"</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
     <span class="na">type</span><span class="p">:</span> <span class="s2">"excel"</span><span class="p">,</span>
     <span class="na">target</span><span class="p">:</span> <span class="s2">"local"</span><span class="p">,</span>
@@ -2183,7 +2174,7 @@ var onDoneDataSet = function() {
         <span class="na">height</span><span class="p">:</span> <span class="mi">60</span>
     <span class="p">},</span>
     <span class="na">documentSubtitle</span><span class="p">:</span> <span class="p">{</span>  <span class="c1">//부제</span>
-        <span class="na">message</span><span class="p">:</span> <span class="s2">"작성자 : 리얼그리드\n작성일 : "</span> <span class="o">+</span> <span class="nx">today</span><span class="p">(),</span>
+        <span class="na">message</span><span class="p">:</span> <span class="s2">"작성자 : 리얼그리드</span><span class="se">\n</span><span class="s2">작성일 : "</span> <span class="o">+</span> <span class="nx">today</span><span class="p">(),</span>
         <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"far"</span><span class="p">,</span>
@@ -2202,9 +2193,7 @@ var onDoneDataSet = function() {
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#btnExportGrid').click(function() {

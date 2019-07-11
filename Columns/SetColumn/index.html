@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2018,50 +2009,7 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="btnColumns">컬럼 생성</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[];</span>
-
-<span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">DataColumn</span><span class="p">();</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"column1"</span><span class="p">;</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">=</span> <span class="s2">"Field1"</span><span class="p">;</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="s2">"Column 1"</span> <span class="p">}</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">tag</span> <span class="o">=</span> <span class="s2">"columntag1"</span><span class="p">;</span>
-<span class="nx">columns</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
-
-<span class="p">...</span>
-
-<span class="nx">column</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">DataColumn</span><span class="p">();</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"column6"</span><span class="p">;</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">=</span> <span class="s2">"Field3"</span><span class="p">;</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="s2">"Column 6"</span> <span class="p">}</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="s2">"#33ffff00"</span> <span class="p">};</span>
-<span class="nx">columns</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
-
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<p>RealGridJS.DataColumn 객체가 아닌 단순 javascript 객체로 컬럼을 생성할 수 있습니다. RealGridJS.DataColumn 등의 Class들은 realgridjs-api에 명세로 존재합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2080,7 +2028,50 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">DataColumn</span><span class="p">();</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"column1"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">=</span> <span class="s2">"Field1"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="s2">"Column 1"</span> <span class="p">}</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">tag</span> <span class="o">=</span> <span class="s2">"columntag1"</span><span class="p">;</span>
+<span class="nx">columns</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
+
+<span class="p">...</span>
+
+<span class="nx">column</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">DataColumn</span><span class="p">();</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"column6"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">=</span> <span class="s2">"Field3"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="s2">"Column 6"</span> <span class="p">}</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="s2">"#33ffff00"</span> <span class="p">};</span>
+<span class="nx">columns</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
+
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>RealGridJS.DataColumn 객체가 아닌 단순 javascript 객체로 컬럼을 생성할 수 있습니다. RealGridJS.DataColumn 등의 Class들은 realgridjs-api에 명세로 존재합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
 <span class="c1">// column1</span>
 <span class="p">{</span>
     <span class="na">name</span> <span class="p">:</span> <span class="s2">"column1"</span><span class="p">,</span>
@@ -2100,9 +2091,7 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 <span class="p">...</span>
 <span class="p">];</span>
 <span class="nx">grid</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>GridBase.setColumns() 함수는 기존 컬럼들을 지우고 매개변수로 전달되는 컬럼 정보로 새로운 컬럼들을 추가합니다. 
 예제에서 <code class="highlighter-rouge">column3</code>와 <code class="highlighter-rouge">column6</code> 컬럼은 동일한 <code class="highlighter-rouge">Field3</code> 필드를 표시하고 있습니다. 이와같이 하나의 데이터 필드를 여러 컬럼이 동시에 참조하여 각각 다른 방식으로 표시할 수 있습니다.</p>
@@ -2111,36 +2100,33 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="btnColumnByName">columnByName</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"column3"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"column3"</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">column</span><span class="p">));</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a href="http://help.realgrid.com/api/GridBase/columnsByField/" target="_blank"><code class="highlighter-rouge">GridBase.columnsByField()</code></a> 함수는 Field이름에 해당하는 컬럼 객체들을 배열로 반환합니다. 
 결과가 하나로 예상 되는경우는 <a href="http://help.realgrid.com/api/GridBase/columnByField/" target="_blank"><code class="highlighter-rouge">GridBase.columnByField()</code></a>함수를 사용합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnColumnsByField">columnsByField</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnsByField</span><span class="p">(</span><span class="s2">"Field3"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnsByField</span><span class="p">(</span><span class="s2">"Field3"</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">columns</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>컬럼의 tag 속성 값은 다양한 용도로 사용할 수 있는 사용자 지정 값으로 중복하여 지정 할 수 있습니다. <a href="http://help.realgrid.com/api/GridBase/columnsByTag/" target="_blank"><code class="highlighter-rouge">GridBase.columnsByTag()</code></a> 함수는 매개변수로 지정한 tag 값을 갖는 모든 컬럼들을 배열로 리턴 합니다. 
 결과가 하나로 예상 되는경우는 <a href="http://help.realgrid.com/api/GridBase/columnByTag/" target="_blank"><code class="highlighter-rouge">GridBase.columnByTag()</code></a> 함수를 사용합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnColumnsByTag">columnsByTag</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnsByTag</span><span class="p">(</span><span class="s2">"columntag1"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnsByTag</span><span class="p">(</span><span class="s2">"columntag1"</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">columns</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>이런 함수들이 리턴하는 컬럼들은 setColumns() 에서 전달한 컬럼 개체들입니다. 즉, javascript 내에서 생성되고 Grid에서 보관하는 컬럼 정보들인데, grid 내부에서 생성되는 컬럼 객체와는 양쪽에서 관리하는 id 값으로 연결되지만 속성들이 자동으로 동기화 되지는 않습니다.</p>
 

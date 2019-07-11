@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2128,7 +2119,7 @@
 
 <p>values/labels 컬럼에 <code class="highlighter-rouge">values</code>로 설정된 값 중 하나를 입력해 보세요.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2152,7 +2143,8 @@
 22
 23
 24
-25</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+25
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="p">...</span>
 <span class="p">},</span> <span class="p">{</span>
     <span class="na">name</span><span class="p">:</span> <span class="s2">"UserName"</span><span class="p">,</span>
@@ -2177,15 +2169,13 @@
 <span class="p">}];</span>
 
 <span class="nx">grid</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="labelfield-설정">labelField 설정</h4>
 
 <p>해당 컬럼 셀에는 실제 값 대신 이 필드의 셀과 같은 행에 있는 <code class="highlighter-rouge">labelField</code>의 값을 표시합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2207,7 +2197,8 @@
 20
 21
 22
-23</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+23
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="p">...</span>
 <span class="p">},</span> <span class="p">{</span>
     <span class="na">name</span><span class="p">:</span> <span class="s2">"Age"</span><span class="p">,</span>
@@ -2230,29 +2221,25 @@
 <span class="p">}];</span>
 
 <span class="nx">grid</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="getFieldValues">Label Field컬럼 값 확인</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"Age"</span><span class="p">))</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"Age"</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="getLabelValues">labelField 값 확인</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"AgeLabel"</span><span class="p">))</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"AgeLabel"</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="dropdown-lookup-설정">dropDown lookup 설정</h4>
 
 <p>values와 labels 목록은 <code class="highlighter-rouge">DropDown</code> 편집기의 lookup 목록으로 사용될 수도 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2281,7 +2268,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+30
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
 	<span class="p">...</span>
 <span class="p">},</span> <span class="p">{</span>
     <span class="na">name</span><span class="p">:</span> <span class="s2">"Gender"</span><span class="p">,</span>
@@ -2311,9 +2299,7 @@
 <span class="p">}];</span>
 
 <span class="nx">grid</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="value값-확인하기">value값 확인하기</h4>
 
@@ -2321,14 +2307,13 @@
 
 <p><a class="btn primary small round lowercase" id="getValue">데이터셀 값 확인</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">focusIndex</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">itemIndex</span><span class="p">;</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">focusIndex</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">itemIndex</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">focusField</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">().</span><span class="nx">fieldName</span><span class="p">;</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">focusIndex</span><span class="p">,</span> <span class="nx">focusField</span><span class="p">))</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#getValue').click(function() {

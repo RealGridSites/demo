@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2214,7 +2205,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btn">showAll 보이기/숨기기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2223,7 +2214,8 @@ var onDoneDataSet = function() {
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">checked</span><span class="p">;</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">checked</span><span class="p">;</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getCheckBar</span><span class="p">().</span><span class="nx">showAll</span><span class="p">){</span>
     <span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span><span class="k">else</span><span class="p">{</span>
@@ -2233,15 +2225,13 @@ var onDoneDataSet = function() {
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
     <span class="na">showAll</span><span class="p">:</span> <span class="nx">checked</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="클릭-더블클릭-이벤트">클릭, 더블클릭 이벤트</h4>
 
 <p>현재 데모에 적용된 <code class="highlighter-rouge">클릭</code>, <code class="highlighter-rouge">더블클릭</code> 이벤트들입니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2339,7 +2329,8 @@ var onDoneDataSet = function() {
 96
 97
 98
-99</pre></td><td class="code"><pre><span class="c1">//flash 지원</span>
+99
+</pre></td><td class="rouge-code"><pre><span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnHeaderClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onColumnHeaderClicked: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -2438,9 +2429,7 @@ var onDoneDataSet = function() {
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onBodyEmptyDblClicked</span> <span class="o">=</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onBodyEmptyDblClicked"</span><span class="p">);</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#btn').click(function() {

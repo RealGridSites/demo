@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2254,7 +2245,7 @@ function setPie(chart, index) {
 
 <h4 id="pie-타입-차트-생성">pie 타입 차트 생성</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2360,7 +2351,8 @@ function setPie(chart, index) {
 104
 105
 106
-107</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setHiChart</span><span class="p">(</span><span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
+107
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setHiChart</span><span class="p">(</span><span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">categories</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"year"</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">diVal</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"DIncome"</span><span class="p">);</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">diVal</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
@@ -2467,13 +2459,11 @@ function setPie(chart, index) {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="이벤트-설정">이벤트 설정</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2501,7 +2491,8 @@ function setPie(chart, index) {
 26
 27
 28
-29</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">gridEvents</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
+29
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">gridEvents</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">provider</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">grid</span><span class="p">.</span><span class="nx">onCurrentChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#container"</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">();</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">chart</span><span class="p">)</span>
@@ -2530,13 +2521,11 @@ function setPie(chart, index) {
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="setpie-설정-함수">setPie 설정 함수</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2548,7 +2537,8 @@ function setPie(chart, index) {
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">setPie</span><span class="p">(</span><span class="nx">chart</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setPie</span><span class="p">(</span><span class="nx">chart</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">index</span> <span class="o">=</span> <span class="nx">index</span> <span class="p">?</span> <span class="nx">index</span> <span class="p">:</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
     <span class="kd">var</span> <span class="nx">rowValue</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getJsonRow</span><span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">hcData</span> <span class="o">=</span> <span class="p">[];</span>
@@ -2561,9 +2551,7 @@ function setPie(chart, index) {
     <span class="p">});</span>
     <span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="nx">setData</span><span class="p">(</span><span class="nx">hcData</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

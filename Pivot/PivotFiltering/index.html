@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2048,48 +2039,45 @@ conditions에는 criteria로 식을 지정하거나, values에 특정 값을 지
 
 <p><a class="btn primary small round lowercase" id="btnSetFilter1">이사분기 이상이고 차종이 기아,현대로 필터링</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">filter</span><span class="p">({</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">filter</span><span class="p">({</span>
     <span class="na">operation</span><span class="p">:</span> <span class="s2">"and"</span><span class="p">,</span>  <span class="c1">// and | or</span>
     <span class="na">conditions</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 2"</span> <span class="p">},</span>
         <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"브랜드명"</span><span class="p">,</span> <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="s2">"기아"</span><span class="p">,</span> <span class="s2">"현대"</span><span class="p">]</span> <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetFilter2">판매월이 9월이후이고 중형으로 필터링</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">filter</span><span class="p">({</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">filter</span><span class="p">({</span>
     <span class="na">operation</span><span class="p">:</span> <span class="s2">"and"</span><span class="p">,</span>  <span class="c1">// and | or</span>
     <span class="na">conditions</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매월"</span><span class="p">,</span> <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt;= 9"</span> <span class="p">},</span>
         <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"차종"</span><span class="p">,</span> <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="s2">"중형"</span><span class="p">]</span> <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnResetFilter">필터 초기화</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">resetFilter</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">resetFilter</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="api-link">API LINK</h4>
 

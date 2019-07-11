@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2103,14 +2094,13 @@ var onDoneDataSet = function() {
   <li>“none” - 이미지 크기나 위치를 변경하지 않습니다. 크기대로 왼쪽 상단에서부터 표시됩니다.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">styles</span><span class="err">:</span> <span class="p">{</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">styles</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">contentFit</span><span class="p">:</span> <span class="s2">"center"</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>렌더러의 <code class="highlighter-rouge">smoothing</code> 속성으로 이미지 크기 변경 후 처리 방법을 지정합니다.</p>
 
@@ -2118,16 +2108,15 @@ var onDoneDataSet = function() {
   <li><code class="highlighter-rouge">smoothing</code> - 실제 이미지보다 크게 그릴 때 보정하여 그립니다.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">renderer</span><span class="err">:</span> <span class="p">{</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">renderer</span><span class="p">:</span> <span class="p">{</span>
 	<span class="nl">type</span><span class="p">:</span> <span class="s2">"image"</span><span class="p">,</span>
-	<span class="nx">smoothing</span><span class="err">:</span> <span class="kc">true</span>
+	<span class="nx">smoothing</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="이미지-표시하기">이미지 표시하기</h4>
 
@@ -2137,18 +2126,17 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnSetImageNormalFlag3">이미지 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="c1">//이미지 렌더러 설정</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">//이미지 렌더러 설정</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"NormalFlag3"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="s2">"image"</span><span class="p">,</span> <span class="na">sommthing</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
 
 <span class="c1">//이미지의 위치와 크기가 결정</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnproperty</span><span class="p">(</span><span class="s2">"NormalFlag3"</span><span class="p">,</span> <span class="s2">"styles"</span><span class="p">,</span> <span class="p">{</span><span class="na">contentFit</span><span class="p">:</span> <span class="s2">"both"</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#btnSetImageNormalFlag3').click(function() {

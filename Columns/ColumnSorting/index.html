@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2112,16 +2103,15 @@
 
 <p><a class="btn primary small round lowercase" id="btnToggleGlobalColumnSortable">ToggleGlobalColumnSortable</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getSortingOptions</span><span class="p">();</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getSortingOptions</span><span class="p">();</span>
 
 <span class="nx">options</span><span class="p">.</span><span class="nx">enabled</span> <span class="o">=</span> <span class="o">!</span><span class="nx">options</span><span class="p">.</span><span class="nx">enabled</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="선택한-컬럼-소트-가능-여부-설정">선택한 컬럼 소트 가능 여부 설정</h4>
 <p>테스트할 컬럼 선택 <select id="columnList" onchange="javascript:selectColumn()">
@@ -2129,131 +2119,123 @@
 
 <p><a class="btn primary small round lowercase" id="btnToggleColumnSortable">ToggleColumnSortable</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">colName</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">colName</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">colName</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">proxy</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">colName</span><span class="p">);</span>
     <span class="nx">proxy</span><span class="p">.</span><span class="nx">sortable</span> <span class="o">=</span> <span class="o">!</span><span class="nx">proxy</span><span class="p">.</span><span class="nx">sortable</span><span class="p">;</span>
     <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">proxy</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="소트-스타일-지정">소트 스타일 지정</h4>
 
 <p><a class="btn primary small round lowercase" id="btnNone">none</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">style</span><span class="p">:</span> <span class="s2">"none"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnExclusive">exclusive</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">style</span><span class="p">:</span> <span class="s2">"exclusive"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnInclusive">inclusive</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">style</span><span class="p">:</span> <span class="s2">"inclusive"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnReverse">reverse</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">style</span><span class="p">:</span> <span class="s2">"reverse"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="핸들-표시방법-지정">핸들 표시방법 지정</h4>
 
 <p><a class="btn primary small round lowercase" id="btnHidden">hidden</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">handleVisibility</span><span class="p">:</span> <span class="s2">"hidden"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnVisible">visible</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">handleVisibility</span><span class="p">:</span> <span class="s2">"visible"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnAlways">always</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">handleVisibility</span><span class="p">:</span> <span class="s2">"always"</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="핸들-기호를-이미지로-표시">핸들 기호를 이미지로 표시</h4>
 
@@ -2262,7 +2244,7 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetHandleImage">setHandleImage</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2274,7 +2256,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
+13
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">imageHandle</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">handleImages</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">ascending</span><span class="p">:</span> <span class="s2">"/Images/desc.png"</span><span class="p">,</span>
@@ -2287,9 +2270,7 @@
 <span class="p">});</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="정렬-순서-표시">정렬 순서 표시</h4>
 
@@ -2297,7 +2278,7 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetShowSortOrder">setShowSortOrder</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2306,7 +2287,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">showSortOrder</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
   <span class="na">sortOrderStyles</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">font</span><span class="p">:</span><span class="s2">"굴림체"</span><span class="p">,</span> 
@@ -2316,9 +2298,7 @@
     <span class="na">textAlignment</span><span class="p">:</span><span class="s2">"far"</span>
   <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 function createColumnList(grid) {

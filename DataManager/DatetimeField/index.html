@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2097,7 +2088,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <p>아래는 예제에 사용된 각 컬럼별 datetimeFormat에 해당 하는 데이터 형태입니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2110,7 +2101,8 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+14
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s2">"20141114"</span><span class="p">,</span> <span class="s2">"20141114PM051215008"</span><span class="p">,</span> <span class="s2">"20141114171215008"</span><span class="p">,</span> <span class="s2">"2014/11/14 17:12"</span><span class="p">,</span> <span class="s2">"2014-11-14T17:12:15+09:00"</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">"20141115"</span><span class="p">,</span> <span class="s2">"20140304AM040805556"</span><span class="p">,</span> <span class="s2">"20140304040805556"</span><span class="p">,</span> <span class="s2">"2014/03/04 04:08"</span><span class="p">,</span> <span class="s2">"2014-03-04T04:08:05+09:00"</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">"20010215"</span><span class="p">,</span> <span class="s2">"20010215PM124236721"</span><span class="p">,</span> <span class="s2">"20010215124236721"</span><span class="p">,</span> <span class="s2">"2001/02/15 12:42"</span><span class="p">,</span> <span class="s2">"2001-02-15T12:42:36+09:00"</span><span class="p">],</span>
@@ -2124,34 +2116,31 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 <span class="p">];</span>
 
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRows</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="datetimeformat-설정">datetimeFormat 설정</h4>
 
 <p><a href="http://help.realgrid.com/api/DataProvider/loadData/">loadData()</a>를 통해 Datetime 형의 값이 문자열로 전달되거나, <a href="http://help.realgrid.com/api/LocalDataProvider/setRows/">setRows()</a> 함수 등으로 javascript에서 문자열로 Date 필드의 값을 전달할 때, 그 문자열은 아래와 같이 리얼그리드가 Datetime 형의 값으로 인식할 수 있는 형태를 설정해야 합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setFields</span><span class="p">([{</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setFields</span><span class="p">([{</span>
         <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Datetime1"</span><span class="p">,</span>
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"datetime"</span><span class="p">,</span>
         <span class="na">datetimeFormat</span><span class="p">:</span> <span class="s2">"yyyyMMdd"</span>
     <span class="p">},</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>사용자의 입력을 Datetime 값으로 변환하고, Datetime 값을 에디터에 표시하기 위한 형식을 <code class="highlighter-rouge">editor</code>의 datetimeFormat속성을 아래와 같은 형식으로 지정합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2160,7 +2149,8 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
     <span class="na">name</span><span class="p">:</span> <span class="s2">"Datetime1"</span><span class="p">,</span>
     <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Datetime1"</span><span class="p">,</span>
     <span class="na">width</span><span class="p">:</span> <span class="s2">"110"</span><span class="p">,</span>
@@ -2170,13 +2160,11 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     <span class="p">}</span>
     <span class="p">...</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Datetime 필드의 값을 표시하는 셀 렌더러는 datetimeFormat <code class="highlighter-rouge">스타일</code> 값을 사용합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2185,7 +2173,8 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
     <span class="na">name</span><span class="p">:</span> <span class="s2">"Datetime1"</span><span class="p">,</span>
     <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Datetime1"</span><span class="p">,</span>
     <span class="na">width</span><span class="p">:</span> <span class="s2">"110"</span><span class="p">,</span>
@@ -2195,9 +2184,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     <span class="p">}</span>
     <span class="p">...</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

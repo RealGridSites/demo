@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2127,7 +2118,7 @@
 <p><a class="btn primary small round lowercase" id="setCheckBar">체크바 보이기/감추기</a>
 <a class="btn primary small round lowercase" id="setCheckBox">체크박스 보이기/감추기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2138,7 +2129,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="c1">// 체크바 보이기/감추기</span>
+12
+</pre></td><td class="rouge-code"><pre><span class="c1">// 체크바 보이기/감추기</span>
 <span class="kd">var</span> <span class="nx">checkBar</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCheckBar</span><span class="p">();</span>
 <span class="nx">checkBar</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="o">!</span><span class="nx">checkBar</span><span class="p">.</span><span class="nx">visible</span><span class="p">;</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">(</span><span class="nx">checkBar</span><span class="p">);</span>
@@ -2150,9 +2142,7 @@
     <span class="na">showCheckBox</span><span class="p">:</span> <span class="o">!</span><span class="nx">treeOptions</span><span class="p">.</span><span class="nx">showCheckBox</span>
   <span class="p">}</span>
 <span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>체크바와 체크박스는 표시되는 위치만 다를뿐 동일한 기능입니다. 체크바와 체크박스를 모두 보이게 한 다음
 한 쪽을 체크/언체크 하면 동일하게 동작되는 것을 확인 할 수 있습니다.</p>
@@ -2161,16 +2151,15 @@
 
 <p><a class="btn primary small round lowercase" id="setRadioButton">라디오 버튼 보이기/감추기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="c1">// 라디오 버튼 보이기/감추기</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="c1">// 라디오 버튼 보이기/감추기</span>
 <span class="kd">var</span> <span class="nx">checkBar</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCheckBar</span><span class="p">();</span>
 <span class="nx">checkBar</span><span class="p">.</span><span class="nx">exclusive</span> <span class="o">=</span> <span class="o">!</span><span class="nx">checkBar</span><span class="p">.</span><span class="nx">exclusive</span><span class="p">;</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">(</span><span class="nx">checkBar</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="체크된-행-가져오기">체크된 행 가져오기</h4>
 
@@ -2186,22 +2175,21 @@
 <p><a class="btn primary small round lowercase" id="getCheckedItems">체크된 ItemIndex 배열</a>
 <a class="btn primary small round lowercase" id="getCheckedRows">체크된 RowId 배열</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="c1">// 체크된 ItemIndex 배열 가져오기</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="c1">// 체크된 ItemIndex 배열 가져오기</span>
 <span class="kd">var</span> <span class="nx">checkedItems</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCheckedItems</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">checkedItems</span><span class="p">);</span>
 
 <span class="c1">// 체크된 RowId 배열 가져오기</span>
 <span class="kd">var</span> <span class="nx">checkedRows</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCheckedRows</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">checkedRows</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="체크-또는-언체크">체크 또는 언체크</h4>
 
@@ -2229,12 +2217,11 @@
 
 <p><a class="btn primary small round lowercase" id="checkSample1">‘남자’의 모든 하위노드 체크</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="c1">// 최초 그리드뷰에서 '남자' 노드의 ItemIndex는 `0`입니다.</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1">// 최초 그리드뷰에서 '남자' 노드의 ItemIndex는 `0`입니다.</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">checkChildren</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="체크-여부">체크 여부</h4>
 
@@ -2249,14 +2236,13 @@
 
 <p><a class="btn primary small round lowercase" id="isCheckedItem">‘아시아’노드가 체크되었는가?</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="c1">// 최초 그리드뷰에서 구분이 '아시아' 노드의 ItemIndex는 `1`입니다.</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="c1">// 최초 그리드뷰에서 구분이 '아시아' 노드의 ItemIndex는 `1`입니다.</span>
 <span class="kd">var</span> <span class="nx">isCheckedItem</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">isCheckedItem</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">isCheckedItem</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
   $('#setCheckBar').click(function() {

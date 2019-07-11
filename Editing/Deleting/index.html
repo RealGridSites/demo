@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2091,14 +2082,13 @@
 
 <p><a class="btn primary small round lowercase" id="btnSetEditOptions">설정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setEditOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setEditOptions</span><span class="p">({</span>
   <span class="na">deletable</span><span class="p">:</span> <span class="kc">true</span>  
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="softdeleting">softDeleting</h4>
 <p><a href="http://help.realgrid.com/api/types/DataProviderOptions/" target="_blank">dataProvider.options()</a>의 softDeleting이 true이면 데이터행을 실제로 삭제하지 않고 행의 상태를 <a href="http://help.realgrid.com/api/types/RowState/" target="_blank">RowState</a>.DELETED 나 <a href="http://help.realgrid.com/api/types/RowState/" target="_blank">RowState</a>.CREATE_AND_DELETED 로 변경합니다.</p>
@@ -2106,14 +2096,13 @@
 <p><a class="btn primary small round lowercase" id="btnSoftDeleting">softDeleting 설정</a><br />
 <input type="checkbox" id="chkSoftDeleting" /> softDeleting</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
   <span class="na">softDeleting</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkSoftDeleting"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">)</span>
 <span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="deletecreated">deleteCreated</h4>
 <p><a href="http://help.realgrid.com/api/types/DataProviderOptions/" target="_blank">dataProvider.options()</a>의 deleteCreated이 true이면 softDeleting이더라도 행의 상태가 <a href="http://help.realgrid.com/api/types/RowState/" target="_blank">RowState</a>.CREATE인 행을 삭제합니다.</p>
@@ -2121,14 +2110,13 @@
 <p><a class="btn primary small round lowercase" id="btnDeleteCreated">deleteCreated 설정</a><br />
 <input type="checkbox" id="chkDeleteCreated" /> deleteCreated</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
   <span class="na">deleteCreated</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkDeleteCreated"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">)</span>
 <span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="hidedeletedrows">hideDeletedRows</h4>
 <p><a href="http://help.realgrid.com/api/types/GridOptions/" target="_blank">gridBase.options</a>.hideDeletedRows이 true이면 행의 상태가 <a href="http://help.realgrid.com/api/types/RowState/" target="_blank">RowState</a>.DELETED 나 <a href="http://help.realgrid.com/api/types/RowState/" target="_blank">RowState</a>.CREATE_AND_DELETED인 행을 그리드에서 제외 시킵니다.</p>
@@ -2136,14 +2124,13 @@
 <p><a class="btn primary small round lowercase" id="btnHideDeletedRows">hideDeletedRows 설정</a><br />
 <input type="checkbox" id="chkHideDeletedRows" /> hideDeletedRows</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
   <span class="na">hideDeletedRows</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkHideDeletedRows"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">)</span>
 <span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="행-삭제">행 삭제</h4>
 <p>리얼그리드에서 행을 삭제하는 방법은 몇가지가 있습니다. 각 기능을 확인해보시기 바랍니다.</p>
@@ -2153,21 +2140,19 @@
 
 <p><a class="btn primary small round lowercase" id="btnDeleteSelection">deleteSelection()</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">deleteSelection</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// true이면 editOptions.deleteRowsConfirm이 true여도 메세지 확인없이 즉시 삭제한다.</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">deleteSelection</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// true이면 editOptions.deleteRowsConfirm이 true여도 메세지 확인없이 즉시 삭제한다.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><code class="highlighter-rouge">3</code>. <a href="http://help.realgrid.com/api/LocalDataProvider/removeRow/" target="_blank">dataProvider.removeRow()</a>, <a href="http://help.realgrid.com/api/LocalDataProvider/removeRows/" target="_blank">dataProvider.removeRows()</a></p>
 
 <p><a class="btn primary small round lowercase" id="btnRemoveRow">removeRow()</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">removeRow</span><span class="p">(</span><span class="nx">curr</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

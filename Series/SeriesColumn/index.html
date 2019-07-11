@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2103,20 +2094,19 @@ var onDoneDataSet = function() {
 예제는 <em>통계청 포탈에서 제공하는 세계 경제 지표</em> 데이터입니다.<br />
 “Series” 컬럼은 필드들의 값을 텍스트로 나열하는 <em>기본 시리즈 렌더러</em>가 설정되었고, “Spark” 컬럼은 <em>Spark line chart 렌더러</em>로 설정됐습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="s2">"renderer"</span><span class="err">:</span> <span class="p">{</span> 
-    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"sparkLine"</span><span class="p">,</span>
-    <span class="s2">"highFill"</span><span class="err">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
-    <span class="s2">"lowFill"</span><span class="err">:</span> <span class="s2">"#ffff0000"</span><span class="p">,</span>
-    <span class="s2">"lastFill"</span><span class="err">:</span> <span class="s2">"#ff888888"</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="s2">"renderer"</span><span class="p">:</span> <span class="p">{</span> 
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"sparkLine"</span><span class="p">,</span>
+    <span class="s2">"highFill"</span><span class="p">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
+    <span class="s2">"lowFill"</span><span class="p">:</span> <span class="s2">"#ffff0000"</span><span class="p">,</span>
+    <span class="s2">"lastFill"</span><span class="p">:</span> <span class="s2">"#ff888888"</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>데이터셀들의 값을 수정해서 Spark line이 변경되는 것을 확인해 보세요.</p>
 
@@ -2124,7 +2114,7 @@ var onDoneDataSet = function() {
 
 <p>컬럼의 type은 <code class="highlighter-rouge">"series"</code>로 지정하고, 표시할 컬럼은 fieldNames 속성으로 지정합니다. fieldNames에 콤마로 나누어진 필드 목록을 지정하는 데, 데이터 프로바이더에 추가한 컬럼 순서대로 이어진 필드들을 지정할 때는 <code class="highlighter-rouge">field1..fieldn</code> 처럼 할 수도 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2154,15 +2144,16 @@ var onDoneDataSet = function() {
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="p">{</span>
-    <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"colSeries"</span><span class="p">,</span>
-    <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"series"</span><span class="p">,</span> <span class="c1">//타입 설정</span>
-    <span class="s2">"fieldNames"</span><span class="err">:</span> <span class="s2">"2000,2002,2004,2006,2008,2010"</span><span class="p">,</span> <span class="c1">//컬럼에 표시할 필드들</span>
-    <span class="s2">"width"</span><span class="err">:</span> <span class="mi">120</span><span class="p">,</span>
-    <span class="s2">"header"</span><span class="err">:</span> <span class="p">{</span> <span class="s2">"text"</span><span class="err">:</span> <span class="s2">"Series"</span> <span class="p">},</span>
-    <span class="s2">"styles"</span><span class="err">:</span> <span class="p">{</span> 
-        <span class="s2">"background"</span><span class="err">:</span> <span class="s2">"#0800ff00"</span><span class="p">,</span>
-        <span class="s2">"textAlignment"</span><span class="err">:</span> <span class="s2">"near"</span>
+31
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"colSeries"</span><span class="p">,</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"series"</span><span class="p">,</span> <span class="c1">//타입 설정</span>
+    <span class="s2">"fieldNames"</span><span class="p">:</span> <span class="s2">"2000,2002,2004,2006,2008,2010"</span><span class="p">,</span> <span class="c1">//컬럼에 표시할 필드들</span>
+    <span class="s2">"width"</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Series"</span> <span class="p">},</span>
+    <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span> 
+        <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#0800ff00"</span><span class="p">,</span>
+        <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"near"</span>
     <span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
     <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"colSpark"</span><span class="p">,</span>
@@ -2185,9 +2176,7 @@ var onDoneDataSet = function() {
         <span class="s2">"paddingBottom"</span><span class="p">:</span><span class="mi">4</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="시리즈-컬럼-구분자-변경">시리즈 컬럼 구분자 변경</h4>
 
@@ -2195,16 +2184,15 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnValueSeparator">시리즈 컬럼 구분자 변경</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"colSeries"</span><span class="p">,</span><span class="s2">"renderer"</span><span class="p">,{</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"colSeries"</span><span class="p">,</span><span class="s2">"renderer"</span><span class="p">,{</span>
     <span class="na">type</span><span class="p">:</span><span class="s2">"seriesText"</span><span class="p">,</span>
     <span class="na">valueSeparator</span><span class="p">:</span><span class="s2">"~"</span>
 <span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $("#btnValueSeparator").click(function() { 

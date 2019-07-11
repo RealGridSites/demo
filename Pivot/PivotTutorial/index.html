@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2052,20 +2043,19 @@ $('#btnStep4').click(function() {
       
       <h4 id="step-1-dataprovider-pivot-객체-생성-및-연결">STEP 1. dataProvider, pivot 객체 생성 및 연결</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">dataProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">LocalDataProvider</span><span class="p">();</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">dataProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">LocalDataProvider</span><span class="p">();</span>
 <span class="c1">//pivot 객체 생성</span>
 <span class="nx">pivot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealPivot</span><span class="p">(</span><span class="s2">"realpivot"</span><span class="p">);</span>
 <span class="nx">pivot</span><span class="p">.</span><span class="nx">setDataProvider</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="step-2-dataprovider-field생성-및-pivot-fieldmapping">STEP 2. dataProvider field생성 및 pivot fieldMapping</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2149,7 +2139,8 @@ $('#btnStep4').click(function() {
 82
 83
 84
-85</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
+85
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">fieldName</span><span class="p">:</span><span class="s2">"국산/수입"</span>
 <span class="p">},{</span>
     <span class="na">fieldName</span><span class="p">:</span><span class="s2">"국가"</span>
@@ -2234,20 +2225,19 @@ $('#btnStep4').click(function() {
         <span class="na">expression</span><span class="p">:</span> <span class="s2">"sum"</span>
     <span class="p">}]</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="step-3-데이터-불러오기">STEP 3. 데이터 불러오기</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"/resource/data/pivotDataSet.json"</span><span class="p">,</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,{</span><span class="na">count</span><span class="p">:</span><span class="mi">5000</span><span class="p">});</span>
@@ -2255,16 +2245,13 @@ $('#btnStep4').click(function() {
     <span class="na">complete</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="step-4-pivot-그리기">STEP 4. pivot 그리기</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">drawView</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">drawView</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

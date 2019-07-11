@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2102,7 +2093,7 @@
 
 <p><a class="btn primary small round lowercase" id="btnSearchData">“SPECD” 검색</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2112,7 +2103,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">searchData</span><span class="p">({</span><span class="na">fields</span><span class="p">:[</span><span class="s2">"col1"</span><span class="p">,</span><span class="s2">"col2"</span><span class="p">],</span> <span class="na">value</span><span class="p">:</span><span class="s2">"SPECD"</span><span class="p">,</span> <span class="na">wrap</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">searchData</span><span class="p">({</span><span class="na">fields</span><span class="p">:[</span><span class="s2">"col1"</span><span class="p">,</span><span class="s2">"col2"</span><span class="p">],</span> <span class="na">value</span><span class="p">:</span><span class="s2">"SPECD"</span><span class="p">,</span> <span class="na">wrap</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">ret</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">rowId</span> <span class="o">=</span> <span class="nx">ret</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">parents</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getAncestors</span><span class="p">(</span><span class="nx">rowId</span><span class="p">);</span>
@@ -2123,9 +2115,7 @@
         <span class="nx">treeView</span><span class="p">.</span><span class="nx">setCurrent</span><span class="p">({</span><span class="na">itemIndex</span><span class="p">:</span><span class="nx">treeView</span><span class="p">.</span><span class="nx">getItemIndex</span><span class="p">(</span><span class="nx">rowId</span><span class="p">),</span> <span class="na">fieldIndex</span><span class="p">:</span><span class="nx">ret</span><span class="p">.</span><span class="nx">fieldIndex</span><span class="p">})</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
   $('#btnSearchData').click(function() {

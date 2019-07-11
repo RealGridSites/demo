@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2055,7 +2046,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
 
 <p>고유 값표시 설정은 setPivotFields함수의 <a href="http://help.realgrid.com/pivotApi/types/ValueType/" target="_blank">값의 유형</a>을 “distinct”로 설정합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2065,7 +2056,8 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
 8
 9
 10
-11</pre></td><td class="code"><pre>pivot.setPivotFields({
+11
+</pre></td><td class="rouge-code"><pre>pivot.setPivotFields({
     columns: ["대분류", "중분류"],
     rows: ["재질대분류", "설명", "구분"],
     values: [{
@@ -2076,16 +2068,14 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
         expression: "distinct"
     }]
 });
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="고유-데이터">고유 데이터</h4>
 
 <p>HTML태그 형태의 데이터와 이미지를 셀에 표시합니다.<br />
 고유 데이터는 모든 동일 항목의 데이터가 같아야 셀에 표시가 됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2095,7 +2085,8 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
 8
 9
 10
-11</pre></td><td class="code"><pre>// 이미지 표시
+11
+</pre></td><td class="rouge-code"><pre>// 이미지 표시
 {
     "fieldName": "&lt;img src='images/uncheck.png'&gt;"
     ...
@@ -2106,9 +2097,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
     "fieldName": "&lt;font color='blue'&gt;▼&lt;/font&gt;"
     ...
 }
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

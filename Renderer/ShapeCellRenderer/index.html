@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2098,14 +2089,13 @@ var onDoneDataSet = function() {
 
 <p>도형을 표시하기 위해서는 renderer의 type은 <code class="highlighter-rouge">shape</code>로 설정합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nx">renderer</span><span class="err">:</span> <span class="p">{</span>
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">renderer</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">type</span><span class="p">:</span> <span class="s2">"shape"</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>다음으로 도형컬럼에 도형과 style을 설정합니다.</p>
 
@@ -2117,35 +2107,35 @@ var onDoneDataSet = function() {
   <li><a href="http://help.realgrid.com/api/types/ShapeCellRenderer/">ShapeCellRenderer</a></li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7</pre></td><td class="code"><pre><span class="nx">styles</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nl">figureBackground</span><span class="p">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
-    <span class="nx">figureName</span><span class="err">:</span> <span class="s2">"minus"</span><span class="p">,</span>
-    <span class="nx">iconLocation</span><span class="err">:</span> <span class="s2">"right"</span><span class="p">,</span>
-    <span class="nx">figureSize</span><span class="err">:</span> <span class="s2">"50%"</span><span class="p">,</span>
-    <span class="nx">paddingRight</span><span class="err">:</span> <span class="mi">6</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<h4 id="도형-표시하기">도형 표시하기</h4>
-
-<p><code class="highlighter-rouge">OrderID</code> 컬럼에 원 도형을 표시합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span><span class="s2">"shape"</span><span class="p">});</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">styles</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">figureBackground</span><span class="p">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
+    <span class="nx">figureName</span><span class="p">:</span> <span class="s2">"minus"</span><span class="p">,</span>
+    <span class="nx">iconLocation</span><span class="p">:</span> <span class="s2">"right"</span><span class="p">,</span>
+    <span class="nx">figureSize</span><span class="p">:</span> <span class="s2">"50%"</span><span class="p">,</span>
+    <span class="nx">paddingRight</span><span class="p">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="도형-표시하기">도형 표시하기</h4>
+
+<p><code class="highlighter-rouge">OrderID</code> 컬럼에 원 도형을 표시합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span><span class="s2">"shape"</span><span class="p">});</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"OrderID"</span><span class="p">,</span> <span class="s2">"styles"</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">figureBackground</span><span class="p">:</span> <span class="s2">"#ff008800"</span><span class="p">,</span>
@@ -2153,15 +2143,13 @@ var onDoneDataSet = function() {
     <span class="na">iconLocation</span><span class="p">:</span> <span class="s2">"right"</span><span class="p">,</span>
     <span class="na">paddingRight</span><span class="p">:</span> <span class="mi">6</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>버튼 클릭시 <code class="highlighter-rouge">CustomerID</code> 컬럼에 값에 따른 동적으로 도형을 표시합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetShapeCustomerID">도형 표시하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2189,7 +2177,8 @@ var onDoneDataSet = function() {
 26
 27
 28
-29</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span><span class="s2">"shape"</span><span class="p">});</span>
+29
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span><span class="s2">"shape"</span><span class="p">});</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
     <span class="na">criteria</span><span class="p">:</span> <span class="s2">"(value = 'WARTH') or (value = 'HILAA')"</span><span class="p">,</span>
@@ -2218,15 +2207,13 @@ var onDoneDataSet = function() {
     <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'SUPRD'"</span><span class="p">,</span>
     <span class="na">styles</span><span class="p">:</span> <span class="s2">"figureBackground=#ffff44f5;figureName=rectangle"</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>버튼 클릭시 <code class="highlighter-rouge">UnitPrice</code> 컬럼에 숫자 값에 따른 도형을 표시합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetShapeUnitPrice">도형 표시하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2240,7 +2227,8 @@ var onDoneDataSet = function() {
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"UnitPrice"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span><span class="s2">"shape"</span><span class="p">});</span>
+15
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"UnitPrice"</span><span class="p">,</span> <span class="s2">"renderer"</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span><span class="s2">"shape"</span><span class="p">});</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"UnitPrice"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
     <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &lt; 20"</span><span class="p">,</span>
@@ -2255,9 +2243,7 @@ var onDoneDataSet = function() {
     <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt; 80"</span><span class="p">,</span>
     <span class="na">styles</span><span class="p">:</span> <span class="s2">"background=#11ff0000;figureBackground=#ffff0000;foreground=#ffff0000;figureName=uparrow"</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

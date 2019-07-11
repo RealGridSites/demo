@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1765,21 +1756,21 @@
                   </span>
                 </a>
               </li>
-              <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
               <li class="item-toc current">
                 <a href="/Pivot/PivotFocus/"
                 class="current sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2053,25 +2044,23 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
 
 <p><a class="btn primary small round lowercase" id="btnSetDisplayOptions">포커스 표시</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre>pivot.setDisplayOptions({showFocus:true, showFocusGuide:true})
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>pivot.setDisplayOptions({showFocus:true, showFocusGuide:true})
 pivot.drawView();
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="피벗-포커스-이벤트">피벗 포커스 이벤트</h4>
 
 <p>포커스가 이동될때 <a href="http://help.realgrid.com/pivotApi/RealPivot/onCurrentChanged/" target="_blank">onCurrentChanged</a> 콜백이 발생합니다.  </p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre>pivot.onCurrentChanged = function (pivot, index) {
+3
+</pre></td><td class="rouge-code"><pre>pivot.onCurrentChanged = function (pivot, index) {
     console.log(index); 
 }
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#btnSetDisplayOptions').click(function() {

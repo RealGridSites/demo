@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2096,7 +2087,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnAddCellRenderers">렌더러 정보 추가</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2127,7 +2118,8 @@ var onDoneDataSet = function() {
 29
 30
 31
-32</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellRenderers</span><span class="p">([{</span>
+32
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellRenderers</span><span class="p">([{</span>
     <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"bar01"</span><span class="p">,</span>
     <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"bar"</span>
 <span class="p">},</span> <span class="p">{</span>
@@ -2159,9 +2151,7 @@ var onDoneDataSet = function() {
     <span class="s2">"minimum"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s2">"maximum"</span><span class="p">:</span> <span class="mi">100</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="한-컬럼에-다양한-렌더러-사용">한 컬럼에 다양한 렌더러 사용</h4>
 
@@ -2171,7 +2161,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnSetRendererUnitPrice2">렌더러 정보 추가</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2201,7 +2191,8 @@ var onDoneDataSet = function() {
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"UnitPrice2"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
+31
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"UnitPrice2"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
     <span class="s2">"criteria"</span><span class="p">:</span> <span class="s2">"value &gt;= 0"</span><span class="p">,</span>
     <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"renderer"</span><span class="p">:</span> <span class="s2">"signal01"</span><span class="p">,</span>
@@ -2232,9 +2223,7 @@ var onDoneDataSet = function() {
         <span class="s2">"figureSize"</span><span class="p">:</span> <span class="mi">12</span>
     <span class="p">}</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="체크박스의-체크여부에-따른-렌더러-적용">체크박스의 체크여부에 따른 렌더러 적용</h4>
 
@@ -2244,7 +2233,7 @@ var onDoneDataSet = function() {
 
 <p><a class="btn primary small round lowercase" id="btnSetCheckRenderer">체크시 렌더러 적용</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2261,7 +2250,8 @@ var onDoneDataSet = function() {
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"UnitPrice1"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
+18
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"UnitPrice1"</span><span class="p">,</span> <span class="s2">"dynamicStyles"</span><span class="p">,</span> <span class="p">[{</span>
     <span class="s2">"criteria"</span><span class="p">:</span> <span class="s2">"checked"</span><span class="p">,</span> <span class="c1">//체크 시 styles 적용</span>
     <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"renderer"</span><span class="p">:</span> <span class="s2">"shape01"</span>
@@ -2279,9 +2269,7 @@ var onDoneDataSet = function() {
     <span class="s2">"criteria"</span><span class="p">:</span> <span class="s2">"(value &gt; 80) and (checked)"</span><span class="p">,</span>
     <span class="s2">"styles"</span><span class="p">:</span> <span class="s2">"figureBackground=#ffff0000;foreground=#ffff0000;figureName=uparrow"</span>
 <span class="p">}]);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 $('#btnAddCellRenderers').click(function() {

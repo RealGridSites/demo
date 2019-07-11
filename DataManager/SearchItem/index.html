@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2098,7 +2089,7 @@ var onDoneDataSet = function() {
 
 <p><a href="http://help.realgrid.com/api/types/SearchOptions/">SearchOptions</a>는 그리드에 현재 표시된 행들 중에서 특정한 행을 찾는 조건을 지정합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2114,7 +2105,8 @@ var onDoneDataSet = function() {
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#txtSearch"</span><span class="p">).</span><span class="nx">val</span><span class="p">()];</span>
+17
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#txtSearch"</span><span class="p">).</span><span class="nx">val</span><span class="p">()];</span>
 <span class="kd">var</span> <span class="nx">caseSensitive</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="case"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"case"</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">partialMatch</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="partial"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"partial"</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">wrap</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="wrap"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"wrap"</span><span class="p">;</span>
@@ -2131,37 +2123,33 @@ var onDoneDataSet = function() {
     <span class="na">wrap</span><span class="p">:</span> <span class="nx">wrap</span><span class="p">,</span>
     <span class="na">select</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="검색하기">검색하기</h4>
 
 <p><a href="http://help.realgrid.com/api/GridBase/searchItem/">searchItem()</a>함수를 사용해서 지정한 필드들의 값에 해당하는 첫번째 행을 찾아 행의 번호를 반환합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">searchItem</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">searchItem</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="포커스-이동하기">포커스 이동하기</h4>
 
 <p><a href="http://help.realgrid.com/api/GridBase/searchItem/">searchItem()</a>에서 반환한 첫번째 행으로 포커스를 이동합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCurrent</span><span class="p">({</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCurrent</span><span class="p">({</span>
     <span class="na">itemIndex</span><span class="p">:</span> <span class="nx">index</span><span class="p">,</span>
     <span class="na">column</span><span class="p">:</span> <span class="s2">"브랜드명"</span>
 <span class="p">});</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="브랜드명-검색해보기">브랜드명 검색해보기</h4>
 

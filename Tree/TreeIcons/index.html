@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2084,7 +2075,7 @@
 <a href="http://help.realgrid.com/api/types/ImageList/">ImageList</a>객체를 이용해 이미지파일의
 경로를 목록으로 만들어야 합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2100,7 +2091,8 @@
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
+17
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
 <span class="err">    </span><span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">([</span>
 <span class="err">                </span><span class="s2">"icon_male.png"</span><span class="p">,</span>
 <span class="err">                </span><span class="s2">"icon_female.png"</span><span class="p">,</span>
@@ -2117,9 +2109,7 @@
     <span class="na">iconImages</span><span class="p">:</span> <span class="nx">imageList</span><span class="p">.</span><span class="nx">getName</span><span class="p">(),</span>
     <span class="na">iconWidth</span><span class="p">:</span> <span class="mi">20</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>위 코드는 실제로 왼쪽 데모 화면에서 트리뷰(TreeView)에 아이콘을 적용하기 위해 이미지 목록을 만들고
 트리에 등록하는 코드입니다.
 이미지 목록을 트리에 등록하고 사용하려면</p>
@@ -2160,7 +2150,7 @@
 <a href="http://help.realgrid.com/api/GridView/registerImageList/">TreeView.registerImageList()</a>함수로
 TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는 아이콘에 트리노드에 표시됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2180,7 +2170,8 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="c1">// 이미지 리스트 만들기</span>
+21
+</pre></td><td class="rouge-code"><pre><span class="c1">// 이미지 리스트 만들기</span>
 <span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
 <span class="err">    </span><span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">([</span>
 <span class="err">                </span><span class="s2">"icon_male.png"</span><span class="p">,</span>
@@ -2201,9 +2192,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
     <span class="na">iconImages</span><span class="p">:</span> <span class="nx">imageList</span><span class="p">.</span><span class="nx">getName</span><span class="p">(),</span>
     <span class="na">iconWidth</span><span class="p">:</span> <span class="mi">20</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="트리-노드-아이콘-변경-하기">트리 노드 아이콘 변경 하기</h4>
 
@@ -2218,7 +2207,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <p><a class="btn primary small round lowercase" id="setIconIndex">현재 노드의 아이콘 변경하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2227,7 +2216,8 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="c1">// 현재 노드의 아이콘을 2 또는 3으로 변경하기</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="c1">// 현재 노드의 아이콘을 2 또는 3으로 변경하기</span>
 <span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">current</span> <span class="o">&amp;&amp;</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">iidx</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getIconIndex</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
@@ -2237,9 +2227,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
     <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setIconIndex</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="트리를-접거나-펼칠때-아이콘-바꾸기">트리를 접거나 펼칠때 아이콘 바꾸기</h4>
 
@@ -2256,7 +2244,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <p>버튼을 누르면 트리의 두번째 레벨 노드를 접을때와 펼칠때 다른 아이콘이 표시됩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2270,7 +2258,8 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="c1">// 노드를 펼칠때 아이콘 인덱스를 3으로 변경</span>
+15
+</pre></td><td class="rouge-code"><pre><span class="c1">// 노드를 펼칠때 아이콘 인덱스를 3으로 변경</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">onTreeItemExpanded</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tree</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">rowId</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">level</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getLevel</span><span class="p">(</span><span class="nx">rowId</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">level</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
@@ -2285,9 +2274,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
     <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">setIconIndex</span><span class="p">(</span><span class="nx">rowId</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="expander-이미지로-바꾸기">expander 이미지로 바꾸기</h4>
 
@@ -2302,28 +2289,25 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <p>expand 표시를 해당 경로의 이미지 파일로 변경합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">expandImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_col.png"</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">expandImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_col.png"</span><span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="setCollapseImage">collapse 이미지 변경</a></p>
 
 <p>collapse 표시를 해당 경로의 이미지 파일로 변경합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">collapseImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_exp.png"</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">collapseImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_exp.png"</span><span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="setLineVisible">트리 라인 숨기기</a></p>
 
 <p>트리의 라인을 표시하지 않습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">lineVisible</span><span class="p">:</span><span class="kc">false</span><span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">lineVisible</span><span class="p">:</span><span class="kc">false</span><span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
   $('#setIcons').click(function() {

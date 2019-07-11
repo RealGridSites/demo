@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2096,20 +2087,19 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 
 <p>count에 지정한 수 만큼 footer의 높이가 자동으로 조절되지는 않습니다. 직접 높이를 지정해야 합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
   <span class="s2">"count"</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="s2">"height"</span> <span class="p">:</span> <span class="mi">50</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>푸터에 표시할 수식과 문자열은 Column.Footer.Expression, Column.Footer.Text를 배열로 지정로 지정합니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2152,7 +2142,8 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 41
 42
 43
-44</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+44
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
 <span class="p">...</span>
     <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"QuantityPerUnit"</span><span class="p">,</span>
     <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"QuantityPerUnit"</span><span class="p">,</span>
@@ -2196,26 +2187,23 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 <span class="p">},</span> <span class="p">{</span>
 <span class="p">...</span>
 <span class="p">}];</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetFooter">3행 푸터 지정</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span>
   <span class="s2">"count"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
   <span class="s2">"height"</span> <span class="p">:</span> <span class="mi">75</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetColumnFooter">Quantity컬럼 Footer3행에 표준편차 표시</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2223,7 +2211,8 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">footer</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="s2">"QuantityPerUnit"</span><span class="p">,</span> <span class="s2">"footer"</span><span class="p">);</span>
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">footer</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getColumnProperty</span><span class="p">(</span><span class="s2">"QuantityPerUnit"</span><span class="p">,</span> <span class="s2">"footer"</span><span class="p">);</span>
 <span class="nx">footer</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"합계 =&gt;"</span><span class="p">,</span> <span class="s2">"평균 =&gt;"</span><span class="p">,</span> <span class="s2">"표준편차 =&gt;"</span><span class="p">];</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"QuantityPerUnit"</span><span class="p">,</span> <span class="s2">"footer"</span><span class="p">,</span> <span class="nx">footer</span><span class="p">);</span>  
@@ -2232,9 +2221,7 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 <span class="nx">footer</span><span class="p">.</span><span class="nx">expression</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"sum"</span><span class="p">,</span> <span class="s2">"avg"</span><span class="p">,</span> <span class="s2">"stdev"</span><span class="p">];</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Quantity"</span><span class="p">,</span> <span class="s2">"footer"</span><span class="p">,</span> <span class="nx">footer</span><span class="p">);</span>  
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><em>멀티 푸터 스타일 설정</em></p>
 
@@ -2242,7 +2229,7 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 
 <p><a class="btn primary small round lowercase" id="btnSetMultiFooterStyles">동적 컬럼 푸터 스타일</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2256,7 +2243,8 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Quantity"</span><span class="p">,</span><span class="s2">"footer"</span><span class="p">,</span> <span class="p">{</span>
+15
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"Quantity"</span><span class="p">,</span><span class="s2">"footer"</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">styles</span><span class="p">:[{</span>
         <span class="na">background</span><span class="p">:</span><span class="s2">"#ffffff00"</span><span class="p">,</span>
         <span class="na">textAlignment</span><span class="p">:</span><span class="s2">"far"</span><span class="p">,</span>
@@ -2271,22 +2259,21 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
         <span class="na">numberFormat</span><span class="p">:</span><span class="s2">"#,##0.###"</span>
     <span class="p">}]</span>
 <span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>모든 푸터 행에 스타일을 설정할 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="btnSetMultiFooterStyleRows">전체 푸터 행 스타일</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span><span class="na">styles</span><span class="p">:[{</span>
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setFooter</span><span class="p">({</span><span class="na">styles</span><span class="p">:[{</span>
         <span class="na">background</span><span class="p">:</span><span class="s2">"#ffffff00"</span>
     <span class="p">},{</span>
         <span class="na">background</span><span class="p">:</span><span class="s2">"#ff00ffff"</span>
@@ -2294,9 +2281,7 @@ Footer를 여러 줄로 표시하는 경우에 수식과 문자열은 Column.Foo
         <span class="na">background</span><span class="p">:</span><span class="s2">"#ff11ff55"</span>
     <span class="p">}]</span>
 <span class="p">})</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 

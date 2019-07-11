@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2108,18 +2099,17 @@
 <p><a class="btn primary small round lowercase" id="expandAll">모두 펼치기</a>
 <a class="btn primary small round lowercase" id="collapseAll">모두 접기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="c1">//모두 펼치기</span>
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">//모두 펼치기</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
 
 <span class="c1">//모두 접기</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">collapseAll</span><span class="p">();</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>선택된 노드에 대한 접기, 펼치기 기능을 실행해 보세요.</p>
 
@@ -2149,7 +2139,7 @@
   </label>
 </div>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2157,7 +2147,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">recursive</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"checkRecursive"</span><span class="p">).</span><span class="nx">checked</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">force</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"checkForce"</span><span class="p">).</span><span class="nx">checked</span><span class="p">;</span>
 
@@ -2166,9 +2157,7 @@
 
 <span class="c1">//선택 노드 접기</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">collapse</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">recursive</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="자식-노드-개수-가져오기">자식 노드 개수 가져오기</h4>
 
@@ -2182,22 +2171,21 @@
 <p><a class="btn primary small round lowercase" id="getChildCount">자식 노드 수</a>
 <a class="btn primary small round lowercase" id="getDescendantCount">모든 자손 노드 수</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 
 <span class="c1">//자식 노드 개수 가져오기</span>
 <span class="kd">var</span> <span class="nx">childCount</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getChildCount</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
 
 <span class="c1">//자식 및 모든 자손 노드의 개수 가져오기</span>
 <span class="kd">var</span> <span class="nx">childCount</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getDescendantCount</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="자손-또는-조상-노드의-rowid-가져오기">자손 또는 조상 노드의 RowId 가져오기</h4>
 
@@ -2211,22 +2199,21 @@
 <p><a class="btn primary small round lowercase" id="getDescendants">자손 노드 RowId 가져오기</a>
 <a class="btn primary small round lowercase" id="getAncestors">조상 노드 RowId 가져오기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 
 <span class="c1">//자손 노드 RowId 가져오기</span>
 <span class="kd">var</span> <span class="nx">descendants</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getDescendants</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
 
 <span class="c1">//조상 노드 RowId 가져오기</span>
 <span class="kd">var</span> <span class="nx">ancestors</span> <span class="o">=</span> <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getAncestors</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="노드의-순서를-위아래로-이동하기">노드의 순서를 위/아래로 이동하기</h4>
 
@@ -2239,7 +2226,7 @@
 <p><a class="btn primary small round lowercase" id="moveRowSiblingUp">노드를 한 줄 위로 이동하기</a>
 <a class="btn primary small round lowercase" id="moveRowSiblingDown">노드를 한 줄 아래로 이동하기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2247,7 +2234,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">treeView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
 
 <span class="c1">//노드를 한 줄 위로 이동하기</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">moveRowSibling</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
@@ -2256,9 +2244,7 @@
 <span class="c1">//노드를 한 줄 아래로 이동하기</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">moveRowSibling</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">);</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">setCurrent</span><span class="p">({</span><span class="na">dataRow</span><span class="p">:</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="노드를-다른-노드의-자식으로-이동하기">노드를 다른 노드의 자식으로 이동하기</h4>
 
@@ -2272,20 +2258,19 @@
 
 <p>아래 코드는 변화를 잘 볼 수 있도록 모든 노드를 접고, 브라질과 아르헨티나 노드만 펼칩니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="c1">//일단 모두 접기</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="c1">//일단 모두 접기</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">collapseAll</span><span class="p">();</span>
 <span class="c1">//브라질(ItemIndex = 1) 노드 펼치기</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">expand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="c1">//아르헨티나 노드(ItemIndex = 0) 펼치기</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">expand</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a href="http://help.realgrid.com/api/TreeDataProvider/changeRowParent/">TreeDataProvider.changeRowParent()</a>함수를 사용하려면 이동할 노드와 목적 노드의 RowId를 알아야 합니다.
 보통은 <a href="http://help.realgrid.com/api/GridBase/getCurrent/">GridBase.getCurrent()</a>함수를 통해 <a href="http://help.realgrid.com/tutorial/a9/">RowId</a>를 가져오지만 여기서는 실습을 위해 미리 정해진 RowId를 사용합니다.</p>
@@ -2297,16 +2282,15 @@
 
 <p><a class="btn primary small round lowercase" id="changeRowParent">브라질의 상파울루를 아르헨티나 두 번째 하위로 이동</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="c1">// 상파울루(RowId = 10)를 아르헨티나(RowId = 1) 하위 두 번째 노드(index = 1)로 이동하기</span>
+4
+</pre></td><td class="rouge-code"><pre><span class="c1">// 상파울루(RowId = 10)를 아르헨티나(RowId = 1) 하위 두 번째 노드(index = 1)로 이동하기</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">changeRowParent</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="c1">//상파울루노드(RowId = 10)에 포커스 이동하기</span>
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">setCurrent</span><span class="p">({</span><span class="na">dataRow</span><span class="p">:</span> <span class="mi">10</span><span class="p">});</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 function getCurrent() {

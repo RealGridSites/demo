@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -1826,20 +1817,19 @@
             <p>리얼그리드 DataProvider의 DataField는 네 가지 자료형 중 하나가 될 수 있습니다.<br />
 Text, Number, Boolean, Datetime이 그것들인데, RealGrids.DataType 상수로 선언되어 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">DataType</span> <span class="o">=</span> <span class="p">{</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">DataType</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">TEXT</span><span class="p">:</span> <span class="s2">"text"</span><span class="p">,</span>
     <span class="na">NUMBER</span><span class="p">:</span> <span class="s2">"number"</span><span class="p">,</span>       <span class="c1">// or "numeric"</span>
     <span class="na">BOOLEAN</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>     <span class="c1">// or "bool"</span>
     <span class="na">DATETIME</span><span class="p">:</span> <span class="s2">"datetime"</span>
 <span class="p">};</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Local DataProvider(RealGrid 메모리에 데이터를 저장합니다. 현재 리얼그리드 DataProvider는 Local DataProvider입니다.)에는 각 필드의 자료형에 맞게 변화되어 값들이 저장됩니다.</p>
 
@@ -1863,16 +1853,15 @@ Local DataProvider에는 <mark>Number가 아닌 값은 Number로 변환되어 Da
 
 <p>false, true 둘 중 하나의 값으로 저장됩니다. 즉, loadData()나 setRows() 등으로 외부 데이터가 Boolean 필드에 저장될 때, <mark>Boolean이 아닌 원본 값은 보존되지 않고 true/false로 변환됩니다. undefined는 undefined로 저장됩니다.</mark> 아래의 값들이 false로, 나머지 값들은 true로 변환됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre>0	Javascript 숫자 0
+4
+</pre></td><td class="rouge-code"><pre>0	Javascript 숫자 0
 NaN	Javascript NaN
 ""	빈 문자열
 null	Javascript null
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>DataProvider에는 false/true 두 값들 중 하나로 저장되지만, 그리드 사용 중 여러 지점에서 문자열과의 호환이 필요해집니다.<br />
 Boolean 필드의 값과 문자열 값의 호환성이 고려되어야 하는 경우는 아래와 같습니다.</p>
@@ -1883,22 +1872,21 @@ Boolean 필드의 값과 문자열 값의 호환성이 고려되어야 하는 �
 
 <p>loadData()나 setRows() 등으로 DataProvider에 행들을 추가할 때, Boolean이 아닌 값을 Boolean 필드에 저장하고 싶다면, DataProvider나 DataField의 booleanFormat 속성을 이용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre>dataProvider.setOptions({
+7
+</pre></td><td class="rouge-code"><pre>dataProvider.setOptions({
     booleanFormat: "false,f:true:0"
 });
 dataProvider.setFields([{
     booleanFormat: "false,f:true:0"
 },
 ...}]);
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>booleanFormat 속성 값은 “false,f:true:0”과 같은 형식으로 지정합니다.<br />
 콜론(:)으로 구분하며 첫번째 마디는 false로 해석될 하나 이상의 값들을 콤마로 분리하고, 두번째 마디에는 true로 해석할 하나 이상의 값들을 역시 콤마로 분리하여 지정합니다.<br />
@@ -1913,22 +1901,21 @@ DataProvider와 DataField에 모두 지정되었다면 DataField에 지정된 �
 
 <p>셀 렌더러들은 Styles의 booleanFormat 속성 값을 기준으로 Boolean 필드의 값을 표시합니다. booleanFormat이 설정되지 않으면 각각 “false”, “true”로 표시됩니다. undefined는 빈문자열로 표시됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre>grid.setColumns([{
+7
+</pre></td><td class="rouge-code"><pre>grid.setColumns([{
     styles: {
         booleanFormat: "Lie;Truth",
         ...
     }
 }, {
 ...}]);
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>booleanFormat 스타일 속성은 “거짓말;참말;거짓말” 처럼 세미콜론(;)이나 콜론(:)으로 분리하여 false/true/undefined 값을 지정합니다.</p>
 
@@ -1938,14 +1925,15 @@ DataProvider와 DataField에 모두 지정되었다면 DataField에 지정된 �
 
 <p>텍스트를 입력하는 셀 에디터들은 booleanFormat 속성을 지정해서 Boolean 필드의 값을 텍스트로 표시하고, 입력된 텍스트 값을 Boolean 값으로 저장할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre>grid.setColumns([{
+8
+</pre></td><td class="rouge-code"><pre>grid.setColumns([{
     editor: {
         booleanFormat: "false,f:true:0",
         emptyValue: false // 기본값은 undefined
@@ -1953,9 +1941,7 @@ DataProvider와 DataField에 모두 지정되었다면 DataField에 지정된 �
     }
 }, {
 ...}]);
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>셀 에디터의 booleanFormat 속성은 “false,f:true:0”과 같은 형식으로 지정합니다.<br />
 콜론(:)으로 구분하며 첫번째 마디는 false로 해석될 값들을 콤마로 분리하고, 두번째 마디에는 true로 해석할 값들을 지정합니다. <br />
@@ -1979,7 +1965,7 @@ undefined는 undefined로 저장됩니다. 하지만, RealGrid 사용자는 주�
 
 <p>loadData()를 통해 Datetime 형의 값이 문자열로 전달되거나, setRows() 함수 등으로 javascript에서 문자열로 Date 필드의 값을 전달할 때, 그 문자열은 아래와 같이 리얼그리드가 Datetime 형의 값으로 인식할 수 있는 몇가지 형식으로 반드시 구성되어야 합니다. 이 형식의 종류는 DataProvider나 DataField의 datetimeFormat 속성 및 관련된 속성들에 지정할 수 있습니다. DataProvider와 DataField에 모두 설정된 경우 DataField에 지정한 것이 우선합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1991,7 +1977,8 @@ undefined는 undefined로 저장됩니다. 하지만, RealGrid 사용자는 주�
 10
 11
 12
-13</pre></td><td class="code"><pre>dataProvider.setOptions({
+13
+</pre></td><td class="rouge-code"><pre>dataProvider.setOptions({
     datetimeFormat: "yyyy/MM/dd",
     amText: "AM",
     pmText: "PM",
@@ -2004,9 +1991,7 @@ dataProvider.setFields([{
     baseYear: 2000
 },
 ...}]
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
 
@@ -2212,18 +2197,17 @@ ISO 표준 상으로는 시간대가 반드시 존재해야 하지만, 리얼그
 또한, 시간 부분이 없거나 날짜 일부만 존재해도 해석합니다. 년도가 두자리일 경우 1900년이 추가되어 해석됩니다.<br />
 “iso” 형식으로 해석할 수 있는 문자열들은 아래와 같습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre>"2014/12/12T21:22:33Z"
+5
+</pre></td><td class="rouge-code"><pre>"2014/12/12T21:22:33Z"
 "2014/12/12T21:22:33+09:00"
 "2014/12/12T21:22"
 "2014/12/12"
 "2014/12"
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
 
@@ -2233,29 +2217,29 @@ ISO 표준 상으로는 시간대가 반드시 존재해야 하지만, 리얼그
 Flash 플랫폼이 native로 지원하는 형식입니다. . 년도가 두자리일 경우 1900년이 추가되어 해석됩니다.<br />
 해석 가능한 예제는 아래와 같습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre>"2014/12/12T21:22:33Z"
+5
+</pre></td><td class="rouge-code"><pre>"2014/12/12T21:22:33Z"
 "2014/12/12T21:22:33+09:00"
 "2014/12/12T21:22"
 "2014/12/12"
 "2014/12"
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>가능하면 이 형식을 따라야 합니다. 특히 10만 건 이상의 대량 데이터를 로드하는 경우는 이 형식이 “iso”나 custom 형식보다 수 배 이상 빠르게 파싱합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre>"Wed Jan 1 11:22:33 GMT+0900 2014"
+8
+</pre></td><td class="rouge-code"><pre>"Wed Jan 1 11:22:33 GMT+0900 2014"
 "Wed Jan 1 2014 11:22:33 GMT+0900"
 "Wed Jan 1 2014"
 "01/01/2014"
@@ -2263,31 +2247,28 @@ Flash 플랫폼이 native로 지원하는 형식입니다. . 년도가 두자리
 "2014/01/01 11:22:33 GMT+0900"
 "2014/01/01 11:22:33"
 "2014/01/01"
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
 
 <h4 id="42-rendering">4.2) rendering</h4>
 <p>Datetime 필드의 값을 표시하는 셀 렌더러는 datetimeFormat 스타일 값을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre>grid.setColumns([{
+7
+</pre></td><td class="rouge-code"><pre>grid.setColumns([{
     styles: {
         datetimeFormat: "yyyy.MM.dd a HH:mm:ss;오전,오후",
         ...
     }
 }, {
 ...}]);
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>datetimeFormat 스타일은 아래와 같은 패턴들로 구성될 수 있습니다. <br />
 스타일값이 지정되지 않으면 “yyyy/MM/dd” 포맷이 기본으로 사용됩니다.<br />
@@ -2413,22 +2394,21 @@ dateFormat 스타일 값을 없애고 datetimeFormat 스타일 값으로 재설�
 <p>Datetime 필드의 값을 입력하는 셀 에디터 또한 사용자의 입력을 Datetime 값으로 변환하고, Datetime 값을 에디터에 표시하기 위한 형식이 필요합니다.<br />
 셀 에디터의 datetimeFormat 속성에 아래와 같은 형식으로 지정합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre>grid.setColumns([{
+7
+</pre></td><td class="rouge-code"><pre>grid.setColumns([{
     editor: {
         datetimeFormat: "yyyy.MM.dd a HH:mm:ss;2000;오전,오후",
         ...
     }
 }, {
 ...}]);
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>세미콜론(;)으로 분리되며 첫 번째 마디는 날짜/시간의 패턴, 두 번째 마디는 년도를 두자리 이하로 입력할 때 자동 추가될 년도를 지정합니다. <br />
 기본값은 2000 입니다. 세번째 마디에는 AM/PM 구분자를 콤마로 분리해서 순서대로 지정합니다.<br />

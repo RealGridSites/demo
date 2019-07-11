@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2098,37 +2089,7 @@ var onDoneDataSet = function() {
 <code class="highlighter-rouge">figureSize</code> - padding을 제외한 그리기 영역 내에서 바가 차지할 너비나 높이를 %로 지정합니다.<br />
 지정하지 않으면 기본 크기대로 그려집니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10</pre></td><td class="code"><pre><span class="p">{</span>
-    <span class="p">...</span>
-    <span class="nl">styles</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">figureBackground</span><span class="p">:</span> <span class="s2">"linear,#ff000044,#ffeeeeee"</span><span class="p">,</span>
-        <span class="nx">textAlignment</span><span class="err">:</span> <span class="s2">"far"</span><span class="p">,</span>
-        <span class="nx">paddingRight</span><span class="err">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nx">figureSize</span><span class="err">:</span> <span class="s2">"50%"</span>
-    <span class="p">},</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
-
-<h4 id="바-렌더러-속성">바 렌더러 속성</h4>
-
-<p><a href="http://help.realgrid.com/api/types/BarCellRenderer/">BarCellRenderer</a></p>
-
-<p>Bar 셀렌더러의 숫자형 컬럼 셀의 값을 막대 상자로 표시하는 렌더러 속성입니다.<br />
-막대 상자의 너비는 스타일이 아니라 Bar 렌더러의 속성으로 지정합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2138,20 +2099,48 @@ var onDoneDataSet = function() {
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
     <span class="p">...</span>
-    <span class="nl">renderer</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">type</span><span class="p">:</span> <span class="s2">"bar"</span><span class="p">,</span>
-        <span class="nx">minimum</span><span class="err">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">//최소값</span>
-        <span class="nx">maximum</span><span class="err">:</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">//최대값</span>
-        <span class="nx">minWidth</span><span class="err">:</span> <span class="mi">150</span><span class="p">,</span> <span class="c1">// 최소 너비</span>
-        <span class="nx">showLabel</span><span class="err">:</span> <span class="kc">true</span> <span class="c1">//라벨표시 여부</span>
+    <span class="nx">styles</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">figureBackground</span><span class="p">:</span> <span class="s2">"linear,#ff000044,#ffeeeeee"</span><span class="p">,</span>
+        <span class="nx">textAlignment</span><span class="p">:</span> <span class="s2">"far"</span><span class="p">,</span>
+        <span class="nx">paddingRight</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="nx">figureSize</span><span class="p">:</span> <span class="s2">"50%"</span>
     <span class="p">},</span>
     <span class="p">...</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="바-렌더러-속성">바 렌더러 속성</h4>
+
+<p><a href="http://help.realgrid.com/api/types/BarCellRenderer/">BarCellRenderer</a></p>
+
+<p>Bar 셀렌더러의 숫자형 컬럼 셀의 값을 막대 상자로 표시하는 렌더러 속성입니다.<br />
+막대 상자의 너비는 스타일이 아니라 Bar 렌더러의 속성으로 지정합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nx">renderer</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">type</span><span class="p">:</span> <span class="s2">"bar"</span><span class="p">,</span>
+        <span class="nx">minimum</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">//최소값</span>
+        <span class="nx">maximum</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">//최대값</span>
+        <span class="nx">minWidth</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="c1">// 최소 너비</span>
+        <span class="nx">showLabel</span><span class="p">:</span> <span class="kc">true</span> <span class="c1">//라벨표시 여부</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

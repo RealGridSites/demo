@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2120,7 +2111,7 @@ var onDoneDataSet = function() {
 <p>“Values”컬럼을 제외한 각각의 필드에는 원시값을 Boolean 값으로 변환하기 위한 booleanFormat 속성이 지정됐습니다. 
 또한, 각각의 “Boolean” 컬럼에게는 스타일의 booleanFormat 속성과 에디터의 booleanFormat이 지정됐습니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2145,7 +2136,8 @@ var onDoneDataSet = function() {
 23
 24
 25
-26</pre></td><td class="code"><pre><span class="c1">//필드 설정</span>
+26
+</pre></td><td class="rouge-code"><pre><span class="c1">//필드 설정</span>
 <span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
     <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Boolean1"</span><span class="p">,</span>
     <span class="na">dataType</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
@@ -2171,9 +2163,7 @@ var onDoneDataSet = function() {
 <span class="p">}];</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
 </div>

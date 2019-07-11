@@ -633,15 +633,6 @@
                   footer, merge, 푸터, 병합, 머지
                   </span>
                 </a>
-              </li>
-              <li class="item-toc ">
-                <a href="/HeaderAndFooter/FooterCallback/"
-                class=" sidebar-link ">
-                  <span>푸터 콜백</span>
-                  <span style="display: none;">
-                  footer, summary, 합계, 푸터, callback, footerCallback
-                  </span>
-                </a>
               </li></ul>
 
         </li>
@@ -1766,20 +1757,20 @@
                 </a>
               </li>
               <li class="item-toc ">
-                <a href="/Pivot/PivotNumberFormat/"
-                class=" sidebar-link ">
-                  <span>피벗 숫자포맷</span>
-                  <span style="display: none;">
-                  pivot, numberFormat
-                  </span>
-                </a>
-              </li>
-              <li class="item-toc ">
                 <a href="/Pivot/PivotFocus/"
                 class=" sidebar-link ">
                   <span>피벗 포커스</span>
                   <span style="display: none;">
                   pivot, 포커스, focus
+                  </span>
+                </a>
+              </li>
+              <li class="item-toc ">
+                <a href="/Pivot/PivotNumberFormat/"
+                class=" sidebar-link ">
+                  <span>피벗 숫자포맷</span>
+                  <span style="display: none;">
+                  pivot, numberFormat
                   </span>
                 </a>
               </li>
@@ -2092,7 +2083,7 @@
 
 <p><a class="btn primary small round lowercase" id="onScrollToBottom">마지막행까지 스크롤될 때 다음 데이터 읽어오기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2105,7 +2096,8 @@
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">loadNext</span><span class="p">()</span> <span class="p">{</span>
+14
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">loadNext</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">newStart</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"/resource/data/carData2.json"</span><span class="p">,</span>
@@ -2119,9 +2111,7 @@
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onScrollToBottom</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">loadNext</span><span class="p">();</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="50개-행이-스크롤될때-마다-데이터-불러오기">50개 행이 스크롤될때 마다 데이터 불러오기</h4>
 
@@ -2131,7 +2121,7 @@
 
 <p><a class="btn primary small round lowercase" id="onTopItemIndexChanged">스크롤시 50행 지날때 마다 데이터 읽어오기</a></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2149,7 +2139,8 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">loadNext</span><span class="p">()</span> <span class="p">{</span>
+19
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">loadNext</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">newStart</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"/resource/data/carData2.json"</span><span class="p">,</span>
@@ -2168,9 +2159,7 @@
     <span class="nx">loadNext</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
 function loadNext() {
