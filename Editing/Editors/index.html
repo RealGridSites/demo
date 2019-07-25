@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.32</span>
+                            <span>최신버전 1.1.33</span>
                         </a>
                     </li>
                     
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.32</span>
+                            <span>최신버전 1.1.33</span>
                         </a>
                     </li>
                     
@@ -1876,7 +1876,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.32");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2158,6 +2158,22 @@
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><a class="btn primary small round lowercase" id="btnAltEnterNewLine">altEnterNewLine</a></p>
+
+<p>altEnterNewLine속성을 true로 설정하면 alt+enter키 입력시 줄바꿈을 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>gridView.setColumnProperty("CompanyName","editor", {
+    "type": "multiline",
+    "textCase": "upper",
+    altEnterNewLine:true
+})
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="숫자-편집기"><a href="http://help.realgrid.com/api/types/NumberCellEditor/" target="_blank">숫자 편집기</a></h4>
@@ -2552,6 +2568,48 @@
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
+<p><a class="btn primary small round lowercase" id="btnSetHolidays">달력에 휴일 지정</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre>var holidays = [ {
+    type : "day", // 요일을 지정합니다.
+    days : [0,6], // 일요일,토요일
+    styles : {foreground:"#FFFF0000"}, // 배경색과 폰트색을 지정합니다.
+    tooltips : ["일요일","토요일"], // tooltip
+    enabled : true  // false인경우 선택할수 없습니다.
+  }, {
+    type : "date", // 기념일 또는 특정일자를 지정합니다.
+    dates : ["01-01","03-01","05-05","08-15"], // 기념일.
+    styles:{foreground:"#FF000000"},
+    tooltips : ["신정","삼일절","어린이날","광복절"]
+  }, {
+    type:"date",  // 동일한 type을 중복해서 지정할수 있습니다.
+    dates:["2019-05-06"],
+    styles:{foreground:"#FFFF0000", background:"#10FF0000"},
+    tooltips:["어린이날 대체휴무"]
+  }
+];
+gridView.setColumnProperty("OrderDate","editor",{type:"date",holidays:holidays})
+</pre></td></tr></tbody></table></code></pre></div></div>
+
 <h4 id="editor의-textalignment를-변경">editor의 textAlignment를 변경</h4>
 
 <p><em>편집 정렬</em></p>
@@ -2625,8 +2683,38 @@
     });
   });
 
+  $('#btnSetHolidays').click(function() {
+    var holidays = [ {
+        type : "day", // 요일을 지정합니다.
+        days : [0,6], // 일요일,토요일
+        styles : {foreground:"#FFFF0000"}, // 배경색과 폰트색을 지정합니다.
+        tooltips : ["일요일","토요일"], // tooltip
+        enabled : true  // false인경우 선택할수 없습니다.
+      }, {
+        type : "date", // 기념일 또는 특정일자를 지정합니다.
+        dates : ["01-01","03-01","05-05","08-15"], // 기념일.
+        styles:{foreground:"#FF000000"},
+        tooltips : ["신정","삼일절","어린이날","광복절"]
+      }, {
+        type:"date",  // 동일한 type을 중복해서 지정할수 있습니다.
+        dates:["2019-05-06"],
+        styles:{foreground:"#FFFF0000", background:"#10FF0000"},
+        tooltips:["어린이날 대체휴무"]
+      }
+    ];
+    gridView.setColumnProperty("OrderDate","editor",{type:"date",holidays:holidays})
+  });
+
   $('#btnSetEditor').click(function() {
     gridView.setColumnProperty("OrderID","editor",{textAlignment:"center"});
+  });
+
+  $('#btnAltEnterNewLine').click(function() {
+    gridView.setColumnProperty("CompanyName","editor", {
+            "type": "multiline",
+            "textCase": "upper",
+            "altEnterNewLine":true
+        })
   });
 
 </script>
@@ -2649,9 +2737,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs_eval.1.1.32.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/realgridjs-api.1.1.32.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.32/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>
