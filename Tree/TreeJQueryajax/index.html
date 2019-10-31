@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1895,7 +1895,7 @@
     var treeDataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         treeDataProvider = new RealGridJS.LocalTreeDataProvider();
         treeView = new RealGridJS.TreeView("realtree");
@@ -2147,12 +2147,12 @@
 
 <span class="c1">// jQuery ajax() 함수 호출</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-      <span class="na">url</span><span class="p">:</span> <span class="s2">"http://"</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="o">+</span> <span class="s2">"/resource/data/treedata3.json?__time__="</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
-    <span class="na">dataType</span><span class="p">:</span> <span class="s2">"text"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/resource/data/treedata3.json?__time__=</span><span class="dl">"</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// 원격 데이터를 비동기로 가져온 경우 호출 되는 콜백</span>
-      <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span> <span class="na">rows</span><span class="p">:</span> <span class="s2">"rows"</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s2">"icon"</span> <span class="p">});</span>
+      <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span> <span class="na">rows</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rows</span><span class="dl">"</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">"</span><span class="s2">icon</span><span class="dl">"</span> <span class="p">});</span>
       <span class="nx">treeView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
     <span class="p">},</span>
     <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
@@ -2167,7 +2167,7 @@
         <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">window</span><span class="p">.</span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
 
         <span class="c1">// xhr 요청 정보를 이용해 progress 이벤트 리스너 등록</span>
-        <span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"progress"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">progress</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">lengthComputable</span><span class="p">)</span> <span class="p">{</span>
               <span class="nx">treeView</span><span class="p">.</span><span class="nx">setProgress</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">total</span><span class="p">,</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">loaded</span><span class="p">);</span>
             <span class="p">}</span>
@@ -2244,9 +2244,9 @@ $('#loadRemoteData').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

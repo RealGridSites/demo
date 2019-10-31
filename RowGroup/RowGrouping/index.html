@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1860,7 +1860,7 @@ var onDoneDataSet = function() {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2104,7 +2104,7 @@ var onDoneDataSet = function() {
 4
 5
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fieldNames</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">"input[name='chkFieldName']:checked"</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">input[name='chkFieldName']:checked</span><span class="dl">"</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">fieldNames</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
 <span class="p">});</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">groupBy</span><span class="p">(</span><span class="nx">fieldNames</span><span class="p">);</span>
@@ -2130,12 +2130,12 @@ var onDoneDataSet = function() {
 7
 8
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">onGrouping</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">){</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="s2">"onGrouping 이벤트가 발생했습니다. true를 반환합니다."</span><span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">onGrouping 이벤트가 발생했습니다. true를 반환합니다.</span><span class="dl">"</span><span class="p">);</span>
   <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onGroupingChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="s2">"onGroupingChanged : isGrouped = "</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">isGrouped</span><span class="p">()</span> <span class="o">+</span> <span class="s2">", isMergedGrouped  = "</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">isMergedGrouped</span><span class="p">());</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">onGroupingChanged : isGrouped = </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">isGrouped</span><span class="p">()</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">, isMergedGrouped  = </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">isMergedGrouped</span><span class="p">());</span>
 <span class="p">};</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2159,7 +2159,7 @@ var onDoneDataSet = function() {
 3
 4
 5
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">statement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selFooterStatement'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">statement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#selFooterStatement</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="nx">statement</span> <span class="o">=</span> <span class="nx">statement</span> <span class="p">?</span> <span class="nx">statement</span> <span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
   <span class="na">footerStatement</span><span class="p">:</span> <span class="nx">statement</span>
@@ -2198,7 +2198,7 @@ var onDoneDataSet = function() {
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">statement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#selHeaderStatement'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">statement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#selHeaderStatement</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
     <span class="na">headerStatement</span><span class="p">:</span> <span class="nx">statement</span>
 <span class="p">});</span>
@@ -2226,7 +2226,7 @@ var onDoneDataSet = function() {
 10
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setGroupingOptions</span><span class="p">({</span>
     <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
-    <span class="na">prompt</span><span class="p">:</span> <span class="s2">"컬럼 헤더를 이 곳으로 끌어다 놓으면 그 컬럼으로 그룹핑합니다."</span><span class="p">,</span> 
+    <span class="na">prompt</span><span class="p">:</span> <span class="dl">"</span><span class="s2">컬럼 헤더를 이 곳으로 끌어다 놓으면 그 컬럼으로 그룹핑합니다.</span><span class="dl">"</span><span class="p">,</span> 
     <span class="na">linear</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> 
     <span class="na">removeIncludeLower</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="na">expandWhenGrouping</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
@@ -2280,9 +2280,9 @@ collapsedAdornments:
 5
 6
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
-  <span class="na">summaryMode</span><span class="p">:</span> <span class="s2">"aggregate"</span><span class="p">,</span>
+  <span class="na">summaryMode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">aggregate</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">sorting</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="na">footerStatement</span><span class="p">:</span> <span class="s2">"행 그룹핑된 컬럼의 풋터입니다."</span><span class="p">,</span>
+  <span class="na">footerStatement</span><span class="p">:</span> <span class="dl">"</span><span class="s2">행 그룹핑된 컬럼의 풋터입니다.</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">footerCellMerge</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -2357,65 +2357,65 @@ collapsedAdornments:
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setRowGroup</span><span class="p">({</span>
   <span class="na">levels</span><span class="p">:</span> <span class="p">[{</span>
     <span class="na">headerStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF008800"</span><span class="p">,</span>
-      <span class="na">foreground</span><span class="p">:</span> <span class="s2">"#FFFFFFFF"</span><span class="p">,</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF008800</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">foreground</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FFFFFFFF</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">fontBold</span><span class="p">:</span> <span class="kc">true</span>
     <span class="p">},</span>
     <span class="na">footerStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF008800"</span><span class="p">,</span>
-      <span class="na">foreground</span><span class="p">:</span> <span class="s2">"#FFFFFFFF"</span><span class="p">,</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF008800</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">foreground</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FFFFFFFF</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">fontBold</span><span class="p">:</span> <span class="kc">true</span>
     <span class="p">},</span>
     <span class="na">headerBarStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF008800"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF008800</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">footerBarStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF008800"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF008800</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">barStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF008800"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF008800</span><span class="dl">"</span>
     <span class="p">}</span>
   <span class="p">},{</span>
     <span class="na">headerStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00CC00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00CC00</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">footerStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00CC00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00CC00</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">headerBarStyles</span><span class="p">:</span> <span class="p">{</span>
-     <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00CC00"</span>
+     <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00CC00</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">footerBarStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00CC00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00CC00</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">barStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00CC00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00CC00</span><span class="dl">"</span>
     <span class="p">}</span>
   <span class="p">},{</span>
     <span class="na">headerStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00FF00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00FF00</span><span class="dl">"</span>
     <span class="p">},</span>
    <span class="na">footerStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00FF00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00FF00</span><span class="dl">"</span>
    <span class="p">},</span>
     <span class="na">headerBarStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00FF00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00FF00</span><span class="dl">"</span>
    <span class="p">},</span>
    <span class="na">footerBarStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00FF00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00FF00</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">barStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#FF00FF00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#FF00FF00</span><span class="dl">"</span>
    <span class="p">}</span>
   <span class="p">},{</span>
     <span class="na">headerStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#4400FF00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#4400FF00</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">headerBarStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#4400FF00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#4400FF00</span><span class="dl">"</span>
    <span class="p">},</span>
     <span class="na">barStyles</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">background</span><span class="p">:</span> <span class="s2">"#4400FF00"</span>
+      <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#4400FF00</span><span class="dl">"</span>
    <span class="p">}</span>
   <span class="p">}]</span> 
 <span class="p">});</span>
@@ -2576,9 +2576,9 @@ $('#btnSetRowLevels').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

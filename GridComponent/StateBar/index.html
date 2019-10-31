@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1889,7 +1889,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2155,7 +2155,7 @@
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">curr</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">rowState</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">":input:radio[name='rowState']:checked"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">rowState</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">:input:radio[name='rowState']:checked</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">setRowState</span><span class="p">(</span><span class="nx">curr</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">,</span> <span class="nx">rowState</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2175,12 +2175,12 @@
 8
 9
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
-    <span class="na">mark</span><span class="p">:</span> <span class="s2">"text"</span><span class="p">,</span>
+    <span class="na">mark</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">stateTexts</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">created</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
-        <span class="na">updated</span><span class="p">:</span> <span class="s2">"U"</span><span class="p">,</span>
-        <span class="na">deleted</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
-        <span class="na">createAndDeleted</span><span class="p">:</span> <span class="s2">"X"</span>
+        <span class="na">created</span><span class="p">:</span> <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">updated</span><span class="p">:</span> <span class="dl">"</span><span class="s2">U</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">deleted</span><span class="p">:</span> <span class="dl">"</span><span class="s2">D</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">createAndDeleted</span><span class="p">:</span> <span class="dl">"</span><span class="s2">X</span><span class="dl">"</span>
     <span class="p">}</span>
 <span class="p">});</span>    
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -2191,7 +2191,7 @@
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
-    <span class="na">mark</span><span class="p">:</span> <span class="s2">"default"</span>
+    <span class="na">mark</span><span class="p">:</span> <span class="dl">"</span><span class="s2">default</span><span class="dl">"</span>
 <span class="p">});</span> 
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2214,8 +2214,8 @@
 5
 6
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
-  <span class="na">headText</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>  
-  <span class="na">footText</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+  <span class="na">headText</span><span class="p">:</span> <span class="dl">"</span><span class="s2">H</span><span class="dl">"</span><span class="p">,</span>  
+  <span class="na">footText</span><span class="p">:</span> <span class="dl">"</span><span class="s2">F</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">headImageUrl</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>  
   <span class="na">footImageUrl</span><span class="p">:</span> <span class="kc">null</span>  
 <span class="p">});</span>
@@ -2232,8 +2232,8 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
   <span class="na">headText</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>  
   <span class="na">footText</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="na">headImageUrl</span><span class="p">:</span> <span class="s2">"/resource/image/common/dot_arrow2_top.gif"</span><span class="p">,</span>  
-  <span class="na">footImageUrl</span><span class="p">:</span> <span class="s2">"/resource/image/common/dot_arrow2_bottom.gif"</span>  
+  <span class="na">headImageUrl</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/resource/image/common/dot_arrow2_top.gif</span><span class="dl">"</span><span class="p">,</span>  
+  <span class="na">footImageUrl</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/resource/image/common/dot_arrow2_bottom.gif</span><span class="dl">"</span>  
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2249,12 +2249,12 @@
 8
 9
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setStateBar</span><span class="p">({</span>
-    <span class="na">mark</span><span class="p">:</span><span class="s2">"text"</span><span class="p">,</span>
-    <span class="na">styles</span><span class="p">:{</span><span class="na">font</span><span class="p">:</span><span class="s2">"나눔고딕코딩"</span><span class="p">},</span>
+    <span class="na">mark</span><span class="p">:</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">styles</span><span class="p">:{</span><span class="na">font</span><span class="p">:</span><span class="dl">"</span><span class="s2">나눔고딕코딩</span><span class="dl">"</span><span class="p">},</span>
     <span class="na">stateStyles</span><span class="p">:{</span> 
-        <span class="s2">"updated"</span><span class="p">:{</span><span class="s2">"background"</span><span class="p">:</span><span class="s2">"#FF00FF00"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="s2">"나눔고딕코딩"</span><span class="p">},</span>
-        <span class="s2">"created"</span><span class="p">:{</span><span class="s2">"background"</span><span class="p">:</span><span class="s2">"#44FF22FF"</span><span class="p">,</span> <span class="na">figureBackground</span><span class="p">:</span><span class="s2">"#88888888"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="s2">"굴림체"</span><span class="p">},</span>
-        <span class="s2">"deleted"</span><span class="p">:{</span><span class="s2">"background"</span><span class="p">:</span><span class="s2">"#44000000"</span><span class="p">,</span> <span class="na">foreground</span><span class="p">:</span><span class="s2">"#FF88FF88"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="s2">"바탕체"</span><span class="p">}</span>
+        <span class="dl">"</span><span class="s2">updated</span><span class="dl">"</span><span class="p">:{</span><span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">#FF00FF00</span><span class="dl">"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="dl">"</span><span class="s2">나눔고딕코딩</span><span class="dl">"</span><span class="p">},</span>
+        <span class="dl">"</span><span class="s2">created</span><span class="dl">"</span><span class="p">:{</span><span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">#44FF22FF</span><span class="dl">"</span><span class="p">,</span> <span class="na">figureBackground</span><span class="p">:</span><span class="dl">"</span><span class="s2">#88888888</span><span class="dl">"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="dl">"</span><span class="s2">굴림체</span><span class="dl">"</span><span class="p">},</span>
+        <span class="dl">"</span><span class="s2">deleted</span><span class="dl">"</span><span class="p">:{</span><span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">#44000000</span><span class="dl">"</span><span class="p">,</span> <span class="na">foreground</span><span class="p">:</span><span class="dl">"</span><span class="s2">#FF88FF88</span><span class="dl">"</span><span class="p">,</span> <span class="na">font</span><span class="p">:</span><span class="dl">"</span><span class="s2">바탕체</span><span class="dl">"</span><span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -2347,9 +2347,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

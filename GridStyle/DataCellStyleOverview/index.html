@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1861,7 +1861,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2093,29 +2093,29 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 24
 25
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyles</span><span class="p">([{</span>
-    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"style1"</span><span class="p">,</span>
-    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffffff"</span><span class="p">,</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff333333"</span><span class="p">,</span>
-    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-    <span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"editable"</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">style1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffffffff</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff333333</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontBold</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">editable</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">},</span> <span class="p">{</span>
-    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"style2"</span><span class="p">,</span>
-    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffff00"</span><span class="p">,</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff111111"</span><span class="p">,</span>
-    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-    <span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"readOnly"</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">style2</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffffff00</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff111111</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontBold</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">readOnly</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">},</span> <span class="p">{</span>
-    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"style3"</span><span class="p">,</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#110000ff"</span><span class="p">,</span>
-    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ff000088"</span><span class="p">,</span>
-    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-    <span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"textAlignment"</span><span class="p">:</span> <span class="s2">"center"</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">style3</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#110000ff</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff000088</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontBold</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">textAlignment</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span>
 <span class="p">},</span> <span class="p">{</span>
-    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"styleNew"</span><span class="p">,</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#33ffff00"</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">styleNew</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#33ffff00</span><span class="dl">"</span>
 <span class="p">}]);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2131,16 +2131,16 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 8
 9
 10
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#4400ff00"</span><span class="p">,</span>
-    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-    <span class="s2">"paddingTop"</span><span class="p">:</span> <span class="mi">5</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="dl">"</span><span class="s2">style01</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#4400ff00</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">paddingTop</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span>
 <span class="p">});</span>
 <span class="c1">// field가 -1이면 행 전체 셀들에 대해 지정한다.</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"style01"</span><span class="p">);</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"style2"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">style01</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">style2</span><span class="dl">"</span><span class="p">);</span>
 <span class="c1">// row가 -1이면 추가 중인 행에 대해 적용된다.</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"styleNew"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">styleNew</span><span class="dl">"</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetFieldClickHandler">개별 스타일 적용</a></p>
@@ -2153,14 +2153,14 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 6
 7
 8
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style02"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="s2">"paddingLeft"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span>
-    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffff"</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="dl">"</span><span class="s2">style02</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">paddingLeft</span><span class="dl">"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#000000</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffffff</span><span class="dl">"</span>
 <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"style02"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">style02</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="dl">"</span><span class="s2">style02</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">"</span><span class="s2">style02</span><span class="dl">"</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnSetRangeClickHandler">여러 셀 동시 적용</a></p>
@@ -2171,12 +2171,12 @@ Sorting이나 Filtering 후에도 같은 데이터셀에 지정된 스타일은 
 4
 5
 6
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style03"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#cc880000"</span><span class="p">,</span>
-    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffff"</span><span class="p">,</span>
-    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">14</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="dl">"</span><span class="s2">style03</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#cc880000</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffffff</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">14</span>
 <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="s2">"style03"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="dl">"</span><span class="s2">style03</span><span class="dl">"</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>셀들에 지정했던 모든 설정을 제거합니다.</p>
@@ -2274,9 +2274,9 @@ $('#btnClearAllClickHandler').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

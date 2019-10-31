@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1860,7 +1860,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2073,18 +2073,18 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffffff"</span><span class="p">,</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff333333"</span><span class="p">,</span>
-    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-    <span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"editable"</span><span class="p">:</span> <span class="kc">false</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="dl">"</span><span class="s2">style01</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffffffff</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff333333</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontBold</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">editable</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">});</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style02"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ff000000"</span><span class="p">,</span>
-    <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ffcccccc"</span><span class="p">,</span>
-    <span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-    <span class="s2">"readOnly"</span><span class="p">:</span> <span class="kc">true</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="dl">"</span><span class="s2">style02</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff000000</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffcccccc</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">readOnly</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2094,8 +2094,8 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s2">"term"</span><span class="p">,</span> <span class="s2">"1997"</span><span class="p">,</span> <span class="s2">"1998"</span><span class="p">],</span> <span class="s2">"style01"</span><span class="p">);</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s2">"2000"</span><span class="p">,</span> <span class="s2">"2001"</span><span class="p">,</span> <span class="s2">"2002"</span><span class="p">],</span> <span class="s2">"style02"</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="dl">"</span><span class="s2">term</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">1997</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">1998</span><span class="dl">"</span><span class="p">],</span> <span class="dl">"</span><span class="s2">style01</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="dl">"</span><span class="s2">2000</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2001</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2002</span><span class="dl">"</span><span class="p">],</span> <span class="dl">"</span><span class="s2">style02</span><span class="dl">"</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>셀들에 지정했던 모든 설정을 제거합니다.</p>
@@ -2153,9 +2153,9 @@ $('#btnClearAllClickHandler').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

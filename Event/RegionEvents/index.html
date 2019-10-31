@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1976,7 +1976,7 @@ var onDoneDataSet = function() {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2332,102 +2332,102 @@ var onDoneDataSet = function() {
 99
 </pre></td><td class="rouge-code"><pre><span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnHeaderClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onColumnHeaderClicked: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onColumnHeaderClicked: </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnHeaderDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onColumnHeaderDblClicked: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onColumnHeaderDblClicked: </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onColumnCheckedChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onColumnCheckedChanged: "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">checked</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onColumnCheckedChanged: </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">checked</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onDataCellClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onDataCellClicked: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onDataCellClicked: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
 <span class="p">};</span>
 <span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onDataCellDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onDataCellDblClicked: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onDataCellDblClicked: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onFooterCellClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onFooterCellClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onFooterCellClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onFooterCellDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onFooterCellDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onFooterCellDblClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onItemChecked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onItemChecked: "</span> <span class="o">+</span> <span class="nx">itemIndex</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onItemChecked: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">itemIndex</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onItemsChecked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">items</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onItemsChecked: "</span> <span class="o">+</span> <span class="nx">items</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onItemsChecked: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">items</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="c1">//flash 지원</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onItemAllChecked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onItemAllChecked: "</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onItemAllChecked: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">checked</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onCheckBarHeadClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onCheckBarHeadClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onCheckBarHeadClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onCheckBarFootClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onCheckBarFootClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onCheckBarFootClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onIndicatorCellClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onIndicatorCellClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onIndicatorCellClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onStateBarCellClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onStateBarCellClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onStateBarCellClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupHeadClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupHeadClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupHeadClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupFootClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupFootClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupFootClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupHeaderFooterClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupHeaderFooterClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupHeaderFooterClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupBarClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupBarClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupBarClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onCheckBarFootDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onCheckBarFootDblClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onCheckBarFootDblClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onIndicatorCellDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onIndicatorCellDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onIndicatorCellDblClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onStateBarCellDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onStateBarCellDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onStateBarCellDblClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupHeadDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupHeadDblClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupHeadDblClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupFootDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupFootDblClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupFootDblClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupHeaderFooterDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupHeaderFooterDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupHeaderFooterDblClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupBarDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupBarDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupBarDblClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onPanelClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onPanelClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onPanelClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onPanelDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onPanelDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onPanelDblClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupPanelClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupPanelClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupPanelClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onRowGroupPanelDblClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onRowGroupPanelDblClicked : "</span> <span class="o">+</span> <span class="s2">"("</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onRowGroupPanelDblClicked : </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onBodyEmptyClicked</span> <span class="o">=</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onBodyEmptyClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onBodyEmptyClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onBodyEmptyDblClicked</span> <span class="o">=</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">addLog</span><span class="p">(</span><span class="s2">"onBodyEmptyDblClicked"</span><span class="p">);</span>
+    <span class="nx">addLog</span><span class="p">(</span><span class="dl">"</span><span class="s2">onBodyEmptyDblClicked</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2464,9 +2464,9 @@ $('#btn').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

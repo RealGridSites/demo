@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1867,7 +1867,7 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2031,19 +2031,19 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[];</span>
 
 <span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">DataColumn</span><span class="p">();</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"column1"</span><span class="p">;</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">=</span> <span class="s2">"Field1"</span><span class="p">;</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="s2">"Column 1"</span> <span class="p">}</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">tag</span> <span class="o">=</span> <span class="s2">"columntag1"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">column1</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Field1</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Column 1</span><span class="dl">"</span> <span class="p">}</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">tag</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">columntag1</span><span class="dl">"</span><span class="p">;</span>
 <span class="nx">columns</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
 
 <span class="p">...</span>
 
 <span class="nx">column</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">DataColumn</span><span class="p">();</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"column6"</span><span class="p">;</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">=</span> <span class="s2">"Field3"</span><span class="p">;</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="s2">"Column 6"</span> <span class="p">}</span>
-<span class="nx">column</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="s2">"#33ffff00"</span> <span class="p">};</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">column6</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Field3</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Column 6</span><span class="dl">"</span> <span class="p">}</span>
+<span class="nx">column</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#33ffff00</span><span class="dl">"</span> <span class="p">};</span>
 <span class="nx">columns</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">column</span><span class="p">);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">(</span><span class="nx">columns</span><span class="p">);</span>
@@ -2074,10 +2074,10 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
 <span class="c1">// column1</span>
 <span class="p">{</span>
-    <span class="na">name</span> <span class="p">:</span> <span class="s2">"column1"</span><span class="p">,</span>
-    <span class="na">fieldName</span> <span class="p">:</span> <span class="s2">"Field1"</span><span class="p">,</span>
+    <span class="na">name</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">column1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">fieldName</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Field1</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">header</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="na">text</span> <span class="p">:</span> <span class="s2">"컬럼 1"</span>
+        <span class="na">text</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">컬럼 1</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="na">footer</span> <span class="p">:</span> <span class="p">{</span>
     <span class="p">},</span>
@@ -2102,7 +2102,7 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"column3"</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="dl">"</span><span class="s2">column3</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">column</span><span class="p">));</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2113,7 +2113,7 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnsByField</span><span class="p">(</span><span class="s2">"Field3"</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnsByField</span><span class="p">(</span><span class="dl">"</span><span class="s2">Field3</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">columns</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2124,7 +2124,7 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnsByTag</span><span class="p">(</span><span class="s2">"columntag1"</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnsByTag</span><span class="p">(</span><span class="dl">"</span><span class="s2">columntag1</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">columns</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2215,9 +2215,9 @@ $('#btnColumnsByTag').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

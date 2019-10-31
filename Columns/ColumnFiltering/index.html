@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1986,7 +1986,7 @@ if (column) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2270,57 +2270,57 @@ if (column) {
 54
 55
 56
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"VINET"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'VINET'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value = 'VINET'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"VICTE"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'VICTE'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">VICTE</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value = 'VICTE'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"HANAR"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'HANAR'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HANAR</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value = 'HANAR'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"'VICTE' or 'HANAR'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"(value = 'VICTE') or (value = 'HANAR')"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">'VICTE' or 'HANAR'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">(value = 'VICTE') or (value = 'HANAR')</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"HANAR: value &gt; 'HANAR'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &gt; 'HANAR'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HANAR: value &gt; 'HANAR'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value &gt; 'HANAR'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"SUPRD"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'SUPRD'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SUPRD</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value = 'SUPRD'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"SUPRD: value &lt;&gt; 'SUPRD'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &lt;&gt; 'SUPRD'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SUPRD: value &lt;&gt; 'SUPRD'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value &lt;&gt; 'SUPRD'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"not equal CustomerID2"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value &lt;&gt; values['CustomerID2']"</span> <span class="c1">// CustomerID와 CustomerID2가 상이한 경우</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">not equal CustomerID2</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value &lt;&gt; values['CustomerID2']</span><span class="dl">"</span> <span class="c1">// CustomerID와 CustomerID2가 상이한 경우</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"W: value like 'L%'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value like 'L%'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">W: value like 'L%'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value like 'L%'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"W: value not like 'L%'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value not like 'L%'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">W: value not like 'L%'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value not like 'L%'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"S: value like '%S'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value like '%S'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">S: value like '%S'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value like '%S'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"S: value not like '%S'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value not like '%S'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">S: value not like '%S'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value not like '%S'</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span> 
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"TC: value match 'TC'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value match 'TC'"</span> <span class="c1">// 문자열에 TC가 포함된 경우</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TC: value match 'TC'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value match 'TC'</span><span class="dl">"</span> <span class="c1">// 문자열에 TC가 포함된 경우</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"match '^RATTC$|^SUPRD$'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value match '^RATTC$|^SUPRD$'"</span> <span class="c1">//RATTC, SUPRD 중 하나인 경우</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">match '^RATTC$|^SUPRD$'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value match '^RATTC$|^SUPRD$'</span><span class="dl">"</span> <span class="c1">//RATTC, SUPRD 중 하나인 경우</span>
     <span class="p">},</span> <span class="p">{</span> 
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"TC: value not match 'TC'"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value not match 'TC'"</span> <span class="c1">// 문자열에 TC가 포함되지 않는 경우</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TC: value not match 'TC'</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value not match 'TC'</span><span class="dl">"</span> <span class="c1">// 문자열에 TC가 포함되지 않는 경우</span>
     <span class="p">}];</span>
 
     <span class="c1">// 컬럼 필터를 재설정한다.</span>
-    <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="nx">filters</span><span class="p">);</span>
+    <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilters</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">,</span> <span class="nx">filters</span><span class="p">);</span>
 
     <span class="c1">// 아래와 같이 호출해도 된다.</span>
     <span class="c1">//column.filters = filters;</span>
@@ -2356,26 +2356,26 @@ if (column) {
 23
 24
 25
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s1">'OrderDate'</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="dl">'</span><span class="s1">OrderDate</span><span class="dl">'</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"1996년"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"year(value) = 1996"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1996년</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">year(value) = 1996</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"1997년"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"year(value) = 1997"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1997년</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">year(value) = 1997</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"10월"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"month(value) = 10"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">10월</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">month(value) = 10</span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span> 
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"8일"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"day(value) = 8 "</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">8일</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">day(value) = 8 </span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"1시"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"hour(value) = 1 "</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1시</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hour(value) = 1 </span><span class="dl">"</span>
     <span class="p">},</span> <span class="p">{</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s2">"1996년10월"</span><span class="p">,</span>
-        <span class="na">criteria</span><span class="p">:</span> <span class="s2">"datestr(value) like '199610%'"</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1996년10월</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">datestr(value) like '199610%'</span><span class="dl">"</span>
     <span class="p">}];</span>
 
     <span class="nx">column</span><span class="p">.</span><span class="nx">filters</span> <span class="o">=</span> <span class="nx">filters</span><span class="p">;</span>
@@ -2389,7 +2389,7 @@ if (column) {
 <a class="btn primary small round lowercase" id="btnClearColumnFilters">ClearColumnFilters</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">clearColumnFilters</span><span class="p">(</span><span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-추가하기">필터 추가하기</h4>
@@ -2414,20 +2414,20 @@ if (column) {
 14
 15
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"VINET"</span><span class="p">,</span>
-    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'VINET'"</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value = 'VINET'</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">active</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">},</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"VICTE"</span><span class="p">,</span>
-    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'VICTE'"</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">VICTE</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value = 'VICTE'</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">active</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">},</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"HANAR"</span><span class="p">,</span>
-    <span class="na">criteria</span><span class="p">:</span> <span class="s2">"value = 'HANAR'"</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HANAR</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value = 'HANAR'</span><span class="dl">"</span>
 <span class="p">}];</span>
 <span class="kd">var</span> <span class="nx">overwrite</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// false면 기존에 같은 이름의 필터가 있을 때 예외 발생.</span>
 
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">addColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="nx">filters</span><span class="p">,</span> <span class="nx">overwrite</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">addColumnFilters</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">,</span> <span class="nx">filters</span><span class="p">,</span> <span class="nx">overwrite</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-제거하기">필터 제거하기</h4>
@@ -2436,7 +2436,7 @@ if (column) {
 <a class="btn primary small round lowercase" id="btnRemoveColumnFilters">RemoveColumnFilters</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">removeColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">]);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">removeColumnFilters</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">VICTE</span><span class="dl">"</span><span class="p">]);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터링-하기">필터링 하기</h4>
@@ -2445,28 +2445,28 @@ if (column) {
 <a class="btn primary small round lowercase" id="btnActivateColumnFilters">ActivateColumnFilters</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateColumnFilters</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">VICTE</span><span class="dl">"</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>필터 해제하기  <br />
 <a class="btn primary small round lowercase" id="btnDeactivateColumnFilters">DeactivateColumnFilters</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateColumnFilters</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">VICTE</span><span class="dl">"</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>모든 필터 적용하기  <br />
 <a class="btn primary small round lowercase" id="btnActivateAllColumnFilters">ActivateAllColumnFilters</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateAllColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateAllColumnFilters</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>모든 필터 해제하기  <br />
 <a class="btn primary small round lowercase" id="btnDeactivateAllColumnFilters">DeactivateAllColumnFilters</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateAllColumnFilters</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">activateAllColumnFilters</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-액션">필터 액션</h4>
@@ -2555,22 +2555,22 @@ if (column) {
 79
 </pre></td><td class="rouge-code"><pre>
 <span class="kd">var</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s2">"autoFilter"</span><span class="p">,</span>
-  <span class="na">text</span><span class="p">:</span> <span class="s2">"Auto Filter"</span><span class="p">,</span>
-  <span class="na">description</span><span class="p">:</span> <span class="s2">"100개의 순차 데이터중 선택하여 filter하는 action."</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">autoFilter</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Auto Filter</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">100개의 순차 데이터중 선택하여 filter하는 action.</span><span class="dl">"</span>
 <span class="p">}];</span>
 
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilterActions</span><span class="p">(</span><span class="s1">'CustomerID'</span><span class="p">,</span> <span class="nx">actions</span><span class="p">);</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilterActions</span><span class="p">(</span><span class="s1">'OrderID'</span><span class="p">,</span> <span class="nx">actions</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilterActions</span><span class="p">(</span><span class="dl">'</span><span class="s1">CustomerID</span><span class="dl">'</span><span class="p">,</span> <span class="nx">actions</span><span class="p">);</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilterActions</span><span class="p">(</span><span class="dl">'</span><span class="s1">OrderID</span><span class="dl">'</span><span class="p">,</span> <span class="nx">actions</span><span class="p">);</span>
 
-<span class="nx">$</span><span class="p">(</span><span class="s2">"#btnFilter"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">,</span> <span class="s2">"disabled"</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">"#txtFilter"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">"'CustomerId' 컬럼에 필터가 설정됐습니다."</span><span class="p">);</span>  
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#btnFilter</span><span class="dl">"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#txtFilter</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">'CustomerId' 컬럼에 필터가 설정됐습니다.</span><span class="dl">"</span><span class="p">);</span>  
 
 <span class="c1">//////////////////////////////////////////////////////////////////////////////    </span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onFilterActionClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"onFilterActionClicked"</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">action</span> <span class="o">==</span> <span class="s2">"autoFilter"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">offset</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#realgrid"</span><span class="p">).</span><span class="nx">offset</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">onFilterActionClicked</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">action</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">autoFilter</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">offset</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#realgrid</span><span class="dl">"</span><span class="p">).</span><span class="nx">offset</span><span class="p">();</span>
 
     <span class="nx">showAutoFiltering</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">offset</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">offset</span><span class="p">.</span><span class="nx">top</span><span class="p">);</span>
   <span class="p">}</span>
@@ -2584,53 +2584,53 @@ if (column) {
   <span class="kd">var</span> <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">column</span><span class="p">).</span><span class="nx">fieldName</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getDistinctValues</span><span class="p">(</span><span class="nx">fieldName</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 
-  <span class="kd">var</span> <span class="nx">span</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#spanFilters"</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">span</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#spanFilters</span><span class="dl">"</span><span class="p">);</span>
   <span class="nx">span</span><span class="p">.</span><span class="nx">empty</span><span class="p">();</span>
   <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;label /&gt;"</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">span</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;label /&gt;</span><span class="dl">"</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">span</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">existsFilter</span> <span class="o">=</span> <span class="nx">autoFilterItems</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">"&lt;input /&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="s2">"checkbox"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"chkAutoFilterItem"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">v</span><span class="p">,</span> <span class="na">checked</span><span class="p">:</span> <span class="nx">existsFilter</span><span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;input /&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">chkAutoFilterItem</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">v</span><span class="p">,</span> <span class="na">checked</span><span class="p">:</span> <span class="nx">existsFilter</span><span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
     <span class="nx">label</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
-    <span class="nx">span</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"&lt;br/&gt;"</span><span class="p">);</span>
+    <span class="nx">span</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;br/&gt;</span><span class="dl">"</span><span class="p">);</span>
   <span class="p">});</span>
 
-  <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"left"</span><span class="p">,</span> <span class="nx">x</span><span class="p">);</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"top"</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#divAutoFilter</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">,</span> <span class="nx">x</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#divAutoFilter</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">top</span><span class="dl">"</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
 
-  <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#divAutoFilter</span><span class="dl">"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">applyAutoFilter</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">filterExpr</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">filterItems</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'input[name="chkAutoFilterItem"]:checked'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">filterExpr</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">filterItems</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">input[name="chkAutoFilterItem"]:checked</span><span class="dl">'</span><span class="p">);</span>
   <span class="nx">autoFilterItems</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">filterItems</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">autoFilterItems</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">filterItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">filterExpr</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">)</span>
-      <span class="nx">filterExpr</span> <span class="o">+=</span> <span class="s2">" or "</span><span class="p">;</span>
-    <span class="nx">filterExpr</span> <span class="o">+=</span> <span class="s2">"(value = '"</span> <span class="o">+</span> <span class="nx">filterItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">+</span> <span class="s2">"')"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">filterExpr</span> <span class="o">!=</span> <span class="dl">""</span><span class="p">)</span>
+      <span class="nx">filterExpr</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2"> or </span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">filterExpr</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">(value = '</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">filterItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">')</span><span class="dl">"</span><span class="p">;</span>
   <span class="p">};</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filterExpr</span><span class="p">);</span>
   <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"auto_result"</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">auto_result</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">criteria</span><span class="p">:</span> <span class="nx">filterExpr</span><span class="p">,</span>
     <span class="na">active</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="na">hidden</span><span class="p">:</span><span class="kc">true</span>
   <span class="p">};</span>
 
   <span class="nx">gridView</span><span class="p">.</span><span class="nx">addColumnFilters</span><span class="p">(</span><span class="nx">autoFiltercolumn</span><span class="p">,</span> <span class="nx">filters</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#divAutoFilter</span><span class="dl">"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 <span class="p">};</span>
 
 <span class="kd">function</span> <span class="nx">closeAutoFilter</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">"#divAutoFilter"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#divAutoFilter</span><span class="dl">"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 <span class="p">}</span>
 <span class="c1">/////////////////////////////////////////////////////////////////////////////</span>
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"divAutoFilter"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"display:none; position:absolute; height:260px; background-color:#eeeeee; border:1px solid black;"</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"spanFilters"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"overflow-y:scroll; display:block; width:100%; height:230px"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">divAutoFilter</span><span class="dl">"</span> <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">display:none; position:absolute; height:260px; background-color:#eeeeee; border:1px solid black;</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">spanFilters</span><span class="dl">"</span> <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">overflow-y:scroll; display:block; width:100%; height:230px</span><span class="dl">"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"applyAutoFilter"</span> <span class="nx">value</span><span class="o">=</span><span class="s2">"Apply"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"applyAutoFilter();"</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"button gray medium3"</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"cancelAutoFilter"</span> <span class="nx">value</span><span class="o">=</span><span class="s2">"Cancel"</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"closeAutoFilter();"</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"button gray medium3"</span> <span class="o">/&gt;</span>
+</span>    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">applyAutoFilter</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">Apply</span><span class="dl">"</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">applyAutoFilter();</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">button gray medium3</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">cancelAutoFilter</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">Cancel</span><span class="dl">"</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">closeAutoFilter();</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">button gray medium3</span><span class="dl">"</span> <span class="o">/&gt;</span>
 <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2641,7 +2641,7 @@ if (column) {
 <p><a class="btn primary small round lowercase" id="btnHideColumnFilters">컬럼 필터 값 숨기기</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">hideColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"VINET"</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">hideColumnFilters</span><span class="p">(</span><span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">,</span> <span class="p">[</span><span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>CustomerID에 설정된 필터 전체 목록을 숨깁니다.</p>
@@ -2649,7 +2649,7 @@ if (column) {
 <p><a class="btn primary small round lowercase" id="btnHideAllColumnFilters">컬럼 필터 값 숨기기</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">hideAllColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">hideAllColumnFilters</span><span class="p">(</span><span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="필터-검색-기능-설정">필터 검색 기능 설정</h4>
@@ -2673,8 +2673,8 @@ if (column) {
   <span class="na">selector</span><span class="p">:{</span>
     <span class="na">showSearchInput</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="na">showButtons</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
-    <span class="na">acceptText</span><span class="p">:</span><span class="s2">"선택"</span><span class="p">,</span>
-    <span class="na">cancelText</span><span class="p">:</span><span class="s2">"취소"</span>
+    <span class="na">acceptText</span><span class="p">:</span><span class="dl">"</span><span class="s2">선택</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">cancelText</span><span class="p">:</span><span class="dl">"</span><span class="s2">취소</span><span class="dl">"</span>
   <span class="p">}</span>
 <span class="p">})</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -2716,11 +2716,11 @@ if (column) {
 29
 30
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">filterFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">,</span> <span class="nx">dataRow</span><span class="p">,</span> <span class="nx">fieldName</span> <span class="p">,</span> <span class="nx">filter</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"VINET"</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">){</span>
       <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"VICTE"</span><span class="p">){</span>
+    <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">VICTE</span><span class="dl">"</span><span class="p">){</span>
       <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"HANAR"</span><span class="p">){</span>
+     <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">tag</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">HANAR</span><span class="dl">"</span><span class="p">){</span>
       <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
       <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
@@ -2728,23 +2728,23 @@ if (column) {
   <span class="p">}</span>
   <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span> 
-   <span class="na">name</span><span class="p">:</span><span class="s2">"filter1"</span><span class="p">,</span>
-   <span class="na">text</span><span class="p">:</span><span class="s2">"VINET"</span><span class="p">,</span>
+   <span class="na">name</span><span class="p">:</span><span class="dl">"</span><span class="s2">filter1</span><span class="dl">"</span><span class="p">,</span>
+   <span class="na">text</span><span class="p">:</span><span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">,</span>
    <span class="na">tag</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
    <span class="na">criteria</span><span class="p">:</span><span class="nx">filterFunc</span>
     <span class="p">},{</span> 
-   <span class="na">name</span><span class="p">:</span><span class="s2">"filter2"</span><span class="p">,</span>
-   <span class="na">text</span><span class="p">:</span><span class="s2">"VICTE"</span><span class="p">,</span>
+   <span class="na">name</span><span class="p">:</span><span class="dl">"</span><span class="s2">filter2</span><span class="dl">"</span><span class="p">,</span>
+   <span class="na">text</span><span class="p">:</span><span class="dl">"</span><span class="s2">VICTE</span><span class="dl">"</span><span class="p">,</span>
    <span class="na">tag</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
    <span class="na">criteria</span><span class="p">:</span><span class="nx">filterFunc</span>
     <span class="p">},{</span> 
-   <span class="na">name</span><span class="p">:</span><span class="s2">"filter3"</span><span class="p">,</span>
-   <span class="na">text</span><span class="p">:</span><span class="s2">"HANAR"</span><span class="p">,</span>
+   <span class="na">name</span><span class="p">:</span><span class="dl">"</span><span class="s2">filter3</span><span class="dl">"</span><span class="p">,</span>
+   <span class="na">text</span><span class="p">:</span><span class="dl">"</span><span class="s2">HANAR</span><span class="dl">"</span><span class="p">,</span>
    <span class="na">tag</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
    <span class="na">criteria</span><span class="p">:</span><span class="nx">filterFunc</span>
     <span class="p">}</span>
   <span class="p">]</span>
-  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilters</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="nx">filters</span><span class="p">);</span>
+  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnFilters</span><span class="p">(</span><span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">,</span> <span class="nx">filters</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
@@ -2955,9 +2955,9 @@ $("#btnSetFilterFunc").click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1870,7 +1870,7 @@
     var treeDataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         treeDataProvider = new RealGridJS.LocalTreeDataProvider();
         treeView = new RealGridJS.TreeView("realtree");
@@ -2133,17 +2133,17 @@
   <span class="c1">// 자식들을 가져와 그 행에 추가한다.</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getChildCount</span><span class="p">(</span><span class="nx">rowId</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-      <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-      <span class="na">url</span><span class="p">:</span> <span class="s2">"http://"</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="o">+</span> <span class="s2">"/resource/data/treedata5.txt?__time__="</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
-      <span class="na">dataType</span><span class="p">:</span> <span class="s2">"text"</span><span class="p">,</span>
+      <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/resource/data/treedata5.txt?__time__=</span><span class="dl">"</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
+      <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">fillCsvData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span>
           <span class="p">{</span>
             <span class="na">append</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="na">parent</span><span class="p">:</span> <span class="nx">rowId</span><span class="p">,</span>
-            <span class="na">children</span><span class="p">:</span> <span class="s2">"childrenField"</span><span class="p">,</span>
-            <span class="na">tree</span><span class="p">:</span> <span class="s2">"tree"</span><span class="p">,</span>
-            <span class="na">icon</span><span class="p">:</span> <span class="s2">"icon"</span><span class="p">,</span>
+            <span class="na">children</span><span class="p">:</span> <span class="dl">"</span><span class="s2">childrenField</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">tree</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tree</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">icon</span><span class="p">:</span> <span class="dl">"</span><span class="s2">icon</span><span class="dl">"</span><span class="p">,</span>
             <span class="na">quoted</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="na">start</span><span class="p">:</span> <span class="mi">0</span>
           <span class="p">}</span>
@@ -2220,9 +2220,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1857,8 +1857,8 @@
 3
 4
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">preview</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"http://URL/oz70/ozGroup.html"</span><span class="p">,</span> <span class="s2">"open"</span><span class="p">,</span> <span class="s2">"height=900,width=1300,resizable=yes"</span><span class="p">);</span>
-    <span class="nx">popup</span><span class="p">.</span><span class="nx">sampleData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getOutputRows</span><span class="p">({</span><span class="na">datetimeFormat</span><span class="p">:</span> <span class="s2">"yyyy/MM/dd"</span><span class="p">}));</span>
+    <span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://URL/oz70/ozGroup.html</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">height=900,width=1300,resizable=yes</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">popup</span><span class="p">.</span><span class="nx">sampleData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getOutputRows</span><span class="p">({</span><span class="na">datetimeFormat</span><span class="p">:</span> <span class="dl">"</span><span class="s2">yyyy/MM/dd</span><span class="dl">"</span><span class="p">}));</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -1885,15 +1885,15 @@
 
 <span class="kd">function</span> <span class="nx">SetOZParamters_OZViewer</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">oz</span><span class="p">;</span>
-    <span class="nx">oz</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"OZViewer"</span><span class="p">);</span>
-    <span class="nx">oz</span><span class="p">.</span><span class="nx">sendToActionScript</span><span class="p">(</span><span class="s2">"connection.servlet"</span><span class="p">,</span><span class="s2">"http://URL/oz70/server"</span><span class="p">);</span>
-    <span class="nx">oz</span><span class="p">.</span><span class="nx">sendToActionScript</span><span class="p">(</span><span class="s2">"connection.reportname"</span><span class="p">,</span><span class="s2">"ozGroup.ozr"</span><span class="p">);</span>
-    <span class="nx">oz</span><span class="p">.</span><span class="nx">sendToActionScript</span><span class="p">(</span><span class="s2">"connection.pcount"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">);</span>
-    <span class="nx">oz</span><span class="p">.</span><span class="nx">sendToActionScript</span><span class="p">(</span><span class="s2">"connection.args1"</span><span class="p">,</span>  <span class="s2">"jsondata={'sample':"</span> <span class="o">+</span> <span class="nx">gridData</span> <span class="o">+</span> <span class="s2">" }"</span><span class="p">);</span>
+    <span class="nx">oz</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">OZViewer</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">oz</span><span class="p">.</span><span class="nx">sendToActionScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">connection.servlet</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">http://URL/oz70/server</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">oz</span><span class="p">.</span><span class="nx">sendToActionScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">connection.reportname</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">ozGroup.ozr</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">oz</span><span class="p">.</span><span class="nx">sendToActionScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">connection.pcount</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">oz</span><span class="p">.</span><span class="nx">sendToActionScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">connection.args1</span><span class="dl">"</span><span class="p">,</span>  <span class="dl">"</span><span class="s2">jsondata={'sample':</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">gridData</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> }</span><span class="dl">"</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">start_ozjs</span><span class="p">(</span><span class="s2">"OZViewer"</span><span class="p">,</span><span class="s2">"http://URL/oz70/ozhviewer70/"</span><span class="p">);</span>
+<span class="nx">start_ozjs</span><span class="p">(</span><span class="dl">"</span><span class="s2">OZViewer</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">http://URL/oz70/ozhviewer70/</span><span class="dl">"</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
@@ -1913,9 +1913,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

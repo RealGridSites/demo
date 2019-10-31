@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1878,7 +1878,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2126,7 +2126,7 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">colName</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">colName</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#columnList</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">colName</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">proxy</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="nx">colName</span><span class="p">);</span>
@@ -2147,7 +2147,7 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
-  <span class="na">style</span><span class="p">:</span> <span class="s2">"none"</span>
+  <span class="na">style</span><span class="p">:</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2161,7 +2161,7 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
-  <span class="na">style</span><span class="p">:</span> <span class="s2">"exclusive"</span>
+  <span class="na">style</span><span class="p">:</span> <span class="dl">"</span><span class="s2">exclusive</span><span class="dl">"</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2175,7 +2175,7 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
-  <span class="na">style</span><span class="p">:</span> <span class="s2">"inclusive"</span>
+  <span class="na">style</span><span class="p">:</span> <span class="dl">"</span><span class="s2">inclusive</span><span class="dl">"</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2189,7 +2189,7 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
-  <span class="na">style</span><span class="p">:</span> <span class="s2">"reverse"</span>
+  <span class="na">style</span><span class="p">:</span> <span class="dl">"</span><span class="s2">reverse</span><span class="dl">"</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2205,7 +2205,7 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
-  <span class="na">handleVisibility</span><span class="p">:</span> <span class="s2">"hidden"</span>
+  <span class="na">handleVisibility</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hidden</span><span class="dl">"</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2219,7 +2219,7 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
-  <span class="na">handleVisibility</span><span class="p">:</span> <span class="s2">"visible"</span>
+  <span class="na">handleVisibility</span><span class="p">:</span> <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2233,7 +2233,7 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">([]);</span>
 
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
-  <span class="na">handleVisibility</span><span class="p">:</span> <span class="s2">"always"</span>
+  <span class="na">handleVisibility</span><span class="p">:</span> <span class="dl">"</span><span class="s2">always</span><span class="dl">"</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2260,12 +2260,12 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">imageHandle</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">handleImages</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">ascending</span><span class="p">:</span> <span class="s2">"/Images/desc.png"</span><span class="p">,</span>
-      <span class="na">descending</span><span class="p">:</span> <span class="s2">"/Images/asc.png"</span><span class="p">,</span>
-      <span class="na">hoveredAscending</span><span class="p">:</span> <span class="s2">"/Images/desc_hov.png"</span><span class="p">,</span>
-      <span class="na">hoveredDescending</span><span class="p">:</span> <span class="s2">"/Images/asc_hov.png"</span><span class="p">,</span>
-      <span class="na">none</span><span class="p">:</span> <span class="s2">"/Images/none.png"</span><span class="p">,</span>
-      <span class="na">hoveredNone</span><span class="p">:</span> <span class="s2">"/Images/none_hov.png"</span>
+      <span class="na">ascending</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/Images/desc.png</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">descending</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/Images/asc.png</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">hoveredAscending</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/Images/desc_hov.png</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">hoveredDescending</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/Images/asc_hov.png</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">none</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/Images/none.png</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">hoveredNone</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/Images/none_hov.png</span><span class="dl">"</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
@@ -2291,11 +2291,11 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setSortingOptions</span><span class="p">({</span>
   <span class="na">showSortOrder</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
   <span class="na">sortOrderStyles</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">font</span><span class="p">:</span><span class="s2">"굴림체"</span><span class="p">,</span> 
+    <span class="na">font</span><span class="p">:</span><span class="dl">"</span><span class="s2">굴림체</span><span class="dl">"</span><span class="p">,</span> 
     <span class="na">fontSize</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> 
     <span class="na">fontBold</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> 
-    <span class="na">foreground</span><span class="p">:</span><span class="s2">"#ffff8888"</span><span class="p">,</span> 
-    <span class="na">textAlignment</span><span class="p">:</span><span class="s2">"far"</span>
+    <span class="na">foreground</span><span class="p">:</span><span class="dl">"</span><span class="s2">#ffff8888</span><span class="dl">"</span><span class="p">,</span> 
+    <span class="na">textAlignment</span><span class="p">:</span><span class="dl">"</span><span class="s2">far</span><span class="dl">"</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -2467,9 +2467,9 @@ $("#btnSetShowSortOrder").click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

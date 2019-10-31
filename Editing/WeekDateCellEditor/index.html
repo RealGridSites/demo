@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1861,7 +1861,7 @@ yyyyWW -&gt; yyyy-WW 컬럼은 yyyyWW 형태의 데이터를 그리드에서 마
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2112,27 +2112,27 @@ yyyyWW -&gt; yyyy-WW 컬럼은 yyyyWW 형태의 데이터를 그리드에서 마
 24
 25
 </pre></td><td class="rouge-code"><pre><span class="p">{</span>
-    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"dateTime3"</span><span class="p">,</span>
-    <span class="s2">"fieldName"</span><span class="p">:</span> <span class="s2">"dateTime3"</span><span class="p">,</span>
-    <span class="s2">"width"</span><span class="p">:</span> <span class="s2">"160"</span><span class="p">,</span>
-    <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"yyyyWW -&gt; yyyy-WW"</span><span class="p">,</span>
-        <span class="s2">"styles"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"background"</span><span class="p">:</span> <span class="s2">"linear,#22ffd500,#ffffd500,90"</span>
+    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dateTime3</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">fieldName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dateTime3</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">160</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">header</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">yyyyWW -&gt; yyyy-WW</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">styles</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">linear,#22ffd500,#ffffd500,90</span><span class="dl">"</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s2">"displayRegExp"</span><span class="p">:</span> <span class="o">/^</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">4</span><span class="p">})([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">2</span><span class="p">})</span><span class="nx">$</span><span class="o">/</span><span class="p">,</span>
-    <span class="s2">"displayReplace"</span><span class="p">:</span> <span class="s2">"$1-$2"</span><span class="p">,</span>
-    <span class="s2">"editor"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"date"</span><span class="p">,</span>
-        <span class="s2">"textReadOnly"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s2">"commitOnSelect"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s2">"yearNavigation"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s2">"showWeeks"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s2">"weekSelectable"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s2">"startWeek"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="s2">"mask"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"editMask"</span><span class="p">:</span> <span class="s2">"9999-99"</span>
+    <span class="dl">"</span><span class="s2">displayRegExp</span><span class="dl">"</span><span class="p">:</span> <span class="o">/^</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">4</span><span class="p">})([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">2</span><span class="p">})</span><span class="nx">$</span><span class="o">/</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">displayReplace</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$1-$2</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">editor</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">date</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">textReadOnly</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">commitOnSelect</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">yearNavigation</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">showWeeks</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">weekSelectable</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">startWeek</span><span class="dl">"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">mask</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">editMask</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9999-99</span><span class="dl">"</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -2155,9 +2155,9 @@ yyyyWW -&gt; yyyy-WW 컬럼은 yyyyWW 형태의 데이터를 그리드에서 마
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

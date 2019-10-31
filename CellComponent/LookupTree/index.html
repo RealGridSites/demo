@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1923,7 +1923,7 @@ var onDoneDataSet = function() {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2189,19 +2189,19 @@ var onDoneDataSet = function() {
 42
 </pre></td><td class="rouge-code"><pre><span class="c1">//lookup tree에서 사용할 lookup source들을 등록</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setLookups</span><span class="p">([{</span>
-    <span class="na">id</span><span class="p">:</span> <span class="s2">"customers"</span><span class="p">,</span>
+    <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">customers</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">levels</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="na">keys</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">[</span><span class="s2">"France"</span><span class="p">,</span> <span class="s2">"VINET"</span><span class="p">],</span>
-        <span class="p">[</span><span class="s2">"France"</span><span class="p">,</span> <span class="s2">"VICTE"</span><span class="p">],</span>
-        <span class="p">[</span><span class="s2">"Germany"</span><span class="p">,</span> <span class="s2">"TOMSP"</span><span class="p">],</span>
-        <span class="p">[</span><span class="s2">"Brazil"</span><span class="p">,</span> <span class="s2">"HANAR"</span><span class="p">]</span>
+        <span class="p">[</span><span class="dl">"</span><span class="s2">France</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">VINET</span><span class="dl">"</span><span class="p">],</span>
+        <span class="p">[</span><span class="dl">"</span><span class="s2">France</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">VICTE</span><span class="dl">"</span><span class="p">],</span>
+        <span class="p">[</span><span class="dl">"</span><span class="s2">Germany</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">TOMSP</span><span class="dl">"</span><span class="p">],</span>
+        <span class="p">[</span><span class="dl">"</span><span class="s2">Brazil</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">HANAR</span><span class="dl">"</span><span class="p">]</span>
     <span class="p">],</span>
     <span class="na">values</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">"Vins et alcools Chevalier"</span><span class="p">,</span>
-        <span class="s2">"Victuailles en stock"</span><span class="p">,</span>
-        <span class="s2">"Toms Spezialitäten"</span><span class="p">,</span>
-        <span class="s2">"Hanari Carnes"</span>
+        <span class="dl">"</span><span class="s2">Vins et alcools Chevalier</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Victuailles en stock</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Toms Spezialitäten</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Hanari Carnes</span><span class="dl">"</span>
     <span class="p">]</span>
 <span class="p">}]);</span>
 
@@ -2209,22 +2209,22 @@ var onDoneDataSet = function() {
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([</span>
     <span class="p">...</span>
     <span class="p">{</span>
-        <span class="nl">name</span><span class="p">:</span> <span class="s2">"CustomerID2"</span><span class="p">,</span>
-        <span class="nx">fieldName</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-        <span class="nx">type</span><span class="p">:</span> <span class="s2">"data"</span><span class="p">,</span>
-        <span class="nx">width</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
-        <span class="nx">lookupDisplay</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
-        <span class="nx">lookupSourceId</span><span class="p">:</span> <span class="s2">"customers"</span><span class="p">,</span>
+        <span class="nl">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CustomerID2</span><span class="dl">"</span><span class="p">,</span>
+        <span class="nx">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">,</span>
+        <span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span>
+        <span class="nx">width</span><span class="p">:</span> <span class="dl">"</span><span class="s2">200</span><span class="dl">"</span><span class="p">,</span>
+        <span class="nx">lookupDisplay</span><span class="p">:</span> <span class="dl">"</span><span class="s2">true</span><span class="dl">"</span><span class="p">,</span>
+        <span class="nx">lookupSourceId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">customers</span><span class="dl">"</span><span class="p">,</span>
         <span class="nx">lookupKeyFields</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">"Country"</span><span class="p">,</span>
-            <span class="s2">"CustomerID"</span>
+            <span class="dl">"</span><span class="s2">Country</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span>
         <span class="p">],</span>
         <span class="nx">styles</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nl">background</span><span class="p">:</span> <span class="s2">"#ffffff99"</span><span class="p">,</span>
-            <span class="nx">textAlignment</span><span class="p">:</span> <span class="s2">"center"</span>
+            <span class="nl">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffffff99</span><span class="dl">"</span><span class="p">,</span>
+            <span class="nx">textAlignment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span>
         <span class="p">},</span>
         <span class="nx">header</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nl">text</span><span class="p">:</span> <span class="s2">"Customer ID 3"</span>
+            <span class="nl">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Customer ID 3</span><span class="dl">"</span>
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="p">...</span>
@@ -2273,7 +2273,7 @@ var onDoneDataSet = function() {
 36
 </pre></td><td class="rouge-code"><pre><span class="c1">//사용자 입력이 셀에 반영될때 발생하는 이벤트</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onEditCommit</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">field</span> <span class="o">==</span> <span class="s2">"Country"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">field</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">Country</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">lookupDataChange</span><span class="p">(</span><span class="nx">newValue</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">};</span>
@@ -2281,7 +2281,7 @@ var onDoneDataSet = function() {
 <span class="c1">//그리드의 포커스 셀의 위치가 변경된 후 발생하는 이벤트</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">onCurrentChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">newIndex</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">newIndex</span> <span class="o">&amp;&amp;</span> <span class="nx">newIndex</span><span class="p">.</span><span class="nx">dataRow</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">keyValue</span> <span class="o">=</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">newIndex</span><span class="p">.</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="s2">"Country"</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">keyValue</span> <span class="o">=</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">newIndex</span><span class="p">.</span><span class="nx">itemIndex</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Country</span><span class="dl">"</span><span class="p">);</span>
         <span class="nx">lookupDataChange</span><span class="p">(</span><span class="nx">keyValue</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">};</span>
@@ -2291,15 +2291,15 @@ var onDoneDataSet = function() {
     <span class="k">if</span> <span class="p">(</span><span class="nx">oldKey</span> <span class="o">!=</span> <span class="nx">keyValue</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span> <span class="na">country</span><span class="p">:</span> <span class="nx">keyValue</span> <span class="p">};</span>
  
-        <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s2">"/Demo/GetCustomerByCountry"</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">/Demo/GetCustomerByCountry</span><span class="dl">"</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">lookups</span> <span class="o">=</span> <span class="p">[];</span>
             <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">existsLookupData</span><span class="p">(</span><span class="s2">"customers"</span><span class="p">,</span> <span class="p">[</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">Country</span><span class="p">,</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">CustomerID</span><span class="p">]))</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">existsLookupData</span><span class="p">(</span><span class="dl">"</span><span class="s2">customers</span><span class="dl">"</span><span class="p">,</span> <span class="p">[</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">Country</span><span class="p">,</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">CustomerID</span><span class="p">]))</span> <span class="p">{</span>
                     <span class="kd">var</span> <span class="nx">lookup</span> <span class="o">=</span> <span class="p">[</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">Country</span><span class="p">,</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">CustomerID</span><span class="p">,</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">CompanyName</span><span class="p">];</span>
                     <span class="nx">lookups</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">lookup</span><span class="p">);</span>
                 <span class="p">}</span>
             <span class="p">}</span>
-            <span class="nx">gridView</span><span class="p">.</span><span class="nx">fillLookupData</span><span class="p">(</span><span class="s2">"customers"</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">gridView</span><span class="p">.</span><span class="nx">fillLookupData</span><span class="p">(</span><span class="dl">"</span><span class="s2">customers</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
                 <span class="na">rows</span><span class="p">:</span> <span class="nx">lookups</span>
             <span class="p">});</span>
         <span class="p">});</span>
@@ -2326,9 +2326,9 @@ var onDoneDataSet = function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

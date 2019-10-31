@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -2001,7 +2001,7 @@ function setHiChart(provider) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2240,15 +2240,15 @@ function setHiChart(provider) {
 14
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setFilter</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="kd">var</span> <span class="nx">vals</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getDistinctValues</span><span class="p">(</span><span class="s2">"year"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">vals</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getDistinctValues</span><span class="p">(</span><span class="dl">"</span><span class="s2">year</span><span class="dl">"</span><span class="p">);</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">vals</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">filter</span> <span class="o">=</span> <span class="p">{};</span>
         <span class="nx">filter</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">v</span><span class="p">;</span>
-        <span class="nx">filter</span><span class="p">.</span><span class="nx">criteria</span> <span class="o">=</span> <span class="s2">"value = '"</span> <span class="o">+</span> <span class="nx">v</span> <span class="o">+</span> <span class="s2">"'"</span><span class="p">;</span>
+        <span class="nx">filter</span><span class="p">.</span><span class="nx">criteria</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">value = '</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">v</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">'</span><span class="dl">"</span><span class="p">;</span>
         <span class="nx">filters</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">filter</span><span class="p">);</span>
     <span class="p">});</span>
  
-    <span class="kd">var</span> <span class="nx">col</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="s2">"Year"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">col</span> <span class="o">=</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">columnByName</span><span class="p">(</span><span class="dl">"</span><span class="s2">Year</span><span class="dl">"</span><span class="p">);</span>
     <span class="nx">col</span><span class="p">.</span><span class="nx">filters</span> <span class="o">=</span> <span class="nx">filters</span><span class="p">;</span>
     <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="nx">col</span><span class="p">);</span>
 <span class="p">}</span>
@@ -2302,10 +2302,10 @@ function setHiChart(provider) {
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">jObj</span><span class="p">.</span><span class="nx">Year</span><span class="p">)</span> <span class="nx">jObj</span><span class="p">.</span><span class="nx">Year</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
             <span class="nx">jArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">jObj</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#container"</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#container</span><span class="dl">"</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">();</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">chart</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
         <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">"Year"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">Year</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
                 <span class="kd">var</span> <span class="nx">cate</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">jArr</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">Year</span><span class="p">;</span>
                 <span class="p">});</span>
@@ -2413,23 +2413,23 @@ function setHiChart(provider) {
     <span class="c1">//필터 결과에 맞는 categories 목록 생성</span>
     <span class="kd">var</span> <span class="nx">categories</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getItemCount</span><span class="p">();</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="nx">categories</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="s2">"Year"</span><span class="p">));</span>
+        <span class="nx">categories</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">gridView</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Year</span><span class="dl">"</span><span class="p">));</span>
     <span class="p">}</span>
 	
-    <span class="kd">var</span> <span class="nx">diVal</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"DIncome"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">diVal</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="dl">"</span><span class="s2">DIncome</span><span class="dl">"</span><span class="p">);</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">diVal</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">v</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span>
             <span class="nx">diVal</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">});</span>
  	
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">({</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#container</span><span class="dl">'</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">({</span>
         <span class="na">title</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">text</span><span class="p">:</span> <span class="s1">'통계청 총생산소득'</span><span class="p">,</span>
+            <span class="na">text</span><span class="p">:</span> <span class="dl">'</span><span class="s1">통계청 총생산소득</span><span class="dl">'</span><span class="p">,</span>
             <span class="na">x</span><span class="p">:</span> <span class="o">-</span><span class="mi">20</span>
             <span class="c1">//center</span>
         <span class="p">},</span>
         <span class="na">subtitle</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">text</span><span class="p">:</span> <span class="s1">'www.realgrid.com'</span><span class="p">,</span>
+            <span class="na">text</span><span class="p">:</span> <span class="dl">'</span><span class="s1">www.realgrid.com</span><span class="dl">'</span><span class="p">,</span>
             <span class="na">x</span><span class="p">:</span> <span class="o">-</span><span class="mi">20</span>
         <span class="p">},</span>
         <span class="na">xAxis</span><span class="p">:</span> <span class="p">{</span>
@@ -2438,48 +2438,48 @@ function setHiChart(provider) {
         <span class="p">},</span>
         <span class="na">yAxis</span><span class="p">:</span> <span class="p">[{</span>
             <span class="na">title</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">text</span><span class="p">:</span> <span class="s1">'소득 ($)'</span>
+                <span class="na">text</span><span class="p">:</span> <span class="dl">'</span><span class="s1">소득 ($)</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="na">labels</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">format</span><span class="p">:</span> <span class="s1">'{value} $'</span>
+                <span class="na">format</span><span class="p">:</span> <span class="dl">'</span><span class="s1">{value} $</span><span class="dl">'</span>
             <span class="p">}</span>
         <span class="p">}],</span>
         <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">shared</span><span class="p">:</span> <span class="kc">true</span> <span class="c1">// 한 로우에 여러 컬럼의 값을 표시</span>
         <span class="p">},</span>
         <span class="na">legend</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">layout</span><span class="p">:</span> <span class="s1">'vertical'</span><span class="p">,</span>
-            <span class="na">align</span><span class="p">:</span> <span class="s1">'right'</span><span class="p">,</span>
-            <span class="na">verticalAlign</span><span class="p">:</span> <span class="s1">'middle'</span><span class="p">,</span>
+            <span class="na">layout</span><span class="p">:</span> <span class="dl">'</span><span class="s1">vertical</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">align</span><span class="p">:</span> <span class="dl">'</span><span class="s1">right</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">verticalAlign</span><span class="p">:</span> <span class="dl">'</span><span class="s1">middle</span><span class="dl">'</span><span class="p">,</span>
             <span class="na">borderWidth</span><span class="p">:</span> <span class="mi">0</span>
         <span class="p">},</span>
         <span class="na">series</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="na">type</span><span class="p">:</span> <span class="s1">'spline'</span><span class="p">,</span>
-            <span class="na">name</span><span class="p">:</span> <span class="s2">"GDP"</span><span class="p">,</span>
-            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"GDP"</span><span class="p">),</span>
+            <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">spline</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GDP</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="dl">"</span><span class="s2">GDP</span><span class="dl">"</span><span class="p">),</span>
             <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s2">"$ ($100 million)"</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$ ($100 million)</span><span class="dl">"</span>
             <span class="p">}</span>
         <span class="p">},</span> <span class="p">{</span>
-            <span class="na">type</span><span class="p">:</span> <span class="s1">'spline'</span><span class="p">,</span>
-            <span class="na">name</span><span class="p">:</span> <span class="s2">"GNI"</span><span class="p">,</span>
-            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"GNI"</span><span class="p">),</span>
+            <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">spline</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GNI</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="dl">"</span><span class="s2">GNI</span><span class="dl">"</span><span class="p">),</span>
             <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s2">"$ ($100 million)"</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$ ($100 million)</span><span class="dl">"</span>
             <span class="p">}</span>
         <span class="p">},</span> <span class="p">{</span>
-            <span class="na">type</span><span class="p">:</span> <span class="s1">'spline'</span><span class="p">,</span>
-            <span class="na">name</span><span class="p">:</span> <span class="s2">"PGNI"</span><span class="p">,</span>
-            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="s2">"PGNI"</span><span class="p">),</span>
+            <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">spline</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PGNI</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="dl">"</span><span class="s2">PGNI</span><span class="dl">"</span><span class="p">),</span>
             <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s2">"$"</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$</span><span class="dl">"</span>
             <span class="p">}</span>
         <span class="p">},</span> <span class="p">{</span>
-            <span class="na">type</span><span class="p">:</span> <span class="s1">'spline'</span><span class="p">,</span>
-            <span class="na">name</span><span class="p">:</span> <span class="s2">"DIncome"</span><span class="p">,</span>
+            <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">spline</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">DIncome</span><span class="dl">"</span><span class="p">,</span>
             <span class="na">data</span><span class="p">:</span> <span class="nx">diVal</span><span class="p">,</span>
             <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s2">"$"</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$</span><span class="dl">"</span>
             <span class="p">}</span>
         <span class="p">}],</span>
         <span class="na">chart</span><span class="p">:</span> <span class="p">{</span>
@@ -2513,9 +2513,9 @@ function setHiChart(provider) {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1897,7 +1897,7 @@
     var treeDataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         treeDataProvider = new RealGridJS.LocalTreeDataProvider();
         treeView = new RealGridJS.TreeView("realtree");
@@ -2132,7 +2132,7 @@
 </pre></td><td class="rouge-code"><pre><span class="c1">// 최상위 노드에 행 추가</span>
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">addChildRow</span><span class="p">(</span>
   <span class="o">-</span><span class="mi">1</span><span class="p">,</span>     <span class="c1">// parent rowId</span>
-  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"최상위 노드"</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="dl">"</span><span class="s2">최상위 노드</span><span class="dl">"</span><span class="p">],</span>
   <span class="mi">3</span><span class="p">,</span>      <span class="c1">// icon index</span>
   <span class="kc">false</span>   <span class="c1">// children(자식 보유 여부)</span>
 <span class="p">);</span>
@@ -2154,7 +2154,7 @@
 <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">insertChildRow</span><span class="p">(</span>
   <span class="mi">2</span><span class="p">,</span>      <span class="c1">// parent rowId</span>
   <span class="mi">2</span><span class="p">,</span>      <span class="c1">// child index</span>
-  <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"세번째 자식 노드"</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="dl">"</span><span class="s2">세번째 자식 노드</span><span class="dl">"</span><span class="p">],</span>
   <span class="mi">8</span><span class="p">,</span>      <span class="c1">// icon index</span>
   <span class="kc">false</span>   <span class="c1">// children(자식 보유 여부)</span>
 <span class="p">);</span>
@@ -2178,10 +2178,10 @@
 4
 5
 </pre></td><td class="rouge-code"><pre><span class="c1">// '일본'을 'Japan'으로 수정, '일본'의 rowId=4</span>
-<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">updateRow</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"Japan"</span><span class="p">]);</span>
+<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">updateRow</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Japan</span><span class="dl">"</span><span class="p">]);</span>
 
 <span class="c1">// '마카오'를 '홍콩'으로 수정, '마카오'의 rowId=3</span>
-<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">updateStrictRow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">{</span><span class="na">Col0</span><span class="p">:</span> <span class="s2">"홍콩"</span><span class="p">});</span>
+<span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">updateStrictRow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">{</span><span class="na">Col0</span><span class="p">:</span> <span class="dl">"</span><span class="s2">홍콩</span><span class="dl">"</span><span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="삭제">삭제</h4>
@@ -2284,9 +2284,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

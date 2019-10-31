@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1859,7 +1859,7 @@ var onDoneDataSet = function() {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2153,43 +2153,43 @@ var onDoneDataSet = function() {
 38
 39
 40
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">excelType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">':radio[name="excelType"]:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"2007"</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">excelType</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">:radio[name="excelType"]:checked</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">2007</span><span class="dl">"</span><span class="p">;</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
-    <span class="na">type</span><span class="p">:</span> <span class="s2">"excel"</span><span class="p">,</span>
-    <span class="na">target</span><span class="p">:</span> <span class="s2">"local"</span><span class="p">,</span>
-    <span class="na">fileName</span><span class="p">:</span> <span class="s2">"gridExportSample.xlsx"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">excel</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">target</span><span class="p">:</span> <span class="dl">"</span><span class="s2">local</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">fileName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gridExportSample.xlsx</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">compatibility</span><span class="p">:</span> <span class="nx">excelType</span><span class="p">,</span>
     <span class="na">documentTitle</span><span class="p">:</span> <span class="p">{</span>  <span class="c1">//제목</span>
-        <span class="na">message</span><span class="p">:</span> <span class="s2">"리얼그리드 제목1"</span><span class="p">,</span>
+        <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">리얼그리드 제목1</span><span class="dl">"</span><span class="p">,</span>
         <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">fontSize</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
             <span class="na">fontBold</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"center"</span><span class="p">,</span>
-            <span class="na">lineAlignment</span><span class="p">:</span> <span class="s2">"center"</span><span class="p">,</span>
-            <span class="na">background</span><span class="p">:</span> <span class="s2">"#08f90000"</span>
+            <span class="na">textAlignment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">lineAlignment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#08f90000</span><span class="dl">"</span>
         <span class="p">},</span>
         <span class="na">spaceTop</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="na">spaceBottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="na">height</span><span class="p">:</span> <span class="mi">60</span>
     <span class="p">},</span>
     <span class="na">documentSubtitle</span><span class="p">:</span> <span class="p">{</span>  <span class="c1">//부제</span>
-        <span class="na">message</span><span class="p">:</span> <span class="s2">"작성자 : 리얼그리드</span><span class="se">\n</span><span class="s2">작성일 : "</span> <span class="o">+</span> <span class="nx">today</span><span class="p">(),</span>
+        <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">작성자 : 리얼그리드</span><span class="se">\n</span><span class="s2">작성일 : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">today</span><span class="p">(),</span>
         <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"far"</span><span class="p">,</span>
-            <span class="na">background</span><span class="p">:</span> <span class="s2">"#08f90000"</span>
+            <span class="na">textAlignment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">far</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#08f90000</span><span class="dl">"</span>
         <span class="p">},</span>
         <span class="na">height</span><span class="p">:</span> <span class="mi">60</span>
     <span class="p">},</span>
     <span class="na">documentTail</span><span class="p">:</span> <span class="p">{</span>  <span class="c1">//꼬릿말</span>
-        <span class="na">message</span><span class="p">:</span> <span class="s2">"리얼그리드 꼬릿말"</span><span class="p">,</span>
+        <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">리얼그리드 꼬릿말</span><span class="dl">"</span><span class="p">,</span>
         <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">fontSize</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
             <span class="na">fontBold</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"center"</span><span class="p">,</span>
-            <span class="na">background</span><span class="p">:</span> <span class="s2">"#080000f1"</span>
+            <span class="na">textAlignment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">background</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#080000f1</span><span class="dl">"</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span>
@@ -2273,9 +2273,9 @@ function today() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

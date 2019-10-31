@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1857,7 +1857,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2109,16 +2109,16 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
 <span class="p">...</span>
 <span class="p">},{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-  <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"CustomerID"</span><span class="p">,</span>
-  <span class="na">type</span><span class="p">:</span> <span class="s2">"data"</span><span class="p">,</span>
-  <span class="na">width</span><span class="p">:</span> <span class="s2">"130"</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">width</span><span class="p">:</span> <span class="dl">"</span><span class="s2">130</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">equalBlank</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">styles</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">textAlignment</span><span class="p">:</span> <span class="s2">"center"</span>
+    <span class="na">textAlignment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span>
   <span class="p">},</span>
   <span class="na">header</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">text</span><span class="p">:</span> <span class="s2">"Customer ID"</span>
+    <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Customer ID</span><span class="dl">"</span>
   <span class="p">}</span>
 <span class="p">},{</span>
 <span class="p">...</span>
@@ -2129,13 +2129,13 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 <p><a class="btn primary small round lowercase" id="btnEqualBlankTrue">CustomerID컬럼 같은 값 생략</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"equalBlank"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">equalBlank</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="btnEqualBlankFalse">CustomerID컬럼 생략 해제</a></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="s2">"CustomerID"</span><span class="p">,</span> <span class="s2">"equalBlank"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">equalBlank</span><span class="dl">"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <script>
@@ -2168,9 +2168,9 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

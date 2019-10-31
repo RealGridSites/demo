@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1908,7 +1908,7 @@ $.getJSON("/resource/data/calculateFieldData.json", function (data) {
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2143,15 +2143,15 @@ Calculate Field와 연결된 컬럼은 readOnly가 됩니다.
 10
 11
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
-    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
-    <span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span>
+    <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Quantity</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span>
 <span class="p">},</span> <span class="p">{</span>
-    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"UnitPrice"</span><span class="p">,</span>
-    <span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span>
+    <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">UnitPrice</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span>
 <span class="p">},</span> <span class="p">{</span>
-    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Price"</span><span class="p">,</span>
-    <span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span><span class="p">,</span>
-    <span class="na">calculateExpression</span><span class="p">:</span> <span class="s2">"values['Quantity'] * values['UnitPrice']"</span>
+    <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Price</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">calculateExpression</span><span class="p">:</span> <span class="dl">"</span><span class="s2">values['Quantity'] * values['UnitPrice']</span><span class="dl">"</span>
 <span class="p">}]</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2178,17 +2178,17 @@ Calculate Field와 연결된 컬럼은 readOnly가 됩니다.
 17
 18
 </pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[{</span>
-    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Quantity"</span><span class="p">,</span>
-    <span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span>
+    <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Quantity</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span>
 <span class="p">},</span> <span class="p">{</span>
-    <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"UnitPrice"</span><span class="p">,</span>
-    <span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span>
+    <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">UnitPrice</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span>
 <span class="p">},</span> <span class="p">{</span>
-	<span class="na">fieldName</span><span class="p">:</span> <span class="s2">"Price"</span><span class="p">,</span>
-	<span class="na">dataType</span><span class="p">:</span> <span class="s2">"number"</span><span class="p">,</span>
+	<span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Price</span><span class="dl">"</span><span class="p">,</span>
+	<span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span><span class="p">,</span>
 	<span class="na">calculateCallback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">dataRow</span><span class="p">,</span> <span class="nx">fieldName</span><span class="p">,</span> <span class="nx">fieldNames</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
-	    <span class="kd">var</span> <span class="nx">quantity</span> <span class="o">=</span> <span class="nx">values</span><span class="p">[</span><span class="nx">fieldNames</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"Quantity"</span><span class="p">)];</span>
-	    <span class="kd">var</span> <span class="nx">unitprice</span> <span class="o">=</span> <span class="nx">values</span><span class="p">[</span><span class="nx">fieldNames</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"UnitPrice"</span><span class="p">)];</span>
+	    <span class="kd">var</span> <span class="nx">quantity</span> <span class="o">=</span> <span class="nx">values</span><span class="p">[</span><span class="nx">fieldNames</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">Quantity</span><span class="dl">"</span><span class="p">)];</span>
+	    <span class="kd">var</span> <span class="nx">unitprice</span> <span class="o">=</span> <span class="nx">values</span><span class="p">[</span><span class="nx">fieldNames</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">UnitPrice</span><span class="dl">"</span><span class="p">)];</span>
 	    <span class="k">if</span> <span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">quantity</span><span class="p">)</span> <span class="o">||</span> <span class="nb">isNaN</span><span class="p">(</span><span class="nx">unitprice</span><span class="p">))</span>
 	        <span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
 	    <span class="k">else</span>
@@ -2214,9 +2214,9 @@ Calculate Field와 연결된 컬럼은 readOnly가 됩니다.
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

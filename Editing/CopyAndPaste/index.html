@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1880,7 +1880,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2113,10 +2113,10 @@
 5
 6
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCopyOptions</span><span class="p">({</span>
-  <span class="na">singleMode</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkSingleMode"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">enabled</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkEnabled"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">datetimeFormat</span><span class="p">:</span> <span class="s2">"yyyy/MM/dd"</span><span class="p">,</span>
-  <span class="na">booleanFormat</span><span class="p">:</span><span class="s2">"N;Y"</span>
+  <span class="na">singleMode</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkSingleMode</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">enabled</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkEnabled</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">datetimeFormat</span><span class="p">:</span> <span class="dl">"</span><span class="s2">yyyy/MM/dd</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">booleanFormat</span><span class="p">:</span><span class="dl">"</span><span class="s2">N;Y</span><span class="dl">"</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2162,22 +2162,22 @@
 17
 18
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setPasteOptions</span><span class="p">({</span>
-  <span class="na">singleMode</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkPasteSingleMode"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">enabled</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkPasteEnabled"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">startEdit</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkStartEdit"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">commitEdit</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkCommitEdit"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">enableAppend</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkEnableAppend"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">fillFieldDefaults</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkFillFieldDefaults"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">fillColumnDefaults</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkFillColumnDefaults"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">forceRowValidation</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkForceRowValidation"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">forceColumnValidation</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkForceColumnValidation"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">selectionBase</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkSelectionBase"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">stopOnError</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkStopOnError"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">noEditEvent</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkNoEditEvent"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">eventEachRow</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkEventEachRow"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">checkReadOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkCheckReadOnly"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">checkDomainOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkCheckDomainOnly"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">),</span>
-  <span class="na">convertLookupLabel</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkConvertLookupLabel"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">)</span>
+  <span class="na">singleMode</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkPasteSingleMode</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">enabled</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkPasteEnabled</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">startEdit</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkStartEdit</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">commitEdit</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkCommitEdit</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">enableAppend</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkEnableAppend</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">fillFieldDefaults</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkFillFieldDefaults</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">fillColumnDefaults</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkFillColumnDefaults</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">forceRowValidation</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkForceRowValidation</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">forceColumnValidation</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkForceColumnValidation</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">selectionBase</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkSelectionBase</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">stopOnError</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkStopOnError</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">noEditEvent</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkNoEditEvent</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">eventEachRow</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkEventEachRow</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">checkReadOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkCheckReadOnly</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">checkDomainOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkCheckDomainOnly</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">convertLookupLabel</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkConvertLookupLabel</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 <script>
@@ -2232,9 +2232,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

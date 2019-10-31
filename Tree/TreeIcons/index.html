@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1862,7 +1862,7 @@
     var treeDataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         treeDataProvider = new RealGridJS.LocalTreeDataProvider();
         treeView = new RealGridJS.TreeView("realtree");
@@ -2092,14 +2092,14 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="dl">"</span><span class="s2">images</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/demo/resource/image/smallflag/</span><span class="dl">"</span><span class="p">);</span>
 <span class="err">    </span><span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">([</span>
-<span class="err">                </span><span class="s2">"icon_male.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"icon_female.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"de.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"gr.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"hu.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"is.png"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">icon_male.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">icon_female.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">de.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">gr.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">hu.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">is.png</span><span class="dl">"</span><span class="p">,</span>
 <span class="err">                </span><span class="p">...</span>
 <span class="err">        </span><span class="p">]</span>
 <span class="err">    </span><span class="p">);</span>
@@ -2172,16 +2172,16 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 20
 21
 </pre></td><td class="rouge-code"><pre><span class="c1">// 이미지 리스트 만들기</span>
-<span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"/demo/resource/image/smallflag/"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">imageList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RealGridJS</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">(</span><span class="dl">"</span><span class="s2">images</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/demo/resource/image/smallflag/</span><span class="dl">"</span><span class="p">);</span>
 <span class="err">    </span><span class="nx">imageList</span><span class="p">.</span><span class="nx">addUrls</span><span class="p">([</span>
-<span class="err">                </span><span class="s2">"icon_male.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"icon_female.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"icon_folder_col.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"icon_folder-exp.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"de.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"gr.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"hu.png"</span><span class="p">,</span>
-<span class="err">                </span><span class="s2">"is.png"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">icon_male.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">icon_female.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">icon_folder_col.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">icon_folder-exp.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">de.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">gr.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">hu.png</span><span class="dl">"</span><span class="p">,</span>
+<span class="err">                </span><span class="dl">"</span><span class="s2">is.png</span><span class="dl">"</span><span class="p">,</span>
 <span class="err">                </span><span class="p">...</span>
 <span class="err">        </span><span class="p">]</span>
 <span class="err">    </span><span class="p">);</span>
@@ -2290,7 +2290,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 <p>expand 표시를 해당 경로의 이미지 파일로 변경합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">expandImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_col.png"</span><span class="p">})</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">expandImage</span><span class="p">:</span><span class="dl">"</span><span class="s2">/resource/image/smallflag/icon_folder_col.png</span><span class="dl">"</span><span class="p">})</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="setCollapseImage">collapse 이미지 변경</a></p>
@@ -2298,7 +2298,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 <p>collapse 표시를 해당 경로의 이미지 파일로 변경합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">collapseImage</span><span class="p">:</span><span class="s2">"/resource/image/smallflag/icon_folder_exp.png"</span><span class="p">})</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">treeView</span><span class="p">.</span><span class="nx">setTreeOptions</span><span class="p">({</span><span class="na">collapseImage</span><span class="p">:</span><span class="dl">"</span><span class="s2">/resource/image/smallflag/icon_folder_exp.png</span><span class="dl">"</span><span class="p">})</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><a class="btn primary small round lowercase" id="setLineVisible">트리 라인 숨기기</a></p>
@@ -2405,9 +2405,9 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

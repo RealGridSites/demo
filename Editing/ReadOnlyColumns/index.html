@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1879,7 +1879,7 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2108,7 +2108,7 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setEditOptions</span><span class="p">({</span>
-  <span class="na">skipReadOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkSkipReadOnly"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">)</span>
+  <span class="na">skipReadOnly</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkSkipReadOnly</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2123,9 +2123,9 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#columnList</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"readOnly"</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkReadOnly"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">));</span>
+    <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="dl">"</span><span class="s2">readOnly</span><span class="dl">"</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkReadOnly</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2135,9 +2135,9 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#columnList"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">column</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#columnList</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="s2">"editable"</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#chkEditable"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":checked"</span><span class="p">));</span>
+    <span class="nx">gridView</span><span class="p">.</span><span class="nx">setColumnProperty</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="dl">"</span><span class="s2">editable</span><span class="dl">"</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chkEditable</span><span class="dl">"</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">"</span><span class="s2">:checked</span><span class="dl">"</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2159,18 +2159,18 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 11
 12
 13
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style01"</span><span class="p">,</span> <span class="p">{</span>
-	<span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ffffffff"</span><span class="p">,</span>
-	<span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ff333333"</span><span class="p">,</span>
-	<span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-	<span class="s2">"fontBold"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-	<span class="s2">"editable"</span><span class="p">:</span> <span class="kc">false</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="dl">"</span><span class="s2">style01</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+	<span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffffffff</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff333333</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">fontBold</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">editable</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">});</span>
-<span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="s2">"style02"</span><span class="p">,</span> <span class="p">{</span>
-	<span class="s2">"foreground"</span><span class="p">:</span> <span class="s2">"#ff000000"</span><span class="p">,</span>
-	<span class="s2">"background"</span><span class="p">:</span> <span class="s2">"#ffcccccc"</span><span class="p">,</span>
-	<span class="s2">"fontSize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-	<span class="s2">"readOnly"</span><span class="p">:</span> <span class="kc">true</span>
+<span class="nx">gridView</span><span class="p">.</span><span class="nx">addCellStyle</span><span class="p">(</span><span class="dl">"</span><span class="s2">style02</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+	<span class="dl">"</span><span class="s2">foreground</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff000000</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">background</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffcccccc</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">fontSize</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">readOnly</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2178,7 +2178,7 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="s2">"CompanyName"</span><span class="p">],</span> <span class="s2">"style01"</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="dl">"</span><span class="s2">CompanyName</span><span class="dl">"</span><span class="p">],</span> <span class="dl">"</span><span class="s2">style01</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2186,7 +2186,7 @@ Read-Only 컬럼은 그리드 edit 옵션의 skipReadOnly가 true로 지정되�
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="s2">"CustomerID"</span><span class="p">],</span> <span class="s2">"style02"</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">setCellStyles</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="dl">"</span><span class="s2">CustomerID</span><span class="dl">"</span><span class="p">],</span> <span class="dl">"</span><span class="s2">style02</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">gridView</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">();</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2262,9 +2262,9 @@ $("#btnClearCellStyles").click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

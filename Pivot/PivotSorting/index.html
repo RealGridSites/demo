@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -2071,17 +2071,17 @@ labels 속성에는 각 필드들의 이름과 <a href="http://help.realgrid.com
 16
 </pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">sort</span><span class="p">({</span>
   <span class="na">column</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">labels</span><span class="p">:</span> <span class="p">[</span>  
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">},</span>
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매월"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">}</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매분기</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">descending</span><span class="dl">"</span><span class="p">},</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매월</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">descending</span><span class="dl">"</span><span class="p">}</span>
      <span class="p">]</span>
   <span class="p">},</span>
   <span class="na">row</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">method</span><span class="p">:</span><span class="s2">"label"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span><span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">labels</span><span class="p">:</span> <span class="p">[</span>  
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"브랜드명"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"ascending"</span><span class="p">},</span>
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"차종"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"ascending"</span><span class="p">}</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">브랜드명</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ascending</span><span class="dl">"</span><span class="p">},</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">차종</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ascending</span><span class="dl">"</span><span class="p">}</span>
      <span class="p">]</span>
   <span class="p">}</span>
 <span class="p">});</span>
@@ -2111,16 +2111,16 @@ conditions가 생략되면 전체 요약 기준으로 정렬합니다.</p>
 15
 </pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">sort</span><span class="p">({</span>
   <span class="na">column</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
-      <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span>
-      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">,</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매수량</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">descending</span><span class="dl">"</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="na">row</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
-      <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span> 
-      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">,</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매수량</span><span class="dl">"</span><span class="p">,</span> 
+      <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">descending</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">conditions</span><span class="p">:</span> <span class="p">[{</span>
-      	<span class="na">name</span><span class="p">:</span> <span class="s2">"판매년도"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">2016</span>
+      	<span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매년도</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">2016</span>
       <span class="p">}]</span>
   <span class="p">}</span>
 <span class="p">});</span>
@@ -2150,18 +2150,18 @@ conditions가 생략되면 전체 요약 기준으로 정렬합니다.</p>
 17
 </pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">sort</span><span class="p">({</span>
   <span class="na">column</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">labels</span><span class="p">:</span> <span class="p">[</span>  
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매분기"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">},</span>
-        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"판매월"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">}</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매분기</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">descending</span><span class="dl">"</span><span class="p">},</span>
+        <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매월</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">descending</span><span class="dl">"</span><span class="p">}</span>
      <span class="p">]</span>
   <span class="p">},</span>
   <span class="na">row</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
-      <span class="na">fieldName</span><span class="p">:</span> <span class="s2">"판매수량"</span><span class="p">,</span> 
-      <span class="na">direction</span><span class="p">:</span> <span class="s2">"descending"</span><span class="p">,</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">fieldName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매수량</span><span class="dl">"</span><span class="p">,</span> 
+      <span class="na">direction</span><span class="p">:</span> <span class="dl">"</span><span class="s2">descending</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">conditions</span><span class="p">:</span> <span class="p">[{</span>
-      	<span class="na">name</span><span class="p">:</span> <span class="s2">"판매년도"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">2016</span>
+      	<span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">판매년도</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">2016</span>
       <span class="p">}]</span>
   <span class="p">}</span>
 <span class="p">});</span>
@@ -2245,9 +2245,9 @@ $('#btnComplexSort').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

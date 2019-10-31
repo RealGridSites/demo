@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1865,7 +1865,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2097,13 +2097,13 @@
 8
 9
 </pre></td><td class="rouge-code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">setContextMenu</span><span class="p">([{</span>
-      <span class="na">label</span><span class="p">:</span> <span class="s2">"Menu1"</span>
+      <span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Menu1</span><span class="dl">"</span>
   <span class="p">},</span> <span class="p">{</span>
-      <span class="na">label</span><span class="p">:</span> <span class="s2">"Menu2"</span>
+      <span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Menu2</span><span class="dl">"</span>
   <span class="p">},</span> <span class="p">{</span>
-      <span class="na">label</span><span class="p">:</span> <span class="s2">"-"</span> <span class="c1">// menu separator를 삽입합니다.</span>
+      <span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">-</span><span class="dl">"</span> <span class="c1">// menu separator를 삽입합니다.</span>
   <span class="p">},</span> <span class="p">{</span>
-      <span class="na">label</span><span class="p">:</span> <span class="s2">"ExcelExport"</span>
+      <span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ExcelExport</span><span class="dl">"</span>
   <span class="p">}]);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2120,7 +2120,7 @@
 4
 </pre></td><td class="rouge-code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">onContextMenuPopup</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">elementName</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//헤더셀 영역에서는 컨텍스트 메뉴 실행하지 않음</span>
-    <span class="k">return</span> <span class="nx">elementName</span> <span class="o">!=</span> <span class="s2">"HeaderCell"</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">elementName</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">HeaderCell</span><span class="dl">"</span><span class="p">;</span>
   <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -2139,11 +2139,11 @@
 8
 9
 </pre></td><td class="rouge-code"><pre>  <span class="nx">gridView</span><span class="p">.</span><span class="nx">onContextMenuItemClicked</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">label</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">"Context menu가 클릭됐습니다: "</span> <span class="o">+</span> <span class="nx">label</span><span class="p">.</span><span class="nx">label</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">label</span><span class="p">.</span><span class="nx">label</span> <span class="o">==</span> <span class="s2">"ExcelExport"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Context menu가 클릭됐습니다: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">label</span><span class="p">.</span><span class="nx">label</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">label</span><span class="p">.</span><span class="nx">label</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">ExcelExport</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">grid</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span>
-            <span class="na">type</span><span class="p">:</span> <span class="s2">"excel"</span><span class="p">,</span>
-            <span class="na">target</span><span class="p">:</span> <span class="s2">"local"</span>
+            <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">excel</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">target</span><span class="p">:</span> <span class="dl">"</span><span class="s2">local</span><span class="dl">"</span>
         <span class="p">});</span>
     <span class="p">};</span>
   <span class="p">};</span>
@@ -2643,9 +2643,9 @@ setContextMenu(gridView);
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

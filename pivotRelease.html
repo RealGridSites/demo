@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1891,8 +1891,8 @@
 6
 </pre></td><td class="rouge-code"><pre> <span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([{</span>
  <span class="p">...</span>
- <span class="na">displayFormat</span><span class="p">:</span> <span class="s2">"${value}년도"</span><span class="p">,</span>
- <span class="na">summaryFormat</span><span class="p">:</span> <span class="s2">"${value}년도 합"</span><span class="p">,</span>
+ <span class="na">displayFormat</span><span class="p">:</span> <span class="dl">"</span><span class="s2">${value}년도</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">summaryFormat</span><span class="p">:</span> <span class="dl">"</span><span class="s2">${value}년도 합</span><span class="dl">"</span><span class="p">,</span>
  <span class="p">...</span>
  <span class="p">}]);</span>
 </pre></td></tr></tbody></table></code></pre></div>        </div>
@@ -1906,8 +1906,8 @@
 6
 </pre></td><td class="rouge-code"><pre> <span class="nx">pivot</span><span class="p">.</span><span class="nx">setFieldMapping</span><span class="p">([{</span>
  <span class="p">...</span>
- <span class="na">labelSuffix</span><span class="p">:</span><span class="s2">"년도"</span><span class="p">,</span>
- <span class="na">summarySuffix</span><span class="p">:</span><span class="s2">"년도 합"</span><span class="p">,</span>
+ <span class="na">labelSuffix</span><span class="p">:</span><span class="dl">"</span><span class="s2">년도</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">summarySuffix</span><span class="p">:</span><span class="dl">"</span><span class="s2">년도 합</span><span class="dl">"</span><span class="p">,</span>
  <span class="p">...</span>
  <span class="p">}]);</span>
 </pre></td></tr></tbody></table></code></pre></div>        </div>
@@ -2053,16 +2053,16 @@
 11
 12
 </pre></td><td class="rouge-code"><pre><span class="nx">pivot</span><span class="p">.</span><span class="nx">setContextMenu</span><span class="p">([{</span>
- <span class="na">text</span><span class="p">:</span> <span class="s2">"menu1"</span><span class="p">,</span>
- <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"menu1 click"</span><span class="p">);</span> <span class="p">}</span>
+ <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">menu1</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">menu1 click</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
- <span class="na">text</span><span class="p">:</span> <span class="s2">"menu2"</span><span class="p">,</span>
- <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"menu2 click"</span><span class="p">);</span> <span class="p">}</span>
+ <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">menu2</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">menu2 click</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">},</span> <span class="p">{</span>
- <span class="na">text</span><span class="p">:</span> <span class="s2">"-"</span>
+ <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">-</span><span class="dl">"</span>
 <span class="p">},</span> <span class="p">{</span>
- <span class="na">text</span><span class="p">:</span> <span class="s2">"menu3"</span><span class="p">,</span>
- <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"menu3 click"</span><span class="p">);</span> <span class="p">}</span>
+ <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">menu3</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">menu3 click</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}]);</span>
 </pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
@@ -2134,9 +2134,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>

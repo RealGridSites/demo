@@ -239,7 +239,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1609,7 +1609,7 @@
               <li class="item-toc ">
                 <a href="/Interface/UbiReport/"
                 class=" sidebar-link ">
-                  <span>유비아이 리포트 연동</span>
+                  <span>유비리포트(UbiReport) 연동</span>
                   <span style="display: none;">
                   연동, interface
                   </span>
@@ -1667,7 +1667,7 @@
                     <li class="item-toc ">
                         <a href="/release/"
                           class="sidebar-link  ">
-                            <span>최신버전 1.1.33</span>
+                            <span>최신버전 1.1.34</span>
                         </a>
                     </li>
                     
@@ -1861,7 +1861,7 @@
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.33");
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
 
         dataProvider = new RealGridJS.LocalDataProvider();
         gridView = new RealGridJS.GridView("realgrid");
@@ -2100,10 +2100,10 @@
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">loadNext</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">newStart</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"/resource/data/carData2.json"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/resource/data/carData2.json</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span>
-        <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="s2">"append"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="nx">newStart</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">100</span><span class="p">});</span>
+        <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">append</span><span class="dl">"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="nx">newStart</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">100</span><span class="p">});</span>
     <span class="p">}</span>
   <span class="p">});</span>
 <span class="p">}</span>
@@ -2143,10 +2143,10 @@
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">loadNext</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">newStart</span> <span class="o">=</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"/resource/data/carData2.json"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/resource/data/carData2.json</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span>
-        <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="s2">"append"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="nx">newStart</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">100</span><span class="p">});</span>
+        <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">append</span><span class="dl">"</span><span class="p">,</span> <span class="na">start</span><span class="p">:</span> <span class="nx">newStart</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">100</span><span class="p">});</span>
     <span class="p">}</span>
   <span class="p">});</span>
 <span class="p">}</span>
@@ -2209,9 +2209,9 @@ $('#onTopItemIndexChanged').click(function() {
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs_eval.1.1.33.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/realgridjs-api.1.1.33.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.33/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>
