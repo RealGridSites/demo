@@ -8,9 +8,9 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    성과/목표 렌더러
+    피벗 데이터 디테일
     </title>
-    <meta name="description" content="각각 두 개의 데이터 필드에 저장된 목표값(혹은 기대값)과 실행값을 비교하여 표시하는 시리즈 렌더러들입니다.">
+    <meta name="description" content="피벗 데이터의 특정 셀을 그리드에 디테일한 데이터가 출력되 도록 구현한 예제입니다.본 데모는 그리드와 피벗이 조회용으로 구현되어 있으므로 편집 및 속성 변경은 불가능합니다.">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -1192,9 +1192,9 @@
                   </span>
                 </a>
               </li>
-              <li class="item-toc current">
+              <li class="item-toc ">
                 <a href="/Series/ActualTargetRenderer/"
-                class="current sidebar-link ">
+                class=" sidebar-link ">
                   <span>성과/목표 렌더러</span>
                   <span style="display: none;">
                   시리즈, series, target
@@ -1792,9 +1792,9 @@
                   </span>
                 </a>
               </li>
-              <li class="item-toc ">
+              <li class="item-toc current">
                 <a href="/Pivot/PivotGridFiltering/"
-                class=" sidebar-link ">
+                class="current sidebar-link ">
                   <span>피벗 데이터 디테일</span>
                   <span style="display: none;">
                   pivot, grid, 피벗, 필터, filter
@@ -1823,7 +1823,7 @@
 
     <div class="content-wrapper with-devbox">
         <div class="header-content">
-            <h1 class="title-page">성과/목표 렌더러</h1>
+            <h1 class="title-page">피벗 데이터 디테일</h1>
             
 
             
@@ -1842,44 +1842,211 @@
         </div>
 
         <div class="document-formatting">
-            <p>각각 두 개의 데이터 필드에 저장된 목표값(혹은 기대값)과 실행값을 비교하여 표시하는 시리즈 렌더러들입니다.</p>
+            <p>피벗 데이터의 특정 셀을 그리드에 디테일한 데이터가 출력되 도록 구현한 예제입니다.<br />
+<em>본 데모는 그리드와 피벗이 조회용으로 구현되어 있으므로 편집 및 속성 변경은 불가능합니다.</em></p>
+
+<script type="text/javascript" src="/lib/realgrid/RealGridSkins.js"></script>
+
+<div id="realgrid" style="width:100%;height:250px;"></div>
+<p><br /></p>
 
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
-	dataProvider.setRows(data);
+    RealGridJS.setTrace(false);
+    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.27/");
+    gridView = new RealGridJS.GridView("realgrid");
+    gridView.setDataSource(dataProvider);
+
+    gridView.setStyles(OfficeBlueSkin);
+    gridView.setFilteringOptions({handleVisibility:"hidden"});
+    gridView.setEditOptions({editable: false});
+
+    var columns = [{
+        name: "국산/수입",
+        fieldName: "국산/수입",
+        width: 100,
+        header: {
+            text: "국산/수입"
+        }
+    },{
+        name: "국가",
+        fieldName: "국가",
+        width: 70,
+        header: {
+            text: "국가",
+            styles: {
+                background: "linear,#22ffd500,#ffffd500,90"
+            }
+        }
+    },{
+        name: "브랜드번호",
+        fieldName: "브랜드번호",
+        width: 70,
+        header: {
+            text: "브랜드번호"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
+        }
+    },{
+        name: "브랜드명",
+        fieldName: "브랜드명",
+        width: 100,
+        header: {
+            text: "브랜드명",
+            styles: {
+                background: "linear,#22ffd500,#ffffd500,90"
+            }
+        }
+    },{
+        name: "차종",
+        fieldName: "차종",
+        width: 100,
+        header: {
+            text: "차종",
+            styles: {
+                background: "linear,#22ffd500,#ffffd500,90"
+            }
+        }
+    },{
+        name: "모델번호",
+        fieldName: "모델번호",
+        width: 70,
+        header: {
+            text: "모델번호"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
+        }
+    },{
+        name: "모델명",
+        fieldName: "모델명",
+        width: 150,
+        header: {
+            text: "모델명"
+        }
+    },{
+        name: "색상번호",
+        fieldName: "색상번호",
+        width: 70,
+        header: {
+            text: "색상번호"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
+        }
+    },{
+        name: "색상",
+        fieldName: "색상",
+        width: 100,
+        header: {
+            text: "색상"
+        }
+    },{
+        name: "판매날짜",
+        fieldName: "판매날짜",
+        width: 100,
+        header: {
+            text: "판매날짜"
+        }
+    },{
+        name: "판매수량",
+        fieldName: "판매수량",
+        width: 70,
+        header: {
+            text: "판매수량"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
+        }
+    },{
+        name: "차량가격",
+        fieldName: "차량가격",
+        width: 100,
+        header: {
+            text: "차량가격"
+        },
+        styles: {
+            numberFormat:"#,##0",
+            textAlignment:"far"
+        }
+    },{
+        name: "연료",
+        fieldName: "연료",
+        width: 100,
+        header: {
+            text: "연료"
+        }
+    }];
+
+    gridView.setColumns(columns);
+
+    dataProvider.setRows(data);
+    pivot.drawView();
+
+    pivot.onDblClick = function (pivot, type, index) {
+        var colNames = gridView.getColumnNames()
+
+        for(var j = 0; j < colNames.length; j++){
+            gridView.clearColumnFilters(colNames[j])
+        }
+
+
+
+        //rowLabel 값 필터링
+        for(var i = 0; i < Object.keys(index.rows).length; i++){
+            if(Object.keys(index.rows)[i] !== "__sum"){
+                var filters = [{
+                    name: Object.keys(index.rows)[i],
+                    criteria: "value = '" + index.rows[Object.keys(index.rows)[i]] + "'",
+                    active:true
+                }];
+
+                gridView.setColumnFilters(Object.keys(index.rows)[i], filters);
+            }else{
+            }
+        }
+    }
 }
+
+var onDoneDataSet = function() {
+    $(".realpivot-title-setup").css("display","none");
+}
+
+var onSuccessColumnSet = function(data, textStatus, jqXHR) {
+}  
 
 </script>
 
-<div id="realgrid" class="realgrid" style="width:100%; height:300px"></div>
+<div id="realpivot" class="realpivot" style="width:100%; height:500px"></div>
 
 <div class="toolbox">
   <div class="buttonbox">
     
     <a class="btn tertiary small lowercase active" id="btnDevbox" onclick="setDevbox()">설명 보이기</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridfield')">필드</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridcolumn')">컬럼</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgriddpoption')">Provider 옵션</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridviewoption')">Grid 옵션</a>
-    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realgridstyle')">스타일</a>
-  </div>
-  <pre class="codeview realgridfield"></pre>
-  <pre class="codeview realgridcolumn"></pre>
-  <pre class="codeview realgriddpoption"></pre>
-  <pre class="codeview realgridviewoption"></pre>
-  <pre class="codeview realgridstyle"></pre>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realpivotfield')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realpivotfieldMapping')">필드매핑</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realpivotpivotFields')">피벗필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, 'realpivotpivotOptions')">피벗옵션</a>
+  </div>                                                                                                            
+  <pre class="codeview realpivotfield"></pre>
+  <pre class="codeview realpivotfieldMapping"></pre>
+  <pre class="codeview realpivotpivotFields"></pre>
+  <pre class="codeview realpivotpivotOptions"></pre>
 </div>
 
 <script>
-    var gridView;
+    var pivot;
     var dataProvider;
 
     $(document).ready( function(){
-        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.34");
-
         dataProvider = new RealGridJS.LocalDataProvider();
-        gridView = new RealGridJS.GridView("realgrid");
-        gridView.setDataSource(dataProvider);
+        pivot = new RealPivot("realpivot");
+        pivot.setDataProvider(dataProvider);
 
         
             
@@ -1888,17 +2055,19 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
               async: false
             });
 
-            $.getJSON("/resource/layout/actualTargetRendererField.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+            $.getJSON("/resource/pivotLayout/pivot_setFields.json?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 dataProvider.setFields(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
-                $('.codeview.realgridfield').html(
+                $('.codeview.realpivotfield').html(
                   JSON.stringify(data, null, 4)
                 );
 
                 
             })
             .done(function (data, textStatus, jqXHR) {
-                gridView.setFocus();
 
                 
             })
@@ -1906,7 +2075,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
                 var err = textStatus + ', ' + error;
 
                 
-                  var msg = "gridView failFieldSet: " + err;
+                  var msg = "pivot failFieldSet: " + err;
                   console && console.log(msg);
                   alert(msg);
                 
@@ -1916,19 +2085,23 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
+            $.ajaxSetup({
+              async: false
+            });
 
+            $.getJSON("/resource/pivotLayout/pivot_fieldMapping.json", function (data, textStatus, jqXHR) {
+                pivot.setFieldMapping(data);
+                   $.ajaxSetup({
+                    async: true
+                  });
 
-            $.getJSON("/resource/layout/actualTargetRendererColumn.json", function (data, textStatus, jqXHR) {
-                gridView.setColumns(data);
-
-                $('.codeview.realgridcolumn').html(
+                $('.codeview.realpivotfieldMapping').html(
                   JSON.stringify(data, null, 4)
                 );
 
                 
             })
             .done(function (data, textStatus, jqXHR) {
-                gridView.setFocus();
 
                 
             })
@@ -1936,7 +2109,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
                 var err = textStatus + ', ' + error;
 
                 
-                  var msg = "gridView failColumnSet: " + err;
+                  var msg = "pivot failColumnSet: " + err;
                   console && console.log(msg);
                   alert(msg);
                 
@@ -1948,76 +2121,23 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
         
             
 
-            $.getJSON("/resource/option/dataProviderOption1.json", function (data, textStatus, jqXHR) {
-                dataProvider.setOptions(data);
-
-                $('.codeview.realgriddpoption').html(
-                  JSON.stringify(data, null, 4)
-                );
-
-                
-            })
-            .done(function (data, textStatus, jqXHR) {
-                gridView.setFocus();
-
-                
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
-
-                
-                  var msg = "gridView failDpOptionSet: " + err;
-                  console && console.log(msg);
-                  alert(msg);
-                
+            $.ajaxSetup({
+              async: false
             });
-        
 
-        
-            
-
-            $.getJSON("/resource/option/gridOption1.json", function (data, textStatus, jqXHR) {
-                gridView.setOptions(data);
-
-                $('.codeview.realgridviewoption').html(
-                  JSON.stringify(data, null, 4)
-                );
-
-                
-            })
-            .done(function (data, textStatus, jqXHR) {
-                gridView.setFocus();
-
-                
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
-
-                
-                  var msg = "gridView failGridOptionSet: " + err;
-                  console && console.log(msg);
-                  alert(msg);
-                
-            });
-        
-
-        
-            
-
-            $.getJSON("/resource/style/style1.json", function (data, textStatus, jqXHR) {
-                gridView.setStyles(data);
+            $.getJSON("/resource/pivotLayout/pivot_pivotFields.json", function (data, textStatus, jqXHR) {
+                pivot.setPivotFields(data);
                 $.ajaxSetup({
                   async: true
                 });
 
-                $('.codeview.realgridstyle').html(
+                $('.codeview.realpivotpivotFields').html(
                   JSON.stringify(data, null, 4)
                 );
 
                 
             })
             .done(function (data, textStatus, jqXHR) {
-                gridView.setFocus();
 
                 
             })
@@ -2025,11 +2145,15 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
                 var err = textStatus + ', ' + error;
 
                 
-                  var msg = "gridView failStyleSet: " + err;
+                  var msg = "pivot failDpOptionSet: " + err;
                   console && console.log(msg);
                   alert(msg);
                 
             });
+        
+
+        
+
         
 
 
@@ -2038,8 +2162,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
             
             $.ajax({
               type: "GET",
-              async : true,
-              url:"/resource/data/ActualTargetRenderer.json?__time__=" + new Date().getTime(),
+              url:"/resource/data/pivotDataSet.json?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 
                   onGridSuccessDataSet(data, textStatus, jqXHR);
@@ -2048,7 +2171,9 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
               
             })
             .done( function(data, textStatus, jqXHR) {
-              gridView.setFocus();
+              //pivot.setFocus();
+              
+                onDoneDataSet(data, textStatus, jqXHR);
               
               
             })
@@ -2068,12 +2193,12 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
       $("#devbox").hide();
       document.getElementById("btnDevbox").className = "btn tertiary small lowercase";
       $(".with-devbox").attr("style","margin-right: 0%");
-      gridView.resetSize(); 
+      pivot.resetSize(); 
     }else{
       $("#devbox").show();
       document.getElementById("btnDevbox").className = "btn tertiary small lowercase active";
       $(".with-devbox").attr("style","margin-right: 40%");
-      gridView.resetSize();
+      pivot.resetSize(); 
     }
   }
 </script>
@@ -2090,60 +2215,11 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      <h4 id="actualtartget-renderer-종류">ActualTartget Renderer 종류</h4>
+      <h4 id="피벗-데이터-디테일-그리드">피벗 데이터 디테일 그리드</h4>
 
-<ul>
-  <li><a href="http://help.realgrid.com/api/types/ActualTargetBulletRenderer/">ActualTargetBulletRenderer</a></li>
-  <li><a href="http://help.realgrid.com/api/types/ActualTargetTextRenderer/">ActualTargetTextRenderer</a></li>
-</ul>
+<p>피벗 더블클릭 이벤트에서 그리드의 필터 기능을 동적으로 적용시킵니다.</p>
 
-<p>위와 같은 타입들이 있으며, 데이터의 내용에 맞게 적절한 타입을 선택해야 합니다.</p>
-
-<p><code class="highlighter-rouge">Target, Actual</code> 컬럼들의 값을 수정해서 각 renderer들이 변경되는 것을 확인해 보세요.</p>
-
-<h4 id="actualtartget-renderer-type">ActualTartget Renderer Type</h4>
-
-<p><strong>Bullet renderer</strong></p>
-
-<p>목표값을 수직바로 실행값을 수평바로 표시합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-</pre></td><td class="rouge-code"><pre><span class="p">{</span>
-    <span class="nl">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">series</span><span class="dl">"</span><span class="p">,</span>
-    <span class="nx">fieldNames</span><span class="p">:</span> <span class="dl">"</span><span class="s2">target,actual</span><span class="dl">"</span><span class="p">,</span>
-    <span class="nx">renderer</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">actualTargetBullet</span><span class="dl">"</span><span class="p">,</span>
-        <span class="nx">maximumBackground</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#18000000</span><span class="dl">"</span>
-    <span class="p">},</span>
-    <span class="nx">styles</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">figureSize</span><span class="p">:</span> <span class="dl">"</span><span class="s2">50%</span><span class="dl">"</span><span class="p">,</span>
-        <span class="nx">figureBackground</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#88008800</span><span class="dl">"</span><span class="p">,</span>
-        <span class="nx">figureBorder</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#88008800</span><span class="dl">"</span><span class="p">,</span>
-        <span class="nx">figureInactiveBackground</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff008800</span><span class="dl">"</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><strong>ActualTarget text renderer</strong></p>
-
-<p>“실행값 / 목표값” 형식으로 표시합니다.<br />
-실행값의 <code class="highlighter-rouge">폰트</code>와 <code class="highlighter-rouge">색상</code> 스타일을 별도의 값으로 지정할 수 있습니다.<br />
-렌더러의 동적 스타일을 이용해서 실행값이 목표값을 초과한 경우 <code class="highlighter-rouge">붉은색</code>으로 표시하고 있습니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2158,21 +2234,33 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 13
 14
 15
-</pre></td><td class="rouge-code"><pre><span class="p">{</span>
-    <span class="nl">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">series</span><span class="dl">"</span><span class="p">,</span>
-    <span class="nx">fieldNames</span><span class="p">:</span> <span class="dl">"</span><span class="s2">target,actual</span><span class="dl">"</span><span class="p">,</span>
-    <span class="nx">fillHeight</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-    <span class="nx">renderer</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">actualTargetText</span><span class="dl">"</span><span class="p">,</span>
-        <span class="nx">actualFont</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Arial,30,bold</span><span class="dl">"</span><span class="p">,</span>
-        <span class="nx">actualForeground</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ff888888</span><span class="dl">"</span><span class="p">,</span>
-        <span class="nx">dynamicStyles</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="na">criteria</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value[1] / value[0] &gt;= 1.0</span><span class="dl">"</span><span class="p">,</span>
-            <span class="na">styles</span><span class="p">:</span> <span class="dl">"</span><span class="s2">actualForeground=#ffff00000</span><span class="dl">"</span>
-        <span class="p">}]</span>
-    <span class="p">},</span>
-    <span class="nx">header</span><span class="p">:</span> <span class="p">{</span> <span class="nl">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Text</span><span class="dl">"</span> <span class="p">}</span>
-<span class="p">}</span>
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre>pivot.onDblClick = function (pivot, type, index) {
+    var colNames = gridView.getColumnNames()
+
+    for(var j = 0; j &lt; colNames.length; j++){
+        gridView.clearColumnFilters(colNames[j])
+    }
+
+    //rowLabel 값 필터링
+    for(var i = 0; i &lt; Object.keys(index.rows).length; i++){
+        if(Object.keys(index.rows)[i] !== "__sum"){
+            var filters = [{
+                name: Object.keys(index.rows)[i],
+                criteria: "value = '" + index.rows[Object.keys(index.rows)[i]] + "'",
+                active:true
+            }];
+
+            gridView.setColumnFilters(Object.keys(index.rows)[i], filters);
+        }else{
+        }
+    }
+}
 </pre></td></tr></tbody></table></code></pre></div></div>
 
   </div>
