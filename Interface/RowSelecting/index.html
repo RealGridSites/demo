@@ -2042,6 +2042,29 @@ function setPie(chart, index) {
     });
     chart.series[4].setData(hcData);
 }
+
+function setCheckValueToChart(values) {
+    var year = [], gdp = [], gni = [], pgni = [], dincome = [];
+
+    $.each(values, function (k, v) {
+        year.push(v.Year);
+        gdp.push(v.GDP);
+        gni.push(v.GNI);
+        pgni.push(v.PGNI);
+        dincome.push(v.DIncome ? v.DIncome : null);
+    });
+
+    var chart = $("#container").highcharts();
+    if (!chart)
+        return;
+    chart.xAxis[0].setCategories(year);
+    chart.series[0].setData(gdp);
+    chart.series[1].setData(gni);
+    chart.series[2].setData(pgni);
+    chart.series[3].setData(dincome);
+
+    setPie(chart, gridView.getCurrent());
+}
 </script>
 
 <div id="container" style="height:400px;"></div>
@@ -2598,6 +2621,54 @@ function setPie(chart, index) {
         <span class="nx">hcData</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
     <span class="p">});</span>
     <span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="nx">setData</span><span class="p">(</span><span class="nx">hcData</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="line-chart-설정-함수">Line Chart 설정 함수</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setCheckValueToChart</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">gdp</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">gni</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">pgni</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">dincome</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">year</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">Year</span><span class="p">);</span>
+        <span class="nx">gdp</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">GDP</span><span class="p">);</span>
+        <span class="nx">gni</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">GNI</span><span class="p">);</span>
+        <span class="nx">pgni</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">PGNI</span><span class="p">);</span>
+        <span class="nx">dincome</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">DIncome</span> <span class="p">?</span> <span class="nx">v</span><span class="p">.</span><span class="nx">DIncome</span> <span class="p">:</span> <span class="kc">null</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#container</span><span class="dl">"</span><span class="p">).</span><span class="nx">highcharts</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">chart</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="nx">chart</span><span class="p">.</span><span class="nx">xAxis</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">setCategories</span><span class="p">(</span><span class="nx">year</span><span class="p">);</span>
+    <span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">setData</span><span class="p">(</span><span class="nx">gdp</span><span class="p">);</span>
+    <span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">setData</span><span class="p">(</span><span class="nx">gni</span><span class="p">);</span>
+    <span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">setData</span><span class="p">(</span><span class="nx">pgni</span><span class="p">);</span>
+    <span class="nx">chart</span><span class="p">.</span><span class="nx">series</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nx">setData</span><span class="p">(</span><span class="nx">dincome</span><span class="p">);</span>
+
+    <span class="nx">setPie</span><span class="p">(</span><span class="nx">chart</span><span class="p">,</span> <span class="nx">gridView</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">());</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
