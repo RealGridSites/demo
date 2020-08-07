@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    최신버전 1.1.34
+    최신버전 1.1.35
     </title>
     <meta name="description" content="RealGrid 데모사이트 입니다.">
 
@@ -239,7 +239,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.34</span>
+                            <span>최신버전 1.1.35</span>
                         </a>
                     </li>
                     
@@ -1667,7 +1667,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.34</span>
+                            <span>최신버전 1.1.35</span>
                         </a>
                     </li>
                     
@@ -1853,7 +1853,7 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">최신버전 1.1.34</h1>
+            <h1 class="title-page">최신버전 1.1.35</h1>
             
 
             
@@ -1863,11 +1863,254 @@
 
         <div class="document-formatting">
             
-<h2 id="1134-2019년-10월">1.1.34 (2019년 10월)</h2>
+<h2 id="1135-2020년-08월">1.1.35 (2020년 08월)</h2>
 
 <hr />
 
 <h4 id="기능-개선">기능 개선</h4>
+
+<ol>
+  <li><a href="/Excels/ExcelExport/">ExcelExport</a>
+    <ul>
+      <li><a href="http://help.realgrid.com/api/types/LinkCellRenderer/">LinkCellRenderer</a>를 사용한 셀을 export할때 url도 export하도록 하는 <a href="http://help.realgrid.com/api/types/GridExportOptions/">GridExportOptions</a>.exportLink 속성이 추가되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">gridView</span><span class="p">.</span><span class="nx">exportGrid</span><span class="p">({</span><span class="na">type</span><span class="p">:</span><span class="dl">"</span><span class="s2">excel</span><span class="dl">"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span><span class="dl">"</span><span class="s2">local</span><span class="dl">"</span><span class="p">,</span> <span class="na">exportLink</span><span class="p">:</span><span class="kc">true</span><span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/CheckBar/">CheckBar</a>
+    <ul>
+      <li>checkBar.disableCheckImageUrl속성과 checkbar.disableUnCheckImageUrl 속성이 추가되었습니다.</li>
+      <li>checkable이 false일때 표시되는 이미지의 url을 지정합니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">setCheckBar</span><span class="p">({</span>
+ <span class="na">disableCheckImageUrl</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./images/disableCheckImage.png</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">disableUnCheckImageUrl</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./images/disableUnCheckImageUrl.png</span><span class="dl">"</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">safari</code>에서 가상키보드
+    <ul>
+      <li>iPad/iPhone safari의 userAgent가 변경됨에 따라 모바일을 체크하는 부분을 변경하였습니다.</li>
+      <li>모바일 safari에서 그리드를 클릭했을때 가상키보드가 생성되는 현상이 개선되었습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/LocalDataProvider/moveRow/">moveRow</a>
+    <ul>
+      <li>dataProvider.moveRow를 이용해서 행을 이동할때 check상태도 함께 이동되도록 개선되었습니다.</li>
+    </ul>
+  </li>
+  <li>[FilterSelectorOptions]http://help.realgrid.com/api/types/FilterSelectorOptions/)
+    <ul>
+      <li>filter Selector가 그리드 외부에 생성될수 있도록 viewGridInside속성이 추가되었습니다.</li>
+      <li>enterCallback속성이 추가되었습니다. default는 false입니다.</li>
+      <li>true로 설정하면 search창에서 enter키를 입력했을때 userFilterAddCallback이 실행됩니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">styles</code>
+    <ul>
+      <li>fontLineThrough속성이 추가되었습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
+    <ul>
+      <li>liveScroll이 false일때 topItem의 정보를 표시하는 tipView가 추가되었습니다.</li>
+      <li>scrollBar의 thumb를 마우스로 이동시 위치정보를 표시하는 view가 그리드 오른쪽 상단에 표시됩니다.
+        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nc">.rg-scroll-tip-view</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">setDisplayOptions</span><span class="p">({</span>
+ <span class="na">scrollMessageCallback</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">grid</span><span class="p">,</span> <span class="nx">vertical</span><span class="p">,</span> <span class="nx">itemIndex</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">vertical</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">vertical</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="nx">dataRow</span> <span class="o">=</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">getDataRow</span><span class="p">(</span><span class="nx">itemIndex</span><span class="p">);</span> 
+ <span class="k">if</span> <span class="p">(</span><span class="nx">dataRow</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="dl">"</span><span class="s2">&lt;span style='color:red'&gt;</span><span class="dl">"</span><span class="o">+</span><span class="nx">grid</span><span class="p">.</span><span class="nx">getDataSource</span><span class="p">().</span><span class="nx">getValue</span><span class="p">(</span><span class="nx">dataRow</span><span class="p">,</span> <span class="dl">"</span><span class="s2">keyFieldName</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">&lt;/span&gt;</span><span class="dl">"</span>
+ <span class="p">}</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/SearchOptions/">SearchOptions</a>
+    <ul>
+      <li>dataComparer속성이 추가되었습니다.</li>
+      <li>사용자가 검색조건을 작성하고 조건에 해당하면 true를 return합니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>  <span class="nx">grid</span><span class="p">.</span><span class="nx">grid</span><span class="p">.</span><span class="nx">searchCell</span><span class="p">({</span> 
+ <span class="na">fields</span><span class="p">:[</span><span class="dl">"</span><span class="s2">field1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">field2</span><span class="dl">"</span><span class="p">],</span> 
+ <span class="na">value</span><span class="p">:</span><span class="dl">"</span><span class="s2">검색 조건</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">dataComparer</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dataRow</span><span class="p">,</span> <span class="nx">fieldIndex</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">search</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// dataType에 따라 분리 필요.</span>
+   <span class="c1">// number/ datetime의 경우 replace/indexOf에서 오류 발생.</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">search</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">search</span><span class="p">)))</span> <span class="p">{</span>
+ <span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">" "</span><span class="se">]</span><span class="sr">/gi</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span>  <span class="c1">// 공백제거</span>
+ <span class="nx">search</span> <span class="o">=</span> <span class="nx">search</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">" "</span><span class="se">]</span><span class="sr">/gi</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span>
+ <span class="k">return</span> <span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">search</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">search</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/Tree/TreeDataModel/">TreeView</a>
+    <ul>
+      <li>treeView에서 노드를 접거나 펼칠때 기존에 선택된 행이 유지되도록 수정되었습니다.</li>
+      <li>선택된 행이 화면에서 사라지는 경우 접거나 펼쳐지는 노드로 포커스가 이동되도록 수정되었습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/ImageButtonCellRenderer/">ImageButtonCellRenderer</a>, <a href="http://help.realgrid.com/api/types/ImageButtonsCellRenderer/">ImageButtonsCellRenderer</a>
+    <ul>
+      <li>button에 마우스가 올라가면 tooltip이 표시되도록 개선되었습니다.
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">setColumns</span><span class="p">([{</span>
+ <span class="na">name</span><span class="p">:</span><span class="dl">"</span><span class="s2">column1</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">fieldName</span><span class="p">:</span><span class="dl">"</span><span class="s2">fieldName</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">renderer</span><span class="p">:{</span>
+ <span class="na">type</span><span class="p">:</span><span class="dl">"</span><span class="s2">imageButtons</span><span class="dl">"</span><span class="p">,</span>
+ <span class="na">images</span><span class="p">:[{</span>
+     <span class="na">name</span><span class="p">:</span><span class="dl">"</span><span class="s2">button1</span><span class="dl">"</span><span class="p">,</span>
+     <span class="na">up</span><span class="p">:</span><span class="dl">"</span><span class="s2">./images/button_up.png</span><span class="dl">"</span><span class="p">,</span>
+     <span class="na">tooltip</span><span class="p">:</span><span class="dl">"</span><span class="s2">버튼을 클릭하세요</span><span class="dl">"</span><span class="p">,</span>
+     <span class="na">showTooltip</span><span class="p">:</span> <span class="kc">true</span>
+ <span class="p">}]</span>
+ <span class="p">}</span>
+<span class="p">}]);</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="오류-수정">오류 수정</h4>
+<ol>
+  <li><a href="http://help.realgrid.com/api/GridBase/checkRow/">checkRow</a>
+    <ul>
+      <li>행이 편집중일때 checkRow를 이용해서 체크를 변경할수 없는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/ColumnFooter/">ColumnFooter</a>의 excel export
+    <ul>
+      <li>footer.groupCallback의 return값이 문자인경우 export되지 않는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/ColumnHeader/">ColumnHeader</a>.subText
+    <ul>
+      <li>header.subTextLocation이 “none”이거나 null인경우 export되지 않는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">column.fillWidth</code>
+    <ul>
+      <li>그룹컬럼의 자식컬럼에 fillWidth가 있을때 그룹컬럼의 헤더경계를 더블클릭했을때 그룹컬럼이 사라지는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/GridOptions/">keepNullFocus</a>
+    <ul>
+      <li>keepNullFocus가 true일때 그리드에 포커스를 주지 않고 스크롤후 checkBar의 check를 변경했을때 첫번째 행으로 포커스가 이동하는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/EditOptions/">maxLengthToNextCell</a>
+    <ul>
+      <li>mask 편집기의 includeFormat이 true일때 editOptions.maxLengthToNextCell이 true로 설정되면 값 입력시 바로 다음셀로 넘어가는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">TreeDataProvider</code>
+    <ul>
+      <li><code class="highlighter-rouge">restoreMode</code>가 true일때 dataType이 date인 field를 setVaue를 이용해서 값을 변경시 rowState가 “none”으로 변경되는 현상을 수정하였습니다.</li>
+      <li>dateFormat이 “yyyyMMdd”인 field에 setValue를 이용해서 값을 넣으면 format이 적용되지 않는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/TreeDataProvider/setValue/">TreeDataProvider.setValue</a>
+    <ul>
+      <li>field의 dataType이 <code class="highlighter-rouge">datetime</code>일때 format에 상과없이 string으로 값을 입력시 date형태로 변환되지 않는 오류를 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/ColumnGroup/">ColumnGroup</a>
+    <ul>
+      <li>컬럼그룹이 있는 경우 rowStylesFirst가 true일때 fixed 속성이 적용안되는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">TreeView</code>
+    <ul>
+      <li>데이터 재조회한 후 포커스를 이전위치로 이동시킬 때 현재 화면의 포커스 표시 여부에 따라 스크롤 위치가 달라지는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">mobile Focus</code>
+    <ul>
+      <li>mobile의 일부 브라우저에서 가상키보드 생성시 그리드가 포커스를 가져가는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">numberFormat</code>
+    <ul>
+      <li>sytles.numberFormat에 floor을 지정한 경우 일부 잘못된 값이 표시되는 현상을 수정하였습니다.\</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">editFormat</code>
+    <ul>
+      <li>numberEditor의 editFormat에서 소수점 이하 자릿수가 큰경우 편집시 소수가 일부 짤려서 표시되는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="1134-2019년-10월">1.1.34 (2019년 10월)</h2>
+
+<hr />
+
+<h4 id="기능-개선-1">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/ColumnHeader/">ColumnHeader</a>
@@ -1966,7 +2209,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정">오류 수정</h4>
+<h4 id="오류-수정-1">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/EditorOptions/">EditorOptions</a>
@@ -2000,7 +2243,7 @@
 
 <hr />
 
-<h4 id="기능-개선-1">기능 개선</h4>
+<h4 id="기능-개선-2">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/PasteOptions/">pasteOptions</a>
@@ -2117,7 +2360,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-1">오류 수정</h4>
+<h4 id="오류-수정-2">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/fitRowHeight/">fitRowHeight</a>
@@ -2181,7 +2424,7 @@
 
 <hr />
 
-<h4 id="기능-개선-2">기능 개선</h4>
+<h4 id="기능-개선-3">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DataColumn/">DataColumn</a>
     <ul>
@@ -2477,7 +2720,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-2">오류 수정</h4>
+<h4 id="오류-수정-3">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/LocalDataProvider/removeRow/">removeRow</a>
     <ul>
@@ -2520,7 +2763,7 @@
 
 <hr />
 
-<h4 id="기능-개선-3">기능 개선</h4>
+<h4 id="기능-개선-4">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DynamicStyle/">DynamicStyle</a>
     <ul>
@@ -2756,7 +2999,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-3">오류 수정</h4>
+<h4 id="오류-수정-4">오류 수정</h4>
 <ol>
   <li>[ColumnGroup]((/Columns/ColumnGrouping/)
     <ul>
@@ -2812,7 +3055,7 @@
 
 <hr />
 
-<h4 id="기능-개선-4">기능 개선</h4>
+<h4 id="기능-개선-5">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/GridOptions/#resizeDelay">GridOptions.resizeDelay</a>
     <ul>
@@ -3028,7 +3271,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-4">오류 수정</h4>
+<h4 id="오류-수정-5">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/ImageButtonsCellRenderer/">ImageButtonsCellRenderer</a>
     <ul>
@@ -3071,7 +3314,7 @@
 
 <hr />
 
-<h4 id="기능-개선-5">기능 개선</h4>
+<h4 id="기능-개선-6">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/ColumnFilter/">ColumnFilter</a>
     <ul>
@@ -3381,7 +3624,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-5">오류 수정</h4>
+<h4 id="오류-수정-6">오류 수정</h4>
 <ol>
   <li><a href="/CellComponent/LookupColumn/">lookupColumn</a>
     <ul>
@@ -3440,7 +3683,7 @@
 
 <hr />
 
-<h4 id="기능-개선-6">기능 개선</h4>
+<h4 id="기능-개선-7">기능 개선</h4>
 
 <ol>
   <li><code class="highlighter-rouge">numberFormat</code>
@@ -3722,7 +3965,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-6">오류 수정</h4>
+<h4 id="오류-수정-7">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/Mask/">mask</a>
@@ -3799,7 +4042,7 @@
 
 <hr />
 
-<h4 id="기능-개선-7">기능 개선</h4>
+<h4 id="기능-개선-8">기능 개선</h4>
 
 <ol>
   <li><code class="highlighter-rouge">dataProvider Export</code>
@@ -4070,7 +4313,7 @@
 <span class="p">}]);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h4 id="오류-수정-7">오류 수정</h4>
+<h4 id="오류-수정-8">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/Footer/">Footer</a>
@@ -4125,7 +4368,7 @@
 
 <hr />
 
-<h4 id="기능-개선-8">기능 개선</h4>
+<h4 id="기능-개선-9">기능 개선</h4>
 <ol>
   <li><a href="/GridComponent/ContextMenu/">contextMenu</a>
     <ul>
@@ -4565,7 +4808,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-8">오류 수정</h4>
+<h4 id="오류-수정-9">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/HeaderSummary/">HeaderSummary</a>
     <ul>
@@ -4656,7 +4899,7 @@
 
 <hr />
 
-<h4 id="기능-개선-9">기능 개선</h4>
+<h4 id="기능-개선-10">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/searchCell/">searchCell</a>
     <ul>
@@ -4980,7 +5223,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-9">오류 수정</h4>
+<h4 id="오류-수정-10">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">searchCell</code>
     <ul>
@@ -5058,7 +5301,7 @@
 
 <hr />
 
-<h4 id="기능-개선-10">기능 개선</h4>
+<h4 id="기능-개선-11">기능 개선</h4>
 <ol>
   <li><code class="highlighter-rouge">MergedRowGroup의 Footer 상단표시</code>
     <ul>
@@ -5220,7 +5463,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-10">오류 수정</h4>
+<h4 id="오류-수정-11">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">dataProvider.getFields</code>
     <ul>
@@ -5283,7 +5526,7 @@
 
 <hr />
 
-<h4 id="기능-개선-11">기능 개선</h4>
+<h4 id="기능-개선-12">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/TextWrap/">TextWrap</a>
     <ul>
@@ -5408,7 +5651,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-11">오류 수정</h4>
+<h4 id="오류-수정-12">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">getStyles</code>
     <ul>
@@ -5451,7 +5694,7 @@
 
 <hr />
 
-<h4 id="기능-개선-12">기능 개선</h4>
+<h4 id="기능-개선-13">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/SortingOptions/">SortingOptions</a>
     <ul>
@@ -5631,7 +5874,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-12">오류 수정</h4>
+<h4 id="오류-수정-13">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">getDisplayValues</code>
     <ul>
@@ -5709,7 +5952,7 @@
 
 <hr />
 
-<h4 id="기능-개선-13">기능 개선</h4>
+<h4 id="기능-개선-14">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
@@ -5758,7 +6001,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-13">오류 수정</h4>
+<h4 id="오류-수정-14">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">RowGrouping 상태에서 ExcelExport</code>
@@ -5824,7 +6067,7 @@
 
 <hr />
 
-<h4 id="기능-개선-14">기능 개선</h4>
+<h4 id="기능-개선-15">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/checkValidateCells/">GridBase.checkValidateCells()</a>
@@ -5876,7 +6119,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-14">오류 수정</h4>
+<h4 id="오류-수정-15">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">commit()함수 호출시 메시지 팝업 오류</code>
@@ -5948,7 +6191,7 @@
 <p>1.1.19버전에서는 새로운 기능이 추가 되거나 개선되었습니다. 또, 지난 버전 이후 문제되었던 크고 작은 오류들도 해결되었습니다.<br />
 아래에서 내용을 확인하고 링크를 클릭하여 자세한 사용방법등을 알아보세요.</p>
 
-<h4 id="기능-개선-15">기능 개선</h4>
+<h4 id="기능-개선-16">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/TextCellRenderer/">Renderer.showTooltip</a>
@@ -6066,7 +6309,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-15">오류 수정</h4>
+<h4 id="오류-수정-16">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">onRowInserted이벤트에서 dataProvider.setValue()함수 사용시 오류 발생 현상</code>
@@ -6177,9 +6420,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs_eval.1.1.34.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/realgridjs-api.1.1.34.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.34/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.35/realgridjs_eval.1.1.35.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.35/realgridjs-api.1.1.35.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.35/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>
