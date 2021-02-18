@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    최신버전 1.1.36
+    최신버전 1.1.37
     </title>
     <meta name="description" content="RealGrid 데모사이트 입니다.">
 
@@ -239,7 +239,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.36</span>
+                            <span>최신버전 1.1.37</span>
                         </a>
                     </li>
                     
@@ -1694,7 +1694,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.36</span>
+                            <span>최신버전 1.1.37</span>
                         </a>
                     </li>
                     
@@ -1880,7 +1880,7 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">최신버전 1.1.36</h1>
+            <h1 class="title-page">최신버전 1.1.37</h1>
             
 
             
@@ -1890,11 +1890,50 @@
 
         <div class="document-formatting">
             
-<h2 id="1136-2020년-11월">1.1.36 (2020년 11월)</h2>
+<h2 id="1137-2021년-02월">1.1.37 (2021년 02월)</h2>
 
 <hr />
 
 <h3 id="기능-개선">기능 개선</h3>
+
+<ol>
+  <li><code class="highlighter-rouge">numberFormat</code>의 소수점 올림/버림 설정이 소수점 첫번째 자리에도 적용되도록 개선되었습니다.
+    <ul>
+      <li><code class="highlighter-rouge">numberFormat</code>이 <code class="highlighter-rouge">#,##0;;;f</code>인 경우 소수점을 버린값으로 출력됩니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="오류-수정">오류 수정</h3>
+
+<ol>
+  <li><a href="/Excels/ExcelExport/">ExcelExport</a>
+    <ul>
+      <li>link 타입 컬럼을 export시 font size가 설정된 스타일과 다른 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">fitRowHeight</code>로 자동행 높이 조절시 일부 글자가 표시안되는 현상을 수정하였습니다.
+    <ul>
+      <li>styles.textWrap가 <code class="highlighter-rouge">normal</code>일때 fitRowHeight로 자동행높이 조절시 일부 글자가 표시되지 않는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="https://help.realgrid.com/api/GridBase/onRowsPasted/">onRowsPasted</a>
+    <ul>
+      <li>여러줄을 붙여넣기후 발생되는 onRowsPasted의 items인자에 <code class="highlighter-rouge">-1</code>만 넘어오는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+  <li><a href="https://help.realgrid.com/api/GridBase/getItemIndex/">getItemIndex</a>
+    <ul>
+      <li>treeView에서 편집중인 행의 dataRow를 이용해서 getItemIndex를 호출하는 경우 -1이 return되는 현상을 수정하였습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="1136-2020년-11월">1.1.36 (2020년 11월)</h2>
+
+<hr />
+
+<h3 id="기능-개선-1">기능 개선</h3>
 
 <ol>
   <li><a href="/Excels/ExcelExport/">ExcelExport</a>
@@ -1939,7 +1978,7 @@
   </li>
 </ol>
 
-<h3 id="오류-수정">오류 수정</h3>
+<h3 id="오류-수정-1">오류 수정</h3>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DataColumn/">DataColumn</a>
@@ -1973,7 +2012,7 @@
 
 <hr />
 
-<h4 id="기능-개선-1">기능 개선</h4>
+<h4 id="기능-개선-2">기능 개선</h4>
 
 <ol>
   <li><a href="/Excels/ExcelExport/">ExcelExport</a>
@@ -2142,7 +2181,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-1">오류 수정</h4>
+<h4 id="오류-수정-2">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/checkRow/">checkRow</a>
     <ul>
@@ -2216,7 +2255,7 @@
 
 <hr />
 
-<h4 id="기능-개선-2">기능 개선</h4>
+<h4 id="기능-개선-3">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/ColumnHeader/">ColumnHeader</a>
@@ -2315,7 +2354,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-2">오류 수정</h4>
+<h4 id="오류-수정-3">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/EditorOptions/">EditorOptions</a>
@@ -2349,7 +2388,7 @@
 
 <hr />
 
-<h4 id="기능-개선-3">기능 개선</h4>
+<h4 id="기능-개선-4">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/PasteOptions/">pasteOptions</a>
@@ -2466,7 +2505,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-3">오류 수정</h4>
+<h4 id="오류-수정-4">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/fitRowHeight/">fitRowHeight</a>
@@ -2530,7 +2569,7 @@
 
 <hr />
 
-<h4 id="기능-개선-4">기능 개선</h4>
+<h4 id="기능-개선-5">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DataColumn/">DataColumn</a>
     <ul>
@@ -2826,7 +2865,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-4">오류 수정</h4>
+<h4 id="오류-수정-5">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/LocalDataProvider/removeRow/">removeRow</a>
     <ul>
@@ -2869,7 +2908,7 @@
 
 <hr />
 
-<h4 id="기능-개선-5">기능 개선</h4>
+<h4 id="기능-개선-6">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DynamicStyle/">DynamicStyle</a>
     <ul>
@@ -3105,7 +3144,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-5">오류 수정</h4>
+<h4 id="오류-수정-6">오류 수정</h4>
 <ol>
   <li>[ColumnGroup]((/Columns/ColumnGrouping/)
     <ul>
@@ -3161,7 +3200,7 @@
 
 <hr />
 
-<h4 id="기능-개선-6">기능 개선</h4>
+<h4 id="기능-개선-7">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/GridOptions/#resizeDelay">GridOptions.resizeDelay</a>
     <ul>
@@ -3377,7 +3416,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-6">오류 수정</h4>
+<h4 id="오류-수정-7">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/ImageButtonsCellRenderer/">ImageButtonsCellRenderer</a>
     <ul>
@@ -3420,7 +3459,7 @@
 
 <hr />
 
-<h4 id="기능-개선-7">기능 개선</h4>
+<h4 id="기능-개선-8">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/ColumnFilter/">ColumnFilter</a>
     <ul>
@@ -3730,7 +3769,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-7">오류 수정</h4>
+<h4 id="오류-수정-8">오류 수정</h4>
 <ol>
   <li><a href="/CellComponent/LookupColumn/">lookupColumn</a>
     <ul>
@@ -3789,7 +3828,7 @@
 
 <hr />
 
-<h4 id="기능-개선-8">기능 개선</h4>
+<h4 id="기능-개선-9">기능 개선</h4>
 
 <ol>
   <li><code class="highlighter-rouge">numberFormat</code>
@@ -4071,7 +4110,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-8">오류 수정</h4>
+<h4 id="오류-수정-9">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/Mask/">mask</a>
@@ -4148,7 +4187,7 @@
 
 <hr />
 
-<h4 id="기능-개선-9">기능 개선</h4>
+<h4 id="기능-개선-10">기능 개선</h4>
 
 <ol>
   <li><code class="highlighter-rouge">dataProvider Export</code>
@@ -4419,7 +4458,7 @@
 <span class="p">}]);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h4 id="오류-수정-9">오류 수정</h4>
+<h4 id="오류-수정-10">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/Footer/">Footer</a>
@@ -4474,7 +4513,7 @@
 
 <hr />
 
-<h4 id="기능-개선-10">기능 개선</h4>
+<h4 id="기능-개선-11">기능 개선</h4>
 <ol>
   <li><a href="/GridComponent/ContextMenu/">contextMenu</a>
     <ul>
@@ -4914,7 +4953,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-10">오류 수정</h4>
+<h4 id="오류-수정-11">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/HeaderSummary/">HeaderSummary</a>
     <ul>
@@ -5005,7 +5044,7 @@
 
 <hr />
 
-<h4 id="기능-개선-11">기능 개선</h4>
+<h4 id="기능-개선-12">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/searchCell/">searchCell</a>
     <ul>
@@ -5329,7 +5368,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-11">오류 수정</h4>
+<h4 id="오류-수정-12">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">searchCell</code>
     <ul>
@@ -5407,7 +5446,7 @@
 
 <hr />
 
-<h4 id="기능-개선-12">기능 개선</h4>
+<h4 id="기능-개선-13">기능 개선</h4>
 <ol>
   <li><code class="highlighter-rouge">MergedRowGroup의 Footer 상단표시</code>
     <ul>
@@ -5569,7 +5608,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-12">오류 수정</h4>
+<h4 id="오류-수정-13">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">dataProvider.getFields</code>
     <ul>
@@ -5632,7 +5671,7 @@
 
 <hr />
 
-<h4 id="기능-개선-13">기능 개선</h4>
+<h4 id="기능-개선-14">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/TextWrap/">TextWrap</a>
     <ul>
@@ -5757,7 +5796,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-13">오류 수정</h4>
+<h4 id="오류-수정-14">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">getStyles</code>
     <ul>
@@ -5800,7 +5839,7 @@
 
 <hr />
 
-<h4 id="기능-개선-14">기능 개선</h4>
+<h4 id="기능-개선-15">기능 개선</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/SortingOptions/">SortingOptions</a>
     <ul>
@@ -5980,7 +6019,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-14">오류 수정</h4>
+<h4 id="오류-수정-15">오류 수정</h4>
 <ol>
   <li><code class="highlighter-rouge">getDisplayValues</code>
     <ul>
@@ -6058,7 +6097,7 @@
 
 <hr />
 
-<h4 id="기능-개선-15">기능 개선</h4>
+<h4 id="기능-개선-16">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DisplayOptions/">DisplayOptions</a>
@@ -6107,7 +6146,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-15">오류 수정</h4>
+<h4 id="오류-수정-16">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">RowGrouping 상태에서 ExcelExport</code>
@@ -6173,7 +6212,7 @@
 
 <hr />
 
-<h4 id="기능-개선-16">기능 개선</h4>
+<h4 id="기능-개선-17">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/checkValidateCells/">GridBase.checkValidateCells()</a>
@@ -6225,7 +6264,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-16">오류 수정</h4>
+<h4 id="오류-수정-17">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">commit()함수 호출시 메시지 팝업 오류</code>
@@ -6297,7 +6336,7 @@
 <p>1.1.19버전에서는 새로운 기능이 추가 되거나 개선되었습니다. 또, 지난 버전 이후 문제되었던 크고 작은 오류들도 해결되었습니다.<br />
 아래에서 내용을 확인하고 링크를 클릭하여 자세한 사용방법등을 알아보세요.</p>
 
-<h4 id="기능-개선-17">기능 개선</h4>
+<h4 id="기능-개선-18">기능 개선</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/TextCellRenderer/">Renderer.showTooltip</a>
@@ -6415,7 +6454,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-17">오류 수정</h4>
+<h4 id="오류-수정-18">오류 수정</h4>
 
 <ol>
   <li><code class="highlighter-rouge">onRowInserted이벤트에서 dataProvider.setValue()함수 사용시 오류 발생 현상</code>
@@ -6526,9 +6565,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.36/realgridjs_eval.1.1.36.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.36/realgridjs-api.1.1.36.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.36/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.37/realgridjs_eval.1.1.37.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.37/realgridjs-api.1.1.37.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.37/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.3/realpivot_eval.1.0.3.min.js"></script>
