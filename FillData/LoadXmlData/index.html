@@ -2123,9 +2123,9 @@
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      <h4 id="xml-데이터-only-js-support">XML 데이터 <code class="highlighter-rouge">(Only JS Support)</code></h4>
+      <h4 id="xml-데이터-only-js-support">XML 데이터 <code class="language-plaintext highlighter-rouge">(Only JS Support)</code></h4>
 
-<p>RealGrid의 DataProvider에 XML 포멧의 데이터를 입력 할 수 있습니다. XML데이터의 유형은 아래와 같이 <code class="highlighter-rouge">attribute</code>를 활용하거나 <code class="highlighter-rouge">childNode</code>를 활용하는 방법, 모두 가능하며 두 방법을 조합하여 사용할 수도 있습니다.</p>
+<p>RealGrid의 DataProvider에 XML 포멧의 데이터를 입력 할 수 있습니다. XML데이터의 유형은 아래와 같이 <code class="language-plaintext highlighter-rouge">attribute</code>를 활용하거나 <code class="language-plaintext highlighter-rouge">childNode</code>를 활용하는 방법, 모두 가능하며 두 방법을 조합하여 사용할 수도 있습니다.</p>
 
 <p>아래, 각 유형에 대한 데이터 샘플을 참고하세요.</p>
 
@@ -2421,9 +2421,9 @@
 <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">fillXmlData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span><span class="na">fillMode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">set</span><span class="dl">"</span><span class="p">});</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><a href="http://help.realgrid.com/api/LocalDataProvider/fillJsonData/">LocalDataProvider.fillJsonData()</a>함수의 인자는 <code class="highlighter-rouge">data</code>와 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>객체인 <code class="highlighter-rouge">options</code>가 있습니다.</p>
+<p><a href="http://help.realgrid.com/api/LocalDataProvider/fillJsonData/">LocalDataProvider.fillJsonData()</a>함수의 인자는 <code class="language-plaintext highlighter-rouge">data</code>와 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>객체인 <code class="language-plaintext highlighter-rouge">options</code>가 있습니다.</p>
 
-<p><code class="highlighter-rouge">options</code>에 대해서는 아래 <code class="highlighter-rouge">DataFillOptions</code> 데모를 확인하세요.</p>
+<p><code class="language-plaintext highlighter-rouge">options</code>에 대해서는 아래 <code class="language-plaintext highlighter-rouge">DataFillOptions</code> 데모를 확인하세요.</p>
 
 <h4 id="filldataoptions">FillDataOptions</h4>
 
@@ -2435,13 +2435,13 @@
   <li><a href="http://help.realgrid.com/api/LocalDataProvider/fillCsvData/">fillCsvData(data, options)</a></li>
 </ul>
 
-<p>이 함수들에는 공통적으로 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>형의 <code class="highlighter-rouge">options</code>라는 두번째 인자가 정의되어 있습니다.</p>
+<p>이 함수들에는 공통적으로 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>형의 <code class="language-plaintext highlighter-rouge">options</code>라는 두번째 인자가 정의되어 있습니다.</p>
 
 <p><a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>를 이용해 그리드를 데이터에 로드하기 위한 여러가지 옵션을 설정 할 수 있습니다.</p>
 
-<p><code class="highlighter-rouge">fillMode</code>속성으로 데이터를 채우는 방법을 선택 할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">fillMode</code>속성으로 데이터를 채우는 방법을 선택 할 수 있습니다.</p>
 
-<p>그리드의 모든 데이터를 지우고 아래 <code class="highlighter-rouge">data</code>를 채웁니다.</p>
+<p>그리드의 모든 데이터를 지우고 아래 <code class="language-plaintext highlighter-rouge">data</code>를 채웁니다.</p>
 
 <p><a class="btn primary small round lowercase" id="fillModeSet">SET으로 채우기</a></p>
 
@@ -2469,7 +2469,7 @@
 
 <p><a class="btn primary small round lowercase" id="fillModeAppend">APPEND로 추가하기</a></p>
 
-<p>그리드의 마지막행 뒤에 <code class="highlighter-rouge">jsonData</code>의 첫 번째 행에서 두개 행(<code class="highlighter-rouge">BMW 데이터</code>)을 가져와 <code class="highlighter-rouge">추가(Append)</code> 합니다. 이 작업을 위해 <code class="highlighter-rouge">DataFillOptions</code>의 <code class="highlighter-rouge">start</code>, <code class="highlighter-rouge">count</code>속성을 사용합니다.</p>
+<p>그리드의 마지막행 뒤에 <code class="language-plaintext highlighter-rouge">jsonData</code>의 첫 번째 행에서 두개 행(<code class="language-plaintext highlighter-rouge">BMW 데이터</code>)을 가져와 <code class="language-plaintext highlighter-rouge">추가(Append)</code> 합니다. 이 작업을 위해 <code class="language-plaintext highlighter-rouge">DataFillOptions</code>의 <code class="language-plaintext highlighter-rouge">start</code>, <code class="language-plaintext highlighter-rouge">count</code>속성을 사용합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2497,7 +2497,7 @@
 <span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><code class="highlighter-rouge">jsonData</code>에서 <code class="highlighter-rouge">벤츠</code> 데이터를 가져와 2행 위치에 <code class="highlighter-rouge">삽입(Insert)</code> 합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">jsonData</code>에서 <code class="language-plaintext highlighter-rouge">벤츠</code> 데이터를 가져와 2행 위치에 <code class="language-plaintext highlighter-rouge">삽입(Insert)</code> 합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="fillModeInsert">INSERT로 삽입하기</a></p>
 
@@ -2509,7 +2509,7 @@
 <span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><code class="highlighter-rouge">jsonData</code>에서 <code class="highlighter-rouge">아우디</code> 데이터를 가져와 5행 위치에 있는 데이터를 <code class="highlighter-rouge">덮어쓰기(Update)</code> 합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">jsonData</code>에서 <code class="language-plaintext highlighter-rouge">아우디</code> 데이터를 가져와 5행 위치에 있는 데이터를 <code class="language-plaintext highlighter-rouge">덮어쓰기(Update)</code> 합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="fillModeUpdate">UPDATE로 덮어쓰기</a></p>
 

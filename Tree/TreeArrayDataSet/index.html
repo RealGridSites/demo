@@ -1908,8 +1908,8 @@
         </div>
 
         <div class="document-formatting">
-            <p>트리뷰(TreeView)를 구현하기 위해 <code class="highlighter-rouge">배열형(Array) 데이터</code>를 사용할 수 있습니다.
-<code class="highlighter-rouge">배열형(Array) 데이터</code>의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.</p>
+            <p>트리뷰(TreeView)를 구현하기 위해 <code class="language-plaintext highlighter-rouge">배열형(Array) 데이터</code>를 사용할 수 있습니다.
+<code class="language-plaintext highlighter-rouge">배열형(Array) 데이터</code>의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.</p>
 
 <div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
 
@@ -2154,7 +2154,7 @@
 
 <h4 id="array-데이터로-트리-구현">Array 데이터로 트리 구현</h4>
 
-<p><code class="highlighter-rouge">Array 데이터</code>로 트리를 구현하기 위해서 아래 함수를 사용할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">Array 데이터</code>로 트리를 구현하기 위해서 아래 함수를 사용할 수 있습니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a></li>
@@ -2162,7 +2162,7 @@
 
 <p>함수를 호출하는 샘플 코드를 작성해 보겠습니다.</p>
 
-<p>데이터 입력시 정렬을 위해 함수의 <code class="highlighter-rouge">needSorting</code>인자를 <code class="highlighter-rouge">true</code>로 설정합니다.
+<p>데이터 입력시 정렬을 위해 함수의 <code class="language-plaintext highlighter-rouge">needSorting</code>인자를 <code class="language-plaintext highlighter-rouge">true</code>로 설정합니다.
 정렬에 대한 자세한 설명은 아래 내용을 참고 하세요.</p>
 
 <p><a class="btn primary small round lowercase clearRows">데이터 지우기</a>
@@ -2182,7 +2182,7 @@
 <span class="nx">treeView</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>데이터 입력시 정렬을 하지 않고 입력 하려면 <code class="highlighter-rouge">needSorting</code>인자를 <code class="highlighter-rouge">false</code>로 설정합니다.
+<p>데이터 입력시 정렬을 하지 않고 입력 하려면 <code class="language-plaintext highlighter-rouge">needSorting</code>인자를 <code class="language-plaintext highlighter-rouge">false</code>로 설정합니다.
 정렬에 대한 자세한 설명은 아래 내용을 참고 하세요.</p>
 
 <p><a class="btn primary small round lowercase clearRows">데이터 지우기</a>
@@ -2204,7 +2204,7 @@
 
 <h4 id="트리-구현을-위한-array-데이터-계층-구조">트리 구현을 위한 Array 데이터 계층 구조</h4>
 
-<p>Array 데이터 계층 구조에서 주목할 부분은 <code class="highlighter-rouge">treeField</code> 입니다. <code class="highlighter-rouge">treeField</code>는 이 데모의 데이터에서
+<p>Array 데이터 계층 구조에서 주목할 부분은 <code class="language-plaintext highlighter-rouge">treeField</code> 입니다. <code class="language-plaintext highlighter-rouge">treeField</code>는 이 데모의 데이터에서
 두 번째 항목에 해당하는 필드 입니다. 즉,</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -2217,9 +2217,9 @@
 <span class="p">...</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><code class="highlighter-rouge">treeField</code>는 트리를 구성하기 위한 문자열이며 설명의 편의상 필드의 값을 <code class="highlighter-rouge">트리코드(tree code)</code>라 명명 하겠습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">treeField</code>는 트리를 구성하기 위한 문자열이며 설명의 편의상 필드의 값을 <code class="language-plaintext highlighter-rouge">트리코드(tree code)</code>라 명명 하겠습니다.</p>
 
-<p><code class="highlighter-rouge">트리코드(tree code)</code>는 바로 전에 입력된 트리코드와 비교하여 <code class="highlighter-rouge">문자열의 포함 여부</code> 또는 <code class="highlighter-rouge">문자열의 갯수</code>를
+<p><code class="language-plaintext highlighter-rouge">트리코드(tree code)</code>는 바로 전에 입력된 트리코드와 비교하여 <code class="language-plaintext highlighter-rouge">문자열의 포함 여부</code> 또는 <code class="language-plaintext highlighter-rouge">문자열의 갯수</code>를
 기준으로 노드의 깊이(Level)를 판단 합니다. 트리코드에 대한 자세한 설명은
 [<a href="http://help.realgrid.com/tutorial/b9-3/">B9-3 TreeView의 ItemModel 이해하기</a>]를
 참조하세요.</p>
@@ -2232,8 +2232,8 @@
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setRows</span><span class="p">(</span><span class="nx">rows</span><span class="p">,</span> <span class="nx">treeField</span><span class="p">,</span> <span class="nx">needSorting</span><span class="p">,</span> <span class="nx">childrenField</span><span class="p">,</span> <span class="nx">iconField</span><span class="p">)</span> <span class="p">{}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>이 함수의 마지막 인자인 <code class="highlighter-rouge">iconField</code>에 데이터에서 <code class="highlighter-rouge">아이콘 인덱스(icon index)</code>에 해당하는 필드 이름을 넘겨줍니다.
-이 함수의 두 번째 인자인 <code class="highlighter-rouge">treeField</code>에 데이터에서 트리코드에 해당하는 필드 이름을 넘겨줍니다.</p>
+<p>이 함수의 마지막 인자인 <code class="language-plaintext highlighter-rouge">iconField</code>에 데이터에서 <code class="language-plaintext highlighter-rouge">아이콘 인덱스(icon index)</code>에 해당하는 필드 이름을 넘겨줍니다.
+이 함수의 두 번째 인자인 <code class="language-plaintext highlighter-rouge">treeField</code>에 데이터에서 트리코드에 해당하는 필드 이름을 넘겨줍니다.</p>
 
 <blockquote>
   <p>하지만, 트리의 계층 구조가 바뀌어도 자동으로 이 필드의 값이 바뀌지는 않는다는 사실은 주의해야 합니다.</p>
@@ -2249,20 +2249,20 @@
 
 <h4 id="treefield값의-정렬">treeField값의 정렬</h4>
 
-<p>배열형 데이터를 입력할 때 주의할 점은 <mark>정렬되지 않은</mark> <code class="highlighter-rouge">treeField</code>값을 입력할 경우 정확한 계층 구조를 만들지 못할 수도 있다는 사실입니다.</p>
+<p>배열형 데이터를 입력할 때 주의할 점은 <mark>정렬되지 않은</mark> <code class="language-plaintext highlighter-rouge">treeField</code>값을 입력할 경우 정확한 계층 구조를 만들지 못할 수도 있다는 사실입니다.</p>
 
-<p>위의 배열형 데이터를 다시 자세히 보면 8행에 있는 <code class="highlighter-rouge">성남시 수정구</code>의 경우 treeField 값이 순방향 정렬 순서에 맞지 않는 곳에 위치해 있습니다.</p>
+<p>위의 배열형 데이터를 다시 자세히 보면 8행에 있는 <code class="language-plaintext highlighter-rouge">성남시 수정구</code>의 경우 treeField 값이 순방향 정렬 순서에 맞지 않는 곳에 위치해 있습니다.</p>
 
 <p>이처럼 정렬되지 않은 배열 데이터를 입력할 경우 setRows() 함수의 로직으로 인해 원하는 계층 구조가 만들어 지지 않을 수 있습니다.
-그러므로, 서버에서 데이터를 가져올때 미리 정렬을 하거나, <code class="highlighter-rouge">needSorting</code>인자를 <code class="highlighter-rouge">true</code>로 입력하여 트리를 구성하기 전에
-반드시 <code class="highlighter-rouge">treeField</code>의 값을 정렬하도록 해야 합니다.</p>
+그러므로, 서버에서 데이터를 가져올때 미리 정렬을 하거나, <code class="language-plaintext highlighter-rouge">needSorting</code>인자를 <code class="language-plaintext highlighter-rouge">true</code>로 입력하여 트리를 구성하기 전에
+반드시 <code class="language-plaintext highlighter-rouge">treeField</code>의 값을 정렬하도록 해야 합니다.</p>
 
 <h4 id="트리에-아이콘-표시하기">트리에 아이콘 표시하기</h4>
 
 <p>트리뷰(TreeView)에는 각 노드에 아이콘을 표시할 수 있습니다.</p>
 
-<p>아래 트리 구현 함수들에서는 함수의 마지막 인자인 <code class="highlighter-rouge">iconField</code>에 트리컬럼에 표시할 아이콘의 index값이
-들어 있는 필드명을 입력합니다. 이 필드에 들어있는 값이 트리노드의 <code class="highlighter-rouge">기본 아이콘 인덱스(icon index)</code>가 됩니다.</p>
+<p>아래 트리 구현 함수들에서는 함수의 마지막 인자인 <code class="language-plaintext highlighter-rouge">iconField</code>에 트리컬럼에 표시할 아이콘의 index값이
+들어 있는 필드명을 입력합니다. 이 필드에 들어있는 값이 트리노드의 <code class="language-plaintext highlighter-rouge">기본 아이콘 인덱스(icon index)</code>가 됩니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a></li>
@@ -2270,9 +2270,9 @@
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setXmlRows()</a></li>
 </ul>
 
-<p>또 다른 트리 구현 함수인 아래 함수들에서는 두 번째 인자인 <code class="highlighter-rouge">options</code>
+<p>또 다른 트리 구현 함수인 아래 함수들에서는 두 번째 인자인 <code class="language-plaintext highlighter-rouge">options</code>
 즉, <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
-<code class="highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
+<code class="language-plaintext highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="language-plaintext highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillJsonData/">TreeDataProvider.fillJsonData()</a></li>
@@ -2336,7 +2336,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <h4 id="트리-노드-아이콘-변경-하기">트리 노드 아이콘 변경 하기</h4>
 
-<p>트리 노드의 <code class="highlighter-rouge">아이콘 인덱스(icon index)</code>를 가져오고 지정하기 위해</p>
+<p>트리 노드의 <code class="language-plaintext highlighter-rouge">아이콘 인덱스(icon index)</code>를 가져오고 지정하기 위해</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/getIconIndex/">TreeDataProvider.getIconIndex()</a></li>

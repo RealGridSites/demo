@@ -2170,7 +2170,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
       
       <h4 id="그리드-값을-가져오기-위한-함수들">그리드 값을 가져오기 위한 함수들</h4>
 
-<p>아래는 <code class="highlighter-rouge">dataProvider</code>의 값을 가져오기 위한 함수들이 있습니다.</p>
+<p>아래는 <code class="language-plaintext highlighter-rouge">dataProvider</code>의 값을 가져오기 위한 함수들이 있습니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/LocalDataProvider/getValue/">getValue(row, field)</a></li>
@@ -2183,7 +2183,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
 <h4 id="그리드-값-가져오기">그리드 값 가져오기</h4>
 
-<p>현재 포커스 위치의 <code class="highlighter-rouge">row</code>와 <code class="highlighter-rouge">field</code>값에 해당하는 <code class="highlighter-rouge">value</code> 값을 가져올 수 있습니다.</p>
+<p>현재 포커스 위치의 <code class="language-plaintext highlighter-rouge">row</code>와 <code class="language-plaintext highlighter-rouge">field</code>값에 해당하는 <code class="language-plaintext highlighter-rouge">value</code> 값을 가져올 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="getValue">getValue</a></p>
 
@@ -2195,7 +2195,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">row: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span> <span class="o">+</span>  <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">field: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">current</span><span class="p">.</span><span class="nx">fieldName</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">value: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">value</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>한 행의 필드값들이 순서대로 들어있는 <code class="highlighter-rouge">Array</code>로 가져올 수 있습니다.</p>
+<p>한 행의 필드값들이 순서대로 들어있는 <code class="language-plaintext highlighter-rouge">Array</code>로 가져올 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="getValues">getValues</a></p>
 
@@ -2205,7 +2205,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">row: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getValues</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span><span class="p">));</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>한 행의 값을 <code class="highlighter-rouge">Json객체</code>로 가져올 수 있습니다.</p>
+<p>한 행의 값을 <code class="language-plaintext highlighter-rouge">Json객체</code>로 가져올 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="getJsonRow">getJsonRow</a></p>
 
@@ -2217,9 +2217,9 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">row: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">current</span><span class="p">.</span><span class="nx">dataRow</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">JsonData</span><span class="p">));</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>여러 행의 데이터를 <code class="highlighter-rouge">Array의 Array</code>로 가져올 수 있습니다.<br />
-<code class="highlighter-rouge">startRow</code>는 기본 0이며 0보다 작으면 첫번째 행부터 가져옵니다.<br />
-<code class="highlighter-rouge">endRow</code>는 기본 -1이며 -1이면 마지막 행 까지 가져옵니다.</p>
+<p>여러 행의 데이터를 <code class="language-plaintext highlighter-rouge">Array의 Array</code>로 가져올 수 있습니다.<br />
+<code class="language-plaintext highlighter-rouge">startRow</code>는 기본 0이며 0보다 작으면 첫번째 행부터 가져옵니다.<br />
+<code class="language-plaintext highlighter-rouge">endRow</code>는 기본 -1이며 -1이면 마지막 행 까지 가져옵니다.</p>
 
 <p><a class="btn primary small round lowercase" id="getRows">getRows</a></p>
 
@@ -2227,9 +2227,9 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 </pre></td><td class="rouge-code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getRows</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">));</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>여러 행의 데이터를 <code class="highlighter-rouge">Json객체의 Array</code>로 가져올 수 있습니다.<br />
-<code class="highlighter-rouge">startRow</code>는 기본 0이며 0보다 작으면 첫번째 행부터 가져옵니다.<br />
-<code class="highlighter-rouge">endRow</code>는 기본 -1이며 -1이면 마지막 행 까지 가져옵니다.</p>
+<p>여러 행의 데이터를 <code class="language-plaintext highlighter-rouge">Json객체의 Array</code>로 가져올 수 있습니다.<br />
+<code class="language-plaintext highlighter-rouge">startRow</code>는 기본 0이며 0보다 작으면 첫번째 행부터 가져옵니다.<br />
+<code class="language-plaintext highlighter-rouge">endRow</code>는 기본 -1이며 -1이면 마지막 행 까지 가져옵니다.</p>
 
 <p><a class="btn primary small round lowercase" id="getJsonRows">getJsonRows</a></p>
 
@@ -2237,7 +2237,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 </pre></td><td class="rouge-code"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dataProvider</span><span class="p">.</span><span class="nx">getJsonRows</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)));</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>현재 포커스 위치의 한 필드 값들을 지정한 행 범위만큼 <code class="highlighter-rouge">Array</code>로 가져올 수 있습니다.</p>
+<p>현재 포커스 위치의 한 필드 값들을 지정한 행 범위만큼 <code class="language-plaintext highlighter-rouge">Array</code>로 가져올 수 있습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="getFieldValues">getFieldValues</a></p>
 

@@ -1908,7 +1908,7 @@
         </div>
 
         <div class="document-formatting">
-            <p><code class="highlighter-rouge">트리뷰(TreeView)</code>는 <code class="highlighter-rouge">그리드뷰(GridView)</code>처럼 <code class="highlighter-rouge">TreeDataProvider</code>객체의 함수들을 통해
+            <p><code class="language-plaintext highlighter-rouge">트리뷰(TreeView)</code>는 <code class="language-plaintext highlighter-rouge">그리드뷰(GridView)</code>처럼 <code class="language-plaintext highlighter-rouge">TreeDataProvider</code>객체의 함수들을 통해
 데이터를 편집할 수 있습니다. 트리의 노드를 추가하거나 노드의 자식을 추가하는 등 
 편집하는 방법을 실행해 보세요.</p>
 
@@ -2222,7 +2222,7 @@
 <span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>자식 노드가 여러개인 경우, 자식 노드들은 <code class="highlighter-rouge">순서(index)</code>를 가지고 있습니다. 따라서, 자식노드를 추가할 때 특정 순서의 위치에 추가하고 싶다면 <a href="http://help.realgrid.com/api/TreeDataProvider/insertChildRow/">insertChildRow()</a> 함수를 호출 하면서 두 번째 인자에 자식 노드의 index를 입력합니다.</p>
+<p>자식 노드가 여러개인 경우, 자식 노드들은 <code class="language-plaintext highlighter-rouge">순서(index)</code>를 가지고 있습니다. 따라서, 자식노드를 추가할 때 특정 순서의 위치에 추가하고 싶다면 <a href="http://help.realgrid.com/api/TreeDataProvider/insertChildRow/">insertChildRow()</a> 함수를 호출 하면서 두 번째 인자에 자식 노드의 index를 입력합니다.</p>
 
 <p><a class="btn primary small round lowercase" id="insertChildRow">‘아시아’의 세 번째 자식 노드 추가</a></p>
 
@@ -2290,7 +2290,7 @@
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/removeRows/">TreeDataProvider.removeRows()</a></li>
 </ul>
 
-<p>이중 <code class="highlighter-rouge">removeRow()</code> 함수를 사용해서 샘플코드를 작성해 보겠습니다.</p>
+<p>이중 <code class="language-plaintext highlighter-rouge">removeRow()</code> 함수를 사용해서 샘플코드를 작성해 보겠습니다.</p>
 
 <p><a class="btn primary small round lowercase" id="removeRow">removeRow()함수로 ‘아시아’ 지우기</a></p>
 
@@ -2308,23 +2308,23 @@
 
 <p><strong>추가</strong></p>
 <ul>
-  <li>키보드를 통한 삽입 기능은 <a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.instable</a>이 <code class="highlighter-rouge">true</code>여야 합니다.</li>
-  <li><code class="highlighter-rouge">Insert</code>키는 현재 행 앞에 같은 레벨의 행을 추가합니다.</li>
-  <li><code class="highlighter-rouge">Shift + Insert</code>키는 현재 행 뒤에 같은 레벨의 행을 추가합니다.</li>
-  <li><code class="highlighter-rouge">Ctrl + Insert</code>키는 현재 행의 자식 행을 끝에 추가합니다. 현재 행이 leaf인 경우 <a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.appendable</a>도 <code class="highlighter-rouge">true</code>여야 합니다.</li>
-  <li><code class="highlighter-rouge">아래 화살표</code>: 빈 트리나 표시되는 마지막 행에서 아래 화살표 키를 누르면 최상위 행을 추가합니다.</li>
+  <li>키보드를 통한 삽입 기능은 <a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.instable</a>이 <code class="language-plaintext highlighter-rouge">true</code>여야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Insert</code>키는 현재 행 앞에 같은 레벨의 행을 추가합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Shift + Insert</code>키는 현재 행 뒤에 같은 레벨의 행을 추가합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl + Insert</code>키는 현재 행의 자식 행을 끝에 추가합니다. 현재 행이 leaf인 경우 <a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.appendable</a>도 <code class="language-plaintext highlighter-rouge">true</code>여야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">아래 화살표</code>: 빈 트리나 표시되는 마지막 행에서 아래 화살표 키를 누르면 최상위 행을 추가합니다.</li>
 </ul>
 
 <p><strong>수정</strong></p>
 <ul>
   <li>편집 가능한 임의의 셀에서 키보드를 통해 입력을 시작하면 바로 편집상태가 됩니다.</li>
-  <li><a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.updatable</a>이 <code class="highlighter-rouge">true</code>여야 합니다.</li>
+  <li><a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.updatable</a>이 <code class="language-plaintext highlighter-rouge">true</code>여야 합니다.</li>
 </ul>
 
 <p><strong>삭제</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">Ctrl+Delete</code> 키를 누르면 선택된 행들을 삭제합니다.</li>
-  <li><a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.deletable</a>이 <code class="highlighter-rouge">true</code>여야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl+Delete</code> 키를 누르면 선택된 행들을 삭제합니다.</li>
+  <li><a href="http://help.realgrid.com/api/types/EditOptions/">EditOptions.deletable</a>이 <code class="language-plaintext highlighter-rouge">true</code>여야 합니다.</li>
 </ul>
 
 <script>

@@ -2159,30 +2159,30 @@
 <div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       
-      <h4 id="마스크-편집기-only-js-support">마스크 편집기 <code class="highlighter-rouge">(Only JS Support)</code></h4>
+      <h4 id="마스크-편집기-only-js-support">마스크 편집기 <code class="language-plaintext highlighter-rouge">(Only JS Support)</code></h4>
 
 <p>텍스트와 날짜 필드의 편집기에 마스크를 적용할 수 있습니다.<br />
 (숫자 필드는 <a href="http://demo.realgrid.com/Editing/Editors/">editFormat</a> 사용)</p>
 
-<p><code class="highlighter-rouge">dropDown</code>, <code class="highlighter-rouge">multiLine</code>, <code class="highlighter-rouge">multiCheck</code>, <code class="highlighter-rouge">number</code> 에디터 등에서는 동작하지 않습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">dropDown</code>, <code class="language-plaintext highlighter-rouge">multiLine</code>, <code class="language-plaintext highlighter-rouge">multiCheck</code>, <code class="language-plaintext highlighter-rouge">number</code> 에디터 등에서는 동작하지 않습니다.</p>
 
 <h4 id="마스크-편집기-기본형식">마스크 편집기 기본형식</h4>
 
-<p><code class="highlighter-rouge">"9"</code>의 경우 <code class="highlighter-rouge">공백이 허용</code>됩니다.<br />
+<p><code class="language-plaintext highlighter-rouge">"9"</code>의 경우 <code class="language-plaintext highlighter-rouge">공백이 허용</code>됩니다.<br />
 입력되지 않은 경우 값에서 제외됩니다.<br />
 공백이 허용되지 않는 형식이 있는 경우 반드시 입력해야 다른셀로 이동할 수 있습니다.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">"9"</code>: new RegExp(“[0-9 ]”)</li>
-  <li><code class="highlighter-rouge">"0"</code>: new RegExp(“[0-9]”)</li>
-  <li><code class="highlighter-rouge">"a"</code>: new RegExp(“[A-Za-z]”)</li>
-  <li><code class="highlighter-rouge">"*"</code>: new RegExp(“[A-Za-z0-9]”)</li>
+  <li><code class="language-plaintext highlighter-rouge">"9"</code>: new RegExp(“[0-9 ]”)</li>
+  <li><code class="language-plaintext highlighter-rouge">"0"</code>: new RegExp(“[0-9]”)</li>
+  <li><code class="language-plaintext highlighter-rouge">"a"</code>: new RegExp(“[A-Za-z]”)</li>
+  <li><code class="language-plaintext highlighter-rouge">"*"</code>: new RegExp(“[A-Za-z0-9]”)</li>
 </ul>
 
 <h4 id="textcelleditor에-마스크-편집기-사용">TextCellEditor에 마스크 편집기 사용</h4>
 
-<p>TextCellEditor에 mask에 적용된 형식은 <code class="highlighter-rouge">편집기에만 표시</code>됩니다.<br />
-mask: <code class="highlighter-rouge">"0000-0000"</code> 로 입력하는 경우 입력된 형식에 맞춰 편집기가 <code class="highlighter-rouge">"____-____"</code>로 표시됩니다. 
+<p>TextCellEditor에 mask에 적용된 형식은 <code class="language-plaintext highlighter-rouge">편집기에만 표시</code>됩니다.<br />
+mask: <code class="language-plaintext highlighter-rouge">"0000-0000"</code> 로 입력하는 경우 입력된 형식에 맞춰 편집기가 <code class="language-plaintext highlighter-rouge">"____-____"</code>로 표시됩니다. 
 따라서 텍스트 필드의 경우 Cell에 display하기 위해서는 <a href="http://demo.realgrid.com/CellComponent/RegularExpression/">정규식 표현</a>을 이용해서 적절히 가공해야 합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -2211,7 +2211,7 @@ mask: <code class="highlighter-rouge">"0000-0000"</code> 로 입력하는 경우
 
 <h4 id="datecelleditor에-마스크-편집기-사용">DateCellEditor에 마스크 편집기 사용</h4>
 
-<p>날짜 필드의 경우 <code class="highlighter-rouge">editMask</code>, <code class="highlighter-rouge">editor.datetimeFormat</code>, <code class="highlighter-rouge">styles.datetimeFormat</code>의 형식을 일치시켜야 하며 <code class="highlighter-rouge">includedFormat:true</code>를 이용해서 구분자까지 그대로 셀로 전달이 되어야 날짜 데이터가 정상적으로 처리됩니다.</p>
+<p>날짜 필드의 경우 <code class="language-plaintext highlighter-rouge">editMask</code>, <code class="language-plaintext highlighter-rouge">editor.datetimeFormat</code>, <code class="language-plaintext highlighter-rouge">styles.datetimeFormat</code>의 형식을 일치시켜야 하며 <code class="language-plaintext highlighter-rouge">includedFormat:true</code>를 이용해서 구분자까지 그대로 셀로 전달이 되어야 날짜 데이터가 정상적으로 처리됩니다.</p>
 
 <p><a href="http://help.realgrid.com/api/types/Mask/">Mask</a>속성 설정은 아래와 같이 사용할 수 있습니다.</p>
 

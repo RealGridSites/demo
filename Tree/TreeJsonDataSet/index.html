@@ -1908,8 +1908,8 @@
         </div>
 
         <div class="document-formatting">
-            <p>트리뷰(TreeView)를 구현하기 위해 <code class="highlighter-rouge">JSON 데이터</code>를 사용할 수 있습니다.
-<code class="highlighter-rouge">JSON 데이터</code>의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.</p>
+            <p>트리뷰(TreeView)를 구현하기 위해 <code class="language-plaintext highlighter-rouge">JSON 데이터</code>를 사용할 수 있습니다.
+<code class="language-plaintext highlighter-rouge">JSON 데이터</code>의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.</p>
 
 <div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
 
@@ -2166,9 +2166,9 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h4 id="json-데이터로-트리-구현-only-js-support">JSON 데이터로 트리 구현 <code class="highlighter-rouge">(Only JS Support)</code></h4>
+<h4 id="json-데이터로-트리-구현-only-js-support">JSON 데이터로 트리 구현 <code class="language-plaintext highlighter-rouge">(Only JS Support)</code></h4>
 
-<p><code class="highlighter-rouge">JSON 데이터</code>로 트리를 구현하기 위해 아래 두 함수를 사용할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">JSON 데이터</code>로 트리를 구현하기 위해 아래 두 함수를 사용할 수 있습니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setJsonRows()</a></li>
@@ -2214,23 +2214,23 @@
 
 <p>트리를 구현하기 위한 JSON 데이터의 구조에 대해 조금 더 알아보겠습니다.</p>
 
-<p>이 데모의 JSON 데이터 구조에서 주목할 부분은 <code class="highlighter-rouge">rows</code>라는 이름의 배열 속성 입니다.
+<p>이 데모의 JSON 데이터 구조에서 주목할 부분은 <code class="language-plaintext highlighter-rouge">rows</code>라는 이름의 배열 속성 입니다.
 이 속성은 트리의 계층구조를 표현하기 위한 속성명 입니다.
-<code class="highlighter-rouge">rows</code> 속성은 자식 노드를 위한 속성입니다.
-즉, JSON 에서 계층 구조는 계층을 표현하기 위한 속성(여기서는 <code class="highlighter-rouge">rows</code>)에 하위 노드의 데이터를 배열로 넣어주면 됩니다.</p>
+<code class="language-plaintext highlighter-rouge">rows</code> 속성은 자식 노드를 위한 속성입니다.
+즉, JSON 에서 계층 구조는 계층을 표현하기 위한 속성(여기서는 <code class="language-plaintext highlighter-rouge">rows</code>)에 하위 노드의 데이터를 배열로 넣어주면 됩니다.</p>
 
-<p>이 속성명은 JSON데이터로 트리를 구현하기 위한 <code class="highlighter-rouge">함수의 인자</code> 또는 <code class="highlighter-rouge">옵션의 속성</code>으로 넘겨주게 됩니다.</p>
+<p>이 속성명은 JSON데이터로 트리를 구현하기 위한 <code class="language-plaintext highlighter-rouge">함수의 인자</code> 또는 <code class="language-plaintext highlighter-rouge">옵션의 속성</code>으로 넘겨주게 됩니다.</p>
 
 <p>아래는 <a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setJsonRows()</a>함수의 정의 입니다.
-위 속성명인 <code class="highlighter-rouge">'rows'</code>는 이 함수의 두 번째 인자인 <code class="highlighter-rouge">rowsProp</code>의 값으로 넘겨 주어야 합니다.</p>
+위 속성명인 <code class="language-plaintext highlighter-rouge">'rows'</code>는 이 함수의 두 번째 인자인 <code class="language-plaintext highlighter-rouge">rowsProp</code>의 값으로 넘겨 주어야 합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">setJsonRows</span><span class="p">(</span><span class="nx">json</span><span class="p">,</span> <span class="nx">rowsProp</span><span class="p">,</span> <span class="nx">childrenProp</span><span class="p">,</span> <span class="nx">iconProp</span><span class="p">)</span> <span class="p">{}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>다음은 <a href="http://help.realgrid.com/api/TreeDataProvider/fillJsonData/">TreeDataProvider.fillJsonData()</a>함수의 정의 입니다.
-두 번째 인자인 <code class="highlighter-rouge">options</code> 즉 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
-<code class="highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
+두 번째 인자인 <code class="language-plaintext highlighter-rouge">options</code> 즉 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
+<code class="language-plaintext highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="language-plaintext highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">fillJsonData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{}</span>
@@ -2252,8 +2252,8 @@ Document방식의 데이터를 트리뷰에 표현하기 위해 이 보다 좋�
 
 <p>트리뷰(TreeView)에는 각 노드에 아이콘을 표시할 수 있습니다.</p>
 
-<p>아래 트리 구현 함수들에서는 함수의 마지막 인자인 <code class="highlighter-rouge">iconField</code>에 트리컬럼에 표시할 아이콘의 index값이
-들어 있는 필드명을 입력합니다. 이 필드에 들어있는 값이 트리노드의 <code class="highlighter-rouge">기본 아이콘 인덱스(icon index)</code>가 됩니다.</p>
+<p>아래 트리 구현 함수들에서는 함수의 마지막 인자인 <code class="language-plaintext highlighter-rouge">iconField</code>에 트리컬럼에 표시할 아이콘의 index값이
+들어 있는 필드명을 입력합니다. 이 필드에 들어있는 값이 트리노드의 <code class="language-plaintext highlighter-rouge">기본 아이콘 인덱스(icon index)</code>가 됩니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a></li>
@@ -2261,9 +2261,9 @@ Document방식의 데이터를 트리뷰에 표현하기 위해 이 보다 좋�
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setXmlRows()</a></li>
 </ul>
 
-<p>또 다른 트리 구현 함수인 아래 함수들에서는 두 번째 인자인 <code class="highlighter-rouge">options</code>
+<p>또 다른 트리 구현 함수인 아래 함수들에서는 두 번째 인자인 <code class="language-plaintext highlighter-rouge">options</code>
 즉, <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
-<code class="highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
+<code class="language-plaintext highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="language-plaintext highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillJsonData/">TreeDataProvider.fillJsonData()</a></li>
@@ -2327,7 +2327,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <h4 id="트리-노드-아이콘-변경-하기">트리 노드 아이콘 변경 하기</h4>
 
-<p>트리 노드의 <code class="highlighter-rouge">아이콘 인덱스(icon index)</code>를 가져오고 지정하기 위해</p>
+<p>트리 노드의 <code class="language-plaintext highlighter-rouge">아이콘 인덱스(icon index)</code>를 가져오고 지정하기 위해</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/getIconIndex/">TreeDataProvider.getIconIndex()</a></li>

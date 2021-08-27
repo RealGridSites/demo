@@ -1937,7 +1937,7 @@ Local DataProvider에는 <mark>Number가 아닌 값은 Number로 변환되어 Da
 
 <p>false, true 둘 중 하나의 값으로 저장됩니다. 즉, loadData()나 setRows() 등으로 외부 데이터가 Boolean 필드에 저장될 때, <mark>Boolean이 아닌 원본 값은 보존되지 않고 true/false로 변환됩니다. undefined는 undefined로 저장됩니다.</mark> 아래의 값들이 false로, 나머지 값들은 true로 변환됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1956,7 +1956,7 @@ Boolean 필드의 값과 문자열 값의 호환성이 고려되어야 하는 �
 
 <p>loadData()나 setRows() 등으로 DataProvider에 행들을 추가할 때, Boolean이 아닌 값을 Boolean 필드에 저장하고 싶다면, DataProvider나 DataField의 booleanFormat 속성을 이용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1985,7 +1985,7 @@ DataProvider와 DataField에 모두 지정되었다면 DataField에 지정된 �
 
 <p>셀 렌더러들은 Styles의 booleanFormat 속성 값을 기준으로 Boolean 필드의 값을 표시합니다. booleanFormat이 설정되지 않으면 각각 “false”, “true”로 표시됩니다. undefined는 빈문자열로 표시됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2009,7 +2009,7 @@ DataProvider와 DataField에 모두 지정되었다면 DataField에 지정된 �
 
 <p>텍스트를 입력하는 셀 에디터들은 booleanFormat 속성을 지정해서 Boolean 필드의 값을 텍스트로 표시하고, 입력된 텍스트 값을 Boolean 값으로 저장할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2049,7 +2049,7 @@ undefined는 undefined로 저장됩니다. 하지만, RealGrid 사용자는 주�
 
 <p>loadData()를 통해 Datetime 형의 값이 문자열로 전달되거나, setRows() 함수 등으로 javascript에서 문자열로 Date 필드의 값을 전달할 때, 그 문자열은 아래와 같이 리얼그리드가 Datetime 형의 값으로 인식할 수 있는 몇가지 형식으로 반드시 구성되어야 합니다. 이 형식의 종류는 DataProvider나 DataField의 datetimeFormat 속성 및 관련된 속성들에 지정할 수 있습니다. DataProvider와 DataField에 모두 설정된 경우 DataField에 지정한 것이 우선합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2281,7 +2281,7 @@ ISO 표준 상으로는 시간대가 반드시 존재해야 하지만, 리얼그
 또한, 시간 부분이 없거나 날짜 일부만 존재해도 해석합니다. 년도가 두자리일 경우 1900년이 추가되어 해석됩니다.<br />
 “iso” 형식으로 해석할 수 있는 문자열들은 아래와 같습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2301,7 +2301,7 @@ ISO 표준 상으로는 시간대가 반드시 존재해야 하지만, 리얼그
 Flash 플랫폼이 native로 지원하는 형식입니다. . 년도가 두자리일 경우 1900년이 추가되어 해석됩니다.<br />
 해석 가능한 예제는 아래와 같습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2315,7 +2315,7 @@ Flash 플랫폼이 native로 지원하는 형식입니다. . 년도가 두자리
 
 <p>가능하면 이 형식을 따라야 합니다. 특히 10만 건 이상의 대량 데이터를 로드하는 경우는 이 형식이 “iso”나 custom 형식보다 수 배 이상 빠르게 파싱합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2338,7 +2338,7 @@ Flash 플랫폼이 native로 지원하는 형식입니다. . 년도가 두자리
 <h4 id="42-rendering">4.2) rendering</h4>
 <p>Datetime 필드의 값을 표시하는 셀 렌더러는 datetimeFormat 스타일 값을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2478,7 +2478,7 @@ dateFormat 스타일 값을 없애고 datetimeFormat 스타일 값으로 재설�
 <p>Datetime 필드의 값을 입력하는 셀 에디터 또한 사용자의 입력을 Datetime 값으로 변환하고, Datetime 값을 에디터에 표시하기 위한 형식이 필요합니다.<br />
 셀 에디터의 datetimeFormat 속성에 아래와 같은 형식으로 지정합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4

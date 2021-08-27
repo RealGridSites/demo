@@ -2366,10 +2366,10 @@ function setHighChart(provider, vals, index, columnList) {
 
     <span class="k">if</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">__sum</span><span class="dl">"</span><span class="p">){</span>
         <span class="nx">subtitle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">전체 요약</span><span class="dl">"</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="err">모델</span><span class="p">){</span>
-        <span class="nx">subtitle</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="err">모델</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">모델</span><span class="p">){</span>
+        <span class="nx">subtitle</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">모델</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">subtitle</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="err">제조사</span>
+        <span class="nx">subtitle</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">제조사</span>
     <span class="p">}</span> 
 
     <span class="kd">var</span> <span class="nx">categories</span> <span class="o">=</span> <span class="nx">provider</span><span class="p">.</span><span class="nx">getFieldValues</span><span class="p">(</span><span class="dl">"</span><span class="s2">판매날짜</span><span class="dl">"</span><span class="p">);</span>

@@ -1908,8 +1908,8 @@
         </div>
 
         <div class="document-formatting">
-            <p>트리뷰(TreeView)를 구현하기 위해 <code class="highlighter-rouge">CSV 데이터</code>를 사용할 수 있습니다.
-<code class="highlighter-rouge">CSV 데이터</code>의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.</p>
+            <p>트리뷰(TreeView)를 구현하기 위해 <code class="language-plaintext highlighter-rouge">CSV 데이터</code>를 사용할 수 있습니다.
+<code class="language-plaintext highlighter-rouge">CSV 데이터</code>의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.</p>
 
 <div id="realtree" class="realgrid" style="width:100%; height:300px"></div>
 
@@ -2142,9 +2142,9 @@
   <span class="dl">'</span><span class="s1">0, 1.5, 경기도, 김포시</span><span class="se">\n</span><span class="dl">'</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h4 id="csv-데이터로-트리-구현-only-js-support">CSV 데이터로 트리 구현 <code class="highlighter-rouge">(Only JS Support)</code></h4>
+<h4 id="csv-데이터로-트리-구현-only-js-support">CSV 데이터로 트리 구현 <code class="language-plaintext highlighter-rouge">(Only JS Support)</code></h4>
 
-<p><code class="highlighter-rouge">CSV 데이터</code>로 트리를 구현하기 위해서 아래 함수를 사용할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">CSV 데이터</code>로 트리를 구현하기 위해서 아래 함수를 사용할 수 있습니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillCsvData/">TreeDataProvider.fillCsvData()</a></li>
@@ -2178,10 +2178,10 @@
 
 <h4 id="트리-구현을-위한-csv-데이터-계층-구조">트리 구현을 위한 CSV 데이터 계층 구조</h4>
 
-<p>CSV 데이터의 계층 구조는 Array 데이터의 방식과 거의 동일하게 <code class="highlighter-rouge">트리코드</code>에 해당 하는 필드를
+<p>CSV 데이터의 계층 구조는 Array 데이터의 방식과 거의 동일하게 <code class="language-plaintext highlighter-rouge">트리코드</code>에 해당 하는 필드를
 옵션에 지정해 주는 방식입니다.</p>
 
-<p><code class="highlighter-rouge">트리코드(tree code)</code>는 바로 전에 입력된 트리코드와 비교하여 <code class="highlighter-rouge">문자열의 포함 여부</code> 또는 <code class="highlighter-rouge">문자열의 갯수</code>를
+<p><code class="language-plaintext highlighter-rouge">트리코드(tree code)</code>는 바로 전에 입력된 트리코드와 비교하여 <code class="language-plaintext highlighter-rouge">문자열의 포함 여부</code> 또는 <code class="language-plaintext highlighter-rouge">문자열의 갯수</code>를
 기준으로 노드의 깊이(Level)를 판단 합니다. 트리코드에 대한 자세한 설명은
 [<a href="http://help.realgrid.com/tutorial/b9-3/">B9-3 TreeView의 ItemModel 이해하기</a>]를
 참조하세요.</p>
@@ -2192,14 +2192,14 @@
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">fillCsvData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>이 함수의 두 번째 인자인 <code class="highlighter-rouge">options</code> 즉 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
-<code class="highlighter-rouge">tree</code>속성의 값에 <code class="highlighter-rouge">트리코드</code>를 지정하면 됩니다.</p>
+<p>이 함수의 두 번째 인자인 <code class="language-plaintext highlighter-rouge">options</code> 즉 <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
+<code class="language-plaintext highlighter-rouge">tree</code>속성의 값에 <code class="language-plaintext highlighter-rouge">트리코드</code>를 지정하면 됩니다.</p>
 
-<p>즉, 데모 데이터에서 두 번째 필드의 값에 해당하는 데이터가 <code class="highlighter-rouge">트리코드</code>이며 이 필드의 이름인 <code class="highlighter-rouge">tree</code>를 해당
+<p>즉, 데모 데이터에서 두 번째 필드의 값에 해당하는 데이터가 <code class="language-plaintext highlighter-rouge">트리코드</code>이며 이 필드의 이름인 <code class="language-plaintext highlighter-rouge">tree</code>를 해당
 옵션의 속성 값에 넣어 주는 것으로 계층 구조를 만들수 있습니다.</p>
 
-<p>또, Array 데이터와 마찬 가지로 계층 구조를 <code class="highlighter-rouge">트리코드</code>로 만들다 보니 최초 정렬 순서도 중요하기 때문에
-옵션에서 <code class="highlighter-rouge">sorting</code> 속성의 값을 이용해 정렬여부를 결정 할 수도 있습니다.</p>
+<p>또, Array 데이터와 마찬 가지로 계층 구조를 <code class="language-plaintext highlighter-rouge">트리코드</code>로 만들다 보니 최초 정렬 순서도 중요하기 때문에
+옵션에서 <code class="language-plaintext highlighter-rouge">sorting</code> 속성의 값을 이용해 정렬여부를 결정 할 수도 있습니다.</p>
 
 <p>RealGrid 튜토리얼에 계층 구조 표현을 위한 데이터 구조에 대해 좀더 자세히 다루고 있는 문서들이 있습니다.
 아래 링크를 참조하세요.</p>
@@ -2214,8 +2214,8 @@
 
 <p>트리뷰(TreeView)에는 각 노드에 아이콘을 표시할 수 있습니다.</p>
 
-<p>아래 트리 구현 함수들에서는 함수의 마지막 인자인 <code class="highlighter-rouge">iconField</code>에 트리컬럼에 표시할 아이콘의 index값이
-들어 있는 필드명을 입력합니다. 이 필드에 들어있는 값이 트리노드의 <code class="highlighter-rouge">기본 아이콘 인덱스(icon index)</code>가 됩니다.</p>
+<p>아래 트리 구현 함수들에서는 함수의 마지막 인자인 <code class="language-plaintext highlighter-rouge">iconField</code>에 트리컬럼에 표시할 아이콘의 index값이
+들어 있는 필드명을 입력합니다. 이 필드에 들어있는 값이 트리노드의 <code class="language-plaintext highlighter-rouge">기본 아이콘 인덱스(icon index)</code>가 됩니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/setRows/">TreeDataProvider.setRows()</a></li>
@@ -2223,9 +2223,9 @@
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/setJsonRows/">TreeDataProvider.setXmlRows()</a></li>
 </ul>
 
-<p>또 다른 트리 구현 함수인 아래 함수들에서는 두 번째 인자인 <code class="highlighter-rouge">options</code>
+<p>또 다른 트리 구현 함수인 아래 함수들에서는 두 번째 인자인 <code class="language-plaintext highlighter-rouge">options</code>
 즉, <a href="http://help.realgrid.com/api/types/DataFillOptions/">DataFillOptions</a>의
-<code class="highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
+<code class="language-plaintext highlighter-rouge">rows</code>속성의 값으로 위 속성명인 <code class="language-plaintext highlighter-rouge">'rows'</code>를 넘겨 주어야 합니다.</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/fillJsonData/">TreeDataProvider.fillJsonData()</a></li>
@@ -2289,7 +2289,7 @@ TreeView에 등록하면 아이콘 필드에 입력된 index값에 해당 하는
 
 <h4 id="트리-노드-아이콘-변경-하기">트리 노드 아이콘 변경 하기</h4>
 
-<p>트리 노드의 <code class="highlighter-rouge">아이콘 인덱스(icon index)</code>를 가져오고 지정하기 위해</p>
+<p>트리 노드의 <code class="language-plaintext highlighter-rouge">아이콘 인덱스(icon index)</code>를 가져오고 지정하기 위해</p>
 
 <ul>
   <li><a href="http://help.realgrid.com/api/TreeDataProvider/getIconIndex/">TreeDataProvider.getIconIndex()</a></li>
