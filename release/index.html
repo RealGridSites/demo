@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    최신버전 1.1.38
+    최신버전 1.1.39
     </title>
     <meta name="description" content="RealGrid 데모사이트 입니다.">
 
@@ -239,7 +239,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.38</span>
+                            <span>최신버전 1.1.39</span>
                         </a>
                     </li>
                     
@@ -1703,7 +1703,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.38</span>
+                            <span>최신버전 1.1.39</span>
                         </a>
                     </li>
                     
@@ -1889,7 +1889,7 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">최신버전 1.1.38</h1>
+            <h1 class="title-page">최신버전 1.1.39</h1>
             
 
             
@@ -1899,6 +1899,43 @@
 
         <div class="document-formatting">
             
+<h2 id="1139-2021년-10월">1.1.39 (2021년 10월)</h2>
+
+<h3 id="기능개선">기능개선</h3>
+
+<ol>
+  <li><a href="/RowGroup/ItemModelApi/">ItemModelApi</a>
+    <ul>
+      <li><a href="http://help.realgrid.com/api/GridView/expandGroup/">expandGroup</a> 또는 <a href="http://help.realgrid.com/api/GridView/collapseGroup/">collapseGroup</a>으로 그룹을 접거나 펼칠때 itemIndex에 해당하는 model이 group이 아닌 경우 model의 parent가 접거나 펼쳐지도록 개선.</li>
+    </ul>
+  </li>
+  <li><a href="http://help.realgrid.com/api/types/EditOptions/">editOptions</a>
+    <ul>
+      <li>editOptions.updatable이 false여도 rowState가 <code class="language-plaintext highlighter-rouge">created</code>인 행은 편집가능하도록 개선</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">numberFormat</code>의 소수점 버림/올림시 시 소숫점 이하 표시방식 변경.
+    <ul>
+      <li>numberFormat이 <code class="language-plaintext highlighter-rouge">#,##0.####;f</code>일때 일부 값에서 <code class="language-plaintext highlighter-rouge">0.0000</code>으로 표시되던 것을 <code class="language-plaintext highlighter-rouge">0</code>으로 표시되도록 변경</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="오류-수정">오류 수정</h3>
+
+<ol>
+  <li><a href="/Tree/TreeDataModel/'">TreeView</a>
+    <ul>
+      <li>엑셀로 export시 <a href="http://help.realgrid.com/api/types/ColumnFooter/">footer</a>.callback으로 반환된 문자열이 누락되는 현상 수정</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">syncHeadCheck</code>
+    <ul>
+      <li>checkBar.syncHeadCheck 가 <code class="language-plaintext highlighter-rouge">true</code>일때 첫번째 item의 checkBox를 체크하면 checkBar의 header가 체크되는 현상 수정.</li>
+    </ul>
+  </li>
+</ol>
+
 <h2 id="1138-2021년-06월">1.1.38 (2021년 06월)</h2>
 
 <hr />
@@ -1960,7 +1997,7 @@
 
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h3 id="오류-수정">오류 수정</h3>
+<h3 id="오류-수정-1">오류 수정</h3>
 
 <ol>
   <li>
@@ -2003,7 +2040,7 @@
   </li>
 </ol>
 
-<h3 id="오류-수정-1">오류 수정</h3>
+<h3 id="오류-수정-2">오류 수정</h3>
 
 <ol>
   <li><a href="/Excels/ExcelExport/">ExcelExport</a>
@@ -2077,7 +2114,7 @@
   </li>
 </ol>
 
-<h3 id="오류-수정-2">오류 수정</h3>
+<h3 id="오류-수정-3">오류 수정</h3>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/DataColumn/">DataColumn</a>
@@ -2280,7 +2317,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-3">오류 수정</h4>
+<h4 id="오류-수정-4">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/checkRow/">checkRow</a>
     <ul>
@@ -2453,7 +2490,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-4">오류 수정</h4>
+<h4 id="오류-수정-5">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/EditorOptions/">EditorOptions</a>
@@ -2604,7 +2641,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-5">오류 수정</h4>
+<h4 id="오류-수정-6">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/GridBase/fitRowHeight/">fitRowHeight</a>
@@ -2964,7 +3001,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-6">오류 수정</h4>
+<h4 id="오류-수정-7">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/LocalDataProvider/removeRow/">removeRow</a>
     <ul>
@@ -3243,7 +3280,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-7">오류 수정</h4>
+<h4 id="오류-수정-8">오류 수정</h4>
 <ol>
   <li>[ColumnGroup]((/Columns/ColumnGrouping/)
     <ul>
@@ -3515,7 +3552,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-8">오류 수정</h4>
+<h4 id="오류-수정-9">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/ImageButtonsCellRenderer/">ImageButtonsCellRenderer</a>
     <ul>
@@ -3868,7 +3905,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-9">오류 수정</h4>
+<h4 id="오류-수정-10">오류 수정</h4>
 <ol>
   <li><a href="/CellComponent/LookupColumn/">lookupColumn</a>
     <ul>
@@ -4209,7 +4246,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-10">오류 수정</h4>
+<h4 id="오류-수정-11">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/Mask/">mask</a>
@@ -4557,7 +4594,7 @@
 <span class="p">}]);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h4 id="오류-수정-11">오류 수정</h4>
+<h4 id="오류-수정-12">오류 수정</h4>
 
 <ol>
   <li><a href="http://help.realgrid.com/api/types/Footer/">Footer</a>
@@ -5052,7 +5089,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-12">오류 수정</h4>
+<h4 id="오류-수정-13">오류 수정</h4>
 <ol>
   <li><a href="http://help.realgrid.com/api/types/HeaderSummary/">HeaderSummary</a>
     <ul>
@@ -5467,7 +5504,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-13">오류 수정</h4>
+<h4 id="오류-수정-14">오류 수정</h4>
 <ol>
   <li><code class="language-plaintext highlighter-rouge">searchCell</code>
     <ul>
@@ -5707,7 +5744,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-14">오류 수정</h4>
+<h4 id="오류-수정-15">오류 수정</h4>
 <ol>
   <li><code class="language-plaintext highlighter-rouge">dataProvider.getFields</code>
     <ul>
@@ -5895,7 +5932,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-15">오류 수정</h4>
+<h4 id="오류-수정-16">오류 수정</h4>
 <ol>
   <li><code class="language-plaintext highlighter-rouge">getStyles</code>
     <ul>
@@ -6118,7 +6155,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-16">오류 수정</h4>
+<h4 id="오류-수정-17">오류 수정</h4>
 <ol>
   <li><code class="language-plaintext highlighter-rouge">getDisplayValues</code>
     <ul>
@@ -6245,7 +6282,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-17">오류 수정</h4>
+<h4 id="오류-수정-18">오류 수정</h4>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">RowGrouping 상태에서 ExcelExport</code>
@@ -6363,7 +6400,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-18">오류 수정</h4>
+<h4 id="오류-수정-19">오류 수정</h4>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">commit()함수 호출시 메시지 팝업 오류</code>
@@ -6553,7 +6590,7 @@
   </li>
 </ol>
 
-<h4 id="오류-수정-19">오류 수정</h4>
+<h4 id="오류-수정-20">오류 수정</h4>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">onRowInserted이벤트에서 dataProvider.setValue()함수 사용시 오류 발생 현상</code>
@@ -6664,9 +6701,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.38/realgridjs_eval.1.1.38.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.38/realgridjs-api.1.1.38.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.38/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.39/realgridjs_eval.1.1.39.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.39/realgridjs-api.1.1.39.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.39/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.8/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.8/realpivot_eval.1.0.8.min.js"></script>
