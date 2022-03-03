@@ -8,7 +8,7 @@
 
     <!-- Site Title -->
     <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
-    최신버전 1.1.39
+    최신버전 1.1.40
     </title>
     <meta name="description" content="RealGrid 데모사이트 입니다.">
 
@@ -239,7 +239,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.39</span>
+                            <span>최신버전 1.1.40</span>
                         </a>
                     </li>
                     
@@ -1703,7 +1703,7 @@
                     <li class="item-toc current ">
                         <a href="/release/"
                           class="sidebar-link  current">
-                            <span>최신버전 1.1.39</span>
+                            <span>최신버전 1.1.40</span>
                         </a>
                     </li>
                     
@@ -1889,7 +1889,7 @@
 
     <div class="content-wrapper no-devbox">
         <div class="header-content">
-            <h1 class="title-page">최신버전 1.1.39</h1>
+            <h1 class="title-page">최신버전 1.1.40</h1>
             
 
             
@@ -1899,9 +1899,40 @@
 
         <div class="document-formatting">
             
-<h2 id="1139-2021년-10월">1.1.39 (2021년 10월)</h2>
+<h2 id="1140-2022년-2월">1.1.40 (2022년 2월)</h2>
 
 <h3 id="기능개선">기능개선</h3>
+<ol>
+  <li><a href="http://help.realgrid.com/api/types/CheckBar/">CheckBar</a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">exclusive</code>가 true일때 선택되지 않은 item도 이미지로 표시되도록 하는 <code class="language-plaintext highlighter-rouge">unCheckRadioImageUrl</code> 속성 추가</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="오류수정">오류수정</h3>
+<ol>
+  <li><a href="/RowGroup/TreeView/}">TreeView</a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">onTreeItemCollapsing</code>, <code class="language-plaintext highlighter-rouge">onTreeItemExpanding</code> 이벤트에서 <code class="language-plaintext highlighter-rouge">false</code>를 return해도 접거나 펼치는 동작이 수행되는 현상 수정</li>
+    </ul>
+  </li>
+  <li><a href="/RowGroup/RowGrouping/}">RowGrouping</a>
+    <ul>
+      <li>grouping 관련 스타일이 설정된 상태에서 excel로 export하면 발생하는 오류 수정</li>
+      <li>getRowGroup()으로 가져온 값을 다시 setRowGroup했을때 발생하는 오류 수정</li>
+    </ul>
+  </li>
+  <li><a href="/RowGroup/TreeView/}">TreeView</a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">onTreeItemCollapsed</code>이벤트가 발생하지 않는 현상 수정.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="1139-2021년-10월">1.1.39 (2021년 10월)</h2>
+
+<h3 id="기능개선-1">기능개선</h3>
 
 <ol>
   <li><a href="/RowGroup/ItemModelApi/">ItemModelApi</a>
@@ -6701,9 +6732,9 @@
 
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
 
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.39/realgridjs_eval.1.1.39.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.39/realgridjs-api.1.1.39.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.39/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.40/realgridjs_eval.1.1.40.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.40/realgridjs-api.1.1.40.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.40/jszip.min.js"></script>
 
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.8/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.8/realpivot_eval.1.0.8.min.js"></script>
