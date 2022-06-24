@@ -2218,7 +2218,7 @@
   <span class="k">if</span> <span class="p">(</span><span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">getChildCount</span><span class="p">(</span><span class="nx">rowId</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
       <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/resource/data/treedata5.txt?__time__=</span><span class="dl">"</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https//</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/resource/data/treedata5.txt?__time__=</span><span class="dl">"</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
       <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">treeDataProvider</span><span class="p">.</span><span class="nx">fillCsvData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span>
@@ -2260,7 +2260,7 @@
       if (treeDataProvider.getChildCount(rowId) <= 0) {
         $.ajax({
           type: "GET",
-          url: "http://" + location.host + "/resource/data/treedata5.1.txt?__time__=" + new Date().getTime(),
+          url: "https://" + location.host + "/resource/data/treedata5.1.txt?__time__=" + new Date().getTime(),
           dataType: "text",
           success: function (data) {
             treeDataProvider.fillCsvData(data,
