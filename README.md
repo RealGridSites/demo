@@ -1,3 +1,5 @@
+**(이 저장소는 폐기처분 합니다.)**
+
 # RealGrid DEMO 사이트
 
 ## Architectures
